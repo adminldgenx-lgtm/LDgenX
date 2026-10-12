@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { copy, innovations } from '../content/fr';
-import { Button, Eyebrow, Reveal, SectionHeading, TextLink, FinalCTA } from '../components/ui';
-import { AnimatedHeading } from '../components/motion';
+import { Button, Eyebrow, SectionHeading, FinalCTA } from '../components/ui';
 import { HeroVideo } from '../components/HeroVideo';
 import { DnaProcess } from '../sections/DnaProcess';
 import { KeyFacts, TrustWall } from '../sections/Proof';
@@ -10,6 +9,7 @@ import { ExpertiseLandscape } from '../sections/ExpertiseLandscape';
 import { TeamList } from '../sections/Collections';
 import { StudyCase } from '../sections/StudyCase';
 import { ApplicationAtlas } from '../sections/ApplicationAtlas';
+import { InnovationShowcase } from '../sections/Innovation';
 
 export function Home() {
   return (
@@ -79,40 +79,7 @@ export function Home() {
           <StudyCase />
         </div>
       </section>
-      <section className="innovation-section">
-        <div className="container">
-          <div className="innovation-heading">
-            <div>
-              <Eyebrow light>La recherche comme moteur</Eyebrow>
-              <AnimatedHeading className="display-large" text={copy.home.innovationTitle} />
-            </div>
-            <Reveal>
-              <p>{copy.home.innovationIntro}</p>
-              <TextLink to="/innovation">{copy.labels.innovation}</TextLink>
-            </Reveal>
-          </div>
-          <div className="innovation-projects">
-            {innovations.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 0.1}>
-                <Link className="innovation-project" to={`/innovation/${project.slug}`}>
-                  <span className="item-category">{project.label}</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.intro}</p>
-                  <ul className="innovation-keywords">
-                    {project.steps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ul>
-                  <span className="innovation-read">Explorer le projet</span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-          <div className="innovation-support">
-            <p>Recherche soutenue par Bpifrance et Créalia Occitanie.</p>
-          </div>
-        </div>
-      </section>
+      <InnovationShowcase />
       <TrustWall />
       <section className="section-space team-section">
         <div className="container">

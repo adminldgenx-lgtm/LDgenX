@@ -1,6 +1,8 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { applications, studies, resources, team, partners } from '../content/fr';
 import { Photo, Reveal } from '../components/ui';
+import { usePointerVars } from '../components/motion';
 
 export function ApplicationGrid() {
   return (
@@ -83,10 +85,8 @@ export function TeamList({ detailed = false }: { detailed?: boolean }) {
   return (
     <div className={`team-list ${detailed ? 'team-list-detailed' : ''}`}>
       {team.map((p, i) => (
-        <Reveal key={p.name} className="team-person" delay={i * 0.06}>
-          <figure className="team-portrait">
-            <Photo name={p.photo} alt="" sizes="(max-width: 700px) 90vw, 30vw" />
-          </figure>
+        <Reveal key={p.name} className="team-person" delay={i * 0.12}>
+          <TeamPortrait photo={p.photo} />
           <div>
             <h3>{p.name}</h3>
             <p className="team-role">{p.role}</p>
@@ -95,6 +95,18 @@ export function TeamList({ detailed = false }: { detailed?: boolean }) {
         </Reveal>
       ))}
     </div>
+  );
+}
+
+/** A portrait that leans towards the pointer, the face moving a little less than the frame. */
+function TeamPortrait({ photo }: { photo: string }) {
+  const ref = useRef<HTMLElement>(null);
+  usePointerVars(ref, 6);
+  return (
+    <figure ref={ref} className="team-portrait">
+      <Photo name={photo} alt="" sizes="(max-width: 700px) 90vw, 30vw" />
+      <span className="team-portrait-glare" aria-hidden="true" />
+    </figure>
   );
 }
 

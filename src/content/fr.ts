@@ -736,7 +736,27 @@ export const featuredStudy = {
   outcome:
     'Des données sur la répartition des espèces, et une réflexion nourrie sur l’usage de l’ADNe pour la surveillance des milieux aquatiques.',
   constraintsLabel: 'Contraintes du milieu soulignées par la publication',
-  constraints: ['Courants', 'Turbidité', 'Marées'],
+  constraintsHint: 'Choisissez-en une pour la voir agir sur la carte.',
+  // Each line explains the phenomenon in general terms; none describes a measurement.
+  constraints: [
+    {
+      id: 'courants',
+      label: 'Courants',
+      text: 'Les courants déplacent l’eau, et avec elle les traces d’ADN qu’elle contient.',
+    },
+    {
+      id: 'turbidite',
+      label: 'Turbidité',
+      text: 'Abondantes dans les estuaires, les particules en suspension troublent l’eau.',
+    },
+    {
+      id: 'marees',
+      label: 'Marées',
+      text: 'La marée fait varier le niveau et le mélange des eaux au fil de la journée.',
+    },
+  ],
+  mapNote:
+    'Animation illustrative : les particules et leurs mouvements ne représentent aucune mesure de l’étude.',
   sourceLabel: 'La publication de l’Agence de l’eau',
 };
 

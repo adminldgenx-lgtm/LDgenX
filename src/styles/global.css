@@ -3651,21 +3651,6 @@ h3 {
   line-height: 1.65;
   color: #c2d2d8;
 }
-.innovation-keywords {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 24px;
-  max-width: 520px;
-  margin: 28px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 14px;
-  color: #e4ece6;
-}
-.innovation-keywords li {
-  padding: 11px 0;
-  border-top: 1px solid #ffffff24;
-}
 .innovation-section .innovation-read {
   display: inline-block;
   margin-top: 28px;
@@ -7039,18 +7024,34 @@ h3 {
    from OpenStreetMap, the eight sites of the published sampling map), then the other studies. */
 .study-case {
   display: grid;
-  gap: clamp(72px, 8vw, 112px);
+  gap: clamp(56px, 6vw, 80px);
 }
 .study-case-main {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
-  gap: clamp(48px, 6vw, 96px);
+  gap: 64px clamp(48px, 6vw, 96px);
   align-items: start;
 }
 
 /* The map: a paper chart. Sea, shallows, land, then the coastline drawn as a hairline. */
 .study-map {
   margin: 0;
+}
+/* Beside the account, the map stays in view while it is read. It never exceeds the screen. */
+@media (min-width: 1051px) {
+  .study-map {
+    position: sticky;
+    top: 120px;
+  }
+}
+.study-map-canvas {
+  width: min(100%, calc((100svh - 170px) * 0.7219));
+}
+.study-case-sites {
+  grid-column: 1 / -1;
+}
+.study-case-figure {
+  align-self: stretch;
 }
 .study-map-canvas {
   position: relative;
@@ -7059,7 +7060,8 @@ h3 {
   border-radius: 6px;
   background: #dde8ed;
 }
-.study-map-canvas svg {
+.study-map-canvas > svg,
+.study-map-flow {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -7308,13 +7310,10 @@ h3 {
 }
 
 /* The list of sites, linked to the map. */
-.study-map figcaption {
-  margin-top: 28px;
-}
 .study-sites {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
   grid-auto-flow: column;
   column-gap: 32px;
   margin: 0;
@@ -7410,9 +7409,25 @@ h3 {
   margin-top: 48px;
 }
 .study-case-question blockquote {
+  position: relative;
   margin: 0;
   padding-left: 22px;
-  border-left: 2px solid var(--green);
+}
+.study-case-question blockquote::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--green);
+  transform-origin: top;
+}
+[data-reveal='visible'].study-case-question blockquote::before {
+  animation: study-quote-bar 1s 0.25s var(--motion-ease) both;
+}
+@keyframes study-quote-bar {
+  from {
+    transform: scaleY(0);
+  }
 }
 .study-case-question blockquote p {
   margin: 0;
@@ -7442,37 +7457,87 @@ h3 {
 .study-case-steps li:last-child {
   border-bottom: 1px solid var(--line);
 }
-.study-case-steps li::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 40px;
-  height: 1px;
-  background: var(--green-dark);
-  transform-origin: left;
-}
-[data-reveal='visible'].study-case-steps li::before {
-  animation: study-step-line 0.9s calc(0.35s + var(--i) * 0.16s) var(--motion-ease) both;
-}
-@keyframes study-step-line {
-  from {
-    transform: scaleX(0);
-  }
-}
 .study-case-steps h4 {
   margin: 0;
   font-family: var(--heading);
   font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
-  color: var(--navy);
+}
+.study-case-steps h4 button {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: #8796a0;
+  transition: color 0.35s;
+}
+.study-case-steps h4 button::after {
+  content: '';
+  position: absolute;
+  inset: -12px -14px;
 }
 .study-case-steps li p {
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
-  color: var(--muted);
+  color: #8796a0;
+  transition: color 0.35s;
+}
+.study-case-steps li[data-active] h4 button {
+  color: var(--navy);
+}
+.study-case-steps li[data-active] p {
+  color: var(--ink);
+}
+@media (hover: hover) and (pointer: fine) {
+  .study-case-steps h4 button:hover {
+    color: var(--navy);
+  }
+}
+.study-case-steps h4 button:focus-visible {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 4px;
+}
+/* The step's line is its timer: it fills while the step plays, then the next one begins. */
+.study-step-bar {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  overflow: hidden;
+}
+.study-step-bar::before,
+.study-step-bar > span {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green-dark);
+  transform-origin: left;
+}
+.study-step-bar::before {
+  transform: scaleX(0);
+  transition: transform 0.5s var(--motion-ease);
+}
+.study-case-steps ol:not([data-playing]) li[data-active] .study-step-bar::before {
+  transform: scaleX(1);
+}
+.study-step-bar > span {
+  animation: study-step-run linear both;
+}
+.study-case-steps ol[data-paused] .study-step-bar > span {
+  animation-play-state: paused;
+}
+@keyframes study-step-run {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 .study-case-outcome {
   margin-top: 48px;
@@ -7484,29 +7549,65 @@ h3 {
   color: var(--ink);
 }
 .study-case-constraints-label {
-  margin: 22px 0 8px;
+  margin: 24px 0 12px;
   font-size: 13px;
   color: var(--muted);
 }
 .study-case-constraints {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 8px;
 }
-.study-case-constraints li {
+.study-case-constraints button {
+  position: relative;
+  min-height: 44px;
   padding: 0 18px;
-  border-left: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
   font-family: var(--heading);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1.3;
   color: var(--navy);
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    color 0.25s,
+    transform 0.2s;
 }
-.study-case-constraints li:first-child {
-  padding-left: 0;
-  border-left: 0;
+.study-case-constraints button[aria-pressed='true'] {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: white;
+}
+@media (hover: hover) and (pointer: fine) {
+  .study-case-constraints button:not([aria-pressed='true']):hover {
+    border-color: var(--navy);
+  }
+}
+.study-case-constraints button:active {
+  transform: scale(0.97);
+}
+.study-case-constraints button:focus-visible {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 2px;
+}
+.study-case-layer-note {
+  min-height: 3.2em;
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.study-case-layer-note > span {
+  display: block;
+  animation: study-note-in 0.4s var(--motion-ease) both;
+}
+@keyframes study-note-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
 }
 .study-case-actions {
   display: flex;
@@ -7594,19 +7695,9 @@ h3 {
   .study-case-main {
     grid-template-columns: 1fr;
   }
-  .study-map {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 40px;
-    align-items: end;
-  }
-  .study-map figcaption {
-    margin-top: 0;
-  }
   .study-sites {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
   }
   .study-tiles {
     gap: 28px;
@@ -7639,10 +7730,6 @@ h3 {
   }
 }
 @media (max-width: 640px) {
-  .study-map {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
   .study-sites {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(4, auto);
@@ -7694,5 +7781,670 @@ h3 {
   }
   .study-map-tip {
     animation: none;
+  }
+}
+
+/* Key facts, alive: a reading line sweeps the band, the values decode through the four bases,
+   and a soft light follows the pointer across each fact. */
+.facts-band {
+  position: relative;
+  overflow: hidden;
+}
+.facts-band::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  z-index: 1;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  transform: translateX(-200px);
+  animation: facts-read 9s 1.6s linear infinite;
+}
+@keyframes facts-read {
+  0% {
+    transform: translateX(-200px);
+  }
+  55%,
+  100% {
+    transform: translateX(calc(100vw + 20px));
+  }
+}
+.facts-band .fact {
+  position: relative;
+  isolation: isolate;
+}
+.facts-band .fact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    260px circle at calc(var(--px, 0.5) * 100%) calc(var(--py, 0.5) * 100%),
+    rgba(115, 181, 15, 0.12),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.facts-band .fact[data-pointer]::before {
+  opacity: 1;
+}
+.facts-band .fact::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  width: 48px;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--motion-ease);
+}
+.facts-band .fact:first-child::after {
+  left: 0;
+}
+.facts-band .fact[data-pointer]::after {
+  transform: scaleX(1);
+}
+.facts-band .fact-label {
+  transition: color 0.3s;
+}
+.facts-band .fact[data-pointer] .fact-label {
+  color: var(--ink);
+}
+.decode {
+  position: relative;
+  display: inline-block;
+}
+.decode[data-running] .decode-text {
+  color: transparent;
+}
+.decode-live {
+  position: absolute;
+  inset: 0 auto auto 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.decode-live > span {
+  color: var(--green-dark);
+  opacity: 0.75;
+}
+.decode-live > span[data-settled] {
+  color: var(--navy);
+  opacity: 1;
+}
+
+/* Arrival: the facts rise in turn, their dividers draw downwards. */
+.facts-band[data-phase='pending'] .fact > p {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.facts-band[data-phase='visible'] .fact > p {
+  animation: content-enter 0.7s calc(var(--i) * 0.12s) var(--motion-ease) backwards;
+}
+.facts-band[data-phase='visible'] .fact > .fact-label {
+  animation-delay: calc(0.12s + var(--i) * 0.12s);
+}
+.facts-band[data-phase='pending'] .fact {
+  border-left-color: transparent;
+}
+.facts-band[data-phase='visible'] .fact {
+  animation: facts-divider 0.9s calc(var(--i) * 0.12s) var(--motion-ease) backwards;
+}
+@keyframes facts-divider {
+  from {
+    border-left-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .facts-band::before {
+    display: none;
+  }
+}
+
+/* The study map, alive. The water canvas fades in once running; each step of the approach and
+   each constraint changes what the map does. */
+.study-map-flow {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.study-map[data-flowing] .study-map-flow {
+  opacity: 1;
+}
+.study-map[data-phase='pending'] .study-map-flow {
+  opacity: 0;
+}
+.study-map-shallows {
+  transition:
+    stroke-width 1.2s var(--motion-ease),
+    stroke 0.8s;
+}
+/* Tides: the band of shallow water breathes in and out. */
+.study-map[data-layer='marees'] .study-map-shallows {
+  stroke: #f1f6f6;
+  animation: study-tide 9s ease-in-out infinite;
+}
+@keyframes study-tide {
+  0%,
+  100% {
+    stroke-width: 26;
+  }
+  50% {
+    stroke-width: 86;
+  }
+}
+.study-map[data-layer='turbidite'] .study-map-sea {
+  fill: #d9e2e2;
+  transition: fill 1s;
+}
+.study-map-sea {
+  transition: fill 1s;
+}
+
+/* Sampling: one site after another sends out a ripple, north to south, in a loop. */
+.study-site-ping {
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid var(--green);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.study-map[data-step='0']:not([data-phase='pending']) .study-site-ping {
+  animation: study-ping 4.8s calc(var(--i) * 0.45s + 1.6s) ease-out infinite;
+}
+@keyframes study-ping {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.8);
+  }
+  22%,
+  100% {
+    opacity: 0;
+    transform: scale(3.4);
+  }
+}
+/* Analysis: a ring closes around each site, one after another. */
+.study-site-ring {
+  position: absolute;
+  inset: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  overflow: visible;
+  pointer-events: none;
+  transform: rotate(-90deg);
+}
+.study-site-ring circle {
+  fill: none;
+  stroke: var(--green-dark);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.study-map[data-step='1'] .study-site-ring circle {
+  opacity: 1;
+  animation: study-ring 3.2s calc(var(--i) * 0.16s) var(--motion-ease) infinite;
+}
+@keyframes study-ring {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  55%,
+  85% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+/* Comparison: every site beats together. */
+.study-map[data-step='2'] .study-site::before {
+  animation: study-beat 2.4s ease-in-out infinite;
+}
+@keyframes study-beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.28);
+  }
+}
+/* A site that collects a particle blinks. */
+.study-site[data-catch]::before {
+  animation: study-catch 0.5s var(--motion-ease);
+}
+@keyframes study-catch {
+  40% {
+    transform: scale(1.45);
+    background: #a6d45a;
+  }
+}
+
+/* The other studies: a label, then three cards whose pictures lean towards the pointer. */
+.study-tiles-label {
+  grid-column: 1 / -1;
+  margin: 0 0 -12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green-dark);
+}
+.study-tile-image {
+  position: relative;
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition:
+    transform 0.5s var(--motion-ease),
+    box-shadow 0.5s var(--motion-ease);
+}
+.study-tile[data-pointer] .study-tile-image {
+  transition:
+    transform 0.12s linear,
+    box-shadow 0.5s var(--motion-ease);
+  box-shadow: 0 24px 48px -24px rgba(3, 37, 75, 0.45);
+}
+.study-tile-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at calc(var(--px, 0.5) * 100%) calc(var(--py, 0.5) * 100%),
+    rgba(255, 255, 255, 0.28),
+    transparent 60%
+  );
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.study-tile[data-pointer] .study-tile-glare {
+  opacity: 1;
+}
+.study-tile-question {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 6px;
+  padding: 56px 20px 18px;
+  background: linear-gradient(to top, rgba(3, 26, 50, 0.88), rgba(3, 26, 50, 0.6) 60%, transparent);
+  font-family: var(--heading);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: white;
+  text-wrap: balance;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.4s,
+    transform 0.55s var(--motion-ease);
+  pointer-events: none;
+}
+.study-tile-question > span {
+  font-family: var(--body);
+  font-size: 12px;
+  color: #c3dc9c;
+}
+@media (hover: hover) and (pointer: fine) {
+  .study-tile:hover .study-tile-question,
+  .study-tile:focus-visible .study-tile-question {
+    opacity: 1;
+    transform: none;
+  }
+  .study-tile:hover .study-tile-image .photo {
+    transform: scale(1.06);
+  }
+}
+/* Arrival: each picture uncovers from the bottom. */
+[data-reveal='pending'] > .study-tile .study-tile-image {
+  clip-path: inset(100% 0 0 0 round 6px);
+}
+[data-reveal='visible'] > .study-tile .study-tile-image {
+  animation: study-tile-wipe 1.1s calc(var(--reveal-delay, 0s) + 0.1s) var(--motion-ease) backwards;
+}
+@keyframes study-tile-wipe {
+  from {
+    clip-path: inset(100% 0 0 0 round 6px);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 6px);
+  }
+}
+@media (max-width: 800px) {
+  .study-tiles-label {
+    margin-bottom: -8px;
+  }
+  .study-tile-question {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .study-map .study-site-ping,
+  .study-map .study-site-ring circle,
+  .study-map .study-site::before,
+  .study-map .study-map-shallows,
+  .study-step-bar > span,
+  .study-case-layer-note > span {
+    animation: none !important;
+  }
+  .study-tile-image {
+    transform: none;
+  }
+}
+
+/* Innovation, alive: a green light follows the pointer across the section; each project has a
+   moving illustration and a pipeline that a signal runs through. Everything pauses off screen. */
+.innovation-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.innovation-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    720px circle at calc(var(--px, 0.5) * 100%) calc(var(--py, 0.5) * 100%),
+    rgba(115, 181, 15, 0.1),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.8s;
+  pointer-events: none;
+}
+.innovation-section[data-pointer]::before {
+  opacity: 1;
+}
+.innovation-section:not([data-live]) :is(.innovation-visual *, .innovation-pipeline *),
+.innovation-section:not([data-live]) .innovation-pipeline::after,
+.innovation-section:not([data-live]) .innovation-pipeline li {
+  animation-play-state: paused !important;
+}
+.innovation-visual {
+  position: relative;
+  height: 180px;
+  margin-bottom: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 100% 30px,
+    rgba(255, 255, 255, 0.02);
+  transition:
+    border-color 0.4s,
+    background-color 0.4s;
+}
+.innovation-visual svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .innovation-project:hover .innovation-visual {
+    border-color: rgba(195, 220, 156, 0.4);
+  }
+}
+
+/* DNA EcoTrace: long reads. */
+.reads-row {
+  animation: reads-stream linear infinite;
+}
+@keyframes reads-stream {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-560px);
+  }
+}
+.reads-head {
+  stroke: #c3dc9c;
+  stroke-width: 1.5;
+}
+.reads-head-glow {
+  animation: reads-glow 2.6s ease-in-out infinite;
+}
+@keyframes reads-glow {
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .innovation-project:hover .reads-row {
+    animation-duration: 6s !important;
+  }
+}
+
+/* eDNAClock: the hand, the marks it lights, the growth rings. */
+.clock-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+}
+.clock-ticks line {
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 1.5;
+}
+.clock-marks line {
+  stroke: #9fd34a;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: clock-mark 12s linear infinite;
+}
+@keyframes clock-mark {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0.08;
+  }
+}
+.clock-hand {
+  transform-box: view-box;
+  transform-origin: 280px 90px;
+  animation: clock-sweep 12s linear infinite;
+}
+.clock-hand line {
+  stroke: #e9f6d2;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+@keyframes clock-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.clock-centre {
+  fill: #e9f6d2;
+}
+.clock-rings circle {
+  fill: none;
+  stroke: rgba(195, 220, 156, 0.5);
+  stroke-width: 1;
+  transform-box: view-box;
+  transform-origin: 280px 90px;
+  animation: clock-ring 6s ease-out infinite;
+}
+@keyframes clock-ring {
+  from {
+    opacity: 0.9;
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .innovation-project:hover :is(.clock-hand, .clock-marks line) {
+    animation-duration: 4s !important;
+  }
+}
+
+/* The four stages as a pipeline: one line, a pulse running along it, each stage lighting up
+   as the pulse reaches it. */
+.innovation-pipeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 560px;
+  margin: 30px 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.innovation-pipeline::after {
+  content: '';
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9fd34a, transparent);
+  animation: pipeline-pulse 6.4s linear infinite;
+}
+@keyframes pipeline-pulse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(333%);
+  }
+}
+.innovation-pipeline li {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #9fb4bd;
+  animation: pipeline-stage 6.4s calc(0.71s + var(--i) * 1.23s) linear infinite;
+}
+@keyframes pipeline-stage {
+  0%,
+  30%,
+  100% {
+    color: #9fb4bd;
+  }
+  10%,
+  18% {
+    color: #ffffff;
+  }
+}
+@media (max-width: 640px) {
+  .innovation-visual {
+    height: 150px;
+  }
+  .innovation-pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .innovation-visual *,
+  .innovation-pipeline::after,
+  .innovation-pipeline li {
+    animation: none !important;
+  }
+  .innovation-pipeline::after {
+    display: none;
+  }
+}
+
+/* Team, alive: each portrait uncovers like a curtain on arrival, then leans towards the
+   pointer while the face moves a little less than its frame, under a soft light. */
+.team-portrait {
+  position: relative;
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition:
+    transform 0.6s var(--motion-ease),
+    box-shadow 0.6s var(--motion-ease);
+}
+.team-portrait[data-pointer] {
+  transition:
+    transform 0.12s linear,
+    box-shadow 0.6s var(--motion-ease);
+  box-shadow: 0 30px 60px -30px rgba(3, 37, 75, 0.5);
+}
+.team-portrait .photo {
+  transition: transform 0.7s var(--motion-ease);
+}
+.team-portrait[data-pointer] .photo {
+  transform: scale(1.07)
+    translate(calc((var(--px, 0.5) - 0.5) * -14px), calc((var(--py, 0.5) - 0.5) * -14px));
+  transition: transform 0.2s linear;
+}
+.team-portrait-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at calc(var(--px, 0.5) * 100%) calc(var(--py, 0.5) * 100%),
+    rgba(255, 255, 255, 0.22),
+    transparent 55%
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.team-portrait[data-pointer] .team-portrait-glare {
+  opacity: 1;
+}
+.team-person h3 {
+  position: relative;
+  display: inline-block;
+}
+.team-person h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--green-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--motion-ease);
+}
+.team-person:has(.team-portrait[data-pointer]) h3::after {
+  transform: scaleX(1);
+}
+.team-person[data-reveal='pending'] .team-portrait {
+  clip-path: inset(100% 0 0 0);
+}
+.team-person[data-reveal='visible'] .team-portrait {
+  animation: team-curtain 1.2s calc(var(--reveal-delay, 0s) + 0.05s) var(--motion-ease) backwards;
+}
+.team-person[data-reveal='visible'] .team-portrait .photo {
+  animation: team-settle 1.6s calc(var(--reveal-delay, 0s) + 0.05s) var(--motion-ease) backwards;
+}
+@keyframes team-curtain {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes team-settle {
+  from {
+    transform: scale(1.18);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-portrait {
+    transform: none;
+  }
+}
+@media (max-width: 1050px) {
+  .study-map-canvas {
+    margin-inline: auto;
   }
 }

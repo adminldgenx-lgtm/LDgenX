@@ -189,3 +189,71 @@ export function AnimatedHeading({
     </Tag>
   );
 }
+
+/** Becomes true the first time the element reaches the screen, and stays true. */
+export function useSeen(ref: RefObject<Element | null>, margin = '0px 0px -12% 0px') {
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || seen) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setSeen(true);
+        observer.disconnect();
+      },
+      { rootMargin: margin },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [ref, margin, seen]);
+  return seen;
+}
+
+/** The pointer over an element, as CSS variables: --px and --py from 0 to 1, and, with a
+ *  tilt, --tilt-x and --tilt-y in degrees. `data-pointer` marks the hover. Mouse and trackpad
+ *  only, never with reduced motion; at most one style write per frame. */
+export function usePointerVars(ref: RefObject<HTMLElement | null>, tilt = 0) {
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let frame = 0,
+      x = 0.5,
+      y = 0.5;
+    const apply = () => {
+      frame = 0;
+      element.style.setProperty('--px', x.toFixed(3));
+      element.style.setProperty('--py', y.toFixed(3));
+      if (tilt) {
+        element.style.setProperty('--tilt-x', `${((0.5 - y) * tilt).toFixed(2)}deg`);
+        element.style.setProperty('--tilt-y', `${((x - 0.5) * tilt).toFixed(2)}deg`);
+      }
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(apply);
+    };
+    const move = (event: PointerEvent) => {
+      if (event.pointerType !== 'mouse') return;
+      const box = element.getBoundingClientRect();
+      x = Math.min(1, Math.max(0, (event.clientX - box.left) / box.width));
+      y = Math.min(1, Math.max(0, (event.clientY - box.top) / box.height));
+      element.setAttribute('data-pointer', '');
+      schedule();
+    };
+    const leave = () => {
+      x = 0.5;
+      y = 0.5;
+      element.removeAttribute('data-pointer');
+      schedule();
+    };
+    element.addEventListener('pointermove', move);
+    element.addEventListener('pointerleave', leave);
+    return () => {
+      element.removeEventListener('pointermove', move);
+      element.removeEventListener('pointerleave', leave);
+      cancelAnimationFrame(frame);
+    };
+  }, [ref, tilt]);
+}
