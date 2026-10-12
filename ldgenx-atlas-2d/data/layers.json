@@ -1,0 +1,100 @@
+{
+  "nativeLandscape": {
+    "width": 1672,
+    "height": 941
+  },
+  "exportLandscape": {
+    "width": 4000,
+    "height": 2251,
+    "upscaled": true,
+    "method": "Lanczos resampling; not native 4K and not an AI detail enhancement"
+  },
+  "mask": {
+    "source": "Pixel-aligned colour segmentation of the native landscape with shoreline protection; visually reviewed approximation",
+    "alphaFile": "assets/water-mask.png",
+    "luminanceFile": "assets/water-mask-luma.png",
+    "whiteOrOpaque": "water",
+    "blackOrTransparent": "protected land and structures"
+  },
+  "tower": {
+    "file": "assets/turbine-tower.png",
+    "width": 1024,
+    "height": 1536,
+    "basePx": [
+      499,
+      1493
+    ],
+    "hubPx": [
+      398,
+      109
+    ]
+  },
+  "rotor": {
+    "file": "assets/turbine-rotor.png",
+    "width": 1254,
+    "height": 1254,
+    "hubPx": [
+      628,
+      764
+    ],
+    "bladeRadiusPx": 726,
+    "rotationOriginPercent": [
+      50.08,
+      60.925
+    ]
+  },
+  "turbines": [
+    {
+      "id": "turbine-1",
+      "base": [
+        0.718,
+        0.236
+      ],
+      "towerHeight": 0.098,
+      "durationSeconds": 18,
+      "phaseDegrees": 0,
+      "rotorWidthScale": 0.78,
+      "towerWidthScale": 0.45,
+      "rotorRadiusRatio": 0.5
+    },
+    {
+      "id": "turbine-2",
+      "base": [
+        0.794,
+        0.268
+      ],
+      "towerHeight": 0.092,
+      "durationSeconds": 21,
+      "phaseDegrees": 18,
+      "rotorWidthScale": 0.76,
+      "towerWidthScale": 0.45,
+      "rotorRadiusRatio": 0.5
+    },
+    {
+      "id": "turbine-3",
+      "base": [
+        0.867,
+        0.296
+      ],
+      "towerHeight": 0.083,
+      "durationSeconds": 20,
+      "phaseDegrees": 36,
+      "rotorWidthScale": 0.73,
+      "towerWidthScale": 0.45,
+      "rotorRadiusRatio": 0.5
+    },
+    {
+      "id": "turbine-4",
+      "base": [
+        0.941,
+        0.328
+      ],
+      "towerHeight": 0.078,
+      "durationSeconds": 23,
+      "phaseDegrees": 54,
+      "rotorWidthScale": 0.7,
+      "towerWidthScale": 0.45,
+      "rotorRadiusRatio": 0.5
+    }
+  ]
+}

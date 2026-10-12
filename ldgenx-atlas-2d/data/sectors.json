@@ -1,0 +1,108 @@
+{
+  "version": 2,
+  "coordinates": "normalized image positions; x from left, y from top",
+  "imageAspect": [
+    4000,
+    2251
+  ],
+  "transitionMs": 1200,
+  "recommendedDesktopZoom": 1.6,
+  "sectors": [
+    {
+      "id": "biodiversite",
+      "title": "Biodiversité & Conservation",
+      "backgroundAnchor": [
+        0.235,
+        0.485
+      ],
+      "description": "Suivez les espèces et leur diversité génétique pour orienter vos actions de conservation.",
+      "applications": [
+        "Espèces menacées",
+        "Diversité génétique",
+        "Espèces invasives"
+      ],
+      "suggestedHref": "/applications/biodiversite-conservation",
+      "photoPlaceholder": "Use the existing project photo for Biodiversité & Conservation"
+    },
+    {
+      "id": "aquaculture",
+      "title": "Aquaculture & Pêche",
+      "backgroundAnchor": [
+        0.66,
+        0.389
+      ],
+      "description": "Mobilisez la génomique pour la sélection, la gestion des stocks et la traçabilité.",
+      "applications": [
+        "Sélection génomique",
+        "Stocks halieutiques",
+        "Traçabilité"
+      ],
+      "suggestedHref": "/applications/aquaculture-peche",
+      "photoPlaceholder": "Use the existing project photo for Aquaculture & Pêche"
+    },
+    {
+      "id": "agriculture",
+      "title": "Agriculture & Agroécologie",
+      "backgroundAnchor": [
+        0.705,
+        0.73
+      ],
+      "description": "Étudiez les microbiomes des sols et la biodiversité des écosystèmes agricoles.",
+      "applications": [
+        "Microbiomes des sols",
+        "Biodiversité agricole",
+        "Sélection variétale"
+      ],
+      "suggestedHref": "/applications/agriculture-agroecologie",
+      "photoPlaceholder": "Use the existing project photo for Agriculture & Agroécologie"
+    },
+    {
+      "id": "environnement",
+      "title": "Environnement & Bureaux d’études",
+      "backgroundAnchor": [
+        0.925,
+        0.594
+      ],
+      "description": "Appuyez vos études d’impact et suivis environnementaux sur les données génomiques.",
+      "applications": [
+        "Études d’impact",
+        "Inventaires ADNe",
+        "Surveillance"
+      ],
+      "suggestedHref": "/applications/environnement-bureaux-d-etudes",
+      "photoPlaceholder": "Use the existing project photo for Environnement & Bureaux d’études"
+    },
+    {
+      "id": "recherche",
+      "title": "Recherche publique & privée",
+      "backgroundAnchor": [
+        0.75,
+        0.553
+      ],
+      "description": "Associez séquençage et bioinformatique pour développer vos projets de recherche.",
+      "applications": [
+        "Séquençage",
+        "Bioinformatique",
+        "Outils moléculaires"
+      ],
+      "suggestedHref": "/applications/recherche",
+      "photoPlaceholder": "Use the existing project photo for Recherche publique & privée"
+    },
+    {
+      "id": "energies-marines",
+      "title": "Énergies marines renouvelables",
+      "backgroundAnchor": [
+        0.83,
+        0.225
+      ],
+      "description": "Documentez la biodiversité et les enjeux environnementaux de vos projets en mer.",
+      "applications": [
+        "Éolien offshore",
+        "État initial",
+        "Suivi de biodiversité"
+      ],
+      "suggestedHref": "/applications/energies-marines-renouvelables",
+      "photoPlaceholder": "Use the existing project photo for Énergies marines renouvelables"
+    }
+  ]
+}

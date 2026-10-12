@@ -1,0 +1,10 @@
+{
+  "javascriptSyntax": "passed",
+  "controls": 6,
+  "towers": 4,
+  "independentRotors": 4,
+  "selectionAndReset": "passed",
+  "maskToggle": "passed",
+  "mobileSectorFraming": "passed in geometry tests",
+  "browserRendering": "not tested in a real browser"
+}

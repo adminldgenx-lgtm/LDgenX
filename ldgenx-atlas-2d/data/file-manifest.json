@@ -1,0 +1,78 @@
+{
+  "CLAUDE-READ-FIRST.md": {
+    "bytes": 4436,
+    "sha256": "045647b9f089dbec600d7d14fd88b9c10c9243a21881d1988544b739f1f67c12"
+  },
+  "assets/landscape-4000.jpg": {
+    "bytes": 3191992,
+    "sha256": "431728b0daf8bc96e75fd2ca10984ab23248bccff4d24740d493e49061c0876c"
+  },
+  "assets/landscape-4000.webp": {
+    "bytes": 593292,
+    "sha256": "72296cb9ff34e18223681f5f02fad5f46179046987eae758b49a89b912553b8c"
+  },
+  "assets/landscape-native.png": {
+    "bytes": 2861372,
+    "sha256": "e696a87dd2a38b95c6955dca47494916123daf7770c9a552babbee4fb031d2fb"
+  },
+  "assets/turbine-rotor.png": {
+    "bytes": 293212,
+    "sha256": "0c68309e9d5f59e0cbd377a60f4000ef71f9345b9f037151dc2c5153402cba00"
+  },
+  "assets/turbine-tower.png": {
+    "bytes": 1031551,
+    "sha256": "50501388b2a33e36e715804fc303c6973700a74cae5dc2d520c9fc7a7d7564fe"
+  },
+  "assets/water-mask-luma-native.png": {
+    "bytes": 50793,
+    "sha256": "85d449ce9447aed1455188cda362567d27f6102f9e615fe41e4d18cef1fac2c6"
+  },
+  "assets/water-mask-luma.png": {
+    "bytes": 334261,
+    "sha256": "c74f6119f5459d133379737e75c4ccda4f444797ab2df6aeb9945a514add7404"
+  },
+  "assets/water-mask.png": {
+    "bytes": 434573,
+    "sha256": "c853bf1cfb3eb9dc41aa6d45c0af6938b50f9ea02091475bc91f9745ad4ae26c"
+  },
+  "assets/water-only.png": {
+    "bytes": 13134451,
+    "sha256": "6b55f7b025bdee5045d05f973d3943b504c609828c192af47a58e1d0736dcd32"
+  },
+  "atlas-2d-preview.html": {
+    "bytes": 3599348,
+    "sha256": "22a57403995ef2f29eb672b3727724df83855fb0d867b77e5c39109217b37d7c"
+  },
+  "data/layers.json": {
+    "bytes": 2071,
+    "sha256": "f63ad2bc311cfde6c9756d28d57a1914fb12415d6e7ced7c817d9f5f63aafbf2"
+  },
+  "data/preview-validation.json": {
+    "bytes": 259,
+    "sha256": "caf8c47acd4bce4065feb2e7f8cc8aca091e9b1936cdb8cd7fee857ce99e1644"
+  },
+  "data/sectors.json": {
+    "bytes": 3453,
+    "sha256": "804d9edbdf00d1d80207e1108cc668a034fe211e8a743e7cf59857f741bffb6d"
+  },
+  "source/IMAGE-PROMPTS.md": {
+    "bytes": 4676,
+    "sha256": "f67b38df0aea858381223af944f059a4d8479c6553ff86dea995e38db92c07a7"
+  },
+  "source/build_preview.py": {
+    "bytes": 920,
+    "sha256": "d399dd207fc2327377519ddd7ad90cebf61384df88191ac0ce74e15996d731de"
+  },
+  "source/make_mask.py": {
+    "bytes": 1414,
+    "sha256": "273bcbe960b334009e115f58d8a2d76146898d036147d431d32380275ef717c8"
+  },
+  "source/preview-script.js": {
+    "bytes": 4878,
+    "sha256": "45cefbb01cc480377303714965ede798d990bc5ee73476edb725acec7fe2f63e"
+  },
+  "source/preview-template.html": {
+    "bytes": 7482,
+    "sha256": "ca19af4c19a434fd7e035de47febecfbe21bec9fc3dfc6d757e4fa9d6f7980d9"
+  }
+}
