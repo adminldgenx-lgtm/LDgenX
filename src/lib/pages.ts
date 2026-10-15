@@ -1,6 +1,8 @@
-import { applications, services, studies, resources, innovations, company } from '../content/fr';
+import { catalog, type Catalog } from '../content/catalog';
+import { company, routeSources } from '../content/site';
 import { imageUrl } from './images';
 import { heroPosterPreload } from './hero';
+import { bases, localeOf, locales, routesFor, type Locale } from './routes';
 
 export type PageKind =
   | 'home'
@@ -10,16 +12,20 @@ export type PageKind =
   | 'application'
   | 'studies'
   | 'study'
+  | 'work'
   | 'innovations'
   | 'innovation'
   | 'about'
   | 'team'
+  | 'person'
+  | 'publications'
   | 'partners'
   | 'resources'
   | 'article'
   | 'contact'
   | 'legal'
   | 'privacy'
+  | 'terms'
   | 'not-found';
 export interface PageMeta {
   path: string;
@@ -27,208 +33,322 @@ export interface PageMeta {
   description: string;
   label: string;
   kind: PageKind;
+  locale: Locale;
+  /** The entity shown, the same in both languages (its French slug). */
+  id?: string;
   slug?: string;
   image?: string;
   noindex?: boolean;
+  /** The same page in each language that has it. */
+  alternates: Partial<Record<Locale, string>>;
 }
-const page = (
-  path: string,
-  label: string,
-  kind: PageKind,
-  title: string,
-  description: string,
-  image?: string,
-): PageMeta => ({ path, label, kind, title, description, image });
 
-export const pages: PageMeta[] = [
-  page(
-    '/',
-    'Accueil',
-    'home',
-    'Génomique appliquée & ADN environnemental | LDgenX',
-    'LDgenX accompagne vos projets de biodiversité, d’agriculture et d’aquaculture, de l’échantillonnage à l’interprétation des données génomiques.',
-    'laboratoire',
-  ),
-  page(
-    '/services',
-    'Expertises',
-    'services',
-    'Expertises en ADN et génomique appliquée | LDgenX',
-    'ADN environnemental, génomique des populations, communautés microbiennes, bioinformatique, séquençage et dPCR : découvrez les expertises LDgenX.',
-    'sequencage',
-  ),
-  ...services.map((s) => ({
-    ...page(
-      `/services/${s.slug}`,
-      s.title,
-      'service',
-      `${s.title === 'Communautés microbiennes' ? 'Analyse des communautés microbiennes' : s.title} | LDgenX`,
-      `${s.title} : ${s.short} Découvrez les approches et l’accompagnement LDgenX.`,
-      s.image,
+function buildPages(locale: Locale, c: Catalog): PageMeta[] {
+  const r = routesFor(locale, c);
+  const seo = c.ui.seo;
+  const page = (
+    path: string,
+    kind: PageKind,
+    label: string,
+    title: string,
+    description: string,
+    image?: string,
+    id?: string,
+  ): PageMeta => ({ path, kind, label, title, description, image, id, locale, alternates: {} });
+  const list: PageMeta[] = [
+    page(r.home, 'home', seo.home.label, seo.home.title, seo.home.description, 'laboratoire'),
+    page(
+      r.services,
+      'services',
+      seo.services.label,
+      seo.services.title,
+      seo.services.description,
+      'sequencage',
     ),
-    slug: s.slug,
-  })),
-  page(
-    '/applications',
-    'Applications',
-    'applications',
-    'Applications de la génomique au vivant | LDgenX',
-    'Explorez les applications de la génomique pour la biodiversité, l’aquaculture, l’agriculture, les bureaux d’études et la recherche.',
-    'biodiversite',
-  ),
-  ...applications.map((s) => ({
-    ...page(
-      `/applications/${s.slug}`,
-      s.title,
-      'application',
-      `${s.title} | LDgenX`,
-      `${s.title} : les expertises LDgenX au service de vos enjeux, de l’échantillonnage à l’interprétation.`,
-      s.image,
+    ...c.services.map((s) =>
+      page(
+        r.service(s.id),
+        'service',
+        s.title,
+        s.seo?.title ?? seo.service.title(s.title),
+        s.seo?.description ?? seo.service.description(s.title, s.short),
+        s.image,
+        s.id,
+      ),
     ),
-    slug: s.slug,
-  })),
-  page(
-    '/etudes-de-cas',
-    'Études de cas',
-    'studies',
-    'Études de cas en biodiversité et génomique | LDgenX',
-    'Découvrez des études et champs d’application présentés par LDgenX : ichtyofaune, ADN environnemental, sélection génomique et microbiologie.',
-    'environnement',
-  ),
-  ...studies.map((s) => ({
-    ...page(
-      `/etudes-de-cas/${s.slug}`,
-      s.title,
-      'study',
-      `${s.title.replace(/\.$/, '')} | LDgenX`,
-      s.subtitle,
-      s.image,
+    ...c.works.map((w) =>
+      page(r.work(w.id), 'work', w.title, seo.work.title(w.title), w.summary, w.image, w.id),
     ),
-    slug: s.slug,
-  })),
-  page(
-    '/innovation',
-    'Innovation',
-    'innovations',
-    'Innovation DeepTech : DNA EcoTrace & eDNAClock | LDgenX',
-    'Explorez DNA EcoTrace et eDNAClock, les projets de recherche et développement LDgenX à la croisée de l’ADNe, du séquençage et de la bioinformatique.',
-    'innovation',
-  ),
-  ...innovations.map((s) => ({
-    ...page(
-      `/innovation/${s.slug}`,
-      s.title,
+    page(
+      r.applications,
+      'applications',
+      seo.applications.label,
+      seo.applications.title,
+      seo.applications.description,
+      'riviere',
+    ),
+    ...c.applications.map((s) =>
+      page(
+        r.application(s.id),
+        'application',
+        s.title,
+        s.seo?.title ?? seo.application.title(s.title),
+        s.seo?.description ?? seo.application.description(s.title),
+        s.image,
+        s.id,
+      ),
+    ),
+    page(
+      r.studies,
+      'studies',
+      seo.studies.label,
+      seo.studies.title,
+      seo.studies.description,
+      'carte-artois-picardie',
+    ),
+    ...c.studies.map((s) =>
+      page(
+        r.study(s.id),
+        'study',
+        s.title,
+        seo.article.title(s.title.replace(/\.$/, '')),
+        s.subtitle,
+        s.image,
+        s.id,
+      ),
+    ),
+    page(
+      r.innovations,
+      'innovations',
+      seo.innovations.label,
+      seo.innovations.title,
+      seo.innovations.description,
       'innovation',
-      `${s.title} : ${s.slug === 'dna-ecotrace' ? 'ADNe et biodiversité' : 'ADNe et épigénétique'} | LDgenX`,
-      s.intro,
-      s.image,
     ),
-    slug: s.slug,
-  })),
-  page(
-    '/a-propos',
-    'À propos',
-    'about',
-    'Une équipe DeepTech au service du vivant | LDgenX',
-    'Découvrez LDgenX, entreprise française de génomique appliquée, son équipe scientifique, son approche et son écosystème.',
-    'laboratoire',
-  ),
-  page(
-    '/a-propos/equipe',
-    'Équipe',
-    'team',
-    'L’équipe scientifique de LDgenX',
-    'Maeva Leitwein, Emilie Delpuech et Maxime Lambert : des expertises complémentaires en génomique, bioinformatique et biologie moléculaire.',
-  ),
-  page(
-    '/a-propos/partenaires',
-    'Partenaires',
-    'partners',
-    'Partenaires et écosystème scientifique | LDgenX',
-    'Les soutiens, l’écosystème scientifique et les organisations qui font confiance à LDgenX, présentés selon leur relation avec l’entreprise.',
-  ),
-  page(
-    '/ressources',
-    'Ressources',
-    'resources',
-    'Ressources & expertise en génomique | LDgenX',
-    'Des repères pour comprendre l’ADN environnemental, la bioinformatique et les applications de la génomique en aquaculture.',
-    'bioinformatique',
-  ),
-  ...resources.map((s) => ({
-    ...page(
-      `/ressources/${s.slug}`,
-      s.title,
-      'article',
-      `${s.title.replace(/\.$/, '')} | LDgenX`,
-      s.intro,
-      s.image,
+    ...c.innovations.map((s) =>
+      page(
+        r.innovation(s.id),
+        'innovation',
+        s.title,
+        seo.innovation.title(s.title, s.id),
+        s.intro,
+        s.image,
+        s.id,
+      ),
     ),
-    slug: s.slug,
-  })),
-  page(
-    '/contact',
-    'Contact',
-    'contact',
-    'Parlons de votre projet scientifique | LDgenX',
-    'Contactez LDgenX à Palavas-les-Flots pour votre projet en ADN environnemental, génomique ou bioinformatique. Échangez avec l’équipe scientifique.',
-  ),
-  {
-    ...page(
-      '/mentions-legales',
-      'Mentions légales',
-      'legal',
-      'Mentions légales | LDgenX',
-      'Informations légales de LDgenX SAS, entreprise de génomique appliquée, et coordonnées de contact.',
+    page(r.about, 'about', seo.about.label, seo.about.title, seo.about.description, 'laboratoire'),
+    page(r.team, 'team', seo.team.label, seo.team.title, seo.team.description),
+    ...c.people
+      .filter((p) => p.slug)
+      .map((p) =>
+        page(
+          r.person(p.id),
+          'person',
+          p.name,
+          seo.person.title(p.name),
+          seo.person.description(p.name, p.role),
+          p.photo,
+          p.id,
+        ),
+      ),
+    page(
+      r.publications,
+      'publications',
+      seo.publications.label,
+      seo.publications.title,
+      seo.publications.description,
     ),
-    noindex: true,
-  },
-  {
-    ...page(
-      '/politique-confidentialite',
-      'Confidentialité',
-      'privacy',
-      'Politique de confidentialité | LDgenX',
-      'Informations sur les données et la confidentialité lors de l’utilisation de ce site et de la préparation d’un e-mail à LDgenX.',
+    page(r.partners, 'partners', seo.partners.label, seo.partners.title, seo.partners.description),
+    page(
+      r.resources,
+      'resources',
+      seo.resources.label,
+      seo.resources.title,
+      seo.resources.description,
+      'bioinformatique',
     ),
-    noindex: true,
-  },
-];
+    ...c.resources.map((s) =>
+      page(
+        r.resource(s.id),
+        'article',
+        s.title,
+        seo.article.title(s.title.replace(/\.$/, '')),
+        s.intro,
+        s.image,
+        s.id,
+      ),
+    ),
+    page(r.contact, 'contact', seo.contact.label, seo.contact.title, seo.contact.description),
+    {
+      ...page(r.legal, 'legal', seo.legal.label, seo.legal.title, seo.legal.description),
+      noindex: true,
+    },
+    {
+      ...page(r.privacy, 'privacy', seo.privacy.label, seo.privacy.title, seo.privacy.description),
+      noindex: true,
+    },
+  ];
+  // The terms of sale are published in French only.
+  if (locale === 'fr')
+    list.push(page(r.terms, 'terms', seo.terms.label, seo.terms.title, seo.terms.description));
+  return list;
+}
 
+// Every page's address, per language, from the static index alone: enough for the language
+// alternates and the redirects before a catalogue has loaded.
+type Slot = { kind: PageKind; id?: string; path: string };
+function addresses(locale: Locale): Slot[] {
+  const src = routeSources[locale];
+  const r = routesFor(locale, src);
+  const one = (kind: PageKind, path: string): Slot => ({ kind, path });
+  const each = (kind: PageKind, list: { id: string }[], to: (id: string) => string) =>
+    list.map((e): Slot => ({ kind, id: e.id, path: to(e.id) }));
+  return [
+    one('home', r.home),
+    one('services', r.services),
+    ...each('service', src.services, r.service),
+    ...each('work', src.works, r.work),
+    one('applications', r.applications),
+    ...each('application', src.applications, r.application),
+    one('studies', r.studies),
+    ...each('study', src.studies, r.study),
+    one('innovations', r.innovations),
+    ...each('innovation', src.innovations, r.innovation),
+    one('about', r.about),
+    one('team', r.team),
+    ...each(
+      'person',
+      src.people.filter((p) => p.slug),
+      r.person,
+    ),
+    one('publications', r.publications),
+    one('partners', r.partners),
+    one('resources', r.resources),
+    ...each('article', src.resources, r.resource),
+    one('contact', r.contact),
+    one('legal', r.legal),
+    one('privacy', r.privacy),
+    ...(locale === 'fr' ? [one('terms', r.terms)] : []),
+  ];
+}
+const slots = Object.fromEntries(locales.map((l) => [l, addresses(l)])) as Record<Locale, Slot[]>;
+/** Every page address, in every language (for the preview server). */
+export const pagePaths = locales.flatMap((l) => slots[l].map((t) => t.path));
+
+const built: Partial<Record<Locale, PageMeta[]>> = {};
+/** The pages of a language whose catalogue is loaded, each paired with its counterparts. */
+function pagesOf(locale: Locale): PageMeta[] {
+  return (built[locale] ??= buildPages(locale, catalog(locale)).map((page) => {
+    for (const l of locales) {
+      const twin = slots[l].find((t) => t.kind === page.kind && t.id === page.id);
+      if (twin) page.alternates[l] = twin.path;
+    }
+    return page;
+  }));
+}
+
+/** Every page of every language (server side, once both catalogues are loaded). Checks that the
+ *  static index of addresses matches the catalogues. */
+export function allPages(): PageMeta[] {
+  const list = locales.flatMap(pagesOf);
+  for (const locale of locales) {
+    const expected = slots[locale].map((t) => t.path).sort();
+    const actual = list
+      .filter((p) => p.locale === locale)
+      .map((p) => p.path)
+      .sort();
+    if (expected.join() !== actual.join())
+      throw new Error(`content/site.ts does not match the ${locale} catalogue.`);
+  }
+  return list;
+}
+
+// Former addresses of ldgenx.fr and ldgenx.com (English pages now under /en), with the page
+// that replaces each of them. Addresses that differ from a page only by their capitals are
+// served by the host rules alone (see scripts/prerender.mjs).
 export const redirects: Record<string, string> = {
-  '/equipe': '/a-propos/equipe',
-  '/partenaires': '/a-propos/partenaires',
-  '/a-propos/innovation': '/innovation',
-  '/services/selection': '/services/selection-genomique',
-  '/blog': '/ressources',
-  '/actualites': '/ressources',
+  '/equipe': bases.fr.team,
+  '/publications': bases.fr.publications,
+  // The renewable-energy application now covers onshore wind and solar as well.
+  '/applications/energies-marines-renouvelables': `${bases.fr.applications}/energies-renouvelables`,
+  '/en/applications/marine-renewable-energy': `${bases.en.applications}/renewable-energy`,
+  '/en/publications': bases.en.publications,
+  '/partenaires': bases.fr.partners,
+  '/partenaires-2': bases.fr.partners,
+  '/a-propos/innovation': bases.fr.innovations,
+  '/cgvs': bases.fr.terms,
+  '/blog': bases.fr.resources,
+  '/actualites': bases.fr.resources,
+  '/Services': bases.fr.services,
+  '/a-propos/Services': bases.fr.services,
+  '/applications/Services': bases.fr.services,
+  '/cgvs/Services': bases.fr.services,
+  '/equipe/Services': bases.fr.services,
+  '/services/Services': bases.fr.services,
+  '/en/team': bases.en.team,
+  '/en/a-propos': bases.en.about,
+  '/en/partners': bases.en.partners,
+  '/en/partenaires-2': bases.en.partners,
+  '/en/about-us/innovation': bases.en.innovations,
+  '/en/Services': bases.en.services,
+  '/en/about-us/Services': bases.en.services,
+  '/en/applications/Services': bases.en.services,
+  '/en/services/Services': bases.en.services,
+  '/en/team/Services': bases.en.services,
 };
+
+// Should ldgenx.com point to this site, its addresses (the English pages without /en) lead to
+// the English pages, except where a French page already answers at the same address.
+const everyAddress = locales.flatMap((l) => slots[l].map((t) => t.path.toLowerCase()));
+for (const page of slots.en) {
+  const old = page.path.slice('/en'.length);
+  if (old && !everyAddress.includes(old.toLowerCase()) && !(old in redirects))
+    redirects[old] = page.path;
+}
+
+/** The language of the page shown at an address, redirects followed. */
+export function localeAt(path: string): Locale {
+  const normalized = path.replace(/\/+$/, '') || '/';
+  return localeOf(redirects[normalized] || normalized);
+}
 
 export function getPage(path: string): PageMeta {
   const normalized = path.replace(/\/+$/, '') || '/';
-  return (
-    pages.find((p) => p.path === (redirects[normalized] || normalized)) || {
-      path: normalized,
-      label: 'Page introuvable',
-      kind: 'not-found',
-      title: 'Page introuvable | LDgenX',
-      description:
-        'Cette page n’existe pas. Retrouvez les expertises, applications et ressources de LDgenX.',
-      noindex: true,
-    }
-  );
+  const target = redirects[normalized] || normalized;
+  const locale = localeOf(target);
+  const found = pagesOf(locale).find((p) => p.path === target);
+  if (found) return found;
+  const t = catalog(locale).ui.notFound;
+  return {
+    path: normalized,
+    label: t.label,
+    kind: 'not-found',
+    title: t.metaTitle,
+    description: t.metaDescription,
+    noindex: true,
+    locale,
+    alternates: {},
+  };
 }
 
 export function breadcrumbs(meta: PageMeta) {
-  const crumbs = [{ name: 'Accueil', path: '/' }];
-  if (meta.path !== '/') {
-    const parent = '/' + meta.path.split('/')[1];
-    if (parent !== meta.path) {
-      const parentPage = pages.find((p) => p.path === parent);
-      if (parentPage) crumbs.push({ name: parentPage.label, path: parent });
-    }
-    crumbs.push({ name: meta.label, path: meta.path });
+  const home = bases[meta.locale].home;
+  const crumbs = [{ name: catalog(meta.locale).ui.common.home, path: home }];
+  const pages = pagesOf(meta.locale);
+  if (meta.path === home) return crumbs;
+  const parentPath =
+    meta.kind === 'person'
+      ? bases[meta.locale].team
+      : meta.path.slice(0, meta.path.lastIndexOf('/'));
+  const chain: PageMeta[] = [];
+  let parent = pages.find((p) => p.path === parentPath);
+  while (parent && parent.path !== home) {
+    chain.unshift(parent);
+    const up = parent.path.slice(0, parent.path.lastIndexOf('/'));
+    parent = pages.find((p) => p.path === up);
   }
+  for (const p of chain) crumbs.push({ name: p.label, path: p.path });
+  crumbs.push({ name: meta.label, path: meta.path });
   return crumbs;
 }
 
@@ -259,7 +379,7 @@ export function structuredData(meta: PageMeta) {
       '@id': `${company.origin}/#website`,
       url: company.origin,
       name: company.name,
-      inLanguage: 'fr-FR',
+      inLanguage: meta.locale === 'en' ? 'en' : 'fr-FR',
       publisher: { '@id': organization['@id'] },
     },
     {
@@ -268,7 +388,7 @@ export function structuredData(meta: PageMeta) {
       url: company.origin + meta.path,
       name: meta.title,
       description: meta.description,
-      inLanguage: 'fr-FR',
+      inLanguage: meta.locale === 'en' ? 'en' : 'fr-FR',
       isPartOf: { '@id': `${company.origin}/#website` },
     },
   ];
@@ -296,17 +416,38 @@ export function structuredData(meta: PageMeta) {
       '@type': 'Article',
       headline: meta.label,
       description: meta.description,
-      inLanguage: 'fr-FR',
+      inLanguage: meta.locale === 'en' ? 'en' : 'fr-FR',
       author: { '@id': organization['@id'] },
       publisher: { '@id': organization['@id'] },
       mainEntityOfPage: company.origin + meta.path,
       ...(meta.image && { image: `${company.origin}${imageUrl(meta.image)}` }),
     });
-  if (meta.kind === 'team') {
-    ['Maeva Leitwein', 'Emilie Delpuech', 'Maxime Lambert'].forEach((name) =>
-      graph.push({ '@type': 'Person', name, worksFor: { '@id': organization['@id'] } }),
-    );
+  if (meta.kind === 'team' || meta.kind === 'person') {
+    catalog(meta.locale)
+      .people.filter((p) => meta.kind === 'team' || p.id === meta.id)
+      .forEach((p) =>
+        graph.push({
+          '@type': 'Person',
+          name: p.name.replace(/^Dr /, ''),
+          jobTitle: p.title,
+          worksFor: { '@id': organization['@id'] },
+        }),
+      );
   }
+  // The articles listed on the research page, as they are published (authors, journal, DOI).
+  if (meta.kind === 'publications')
+    for (const p of catalog(meta.locale).research.publications)
+      graph.push({
+        '@type': 'ScholarlyArticle',
+        headline: p.title,
+        name: p.title,
+        author: p.authors.map((name) => ({ '@type': 'Person', name })),
+        datePublished: String(p.year),
+        isPartOf: { '@type': 'Periodical', name: p.journal },
+        sameAs: `https://doi.org/${p.doi}`,
+        identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi },
+        inLanguage: 'en',
+      });
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
@@ -323,9 +464,15 @@ export function renderHead(meta: PageMeta) {
     <meta name="description" content="${description}" />
     <meta name="robots" content="${meta.noindex ? 'noindex, follow' : 'index, follow'}" />
     <link rel="canonical" href="${url}" />
-    <link rel="alternate" hreflang="fr" href="${url}" />
+    ${Object.entries(meta.alternates)
+      .map(
+        ([l, p]) =>
+          `<link rel="alternate" hreflang="${l}" href="${escapeHtml(company.origin + p)}" />`,
+      )
+      .join('\n    ')}
+    ${meta.alternates.fr ? `<link rel="alternate" hreflang="x-default" href="${escapeHtml(company.origin + meta.alternates.fr)}" />` : ''}
     ${meta.kind === 'home' ? heroPosterPreload : ''}
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content="${catalog(meta.locale).ui.ogLocale}" />
     <meta property="og:site_name" content="LDgenX" />
     <meta property="og:type" content="${meta.kind === 'article' ? 'article' : 'website'}" />
     <meta property="og:title" content="${title}" />

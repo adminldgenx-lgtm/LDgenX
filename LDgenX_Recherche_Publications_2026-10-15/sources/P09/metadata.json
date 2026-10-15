@@ -1,0 +1,74 @@
+{
+  "id": "P09",
+  "title": "Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts.",
+  "authors": [
+    "Leitwein M",
+    "Gagnaire PA",
+    "Desmarais E",
+    "Berrebi P",
+    "Guinand B"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Molecular ecology",
+  "year": 2018,
+  "doi": "10.1111/mec.14816",
+  "doi_url": "https://doi.org/10.1111/mec.14816",
+  "pmid": "30054960",
+  "pmcid": null,
+  "publication_dates": {
+    "published": [
+      [
+        2018,
+        8,
+        17
+      ]
+    ],
+    "published-print": [
+      [
+        2018,
+        9
+      ]
+    ],
+    "published-online": [
+      [
+        2018,
+        8,
+        17
+      ]
+    ],
+    "issued": [
+      [
+        2018,
+        8,
+        17
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "published_abstract_only",
+  "retrieved_content_version": "abstract_only",
+  "license_urls_for_retrieved_version": [
+    "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+  ],
+  "preprint": {
+    "doi": "10.1101/302380",
+    "url": "https://doi.org/10.1101/302380",
+    "license_as_reported": "cc_by_nc",
+    "version": "1"
+  },
+  "institutional_records": [
+    {
+      "title_s": [
+        "Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts"
+      ],
+      "uri_s": "https://hal.science/hal-01922616v1",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/mec.14816",
+      "producedDate_s": "2018-09"
+    }
+  ],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

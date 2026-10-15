@@ -1,0 +1,2246 @@
+{
+  "warning": "Automatic OCR, not validated scientific data. French text uses the installed English OCR model. Original assets are authoritative.",
+  "records": [
+    {
+      "asset_path": "assets/images/0096c9b5e331__320-699825bac635e-20251013-145600.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/699825bac635e-20251013-145600/320-699825bac635e-20251013-145600.jpg",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6997116c1be13-20251013-145600/320-6997116c1be13-20251013-145600.jpg"
+      ],
+      "alt_texts": [
+        "Pompe triple ADNe interieur",
+        "triple pump"
+      ],
+      "text": "ay\n\n9\n\n-o a",
+      "ocr_text_path": "source/image-text-drafts/0096c9b5e331__320-699825bac635e-20251013-145600.txt",
+      "mean_word_confidence": 54.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/0243a0d15b75__default-6a58ec611b7bf-14.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec611b7bf-14/default-6a58ec611b7bf-14.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cebe7bb09-14/default-6a58cebe7bb09-14.png"
+      ],
+      "alt_texts": [
+        "cbrs",
+        "cnrs"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/0243a0d15b75__default-6a58ec611b7bf-14.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/026e4b9a8cd2__320-6a5de99179950-datavisualisation.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99179950-datavisualisation/320-6a5de99179950-datavisualisation.png"
+      ],
+      "alt_texts": [
+        "visualisation"
+      ],
+      "text": "Mapping & Data Visualization\n\nat\n\n=e |\n\n=\n\ni:",
+      "ocr_text_path": "source/image-text-drafts/026e4b9a8cd2__320-6a5de99179950-datavisualisation.txt",
+      "mean_word_confidence": 66.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/02735b50f564__320-6a4d2421dc1ed-site-web-ldgenx-34.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d2421dc1ed-site-web-ldgenx-34/320-6a4d2421dc1ed-site-web-ldgenx-34.png"
+      ],
+      "alt_texts": [
+        "développement de pipelines"
+      ],
+      "text": "Développement de pipelines",
+      "ocr_text_path": "source/image-text-drafts/02735b50f564__320-6a4d2421dc1ed-site-web-ldgenx-34.txt",
+      "mean_word_confidence": 96.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/03dbf3a27f72__460-6a4e57b062858-timvb1990-sea-urchin-1536812-1920.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e57b062858-timvb1990-sea-urchin-1536812-1920/460-6a4e57b062858-timvb1990-sea-urchin-1536812-1920.jpg"
+      ],
+      "alt_texts": [
+        "l'oursin violet"
+      ],
+      "text": "FANGS\n\nNe\n\nI\n\nNY\n\nMy,\n\n‘\n\nNev\n\n3\n\nLF\n\n=~\n\nae\n\n—\n\n~\n\nwh\n\ni\n\nfi,\n\nEN\n\ner...\n\n*\n\nat",
+      "ocr_text_path": "source/image-text-drafts/03dbf3a27f72__460-6a4e57b062858-timvb1990-sea-urchin-1536812-1920.txt",
+      "mean_word_confidence": 26.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/042e0bbef8c8__320-6a5deaf713f34-snp.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png"
+      ],
+      "alt_texts": [
+        "snp"
+      ],
+      "text": "Genetic Marker Discovery\n\n(SNPs, Indels)\n\nAGCTAGCTAGCTAGC\n\nAGCTAGCHAGCTAGC",
+      "ocr_text_path": "source/image-text-drafts/042e0bbef8c8__320-6a5deaf713f34-snp.txt",
+      "mean_word_confidence": 88.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/053e4f5b747f__default-6a58ecd82f888-18.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ecd82f888-18/default-6a58ecd82f888-18.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cefb9082b-18/default-6a58cefb9082b-18.png"
+      ],
+      "alt_texts": [
+        "Qualyse",
+        "qualyse"
+      ],
+      "text": "QUALYSE",
+      "ocr_text_path": "source/image-text-drafts/053e4f5b747f__default-6a58ecd82f888-18.txt",
+      "mean_word_confidence": 86.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/061dc627da8b__320-6a4d248ce9291-site-web-ldgenx-25.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d248ce9291-site-web-ldgenx-25/320-6a4d248ce9291-site-web-ldgenx-25.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Reproductibilité des analyses\n\n2",
+      "ocr_text_path": "source/image-text-drafts/061dc627da8b__320-6a4d248ce9291-site-web-ldgenx-25.txt",
+      "mean_word_confidence": 83.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/08bbb633ec01__433-62b59e82220f4-tableau.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b59e82220f4-tableau/433-62b59e82220f4-tableau.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b59e82220f4-tableau/433-62b59e82220f4-tableau.png"
+      ],
+      "alt_texts": [
+        "Rivière Orb Statistique conservation Consanguinité"
+      ],
+      "text": "¥\n\nHe\n\nFis\n\n‘Samples\n\nLabel N\n\nref_map\n\nremap ref_map\n\nreL_map\n\nreL_map\n\nRiver Orb\n\nLa Mare\n\nMar\n\n10\n\n190758\n\n0.2768,\n\n02828,\n\n0.0217\n\n0.0054\n\nGravezon\n\nGrav 10\n\n01696\n\no388e*\n\n0.0033,\n\n192791\n\n02772\n\nUpper Orb\n\norb\n\n10\n\n189116\n\n0.2767,\n\n02780\n\n0.0047\n\n0.0083,\n\nHatchery strain\n\nCauteret\n\nAUS 10\n\n188 165\n\n02769\n\n02287\n\n.1sagees\n\n0.0041\n\n(Atlantic)\n\nAUld 10\n\n191.028\n\n02772\n\n02288\n\nO.1746¢8°\n\n0.0042\n\nMed 10\n\n188 630\n\n02769,\n\n01616\n\nos164re*\n\n0.0028\n\n(Mediter-\n\nranean)",
+      "ocr_text_path": "source/image-text-drafts/08bbb633ec01__433-62b59e82220f4-tableau.txt",
+      "mean_word_confidence": 62.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/08e8692612c5__320-6a4d24286414f-site-web-ldgenx-33.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24286414f-site-web-ldgenx-33/320-6a4d24286414f-site-web-ldgenx-33.png"
+      ],
+      "alt_texts": [
+        "Contrôle Qualité"
+      ],
+      "text": "Contréle qualité\n\na\n\n=\n\nI\\",
+      "ocr_text_path": "source/image-text-drafts/08e8692612c5__320-6a4d24286414f-site-web-ldgenx-33.txt",
+      "mean_word_confidence": 54.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/0b5ca4d701db__default-6a5e181ae26cb-capture-d-e-cran-2026-07-20-a-14-43-34.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e181ae26cb-capture-d-e-cran-2026-07-20-a-14-43-34/default-6a5e181ae26cb-capture-d-e-cran-2026-07-20-a-14-43-34.png"
+      ],
+      "alt_texts": [],
+      "text": "Ne\n\n4\n\nHe",
+      "ocr_text_path": "source/image-text-drafts/0b5ca4d701db__default-6a5e181ae26cb-capture-d-e-cran-2026-07-20-a-14-43-34.txt",
+      "mean_word_confidence": 40.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/0cf94f774009__320-6a228468c771a-anthony-camp-crevettes-unsplash.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a228468c771a-anthony-camp-crevettes-unsplash/320-6a228468c771a-anthony-camp-crevettes-unsplash.jpg"
+      ],
+      "alt_texts": [
+        "selection crevettes"
+      ],
+      "text": "&\n\n7!\n\nBee\n\n=e\n\nee\n\n.\n\nKe.",
+      "ocr_text_path": "source/image-text-drafts/0cf94f774009__320-6a228468c771a-anthony-camp-crevettes-unsplash.txt",
+      "mean_word_confidence": 36.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/0da8ba8a5e04__320-6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50/320-6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50.png"
+      ],
+      "alt_texts": [
+        "sequenceur"
+      ],
+      "text": "[}\n\nGg",
+      "ocr_text_path": "source/image-text-drafts/0da8ba8a5e04__320-6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50.txt",
+      "mean_word_confidence": 20.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/172ab05f2783__320-6a4d242e94402-site-web-ldgenx-32.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d242e94402-site-web-ldgenx-32/320-6a4d242e94402-site-web-ldgenx-32.png"
+      ],
+      "alt_texts": [
+        "rapport type"
+      ],
+      "text": "Rapport d'aide a la décisions",
+      "ocr_text_path": "source/image-text-drafts/172ab05f2783__320-6a4d242e94402-site-web-ldgenx-32.txt",
+      "mean_word_confidence": 80.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/1b5972dcfb09__default-6a58e862613c3-2.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e862613c3-2/default-6a58e862613c3-2.png"
+      ],
+      "alt_texts": [
+        "agriculture"
+      ],
+      "text": "© Agriculture & Agroecelony,",
+      "ocr_text_path": "source/image-text-drafts/1b5972dcfb09__default-6a58e862613c3-2.txt",
+      "mean_word_confidence": 38.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/1bf09a185bad__default-6a58eafd88671-5.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eafd88671-5/default-6a58eafd88671-5.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce48cb100-5/default-6a58ce48cb100-5.png"
+      ],
+      "alt_texts": [
+        "celimer"
+      ],
+      "text": "be\n\nBago w",
+      "ocr_text_path": "source/image-text-drafts/1bf09a185bad__default-6a58eafd88671-5.txt",
+      "mean_word_confidence": 37.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/1c104242e5e3__356-62b49dce0df02-saintpe.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b49dce0df02-saintpe/356-62b49dce0df02-saintpe.png"
+      ],
+      "alt_texts": [
+        "puce truite génome"
+      ],
+      "text": "‘hii",
+      "ocr_text_path": "source/image-text-drafts/1c104242e5e3__356-62b49dce0df02-saintpe.txt",
+      "mean_word_confidence": 0.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/1dd59d6612e1__default-6a45332923190-site-web-ldgenx-11.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45332923190-site-web-ldgenx-11/default-6a45332923190-site-web-ldgenx-11.png"
+      ],
+      "alt_texts": [
+        "Biodiverstité et conservation"
+      ],
+      "text": "Ras\n\nOr\n\n~S\n\n=~\n\n=\n\n© Bi\n\nWY\n\n—\n\na)\n\ney\n\n—s\n\nae\n\n(i bi",
+      "ocr_text_path": "source/image-text-drafts/1dd59d6612e1__default-6a45332923190-site-web-ldgenx-11.txt",
+      "mean_word_confidence": 30.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/1fc5689e9f3a__320-6a5f85e360675-map.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5f85e360675-map/320-6a5f85e360675-map.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a5112a29caf9-site-web-ldgenx-55/320-6a5112a29caf9-site-web-ldgenx-55.png"
+      ],
+      "alt_texts": [
+        "LDgenX adresse"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/1fc5689e9f3a__320-6a5f85e360675-map.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/2118e4a5d2b0__459-6a4e4062b798c-flockine-water-3569659-1920.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e4062b798c-flockine-water-3569659-1920/459-6a4e4062b798c-flockine-water-3569659-1920.jpg"
+      ],
+      "alt_texts": [
+        "analyse des sédiments"
+      ],
+      "text": "tow\n\n<>\n\nee\n\noS\n\na",
+      "ocr_text_path": "source/image-text-drafts/2118e4a5d2b0__459-6a4e4062b798c-flockine-water-3569659-1920.txt",
+      "mean_word_confidence": 38.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/23439c291336__313-62b44264b22b0-img-20210810-111318.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b44264b22b0-img-20210810-111318/313-62b44264b22b0-img-20210810-111318.jpg"
+      ],
+      "alt_texts": [
+        "Maeva Leitwein"
+      ],
+      "text": "ig mer\n\nae\n\nEe\n\na\n\nTE",
+      "ocr_text_path": "source/image-text-drafts/23439c291336__313-62b44264b22b0-img-20210810-111318.txt",
+      "mean_word_confidence": 26.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/234acc1ad13a__320-6a4e19d19791b-site-web-ldgenx-36.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d19791b-site-web-ldgenx-36/320-6a4e19d19791b-site-web-ldgenx-36.png"
+      ],
+      "alt_texts": [
+        "analyses GWAS"
+      ],
+      "text": "Analyses génétiques (GWAS)\n\nfg\n\nfogged\n\nBeaecrars\n\nae\n\ng23\n\nes",
+      "ocr_text_path": "source/image-text-drafts/234acc1ad13a__320-6a4e19d19791b-site-web-ldgenx-36.txt",
+      "mean_word_confidence": 44.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/284d5113d127__218-62b9a9e79d2a9-coho.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b9a9e79d2a9-coho/218-62b9a9e79d2a9-coho.jpg",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b9a9e79d2a9-coho/218-62b9a9e79d2a9-coho.jpg"
+      ],
+      "alt_texts": [
+        "saumon biodiversité",
+        "saumon biodiversité ADNe"
+      ],
+      "text": "=",
+      "ocr_text_path": "source/image-text-drafts/284d5113d127__218-62b9a9e79d2a9-coho.txt",
+      "mean_word_confidence": 44.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/28ef6fde2829__default-6a58e86cc1db3-3.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e86cc1db3-3/default-6a58e86cc1db3-3.png"
+      ],
+      "alt_texts": [
+        "aquaculture"
+      ],
+      "text": "Aquacultur\n\n‘e & Fisheries\n\nee\n\n2 ==\n\nFisheries",
+      "ocr_text_path": "source/image-text-drafts/28ef6fde2829__default-6a58e86cc1db3-3.txt",
+      "mean_word_confidence": 51.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/2997217b012f__433-6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06/433-6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06.png"
+      ],
+      "alt_texts": [],
+      "text": "SIRES\n\nee\n\noe\n\nee\n\nS\n\nS\n\nne\n\nSs\n\nNe\n\nSS\n\nBY\n\nSx\n\nSRR.\n\nRN\n\nBAAS SAN\n\nBIS\n\n<\n\nSS\n\nRIS\n\nLS\n\nx\n\nSS\n\nMl\n\nSASS\n\nSSS\n\n&\n\nXS\n\nXN\n\nAAS\n\nRS\n\nwal\n\new\n\nFy\n\nCARA\n\nSY\n\nSS\n\n$3\n\nSS\n\n1\n\n14\n\n|\n\nAN\n\nS888\n\nSSS\n\nLS\n\nSS\n\n/\n\nAS\n\nwy\n\nCR:\n\nIG",
+      "ocr_text_path": "source/image-text-drafts/2997217b012f__433-6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06.txt",
+      "mean_word_confidence": 38.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/2be430792682__251-69cbf4b816737-torpille.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/69cbf4b816737-torpille/251-69cbf4b816737-torpille.png"
+      ],
+      "alt_texts": [
+        "torpilles échantillonnafe"
+      ],
+      "text": "a",
+      "ocr_text_path": "source/image-text-drafts/2be430792682__251-69cbf4b816737-torpille.txt",
+      "mean_word_confidence": 53.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/2c595a9b0bfc__default-6a58e8e936857-1.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e859b93e8-1/default-6a58e859b93e8-1.png",
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e8e936857-1/default-6a58e8e936857-1.png"
+      ],
+      "alt_texts": [
+        "biodiversity",
+        "bioduversity"
+      ],
+      "text": "o = Bi\n\nS\n\noO\n\nIO\n\n==\n\nEa",
+      "ocr_text_path": "source/image-text-drafts/2c595a9b0bfc__default-6a58e8e936857-1.txt",
+      "mean_word_confidence": 27.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3095ed8f3497__320-6a5de9cbdae16-pipeline.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9cbdae16-pipeline/320-6a5de9cbdae16-pipeline.png"
+      ],
+      "alt_texts": [
+        "pipeline"
+      ],
+      "text": "Pipeline Developpement",
+      "ocr_text_path": "source/image-text-drafts/3095ed8f3497__320-6a5de9cbdae16-pipeline.txt",
+      "mean_word_confidence": 96.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3289f4429298__320-6a4d249d6e9ee-site-web-ldgenx-24.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d249d6e9ee-site-web-ldgenx-24/320-6a4d249d6e9ee-site-web-ldgenx-24.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Préparation des librairies",
+      "ocr_text_path": "source/image-text-drafts/3289f4429298__320-6a4d249d6e9ee-site-web-ldgenx-24.txt",
+      "mean_word_confidence": 93.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3317e05fd6f4__320-6a4d2447e4ccd-site-web-ldgenx-30.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d2447e4ccd-site-web-ldgenx-30/320-6a4d2447e4ccd-site-web-ldgenx-30.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Bancarisation des données",
+      "ocr_text_path": "source/image-text-drafts/3317e05fd6f4__320-6a4d2447e4ccd-site-web-ldgenx-30.txt",
+      "mean_word_confidence": 95.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/333cfc30d271__320-6a5dd4b0507e0-bioinfo.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4b0507e0-bioinfo/320-6a5dd4b0507e0-bioinfo.png"
+      ],
+      "alt_texts": [],
+      "text": "wn",
+      "ocr_text_path": "source/image-text-drafts/333cfc30d271__320-6a5dd4b0507e0-bioinfo.txt",
+      "mean_word_confidence": 25.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/34060a7f8d5a__default-6a5e386276c76-equipent.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e386276c76-equipent/default-6a5e386276c76-equipent.png"
+      ],
+      "alt_texts": [],
+      "text": "Yellow Submarine : 1400€ HT\n\nFilters : 18€ HT",
+      "ocr_text_path": "source/image-text-drafts/34060a7f8d5a__default-6a5e386276c76-equipent.txt",
+      "mean_word_confidence": 89.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/341f5f01a8a9__320-6a4d241b873c1-site-web-ldgenx-35.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d241b873c1-site-web-ldgenx-35/320-6a4d241b873c1-site-web-ldgenx-35.png"
+      ],
+      "alt_texts": [
+        "conception du projet"
+      ],
+      "text": "Conception du projet\n\nve",
+      "ocr_text_path": "source/image-text-drafts/341f5f01a8a9__320-6a4d241b873c1-site-web-ldgenx-35.txt",
+      "mean_word_confidence": 79.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/353265dada54__default-6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27/default-6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27.png"
+      ],
+      "alt_texts": [],
+      "text": "a",
+      "ocr_text_path": "source/image-text-drafts/353265dada54__default-6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27.txt",
+      "mean_word_confidence": 38.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/37f6ec2db969__320-6a4d24832e0b8-site-web-ldgenx-26.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24832e0b8-site-web-ldgenx-26/320-6a4d24832e0b8-site-web-ldgenx-26.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Séquencage\n\n‘GaraaaTerrarttce",
+      "ocr_text_path": "source/image-text-drafts/37f6ec2db969__320-6a4d24832e0b8-site-web-ldgenx-26.txt",
+      "mean_word_confidence": 22.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3922d9e9f304__320-6a5de979a6bcc-blup.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de979a6bcc-blup/320-6a5de979a6bcc-blup.png"
+      ],
+      "alt_texts": [
+        "blup"
+      ],
+      "text": "Genomic Prediction Models (BLUP)\n\nBritt",
+      "ocr_text_path": "source/image-text-drafts/3922d9e9f304__320-6a5de979a6bcc-blup.txt",
+      "mean_word_confidence": 78.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3a1273068b0a__320-6a4d24dfd8ae2-site-web-ldgenx-21.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24dfd8ae2-site-web-ldgenx-21/320-6a4d24dfd8ae2-site-web-ldgenx-21.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Accompagnement scientifqiue",
+      "ocr_text_path": "source/image-text-drafts/3a1273068b0a__320-6a4d24dfd8ae2-site-web-ldgenx-21.txt",
+      "mean_word_confidence": 92.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3d2d4ba338d3__398-6a5df86fc606c-biotope.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df86fc606c-biotope/398-6a5df86fc606c-biotope.png"
+      ],
+      "alt_texts": [],
+      "text": "—_,,\n\ni. i)\n\n,*\n\nfae\n\nSS\n\n/ Kiss\n\nSB)\n\n>»\n\nSN\n\nS\n\nle\n\n@biotope",
+      "ocr_text_path": "source/image-text-drafts/3d2d4ba338d3__398-6a5df86fc606c-biotope.txt",
+      "mean_word_confidence": 28.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/3f2565cad539__433-6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37/433-6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37.png"
+      ],
+      "alt_texts": [
+        "AO"
+      ],
+      "text": "fee\n\n=)",
+      "ocr_text_path": "source/image-text-drafts/3f2565cad539__433-6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37.txt",
+      "mean_word_confidence": 25.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/418d3774bb33__320-65cb2c2e6345d-bar.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb2c2e6345d-bar/320-65cb2c2e6345d-bar.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca5b8e1fde1-bar/320-65ca5b8e1fde1-bar.png"
+      ],
+      "alt_texts": [
+        "bar",
+        "european seabass"
+      ],
+      "text": "RSS\n\nnaan till\n\nii il\n\nbi.\n\nie\n\n&\n\nWit\n\nSS",
+      "ocr_text_path": "source/image-text-drafts/418d3774bb33__320-65cb2c2e6345d-bar.txt",
+      "mean_word_confidence": 38.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/4206b585309a__default-6a58ed612887b-23.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed612887b-23/default-6a58ed612887b-23.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf3bdc741-23/default-6a58cf3bdc741-23.png"
+      ],
+      "alt_texts": [
+        "Line Up ocean",
+        "line up"
+      ],
+      "text": "ANAS\n\nLINEUP OCEAN",
+      "ocr_text_path": "source/image-text-drafts/4206b585309a__default-6a58ed612887b-23.txt",
+      "mean_word_confidence": 64.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/4219692fade6__default-6a58ced440ab3-16.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ced440ab3-16/default-6a58ced440ab3-16.png"
+      ],
+      "alt_texts": [
+        "Marbec"
+      ],
+      "text": "wz\n\nmarine biodiversity\n\n“exploitation & conservation",
+      "ocr_text_path": "source/image-text-drafts/4219692fade6__default-6a58ced440ab3-16.txt",
+      "mean_word_confidence": 68.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/430a0a5c9118__459-6a4e3f27caf5c-dindart.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e3f27caf5c-dindart/459-6a4e3f27caf5c-dindart.png"
+      ],
+      "alt_texts": [
+        "prélèvement en eaux turbide"
+      ],
+      "text": "|\n\nS\n\nRX\n\nSS.\n\nKARSS\n\nAe\n\nwe\n\npS.\n\nSAAN\n\nSY\n\nwe\n\n1A\n\nEOS.\n\nSSS\n\nSSNS\n\nES.\n\nRS\n\nSS\n\nwill\n\nrl\n\nRSS\n\nRen\n\noS\n\nyy\n\n<\n\nNA\n\nSS\n\nSSS\n\nSy\n\nTT\n\nSISSS\n\nLN\n\nRSS\n\nAwe\n\nSS\n\n@\n\nNN\n\nRN\n\nAS\n\nBx\n\nee",
+      "ocr_text_path": "source/image-text-drafts/430a0a5c9118__459-6a4e3f27caf5c-dindart.txt",
+      "mean_word_confidence": 39.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/431627da89b6__320-62c45db0e8a08-dsc-0029-latex-cv.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62c45db0e8a08-dsc-0029-latex-cv/320-62c45db0e8a08-dsc-0029-latex-cv.jpg",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c45db0e8a08-dsc-0029-latex-cv/320-62c45db0e8a08-dsc-0029-latex-cv.jpg"
+      ],
+      "alt_texts": [
+        "Emilie_delpuech"
+      ],
+      "text": "ie H y",
+      "ocr_text_path": "source/image-text-drafts/431627da89b6__320-62c45db0e8a08-dsc-0029-latex-cv.txt",
+      "mean_word_confidence": 35.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/465b159e10ee__default-6a58ebbe2b81d-8.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebbe2b81d-8/default-6a58ebbe2b81d-8.png",
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec9d3f69d-8/default-6a58ec9d3f69d-8.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce75efb5e-8/default-6a58ce75efb5e-8.png"
+      ],
+      "alt_texts": [
+        "pole mer",
+        "pôle mer"
+      ],
+      "text": "N\n\nMER\n\nWY\n\nMEDITERRANECE",
+      "ocr_text_path": "source/image-text-drafts/465b159e10ee__default-6a58ebbe2b81d-8.txt",
+      "mean_word_confidence": 62.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/468588a5a970__default-69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13/default-69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13.png"
+      ],
+      "alt_texts": [
+        "sequench"
+      ],
+      "text": "SE:@-UENCH",
+      "ocr_text_path": "source/image-text-drafts/468588a5a970__default-69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13.txt",
+      "mean_word_confidence": 0.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/489f32d312ef__320-686f73d237de7-image-stage-siteweb.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/686f73d237de7-image-stage-siteweb/320-686f73d237de7-image-stage-siteweb.png"
+      ],
+      "alt_texts": [
+        "Stage M2 Bioinformatique"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/489f32d312ef__320-686f73d237de7-image-stage-siteweb.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/4c46cb2f7761__default-6a58e877ef35b-4.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e877ef35b-4/default-6a58e877ef35b-4.png"
+      ],
+      "alt_texts": [
+        "research"
+      ],
+      "text": "SSS\n\niia\n\nghd Priv\n\nas",
+      "ocr_text_path": "source/image-text-drafts/4c46cb2f7761__default-6a58e877ef35b-4.txt",
+      "mean_word_confidence": 30.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/4ef08db93fd7__default-6a58ebdb74f82-9.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebdb74f82-9/default-6a58ebdb74f82-9.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce8553e5b-9/default-6a58ce8553e5b-9.png"
+      ],
+      "alt_texts": [
+        "incubateur mbs"
+      ],
+      "text": "1.618\n\nLINCUBATEUR DES\n\nENTREPRISES RESPONSABLES,",
+      "ocr_text_path": "source/image-text-drafts/4ef08db93fd7__default-6a58ebdb74f82-9.txt",
+      "mean_word_confidence": 66.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/526fc7cf1182__960-62b48c6a407bd-admixture.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b48c6a407bd-admixture/960-62b48c6a407bd-admixture.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b48c6a407bd-admixture/960-62b48c6a407bd-admixture.png"
+      ],
+      "alt_texts": [
+        "Ancestralité K Admixture populations"
+      ],
+      "text": "(INT) La\n\n{MAAN",
+      "ocr_text_path": "source/image-text-drafts/526fc7cf1182__960-62b48c6a407bd-admixture.txt",
+      "mean_word_confidence": 26.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/52d978268d79__default-6a58eba1bbc36-7.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eba1bbc36-7/default-6a58eba1bbc36-7.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce6b93374-7/default-6a58ce6b93374-7.png"
+      ],
+      "alt_texts": [
+        "pepite deeptech"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/52d978268d79__default-6a58eba1bbc36-7.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/53d4dbe4e691__320-6a4d24576f8fa-site-web-ldgenx-29.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24576f8fa-site-web-ldgenx-29/320-6a4d24576f8fa-site-web-ldgenx-29.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Cartographie et visualisation\n\npo aE:\n\ni\n\nT\n\na\n\n“|\n\n2",
+      "ocr_text_path": "source/image-text-drafts/53d4dbe4e691__320-6a4d24576f8fa-site-web-ldgenx-29.txt",
+      "mean_word_confidence": 45.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5429396f3fcb__460-6a4e3ec10d081-palavas.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e3ec10d081-palavas/460-6a4e3ec10d081-palavas.jpg"
+      ],
+      "alt_texts": [
+        "prélèvement ADNe"
+      ],
+      "text": "“\n\na\n\nab\n\nek.",
+      "ocr_text_path": "source/image-text-drafts/5429396f3fcb__460-6a4e3ec10d081-palavas.txt",
+      "mean_word_confidence": 22.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5630ddd814e6__320-6a5de987bbdfe-data-managment.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de987bbdfe-data-managment/320-6a5de987bbdfe-data-managment.png"
+      ],
+      "alt_texts": [
+        "data "
+      ],
+      "text": "Data Management",
+      "ocr_text_path": "source/image-text-drafts/5630ddd814e6__320-6a5de987bbdfe-data-managment.txt",
+      "mean_word_confidence": 96.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/56d457600998__320-69971dd9992cc-stickpump.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971dd9992cc-stickpump/320-69971dd9992cc-stickpump.png"
+      ],
+      "alt_texts": [
+        "stick pump"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/56d457600998__320-69971dd9992cc-stickpump.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/57583766b603__default-6a58ecf45908e-19.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ecf45908e-19/default-6a58ecf45908e-19.png",
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a60c70955fb3-19/default-6a60c70955fb3-19.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf0c8ff4c-19/default-6a58cf0c8ff4c-19.png"
+      ],
+      "alt_texts": [
+        "Pays de l'ours",
+        "ours",
+        "pays de l'ours"
+      ],
+      "text": "qs\n\nPYRENEES,",
+      "ocr_text_path": "source/image-text-drafts/57583766b603__default-6a58ecf45908e-19.txt",
+      "mean_word_confidence": 33.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5913b81d52bc__320-69971e6cf08f6-waterra.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971e6cf08f6-waterra/320-69971e6cf08f6-waterra.png"
+      ],
+      "alt_texts": [
+        "Capsules waterra "
+      ],
+      "text": "-\n\n-",
+      "ocr_text_path": "source/image-text-drafts/5913b81d52bc__320-69971e6cf08f6-waterra.txt",
+      "mean_word_confidence": 56.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5b837c99e790__320-6a5deb0f68d0a-support.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb0f68d0a-support/320-6a5deb0f68d0a-support.png"
+      ],
+      "alt_texts": [
+        "support"
+      ],
+      "text": "Scientific support",
+      "ocr_text_path": "source/image-text-drafts/5b837c99e790__320-6a5deb0f68d0a-support.txt",
+      "mean_word_confidence": 96.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5c270e2adf79__320-65cb2a57ce7fd-edna1.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb2a57ce7fd-edna1/320-65cb2a57ce7fd-edna1.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca571581623-edna1/320-65ca571581623-edna1.png"
+      ],
+      "alt_texts": [
+        "eDNA"
+      ],
+      "text": "~\n\na\n\nbas\n\na)\n\nlac\n\nBx\n\nea\n\ni)\n\n4\n\n=)\n\n=— rt",
+      "ocr_text_path": "source/image-text-drafts/5c270e2adf79__320-65cb2a57ce7fd-edna1.txt",
+      "mean_word_confidence": 25.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/5e9a17fcadeb__356-65ca5b8e1fde1-bar.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca5b8e1fde1-bar/356-65ca5b8e1fde1-bar.png"
+      ],
+      "alt_texts": [
+        "bar"
+      ],
+      "text": "sass lt\n\nSS\n\nintl\n\naa\n\n%\n\naS\n\nSy\n\nSS",
+      "ocr_text_path": "source/image-text-drafts/5e9a17fcadeb__356-65ca5b8e1fde1-bar.txt",
+      "mean_word_confidence": 31.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/60426b989a81__320-6a5deb078a06a-stat.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb078a06a-stat/320-6a5deb078a06a-stat.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d246d0834d-site-web-ldgenx-28/320-6a4d246d0834d-site-web-ldgenx-28.png"
+      ],
+      "alt_texts": [
+        "analyse diversite",
+        "stat"
+      ],
+      "text": "Analyses Statistiques\n\n‘ewes",
+      "ocr_text_path": "source/image-text-drafts/60426b989a81__320-6a5deb078a06a-stat.txt",
+      "mean_word_confidence": 77.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/62a829c7114a__363-6a5e12af3c289-capture-d-e-cran-2026-07-20-a-14-20-11.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e12af3c289-capture-d-e-cran-2026-07-20-a-14-20-11/363-6a5e12af3c289-capture-d-e-cran-2026-07-20-a-14-20-11.png"
+      ],
+      "alt_texts": [],
+      "text": "ee\n\nos",
+      "ocr_text_path": "source/image-text-drafts/62a829c7114a__363-6a5e12af3c289-capture-d-e-cran-2026-07-20-a-14-20-11.txt",
+      "mean_word_confidence": 25.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/63c1a4f6524c__459-6a4e45f00ac4a-53852.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e45f00ac4a-53852/459-6a4e45f00ac4a-53852.jpg"
+      ],
+      "alt_texts": [
+        "sar "
+      ],
+      "text": "\\",
+      "ocr_text_path": "source/image-text-drafts/63c1a4f6524c__459-6a4e45f00ac4a-53852.txt",
+      "mean_word_confidence": 62.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/6492fa6fb23e__459-6a4e57ca80521-davidclode-shark-9897726-1920.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e57ca80521-davidclode-shark-9897726-1920/459-6a4e57ca80521-davidclode-shark-9897726-1920.jpg"
+      ],
+      "alt_texts": [
+        "requin"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/6492fa6fb23e__459-6a4e57ca80521-davidclode-shark-9897726-1920.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/6699c22f9a74__default-6a4534a28b4db-site-web-ldgenx-17.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4534a28b4db-site-web-ldgenx-17/default-6a4534a28b4db-site-web-ldgenx-17.png"
+      ],
+      "alt_texts": [
+        "Energies marines renouvelables"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/6699c22f9a74__default-6a4534a28b4db-site-web-ldgenx-17.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/682bb403e772__550-6ac390fdf3d19-format-bo-photo-2.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6ac390fdf3d19-format-bo-photo-2/550-6ac390fdf3d19-format-bo-photo-2.png"
+      ],
+      "alt_texts": [
+        "BlueTechShow salon 2026"
+      ],
+      "text": "20 > 21 octobre 2026\n\n(CANET-EN-ROUSSILLON\n\nBLUE\n\nLes Voiles Rouges\n\nTECH\n\n5\n\n»\n\n2\n\neu\n\nSHOW\n\nlex\n\nGSD 6S com\n\nres",
+      "ocr_text_path": "source/image-text-drafts/682bb403e772__550-6ac390fdf3d19-format-bo-photo-2.txt",
+      "mean_word_confidence": 67.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/6ffae0a69a20__320-6a5deaff86308-snppanel.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaff86308-snppanel/320-6a5deaff86308-snppanel.png"
+      ],
+      "alt_texts": [
+        "snpPanel"
+      ],
+      "text": "SNP Panel developpement\n\n—|\n\n5)",
+      "ocr_text_path": "source/image-text-drafts/6ffae0a69a20__320-6a5deaff86308-snppanel.txt",
+      "mean_word_confidence": 64.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/7083b0dc5d9d__320-62a9d2962acf8-img-20190805-111018.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62a9d2962acf8-img-20190805-111018/320-62a9d2962acf8-img-20190805-111018.jpg",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62a9d2962acf8-img-20190805-111018/320-62a9d2962acf8-img-20190805-111018.jpg"
+      ],
+      "alt_texts": [
+        "riviere"
+      ],
+      "text": "eae |\n\na~>\n\nnet\n\n—_\n\nSe\n\n£\n\n_",
+      "ocr_text_path": "source/image-text-drafts/7083b0dc5d9d__320-62a9d2962acf8-img-20190805-111018.txt",
+      "mean_word_confidence": 22.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/73e1f0548f14__default-6a453351240ca-site-web-ldgenx-12.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a453351240ca-site-web-ldgenx-12/default-6a453351240ca-site-web-ldgenx-12.png"
+      ],
+      "alt_texts": [
+        "Agriculture et agroécologie"
+      ],
+      "text": "“Agriculture-& Agteccolagic.",
+      "ocr_text_path": "source/image-text-drafts/73e1f0548f14__default-6a453351240ca-site-web-ldgenx-12.txt",
+      "mean_word_confidence": 46.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/747ef4d638df__390-6a5e334f92a14-capture-d-e-cran-2026-07-20-a-16-35-43.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e334f92a14-capture-d-e-cran-2026-07-20-a-16-35-43/390-6a5e334f92a14-capture-d-e-cran-2026-07-20-a-16-35-43.png"
+      ],
+      "alt_texts": [],
+      "text": "-—",
+      "ocr_text_path": "source/image-text-drafts/747ef4d638df__390-6a5e334f92a14-capture-d-e-cran-2026-07-20-a-16-35-43.txt",
+      "mean_word_confidence": 0.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/74fda20b3905__default-6a58eadcdc0c6-4.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eadcdc0c6-4/default-6a58eadcdc0c6-4.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3f3381a-4/default-6a58ce3f3381a-4.png"
+      ],
+      "alt_texts": [
+        "incubateur",
+        "initium"
+      ],
+      "text": "agi\n\nrovallée\n\nincubation\n\nA\n\nLINCUBATEUR\n\na TNITIOM\n\nUNIVERSITE DE MONTPELLIEF",
+      "ocr_text_path": "source/image-text-drafts/74fda20b3905__default-6a58eadcdc0c6-4.txt",
+      "mean_word_confidence": 64.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/769371c6fefc__398-6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02/398-6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02.png"
+      ],
+      "alt_texts": [],
+      "text": "ni\n\nRR\n\nat",
+      "ocr_text_path": "source/image-text-drafts/769371c6fefc__398-6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02.txt",
+      "mean_word_confidence": 28.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/77a7e6ed5f26__320-6a510e7cb33da-maxime.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a510e7cb33da-maxime/320-6a510e7cb33da-maxime.jpg"
+      ],
+      "alt_texts": [
+        "Maxime Lambert"
+      ],
+      "text": "S\n\nWis\n\nA\n\n~~ a",
+      "ocr_text_path": "source/image-text-drafts/77a7e6ed5f26__320-6a510e7cb33da-maxime.txt",
+      "mean_word_confidence": 59.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/77af31dc88f8__default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5faed8f0e-site-web-ldgenx-45/default-6a4e5faed8f0e-site-web-ldgenx-45.png"
+      ],
+      "alt_texts": [
+        "pris stick pump et filtres"
+      ],
+      "text": "Stickpump : 1270€ HT\n\nFiltres : 18€ HT",
+      "ocr_text_path": "source/image-text-drafts/77af31dc88f8__default-6a4e5faed8f0e-site-web-ldgenx-45.txt",
+      "mean_word_confidence": 90.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/79af3b9ed6a4__320-6a4d24f7da570-site-web-ldgenx-19.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24f7da570-site-web-ldgenx-19/320-6a4d24f7da570-site-web-ldgenx-19.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Design d’amorces *\n\n*sinon disponibles,",
+      "ocr_text_path": "source/image-text-drafts/79af3b9ed6a4__320-6a4d24f7da570-site-web-ldgenx-19.txt",
+      "mean_word_confidence": 74.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/7c8b81c451b4__default-6a58e97c1a7ee-5.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e97c1a7ee-5/default-6a58e97c1a7ee-5.png"
+      ],
+      "alt_texts": [
+        "marin energy"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/7c8b81c451b4__default-6a58e97c1a7ee-5.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/7ed08828170d__320-6a4cf498329ad-tylijura-fungus-9279389-1920.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4cf498329ad-tylijura-fungus-9279389-1920/320-6a4cf498329ad-tylijura-fungus-9279389-1920.png"
+      ],
+      "alt_texts": [
+        "Microorganismes"
+      ],
+      "text": "a x",
+      "ocr_text_path": "source/image-text-drafts/7ed08828170d__320-6a4cf498329ad-tylijura-fungus-9279389-1920.txt",
+      "mean_word_confidence": 48.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/7fd3f76ff34e__320-6a217b79cf96b-vanellus-vanellus-1.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a217b79cf96b-vanellus-vanellus-1/320-6a217b79cf96b-vanellus-vanellus-1.jpg"
+      ],
+      "alt_texts": [
+        "vanneau huppe"
+      ],
+      "text": "a",
+      "ocr_text_path": "source/image-text-drafts/7fd3f76ff34e__320-6a217b79cf96b-vanellus-vanellus-1.txt",
+      "mean_word_confidence": 22.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/859c50343a04__960-682dedeef006f-plaquette-services.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/682dedeef006f-plaquette-services/960-682dedeef006f-plaquette-services.jpg"
+      ],
+      "alt_texts": [],
+      "text": "Project Design\n\nStrategic sampling\n\nBibliographic support, definition of objectives and indicators.\n\nDNA Sequencing\n\nLong-read NGS (Nanopore, PacBio®) and short-read platforms\n\n“\n\n$4\n\nBs\n\n.\n\n(illumina, Aviti™), targeted sequencing and microsatellites\n\nra\n\n(PCR, Sanger, KASP).\n\n5\n\nAdvanced analyses\n\nBioinformatics & biostatistics\n\nLDgenX\n\nAnalyse et Expertise Génownique\n\nExpert Repporting\n\nActionable results.\n\nInterpretation and decision-making support.",
+      "ocr_text_path": "source/image-text-drafts/859c50343a04__960-682dedeef006f-plaquette-services.txt",
+      "mean_word_confidence": 81.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/86d98efc6dca__default-6a58ec830c9fb-15.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec830c9fb-15/default-6a58ec830c9fb-15.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cec8d30cf-15/default-6a58cec8d30cf-15.png"
+      ],
+      "alt_texts": [
+        "EPHE"
+      ],
+      "text": "Ecole Pratique\n\ndes Hautes Etudes",
+      "ocr_text_path": "source/image-text-drafts/86d98efc6dca__default-6a58ec830c9fb-15.txt",
+      "mean_word_confidence": 95.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/8a1749794d92__390-6a5e3277c7393-capture-d-e-cran-2026-07-20-a-16-34-48.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e3277c7393-capture-d-e-cran-2026-07-20-a-16-34-48/390-6a5e3277c7393-capture-d-e-cran-2026-07-20-a-16-34-48.png"
+      ],
+      "alt_texts": [],
+      "text": "=>.\n\nes",
+      "ocr_text_path": "source/image-text-drafts/8a1749794d92__390-6a5e3277c7393-capture-d-e-cran-2026-07-20-a-16-34-48.txt",
+      "mean_word_confidence": 39.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/8a8436f63905__320-6a4e19deb3ac8-site-web-ldgenx-38.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19deb3ac8-site-web-ldgenx-38/320-6a4e19deb3ac8-site-web-ldgenx-38.png"
+      ],
+      "alt_texts": [
+        "modèles Blup"
+      ],
+      "text": "Modéles de prédiction génomique\n\n(BLUP)",
+      "ocr_text_path": "source/image-text-drafts/8a8436f63905__320-6a4e19deb3ac8-site-web-ldgenx-38.txt",
+      "mean_word_confidence": 90.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/8d553e5c741a__488-6852e0a31ff62-plaquette-services.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6852e0a31ff62-plaquette-services/488-6852e0a31ff62-plaquette-services.png"
+      ],
+      "alt_texts": [
+        "Montage projet LDgenX"
+      ],
+      "text": "Montage projet\n\ncantlloanage seat\n\nAppalbitingrapique dnion dex bjt etsy\n\nSéquengage ADN\n\net\n\nta\n\nHace\n\n‘slong (Nanopore Paci) eour fragments una,\n\n9 dgucngage it microaelle (FR, Sange KAS)\n\nSS\n\nrt)\n\nie\n\nAnalyses avancées\n\n(a)\n\nBoinformatique &biostatitique\n\nLDgenx\n\nAral Eerie Gomi\n\nRapport expert\n\nétat actionnables\n\nnarration de ou ide ei de on",
+      "ocr_text_path": "source/image-text-drafts/8d553e5c741a__488-6852e0a31ff62-plaquette-services.txt",
+      "mean_word_confidence": 42.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/8e1ed3a1bee5__default-6a58ed10189a0-20.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed10189a0-20/default-6a58ed10189a0-20.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf17b7070-20/default-6a58cf17b7070-20.png"
+      ],
+      "alt_texts": [
+        "BARBA",
+        "groupe barba"
+      ],
+      "text": "GROUPE\n\nBARBA\n\nS",
+      "ocr_text_path": "source/image-text-drafts/8e1ed3a1bee5__default-6a58ed10189a0-20.txt",
+      "mean_word_confidence": 80.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9184f8165f11__320-6a4d24c0084d6-site-web-ldgenx-23.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24c0084d6-site-web-ldgenx-23/320-6a4d24c0084d6-site-web-ldgenx-23.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Extraction d‘ADN\n\nPrices\n\n6 sang\n\n( poas\n\n1\n\n2\n\n© urine\n\nTiss",
+      "ocr_text_path": "source/image-text-drafts/9184f8165f11__320-6a4d24c0084d6-site-web-ldgenx-23.txt",
+      "mean_word_confidence": 52.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/91d61a6c6c1f__320-6a5deaee7d0bc-sequencing.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaee7d0bc-sequencing/320-6a5deaee7d0bc-sequencing.png"
+      ],
+      "alt_texts": [
+        "sequencing"
+      ],
+      "text": "Sequencing\n\n\\\n\n‘Garaaaterrartice",
+      "ocr_text_path": "source/image-text-drafts/91d61a6c6c1f__320-6a5deaee7d0bc-sequencing.txt",
+      "mean_word_confidence": 63.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/924ac22c9ca9__default-6a58ec326cbff-12.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec326cbff-12/default-6a58ec326cbff-12.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea9c5855-12/default-6a58cea9c5855-12.png"
+      ],
+      "alt_texts": [
+        "ifremer"
+      ],
+      "text": "Itremer",
+      "ocr_text_path": "source/image-text-drafts/924ac22c9ca9__default-6a58ec326cbff-12.txt",
+      "mean_word_confidence": 3.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/93c836baf070__459-6a4e3e20577fa-copie-de-soutenance.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e3e20577fa-copie-de-soutenance/459-6a4e3e20577fa-copie-de-soutenance.png"
+      ],
+      "alt_texts": [
+        "carte d'échantillonnage"
+      ],
+      "text": "me",
+      "ocr_text_path": "source/image-text-drafts/93c836baf070__459-6a4e3e20577fa-copie-de-soutenance.txt",
+      "mean_word_confidence": 30.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/93d92bef2467__251-69981cc10bc2a-20260219-155036.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/69981cc10bc2a-20260219-155036/251-69981cc10bc2a-20260219-155036.jpg"
+      ],
+      "alt_texts": [
+        "torpille tractée"
+      ],
+      "text": "e\n\nsus",
+      "ocr_text_path": "source/image-text-drafts/93d92bef2467__251-69981cc10bc2a-20260219-155036.txt",
+      "mean_word_confidence": 62.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/95a0e0f955ec__461-62b48e92c3b00-time.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b48e92c3b00-time/461-62b48e92c3b00-time.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b48e92c3b00-time/461-62b48e92c3b00-time.png"
+      ],
+      "alt_texts": [
+        "leitwein et al 2018"
+      ],
+      "text": "PIL\n\nulations.",
+      "ocr_text_path": "source/image-text-drafts/95a0e0f955ec__461-62b48e92c3b00-time.txt",
+      "mean_word_confidence": 20.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/96e5dc1d5d12__default-6a58eac581523-3.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eac581523-3/default-6a58eac581523-3.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3071ab9-3/default-6a58ce3071ab9-3.png"
+      ],
+      "alt_texts": [
+        "Montpellier buisness school",
+        "mbs"
+      ],
+      "text": "BS",
+      "ocr_text_path": "source/image-text-drafts/96e5dc1d5d12__default-6a58eac581523-3.txt",
+      "mean_word_confidence": 96.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/971cdf9bb61a__default-6a58ec16270e1-11.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec16270e1-11/default-6a58ec16270e1-11.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea108230-11/default-6a58cea108230-11.png"
+      ],
+      "alt_texts": [
+        "stella mare",
+        "université de corse"
+      ],
+      "text": "Users\n\nDrona\n\nUNIVERSITA\n\nPasqyatt\n\nDI CORSICA\n\n€,\n\nPao",
+      "ocr_text_path": "source/image-text-drafts/971cdf9bb61a__default-6a58ec16270e1-11.txt",
+      "mean_word_confidence": 45.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/97ed5ce6b91e__320-65cb2859a9548-saintpe.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb2859a9548-saintpe/320-65cb2859a9548-saintpe.png"
+      ],
+      "alt_texts": [
+        "linkage map"
+      ],
+      "text": "Pye",
+      "ocr_text_path": "source/image-text-drafts/97ed5ce6b91e__320-65cb2859a9548-saintpe.txt",
+      "mean_word_confidence": 28.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/981453c0a4b2__320-6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54/320-6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54.png"
+      ],
+      "alt_texts": [],
+      "text": "[i\n\nog",
+      "ocr_text_path": "source/image-text-drafts/981453c0a4b2__320-6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54.txt",
+      "mean_word_confidence": 29.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/98be0d13fd8f__320-6a5de99cb94a7-diversity.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99cb94a7-diversity/320-6a5de99cb94a7-diversity.png"
+      ],
+      "alt_texts": [
+        "diversity"
+      ],
+      "text": "Duversity analyses\n\na By",
+      "ocr_text_path": "source/image-text-drafts/98be0d13fd8f__320-6a5de99cb94a7-diversity.txt",
+      "mean_word_confidence": 88.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9a6d2369f7f1__320-6a5de9d48d446-probe.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9d48d446-probe/320-6a5de9d48d446-probe.png"
+      ],
+      "alt_texts": [
+        "probe"
+      ],
+      "text": "Probe Design",
+      "ocr_text_path": "source/image-text-drafts/9a6d2369f7f1__320-6a5de9d48d446-probe.txt",
+      "mean_word_confidence": 96.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9c0e79fec487__460-6a4e3f0c05c15-site-web-ldgenx-41.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e3f0c05c15-site-web-ldgenx-41/460-6a4e3f0c05c15-site-web-ldgenx-41.png"
+      ],
+      "alt_texts": [
+        "ADNe en parc éolien offshore"
+      ],
+      "text": "——\n\ni)\n\naid\n\nCae\n\n~~\n\nS\n\nx\n\na.\n\nye\n\n™)\n\nif\n\nPUN\n\naw\n\nHAY",
+      "ocr_text_path": "source/image-text-drafts/9c0e79fec487__460-6a4e3f0c05c15-site-web-ldgenx-41.txt",
+      "mean_word_confidence": 29.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9d43b639bd77__default-6a58ea6467ff6-1.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ea6467ff6-1/default-6a58ea6467ff6-1.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce0c9879c-1/default-6a58ce0c9879c-1.png"
+      ],
+      "alt_texts": [
+        "inra start and grow",
+        "start and grow"
+      ],
+      "text": "VATION",
+      "ocr_text_path": "source/image-text-drafts/9d43b639bd77__default-6a58ea6467ff6-1.txt",
+      "mean_word_confidence": 55.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9df6444fc4dd__570-62c59a94b88e5-figure2-manhattan-plot.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62c59a94b88e5-figure2-manhattan-plot/570-62c59a94b88e5-figure2-manhattan-plot.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c59a94b88e5-figure2-manhattan-plot/570-62c59a94b88e5-figure2-manhattan-plot.png"
+      ],
+      "alt_texts": [
+        "GWAS génétique sélection marqueurs génétiques SNP BLUP"
+      ],
+      "text": "a 20\n\n15\n\nz..\n\n21\n\n7\n\n2\n\nor\n\nez\n\na2\n\na2\n\nSS\n\naS\n\ng\n\n8s\n\nb 20\n\n15\n\n24\n\nS\n\n2.5\n\n21\n\nays\n\n833\n\n2\n\n8\n\n‘B\n\n8\n\nor\n\nez\n\na2\n\nse\n\nea\n\naS\n\ngee\n\ng\n\ns\n\ng\n\ng\n\ng\n\n8s",
+      "ocr_text_path": "source/image-text-drafts/9df6444fc4dd__570-62c59a94b88e5-figure2-manhattan-plot.txt",
+      "mean_word_confidence": 52.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/9f957d4a1635__320-65cb281e45a14-truites.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb281e45a14-truites/320-65cb281e45a14-truites.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca481968dd5-truites/320-65ca481968dd5-truites.png"
+      ],
+      "alt_texts": [
+        "diversité génétique des truites",
+        "salmo trutta"
+      ],
+      "text": "Truite Méditerranéene domestique\n\nwe\n\nTruite Atlantique domestique",
+      "ocr_text_path": "source/image-text-drafts/9f957d4a1635__320-65cb281e45a14-truites.txt",
+      "mean_word_confidence": 89.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/a7cceab4deda__default-6a4533deefa53-site-web-ldgenx-16.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4533deefa53-site-web-ldgenx-16/default-6a4533deefa53-site-web-ldgenx-16.png"
+      ],
+      "alt_texts": [
+        "Aquaculture et pêche"
+      ],
+      "text": "Ss ———_—___\n\n=\n\n«\n\n“Aquaculture & Péche\n\n=\n\nSS\n\n=",
+      "ocr_text_path": "source/image-text-drafts/a7cceab4deda__default-6a4533deefa53-site-web-ldgenx-16.txt",
+      "mean_word_confidence": 48.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/a85ba7409b25__391-62b9a2ee6154e-deletaire.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b9a2ee6154e-deletaire/391-62b9a2ee6154e-deletaire.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b9a2ee6154e-deletaire/391-62b9a2ee6154e-deletaire.png"
+      ],
+      "alt_texts": [
+        "allele deletaire"
+      ],
+      "text": "Linkage group 26\n\n03\n\nFem= 039\n\npate 052\n\n02\n\nos\n\nLe\n\n0\n\n-02\n\n‘Non deleterious\n\nPotentially deleterious",
+      "ocr_text_path": "source/image-text-drafts/a85ba7409b25__391-62b9a2ee6154e-deletaire.txt",
+      "mean_word_confidence": 52.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/a878d7858238__320-6a5de9af5a808-extraction.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9af5a808-extraction/320-6a5de9af5a808-extraction.png"
+      ],
+      "alt_texts": [
+        "extraction"
+      ],
+      "text": "DNA extraction\n\nPrices\n\n6 sang\n\n1\n\n( poas\n\n2\n\n© urine\n\nTiss",
+      "ocr_text_path": "source/image-text-drafts/a878d7858238__320-6a5de9af5a808-extraction.txt",
+      "mean_word_confidence": 59.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/ad729bfc052f__320-6a5de9eecd4bd-report.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9eecd4bd-report/320-6a5de9eecd4bd-report.png"
+      ],
+      "alt_texts": [
+        "report"
+      ],
+      "text": "Decision-Support Report\n\n1",
+      "ocr_text_path": "source/image-text-drafts/ad729bfc052f__320-6a5de9eecd4bd-report.txt",
+      "mean_word_confidence": 65.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/af35b15bf907__default-6a5e3320b9250-capture-d-e-cran-2026-07-20-a-16-35-22.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e3320b9250-capture-d-e-cran-2026-07-20-a-16-35-22/default-6a5e3320b9250-capture-d-e-cran-2026-07-20-a-16-35-22.png"
+      ],
+      "alt_texts": [],
+      "text": "A ade\n\n&\n\nmal\n\nee\n\nNy",
+      "ocr_text_path": "source/image-text-drafts/af35b15bf907__default-6a5e3320b9250-capture-d-e-cran-2026-07-20-a-16-35-22.txt",
+      "mean_word_confidence": 38.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b500ff661eeb__320-6a5de9c3a34cb-librairy.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9c3a34cb-librairy/320-6a5de9c3a34cb-librairy.png"
+      ],
+      "alt_texts": [
+        "librairy prep"
+      ],
+      "text": "Libraries prepartion",
+      "ocr_text_path": "source/image-text-drafts/b500ff661eeb__320-6a5de9c3a34cb-librairy.txt",
+      "mean_word_confidence": 92.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b5d8447f2e01__320-6a4e19d893a4a-site-web-ldgenx-37.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d893a4a-site-web-ldgenx-37/320-6a4e19d893a4a-site-web-ldgenx-37.png"
+      ],
+      "alt_texts": [
+        "Analyses SNPs"
+      ],
+      "text": "Découverte de marqueurs\n\ngénétiques (SNP, indel)\n\nAGCTAGCTAGCTAGC\n\nAGCTAGCHAGCTAGC",
+      "ocr_text_path": "source/image-text-drafts/b5d8447f2e01__320-6a4e19d893a4a-site-web-ldgenx-37.txt",
+      "mean_word_confidence": 86.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b609dec93523__default-6a4cd7c2214d6-chaine-valeur-site2.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4cd7c2214d6-chaine-valeur-site2/default-6a4cd7c2214d6-chaine-valeur-site2.png"
+      ],
+      "alt_texts": [
+        "montage projet, séquençage ADN, analyses bioinformatique biostatistique, rapport"
+      ],
+      "text": "Montage projet\n\nEchantillonnage stratégique\n\nAppui bibliographique, définition des objectifs et des indicateurs\n\nSéquengage ADN\n\nNGS long (Nanopore, PacBio®) et court fragments (Ilumina,\n\nAviti™), séquencage ciblé et microsatellites (qPCR, Sanger, KASP)\n\nAnalyses avancées\n\nBioinformatique & biostatistique\n\nRapport expert\n\nRésultats actionnables\n\nInterprétation des résultats et aide a la prise de décision.",
+      "ocr_text_path": "source/image-text-drafts/b609dec93523__default-6a4cd7c2214d6-chaine-valeur-site2.txt",
+      "mean_word_confidence": 91.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b8067556dbd8__570-62c5b4d05e451-gebv-rfi.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62c5b4d05e451-gebv-rfi/570-62c5b4d05e451-gebv-rfi.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c5b4d05e451-gebv-rfi/570-62c5b4d05e451-gebv-rfi.png"
+      ],
+      "alt_texts": [
+        "Sélection BLUP GBLUP corrélation"
+      ],
+      "text": "0 Scenario\n\nDh Seer\n\na\n\nScones\n\n‘See\n\n6\n\n‘BE Scenario\n\n1.00] #\n\n075)\n\nSa5\n\nH\n\ngae$\n\nii,\n\n050\n\n025)\n\n0.00\n\nil\n\nll\n\nll\n\niit |\n\nil\n\n1.00\n\no7s\n\nfsishs\n\n050\n\nS3es5\n\n025)\n\nit i\n\nil\n\nil\n\n‘li\n\nlll\n\n0.00\n\neeeee\n\nDF\n\nFGR\n\nTrait",
+      "ocr_text_path": "source/image-text-drafts/b8067556dbd8__570-62c5b4d05e451-gebv-rfi.txt",
+      "mean_word_confidence": 47.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b8876ca9f267__320-6a5de9de2c4d9-project.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9de2c4d9-project/320-6a5de9de2c4d9-project.png"
+      ],
+      "alt_texts": [
+        "project"
+      ],
+      "text": "Project Design\n\nve",
+      "ocr_text_path": "source/image-text-drafts/b8876ca9f267__320-6a5de9de2c4d9-project.txt",
+      "mean_word_confidence": 73.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/b8d29d17a75b__320-6a4d01e4db988-capture-d-ecran-2024-10-29-181800.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d01e4db988-capture-d-ecran-2024-10-29-181800/320-6a4d01e4db988-capture-d-ecran-2024-10-29-181800.png"
+      ],
+      "alt_texts": [
+        "Analyses génomique"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/b8d29d17a75b__320-6a4d01e4db988-capture-d-ecran-2024-10-29-181800.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/bc32519ef30f__320-6a5de971cebfe-bioinfo.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de971cebfe-bioinfo/320-6a5de971cebfe-bioinfo.png"
+      ],
+      "alt_texts": [
+        "bioinf"
+      ],
+      "text": "Bioinformatics",
+      "ocr_text_path": "source/image-text-drafts/bc32519ef30f__320-6a5de971cebfe-bioinfo.txt",
+      "mean_word_confidence": 95.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/bc8f5126aa7a__320-6a4e19e5b9e1b-site-web-ldgenx-39.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19e5b9e1b-site-web-ldgenx-39/320-6a4e19e5b9e1b-site-web-ldgenx-39.png"
+      ],
+      "alt_texts": [
+        "Développment de panels de SNPs"
+      ],
+      "text": "Développement de panels SNP\n\n—|\n\n5)",
+      "ocr_text_path": "source/image-text-drafts/bc8f5126aa7a__320-6a4e19e5b9e1b-site-web-ldgenx-39.txt",
+      "mean_word_confidence": 71.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/bdb39c16c04c__320-69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58/320-69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58.png"
+      ],
+      "alt_texts": [],
+      "text": "SE:;UENCH",
+      "ocr_text_path": "source/image-text-drafts/bdb39c16c04c__320-69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58.txt",
+      "mean_word_confidence": 17.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c0e24c86ad35__default-6a58ec4b0e6dd-13.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec4b0e6dd-13/default-6a58ec4b0e6dd-13.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceb2adde4-13/default-6a58ceb2adde4-13.png"
+      ],
+      "alt_texts": [
+        "INRAE",
+        "inrae"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/c0e24c86ad35__default-6a58ec4b0e6dd-13.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c25a516d7ccc__320-6a5de9a669ccb-dpcr.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9a669ccb-dpcr/320-6a5de9a669ccb-dpcr.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24edd1bef-site-web-ldgenx-20/320-6a4d24edd1bef-site-web-ldgenx-20.png"
+      ],
+      "alt_texts": [
+        "analyse diversite",
+        "dPCR"
+      ],
+      "text": "Digital PCR\n\n@ 0e0e",
+      "ocr_text_path": "source/image-text-drafts/c25a516d7ccc__320-6a5de9a669ccb-dpcr.txt",
+      "mean_word_confidence": 78.4,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c2f05cf03e5d__default-6a58eb143a85f-6.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eb143a85f-6/default-6a58eb143a85f-6.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce5d175ed-6/default-6a58ce5d175ed-6.png"
+      ],
+      "alt_texts": [
+        "BPI FRANCE label deep tech",
+        "bpi"
+      ],
+      "text": "arent\n\nVTECH\n\nbpifrance\n\nEQSTER Situ Ei Sal",
+      "ocr_text_path": "source/image-text-drafts/c2f05cf03e5d__default-6a58eb143a85f-6.txt",
+      "mean_word_confidence": 43.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c4691725cb37__320-62b44264b22b0-img-20210810-111318.jpg",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b44264b22b0-img-20210810-111318/320-62b44264b22b0-img-20210810-111318.jpg"
+      ],
+      "alt_texts": [
+        "Maeva Leitwein"
+      ],
+      "text": "ae\n\n=?\n\ney\n\na\n\n2D",
+      "ocr_text_path": "source/image-text-drafts/c4691725cb37__320-62b44264b22b0-img-20210810-111318.txt",
+      "mean_word_confidence": 30.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c5b600059e27__320-6a4d2475c7869-site-web-ldgenx-27.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d2475c7869-site-web-ldgenx-27/320-6a4d2475c7869-site-web-ldgenx-27.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Analyses Bioinformatiques",
+      "ocr_text_path": "source/image-text-drafts/c5b600059e27__320-6a4d2475c7869-site-web-ldgenx-27.txt",
+      "mean_word_confidence": 88.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c64a3ed24807__default-6a4e603cb9218-site-web-ldgenx-46.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e603cb9218-site-web-ldgenx-46/default-6a4e603cb9218-site-web-ldgenx-46.png"
+      ],
+      "alt_texts": [
+        "prix torpille"
+      ],
+      "text": "Torpille : 1400€ HT\n\nFiltres : 18€ HT",
+      "ocr_text_path": "source/image-text-drafts/c64a3ed24807__default-6a4e603cb9218-site-web-ldgenx-46.txt",
+      "mean_word_confidence": 91.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c89adf8d8398__default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5f94c9b24-site-web-ldgenx-44/default-6a4e5f94c9b24-site-web-ldgenx-44.png"
+      ],
+      "alt_texts": [
+        "prix pompes ADNe"
+      ],
+      "text": "Pompe\n\nle modéle 1: 1900€ HT\n\nPompe triple modéle 2: 2100€ HT\n\nCapsules + tampon de préservation : 40€ HT",
+      "ocr_text_path": "source/image-text-drafts/c89adf8d8398__default-6a4e5f94c9b24-site-web-ldgenx-44.txt",
+      "mean_word_confidence": 90.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/c9cb9d77b00d__default-6a58ebfdc2592-10.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebfdc2592-10/default-6a58ebfdc2592-10.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce93a36e4-10/default-6a58ce93a36e4-10.png"
+      ],
+      "alt_texts": [
+        "universite de montpellier",
+        "université montpellier"
+      ],
+      "text": "UNIVERSITE ne\n\nMONTPELLIER\n\no",
+      "ocr_text_path": "source/image-text-drafts/c9cb9d77b00d__default-6a58ebfdc2592-10.txt",
+      "mean_word_confidence": 71.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/cb591e3d02c8__320-699825d7456f3-20251013-145507.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/699825d7456f3-20251013-145507/320-699825d7456f3-20251013-145507.jpg",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6997101e811fe-20251013-145507/320-6997101e811fe-20251013-145507.jpg"
+      ],
+      "alt_texts": [
+        "Pompe triple ADNe",
+        "triple pump up"
+      ],
+      "text": "=\n\nqq 2=\n\nSe",
+      "ocr_text_path": "source/image-text-drafts/cb591e3d02c8__320-699825d7456f3-20251013-145507.txt",
+      "mean_word_confidence": 16.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/cbd2fd0ac041__default-6a60c845f161f-capture-d-e-cran-2026-07-22-a-15-36-14.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a60c845f161f-capture-d-e-cran-2026-07-22-a-15-36-14/default-6a60c845f161f-capture-d-e-cran-2026-07-22-a-15-36-14.png"
+      ],
+      "alt_texts": [],
+      "text": "W\n\ne”\n\no,\n\n>\n\n——",
+      "ocr_text_path": "source/image-text-drafts/cbd2fd0ac041__default-6a60c845f161f-capture-d-e-cran-2026-07-22-a-15-36-14.txt",
+      "mean_word_confidence": 10.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/d2331b9d51f2__320-6998259991b35-20260219-155036.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6998259991b35-20260219-155036/320-6998259991b35-20260219-155036.jpg"
+      ],
+      "alt_texts": [
+        "yellow submarine"
+      ],
+      "text": "a\n\ne\n\n‘SE¢,UENCH\n\nae",
+      "ocr_text_path": "source/image-text-drafts/d2331b9d51f2__320-6998259991b35-20260219-155036.txt",
+      "mean_word_confidence": 36.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/d459ae43e6bf__320-699824ba85e1d-torpille.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/699824ba85e1d-torpille/320-699824ba85e1d-torpille.png"
+      ],
+      "alt_texts": [
+        "topille"
+      ],
+      "text": "r\n\n:",
+      "ocr_text_path": "source/image-text-drafts/d459ae43e6bf__320-699824ba85e1d-torpille.txt",
+      "mean_word_confidence": 0.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/d614005cc4e3__320-699824a1455ca-waterra.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/699824a1455ca-waterra/320-699824a1455ca-waterra.png"
+      ],
+      "alt_texts": [
+        "capsules eDNA"
+      ],
+      "text": "BEBRB&26",
+      "ocr_text_path": "source/image-text-drafts/d614005cc4e3__320-699824a1455ca-waterra.txt",
+      "mean_word_confidence": 0.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/d789e8698e7e__320-6a5de9b7f2820-gwas.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9b7f2820-gwas/320-6a5de9b7f2820-gwas.png"
+      ],
+      "alt_texts": [
+        "gwas"
+      ],
+      "text": "GWAS analyses\n\nfg\n\nfogged\n\n&\n\nSik\n\nae",
+      "ocr_text_path": "source/image-text-drafts/d789e8698e7e__320-6a5de9b7f2820-gwas.txt",
+      "mean_word_confidence": 59.5,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/da09c348714b__320-6a5deb1992091-workflow.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb1992091-workflow/320-6a5deb1992091-workflow.png"
+      ],
+      "alt_texts": [
+        "workflox"
+      ],
+      "text": "Reproducible Workflow\n\n2",
+      "ocr_text_path": "source/image-text-drafts/da09c348714b__320-6a5deb1992091-workflow.txt",
+      "mean_word_confidence": 81.6,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/db44efa5766f__default-6a45301e431df-site-web-ldgenx-5.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45301e431df-site-web-ldgenx-5/default-6a45301e431df-site-web-ldgenx-5.png"
+      ],
+      "alt_texts": [
+        "R&D"
+      ],
+      "text": "SS ==\n\na\n\nshe publi\n\nfeet priveene",
+      "ocr_text_path": "source/image-text-drafts/db44efa5766f__default-6a45301e431df-site-web-ldgenx-5.txt",
+      "mean_word_confidence": 44.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/dc1fb8809f06__default-6a58ed48f2fac-22.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed48f2fac-22/default-6a58ed48f2fac-22.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf2dd2c6a-22/default-6a58cf2dd2c6a-22.png"
+      ],
+      "alt_texts": [
+        "Plastic at sea",
+        "plastic at sea"
+      ],
+      "text": "Renstic\n\nolin",
+      "ocr_text_path": "source/image-text-drafts/dc1fb8809f06__default-6a58ed48f2fac-22.txt",
+      "mean_word_confidence": 17.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/dfae50eb8838__default-6a5e37c1225c3-stickpump.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e37c1225c3-stickpump/default-6a5e37c1225c3-stickpump.png"
+      ],
+      "alt_texts": [],
+      "text": "Stickpump : 1270€ HT\n\nFilters : 18€ HT",
+      "ocr_text_path": "source/image-text-drafts/dfae50eb8838__default-6a5e37c1225c3-stickpump.txt",
+      "mean_word_confidence": 85.2,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/e0b873220599__default-6a5e0dcc33f1a-capture-d-e-cran-2026-07-20-a-13-59-26.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e0dcc33f1a-capture-d-e-cran-2026-07-20-a-13-59-26/default-6a5e0dcc33f1a-capture-d-e-cran-2026-07-20-a-13-59-26.png"
+      ],
+      "alt_texts": [],
+      "text": "=\n\noe",
+      "ocr_text_path": "source/image-text-drafts/e0b873220599__default-6a5e0dcc33f1a-capture-d-e-cran-2026-07-20-a-13-59-26.txt",
+      "mean_word_confidence": 23.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/e3b3a3b00a4f__423-682dedeef006f-plaquette-services.jpg",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/682dedeef006f-plaquette-services/423-682dedeef006f-plaquette-services.jpg"
+      ],
+      "alt_texts": [],
+      "text": "sans\n\nProject Design\n\nop np neha\n\nDNA Sequencing,\n\nta\n\nAen sepa io) nt er pam\n\n&\n\n‘hon rpenngeg amin\n\neng,\n\n<e\n\nAdvanced analyses\n\nFal\n\nilo Kiowa.\n\nLUDgenx\n\ndng renin\n\nExpert Repporting\n\nsinter\n\n‘Seren eee i ee",
+      "ocr_text_path": "source/image-text-drafts/e3b3a3b00a4f__423-682dedeef006f-plaquette-services.txt",
+      "mean_word_confidence": 46.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/e6076341c3cc__default-6a58ed2c49fc0-21.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed2c49fc0-21/default-6a58ed2c49fc0-21.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf236cbc7-21/default-6a58cf236cbc7-21.png"
+      ],
+      "alt_texts": [
+        "biotope"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/e6076341c3cc__default-6a58ed2c49fc0-21.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/e65b6739f45e__default-69982882ee170-stickpump.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/69982882ee170-stickpump/default-69982882ee170-stickpump.png"
+      ],
+      "alt_texts": [
+        "stick pump"
+      ],
+      "text": "",
+      "ocr_text_path": "source/image-text-drafts/e65b6739f45e__default-69982882ee170-stickpump.txt",
+      "mean_word_confidence": null,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/e69e447be767__320-6a4d243df40fa-site-web-ldgenx-31.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d243df40fa-site-web-ldgenx-31/320-6a4d243df40fa-site-web-ldgenx-31.png"
+      ],
+      "alt_texts": [
+        "analyse diversite"
+      ],
+      "text": "Analyses de diversités\n\na By",
+      "ocr_text_path": "source/image-text-drafts/e69e447be767__320-6a4d243df40fa-site-web-ldgenx-31.txt",
+      "mean_word_confidence": 89.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/efa7033e8d1b__default-6a58e93b39bad-6.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58e93b39bad-6/default-6a58e93b39bad-6.png"
+      ],
+      "alt_texts": [
+        "environement"
+      ],
+      "text": "sa\n\n=a)\n\nnN\n\n29",
+      "ocr_text_path": "source/image-text-drafts/efa7033e8d1b__default-6a58e93b39bad-6.txt",
+      "mean_word_confidence": 19.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/f158d7d06c64__960-62b97365b32db-introgression.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b97365b32db-introgression/960-62b97365b32db-introgression.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b97365b32db-introgression/960-62b97365b32db-introgression.png"
+      ],
+      "alt_texts": [
+        "ancestralité domestique"
+      ],
+      "text": "We\n\nMV)\n\nMy\n\nLinkage groups\n\nes\n\na",
+      "ocr_text_path": "source/image-text-drafts/f158d7d06c64__960-62b97365b32db-introgression.txt",
+      "mean_word_confidence": 53.0,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/f953b84c33b6__460-62b49dce0df02-saintpe.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/62b49dce0df02-saintpe/460-62b49dce0df02-saintpe.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b49dce0df02-saintpe/460-62b49dce0df02-saintpe.png"
+      ],
+      "alt_texts": [
+        "puce truite",
+        "puce truite génome"
+      ],
+      "text": "nia)",
+      "ocr_text_path": "source/image-text-drafts/f953b84c33b6__460-62b49dce0df02-saintpe.txt",
+      "mean_word_confidence": 4.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/f99e71401949__default-6a5e3638ef849-pump.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e3638ef849-pump/default-6a5e3638ef849-pump.png"
+      ],
+      "alt_texts": [],
+      "text": "Triple pump model 1 : 1900€ HT\n\nTriple pump model 2: 2100€ HT\n\nWaterra Filters + Buffer : 40€ HT",
+      "ocr_text_path": "source/image-text-drafts/f99e71401949__default-6a5e3638ef849-pump.txt",
+      "mean_word_confidence": 88.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/fa38cb241d17__default-6a45337fc5bd8-site-web-ldgenx-15.png",
+      "source_urls": [
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45337fc5bd8-site-web-ldgenx-15/default-6a45337fc5bd8-site-web-ldgenx-15.png"
+      ],
+      "alt_texts": [
+        "Environnement et bureaux d'études"
+      ],
+      "text": "ee.\n\n————————— a ae\n\nes\n\nge)\n\nBU\n\nCa ha",
+      "ocr_text_path": "source/image-text-drafts/fa38cb241d17__default-6a45337fc5bd8-site-web-ldgenx-15.txt",
+      "mean_word_confidence": 31.9,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/fc51b4fafa3d__default-6a58ed7eb72c8-24.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed7eb72c8-24/default-6a58ed7eb72c8-24.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf46d80f4-24/default-6a58cf46d80f4-24.png"
+      ],
+      "alt_texts": [
+        "Agence de l'eau",
+        "agence de l'eau"
+      ],
+      "text": "Es\n\nREPUBLIQUE\n\nFRANCAISE\n\neae\n\nFeit",
+      "ocr_text_path": "source/image-text-drafts/fc51b4fafa3d__default-6a58ed7eb72c8-24.txt",
+      "mean_word_confidence": 40.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/fd67c3e94e39__default-6a58ea6fa72c3-2.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ea6fa72c3-2/default-6a58ea6fa72c3-2.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf5730837-2/default-6a58cf5730837-2.png"
+      ],
+      "alt_texts": [
+        "Crealia",
+        "crealia"
+      ],
+      "text": "eo Pap\n\nCREAN ag",
+      "ocr_text_path": "source/image-text-drafts/fd67c3e94e39__default-6a58ea6fa72c3-2.txt",
+      "mean_word_confidence": 54.7,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/fda505138ec0__320-682de64c5a18d-logo-ldgenx.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png"
+      ],
+      "alt_texts": [
+        "LDgenX analyse expertise génomique génétique ADN"
+      ],
+      "text": "ta,\n\n: Lye\n\nLDgenX\n\nAnalyse et Expertise Génomique",
+      "ocr_text_path": "source/image-text-drafts/fda505138ec0__320-682de64c5a18d-logo-ldgenx.txt",
+      "mean_word_confidence": 54.8,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/ffbb56ffe161__default-6a58ecbd094ed-17.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ecbd094ed-17/default-6a58ecbd094ed-17.png",
+        "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceef0f4e3-17/default-6a58ceef0f4e3-17.png"
+      ],
+      "alt_texts": [
+        "FNC",
+        "Fédération Nationale des Chasseurs"
+      ],
+      "text": "=\n\nFédération Nationale des Chasseurs.",
+      "ocr_text_path": "source/image-text-drafts/ffbb56ffe161__default-6a58ecbd094ed-17.txt",
+      "mean_word_confidence": 72.3,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    },
+    {
+      "asset_path": "assets/images/ffce9c149053__320-6a5de9e60aa45-qc.png",
+      "source_urls": [
+        "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9e60aa45-qc/320-6a5de9e60aa45-qc.png"
+      ],
+      "alt_texts": [
+        "QC"
+      ],
+      "text": "Quality Controls\n\na\n\n=\n\ntiti",
+      "ocr_text_path": "source/image-text-drafts/ffce9c149053__320-6a5de9e60aa45-qc.txt",
+      "mean_word_confidence": 58.1,
+      "status": "automatic_draft_requires_review",
+      "ocr_language_model": "eng",
+      "error": null
+    }
+  ]
+}

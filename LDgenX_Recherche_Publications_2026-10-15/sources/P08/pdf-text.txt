@@ -1,0 +1,784 @@
+Saint-Pé et al. BMC Genomics     (2019) 20:582
+https://doi.org/10.1186/s12864-019-5958-9
+
+
+
+
+ METHODOLOGY ARTICLE                                                                                                                              Open Access
+
+Development of a large SNPs resource and
+a low-density SNP array for brown trout
+(Salmo trutta) population genetics
+Keoni Saint-Pé1*†, Maeva Leitwein2,3†, Laurence Tissot5, Nicolas Poulet6, Bruno Guinand3, Patrick Berrebi3,4,
+Geoffrey Marselli1, Jean-Marc Lascaux7, Pierre-Alexandre Gagnaire3† and Simon Blanchet1,8†
+
+
+  Abstract
+  Background: The brown trout (Salmo trutta) is an economically and ecologically important species for which population
+  genetic monitoring is frequently performed. The most commonly used genetic markers for this species are microsatellites
+  and mitochondrial markers that lack replicability among laboratories, and a large genome coverage. An alternative that
+  may be particularly efficient and universal is the development of small to large panels of Single Nucleotide Polymorphism
+  markers (SNPs). Here, we used Restriction site Associated DNA sequences (RADs) markers to identify a set of 12,204
+  informative SNPs positioned on the brown trout linkage map and suitable for population genetics studies. Then, we used
+  this novel resource to develop a cost-effective array of 192 SNPs (96 × 2) evenly spread on this map. This array was tested
+  for genotyping success in five independent rivers occupied by two main brown trout evolutionary lineages (Atlantic -AT-
+  and Mediterranean -ME-) on a total of 1862 individuals. Moreover, inference of admixture rate with domestic strains and
+  population differentiation were assessed for a small river system (the Taurion River, 190 individuals) and results were
+  compared to a panel of 13 microsatellites.
+  Results: A high genotyping success was observed for all rivers (< 1% of non-genotyped loci per individual), although
+  some initially used SNP failed to be amplified, probably because of mutations in primers, and were replaced. These SNPs
+  permitted to identify patterns of isolation-by-distance for some rivers. Finally, we found that microsatellite and SNP
+  markers yielded very similar patterns for population differentiation and admixture assessments, with SNPs having better
+  ability to detect introgression and differentiation.
+  Conclusions: The novel resources provided here opens new perspectives for universality and genome-wide studies in
+  brown trout populations.
+  Keywords: Conservation, Management, Population genomics, Microarray, Admixture
+
+
+Background                                                                             [2, 3]. Thanks to its wide ecological variability and excel-
+The brown trout (Salmo trutta) is one of the most wide-                                lent ability to spread and colonize new watersheds, the
+spread freshwater fish species in Eurasia, and it has been                             species is found both in fresh and salt waters over most
+widely introduced in both the southern and northern                                    of its range. The brown trout is also an economically
+hemispheres [1]. As part of the Salmonidae family, it is a                             major species in terms of farming, net fishing (for the
+scientifically interesting species because of its diversity                            sea-run form), and expenditure in recreational angling
+in terms of ecology, life history strategies and habitat use                           [4, 5], partly explaining its worldwide intentional intro-
+                                                                                       duction [6]. Because this species is strongly associated to
+* Correspondence: keoni.saintpe@sete.cnrs.fr
+                                                                                       human interests, wild brown trout populations are
+†
+ Keoni Saint-Pé and Maeva Leitwein are co-first authors                                widely managed, either to sustain attractive leisure activ-
+Pierre-Alexandre Gagnaire and Simon Blanchet are co-last authors
+1
+                                                                                       ities such as recreational angling or to conserve declin-
+ Centre National de la Recherche Scientifique (CNRS), Université Paul Sabatier
+(UPS), Station d’Ecologie Théorique et Expérimentale, SETE, UMR 5321, 2
+                                                                                       ing and/or emblematic populations. Moreover, the
+route du CNRS, 09200 Moulis, France                                                    brown trout has been domesticated since the nineteenth
+Full list of author information is available at the end of the article
+
+                                         © The Author(s). 2019 Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0
+                                         International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and
+                                         reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to
+                                         the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver
+                                         (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.
+Saint-Pé et al. BMC Genomics   (2019) 20:582                                                                    Page 2 of 13
+
+
+
+
+century [7], and hatchery strains have been largely used       as far as the number of loci is sufficiently high and evenly
+to sustain wild populations worldwide [8–10]. Instead of       spread across the genome (> 50; [44–48]). Genome cover-
+positive expected effects of these stocking activities,        age is an important aspect in the choice of markers for
+most have proven to have negative long term effects on         population genetics: first, markers evenly spread across
+wild brown trout populations in part because of the re-        the genome are less likely to exhibit linkage disequilibrium
+duced fitness brought by hatchery fish in wild popula-         [49], and second, it was shown that many population
+tions, and the loss of local genetic heritage caused by the    events, such as introgressive hybridization can only con-
+replacement of local wild populations with genetically         cern certain genomic blocks, a full coverage thus enables
+homogeneous hatchery strains [11–14].                          to capture these events [50, 51].
+   The brown trout presents high levels of phenotypic and         SNP arrays are commonly used for conservation pur-
+genetic polymorphism, with seven main mitochondrial            poses in salmonids [52–54], although rarely in brown
+(mtDNA) lineages with various geographical extents being       trout, which is probably because only a handful of SNP
+generally recognized. These consist of (i) four sub-           markers were available for this species [55–57]. How-
+continental lineages: the Atlantic (AT), Mediterranean         ever, higher density resources were more recently devel-
+(ME), Danubian (DA) and Adriatic (AD) lineages, (ii) two       oped. In particular, Linløkken [58] developed 3781 SNPs
+regional lineages: Marmoratus (MA) in the north of the         to analyse genetic differences between wild and hatchery
+Adriatic Sea and North African (NA) in Morocco, Algeria        brown trout in a tributary of Lake Savalen in central
+and Sicily [15, 16] and “(iii) two local lineages limited to   Norway. Moreover, a new lineage-specific high density
+specific geographical areas: the Duero (DU) in Northwest-      linkage map for S. trutta comprising ancestry inform-
+ern Iberian basins, and the Tigris (TI) in Turkey” [17–21].    ative SNPs for both Atlantic (AT) and Mediterranean
+Within these extent lineages that cover the whole range of     (ME) evolutionary lineages from Western Europe was
+S. trutta, high levels of genetic and phenotypic poly-         also developed [14, 59]. This latter resource provides a
+morphism are also observed at more local spatial scales        novel baseline for the development of mapped SNPs that
+within lineages (e.g. population scale; [22–24]). However,     may be of prime interest for studies on brown trout
+diversity patterns in brown trout have also been locally in-   population genetics across a wide spatial range.
+fluenced by stocking practices that mostly relied on Euro-        The aim of this study was to develop a genome-wide,
+pean hatchery strains of AT origin [25] to supplement          mapped and universal set of SNPs for the brown trout
+local populations, with the exception of a few local strains   for both Atlantic and Mediterranean lineages (AT and
+stemming from local populations [26–28].                       ME lineages; sensu Bernatchez, 2001), which would be a
+   Genetic tools appeared as a key approach for scientists     useful and affordable tool for both scientists and envir-
+and local managers to optimize conservation efforts [29,       onmental managers. By taking advantage of the new
+30] because they provide insight into both the ecological      genomic resource available for brown trout [14, 51, 59],
+and the evolutionary dynamics of wild populations [10,         we developed a panel of 12,204 RADs containing 1 or 2
+31]. For instance, assignment tests, fine-scale population     polymorphic SNPs evenly spread across the genome
+structure, kinship analyses and genome-wide surveys [32–       structured in 40 chromosomes, and ancestry informative
+34] enable to monitor populations effectively, and have        for at least two of the main brown trout lineages, the At-
+high potential applications for conservation and manage-       lantic and the Mediterranean lineages. Among these, a
+ment in salmonids, including the brown trout [13, 28, 35].     sub-panel of 192 SNPs describing the whole genome
+   Molecular studies on trout populations first used allo-     was included in a low-density SNP array. The validity of
+zymes, mitochondrial markers, and then microsatellite          this low-density SNP array was tested by quantifying
+loci [7, 36, 37]. These markers (notably microsatellites)      genotyping success and number of polymorphic loci in
+are useful and adequate to answer many biological ques-        five independent populations from the two lineages at a
+tions, but their genome coverage is generally weak, and        large spatial scale. Finally, the power of this array was
+replicability and universality are relatively low since each   compared to a panel of 13 microsatellites for answering
+research group generally uses its own panel of markers.        classical population genetics questions: admixture with
+Single nucleotide polymorphisms (SNP) markers have             stocked domestic individuals and genetic differentiation
+been shown to potentially reduce these limitations [38–        among wild populations. All resources are made freely
+40]. They allow to uncover a relatively high number of an-     available for future users (Additional file 1: S1 and S2).
+notated and mapped markers with low scoring-error rates
+[41, 42]. Also, SNPs markers can easily be chosen to rep-      Results
+resent both neutral genomic regions and regions under se-      Development of the large SNPs resource and
+lection, at a genome-wide scale and across large samples       characteristics of the low-density SNP array
+[43]. Despite being biallelic markers, SNPs can be highly      After applying filters, we identified a RAD data set of 12,
+informative for most analyses used in population genetics,     204 sequences each containing one or two SNPs that
+Saint-Pé et al. BMC Genomics                    (2019) 20:582                                                                                              Page 3 of 13
+
+
+
+
+met our specifications and that are made readily avail-                                        low-density 182 SNP array, to which we added 10 SNPs
+able to the scientific community (see Additional file 1:                                       previously developed (see the Methods) is presented in
+S1). The number of RADs per linkage groups (LGs) varies                                        Additional file 1: S2.
+between 137 (LG 33) and 563 (LG 6). These RAD tags are
+spaced by 0.119 cM (+/− 0.039) in average. They were                                           Genotyping success of the low-density SNPs array
+found in all LGs and they cover the linkage map relatively                                     Thirty of the 192 SNPs (among which a mitochondrial
+evenly, although there were large gaps on LGs 11 (top), 12                                     marker) that were initially genotyped in the five water-
+(top and bottom), 27 (bottom), 32 (top), 33 (bottom), 37                                       sheds did not amplify, suggesting primers failure to
+(bottom), and 39 (top) (Fig. 1a). One estimate of the local                                    properly bind their target DNA site. For the loci that
+recombination rate for each SNP (i.e. one index of the                                         successfully amplified, the overall genotyping success
+relative power of markers for LD-based mapping ap-                                             was high, with less than 1% of missing data per individ-
+proaches) is provided in Additional file 1: S1 and S2.                                         ual, irrespective of the river basin and the lineage
+  The 245 SNPs selected from this set of RADs were                                             (Table 1). Nonetheless, the number of polymorphic
+spread over all linkage group so as to cover the linkage                                       SNPs greatly varied from one river to another, ranging
+map as homogeneously as possible (Fig. 1b). The final                                          from 91 (for the Seuge River) to 160 (for the Aude River)
+
+                                      0
+
+
+
+
+                                     20
+                     Position (cM)
+
+
+
+
+                                     40
+
+
+
+
+                                     60
+
+
+
+
+                                     80
+
+
+                        A                 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+                                                                                   Linkage group S.trutta
+
+
+
+
+                                      0
+
+
+
+
+                                     20
+                    Position (cM)
+
+
+
+
+                                     40
+
+
+
+
+                                     60
+
+
+
+
+                                     80
+
+
+                        B                 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+                                                                                   Linkage group S.trutta
+ Fig. 1 Positions on the brown trout linkage map of the 12204 RADs (a; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT
+ + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs (b; informative for at
+ least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)
+Saint-Pé et al. BMC Genomics           (2019) 20:582                                                                                       Page 4 of 13
+
+
+
+
+Table 1 Number of polymorphic loci, number of non-genotyped loci per individual considering polymorphic loci (average, min and
+max), expected heterozygosity (He) on polymorphic loci in each of the five river basins, and surface drained by the river basin
+(upstream from the lowest sampling site)
+River basin (lineage)        Number of                 Average (±SD) number of non-genotyped loci per individual       He on              Basin surface
+                             polymorphic loci          on polymorphic loci                                             polymorphic loci   (Km2)
+                                                       Min-max
+Aude (Mediteranean)          160/162                   1.04 (±1.68) 0–24                                               0.16               240
+Doron de Bozel               153/162                   0.71 (±0.99) 0–8                                                0.30               180
+(Mediteranean)
+One (Atlantic)               119/162                   0.87 (±1.23) 0–13                                               0.14               155
+Roya (Mediteranean)          158/162                   1.36 (±4.51) 0–63                                               0.30               360
+Seuge (Atlantic)             91/162                    0.66 (±1.06) 0–15                                               0.09               90
+Average                      136                       0.95                                                            0.20               205
+
+
+
+out of the 162 SNPs that were successfully genotyped in                            individuals from the Taurion basin and 30 from the
+that portion of our work (Table 1). The isolation-by-                              Soueich trout farm). Expected heterozygosity ranged from
+distance patterns were significant (pairwise Fst signifi-                          0.18 to 0.22 for SNPs and from 0.58 to 0.73 for microsatel-
+cantly correlated to pairwise riparian distance) for the                           lites. Fst ranged from 0.022 to 0.070 for SNPs and from
+Seuge River (rMantel = 0.55, p-value < 0.001) and the Roya                         0.019 to 0.040 for microsatellites (details for each site are
+River (rMantel = 0.65, p-value = 0.01). Fst and riparian dis-                      shown in Table 2). We found one marker that was a sig-
+tance were also positively although non-significantly cor-                         nificant Fst outlier, suggesting it may be influenced by se-
+related for the Aude River (rMantel = 0.19, p-value = 0.15),                       lection (ID 295415; Fst> > Expected heterozygosity), but
+the One River (rMantel = 0.28, p-value = 0.07) and the                             we decided to keep it in our analyses (see the Discussion).
+Doron River (rMantel = 0.02, p-value = 0.36) (see Add-                                Individual inferences of hatchery ancestry measured
+itional file 1: S3 for the plots).                                                 with either SNPs or microsatellites are presented in Fig. 2
+                                                                                   in the form of individual barplots. The distribution of
+Efficiency of the low-density SNPs array                                           captive-bred ancestry was bimodal, meaning that most
+Among the 30 replaced SNPs for the empirical test in                               individuals were either purely wild or captive-bred, with
+the Taurion River, 10 failed at the amplification step (see                        relatively low numbers of admixed genotypes (Fig. 2,
+Additional file 1: S2). This resulted in a set of 182                              Fig. 3a). Levels of hatchery ancestry were significantly
+markers that successfully amplified, although only 92 of                           and moderately correlated (rSpearman = 0.60, d.f. = 193,
+them were polymorphic in this river (among which only                              p < 0.001; Fig. 3a), although for some individuals, there
+one mitochondrial marker of the 10 INRA and mito-                                  was a discrepancy between markers with one of the two
+chondrial added markers). After removing individuals                               marker types detecting introgressed fish while the other
+with more than a third of missing data, and keeping only                           marker type assigned them as pure wild fish (Figs. 2, 3a).
+individuals for which we had both SNPs and microsatellite                          Pairwise Fst values are presented for both SNPs and
+data, our final dataset comprised 197 individuals (167                             microsatellites in Additional file 1: S4. They ranged from
+
+
+Table 2 For each site, sample size (“N”), mean expected heterozygosity over all loci (“He”) and standard deviation between loci,
+mean observed heterozygosity over all loci (“Ho”) and standard deviation between loci, mean allelic richness computed using a
+rarefaction approach over all loci (“Ar”), mean Fis over all loci (“Fis”), mean Fst over all loci (i.e. uniqueness at the site level; Fst = 1-
+HeSite/HeTotal)
+                        SNPs                                                                 Microsatellites
+Site             N      Ho                 He                 Fis          Fst       Ar      Ho                He              Fis        Fst       Ar
+BEA-Rau          27     0.18 ± 0.19        0.18 ± 0.18        0.011        0.070     1.58    0.44 ± 0.20       0.58 ± 0.25     0.226      0.04      4.42
+PON-Rau          12     0.22 ± 0.23        0.21 ± 0.20        −0.038       0.030     1.66    0.67 ± 0.19       0.70 ± 0.17     0.027      0.022     5.63
+THA-Bar          26     0.22 ± 0.23        0.22 ± 0.20        −0.025       0.022     1.65    0.65 ± 0.17       0.67 ± 0.18     0.015      0.017     5.85
+THA-Tcc          30     0.19 ± 0.20        0.20 ± 0.18        0.028        0.027     1.69    0.61 ± 0.18       0.69 ± 0.17     0.107      0.019     6.18
+THA-Usi          29     0.22 ± 0.22        0.21 ± 0.19        −0.023       0.025     1.67    0.68 ± 0.12       0.73 ± 0.16     0.057      0.019     6.79
+THA-Vig          21     0.21 ± 0.21        0.22 ± 0.20        0.056        0.028     1.68    0.64 ± 0.17       0.72 ± 0.12     0.125      0.024     6.40
+VIG-Tex          22     0.21 ± 0.21        0.21 ± 0.19        −0.004       0.031     1.66    0.69 ± 0.14       0.70 ± 0.15     0.033      0.02      5.91
+Saint-Pé et al. BMC Genomics       (2019) 20:582                                                                                          Page 5 of 13
+
+
+
+
+                     A
+
+
+
+
+                     B
+ Fig. 2 Structure barplots of assignment to the wild (grey) and the captive-bred (black) clusters, using both SNPs (a) and microsatellites (b)
+
+
+0.010 to 0.088 for SNPs (mean = 0.033 ± 0.025) and from                      usability on poor quality samples. In terms of costs, SNPs
+0.010 to 0.053 for microsatellites (mean = 0.025 ± 0.013).                   and microsatellites are roughly similar, however in terms
+Pairwise Fst values between sites assessed with SNPs                         of time efficiency, SNPs are highly advantageous: samples
+and microsatellites were strongly correlated (rMantel =                      are directly sent to the genotyping platform, and within a
+0.92, p = 0.001 based on 1000 permutations), and SNPs                        month, data is ready to be analyzed. Moreover, SNPs can
+had higher values (Fig. 3b, the regression coefficient is                    be easily reused in other studies, and are more powerful in
+significantly higher than the 1:1 line (dotted line on fig-                  detecting hybridization [63].
+ure) since its 95% CI is 1.46–2.18).
+  Finally, within the Taurion River, the 92 SNPs dis-                        Development of a large variation map for population
+played a slightly lower informativeness (I) than the 13                      genomic studies in brown trout
+microsatellites (2.08 vs. 2.48; Fig. 4). We found that the                   The 12,204 RAD-derived SNPs were relatively homoge-
+informativeness of these 92 SNPs is actually equivalent                      neously distributed across the 40 linkage groups of
+to that of 10 of the microsatellites (Fig. 4). Based on the                  Salmo trutta (with 137 to 563 RADs per LG), and
+equation linking the number of our SNPs and inform-                          showed an average spacing of 0.119 cM. There are some
+ativeness (I = 0.023*Nsnps+ 0.0038; r2 = 0.98, p-value <                     gaps in coverage, which does not necessarily mean that
+0.001), we extrapolated that 108 SNPs are required to be                     information is missing, they could be due to high recom-
+equivalent to the panel of 13 microsatellites in terms of                    bination rates in these regions or to the positions of the
+informativeness for individual assignment.                                   centromeres. Although these gaps exist, genome cover-
+                                                                             age is satisfying, and with the marker density obtained, it
+Discussion                                                                   should be sufficient for most genome-scale studies that
+The SNP panel developed here was shown to be efficient                       need to tag a large fraction of genomic variation through
+to study the population genetics of Atlantic and Medi-                       linkage disequilibrium. However, this marker density
+terranean brown trout lineages from Western Europe,                          may still be limited when a rapid decay of linkage dis-
+which gathered a huge number of studies in the past de-                      equilibrium leaves many genomic regions unattainable,
+cades [60–62]. We provided a panel of 12,204 RADs                            as it might be the case for some applications like the
+which are relatively evenly spread across the whole gen-                     search for loci underlying fitness in the wild [64]. There-
+ome, and, from a sample of this panel, we proved its effi-                   fore, an estimate of the local recombination rate for each
+ciency in terms of genotyping success, and measuring                         SNP as an index of the relative power of markers for
+patterns of isolation-by-distance. We also proved that                       LD-based mapping approaches is provided in Additional
+these SNPs successfully detect population structure, which                   file 1: S1 and S2.
+opens new insights for many applications with great po-                         The proposed SNP resource only includes SNPs with a
+tential compared to commonly used markers. These ad-                         MAF higher than 0.05 (i.e. removing of rare variants), a
+vantages are multiple, going from lower error rates and a                    criterion that has been set for two main reasons. First,
+simple mutation model with low homoplasy [43] to                             SNPs with very low MAF can in many cases be
+Saint-Pé et al. BMC Genomics      (2019) 20:582                                                                                        Page 6 of 13
+
+
+
+
+                        A                                                      B
+ Fig. 3 Plot of individual hatchery ancestry proportion measured with microsatellites against that measured with SNPs (a) and pairwise Fst
+ between sites measured with microsatellites against pairwise Fst between sites measured with SNPs (b). Black lines represent the linear regression
+ with its confidence interval; spotted lines represent the 1:1 line
+
+
+
+genotyping errors [65, 66]. Second, we chose a relatively                   SNPs with higher MAF were shown to generally be the
+high MAF because this panel of SNPs is primarily de-                        most powerful [42, 70, 71].
+signed for studying populations for most of the species                       In the test panel, and for the Taurion river (test basin),
+range. Therefore, SNPs that are discovered in the popu-                     one locus might be potentially affected by selection. Outlier
+lations used to develop the panel are more likely to be                     markers are usually removed before analyses for inferring
+polymorphic in other populations from which they were                       neutral evolutionary processes, such as genetic drift and
+not developed if their MAF is high [67]. Although filter-                   gene flow [72]. In our analyses, we decided not to remove it
+ing SNPs on their MAF could lead to ascertainment bias                      because in the case of detection of admixture between
+[40, 68, 69], we suggest this is not an issue in our case                   strains, it was shown that these ancestry informative
+study because we applied the MAF criteria regarding dis-                    markers can increase accuracy for detecting differentiation
+tinct glacial lineages, which limits marker choice bias.                    and assignment of individuals to populations [68, 73, 74].
+Moreover, for individually-centered investigations such as                  Removing loci displaying selection is thus up to the users of
+population structure, kinship and individual assignment,                    the resource, depending on the aim of the study. For in-
+                                                                            stance, if the aim is to determine if a population is at HWE,
+                                                                            or to quantify gene flow/inbreeding, or calculate effective
+                                                                            population sizes, loci affected by selection should be re-
+                                                                            moved, whereas more individual-based questions do not
+                                                                            necessarily require removing these loci.
+
+
+                                                                            Genotyping success
+                                                                            Genotyping success was very high in all basins, and ex-
+                                                                            cept for two basins, the number of polymorphic SNPs
+                                                                            among the 162 amplified (from the 192 set) was satisfac-
+                                                                            tory (73 to 99%), confirming the potential versatility of
+                                                                            this tool. This set of 162 SNPs already benefits to the
+                                                                            field of population genetics for the species as to our
+                                                                            knowledge, most studies used less than 40 SNPs [46–
+                                                                            48]. Therefore, the 12,204 RAD panel is a promising tool
+                                                                            for genome wide studies on brown trout. It would be of
+                                                                            interest however to further test this panel on other evo-
+                                                                            lutionary lineages, or on populations which have been
+ Fig. 4 Plot of informativeness against number of SNPs. 107 SNPs            shown to have diverged from the continental popula-
+ would be equivalent to the 13 microsatellites in terms
+                                                                            tions such as western Mediterranean populations found
+ of informativeness
+                                                                            in Iberian Peninsula [25], Italian populations [75], and
+Saint-Pé et al. BMC Genomics   (2019) 20:582                                                                     Page 7 of 13
+
+
+
+
+Corsican populations [76], as well as on the other main        they enable to better detect introgression and admixture
+lineages (e.g. Adriatic and Danube lineages; [15]) or re-      compared to microsatellites, and show that individuals
+mote populations inhabiting at the edges of the species’       considered as « pure » with microsatellites may in fact be
+range (Iran [77, 78], Morocco [16]).                           introgressed [84]. This difference in individual admixture
+   As a first approach we found this panel to be efficient     proportions calculated with microsatellites and SNPs
+for detecting patterns of isolation-by-distance, although      might results from the fact that our panel is characterized
+we had no other markers to compare with. Patterns of           by an even repartition of SNPs along the genome of the
+isolation-by-distance were found to be significant only in     brown trout, which is expected to improve the global as-
+the Seuge and the Roya Rivers, although there was a ten-       sessment of genome-wide admixture proportions [51].
+dency in the other three basins. Interestingly, it seems       Hence, the strong advantage of a SNP panel of this type is
+that even when the number of polymorphic SNPs was              that it ensures a better representativeness of the entire
+low (Seuge River: 92 polymorphic loci), detecting a pat-       genome of the brown trout. Moreover, although inform-
+tern of isolation-by-distance was still possible. In other     ativeness is lower, the 92 SNPs still give sufficient informa-
+basins, we suggest that the strength of the relation be-       tion on admixture and differentiation, highly correlated
+tween genetic and riparian distance may also be affected       with that given by the microsatellites: the trade-off be-
+by stocking events, or by characteristics of the watershed     tween cost and power must also be taken into account in
+and demographic histories. However, we did not investi-        regard of the questions asked and the means of the user.
+gate these issues further in the present manuscript.              For other empirical case studies, such as the five river
+                                                               basins on which genotyping success was measured, and
+Tests of the low-density SNP array                             in which individuals are variable on more loci (except
+Studies in which low-density SNP arrays equal or outper-       for the Seuge river, other basins showed 119 to 160 poly-
+form a handful of microsatellites for population structure     morphic loci, Table 1), we can expect higher inform-
+and differentiation are common, particularly when sample       ativeness. We even expect SNPs to equal or outperform
+sizes are large and populations are strongly structured [47,   microsatellites in terms of informativeness for these ba-
+79, 80]. Although we found no literature on this particular    sins (indeed, around 107 SNPs should be equivalent to
+aspect in brown trout, it has been shown in Atlantic Sal-      the panel of 13 microsatellites, as pairwise Fst values
+mon: genetic divergence, structuring and isolation-by-         were higher for SNPs than microsatellites), and with the
+distance were assessed as successfully using only 7 SNPs       advantages of SNPs mentioned previously. This is par-
+and 14 microsatellites, although genetic diversity estimates   ticularly true in Mediterranean rivers, probably because
+were less concordant [81]. Twenty-six SNPs were also           they contain both domestic Atlantic and natural Medi-
+shown to be nearly as efficient as 16 microsatellites for      terranean ancestries. Indeed, these SNPs were discovered
+parentage assignment in this species [82], which makes         using a mix of Mediterranean and Atlantic individuals,
+our set of SNPs appear very promising. The panel of 192        and are therefore more likely to be polymorphic if both
+SNPs tested here performed well in terms of detection of       lineages are present. Additionally, the mitochondrial and
+admixture and population differentiation, although only        INRA markers were also developed to have a fixed allele
+92 SNPs were polymorphic in the Taurion basin. The low         in each lineage, explaining why in the Taurion for in-
+level of polymorphism is probably due to the fact that the     stance, in which only the Atlantic lineage is present, they
+study scale is extremely low (less than 15 km between the      were not polymorphic (except for one).
+two most extreme sampling sites; Fig. 5) and/or that the          We make this SNP panel freely available as a resource.
+biogeographic area in which this river basin is situated has   As it contains many more untested SNPs, future users
+historically low level of diversity (see below).               will be able to choose the number, density, and position
+   We found similar introgression level when measured          of markers in the linkage map, and considering the local
+with SNPs compared to microsatellites (Fig. 3a), and           recombination rate around each SNP in order to adjust
+higher pairwise Fst values between sites with SNPs, sug-       their own panel to their objectives. This should also be
+gesting that SNPs have – at least - a similar discriminatory   considered for the Massif Central Rivers (in our case
+and assignment power. However, the low number of poly-         Taurion and Seuge Rivers), in which the number of poly-
+morphic SNPs in this panel (92 polymorphic SNPs) com-          morphic loci is lower than in the other basins studied
+pared to other SNP-microsatellite comparison case              here, probably because of the past demographic histories
+studies [45, 79, 83] lowered its’ informativeness: it was      (colonization, connectivity, stocking, bottlenecks, popu-
+outperformed by the 13 microsatellites, and we found that      lation sizes and habitat). However, as this subpanel was
+it would actually require 107 SNPs to be equivalent to         tested on only 7 populations (190 individuals), we first
+microsatellites in terms of informativeness for assignment.    suggest that increasing the sample size should increase
+However, the advantage of SNPs may here not be                 statistical power better than increasing the number of
+accounted for when calculating informativeness. Indeed,        SNPs, especially when Fst is low (< 0.01; [67, 85]).
+Saint-Pé et al. BMC Genomics      (2019) 20:582                                                                                        Page 8 of 13
+
+
+
+
+ Fig. 5 Map of the five river basins and and sampling sites (black dots) used to test for genotyping success. The Seuge and Ône Rivers are part of
+ the Atlantic catchment, therefore naturally harboring AT trout, whereas the Aude, Roya and Doron de Bozel Rivers are part of the Mediterranean
+ catchment, naturally populated with ME lineage. Maps were generated by authors on ArcGis and assembled using Inkscape
+
+
+
+Conclusion                                                                  double-digest RAD sequencing. Restriction enzymes EcoRI-
+The SNP panel presented here appears as a novel tool to                     HF and MspI were used to digest individual genomic DNA
+study diverse aspects of population genetics in the brown                   and create the dd-RAD library, which was submitted to size
+trout. The possibility to genotype many loci in a fast and                  selection in order to retain fragments of 200 to 700 bp
+affordable way will open many perspectives. It opens new                    using CleanPCR beads. The library was then amplified
+insights into the species life history, with many potential                 by PCR and sequenced with Illumina HiSeq2500, pro-
+applications both for fundamental population genetics,                      ducing 125-bp paired-end reads. The initial set con-
+conservation and management questions, but also for                         tained 75,000 SNPs discovered from 82 wild
+more biological questions such as mapping of quantitative                   Mediterranean S. trutta from tributaries of the Orb
+trait loci, or investigating links between genetic and envir-               River catchment in southern France, and 102 captive-
+onmental divergence. This resource has the potential to                     bred individuals from farms formerly used for stock-
+offer high flexibility for many possible applications, out-                 ing in this region (41 and 61 hatchery fish from the
+performing previously used markers in many ways: gen-                       ME and AT lineages respectively; see Leitwein [51]
+ome coverage and ancestry detection for instance, but also                  for details). These SNPs were anchored to the-high
+in terms of cost and efficiency to obtain individual geno-                  density S. trutta linkage map using an intermediate
+types. We hope that it will be useful to the population ge-                 step of physical mapping to the Atlantic salmon refer-
+neticists’ community working on brown trout and call for                    ence genome: using their relative positions on the At-
+future studies across the species’ range.                                   lantic salmon reference genome, it was possible to
+                                                                            determine the relative mapping positions of a large
+Methods                                                                     number of additional RAD loci that were not present
+Development of a genome-wide reference SNP panel                            on the brown trout linkage map [59].
+The panel of SNPs markers identified is this study was fil-                   We applied a series of filters which allowed for select-
+tered from the variants described in Leitwein [51] using                    ing a panel of SNP markers that were (i) likely to be
+Saint-Pé et al. BMC Genomics   (2019) 20:582                                                                      Page 9 of 13
+
+
+
+
+highly polymorphic, (ii) mapped on the linkage map, and        French river basins: two from the Pyrénées mountains
+(iii) present in the two brown trout lineages. To do so,       (the Ône and the Aude Rivers), two from the Alps moun-
+we removed from the initial database all SNPs with a           tains (the Roya and the Doron de Bozel Rivers) and one
+minimum allele frequency (MAF) of 5% or less using             from the Massif Central mountains (the Seuge River)
+vcftools [86] based on all individuals (AT + ME). Then,        (Fig. 5). Three of these rivers belong to the Mediterranean
+in order to have clean sequences, straightforward to be        lineage (ME; the Aude, the Doron and the Roya Rivers),
+genotyped, RAD sequences with more than two SNPs,              whereas the two others belong to the Atlantic lineage (AT;
+and SNP positions falling in the first or last 30 bp of the    the One and the Seuge Rivers) (see Fig. 5).
+RAD sequences were also removed, as well as sequences             The sampling sessions were performed in 2016, using
+with undetermined (N) nucleotides. Finally, we kept only       a single-pass electrofishing approach from a total of 79
+RAD sequences for which mapping poisitions on the S.           sites (between 8 and 21 sites per river basin, Additional
+trutta linkage map were determined (see above).                file 1: S5), with an aim of sampling 30 individuals of
+                                                               brown trout per site. In total, we captured 1862 individ-
+Development of the low-density SNP array                       uals (26 individuals per site in average; see Additional
+We used this large SNPs resource to develop a low-             file 1: S5) from which a fin clip was taken (after Eugenol
+density SNP array containing 192 SNPs. The goal was to         anesthesia), and kept in 70% TE Ethanol for genotyping.
+propose a cost-effective tool which holds on two 96-wells      All individuals were released alive to their site of cap-
+genotyping plates for analyzing a large number of individ-     ture. Fin samples were sent to the LGC Genomics com-
+uals. Moreover, SNPs were selected to be informative for       pany for DNA extraction and multilocus genotyping of
+population genetics analyses of brown trout populations        the 192 SNPs markers using KASPAR® [87]. Genotyping
+from at least the AT and ME lineages (sensu Bernatchez         success was measured at the individual level, by the pro-
+[15]) from Western Europe. The array was genotyped             portion of SNPs which were not genotyped (either be-
+using the KASPAR technology® [87] that allows a rapid          cause not amplified or because the allele could not be
+and cost-effective genotyping service for such a number of     read). Finally, these basins were tested for patterns of
+markers. We hence applied further filters to fulfill KAS-      isolation-by-distance, by using a mantel test with 1000
+PAR genotyping constraints. In particular, RADs with           permutations on pairwise Fst matrices (calculated with
+more than one SNP between the primer designing zones           the pairwise.fst adegenet function) and riparian distances
+(50 bp at the two extremities) were excluded. To ensure a      (measured in meters with STARS ArcGis package).
+good representativeness of the genome, we selected SNPs
+evenly spread and spaced by at least 3.5 cM across the         Efficiency of the low-density SNPs array
+1453 cM estimated length of the S. trutta linkage map          The low-density SNP array was further used for classic
+[59]. This resulted in 245 SNPs (average 1453/245 = 5.9        population genetic questions in order to compare its effi-
+cM) among which, in order to retain 182 SNPs, we ran-          ciency with thirteen microsatellite markers previously used
+domly removed 63 SNPs using the sample() R function.           in brown trout population genetic studies (e.g. [91–93]). A
+Then, we added five ancestry informative SNPs developed        total of 190 brown trout individuals were sampled in a
+by the Institut National de Recherche en Agronomie and         small river basin (the Taurion River in the Massif Central
+the University of Savoie (UMR-0042 CARRTEL, France)            Mountains; Fig. 5, “test”) in 2017 using electrofishing. Seven
+that were used in previous studies to distinguish individ-     sites were sampled with 21 to 30 individuals per site (Add-
+uals from the AT and ME lineages (OMM1164,                     itional file 1: S6). For each individual, a pelvic fin clip was
+OMM1105, OMM1154, Str541INRA, Str591INRA; [29,                 taken for genetic analyses. All individuals were released to
+87–89]).Finally, we added five mitochondrial SNPs previ-       their original sampling site. We additionally sampled 30 in-
+ously used to differentiate among the five main brown trout    dividuals of domestic Atlantic brown trout from a local
+lineages (mitoDA10Proline, mitoDA10ProlineB, mitoCytoB,        hatchery used for stocking purposes (the Soueich trout
+mitoATPaseIVA, mitoATPaseIVB; [89, 90]; Additional file 1:     hatchery), to quantify genetic admixture with wild popula-
+S1). These numbers of five ancestry informative nuclear or     tions from the Taurion basin. Fin samples were sent to the
+mtDNA markers were chosen to represent approx. 5% of           LGC Genomics Company for DNA extraction and for mul-
+the markers present on the SNP array. This resulted in a       tilocus genotyping to 192 SNPs markers using the KAS-
+low-density array of 192 SNPs markers. Information and se-     PAR® [87]. Note that 30 SNP markers from the initial 192
+quences are available on Figshare, DOI: https://doi.org/10.6   SNP panel did not amplify (see the Results), and were
+084/m9.figshare.8174708                                        hence replaced by 30 other SNPs from the 245 SNPs fil-
+                                                               tered (see methods) to improve the SNP array (see Add-
+Genotyping success of the low-density SNP array                itional file 1: S2 for details). Additionally, all individuals
+This low-density SNP array was first evaluated for geno-       were genotyped at thirteen microsatellites assembled in
+typing success using individuals from five independent         PCR multiplexes (see Additional file 1: S7, and Saint-Pé et
+Saint-Pé et al. BMC Genomics          (2019) 20:582                                                                                           Page 10 of 13
+
+
+
+
+al., 2018 for details). We tested whether the selected SNPs                      values (calculated with adegenet R package) between sites measured
+were likely influenced by selection using the Fst outlier de-                    with SNPs and with microsatellites. S5. Sample sizes and mean (±
+tection method implemented in the fsthet R package [95],                         standard error) body length in mm of fish sampled in each site and each
+                                                                                 basin for testing the 192 SNPs panel’s genotyping success. S6. Map of
+in which outlier values of FST can be identified in a plot of                    the Taurion River showing sampling points (black dots). Sample sizes by
+FST vs. heterozygosity [72].                                                     site, and mean (±SE) body length in mm) from the Taurion River in table.
+   From both SNP and microsatellite datasets, we removed                         Map was generated by authors on ArcGis and assembled using Inkscape.
+                                                                                 S7. Genotyping microsatellites (DOCX 171 kb)
+individuals with more than a third of missing data, and
+kept only individuals for which we had both SNPs and
+                                                                                Abbreviations
+microsatellites genotypes. We first compared genetic ad-                        INRA: Institut national de la recherche agronomique; KASPAR: Kompetitive
+mixture between wild and captive-bred strains using                             allele-specific PCR amplification of target sequences and endpoint fluores-
+STRUCTURE 2.3.1 [96] with the admixture model and the                           cence genotyping; LD: Linkage disequilibrium; MAF: Minor allele frequency;
+                                                                                PCR: polymerase chain reaction; RAD: Restriction site associated DNA;
+correlated allele frequency model, without prior population                     SNP: Single nucleotide polymorphism
+information. Twenty runs assuming two clusters (K = 2, in
+order to discriminate between wild and captive-bred indi-                       Acknowledgments
+viduals, see [94]) were performed with a burn-in period of                      We warmly thank the AAPPMA of Luchon (J. Lérimé, D. Estrade and
+                                                                                colleagues) and of Hérault (E. Ravel and colleagues), ECOGEA (P. Baran and
+200,000 and 200,000 subsequent MCMC repetitions. The                            colleagues) and members of EDF (A. Barillier, V. Gouraud and colleagues) for
+ten best runs (highest LnP(D) values) were compiled using                       field sampling support. This work was undertaken at SETE, which forms part
+CLUMPP [97] to obtain final averaged individual Q-values.                       of the “Laboratoire d’Excellence” (LABEX) entitled TULIP (ANR-10-LABX-41),
+                                                                                and M. Leitwein was supported by a grant from LABEX CeMEB (Centre
+Individuals were assigned to one of the two clusters with                       Méditerranéen de l’Environnement et de la Biodiversité, Montpellier), using
+the greatest Q-value, provided that value exceeded 0.7 (as                      genotyping and sequencing facilities of ISEM (Institut des Sciences de
+in [94]). Individuals with intermediate Q-values were con-                      l’Evolution-Montpellier)
+sidered genetically admixed individuals between hatchery
+                                                                                Authors’ contributions
+and wild strains. Individual assignment Q-values to the                         KSP, SB, NP and LT designed the experiment and coordinated the study; KSP,
+cluster containing all Soueich hatchery individuals (i.e. de-                   ML, BG, LT, NP, GM, JML, PB, and SB conducted sampling; ML, PAG, BG and
+gree of assignment to the “captive-bred” cluster = individ-                     PB generated the variation map used for developing the SNP panel; KSP, ML,
+                                                                                GM and SB carried out the experimental lab work; KSP and ML ran the
+ual level of “hatchery ancestry”) were compared between                         statistical analyses; KSP, ML, PAG, GB, LT, NP, and SB interpreted the data;
+SNPs and microsatellites using a Spearman correlation test,                     KSP, ML PAG, and SB wrote the first draft of the manuscript; BG, LT, NP, GM,
+as admixed ancestry was not normally distributed.                               JML and PB read, commented and corrected the initial draft, and all authors
+                                                                                gave final approval for publication.
+   We then compared population differentiation assessment
+between markers by calculating pairwise Fst between sites                       Funding
+using the adegenet R package and mantel R function. Fi-                         This work was funded by the French Agency for Biodiversity (n° 136406),
+                                                                                Electricité De France (n°8619–5920011137). Two of the authors are attached
+nally, we compared the informativeness of both sets of                          to the funding body (Tissot Laurence, EDF; Poulet Nicolas, AFB), and have
+markers for population structure by calculating the inform-                     contributed to the design of the study, the collection, analysis, and
+ativeness for assignment (In; [98]). A higher index indicates                   interpretation of data, and in writing the manuscript.
+a higher informativeness of the set of markers. It was calcu-
+                                                                                Availability of data and materials
+lated with R as follows: for i = 1, 2,..., K populations and                    SNPs sequences and information are available on Figshare.
+m = 1, 2, ..., L loci, with K ≥ 2 and L ≥ 1. Locus m has alleles                DOI: https://doi.org/10.6084/m9.figshare.8174708
+j = 1, 2, ..., N(m). The average frequency of allele j at locus m
+                                                   P P                          Ethics approval and consent to participate
+across the K populations is defined as Pj = Ki¼1 ijðmÞ  K , where               The Direction Départmentale des Territoires et de la Mer of departments
+Pij(m) is the relative frequency for allele j of locus m in                     gave their ethical approval for the field sessions and trout capture.
+population i. The informativeness is defined as:
+                                                                                Consent for publication
+                                                 !                              Not applicable.
+             X N                 XK
+                                     Pij
+     In ¼          −P j logP j þ         logP ij
+              i¼1                i¼1
+                                     K                                          Competing interests
+                                                                                The authors declare that they have no competing interests.
+
+                                                                                Author details
+Additional file                                                                 1
+                                                                                 Centre National de la Recherche Scientifique (CNRS), Université Paul Sabatier
+                                                                                (UPS), Station d’Ecologie Théorique et Expérimentale, SETE, UMR 5321, 2
+ Additional file 1: S1. RAD data set of 12204 sequences each containing         route du CNRS, 09200 Moulis, France. 2Département de Biologie, Institut de
+                                                                                Biologie Intégrative et des Systèmes (IBIS), Université Laval, Québec, QC,
+ one or two SNPs, with minimum allele frequency of 5% or higher, no
+ SNPs in the first or last 30 bp of the RAD, no unsequenced nucleotides,        Canada. 3ISEM, CNRS, Univ. Montpellier, IRD, EPHE, Montpellier, France.
+                                                                                4
+ and which can be positioned on the S. trutta linkage map, S2. SNPs used         Present address: Genome - Research and Diagnostic, 697 avenue de Lunel,
+ for low density arrays (5 basins and Taurion test). S3. Isolation by           34400 Saint-Just, France. 5EDF R and D LNHE - Laboratoire National
+                                                                                d’Hydraulique et Environnement, 6 quai Watier, 78401 Chatou Cedex, France.
+ distance patterns for each river basin, represented by plots of pairwise Fst   6
+ values against pairwise riparian distance between sites. S4. Pairwise Fst       Pôle écohydraulique AFB-IMT, allée du Pr Camille Soula, 31400 Toulouse,
+                                                                                France. 7ECOGEA, 352 Avenue Roger Tissandié, 31600 Muret, France.
+Saint-Pé et al. BMC Genomics              (2019) 20:582                                                                                                    Page 11 of 13
+
+
+
+
+8
+ Université de Toulouse, UPS, UMR 5174 (EDB), 118 route de Narbonne,                      22. Swatdipong A, Vasemägi A, Niva T, Koljonen M-L, Primmer CR. High level of
+F-31062 Toulouse cedex 4, France.                                                             population genetic structuring in lake-run brown trout, Salmo trutta, of the
+                                                                                              Inari Basin, northern Finland. J Fish Biol. 2010;77:2048–71.
+Received: 29 January 2019 Accepted: 4 July 2019                                           23. Vøllestad LA, Serbezov D, Bass A, Bernatchez L, Olsen EM, Taugbøl A. Small-
+                                                                                              scale dispersal and population structure in stream-living brown trout (Salmo
+                                                                                              trutta) inferred by mark–recapture, pedigree reconstruction, and population
+                                                                                              genetics. Can J Fish Aquat Sci. 2012;69:1513–24.
+References                                                                                24. Berrebi P. Three brown trout Salmo trutta lineages in Corsica
+1. Lobón-Cervía J, Sanz N, editors. Brown trout: biology, ecology and                         described through allozyme variation: salmo trutta genetics in Corsica.
+    management. Hoboken: Wiley; 2018.                                                         J Fish Biol. 2015;86:60–73.
+2. Klemetsen A, Amundsen P-A, Dempson JB, Jonsson B, Jonsson N, O’Connell                 25. Cortey M, Pla C, García-Marín J-L. Historical biogeography of Mediterranean
+    MF, et al. Atlantic salmon Salmo salar L., brown trout Salmo trutta L. and                trout. Mol Phylogenet Evol. 2004;33:831–44.
+    Arctic charr Salvelinus alpinus L: a review of aspects of their life histories.       26. Cortey M, Garcia-Marin J-L. Evidence for phylogeographically informative
+    Ecol Freshw Fish. 2003;12:1–59.                                                           sequence variation in the mitochondrial control region of Atlantic brown
+3. Rahel FJ, Nibbelink NP. Spatial patterns in relations among brown trout                    trout. J Fish Biol. 2002;60:1058–63.
+    (Salmo trutta) distribution, summer air temperature, and stream size in               27. Bohling J, Haffray P, Berrebi P. Genetic diversity and population structure of
+    Rocky Mountain streams. Can J Fish Aquat Sci. 1999;56:43–51.                              domestic brown trout (Salmo trutta) in France. Aquaculture. 2016;462:1–9.
+4. Butler JRA, Radford A, Riddington G, Laughton R. Evaluating an ecosystem               28. Caudron A, Champigneulle A, Guyomard R. Assessment of restocking as a
+    service provided by Atlantic salmon, sea trout and other fish species in the              strategy for rehabilitating a native population of brown trout Salmo trutta L.
+    river Spey, Scotland: the economic impact of recreational rod fisheries. Fish             in a fast-flowing mountain stream in the northern French Alps. J Fish Biol.
+    Res. 2009;96:259–66.                                                                      2006;69:sa:127–39.
+5. Mills D. Conservation and management of brown trout, Salmo trutta, in                  29. Altukhov IP, Salmenkova EA, Omel’chenko VT. Salmonid fishes: population
+    Scotland: a historical review and the future. Freshw Biol. 1989;21:87–98.                 biology, genetics, and management. Oxford [England], Malden: Blackwell
+6. Rahel FJ. Biogeographic barriers, connectivity and homogenization of                       Science; 2000.
+    freshwater faunas: it’s a small world after all. Freshw Biol. 2007;52:696–710.        30. Sato T, Harada Y. Loss of genetic variation and effective population size of
+7. Laikre L, Antunes A. Concerted action on identification M and E ofGenetic R                Kirikuchi charr: implications for the management of small, isolated salmonid
+    in the BT (Salmo trutta) (projekt). Conservation genetic management of                    populations. Anim Conserv. 2008;11:153–9.
+    brown trout (Salmo trutta) in Europe. Danmarks Fiskeriundersøgelser, Afd.             31. Pelletier F, Garant D, Hendry AP. Eco-evolutionary dynamics. Philos Trans R
+    for Ferskvandsfiskeri: Silkeborg; 1999.                                                   Soc B Biol Sci. 2009;364:1483–9.
+8. Berrebi P, Poteaux C, Fissier M, Cattaneo-Berrebi G. Stocking impact and               32. Araki H, Waples RS, Ardren WR, Cooper B, Blouin MS. Effective population
+    allozyme diversity in brown trout from Mediterranean southern France. J                   size of steelhead trout: influence of variance in reproductive success,
+    Fish Biol. 2000;56:949–60.                                                                hatchery programs, and genetic compensation between life-history forms:
+9. Bohling JH. Strategies to address the conservation threats posed by                        effective population size of steelhead trout. Mol Ecol. 2007;16:953–66.
+    hybridization and genetic introgression. Biol Conserv. 2016;203:321–7.                33. Bourret V, Kent MP, Primmer CR, Vasemägi A, Karlsson S, Hindar K, et al.
+10. Elliott JM. Quantitative ecology and the brown trout. Oxford. New York:                   SNP-array reveals genome-wide patterns of geographical and potential
+    Oxford University Press; 1994.                                                            adaptive divergence across the natural range of Atlantic salmon (Salmo
+11. Araki H, Schmid C. Is hatchery stocking a help or harm? Aquaculture.                      salar). Mol Ecol. 2013;22:532–51.
+    2010;308:S2–11.                                                                       34. Stinchcombe JR, Hoekstra HE. Combining population genomics and
+12. Christie MR, Marine ML, French RA, Waples RS, Blouin MS. Effective size of a              quantitative genetics: finding the genes underlying ecologically important
+    wild salmonid population is greatly reduced by hatchery supplementation.                  traits. Heredity. 2008;100:158–70.
+    Heredity. 2012;109:254–60.                                                            35. Waples RS, Hendry AP. Editorial: special issue: evolutionary perspectives on
+13. Hansen MM. Estimating the long-term effects of stocking domesticated                      salmonid conservation and management: evolutionary perspectives on
+    trout into wild brown trout (Salmo trutta) populations: an approach using                 salmonids. Evol Appl. 2008;1:183–8.
+    microsatellite DNA analysis of historical and contemporary samples. Mol               36. Apostolidis AP, Triantaphyllidis C, Kouvatsi A, Economidis PS. Mitochondrial
+    Ecol. 2002;11:1003–15.                                                                    DNA sequence variation and phylogeography among Salmo trutta L. (Greek
+14. Leitwein M, Gagnaire P-A, Desmarais E, Guendouz S, Rohmer M, Berrebi P,                   brown trout) populations. Mol Ecol. 1997;6:531–42.
+    et al. Genome-wide nucleotide diversity of hatchery-reared Atlantic and               37. Carlsson J, Olsen KH, Nilsson J, Overli O, Stabell OB. Microsatellites
+    Mediterranean strains of brown trout Salmo trutta compared to wild                        reveal fine-scale genetic structure in stream-living brown trout. J Fish
+    Mediterranean populations: genome-wide nucleotide diversity of s. trutta. J               Biol. 1999;55:1290–303.
+    Fish Biol. 2016;89:2717–34.                                                           38. Davey JW, Hohenlohe PA, Etter PD, Boone JQ, Catchen JM, Blaxter ML.
+15. Bernatchez L. The evolutionary history of brown trout (Salmo trutta L.)                   Genome-wide genetic marker discovery and genotyping using next-
+    inferred from phylogeographic, nested clade, and mismatch analyses of                     generation sequencing. Nat Rev Genet. 2011;12:499–510.
+    mitochondrial DNA variation. Evolution. 2001;55:351.                                  39. Etter PD, Preston JL, Bassham S, Cresko WA, Johnson EA. Local De novo
+16. Tougard C, Justy F, Guinand B, Douzery EJP, Berrebi P. Salmo macrostigma                  assembly of RAD paired-end Contigs using short sequencing reads. PLoS
+    (Teleostei, Salmonidae): nothing more than a brown trout (S. trutta) lineage?             One. 2011;6:e18561.
+    J Fish Biol. 2018;93:302–10.                                                          40. Helyar SJ, Hemmer-Hansen J, Bekkevold D, Taylor MI, Ogden R, Limborg MT,
+17. Suárez J, Bautista JM, Almodóvar A, Machordom A. Evolution of the                         et al. Application of SNPs for population genetics of nonmodel organisms:
+    mitochondrial control region in Palaearctic brown trout (Salmo trutta)                    new opportunities and challenges: Analytical approaches. Mol Ecol Resour.
+    populations: the biogeographical role of the Iberian Peninsula. Heredity.                 2011;11:123–36.
+    2001;87:198–206.                                                                      41. Brumfield RT, Beerli P, Nickerson DA, Edwards SV. The utility of single
+18. Susnik S, Schoffmann J, Weiss S. Genetic verification of native brown trout               nucleotide polymorphisms in inferences of population history. Trends Ecol
+    from the Persian Gulf (Catak Cay River, Tigris basin). J Fish Biol. 2005;67:879–84.       Evol. 2003;18:249–56.
+19. Bardakci F, Degerli N, Ozdemir O, Basibuyuk HH. Phylogeography of the                 42. Morin PA, Luikart G, Wayne RK. the SNP workshop group. SNPs in ecology,
+    Turkish brown trout Salmo trutta L.: mitochondrial DNA PCR-RFLP variation.                evolution and conservation. Trends Ecol Evol. 2004;19:208–16.
+    J Fish Biol. 2006;68(A):36–55.                                                        43. Morin PA, Mccarthy M. Highly accurate SNP genotyping from historical and
+20. Vera M, Cortey M, Sanz N, García-Marín J-L. Maintenance of an endemic                     low-quality samples. Mol Ecol Notes. 2007;7:937–46.
+    lineage of brown trout (Salmo trutta) within the Duero river basin. J Zool            44. Bradbury IR, Hamilton LC, Dempson B, Robertson MJ, Bourret V, Bernatchez
+    Syst Evol Res. 2010;48:181–7.                                                             L, et al. Transatlantic secondary contact in Atlantic Salmon, comparing
+21. Vera M, García-Marín JL, Martinez P, Bouza C. Phylogenetic diversity within               microsatellites, a single nucleotide polymorphism array and restriction-site
+    the endemic brown trout Duero lineage: implications for conservation and                  associated DNA sequencing for the resolution of complex spatial structure.
+    management. Mar Freshw Res. 2015;66:1066.                                                 Mol Ecol. 2015;24:5130–44.
+Saint-Pé et al. BMC Genomics              (2019) 20:582                                                                                                   Page 12 of 13
+
+
+
+
+45. Kaiser SA, Taylor SA, Chen N, Sillett TS, Bondra ER, Webster MS. A                   67. Morin PA, Martien KK, Taylor BL. Assessing statistical power of SNPs for
+    comparative assessment of SNP and microsatellite markers for assigning                   population structure and conservation studies. Mol Ecol Resour. 2009;9:66–73.
+    parentage in a socially monogamous bird. Mol Ecol Resour. 2017;17:                   68. Nielsen EE, Hemmer-Hansen J, Larsen PF, Bekkevold D. Population genomics
+    183–93.                                                                                  of marine fishes: identifying adaptive variation in space and time. Mol Ecol.
+46. Paschou P, Ziv E, Burchard EG, Choudhry S, Rodriguez-Cintron W, Mahoney                  2009;18:3128–50.
+    MW, et al. PCA-correlated SNPs for structure identification in worldwide             69. Rosenblum EB, Novembre J. Ascertainment bias in spatially structured
+    human populations. PLoS Genet. 2007;3:e160.                                              populations: a case study in the eastern fence lizard. J Hered. 2007;98:331–6.
+47. Freamo H, O’Reilly P, Berg PR, Lien S, Boulding EG. Outlier SNPs show more           70. Krawczak M. Informativity assessment for biallelic single nucleotide
+    genetic structure between two bay of Fundy metapopulations of Atlantic                   polymorphisms. Electrophoresis. 1999;20:1676–81.
+    salmon than do neutral SNPs: SNP genotyping and applications. Mol Ecol               71. Ryman N, Palm S, André C, Carvalho GR, Dahlgren TG, Jorde PE, et al. Power
+    Resour. 2011;11:254–67.                                                                  for detecting genetic divergence: differences between statistical methods
+48. Karlsson S, Moen T, Lien S, Glover KA, Hindar K. Generic genetic differences             and marker loci: power for detecting divergence. Mol Ecol. 2006;15:2031–45.
+    between farmed and wild Atlantic salmon identified from a 7K SNP-chip:               72. Beaumont MA, Nichols RA. Evaluating loci for use in the genetic analysis of
+    SNP genotyping and applications. Mol Ecol Resour. 2011;11:247–53.                        population structure. Proc R Soc Lond B Biol Sci. 1996;263:1619–26.
+49. Scheet P, Stephens M. Linkage disequilibrium-based quality control for               73. Funk WC, McKay JK, Hohenlohe PA, Allendorf FW. Harnessing genomics for
+    large-scale genetic studies. PLoS Genet. 2008;4:e1000147.                                delineating conservation units. Trends Ecol Evol. 2012;27:489–96.
+50. Lamaze FC, Sauvage C, Marie A, Garant D, Bernatchez L. Dynamics of                   74. Gagnaire P-A, Broquet T, Aurelle D, Viard F, Souissi A, Bonhomme F, et al.
+    introgressive hybridization assessed by SNP population genomics of coding                Using neutral, selected, and hitchhiker loci to assess connectivity of marine
+    genes in stocked brook charr (Salvelinus fontinalis): SNP population                     populations in the genomic era. Evol Appl. 2015;8:769–86.
+    genomics in brook charr. Mol Ecol. 2012;21:2877–95.                                  75. Splendiani A, Ruggeri P, Giovannotti M, Pesaresi S, Occhipinti G,
+51. Leitwein M, Gagnaire P-A, Desmarais E, Berrebi P, Guinand B. Genomic                     Fioravanti T, et al. Alien brown trout invasion of the Italian peninsula:
+    consequences of a recent three-way admixture in supplemented wild                        the role of geological, climate and anthropogenic factors. Biol Invasions.
+    brown trout populations revealed by ancestry tracts. bioRxiv. 2018. https://             2016;18:2029–44.
+    doi.org/10.1101/302380.                                                              76. Berrebi P, Caputo Barucchi V, Splendiani A, Muracciole S, Sabatini A, Palmas
+52. Dominik S, Henshall JM, Kube PD, King H, Lien S, Kent MP, et al. Evaluation              F, et al. Brown trout (Salmo trutta L.) high genetic diversity around the
+    of an Atlantic salmon SNP chip as a genomic tool for the application in a                Tyrrhenian Sea as revealed by nuclear and mitochondrial markers.
+    Tasmanian Atlantic salmon (Salmo salar) breeding population. Aquaculture.                Hydrobiologia. 2019;826:209–31.
+    2010;308:S56–61.                                                                     77. Osinov AG. Iranian samples of brown trout Salmo trutta or rainbow
+53. Kochzius M, Nölte M, Weber H, Silkenbeumer N, Hjörleifsdottir S,                         trout Oncorhynchus mykiss: comparison of evidence from allozyme
+    Hreggvidsson GO, et al. DNA microarrays for identifying fishes. Mar                      and mitochondrial DNA control region sequence analysis. J Ichthyol.
+    Biotechnol. 2008;10:207–17.                                                              2009;49:825–8.
+54. Lien S, Gidskehaug L, Moen T, Hayes BJ, Berg PR, Davidson WS, et al. A               78. Hashemzadeh Segherloo I, Farahmand H, Abdoli A, Bernatchez L,
+    dense SNP-based linkage map for Atlantic salmon (Salmo salar) reveals                    Primmer CR, Swatdipong A, et al. Phylogenetic status of brown trout
+    extended chromosome homeologies and striking differences in sex-specific                 Salmo trutta populations in five rivers from the southern Caspian Sea
+    recombination patterns. BMC Genomics. 2011;12. https://doi.org/10.1186/14                and two inland lake basins, Iran: a morphogenetic approach. J Fish Biol.
+    71-2164-12-615.                                                                          2012;81:1479–500.
+55. Drywa A, Poćwierz-Kotus A, Wąs A, Dobosz S, Kent MP, Lien S, et al.                  79. Gärke C, Ytournel F, Bed’hom B, Gut I, Lathrop M, Weigend S, et al.
+    Genotyping of two populations of southern Baltic Sea trout Salmo                         Comparison of SNPs and microsatellites for assessing the genetic structure
+    trutta m. trutta using an Atlantic salmon derived SNP-array. Mar                         of chicken populations: population differentiation: SNPs vs SSRs. Anim
+    Genomics. 2013;9:25–32.                                                                  Genet. 2012;43:419–28.
+56. Pustovrh G, Sušnik Bajec S, Snoj A. A set of SNPs for Salmo trutta and               80. Liu N, Chen L, Wang S, Oh C, Zhao H. Comparison of single-nucleotide
+    its application in supplementary breeding programs. Aquaculture. 2012;                   polymorphisms and microsatellites in inference of population structure.
+    370–371:102–8.                                                                           BMC Genet. 2005;6(Suppl 1):S26.
+57. Sušnik Bajec S, Pustovrh G, Jesenšek D, Snoj A. Population genetic SNP               81. Ryynanen HJ, Tonteri A, Vasemagi A, Primmer CR. A comparison of Biallelic
+    analysis of marble and brown trout in a hybridization zone of the Adriatic               markers and microsatellites for the estimation of population and
+    watershed in Slovenia. Biol Conserv. 2015;184:239–50.                                    conservation genetic parameters in Atlantic Salmon (Salmo salar). J Hered.
+58. Linløkken AN, Haugen TO, Kent MP, Lien S. Genetic differences between                    2007;98:692–704.
+    wild and hatchery-bred brown trout (Salmo trutta L.) in single nucleotide            82. Rengmark AH, Slettan A, Skaala Ø, Lie Ø, Lingaas F. Genetic variability in
+    polymorphisms linked to selective traits. Ecol Evol. 2017;7:4963–72.                     wild and farmed Atlantic salmon (Salmo salar) strains estimated by SNP and
+59. Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire P-A.                microsatellites. Aquaculture. 2006;253:229–37.
+    A Dense Brown Trout (Salmo trutta) Linkage map reveals recent                        83. Hauser L, Baird M, Hilborn R, Seeb LW, Seeb JE. An empirical comparison of
+    chromosomal rearrangements in the Salmo genus and the impact of                          SNPs and microsatellites for parentage and kinship assignment in a wild
+    selection on linked neutral diversity. G3 (Bethesda). 2017;7:1365–76.                    sockeye salmon (Oncorhynchus nerka) population: ANALYTICAL
+60. Almodóvar A, Nicola GG, Ayllón D, Elvira B. Global warming threatens the                 APPROACHES. Mol Ecol Resour. 2011;11:150–61.
+    persistence of Mediterranean brown trout. Glob Change Biol. 2012;18:1549–60.         84. Haasl RJ, Payseur BA. Multi-locus inference of population structure: a
+61. Aurelle D, Berrebi P. Genetic structure of brown trout (Salmo trutta, L.)                comparison between single nucleotide polymorphisms and microsatellites.
+    populations from South-Western France: data from mitochondrial control                   Heredity. 2011;106:158–71.
+    region variability. Mol Ecol. 2001;10:1551–61.                                       85. Kalinowski ST. Do polymorphic loci require large sample sizes to estimate
+62. Poteaux C. Microsatellite polymorphism and genetic impact of restocking in               genetic distances? Heredity. 2005;94:33–6.
+    Mediterranean brown trout (Salmo trutta L.). Heredity. 1999;82:645.                  86. Danecek P, Auton A, Abecasis G, Albers CA, Banks E, DePristo MA, et al. The
+63. McFarlane SE, Pemberton JM. Detecting the true extent of                                 variant call format and VCFtools. Bioinformatics. 2011;27:2156–8.
+    introgression during anthropogenic hybridization. Trends Ecol Evol.                  87. Smith SM, Maughan PJ. SNP genotyping using KASPar assays. In: Batley J,
+    2019;34:315–26.                                                                          editor. Plant genotyping. New York: Springer New York; 2015. p. 243–56.
+64. Kaeuffer R, Réale D, Coltman DW, Pontier D. Detecting population                         https://doi.org/10.1007/978-1-4939-1966-6_18.
+    STRUCTURE using STRUCTURE software: effect of background linkage                     88. Harrang E, Guyomard R, Caudron A. Ready-to-use diagnostic molecular
+    disequilibrium. Heredity. 2007;99:374–80.                                                markers for assessment and monitoring of hybridization between native
+65. Ahn K, Gordon D, Finch SJ. Increase of rejection rate in case-control studies with       and non-native domesticated brown trout (Salmo trutta): case studies in
+    the differential genotyping error rates. Stat Appl Genet Mol Biol. 2009;8:1–9.           French alpine streams. Girona: Advances in the Population Ecology of
+66. Wang S, Sha Z, Sonstegard TS, Liu H, Xu P, Somridhivej B, et al. Quality                 Stream Salmonids – IV; 2015.
+    assessment parameters for EST-derived SNPs from catfish. BMC                         89. Bernatchez L, Guyomard R, Bonhomme F. DNA sequence variation of
+    Genomics. 2008;9:450.                                                                    the mitochondrial control region among geographically and
+Saint-Pé et al. BMC Genomics             (2019) 20:582                                 Page 13 of 13
+
+
+
+
+      morphologically remote European brown trout Salmo trutta
+      populations. Mol Ecol. 1992;1:161–73.
+90.   Giuffra E, Bernatchez L, Guyomard R. Mitochondrial control region and
+      protein coding genes sequence variation among phenotypic forms of
+      brown trout Salmo trutta from northern Italy. Mol Ecol. 1994;3:161–71.
+91.   Estoup A, Rousset F, Michalakis Y, Cornuet J-M, Adriamanga M,
+      Guyomard R. Comparative analysis of microsatellite and allozyme
+      markers: a case study investigating microgeographic differentiation in
+      brown trout (Salmo trutta). Mol Ecol. 1998;7:339–53.
+92.   Grimholt U, Drabløs F, Jørgensen S, Høyheim B, Stet R. The major
+      histocompatibility class I locus in Atlantic salmon (Salmo salar L.):
+      polymorphism, linkage analysis and protein modelling. Immunogenetics.
+      2002;54:570–81.
+93.   Slettan A, Olsaker I, Lie O. Atlantic salmon, Salmo salar , microsatellites at
+      the SSOSL25, SSOSL85, SSOSL311, SSOSL417 loci. Anim Genet. 1995;26:281–2.
+94.   Saint-Pé K, Blanchet S, Tissot L, Poulet N, Plasseraud O, Loot G, et al.
+      Genetic admixture between captive-bred and wild individuals affects
+      patterns of dispersal in a brown trout (Salmo trutta) population.
+      Conserv Genet. 2018;19:1269–79.
+95.   Flanagan SP, Jones AG. Constraints on the FST–heterozygosity outlier
+      approach. J Hered. 2017;108:561–73.
+96.   Pritchard JK, Stephens M, Donnelly P. Inference of population structure
+      using multilocus genotype data. Genetics. 2000;155:945–59.
+97.   Jakobsson M, Rosenberg NA. CLUMPP: a cluster matching and permutation
+      program for dealing with label switching and multimodality in analysis of
+      population structure. Bioinformatics. 2007;23:1801–6.
+98.   Rosenberg NA, Li LM, Ward R, Pritchard JK. Informativeness of genetic
+      markers for inference of ancestry. Am J Hum Genet. 2003;73:1402–22.
+
+
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in
+published maps and institutional affiliations.
+

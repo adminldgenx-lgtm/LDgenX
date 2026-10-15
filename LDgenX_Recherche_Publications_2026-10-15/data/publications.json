@@ -1,0 +1,1621 @@
+{
+  "coverage": {
+    "date": "2026-10-15T11:55:29.871752+00:00",
+    "legacy_references": 15,
+    "verified_journal_articles": 15,
+    "published_fulltext_pdf": 9,
+    "published_fulltext_html": 1,
+    "preprint_fulltext_html": 3,
+    "abstract_only": 2,
+    "figure_files": 46,
+    "figure_groups": 46,
+    "article_sources_with_cc_by_license": 8,
+    "scope": "15 références présentes sur les pages de publications de Maeva Leitwein et Emilie Delpuech. Il ne s’agit pas d’une bibliographie exhaustive actualisée de tous les membres."
+  },
+  "publications": [
+    {
+      "id": "P01",
+      "title": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch).",
+      "authors": [
+        "Leitwein M",
+        "Wellband K",
+        "Cayuela H",
+        "Le Luyer J",
+        "Mohns K",
+        "Withler R",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Genome biology and evolution",
+      "year": 2022,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1093/gbe/evac036",
+      "doi_url": "https://doi.org/10.1093/gbe/evac036",
+      "pmid": "35276004",
+      "pmcid": "PMC8995047",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35276004/",
+      "europepmc_url": "https://europepmc.org/article/MED/35276004",
+      "volume": "14",
+      "issue": "4",
+      "pages": "evac036",
+      "publication_dates": {
+        "published": [
+          [
+            2022,
+            3,
+            11
+          ]
+        ],
+        "published-print": [
+          [
+            2022,
+            4,
+            10
+          ]
+        ],
+        "published-online": [
+          [
+            2022,
+            3,
+            11
+          ]
+        ],
+        "issued": [
+          [
+            2022,
+            3,
+            11
+          ]
+        ]
+      },
+      "legacy_display_year": 2022,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P01/article.pdf",
+        "article.xml": "sources/P01/article.xml",
+        "fulltext.md": "sources/P01/fulltext.md",
+        "pdf-text.txt": "sources/P01/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License ( https://creativecommons.org/licenses/by-nc/4.0/ ), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact journals.permissions@oup.com",
+          "urls": [
+            "https://creativecommons.org/licenses/by-nc/4.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/35276004/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Élevage et signatures moléculaires du saumon coho",
+      "themes": [
+        "Épigénétique",
+        "Aquaculture",
+        "Conservation"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique",
+        "Séquençage & dPCR"
+      ],
+      "summary_fr": "Chez des saumons coho adultes issus de deux rivières, les auteurs comparent expression des gènes et méthylation de l’ADN selon une origine en écloserie ou dans le milieu naturel. Des différences d’expression persistent après la phase marine. L’association avec la méthylation reste faible : plusieurs mécanismes peuvent contribuer à ces signatures.",
+      "question_fr": "Les signatures moléculaires associées à l’élevage précoce persistent-elles chez les adultes revenus se reproduire ?",
+      "methods_fr": "Comparaison de saumons coho adultes issus de deux systèmes fluviaux, par RNA-seq et séquençage bisulfite du génome entier.",
+      "finding_fr": "Les différences d’expression entre origines sont parallèles dans les deux rivières; leur lien avec la méthylation est limité.",
+      "limit_fr": "Ne pas présenter la méthylation comme l’unique explication des différences d’expression ou comme une mesure directe de performance en milieu naturel.",
+      "visual_fr": "Un parcours illustratif écloserie ou milieu naturel → phase marine → adulte, accompagné d’un accès aux figures originales. Les deux voies décrivent le protocole; elles ne représentent pas des mesures animées.",
+      "priority": "featured",
+      "figure_paths": [
+        "figures/P01/evac036f1.jpg",
+        "figures/P01/evac036f2.jpg",
+        "figures/P01/evac036f3.jpg",
+        "figures/P01/evac036f4.jpg",
+        "figures/P01/evac036f5.jpg"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish.",
+      "authors": [
+        "Venney CJ",
+        "Cayuela H",
+        "Rougeux C",
+        "Laporte M",
+        "Mérot C",
+        "Normandeau E",
+        "Leitwein M",
+        "Dorant Y",
+        "Præbel K",
+        "Kenchington E",
+        "Clément M",
+        "Sirois P",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 2023,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1093/evolut/qpac028",
+      "doi_url": "https://doi.org/10.1093/evolut/qpac028",
+      "pmid": "36622671",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36622671/",
+      "europepmc_url": "https://europepmc.org/article/MED/36622671",
+      "volume": "77",
+      "issue": "1",
+      "pages": "186-198",
+      "publication_dates": {
+        "published": [
+          [
+            2022,
+            12,
+            8
+          ]
+        ],
+        "published-print": [
+          [
+            2023,
+            1,
+            23
+          ]
+        ],
+        "published-online": [
+          [
+            2022,
+            12,
+            8
+          ]
+        ],
+        "issued": [
+          [
+            2022,
+            12,
+            8
+          ]
+        ]
+      },
+      "legacy_display_year": 2022,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "preprint_fulltext_html",
+      "retrieved_content_version": "preprint",
+      "source_files": {
+        "source-content.html": "sources/P02/source-content.html",
+        "fulltext.md": "sources/P02/fulltext.md",
+        "source_url": "https://www.biorxiv.org/content/10.1101/2021.01.28.428603v1.full"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+      ],
+      "license_evidence": [],
+      "preprint": {
+        "doi": "10.1101/2021.01.28.428603",
+        "url": "https://doi.org/10.1101/2021.01.28.428603",
+        "license_as_reported": "cc_by_nc_nd",
+        "version": "1"
+      },
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/36622671/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Milieu de reproduction et méthylation chez le capelan",
+      "themes": [
+        "Épigénétique",
+        "Adaptation",
+        "Biodiversité"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Cette étude du capelan examine les liens entre méthylation de l’ADN et stratégies de reproduction sur plage ou en profondeur. Deux lignées géographiques présentent des variations épigénétiques associées à ces stratégies, avec une intensité différente. Le travail éclaire les relations entre environnement, variation génétique et épigénétique.",
+      "question_fr": "Comment les différences de stratégies de reproduction sont-elles associées à la méthylation dans deux lignées de capelan ?",
+      "methods_fr": "Comparaison de génomes et méthylomes de capelans d’Amérique du Nord et d’Europe présentant des stratégies de reproduction contrastées.",
+      "finding_fr": "Des différences de méthylation sont observées dans les deux lignées, avec un effet plus marqué dans la lignée européenne.",
+      "limit_fr": "Ce travail ne valide ni une horloge d’âge, ni un produit commercial. La version de prépublication accessible doit rester distincte de l’article final.",
+      "visual_fr": "Deux habitats de reproduction en parallèle, reliés à une explication qualitative du méthylome. Une carte de chaleur chiffrée nécessite les données validées de l’étude.",
+      "priority": "standard",
+      "figure_paths": []
+    },
+    {
+      "id": "P03",
+      "title": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations.",
+      "authors": [
+        "Leitwein M",
+        "Cayuela H",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Genes",
+      "year": 2021,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.3390/genes12040524",
+      "doi_url": "https://doi.org/10.3390/genes12040524",
+      "pmid": "33916757",
+      "pmcid": "PMC8065892",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+      "europepmc_url": "https://europepmc.org/article/MED/33916757",
+      "volume": "12",
+      "issue": "4",
+      "pages": "524",
+      "publication_dates": {
+        "published": [
+          [
+            2021,
+            4,
+            3
+          ]
+        ],
+        "published-online": [
+          [
+            2021,
+            4,
+            3
+          ]
+        ],
+        "issued": [
+          [
+            2021,
+            4,
+            3
+          ]
+        ]
+      },
+      "legacy_display_year": 2021,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P03/article.pdf",
+        "article.xml": "sources/P03/article.xml",
+        "fulltext.md": "sources/P03/fulltext.md",
+        "pdf-text.txt": "sources/P03/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "https://creativecommons.org/licenses/by/4.0/ Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license ( https://creativecommons.org/licenses/by/4.0/ ).",
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Effets du repeuplement sur l’ascendance des populations",
+      "themes": [
+        "Conservation",
+        "Introgression",
+        "Génomique des populations"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Les auteurs étudient l’ascendance domestique de populations lacustres d’omble de fontaine soumises au repeuplement. Les profils génomiques diffèrent entre populations et dépendent du contexte de diversité et de recombinaison. Le travail souligne l’intérêt d’évaluer les conséquences du repeuplement à l’échelle de chaque population.",
+      "question_fr": "Pourquoi l’ascendance domestique se répartit-elle différemment entre les génomes de populations repeuplées ?",
+      "methods_fr": "Génotypage de 552 poissons provenant de 22 populations lacustres et analyse de marqueurs SNP cartographiés, de la diversité et de la recombinaison.",
+      "finding_fr": "Des mécanismes de sélection et de dérive peuvent contribuer à des profils d’ascendance propres à chaque population.",
+      "limit_fr": "Les mécanismes proposés restent des interprétations du système étudié; éviter une conclusion universelle selon laquelle tout repeuplement serait bénéfique ou nuisible.",
+      "visual_fr": "Sélection d’une population pour mettre en évidence ses figures publiées; schéma explicatif séparé des blocs d’ascendance et de la recombinaison.",
+      "priority": "standard",
+      "figure_paths": [
+        "figures/P03/genes-12-00524-g001.jpg",
+        "figures/P03/genes-12-00524-g002.jpg",
+        "figures/P03/genes-12-00524-g003.jpg",
+        "figures/P03/genes-12-00524-g004.jpg"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration.",
+      "authors": [
+        "Leitwein M",
+        "Laporte M",
+        "Le Luyer J",
+        "Mohns K",
+        "Normandeau E",
+        "Withler R",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Evolutionary applications",
+      "year": 2021,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/eva.13235",
+      "doi_url": "https://doi.org/10.1111/eva.13235",
+      "pmid": "34745334",
+      "pmcid": "PMC8549618",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34745334/",
+      "europepmc_url": "https://europepmc.org/article/MED/34745334",
+      "volume": "14",
+      "issue": "10",
+      "pages": "2402-2413",
+      "publication_dates": {
+        "published": [
+          [
+            2021,
+            5,
+            4
+          ]
+        ],
+        "published-print": [
+          [
+            2021,
+            10
+          ]
+        ],
+        "published-online": [
+          [
+            2021,
+            5,
+            4
+          ]
+        ],
+        "issued": [
+          [
+            2021,
+            5,
+            4
+          ]
+        ]
+      },
+      "legacy_display_year": 2021,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P04/article.pdf",
+        "article.xml": "sources/P04/article.xml",
+        "fulltext.md": "sources/P04/fulltext.md",
+        "pdf-text.txt": "sources/P04/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.",
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/34745334/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Des marques épigénétiques persistantes jusqu’à la reproduction",
+      "themes": [
+        "Épigénétique",
+        "Aquaculture",
+        "Conservation"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique",
+        "Séquençage & dPCR"
+      ],
+      "summary_fr": "Chez le saumon coho, des différences de méthylation associées à l’environnement d’élevage précoce sont retrouvées dans les cellules germinales d’adultes après leur migration océanique. Cette persistance ouvre des questions sur les effets possibles de l’élevage à long terme et sur une éventuelle transmission entre générations.",
+      "question_fr": "Des signatures épigénétiques de l’élevage précoce sont-elles encore présentes dans les cellules germinales des adultes ?",
+      "methods_fr": "Séquençage bisulfite du génome entier dans le sperme de saumons adultes d’origine sauvage ou d’écloserie, dans deux rivières.",
+      "finding_fr": "Des régions différentiellement méthylées sont conservées jusqu’au retour des adultes pour la reproduction.",
+      "limit_fr": "La persistance dans les cellules germinales ne démontre pas à elle seule la transmission aux descendants. Ne pas remplacer cette nuance par une affirmation de transmission prouvée.",
+      "visual_fr": "Une chronologie illustrant élevage, séjour marin et reproduction, avec un zoom sur les figures de méthylation publiées.",
+      "priority": "featured",
+      "figure_paths": [
+        "figures/P04/EVA-14-2402-g001.jpg",
+        "figures/P04/EVA-14-2402-g002.jpg",
+        "figures/P04/EVA-14-2402-g003.jpg"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study.",
+      "authors": [
+        "Ferchaud AL",
+        "Leitwein M",
+        "Laporte M",
+        "Boivin-Delisle D",
+        "Bougas B",
+        "Hernandez C",
+        "Normandeau É",
+        "Thibault I",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Molecular ecology",
+      "year": 2020,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/mec.15566",
+      "doi_url": "https://doi.org/10.1111/mec.15566",
+      "pmid": "33463857",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33463857/",
+      "europepmc_url": "https://europepmc.org/article/MED/33463857",
+      "volume": "29",
+      "issue": "18",
+      "pages": "3429-3445",
+      "publication_dates": {
+        "published": [
+          [
+            2020,
+            8,
+            13
+          ]
+        ],
+        "published-print": [
+          [
+            2020,
+            9
+          ]
+        ],
+        "published-online": [
+          [
+            2020,
+            8,
+            13
+          ]
+        ],
+        "issued": [
+          [
+            2020,
+            8,
+            13
+          ]
+        ]
+      },
+      "legacy_display_year": 2020,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "preprint_fulltext_html",
+      "retrieved_content_version": "preprint",
+      "source_files": {
+        "source-content.html": "sources/P05/source-content.html",
+        "fulltext.md": "sources/P05/fulltext.md",
+        "source_url": "https://www.biorxiv.org/content/10.1101/660621v1.full"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+      ],
+      "license_evidence": [],
+      "preprint": {
+        "doi": "10.1101/660621",
+        "url": "https://doi.org/10.1101/660621",
+        "license_as_reported": "cc_by_nc_nd",
+        "version": "1"
+      },
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/33463857/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Diversité génétique et petites populations d’omble de fontaine",
+      "themes": [
+        "Conservation",
+        "Adaptation",
+        "Génomique des populations"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Cette étude compare des populations d’omble de fontaine lacustres, riveraines et anadromes pour examiner l’accumulation de variants génétiques potentiellement favorables ou défavorables. Elle met en relation connectivité, diversité et processus évolutifs, sans réduire les conséquences de l’isolement à un indicateur unique.",
+      "question_fr": "Quel rôle jouent les processus démographiques et sélectifs dans les variants présents au sein de populations plus ou moins connectées ?",
+      "methods_fr": "Comparaison de marqueurs SNP chez des poissons de 50 populations et annotation des effets potentiels des variants.",
+      "finding_fr": "La dérive et la sélection contribuent aux patrons observés; une moindre diversité ne se traduit pas simplement par davantage de variants délétères.",
+      "limit_fr": "Les effets des mutations sont en partie prédits par calcul. La prépublication disponible n’est pas la version finale de la revue.",
+      "visual_fr": "Un schéma illustratif de populations isolées ou connectées, puis des liens vers les résultats documentés; aucune simulation ne doit être présentée comme une mesure de l’article.",
+      "priority": "standard",
+      "figure_paths": []
+    },
+    {
+      "id": "P06",
+      "title": "Using Haplotype Information for Conservation Genomics.",
+      "authors": [
+        "Leitwein M",
+        "Duranton M",
+        "Rougemont Q",
+        "Gagnaire PA",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Trends in ecology & evolution",
+      "year": 2020,
+      "publication_status": "published",
+      "paper_type": "review",
+      "doi": "10.1016/j.tree.2019.10.012",
+      "doi_url": "https://doi.org/10.1016/j.tree.2019.10.012",
+      "pmid": "31810774",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31810774/",
+      "europepmc_url": "https://europepmc.org/article/MED/31810774",
+      "volume": "35",
+      "issue": "3",
+      "pages": "245-258",
+      "publication_dates": {
+        "published": [
+          [
+            2020,
+            3
+          ]
+        ],
+        "published-print": [
+          [
+            2020,
+            3
+          ]
+        ],
+        "issued": [
+          [
+            2020,
+            3
+          ]
+        ]
+      },
+      "legacy_display_year": 2019,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_html",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "source-content.html": "sources/P06/source-content.html",
+        "fulltext.md": "sources/P06/fulltext.md",
+        "source_url": "https://www.sciencedirect.com/science/article/pii/S0169534719303040"
+      },
+      "license_urls_for_retrieved_version": [
+        "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+      ],
+      "license_evidence": [],
+      "preprint": null,
+      "institutional_records": [
+        {
+          "title_s": [
+            "Using Haplotype Information for Conservation Genomics"
+          ],
+          "uri_s": "https://hal.science/hal-02395119v1",
+          "docType_s": "ART",
+          "doiId_s": "10.1016/j.tree.2019.10.012",
+          "producedDate_s": "2019-12",
+          "fileMain_s": "https://hal.science/hal-02395119/document",
+          "licence_s": "https://about.hal.science/hal-authorisation-v1/"
+        }
+      ],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/31810774/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Ce que les haplotypes apportent à la conservation",
+      "themes": [
+        "Conservation",
+        "Haplotypes",
+        "Méthodes"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Cette revue explique comment les combinaisons de variants portées par les chromosomes renseignent l’histoire démographique, les échanges entre populations, la sélection et l’hybridation. Elle expose l’intérêt et les enjeux techniques des analyses d’haplotypes pour les espèces non modèles et la génomique de la conservation.",
+      "question_fr": "Quelles informations les haplotypes apportent-ils au-delà des fréquences de variants considérés séparément ?",
+      "methods_fr": "Revue et synthèse méthodologique; il ne s’agit pas d’une expérimentation unique ni d’un contrat client.",
+      "finding_fr": "Les approches fondées sur les haplotypes complètent les analyses de diversité et d’histoire des populations.",
+      "limit_fr": "Ne pas attribuer à cette revue un jeu de données ou un résultat expérimental unique. La licence non commerciale et sans modification ne permet pas une reprise automatique des figures sur la plateforme commerciale.",
+      "visual_fr": "Une explication originale et qualitative montrant des variants regroupés en blocs sur un chromosome. Légender clairement cette nouvelle illustration comme pédagogique.",
+      "priority": "featured",
+      "figure_paths": []
+    },
+    {
+      "id": "P07",
+      "title": "The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations.",
+      "authors": [
+        "Leitwein M",
+        "Cayuela H",
+        "Ferchaud AL",
+        "Normandeau É",
+        "Gagnaire PA",
+        "Bernatchez L"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Molecular ecology",
+      "year": 2019,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/mec.15256",
+      "doi_url": "https://doi.org/10.1111/mec.15256",
+      "pmid": "31579957",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31579957/",
+      "europepmc_url": "https://europepmc.org/article/MED/31579957",
+      "volume": "28",
+      "issue": "21",
+      "pages": "4755-4769",
+      "publication_dates": {
+        "published": [
+          [
+            2019,
+            10,
+            22
+          ]
+        ],
+        "published-print": [
+          [
+            2019,
+            11
+          ]
+        ],
+        "published-online": [
+          [
+            2019,
+            10,
+            22
+          ]
+        ],
+        "issued": [
+          [
+            2019,
+            10,
+            22
+          ]
+        ]
+      },
+      "legacy_display_year": 2019,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "preprint_fulltext_html",
+      "retrieved_content_version": "preprint",
+      "source_files": {
+        "source-content.html": "sources/P07/source-content.html",
+        "fulltext.md": "sources/P07/fulltext.md",
+        "source_url": "https://www.biorxiv.org/content/10.1101/702696v1.full"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+      ],
+      "license_evidence": [],
+      "preprint": {
+        "doi": "10.1101/702696",
+        "url": "https://doi.org/10.1101/702696",
+        "license_as_reported": "cc_by_nc_nd",
+        "version": "1"
+      },
+      "institutional_records": [
+        {
+          "title_s": [
+            "The role of recombination on genome‐wide patterns of local ancestry exemplified by supplemented brook charr populations"
+          ],
+          "uri_s": "https://hal.science/hal-02395970v1",
+          "docType_s": "ART",
+          "doiId_s": "10.1111/mec.15256",
+          "producedDate_s": "2019-11-08"
+        }
+      ],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/31579957/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Recombinaison et ascendance domestique chez l’omble de fontaine",
+      "themes": [
+        "Introgression",
+        "Conservation",
+        "Haplotypes"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Les profils d’ascendance locale de populations d’omble de fontaine repeuplées permettent d’examiner l’introgression domestique à plusieurs échelles du génome. Les auteurs montrent l’intérêt des segments d’ascendance pour étudier la dynamique du mélange génétique et ses interactions avec la recombinaison.",
+      "question_fr": "Comment l’ascendance domestique varie-t-elle dans le temps et le long des chromosomes après le repeuplement ?",
+      "methods_fr": "Analyse de marqueurs SNP cartographiés chez 611 individus de 24 populations, avec estimation des segments d’ascendance et de la recombinaison.",
+      "finding_fr": "La répartition des segments d’ascendance révèle des processus évolutifs variables selon les régions génomiques.",
+      "limit_fr": "Distinguer mécanismes interprétés et démonstration causale; conserver la différence entre version de prépublication et article final.",
+      "visual_fr": "Des chromosomes schématiques à segments colorés pour expliquer l’ascendance, puis un accès à la source scientifique. Pas de coordonnées ou proportions inventées.",
+      "priority": "standard",
+      "figure_paths": []
+    },
+    {
+      "id": "P08",
+      "title": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics.",
+      "authors": [
+        "Saint-Pé K",
+        "Leitwein M",
+        "Tissot L",
+        "Poulet N",
+        "Guinand B",
+        "Berrebi P",
+        "Marselli G",
+        "Lascaux JM",
+        "Gagnaire PA",
+        "Blanchet S"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "BMC genomics",
+      "year": 2019,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1186/s12864-019-5958-9",
+      "doi_url": "https://doi.org/10.1186/s12864-019-5958-9",
+      "pmid": "31307373",
+      "pmcid": "PMC6631668",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31307373/",
+      "europepmc_url": "https://europepmc.org/article/MED/31307373",
+      "volume": "20",
+      "issue": "1",
+      "pages": "582",
+      "publication_dates": {
+        "published": [
+          [
+            2019,
+            7,
+            15
+          ]
+        ],
+        "published-print": [
+          [
+            2019,
+            12
+          ]
+        ],
+        "published-online": [
+          [
+            2019,
+            7,
+            15
+          ]
+        ],
+        "issued": [
+          [
+            2019,
+            7,
+            15
+          ]
+        ]
+      },
+      "legacy_display_year": 2019,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P08/article.pdf",
+        "article.xml": "sources/P08/article.xml",
+        "fulltext.md": "sources/P08/fulltext.md",
+        "pdf-text.txt": "sources/P08/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0 International License ( http://creativecommons.org/licenses/by/4.0/ ), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver ( http://creativecommons.org/publicdomain/zero/1.0/ ) applies to the data made available in this article, unless otherwise stated.",
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/",
+            "http://creativecommons.org/publicdomain/zero/1.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/31307373/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Des marqueurs SNP pour suivre les populations de truite",
+      "themes": [
+        "Conservation",
+        "Marqueurs SNP",
+        "Méthodes"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Séquençage & dPCR",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Les auteurs développent une ressource de marqueurs SNP et un panel de faible densité pour la génétique des populations de truite commune. Le dispositif est évalué dans plusieurs rivières et comparé à des marqueurs classiques pour l’étude de la différenciation et du mélange avec des souches domestiques.",
+      "question_fr": "Comment construire des outils de génotypage reproductibles et répartis sur le génome pour la truite commune ?",
+      "methods_fr": "Identification de SNP à partir de séquences RAD, construction d’un panel de 192 marqueurs, puis évaluation sur plusieurs rivières.",
+      "finding_fr": "Le travail fournit une ressource génomique et un outil de génotypage pour des études de populations de truite.",
+      "limit_fr": "Les performances concernent le panel et les populations évalués. Ne pas présenter cet outil comme une méthode universelle de détection de toutes les espèces.",
+      "visual_fr": "Un passage pédagogique du génome au panel de marqueurs, associé aux figures et cartes de l’article. Mentionner la contribution conjointe des auteurs.",
+      "priority": "featured",
+      "figure_paths": [
+        "figures/P08/12864_2019_5958_Fig1_HTML.jpg",
+        "figures/P08/12864_2019_5958_Fig2_HTML.jpg",
+        "figures/P08/12864_2019_5958_Fig3_HTML.jpg",
+        "figures/P08/12864_2019_5958_Fig4_HTML.jpg",
+        "figures/P08/12864_2019_5958_Fig5_HTML.jpg"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts.",
+      "authors": [
+        "Leitwein M",
+        "Gagnaire PA",
+        "Desmarais E",
+        "Berrebi P",
+        "Guinand B"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Molecular ecology",
+      "year": 2018,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/mec.14816",
+      "doi_url": "https://doi.org/10.1111/mec.14816",
+      "pmid": "30054960",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "europepmc_url": "https://europepmc.org/article/MED/30054960",
+      "volume": "27",
+      "issue": "17",
+      "pages": "3466-3483",
+      "publication_dates": {
+        "published": [
+          [
+            2018,
+            8,
+            17
+          ]
+        ],
+        "published-print": [
+          [
+            2018,
+            9
+          ]
+        ],
+        "published-online": [
+          [
+            2018,
+            8,
+            17
+          ]
+        ],
+        "issued": [
+          [
+            2018,
+            8,
+            17
+          ]
+        ]
+      },
+      "legacy_display_year": 2018,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_abstract_only",
+      "retrieved_content_version": "abstract_only",
+      "source_files": {},
+      "license_urls_for_retrieved_version": [
+        "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+      ],
+      "license_evidence": [],
+      "preprint": {
+        "doi": "10.1101/302380",
+        "url": "https://doi.org/10.1101/302380",
+        "license_as_reported": "cc_by_nc",
+        "version": "1"
+      },
+      "institutional_records": [
+        {
+          "title_s": [
+            "Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts"
+          ],
+          "uri_s": "https://hal.science/hal-01922616v1",
+          "docType_s": "ART",
+          "doiId_s": "10.1111/mec.14816",
+          "producedDate_s": "2018-09"
+        }
+      ],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Trois ascendances dans les génomes de truites repeuplées",
+      "themes": [
+        "Introgression",
+        "Conservation",
+        "Haplotypes"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Chez des truites communes du sud de la France, cette étude examine le mélange entre populations sauvages méditerranéennes et deux origines domestiques. Les segments d’ascendance apportent des informations supplémentaires sur les profils d’hybridation et leur histoire par rapport aux approches fondées seulement sur les fréquences de variants.",
+      "question_fr": "Comment distinguer les contributions de plusieurs souches domestiques dans les génomes de populations sauvages ?",
+      "methods_fr": "Marqueurs SNP issus du ddRAD-seq, cartographie et estimation de l’ascendance locale le long des chromosomes.",
+      "finding_fr": "Les mosaïques d’ascendance révèlent une diversité de profils de mélange et des différences de temporalité entre origines domestiques.",
+      "limit_fr": "Fiche fondée sur le résumé de l’article final tant que le texte intégral n’est pas récupéré. Ne pas déduire un résultat à une station particulière ni fabriquer une carte d’échantillonnage.",
+      "visual_fr": "Une illustration qualitative de trois origines d’ascendance; les valeurs réelles et cartes quantitatives attendent les données et figures autorisées.",
+      "priority": "standard",
+      "figure_paths": []
+    },
+    {
+      "id": "P10",
+      "title": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity.",
+      "authors": [
+        "Leitwein M",
+        "Guinand B",
+        "Pouzadoux J",
+        "Desmarais E",
+        "Berrebi P",
+        "Gagnaire PA"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "G3 (Bethesda, Md.)",
+      "year": 2017,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1534/g3.116.038497",
+      "doi_url": "https://doi.org/10.1534/g3.116.038497",
+      "pmid": "28235829",
+      "pmcid": "PMC5386884",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28235829/",
+      "europepmc_url": "https://europepmc.org/article/MED/28235829",
+      "volume": "7",
+      "issue": "4",
+      "pages": "1365-1376",
+      "publication_dates": {
+        "published": [
+          [
+            2017,
+            4,
+            1
+          ]
+        ],
+        "published-print": [
+          [
+            2017,
+            4,
+            1
+          ]
+        ],
+        "published-online": [
+          [
+            2017,
+            4,
+            1
+          ]
+        ],
+        "issued": [
+          [
+            2017,
+            4,
+            1
+          ]
+        ]
+      },
+      "legacy_display_year": 2017,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P10/article.pdf",
+        "article.xml": "sources/P10/article.xml",
+        "fulltext.md": "sources/P10/fulltext.md",
+        "pdf-text.txt": "sources/P10/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0 International License ( http://creativecommons.org/licenses/by/4.0/ ), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.",
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/28235829/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Une carte génétique pour la truite commune",
+      "themes": [
+        "Génomique",
+        "Cartographie génétique",
+        "Méthodes"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique",
+        "Séquençage & dPCR"
+      ],
+      "summary_fr": "Une carte de liaison génétique à haute densité est construite pour la truite commune et comparée à celle du saumon atlantique. Elle permet d’étudier les réarrangements chromosomiques et les relations entre recombinaison et diversité, et constitue une ressource pour les recherches en conservation et en aquaculture.",
+      "question_fr": "Comment organiser les marqueurs du génome de la truite et comparer l’évolution de ses chromosomes à ceux du saumon ?",
+      "methods_fr": "Construction d’une carte à partir de marqueurs ddRAD de deux croisements et comparaison des régions chromosomiques conservées.",
+      "finding_fr": "La carte permet l’étude de l’organisation chromosomique et des liens entre recombinaison et diversité génétique.",
+      "limit_fr": "Une carte de liaison décrit des relations génétiques; elle ne constitue pas une photographie physique en trois dimensions des chromosomes.",
+      "visual_fr": "Une exploration des groupes de liaison avec la figure originale et sa légende. Une éventuelle animation d’introduction reste schématique.",
+      "priority": "standard",
+      "figure_paths": [
+        "figures/P10/1365f1.jpg",
+        "figures/P10/1365f2.jpg",
+        "figures/P10/1365f3.jpg",
+        "figures/P10/1365f4.jpg",
+        "figures/P10/1365f5.jpg",
+        "figures/P10/1365f6.jpg"
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape.",
+      "authors": [
+        "Leitwein M",
+        "Garza JC",
+        "Pearse DE"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Evolutionary applications",
+      "year": 2017,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/eva.12416",
+      "doi_url": "https://doi.org/10.1111/eva.12416",
+      "pmid": "28035235",
+      "pmcid": "PMC5192794",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28035235/",
+      "europepmc_url": "https://europepmc.org/article/MED/28035235",
+      "volume": "10",
+      "issue": "1",
+      "pages": "56-67",
+      "publication_dates": {
+        "published": [
+          [
+            2016,
+            10,
+            27
+          ]
+        ],
+        "published-print": [
+          [
+            2017,
+            1
+          ]
+        ],
+        "published-online": [
+          [
+            2016,
+            10,
+            27
+          ]
+        ],
+        "issued": [
+          [
+            2016,
+            10,
+            27
+          ]
+        ]
+      },
+      "legacy_display_year": 2017,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P11/article.pdf",
+        "article.xml": "sources/P11/article.xml",
+        "fulltext.md": "sources/P11/fulltext.md",
+        "pdf-text.txt": "sources/P11/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "https://creativecommons.org/licenses/by/4.0/ This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.",
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/28035235/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Obstacles, migration et conservation de la truite arc-en-ciel",
+      "themes": [
+        "Conservation",
+        "Adaptation",
+        "Continuité écologique"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Dans la baie de San Francisco, les auteurs comparent l’ascendance et la variation adaptative de populations de truite arc-en-ciel vivant de part et d’autre d’obstacles à la migration. Les résultats relient contexte écologique, histoire des populations et traits migratoires, avec des implications pour la restauration des habitats.",
+      "question_fr": "Comment les obstacles et les nouveaux habitats sont-ils associés aux différences génomiques de populations migratrices ou résidentes ?",
+      "methods_fr": "Comparaisons de structure génétique, d’ascendance et de variants associés à des traits migratoires dans plusieurs bassins versants.",
+      "finding_fr": "Des différences adaptatives accompagnent les contextes situés en amont et en aval des barrages; les populations conservent une ascendance côtière native.",
+      "limit_fr": "Les conclusions concernent les populations étudiées en Californie et ne prouvent pas l’effet de chaque aménagement dans un autre territoire.",
+      "visual_fr": "Une carte des sites de l’article et une explication amont-aval des obstacles, en conservant la géographie et les données originales.",
+      "priority": "featured",
+      "figure_paths": [
+        "figures/P11/EVA-10-56-g001.jpg",
+        "figures/P11/EVA-10-56-g002.jpg",
+        "figures/P11/EVA-10-56-g003.jpg",
+        "figures/P11/EVA-10-56-g004.jpg",
+        "figures/P11/EVA-10-56-g005.jpg",
+        "figures/P11/EVA-10-56-g006.jpg"
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations.",
+      "authors": [
+        "Leitwein M",
+        "Gagnaire PA",
+        "Desmarais E",
+        "Guendouz S",
+        "Rohmer M",
+        "Berrebi P",
+        "Guinand B"
+      ],
+      "team_members": [
+        "Maeva Leitwein"
+      ],
+      "journal": "Journal of fish biology",
+      "year": 2016,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1111/jfb.13131",
+      "doi_url": "https://doi.org/10.1111/jfb.13131",
+      "pmid": "27666575",
+      "pmcid": null,
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "europepmc_url": "https://europepmc.org/article/MED/27666575",
+      "volume": "89",
+      "issue": "6",
+      "pages": "2717-2734",
+      "publication_dates": {
+        "published": [
+          [
+            2016,
+            9,
+            25
+          ]
+        ],
+        "published-print": [
+          [
+            2016,
+            12
+          ]
+        ],
+        "published-online": [
+          [
+            2016,
+            9,
+            25
+          ]
+        ],
+        "issued": [
+          [
+            2016,
+            9,
+            25
+          ]
+        ]
+      },
+      "legacy_display_year": 2016,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "access_level": "published_abstract_only",
+      "retrieved_content_version": "abstract_only",
+      "source_files": {},
+      "license_urls_for_retrieved_version": [
+        "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+      ],
+      "license_evidence": [],
+      "preprint": null,
+      "institutional_records": [
+        {
+          "title_s": [
+            "Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations"
+          ],
+          "uri_s": "https://hal.science/hal-01922655v1",
+          "docType_s": "ART",
+          "doiId_s": "10.1111/jfb.13131",
+          "producedDate_s": "2016-12"
+        }
+      ],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Diversité des souches d’élevage et des truites sauvages de l’Orb",
+      "themes": [
+        "Conservation",
+        "Diversité génétique",
+        "Aquaculture"
+      ],
+      "services": [
+        "Génomique des populations",
+        "Bioinformatique",
+        "Séquençage & dPCR"
+      ],
+      "summary_fr": "Cette étude compare la diversité génétique de populations sauvages méditerranéennes de truite commune du bassin de l’Orb à celle de souches d’élevage atlantiques et méditerranéennes. Les analyses génomiques mettent en évidence des différences de diversité pertinentes pour réfléchir aux pratiques de repeuplement et à la conservation.",
+      "question_fr": "Comment la diversité des souches d’élevage se compare-t-elle à celle des populations sauvages méditerranéennes étudiées ?",
+      "methods_fr": "ddRAD-seq et comparaison de stratégies d’obtention des génotypes, complétés par une analyse de la diversité génétique.",
+      "finding_fr": "Dans ce système, les souches d’élevage présentent une diversité plus faible que les populations sauvages comparées.",
+      "limit_fr": "Seuls le résumé et les métadonnées sont récupérés ici; les figures et résultats détaillés attendent un texte intégral autorisé fourni par l’équipe.",
+      "visual_fr": "Un schéma original situant les trois origines de populations; conserver un lien vers l’article pour les résultats et ne pas reproduire de figure non autorisée.",
+      "priority": "standard",
+      "figure_paths": []
+    },
+    {
+      "id": "P13",
+      "title": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass.",
+      "authors": [
+        "Delpuech E",
+        "Vandeputte M",
+        "Morvezen R",
+        "Bestin A",
+        "Besson M",
+        "Brunier J",
+        "Bajek A",
+        "Imarazene B",
+        "François Y",
+        "Bouchez O",
+        "Cousin X",
+        "Poncet C",
+        "Morin T",
+        "Bruant JS",
+        "Chatain B",
+        "Haffray P",
+        "Phocas F",
+        "Allal F"
+      ],
+      "team_members": [
+        "Emilie Delpuech"
+      ],
+      "journal": "Genetics, selection, evolution : GSE",
+      "year": 2023,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1186/s12711-023-00805-2",
+      "doi_url": "https://doi.org/10.1186/s12711-023-00805-2",
+      "pmid": "37143017",
+      "pmcid": "PMC10161657",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37143017/",
+      "europepmc_url": "https://europepmc.org/article/MED/37143017",
+      "volume": "55",
+      "issue": "1",
+      "pages": "30",
+      "publication_dates": {
+        "published": [
+          [
+            2023,
+            5,
+            4
+          ]
+        ],
+        "published-online": [
+          [
+            2023,
+            5,
+            4
+          ]
+        ],
+        "issued": [
+          [
+            2023,
+            5,
+            4
+          ]
+        ]
+      },
+      "legacy_display_year": 2022,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P13/article.pdf",
+        "article.xml": "sources/P13/article.xml",
+        "fulltext.md": "sources/P13/fulltext.md",
+        "pdf-text.txt": "sources/P13/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "https://creativecommons.org/licenses/by/4.0/ Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/ . The Creative Commons Public Domain Dedication waiver ( http://creativecommons.org/publicdomain/zero/1.0/ ) applies to the data made available in this article, unless otherwise stated in a credit line to the data.",
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/37143017/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Résistance virale et génomique du bar européen",
+      "themes": [
+        "Aquaculture",
+        "Sélection génomique",
+        "Santé animale"
+      ],
+      "services": [
+        "Sélection",
+        "Bioinformatique",
+        "Séquençage & dPCR"
+      ],
+      "summary_fr": "Chez le bar européen, cette étude recherche les régions génomiques associées à la résistance à la nécrose nerveuse virale. Elle identifie une région partagée entre deux populations et des gènes candidats, dont IFI6/IFI27-like. Les résultats ouvrent des perspectives pour la sélection, sans constituer un traitement contre la maladie.",
+      "question_fr": "Quelles régions et quels gènes sont associés à la résistance à la VNN chez le bar européen ?",
+      "methods_fr": "Séquençage génomique, génotypage et imputation, cartographie de QTL dans deux populations et validation de l’effet d’une région dans une population indépendante.",
+      "finding_fr": "Une région sur le groupe de liaison 12 est associée à la résistance et contient notamment ZDHHC14 et IFI6/IFI27-like.",
+      "limit_fr": "Un gène candidat ou un QTL associé n’est ni une preuve complète du mécanisme biologique ni une promesse de résistance absolue.",
+      "visual_fr": "Un parcours espèce → génome → région candidate → évaluation, avec les figures originales des résultats et un lien à l’expertise sélection génomique.",
+      "priority": "featured",
+      "figure_paths": [
+        "figures/P13/12711_2023_805_Fig1_HTML.jpg",
+        "figures/P13/12711_2023_805_Fig2_HTML.jpg",
+        "figures/P13/12711_2023_805_Fig3_HTML.jpg",
+        "figures/P13/12711_2023_805_Fig4_HTML.jpg"
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency.",
+      "authors": [
+        "Delpuech E",
+        "Aliakbari A",
+        "Labrune Y",
+        "Fève K",
+        "Billon Y",
+        "Gilbert H",
+        "Riquet J"
+      ],
+      "team_members": [
+        "Emilie Delpuech"
+      ],
+      "journal": "Genetics, selection, evolution : GSE",
+      "year": 2021,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1186/s12711-021-00642-1",
+      "doi_url": "https://doi.org/10.1186/s12711-021-00642-1",
+      "pmid": "34126920",
+      "pmcid": "PMC8201702",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34126920/",
+      "europepmc_url": "https://europepmc.org/article/MED/34126920",
+      "volume": "53",
+      "issue": "1",
+      "pages": "49",
+      "publication_dates": {
+        "published": [
+          [
+            2021,
+            6,
+            14
+          ]
+        ],
+        "published-print": [
+          [
+            2021,
+            12
+          ]
+        ],
+        "published-online": [
+          [
+            2021,
+            6,
+            14
+          ]
+        ],
+        "issued": [
+          [
+            2021,
+            6,
+            14
+          ]
+        ]
+      },
+      "legacy_display_year": 2021,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P14/article.pdf",
+        "article.xml": "sources/P14/article.xml",
+        "fulltext.md": "sources/P14/fulltext.md",
+        "pdf-text.txt": "sources/P14/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "https://creativecommons.org/licenses/by/4.0/ Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/ . The Creative Commons Public Domain Dedication waiver ( http://creativecommons.org/publicdomain/zero/1.0/ ) applies to the data made available in this article, unless otherwise stated in a credit line to the data.",
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/34126920/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Régions génomiques et efficacité alimentaire chez le porc",
+      "themes": [
+        "Agriculture",
+        "Sélection génomique",
+        "GWAS"
+      ],
+      "services": [
+        "Sélection",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Cette étude recherche des régions du génome associées à l’efficacité alimentaire et à d’autres caractères de production chez deux lignées porcines sélectionnées de manière divergente. Les résultats varient selon la lignée et la structure des analyses, ce qui souligne l’importance du plan d’étude dans l’interprétation des associations.",
+      "question_fr": "Quelles régions génomiques sont associées aux caractères de production, et comment les résultats varient-ils selon les lignées analysées ?",
+      "methods_fr": "Études d’association pangénomiques sur deux lignées, séparément et ensemble, à partir de génotypes et de caractères de production.",
+      "finding_fr": "Des QTL connus et nouveaux sont identifiés, avec un recouvrement limité entre certains plans d’analyse.",
+      "limit_fr": "Les associations dépendent du jeu de données; distinguer effets de sélection, dérive et validation fonctionnelle des gènes candidats.",
+      "visual_fr": "Un graphique GWAS original consultable avec sa légende et une explication de la notion de région associée, plutôt qu’une animation de rendement inventé.",
+      "priority": "standard",
+      "figure_paths": [
+        "figures/P14/12711_2021_642_Fig1_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig2_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig3_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig4_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig5_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig6_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig7_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig8_HTML.jpg",
+        "figures/P14/12711_2021_642_Fig9_HTML.jpg"
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs.",
+      "authors": [
+        "Aliakbari A",
+        "Delpuech E",
+        "Labrune Y",
+        "Riquet J",
+        "Gilbert H"
+      ],
+      "team_members": [
+        "Emilie Delpuech"
+      ],
+      "journal": "Genetics, selection, evolution : GSE",
+      "year": 2020,
+      "publication_status": "published",
+      "paper_type": "research_article",
+      "doi": "10.1186/s12711-020-00576-0",
+      "doi_url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "pmid": "33028194",
+      "pmcid": "PMC7539441",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33028194/",
+      "europepmc_url": "https://europepmc.org/article/MED/33028194",
+      "volume": "52",
+      "issue": "1",
+      "pages": "57",
+      "publication_dates": {
+        "published": [
+          [
+            2020,
+            10,
+            7
+          ]
+        ],
+        "published-print": [
+          [
+            2020,
+            12
+          ]
+        ],
+        "published-online": [
+          [
+            2020,
+            10,
+            7
+          ]
+        ],
+        "issued": [
+          [
+            2020,
+            10,
+            7
+          ]
+        ]
+      },
+      "legacy_display_year": 2020,
+      "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "access_level": "published_fulltext_pdf",
+      "retrieved_content_version": "version_of_record",
+      "source_files": {
+        "article.pdf": "sources/P15/article.pdf",
+        "article.xml": "sources/P15/article.xml",
+        "fulltext.md": "sources/P15/fulltext.md",
+        "pdf-text.txt": "sources/P15/pdf-text.txt"
+      },
+      "license_urls_for_retrieved_version": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "license_evidence": [
+        {
+          "text": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/ . The Creative Commons Public Domain Dedication waiver ( http://creativecommons.org/publicdomain/zero/1.0/ ) applies to the data made available in this article, unless otherwise stated in a credit line to the data.",
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/",
+            "http://creativecommons.org/publicdomain/zero/1.0/"
+          ]
+        }
+      ],
+      "preprint": null,
+      "institutional_records": [],
+      "scientific_summary_basis": "published_abstract",
+      "summary_evidence_url": "https://pubmed.ncbi.nlm.nih.gov/33028194/",
+      "relationship_to_ldgenx": "Publication coécrite par un membre de l’équipe; pas automatiquement une prestation commerciale LDgenX.",
+      "retrieved_at": "2026-10-15T11:55:29.871752+00:00",
+      "card_title_fr": "Choisir une population de référence pour la prédiction génomique",
+      "themes": [
+        "Agriculture",
+        "Sélection génomique",
+        "Prédiction"
+      ],
+      "services": [
+        "Sélection",
+        "Bioinformatique"
+      ],
+      "summary_fr": "Les auteurs comparent plusieurs compositions de populations de référence pour prédire des caractères liés à l’efficacité alimentaire chez le porc. Combiner des lignées apparentées produit des effets variables sur la précision et le biais selon les caractères et les scénarios, avec un intérêt pour les programmes disposant de petits effectifs.",
+      "question_fr": "Dans quelles conditions peut-on combiner des lignées apparentées pour construire une population de référence en sélection génomique ?",
+      "methods_fr": "Comparaison de scénarios de prédiction génomique avec différentes compositions de populations d’apprentissage et évaluation de la précision et du biais.",
+      "finding_fr": "La composition de la population de référence et les caractères visés influencent les performances de prédiction.",
+      "limit_fr": "Ajouter des individus d’une autre lignée ne garantit pas une amélioration; les effets observés dépendent du caractère et du scénario étudiés.",
+      "visual_fr": "Un diagramme pédagogique apprentissage → validation → comparaison des scénarios. Afficher des courbes chiffrées uniquement à partir des tableaux sources validés.",
+      "priority": "standard",
+      "figure_paths": [
+        "figures/P15/12711_2020_576_Fig1_HTML.jpg",
+        "figures/P15/12711_2020_576_Fig2_HTML.jpg",
+        "figures/P15/12711_2020_576_Fig3_HTML.jpg",
+        "figures/P15/12711_2020_576_Fig4_HTML.jpg"
+      ]
+    }
+  ]
+}

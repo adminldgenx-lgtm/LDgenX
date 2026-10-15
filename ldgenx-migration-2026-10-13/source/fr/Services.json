@@ -1,0 +1,448 @@
+{
+  "requested_url": "https://www.ldgenx.fr/Services",
+  "final_url": "https://www.ldgenx.fr/Services",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:45.082453+00:00",
+  "language": "fr",
+  "title": "Services LDgenX ADNe, génomique des populations, séquençage",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Services d'analyses génétique, ADNe, métabarcoding, dPCR, sequençage court et long fragments"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/Services.html",
+  "raw_sha256": "1e68d8cc1deb072b2f99b88e542fee3e4da0ed61b1fb431e2eda39472c9cb319",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "Decouvrir ce services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Decouvrir ce service",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "eDNA",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca571581623-edna1/320-65ca571581623-edna1.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "diversité génétique des truites",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca481968dd5-truites/320-65ca481968dd5-truites.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Microorganismes",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4cf498329ad-tylijura-fungus-9279389-1920/320-6a4cf498329ad-tylijura-fungus-9279389-1920.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "bar",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca5b8e1fde1-bar/320-65ca5b8e1fde1-bar.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Analyses génomique",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d01e4db988-capture-d-ecran-2024-10-29-181800/320-6a4d01e4db988-capture-d-ecran-2024-10-29-181800.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "sequenceur",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50/320-6a4d0303af0ae-chatgpt-image-1-juil-2026-11-30-50.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Stage M2 Bioinformatique",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/686f73d237de7-image-stage-siteweb/320-686f73d237de7-image-stage-siteweb.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "montage projet, séquençage ADN, analyses bioinformatique biostatistique, rapport",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4cd7c2214d6-chaine-valeur-site2/default-6a4cd7c2214d6-chaine-valeur-site2.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 2,
+      "text": "Des solutions génomiques adaptées à vos enjeux"
+    },
+    {
+      "level": 1,
+      "text": "ADN environnemental"
+    },
+    {
+      "level": 1,
+      "text": "Génomique des populations"
+    },
+    {
+      "level": 1,
+      "text": "Analyse des communautés microbiennes"
+    },
+    {
+      "level": 1,
+      "text": "Sélection génomique"
+    },
+    {
+      "level": 1,
+      "text": "Bioinformatique"
+    },
+    {
+      "level": 1,
+      "text": "Séquençage et dPCR"
+    },
+    {
+      "level": 1,
+      "text": "R&D"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/Services.md",
+  "content_characters": 3728,
+  "content_sha256": "ade7af25a4ff658a924a53893146eb6ce78ebc84a1bfc58b44acbc2c33e80434",
+  "body_text": "Des solutions génomiques adaptées à vos enjeux\nADN environnemental\n        \n        Détectez et suivre les espèces présentes dans un milieu à partir des traces d'ADN présentes dans l'environnement.\n    Applications :\n> Inventaire de biodiversité \n> Etudes d'impacts\n> Espèces invasives\n> Espèces protégées\n    \n                Decouvrir ce services\n            \n        Génomique des populations\n        \n        Caractériser la diversité génétique, la connectivité et l'adaptation des populations.\n    Applications:\n> Conservation\n> Gestion des populations\n> Plans nationaux d'action\n> Indice de consanguinité, hybridation, origine des individus\n \n    \n                Decouvrir ce service \n            \n        Analyse des communautés microbiennes\n        Étudiez les communautés bactériennes, fongiques et microbiennes grâce au séquençage haut débit. Applications :\n> Qualité des eaux\n> Sols agricoles\n> Aquaculture\n> Recherche\n    \n                Decouvrir ce service \n            \n        Sélection génomique\n        \n        Développez des outils d'aide à la sélection pour les filières agricoles et aquacoles.\n    Applications:\n> Aquaculture\n> Agriculture\n> Amélioration génétique\n    \n                Decouvrir ce service \n            \n        Bioinformatique\n        \n        Transformez vos données de séquençage en résultats exploitables Applications: \n> Métabarcoding & Métagénomique\n> RADseq, RNAseq\n> WGS\n> Epigénétique\n> GWAS\n    \n                Decouvrir ce service \n            \n        Séquençage et dPCR\n        \n        Des solutions de séquençage et de dPCR adaptées à vos projetsApplications :\n> Séquençage d'amplicons\n> Séquençage courts et long fragments\n> Séquençage de génomes entiers et partiel\n> Détection d’espèces cible ou de variants\n    \n                Decouvrir ce service \n            \n        R&D\n        \n        Choissiez LDgenX pour vos projet de R&D Applications: \n> Résponses au AAP\n> Accopagnement\n> Conseils\n    \n                Decouvrir ce service\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/Services.json"
+}

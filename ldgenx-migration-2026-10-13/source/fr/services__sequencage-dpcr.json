@@ -1,0 +1,436 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+  "final_url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:33.503855+00:00",
+  "language": "fr",
+  "title": "Analyses par digital PCR, détection précise et quantitative",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "analyses génétique par digital PCR, détection d'espèces cible, quantificaiton de l'ADN"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__sequencage-dpcr.html",
+  "raw_sha256": "a14c61397e5b4a5a3d090648d50b7af9931828d7b681388600222947f4622f38",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24c0084d6-site-web-ldgenx-23/320-6a4d24c0084d6-site-web-ldgenx-23.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d249d6e9ee-site-web-ldgenx-24/320-6a4d249d6e9ee-site-web-ldgenx-24.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24832e0b8-site-web-ldgenx-26/320-6a4d24832e0b8-site-web-ldgenx-26.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24f7da570-site-web-ldgenx-19/320-6a4d24f7da570-site-web-ldgenx-19.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24edd1bef-site-web-ldgenx-20/320-6a4d24edd1bef-site-web-ldgenx-20.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24dfd8ae2-site-web-ldgenx-21/320-6a4d24dfd8ae2-site-web-ldgenx-21.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "sar ",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e45f00ac4a-53852/459-6a4e45f00ac4a-53852.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "requin",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e57ca80521-davidclode-shark-9897726-1920/459-6a4e57ca80521-davidclode-shark-9897726-1920.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "l'oursin violet",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e57b062858-timvb1990-sea-urchin-1536812-1920/460-6a4e57b062858-timvb1990-sea-urchin-1536812-1920.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24c0084d6-site-web-ldgenx-23/320-6a4d24c0084d6-site-web-ldgenx-23.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d249d6e9ee-site-web-ldgenx-24/320-6a4d249d6e9ee-site-web-ldgenx-24.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24832e0b8-site-web-ldgenx-26/320-6a4d24832e0b8-site-web-ldgenx-26.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24f7da570-site-web-ldgenx-19/320-6a4d24f7da570-site-web-ldgenx-19.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24edd1bef-site-web-ldgenx-20/320-6a4d24edd1bef-site-web-ldgenx-20.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24dfd8ae2-site-web-ldgenx-21/320-6a4d24dfd8ae2-site-web-ldgenx-21.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Solutions de séquençage et de biologie moléculaire pour la recherche, l'environnement et l'innovation"
+    },
+    {
+      "level": 1,
+      "text": "Séquençage & dPCR"
+    },
+    {
+      "level": 2,
+      "text": "Approches"
+    },
+    {
+      "level": 2,
+      "text": "Prestations"
+    },
+    {
+      "level": 2,
+      "text": "Cas d'études"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__sequencage-dpcr.md",
+  "content_characters": 2441,
+  "content_sha256": "6fc9c6bc2ea5f5bbcb36b223bd53391056261b9d624a9d44229d5bdfb6a67629",
+  "body_text": "Solutions de séquençage et de biologie moléculaire pour la recherche, l'environnement et l'innovation\nSéquençage & dPCR\n        \n        LDgenX accompagne les projets nécessitant de technologies de séquençage, de dPCR et d'analyses bioinformatique. \n \n    \n            Approches\n        Séquençage d'amplicons\n16S, ITS, COI, 12S, 18S et marqueurs personnalisésMétagénomique\nAnalyse taxonomique et fonctionnelle des communautés biologiques.Séquençage du génome complet (WGS)\nÉtude exhaustive du génome.RADseq et panels SNP\nAnalyses de génomique des populations.Séquençage longue lecture\nOxford NanoporedPCR\nDétetion d'espèces cibles\n \n    \n            Prestations\n        123456\n            Cas d'études\n        Épigénétique du sarDétection d'espèces méditerranéennes emblématiques par dPCRDétection des oursins Paracentrotus lividus\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__sequencage-dpcr.json"
+}

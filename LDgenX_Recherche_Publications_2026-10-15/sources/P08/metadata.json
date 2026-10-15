@@ -1,0 +1,64 @@
+{
+  "id": "P08",
+  "title": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics.",
+  "authors": [
+    "Saint-Pé K",
+    "Leitwein M",
+    "Tissot L",
+    "Poulet N",
+    "Guinand B",
+    "Berrebi P",
+    "Marselli G",
+    "Lascaux JM",
+    "Gagnaire PA",
+    "Blanchet S"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "BMC genomics",
+  "year": 2019,
+  "doi": "10.1186/s12864-019-5958-9",
+  "doi_url": "https://doi.org/10.1186/s12864-019-5958-9",
+  "pmid": "31307373",
+  "pmcid": "PMC6631668",
+  "publication_dates": {
+    "published": [
+      [
+        2019,
+        7,
+        15
+      ]
+    ],
+    "published-print": [
+      [
+        2019,
+        12
+      ]
+    ],
+    "published-online": [
+      [
+        2019,
+        7,
+        15
+      ]
+    ],
+    "issued": [
+      [
+        2019,
+        7,
+        15
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "published_fulltext_pdf",
+  "retrieved_content_version": "version_of_record",
+  "license_urls_for_retrieved_version": [
+    "http://creativecommons.org/licenses/by/4.0/"
+  ],
+  "preprint": null,
+  "institutional_records": [],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

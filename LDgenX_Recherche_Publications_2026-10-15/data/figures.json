@@ -1,0 +1,924 @@
+{
+  "figures": [
+    {
+      "publication_id": "P01",
+      "figure_id": "evac036-F1",
+      "label": "Fig. 1.",
+      "caption_original": "Patterns of shared differentially expressed (DE) genes detected across the three main effects of rearing environment, sex, and river.",
+      "path": "figures/P01/evac036f1.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/074d/8995047/0791a5540192/evac036f1.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995047/",
+      "doi": "10.1093/gbe/evac036",
+      "width": 717,
+      "height": 426,
+      "format": "JPEG",
+      "sha256": "f17fba9d4fb0379d7d93f1a646b20128501bada431728b3b2ff3e0f96a6a5868",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "commercial_reuse_status": "reference_only_permission_or_credit_review",
+      "third_party_credit_detected": false,
+      "attribution": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch). — Leitwein M, Wellband K, Cayuela H, Le Luyer J, Mohns K, Withler R, Bernatchez L. 2022. Fig. 1.. https://doi.org/10.1093/gbe/evac036. Licence : https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "publication_id": "P01",
+      "figure_id": "evac036-F2",
+      "label": "Fig. 2.",
+      "caption_original": "Patterns of DE genes ( N = 3,643) in the liver between hatchery- and wild-reared Coho salmon. Expression values are TMM-normalized and log-transformed CPM sequencing reads. Samples and genes are clustered on the x - and y -axes, respectively, using Euclidean distance.",
+      "path": "figures/P01/evac036f2.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/074d/8995047/2a559dfc4b6d/evac036f2.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995047/",
+      "doi": "10.1093/gbe/evac036",
+      "width": 741,
+      "height": 1025,
+      "format": "JPEG",
+      "sha256": "dc9043f0d4224f9dac5853338fb2096e589e4587388e51ee3d266d7d163a8c8a",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "commercial_reuse_status": "reference_only_permission_or_credit_review",
+      "third_party_credit_detected": false,
+      "attribution": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch). — Leitwein M, Wellband K, Cayuela H, Le Luyer J, Mohns K, Withler R, Bernatchez L. 2022. Fig. 2.. https://doi.org/10.1093/gbe/evac036. Licence : https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "publication_id": "P01",
+      "figure_id": "evac036-F3",
+      "label": "Fig. 3.",
+      "caption_original": "WGCNA; ( A ) representation of the five modules of the coexpressed genes in liver tissue and their correlation coefficient with the rearing environment and P -values in brackets. ( B ) Representation of the 859 genes of the darkorange module membership (correlation with the main axis of module variation) and the gene significance which is the absolute value of the correlation between hatchery origin and gene expression.",
+      "path": "figures/P01/evac036f3.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/074d/8995047/6401e83c9d8e/evac036f3.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995047/",
+      "doi": "10.1093/gbe/evac036",
+      "width": 760,
+      "height": 412,
+      "format": "JPEG",
+      "sha256": "7af6a2219c9a765f8d5ac2027d940d21e1958420fdc849fb8e9b3caf075866db",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "commercial_reuse_status": "reference_only_permission_or_credit_review",
+      "third_party_credit_detected": false,
+      "attribution": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch). — Leitwein M, Wellband K, Cayuela H, Le Luyer J, Mohns K, Withler R, Bernatchez L. 2022. Fig. 3.. https://doi.org/10.1093/gbe/evac036. Licence : https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "publication_id": "P01",
+      "figure_id": "evac036-F4",
+      "label": "Fig. 4.",
+      "caption_original": "Relationship between methylation and gene expression of the 3,643 DE genes between wild and hatchery-born individuals ( A ) slope coefficient of the generalized linear model (GLM) of the median gene methylation (orange circle) and median gene promotor methylation (5 kb; blue circle) and the gene expression models, ( B ) slope coefficient of the GLM of CpG Traffic Light methylation and the expression of the associated genes (orange circle) and the associated promotor regions (blue circle). ( C ) Histogram of the number of CpGs TL per DE genes. Relationship between methylation and gene expression of the 859 coexpressed genes of the darkorange (DO) module: ( D ) slope coefficient of the GLM models of the median gene methylation (orange circle) and the gene expression, ( E ) slope coefficient of the GLM models of the CpG Traffic Light methylation and the expression of the associated genes (orange circle) and the associated promotor regions (blue circle). ( F ) Histogram of the number of CpGs TL per DO genes.",
+      "path": "figures/P01/evac036f4.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/074d/8995047/cab2fd12e3bb/evac036f4.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995047/",
+      "doi": "10.1093/gbe/evac036",
+      "width": 800,
+      "height": 656,
+      "format": "JPEG",
+      "sha256": "a9ea6dd2e04d340439167e01ece3aede62cf2c458a3de8257a993a1b9cf366fe",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "commercial_reuse_status": "reference_only_permission_or_credit_review",
+      "third_party_credit_detected": false,
+      "attribution": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch). — Leitwein M, Wellband K, Cayuela H, Le Luyer J, Mohns K, Withler R, Bernatchez L. 2022. Fig. 4.. https://doi.org/10.1093/gbe/evac036. Licence : https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "publication_id": "P01",
+      "figure_id": "evac036-F5",
+      "label": "Fig. 5.",
+      "caption_original": "Slope coefficient of the GLM models showing the relationship between gene expression of DE genes (violet) and DO modules genes (orange) and methylation of each CpG TL (diamond) and median gene body methylation (square). The relative position of each CpG TL (diamond) and genes (square) is reported for each 30 Coho salmon linkage groups.",
+      "path": "figures/P01/evac036f5.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/074d/8995047/b73ef9ebebab/evac036f5.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995047/",
+      "doi": "10.1093/gbe/evac036",
+      "width": 727,
+      "height": 253,
+      "format": "JPEG",
+      "sha256": "0eafeab72047a6aa352af209d88973f965966d609994c25268982c28dacadc43",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
+      "commercial_reuse_status": "reference_only_permission_or_credit_review",
+      "third_party_credit_detected": false,
+      "attribution": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch). — Leitwein M, Wellband K, Cayuela H, Le Luyer J, Mohns K, Withler R, Bernatchez L. 2022. Fig. 5.. https://doi.org/10.1093/gbe/evac036. Licence : https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "publication_id": "P03",
+      "figure_id": "genes-12-00524-f001",
+      "label": "Figure 1",
+      "caption_original": "Predicted relationships between domestic ancestry rate, local recombination rate, local genetic diversity and stocking intensity. ( A ) Predicted relationship expected with associative overdominance (AOD), where more domestic ancestry are observed in low-diversity genomic region by masking the effects of potentially recessive deleterious mutation [ 13 ]. ( B , C ) Predicted relationship with negative epistasis where loci of incompatibility results in lower domestic ancestry in low recombining genomic regions. ( B ) Predicted relationship in presence of potential local beneficial alleles where lower diversity is expected due to the fixation of the beneficial alleles and higher introgression of domestic ancestry. ( C ) Predicted higher domestic ancestry in low-diversity genomic regions, namely due to the purge of incompatibility alleles [ 13 , 34 ]. X-axis illustrates the range of variation for each of the three variables (i.e., from lower to higher).",
+      "path": "figures/P03/genes-12-00524-g001.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/90e9/8065892/4e710aaae708/genes-12-00524-g001.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8065892/",
+      "doi": "10.3390/genes12040524",
+      "width": 740,
+      "height": 295,
+      "format": "JPEG",
+      "sha256": "1ce18e2a329446b16142694eca1e7d6bce234b1fc93d66457e0c1b895a0ba10d",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations. — Leitwein M, Cayuela H, Bernatchez L. 2021. Figure 1. https://doi.org/10.3390/genes12040524. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P03",
+      "figure_id": "genes-12-00524-f002",
+      "label": "Figure 2",
+      "caption_original": "Heatmap of the proportion of domestic ancestry rate along the 42 Brook Charr linkage groups (LGs) for each lake. Lakes are ordered as a function of stocking intensity (less stocked lakes at the bottom). Labels are detailed in Table 1 .",
+      "path": "figures/P03/genes-12-00524-g002.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/90e9/8065892/6565df595068/genes-12-00524-g002.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8065892/",
+      "doi": "10.3390/genes12040524",
+      "width": 739,
+      "height": 229,
+      "format": "JPEG",
+      "sha256": "1358978a7809fecad0411f19bcba5131a13a079d9449085cb37b3777190e9785",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations. — Leitwein M, Cayuela H, Bernatchez L. 2021. Figure 2. https://doi.org/10.3390/genes12040524. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P03",
+      "figure_id": "genes-12-00524-f003",
+      "label": "Figure 3",
+      "caption_original": "Whole genome relationship between the domestic ancestry and ( A ) genetic diversity, ( B ) stocking intensity and ( C ) local recombination rate, assessed with a generalized linear mixed model (GLM; R 2 c = 0.084, R 2 m = 0.015, AIC = −1952637, χ 2 = 4143.9, p < 2.2× 10 −16 ( B ); β Recombination = −3.418 × 10 −3 , β Diversity = −4.950 × 10 −3 , β Stocking = 4.441 × 10 −3 , p < 2.2× 10 −16 ). Grey lines represent the 95% confidence interval.",
+      "path": "figures/P03/genes-12-00524-g003.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/90e9/8065892/9f995172e039/genes-12-00524-g003.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8065892/",
+      "doi": "10.3390/genes12040524",
+      "width": 798,
+      "height": 228,
+      "format": "JPEG",
+      "sha256": "492450bc32100a0c5e3c99682fe8d701f460a458de21d8363086260a0602891f",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations. — Leitwein M, Cayuela H, Bernatchez L. 2021. Figure 3. https://doi.org/10.3390/genes12040524. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P03",
+      "figure_id": "genes-12-00524-f004",
+      "label": "Figure 4",
+      "caption_original": "Relationship between the domestic ancestry rate and ( A ) genetic diversity, ( B ) stocking intensity and ( C ) local recombination rate for each linkage group. Slope coefficients of the GLM model are reported for each 42 Brook Charr linkage group. Dots represent the significance of each model with circles and crosses representing p < 0.001 and p > 0.001, along with the 95% confidence interval, respectively.",
+      "path": "figures/P03/genes-12-00524-g004.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/90e9/8065892/538183c860c1/genes-12-00524-g004.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8065892/",
+      "doi": "10.3390/genes12040524",
+      "width": 734,
+      "height": 583,
+      "format": "JPEG",
+      "sha256": "106844cb3f7a603d316f634475c95ca39890320ca70b7053dacf5299b3c968bb",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations. — Leitwein M, Cayuela H, Bernatchez L. 2021. Figure 4. https://doi.org/10.3390/genes12040524. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P04",
+      "figure_id": "eva13235-fig-0001",
+      "label": "FIGURE 1",
+      "caption_original": "Local distance‐based analysis (db‐RDA) performed with average methylation level through 1 kb window‐size on Coho salmon milt samples for chromosomes 9, 13, 15, and 21. Symbols represent the river: circles for Conuma and squares for Quinsam. Colors represent rearing environment: blue for hatchery‐born and orange for wild individuals. All db‐RDA were significant and explained 1.1%–2.9% of the global DNA methylation variation (adj. R 2 is displayed in upper left of each graph). Partial db‐RDA revealed that river of origin and rearing environment explained, respectively, 1.4%–1.7% and 1.1%–1.2% of the variation after controlling for the other variable",
+      "path": "figures/P04/EVA-14-2402-g001.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6d4b/8549618/65cf55e6dcef/EVA-14-2402-g001.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8549618/",
+      "doi": "10.1111/eva.13235",
+      "width": 709,
+      "height": 690,
+      "format": "JPEG",
+      "sha256": "017e919074337d7c01b7faf82b4caa833d73fed6d0fcb1799e76d86e87068977",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration. — Leitwein M, Laporte M, Le Luyer J, Mohns K, Normandeau E, Withler R, Bernatchez L. 2021. FIGURE 1. https://doi.org/10.1111/eva.13235. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P04",
+      "figure_id": "eva13235-fig-0002",
+      "label": "FIGURE 2",
+      "caption_original": "Circle plot showing the 183 differentially methylated regions (DMRs) between hatchery and wild adult fish in milt tissue Only the chromosomes ( n = 30) containing DMRs are represented. Red points indicate hypermethylated and blue points hypomethylated DMRs for the hatchery fish. The overlapping transcripts are represented and details can be found in Table S4 . Chromosomes for which db‐RDA were significant are presented in gray",
+      "path": "figures/P04/EVA-14-2402-g002.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6d4b/8549618/2c84db2342f6/EVA-14-2402-g002.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8549618/",
+      "doi": "10.1111/eva.13235",
+      "width": 709,
+      "height": 712,
+      "format": "JPEG",
+      "sha256": "b1dd90b137a1b25f2fd0231d7559b41b80a3a98727299683d9e0492085e4b3fa",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration. — Leitwein M, Laporte M, Le Luyer J, Mohns K, Normandeau E, Withler R, Bernatchez L. 2021. FIGURE 2. https://doi.org/10.1111/eva.13235. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P04",
+      "figure_id": "eva13235-fig-0003",
+      "label": "FIGURE 3",
+      "caption_original": "Mean percentage of methylation (a) and read depth (b) for hatchery (blue) and wild‐born (yellow) individuals for each CpGs among and around (200 bp) DMRs 61 (pink area) on chromosome 6",
+      "path": "figures/P04/EVA-14-2402-g003.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6d4b/8549618/cdb07471e536/EVA-14-2402-g003.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8549618/",
+      "doi": "10.1111/eva.13235",
+      "width": 709,
+      "height": 353,
+      "format": "JPEG",
+      "sha256": "49dec9bfbbc3ea71e2fad62647d924850cef84bd3f7c39035d69c2c87049ccd3",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration. — Leitwein M, Laporte M, Le Luyer J, Mohns K, Normandeau E, Withler R, Bernatchez L. 2021. FIGURE 3. https://doi.org/10.1111/eva.13235. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P08",
+      "figure_id": "Fig1",
+      "label": "Fig. 1",
+      "caption_original": "Positions on the brown trout linkage map of the 12204 RADs ( a ; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs ( b ; informative for at least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)",
+      "path": "figures/P08/12864_2019_5958_Fig1_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b6d7/6631668/668d3a36c990/12864_2019_5958_Fig1_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6631668/",
+      "doi": "10.1186/s12864-019-5958-9",
+      "width": 707,
+      "height": 857,
+      "format": "JPEG",
+      "sha256": "7e85f84d46d37f3428a67e4f56b8dd72803d0116573603111d04d6568db3cf0d",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics. — Saint-Pé K, Leitwein M, Tissot L, Poulet N, Guinand B, Berrebi P, Marselli G, Lascaux JM, Gagnaire PA, Blanchet S. 2019. Fig. 1. https://doi.org/10.1186/s12864-019-5958-9. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P08",
+      "figure_id": "Fig2",
+      "label": "Fig. 2",
+      "caption_original": "Structure barplots of assignment to the wild (grey) and the captive-bred (black) clusters, using both SNPs ( a ) and microsatellites ( b )",
+      "path": "figures/P08/12864_2019_5958_Fig2_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b6d7/6631668/5f5ae212ff3b/12864_2019_5958_Fig2_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6631668/",
+      "doi": "10.1186/s12864-019-5958-9",
+      "width": 708,
+      "height": 415,
+      "format": "JPEG",
+      "sha256": "2839b39e87bc4326ab61b2e1724d8568cc17ebc98a60ddfc321b6f7e262e228a",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics. — Saint-Pé K, Leitwein M, Tissot L, Poulet N, Guinand B, Berrebi P, Marselli G, Lascaux JM, Gagnaire PA, Blanchet S. 2019. Fig. 2. https://doi.org/10.1186/s12864-019-5958-9. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P08",
+      "figure_id": "Fig3",
+      "label": "Fig. 3",
+      "caption_original": "Plot of individual hatchery ancestry proportion measured with microsatellites against that measured with SNPs ( a ) and pairwise Fst between sites measured with microsatellites against pairwise Fst between sites measured with SNPs ( b ). Black lines represent the linear regression with its confidence interval; spotted lines represent the 1:1 line",
+      "path": "figures/P08/12864_2019_5958_Fig3_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b6d7/6631668/70756048b450/12864_2019_5958_Fig3_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6631668/",
+      "doi": "10.1186/s12864-019-5958-9",
+      "width": 709,
+      "height": 335,
+      "format": "JPEG",
+      "sha256": "766f7af301681aa0b87fa983a926432bb0c9656d5da4d2824adac9a29ff72233",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics. — Saint-Pé K, Leitwein M, Tissot L, Poulet N, Guinand B, Berrebi P, Marselli G, Lascaux JM, Gagnaire PA, Blanchet S. 2019. Fig. 3. https://doi.org/10.1186/s12864-019-5958-9. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P08",
+      "figure_id": "Fig4",
+      "label": "Fig. 4",
+      "caption_original": "Plot of informativeness against number of SNPs. 107 SNPs would be equivalent to the 13 microsatellites in terms of informativeness",
+      "path": "figures/P08/12864_2019_5958_Fig4_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b6d7/6631668/f2fa4c7e6ca3/12864_2019_5958_Fig4_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6631668/",
+      "doi": "10.1186/s12864-019-5958-9",
+      "width": 596,
+      "height": 541,
+      "format": "JPEG",
+      "sha256": "06918363b20c69066906193b72690eac6ffd3869ac7183d35661b709bceebfff",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics. — Saint-Pé K, Leitwein M, Tissot L, Poulet N, Guinand B, Berrebi P, Marselli G, Lascaux JM, Gagnaire PA, Blanchet S. 2019. Fig. 4. https://doi.org/10.1186/s12864-019-5958-9. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P08",
+      "figure_id": "Fig5",
+      "label": "Fig. 5",
+      "caption_original": "Map of the five river basins and and sampling sites (black dots) used to test for genotyping success. The Seuge and Ône Rivers are part of the Atlantic catchment, therefore naturally harboring AT trout, whereas the Aude, Roya and Doron de Bozel Rivers are part of the Mediterranean catchment, naturally populated with ME lineage. Maps were generated by authors on ArcGis and assembled using Inkscape",
+      "path": "figures/P08/12864_2019_5958_Fig5_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b6d7/6631668/be95f9679ba8/12864_2019_5958_Fig5_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6631668/",
+      "doi": "10.1186/s12864-019-5958-9",
+      "width": 709,
+      "height": 627,
+      "format": "JPEG",
+      "sha256": "82155e05cefd56f1ca5dfd19c7ebc4390841ad435c7b81a2f5b96d13eddf0095",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics. — Saint-Pé K, Leitwein M, Tissot L, Poulet N, Guinand B, Berrebi P, Marselli G, Lascaux JM, Gagnaire PA, Blanchet S. 2019. Fig. 5. https://doi.org/10.1186/s12864-019-5958-9. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig1",
+      "label": "Figure 1",
+      "caption_original": "The brown trout ( Salmo trutta ) high-density linkage map. Horizontal black lines within each of the 40 LGs represent mapped RAD markers ( n = 3977). The most probable chromosome type determined with the RFm method ( Limborg et al. 2015a ) is indicated above each LG. Green boxes indicate the approximate position of the centromere for metacentric LGs. Red dots represent the position of 89 additional markers that were transferred from the previous generation linkage map (see Table S2 for details). A, acrocentric; M, metacentric; U, undetermined.",
+      "path": "figures/P10/1365f1.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/335bfa891ec2/1365f1.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 757,
+      "height": 345,
+      "format": "JPEG",
+      "sha256": "fcafe7cf0debdbcab04c9e422b44366b391d97788236f0b0be33a9e6f33d318b",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 1. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig2",
+      "label": "Figure 2",
+      "caption_original": "Plots illustrating the recombination frequency estimates (RFm) for intervals between markers along two different LGs. For each LG, RFm was calculated from both chromosomal extremities (right: red circles; left: blue circles), using each of the two terminal markers as a reference starting point. The RFm plot of (A) LG BT-22 illustrates a classical acrocentric pattern, the centromere position remains undetermined with regard to which LG extremity, while (B) LG BT-28 displays a classical metacentric pattern with a centromere position ∼70 cM. The RFm plots of all brown trout LGs obtained in the two families are illustrated in Figure S1 .",
+      "path": "figures/P10/1365f2.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/f7f9cb5426dd/1365f2.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 797,
+      "height": 472,
+      "format": "JPEG",
+      "sha256": "2d74905eb57e63fe0e11b81058bfd5a6ed1bf2a77c8d71324f37c36a570af1d5",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 2. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig3",
+      "label": "Figure 3",
+      "caption_original": "Dual synteny plot showing conserved syntenic blocks and chromosome rearrangements between Salmo salar ( Ssa ) and Salmo trutta (BT) LGs. Chromosomes arms (p, q a and q b ) are specified for S. salar LGs, and the seven pairs of chromosome arms that still exhibit residual tetrasomy in salmon appear in red ( Lien et al. 2016 ).",
+      "path": "figures/P10/1365f3.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/fd2ce55b8a57/1365f3.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 757,
+      "height": 587,
+      "format": "JPEG",
+      "sha256": "c83684fab9bea6b4c68941b60847f5ea74cbd2e20b3dedf02652be29c87ae30f",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 3. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig4",
+      "label": "Figure 4",
+      "caption_original": "Summary of fission and fusion events within the Salmo genus, that were oriented using the brook charr ( Salvelinus fontinalis ) as an outgroup species. Rearrangements are classified with regards to their occurrence (a) before the S. salar / S. trutta speciation, (b) in the S. salar branch after speciation, or (c) in the S. trutta branch after speciation.",
+      "path": "figures/P10/1365f4.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/4ba5243b7f43/1365f4.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 789,
+      "height": 248,
+      "format": "JPEG",
+      "sha256": "a6ee553ed00f6d0918c37213bbf6cdf61b78b5c60fcac91a1e90d13a8a68066e",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 4. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig5",
+      "label": "Figure 5",
+      "caption_original": "Estimates of local recombination rate ( ρ ) in centimorgan per megabase for markers located along two Salmo trutta linkage groups: (A) LG BT-9 and (B) LG BT-23. The average recombination rate (mean ρ ) for each LG is given at the top left side of each panel. Local recombination rate estimates for other S. trutta LGs are reported in Table S1 and the average recombination rate of each LG is provided in Table 1 .",
+      "path": "figures/P10/1365f5.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/b4e9a4b33d86/1365f5.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 797,
+      "height": 394,
+      "format": "JPEG",
+      "sha256": "2af5d5c1c516d7ba193e10f61bddf92ae25c7b1a7148feb6adf450ee384ed597",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 5. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P10",
+      "figure_id": "fig6",
+      "label": "Figure 6",
+      "caption_original": "Genome-wide positive correlation between the mean nucleotide diversity in the Atlantic brown trout lineage ( π ) and the local recombination rate ( ρ , in centimorgan per megabase), based on 3038 SNP markers ( R 2 = 0.058; p -value < 0.001).",
+      "path": "figures/P10/1365f6.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0b1a/5386884/90695bf31c3c/1365f6.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5386884/",
+      "doi": "10.1534/g3.116.038497",
+      "width": 774,
+      "height": 416,
+      "format": "JPEG",
+      "sha256": "378a598214aa2e15921db447bf76f6f65ed2d325e12ba5c21e02dcee74faa403",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "A Dense Brown Trout ( Salmo trutta ) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity. — Leitwein M, Guinand B, Pouzadoux J, Desmarais E, Berrebi P, Gagnaire PA. 2017. Figure 6. https://doi.org/10.1534/g3.116.038497. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0001",
+      "label": "Figure 1",
+      "caption_original": "Map showing locations of population samples around San Francisco Bay. Sample sites are indicated by numbered triangles, and migration barriers are shown by bars, with sites above reservoir‐forming dams indicated by dots with size proportional to reservoir volume.",
+      "path": "figures/P11/EVA-10-56-g001.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/902754b9ab0a/EVA-10-56-g001.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 709,
+      "height": 974,
+      "format": "JPEG",
+      "sha256": "a0a035253ce083a7a15a7549782a19b5a3bd60165dfc59f277918994a0bac3fb",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 1. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0002",
+      "label": "Figure 2",
+      "caption_original": "Plots from the program distruct representing Structure runs for neutral loci with K = 2. Each individual is represented by a single vertical line, with colors indicating their proportional ancestry in two genetic groups",
+      "path": "figures/P11/EVA-10-56-g002.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/3ee1db9e5355/EVA-10-56-g002.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 617,
+      "height": 2836,
+      "format": "JPEG",
+      "sha256": "7ea4fb2ee5ed2cd9bc1a4a023c98ed920448265214db59a463bd086d0d02786e",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 2. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0003",
+      "label": "Figure 3",
+      "caption_original": "Principal component analysis showing relative genetic distances between individuals with coastal, San Francisco ( SF ) Bay Area, Central Valley, and hatchery trout strain ancestry",
+      "path": "figures/P11/EVA-10-56-g003.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/6d34b4b69e4d/EVA-10-56-g003.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 709,
+      "height": 494,
+      "format": "JPEG",
+      "sha256": "c8af9d1648d19453aa534427d8e770abb649e5e7ff668120e1642d4a93aaed5d",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 3. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0004",
+      "label": "Figure 4",
+      "caption_original": "Unrooted neighbor‐joining tree constructed with chord distances from population samples described in Tables 1 and 2 . Bootstrap values show percent out of 1,000 replicates, with only values >50% reported. For San Francisco Bay Area populations, A=above barrier and B=below barrier, and H=hatchery trout. Dashed lines are approximately half the actual branch length, and dotted lines connect population names to branch tips",
+      "path": "figures/P11/EVA-10-56-g004.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/6eac69e602f8/EVA-10-56-g004.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 709,
+      "height": 672,
+      "format": "JPEG",
+      "sha256": "f6e7246cc563789e0ca0d2aa7ca615a8cc6243d77c52d1def5be9c6b6086bd9d",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 4. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0005",
+      "label": "Figure 5",
+      "caption_original": "Mean values of (A) linkage disequilibrium (r 2 ) and (B) frequency of alleles associated with migratory behavior on chromosome Omy5 for five groups of populations: Central Valley ( CV ), hatchery trout strains, coastal steelhead, and San Francisco Bay above‐ ( SFA ) and below‐barrier ( SFB ) populations",
+      "path": "figures/P11/EVA-10-56-g005.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/adbb8e0b4745/EVA-10-56-g005.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 709,
+      "height": 1002,
+      "format": "JPEG",
+      "sha256": "efd2dd0f8af8c451e7bd8d1d7e1d83aec44bc04c8521bb77c0955d3a86013ab0",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 5. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P11",
+      "figure_id": "eva12416-fig-0006",
+      "label": "Figure 6",
+      "caption_original": "Relationship between the nominal capacity of surveyed reservoirs and the observed frequency of anadromy‐associated alleles for chromosome Omy5 loci (R 2 =.69, p < .01). Reservoir volume data were obtained from California Department of Water Resources (DWR 2015 )",
+      "path": "figures/P11/EVA-10-56-g006.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bc8e/5192794/470cef1442fd/EVA-10-56-g006.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5192794/",
+      "doi": "10.1111/eva.12416",
+      "width": 709,
+      "height": 517,
+      "format": "JPEG",
+      "sha256": "64134917fd4b8659ed2edb542e1bc352a47c3c32c24a0ab88dba8e78c0cbb8a2",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout ( Oncorhynchus mykiss ) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape. — Leitwein M, Garza JC, Pearse DE. 2017. Figure 6. https://doi.org/10.1111/eva.12416. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P13",
+      "figure_id": "Fig1",
+      "label": "Fig. 1",
+      "caption_original": "Evolution of the Kaplan–Meier cumulative survival to a VNN infection challenge for each cohort from two commercial populations and a validation population. Results are in purple for pop A (A_1, A_2, A_3), in green for pop B (B_1, B_2, B_3), and in yellow for the validation population",
+      "path": "figures/P13/12711_2023_805_Fig1_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e73e/10161657/bd1dd3ec50fc/12711_2023_805_Fig1_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10161657/",
+      "doi": "10.1186/s12711-023-00805-2",
+      "width": 708,
+      "height": 476,
+      "format": "JPEG",
+      "sha256": "84edb84707a4da2d500fcd34b86a34fbc3f41c7eefe75aeca60d6776c5dcd83c",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass. — Delpuech E, Vandeputte M, Morvezen R, Bestin A, Besson M, Brunier J, Bajek A, Imarazene B, François Y, Bouchez O, Cousin X, Poncet C, Morin T, Bruant JS, Chatain B, Haffray P, Phocas F, Allal F. 2023. Fig. 1. https://doi.org/10.1186/s12711-023-00805-2. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P13",
+      "figure_id": "Fig2",
+      "label": "Fig. 2",
+      "caption_original": "Manhattan plots of for VNN resistance in European sea bass populations A ( a ) and B ( b ). The red dashed line represents the logBF threshold of 10, corresponding to strong evidence for the presence of a QTL",
+      "path": "figures/P13/12711_2023_805_Fig2_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e73e/10161657/9d45767fb609/12711_2023_805_Fig2_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10161657/",
+      "doi": "10.1186/s12711-023-00805-2",
+      "width": 597,
+      "height": 373,
+      "format": "JPEG",
+      "sha256": "409e61de494a9c298d1a405ca629f519e6190c03de75ec6a39d718eb4fed21ca",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass. — Delpuech E, Vandeputte M, Morvezen R, Bestin A, Besson M, Brunier J, Bajek A, Imarazene B, François Y, Bouchez O, Cousin X, Poncet C, Morin T, Bruant JS, Chatain B, Haffray P, Phocas F, Allal F. 2023. Fig. 2. https://doi.org/10.1186/s12711-023-00805-2. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P13",
+      "figure_id": "Fig3",
+      "label": "Fig. 3",
+      "caption_original": "Average standardised survival rate for the peak SNP in the LG12_QTL_2. Each point corresponds to a weighted mean of the average survival rate found in each cohort. The standard deviation of survival among the three cohorts is reported for each population",
+      "path": "figures/P13/12711_2023_805_Fig3_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e73e/10161657/eb22ef5faf53/12711_2023_805_Fig3_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10161657/",
+      "doi": "10.1186/s12711-023-00805-2",
+      "width": 708,
+      "height": 798,
+      "format": "JPEG",
+      "sha256": "4b13fc3b4fac157c0aae6b486f0830599a685a7405954ef7cc5c3ec0b3fddbe6",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass. — Delpuech E, Vandeputte M, Morvezen R, Bestin A, Besson M, Brunier J, Bajek A, Imarazene B, François Y, Bouchez O, Cousin X, Poncet C, Morin T, Bruant JS, Chatain B, Haffray P, Phocas F, Allal F. 2023. Fig. 3. https://doi.org/10.1186/s12711-023-00805-2. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P13",
+      "figure_id": "Fig4",
+      "label": "Fig. 4",
+      "caption_original": "Results for the LG12_QTL_2 region showing the SNPs with their genomic positions and the identified genes. The graph displays the logBF value on the y-axis and the physical position on the x-axis. Each point represents a variant in the QTL region, colored according to their LD (based on the squared coefficient of correlation, r 2 measure) with the characteristic variant of this QTL (red point). The red dashed lines indicate the logBF = 10 threshold",
+      "path": "figures/P13/12711_2023_805_Fig4_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e73e/10161657/312737512a22/12711_2023_805_Fig4_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10161657/",
+      "doi": "10.1186/s12711-023-00805-2",
+      "width": 796,
+      "height": 703,
+      "format": "JPEG",
+      "sha256": "1dde524b38740555333988b92f1de95e60954ea69f70b346b350819ff71e8ea3",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass. — Delpuech E, Vandeputte M, Morvezen R, Bestin A, Besson M, Brunier J, Bajek A, Imarazene B, François Y, Bouchez O, Cousin X, Poncet C, Morin T, Bruant JS, Chatain B, Haffray P, Phocas F, Allal F. 2023. Fig. 4. https://doi.org/10.1186/s12711-023-00805-2. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig1",
+      "label": "Fig. 1",
+      "caption_original": "The first two axes of the multidimensional scaling (MDS) analysis, based on the 570,447 genotypes. Points represent individuals (corresponding to all sires and dams of the population, N = 1632) and colors are generations",
+      "path": "figures/P14/12711_2021_642_Fig1_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/affbc4f6e70f/12711_2021_642_Fig1_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 599,
+      "height": 542,
+      "format": "JPEG",
+      "sha256": "969056837a4a2b22e481306b256afe0cb7fbba15164c647364c413b467d36156",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 1. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig2",
+      "label": "Fig. 2",
+      "caption_original": "Location of all SNP-QTL identified on the 18 autosomes from the Global-GWAS, LRFI-GWAS and HRFI-GWAS. The SNP-QTL corresponding to Global-GWAS are represented by horizontal bars, LRFI-GWAS by arrows to the right of the chromosomes and HRFI-GWAS by arrows to the left of the chromosomes. Each color represents one of the 24 traits; LRFI: low RFI line; HRFI: high RFI line; DFI: daily feed intake; ADG: average daily gain; FCR: feed conversion ratio; RFI: residual feed intake; carcBFT: backfat thickness measured on carcass; a*_GM: a* measured on the gluteus medius muscle; a*_GS: a* measured on the gluteus superficialis muscle; b*_GM: b* measured on the gluteus medius muscle; b*_GS: b* measured on the gluteus superficialis muscle; L*_GM: L* measured on the gluteus medius muscle; L*_GS: L* measured on the gluteus superficialis muscle; pH24h_AD: pH 24 h after slaughter measured on the adductor femoris muscle; pH24h_GS: pH 24 h after slaughter measured on the gluteus superficialis muscle; pH24h_LM: pH 24 h after slaughter measured on the longissimus dorsi muscle; pH24h_SM: pH 24 h after slaughter measured on the semimembranosus muscle; WHC: water holding capacity of the gluteus superficialis muscle; MQI: meat quality index; LMCcalc: lean meat content of the carcass; DP: carcass dressing percentage; Belly_W: belly weight; BF_W: backfat weight; Ham_W: ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight",
+      "path": "figures/P14/12711_2021_642_Fig2_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/225296dd1066/12711_2021_642_Fig2_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 784,
+      "height": 476,
+      "format": "JPEG",
+      "sha256": "de5b0debbbd00ab96afb7a9adab574d7b6b1242a7c0cbc724a95bb6891e43968",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 2. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig3",
+      "label": "Fig. 3",
+      "caption_original": "Comparison of GWAS results obtained from Global-GWAS (Global), HRFI-GWAS (HRFI) and LRFI-GWAS (LRFI). a Comparison of the number of identical regions and b comparison of the number of identical QTL (trait x region)",
+      "path": "figures/P14/12711_2021_642_Fig3_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/9a44f45cd5f2/12711_2021_642_Fig3_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 596,
+      "height": 249,
+      "format": "JPEG",
+      "sha256": "8093022be671d812f8737020b358e311a61fe3774d4d8da2b8de9dfe8a796c17",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 3. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig4",
+      "label": "Fig. 4",
+      "caption_original": "Plot of the − log 10 ( p -value) of the SNP-QTL. The − log 10 ( p -value) are obtained in first case with the two lines analyses for all SNP-QTL detected for the lines or the global analyses ( a ), and in second case obtained with the global analysis for SNP-QTL detected with the GWAS performed per line ( b )",
+      "path": "figures/P14/12711_2021_642_Fig4_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/63730daa1d0c/12711_2021_642_Fig4_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 798,
+      "height": 455,
+      "format": "JPEG",
+      "sha256": "d9541164e9ec447fac753d5a614b490ebe9e99627f6d765a058376b2941d0275",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 4. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig5",
+      "label": "Fig. 5",
+      "caption_original": "Distribution of SNP-QTL allele frequencies of Global-GWAS (in grey) and Lines-GWAS (in black). Distribution representing individuals from the line of the significant analysis a in G1 generation (G1 individuals only) and b in G9 generation (G1 to G9 individuals)",
+      "path": "figures/P14/12711_2021_642_Fig5_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/5de8d4ba6f96/12711_2021_642_Fig5_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 783,
+      "height": 210,
+      "format": "JPEG",
+      "sha256": "340ebef04fcfb4c9e0055bc7278d74098776079b5989dd3d03631e2c932cb14b",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 5. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig6",
+      "label": "Fig. 6",
+      "caption_original": "Distribution of differences in allele frequencies between the lines. The differences in allele frequencies are the absolute values between lines for SNP-QTL resulting from the Global-GWAS and Lines-GWAS in G1",
+      "path": "figures/P14/12711_2021_642_Fig6_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/14d49808068c/12711_2021_642_Fig6_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 796,
+      "height": 438,
+      "format": "JPEG",
+      "sha256": "a81f08745570035c0256e55af9a2585a8224b7a7f37206220b7f653d1369f1bb",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 6. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig7",
+      "label": "Fig. 7",
+      "caption_original": "Linear regression of the generation number on the allele frequencies computed in each line. Allele frequencies were estimated in the two lines by combining, for each generation, individuals of the generation n with the previous ones (animals from generation G1 to G n-1). Allelic frequencies evolutions are reported for SNP-QTL corresponding to a no-evolution, b co-evolution in both lines, c opposite-evolution, and d evolution only in one line, situations",
+      "path": "figures/P14/12711_2021_642_Fig7_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/746830418001/12711_2021_642_Fig7_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 783,
+      "height": 437,
+      "format": "JPEG",
+      "sha256": "5aaeb66026462a6bfcd2630dd498db84a2c47d4a76016a8c9d09a1b94660b2f8",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 7. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig8",
+      "label": "Fig. 8",
+      "caption_original": "Slopes of the linear regression equations of the allele frequencies on the nine generations. Slopes were calculated in each line, for all SNP-QTL identified with Global-GWAS (in grey) and Lines-GWAS (in black). Four situations (differentiated by different labels) were identified according to the significance of the slope (different from zero with p < 0.05 with a Wald test) in one or the two lines",
+      "path": "figures/P14/12711_2021_642_Fig8_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/e00d9d39d4d0/12711_2021_642_Fig8_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 797,
+      "height": 564,
+      "format": "JPEG",
+      "sha256": "101aaf061fa2f1c82567701804c107a9cf15828aa206c0bcea8afd32c6e2d1a8",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 8. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P14",
+      "figure_id": "Fig9",
+      "label": "Fig. 9",
+      "caption_original": "Genetic differences in G9 between the two lines. The genetic differences were expressed in genetic standard deviations of the trait (σ g ) as a function of the average evolution of allelic frequencies in the QTL regions of the trait between the two lines. The magnitude of the genetic correlation between each trait and RFI is indicated with a grey gradient; DFI: daily feed intake; ADG: average daily gain ; FCR: feed conversion ratio; RFI: residual feed intake; carcBFT : backfat thickness measured on carcass; a*_GM: a* measured on the gluteus medius muscle; a*_GS: a* measured on the gluteus superficialis muscle; b*_GM: b* measured on the gluteus medius muscle; b*_GS: b* measured on the gluteus superficialis muscle; L*_GM: L* measured on the gluteus medius muscle; L*_GS: L* measured on the gluteus superficialis muscle; pH24h_AD: pH 24 h after slaughter measured on the adductor femoris muscle; pH24h_GS: pH 24 h after slaughter measured on the gluteus superficialis muscle; pH24h_LM : pH 24 h after slaughter measured on the longissimus dorsi muscle; pH24h_SM: pH 24 h after slaughter measured on the semimembranosus muscle; WHC: water holding capacity of the gluteus superficialis muscle; MQI: meat quality index; LMCcalc: lean meat content of the carcass; DP: carcass dressing percentage; Belly_W: belly weight; BF_W: backfat weight; Ham_W: ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight",
+      "path": "figures/P14/12711_2021_642_Fig9_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8933/8201702/9c4037e1efdf/12711_2021_642_Fig9_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8201702/",
+      "doi": "10.1186/s12711-021-00642-1",
+      "width": 797,
+      "height": 462,
+      "format": "JPEG",
+      "sha256": "a0808121650fa80c44056b2db1bf53c433458a3e74d11eab58fbfa4b9ed1aa84",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency. — Delpuech E, Aliakbari A, Labrune Y, Fève K, Billon Y, Gilbert H, Riquet J. 2021. Fig. 9. https://doi.org/10.1186/s12711-021-00642-1. Licence : https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P15",
+      "figure_id": "Fig1",
+      "label": "Fig. 1",
+      "caption_original": "Design of scenarios to predict validation animals in HRFI ( a ) and LRFI ( b ) lines",
+      "path": "figures/P15/12711_2020_576_Fig1_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e4d5/7539441/df245db1a3e3/12711_2020_576_Fig1_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7539441/",
+      "doi": "10.1186/s12711-020-00576-0",
+      "width": 797,
+      "height": 731,
+      "format": "JPEG",
+      "sha256": "e4ce4eaa3525094f074bf2cfbc4cecfc4db025100922969ae52062de0e5f180d",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs. — Aliakbari A, Delpuech E, Labrune Y, Riquet J, Gilbert H. 2020. Fig. 1. https://doi.org/10.1186/s12711-020-00576-0. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P15",
+      "figure_id": "Fig2",
+      "label": "Fig. 2",
+      "caption_original": "Correlations between GEBVp and GEBVw, and their SE as error bars for the HRFI ( a ) and LRFI ( b ) lines. *Significant difference with scenarios 1 (control) based on the Williams t-test at a 0.05 level. RFI residual feed intake, ADG average daily gain, FCR feed conversion ratio, DFI daily feed intake, BFT backfat thickness",
+      "path": "figures/P15/12711_2020_576_Fig2_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e4d5/7539441/ec9bd03741e3/12711_2020_576_Fig2_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7539441/",
+      "doi": "10.1186/s12711-020-00576-0",
+      "width": 784,
+      "height": 563,
+      "format": "JPEG",
+      "sha256": "4f0ec1648cf863c884ee51ce202aed1bd211e6d23fd6ff69e3160e25f04ba534",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs. — Aliakbari A, Delpuech E, Labrune Y, Riquet J, Gilbert H. 2020. Fig. 2. https://doi.org/10.1186/s12711-020-00576-0. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P15",
+      "figure_id": "Fig3",
+      "label": "Fig. 3",
+      "caption_original": "Bias (regression coefficients of GEBVw on GEBVp) for the HRFI ( a ) and LRFI ( b ) lines. RFI residual feed intake, ADG average daily gain, FCR feed conversion ratio, DFI daily feed intake, BFT backfat thickness",
+      "path": "figures/P15/12711_2020_576_Fig3_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e4d5/7539441/1181d9f9f69a/12711_2020_576_Fig3_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7539441/",
+      "doi": "10.1186/s12711-020-00576-0",
+      "width": 784,
+      "height": 573,
+      "format": "JPEG",
+      "sha256": "8b7867302056df0d0c5d1003e25ca6ebba21d7e7c545282ddf2731c039f1d971",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs. — Aliakbari A, Delpuech E, Labrune Y, Riquet J, Gilbert H. 2020. Fig. 3. https://doi.org/10.1186/s12711-020-00576-0. Licence : http://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "publication_id": "P15",
+      "figure_id": "Fig4",
+      "label": "Fig. 4",
+      "caption_original": "Average, minimum and maximum relationship coefficients in the H matrix between individuals of the validation set, and individuals of the training set from the target line and from the reverse line, for a and b the HRFI target line, for c and d the LRFI target line",
+      "path": "figures/P15/12711_2020_576_Fig4_HTML.jpg",
+      "source_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e4d5/7539441/8b3021bd9b6b/12711_2020_576_Fig4_HTML.jpg",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7539441/",
+      "doi": "10.1186/s12711-020-00576-0",
+      "width": 784,
+      "height": 812,
+      "format": "JPEG",
+      "sha256": "66b88ddcf7b3fa0a920a93bf7031181318cc62494179ace42994c48fc5339fc3",
+      "license_urls": [
+        "http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "commercial_reuse_status": "cc_by_with_attribution_check_credit_line",
+      "third_party_credit_detected": false,
+      "attribution": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs. — Aliakbari A, Delpuech E, Labrune Y, Riquet J, Gilbert H. 2020. Fig. 4. https://doi.org/10.1186/s12711-020-00576-0. Licence : http://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}

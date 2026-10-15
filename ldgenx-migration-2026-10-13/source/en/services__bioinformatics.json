@@ -1,0 +1,552 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/bioinformatics",
+  "final_url": "https://www.ldgenx.com/services/bioinformatics",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:38.923124+00:00",
+  "language": "en",
+  "title": "",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": ""
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__bioinformatics.html",
+  "raw_sha256": "8dba914f0f54631357d6fd868fdb6bfc036804a3f3272c728d7f1d367d2ed6b9",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "project",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9de2c4d9-project/320-6a5de9de2c4d9-project.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "QC",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9e60aa45-qc/320-6a5de9e60aa45-qc.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "support",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb0f68d0a-support/320-6a5deb0f68d0a-support.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "workflox",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb1992091-workflow/320-6a5deb1992091-workflow.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "bioinf",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de971cebfe-bioinfo/320-6a5de971cebfe-bioinfo.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "visualisation",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99179950-datavisualisation/320-6a5de99179950-datavisualisation.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "report",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9eecd4bd-report/320-6a5de9eecd4bd-report.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "snp",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "snpPanel",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaff86308-snppanel/320-6a5deaff86308-snppanel.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "gwas",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9b7f2820-gwas/320-6a5de9b7f2820-gwas.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pipeline",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9cbdae16-pipeline/320-6a5de9cbdae16-pipeline.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "diversity",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99cb94a7-diversity/320-6a5de99cb94a7-diversity.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "data ",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de987bbdfe-data-managment/320-6a5de987bbdfe-data-managment.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "stat",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb078a06a-stat/320-6a5deb078a06a-stat.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9de2c4d9-project/320-6a5de9de2c4d9-project.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9e60aa45-qc/320-6a5de9e60aa45-qc.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb0f68d0a-support/320-6a5deb0f68d0a-support.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb1992091-workflow/320-6a5deb1992091-workflow.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de971cebfe-bioinfo/320-6a5de971cebfe-bioinfo.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99179950-datavisualisation/320-6a5de99179950-datavisualisation.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9eecd4bd-report/320-6a5de9eecd4bd-report.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaff86308-snppanel/320-6a5deaff86308-snppanel.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9b7f2820-gwas/320-6a5de9b7f2820-gwas.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9cbdae16-pipeline/320-6a5de9cbdae16-pipeline.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99cb94a7-diversity/320-6a5de99cb94a7-diversity.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de987bbdfe-data-managment/320-6a5de987bbdfe-data-managment.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb078a06a-stat/320-6a5deb078a06a-stat.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 2,
+      "text": "Transform Your Sequencing Data into Actionable Insights"
+    },
+    {
+      "level": 2,
+      "text": "Bioinformatics"
+    },
+    {
+      "level": 2,
+      "text": "Approaches"
+    },
+    {
+      "level": 2,
+      "text": "Services"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__bioinformatics.md",
+  "content_characters": 2252,
+  "content_sha256": "99b0c29b21ce8ffcf32ee79fa99f4a81cd367bd789d2bf73a896e19d556b078f",
+  "body_text": "Transform Your Sequencing Data into Actionable Insights\nBioinformatics\n        LDgenX provides tailored bioinformatics solutions for research, biodiversity, and innovation projects.\n            Approaches\n        \n        Metabarcoding\nMetagenomics\nRAD-seq\nWhole-Genome Sequencing (WGS)\nRNA-seq\nEpigenomics\nGenome-Wide Association Studies (GWAS)\nLong-Read Sequencing\n    \n            Services\n        1234567891011121314\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__bioinformatics.json"
+}

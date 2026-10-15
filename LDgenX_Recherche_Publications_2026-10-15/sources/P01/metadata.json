@@ -1,0 +1,62 @@
+{
+  "id": "P01",
+  "title": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch).",
+  "authors": [
+    "Leitwein M",
+    "Wellband K",
+    "Cayuela H",
+    "Le Luyer J",
+    "Mohns K",
+    "Withler R",
+    "Bernatchez L"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Genome biology and evolution",
+  "year": 2022,
+  "doi": "10.1093/gbe/evac036",
+  "doi_url": "https://doi.org/10.1093/gbe/evac036",
+  "pmid": "35276004",
+  "pmcid": "PMC8995047",
+  "publication_dates": {
+    "published": [
+      [
+        2022,
+        3,
+        11
+      ]
+    ],
+    "published-print": [
+      [
+        2022,
+        4,
+        10
+      ]
+    ],
+    "published-online": [
+      [
+        2022,
+        3,
+        11
+      ]
+    ],
+    "issued": [
+      [
+        2022,
+        3,
+        11
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "published_fulltext_pdf",
+  "retrieved_content_version": "version_of_record",
+  "license_urls_for_retrieved_version": [
+    "https://creativecommons.org/licenses/by-nc/4.0/"
+  ],
+  "preprint": null,
+  "institutional_records": [],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

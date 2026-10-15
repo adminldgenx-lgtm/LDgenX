@@ -1,0 +1,2203 @@
+         RAPPORT FINAL
+      Restitution des résultats
+
+               25-A.O.I-03
+Prélèvements et analyses d’eau dans les
+  estuaires et les ports maritimes du
+ bassin Artois-Picardie pour inventorier
+    les espèces de poissons par ADN
+            environnemental
+
+
+
+
+           La Rochelle, le 28 mai 2026,
+           Version 2
+
+           Contacts :
+           Tony AGION
+           tony.agion@qualyse.fr
+           Arno BRINGER
+           arno.bringer@qualyse.fr
+                                                        SOMMAIRE
+                                                                      ________
+1 - RAPPEL DU CONTEXTE ................................................................................................................ 3
+
+2 - MATERIELS & METHODES ............................................................................................................ 4
+   2.1 - STATIONS D’ECHANTILLONAGE ........................................................................................... 4
+   2.2 - PRELEVEMENTS D’EAU & MESURES IN-SITU ................................................................... 14
+      2.2.1 - MESURES IN-SITU ......................................................................................................... 14
+       2.2.2 - FILTRATIONS ADNe ...................................................................................................... 14
+   2.3 - ANALYSES EN LABORATOIRE ............................................................................................. 18
+      2.3.1 - EXTRACTION DE L’ADNe ............................................................................................. 18
+       2.3.2 - AMPLIFICATION CIBLEE .............................................................................................. 18
+       2.3.3 - REALISATION DES LIBRAIRIES et SEQUENCAGE ................................................... 19
+       2.3.4 - CONTROLES QUALITES ............................................................................................... 19
+   2.4 - BIOINFORMATIQUE ............................................................................................................... 20
+
+3 - RESULTATS .................................................................................................................................. 21
+   3.1 - INFORMATIONS GENERALES SUR LE SEQUENÇAGE ..................................................... 21
+   3.2 - ASSIGNATION TAXONOMIQUE - ADNE .............................................................................. 22
+   3.3 - MESURES PHYSICO-CHIMIQUES ........................................................................................ 25
+
+4 - RICHESSES SPECIFIQUES ......................................................................................................... 26
+   4.1 - GUILDE ECOLOGIQUE .......................................................................................................... 26
+   4.2 - DISCUSSION DES RESULTATS DES ESTUAIRES ............................................................. 28
+      4.2.1 - ESTUAIRE DE LA SOMME ............................................................................................ 28
+       4.2.2 - ESTUAIRE DE LA CANCHE .......................................................................................... 30
+       4.2.3 - ESTUAIRE DE LA SLACK .............................................................................................. 30
+   4.3 - DISCUSSION DES RESULTATS DES ZONES PORTUAIRES ............................................. 33
+      4.3.1 - PORT DE BOULOGNE .................................................................................................. 33
+       4.3.2 - PORT DE DUNKERQUE OUEST .................................................................................. 34
+       4.3.3 - PORT DE DUNKERQUE EST........................................................................................ 34
+       4.3.4 - PORT DE CALAIS ........................................................................................................... 35
+
+5 - COMPARAISONS ADNE ET PECHES AU CHALUT ................................................................... 37
+   5.1 - ESTUAIRES ............................................................................................................................ 37
+   5.2 - ZONES PORTUAIRES ............................................................................................................ 44
+
+6 - CONCLUSIONS & AXES D’AMELIORATIONS............................................................................ 45
+
+7 - BIBLIOGRAPHIE ........................................................................................................................... 48
+
+8 - ANNEXES ...................................................................................................................................... 51
+                                         LEXIQUE
+                                            ________
+
+ADN : Acide Désoxybonucléique
+
+Amorce : courte séquence d'ARN ou d'ADN servant de point de départ à la synthèse du brin
+complémentaire de la séquence cible par une polymérase.
+
+ASV : Amplicon Sequence Variants (ou variants de séquence d'amplicon) représentent des
+séquences d’ADN uniques, corrigées des erreurs et non regroupées.
+
+Barcode : technique d'identification moléculaire permettant la caractérisation d'un échantillon à
+partir d'une courte séquence d'ADN de synthèse (marqueur distinctif).
+
+Démultiplexage : Chaque échantillon est marqué par une séquence unique appelée barcode. Une
+fois les échantillons regroupés (pooler), ils peuvent être séquencés ensemble. À la fin du
+séquençage, le démultiplexage intervient pour réattribuer chaque séquence à son échantillon
+d’origine grâce à ces barcodes.
+
+Librairies de séquençage : La préparation des librairies (ou banques) de séquençage est la
+première étape du séquençage, où les ADN doivent être isolés, fragmentés, réparés aux extrémités
+et liés de façon covalente à des adaptateurs au moyen de protocoles de ligation.
+
+PCR : Polymerase Chain reaction (ou réaction de polymérase en chaine) permet de synthétiser de
+manière exponentiel les séquences ADN initialement présentent dans l’échantillon.
+
+Pooler : Regroupement de plusieurs échantillons pour les analyser conjointement.
+
+Trimming : étape de pré-traitement des données brutes de séquençage via la suppression des
+adaptateurs, des barcodes, des bases de mauvaise qualité et des lectures trop courtes. Cette étape
+permet d’améliorer la qualité et la fiabilité des données de séquençage.
+
+DIA : Espèces diadromes /Amphihalines
+
+Espèces dont le cycle biologique implique des migrations entre milieux marins et continentaux.
+Elles regroupent les espèces anadromes se reproduisant en eau douce après une croissance en
+mer, comme le saumon atlantique (Salmo salar), les espèces catadromes se reproduisant en mer
+après une croissance en eau douce ou en estuaire, comme l’anguille européenne (Anguilla
+anguilla). L’estuaire constitue un corridor de transition essentiel pour ces espèces.
+
+FW : Espèces d’eau douce
+
+Espèces principalement inféodées aux milieux continentaux, présentes surtout dans les secteurs
+amont ou faiblement salés des estuaires. Leur présence traduit l’influence fluviale, la connectivité
+avec le bassin versant et les conditions oligohalines.
+
+
+
+ER : Espèces résidentes estuariennes
+
+Espèces capables d’accomplir tout ou partie majeure de leur cycle de vie dans l’estuaire. Elles sont
+adaptées aux variations de salinité, de turbidité, de température et d’oxygène caractéristiques des
+eaux de transition.
+
+MJ : Espèces marines juvéniles
+
+
+
+       QUALYSE                                                                         Page 1
+       Innovation
+Espèces marines utilisant l’estuaire principalement au stade juvénile comme zone de nourricerie,
+de refuge et d’alimentation avant de rejoindre les habitats côtiers ou marins adultes.
+
+MA : Espèces marines adventices
+
+Espèces marines fréquentant l’estuaire de manière occasionnelle ou opportuniste, sans
+dépendance forte à ce milieu pour leur cycle biologique. Leur présence reflète surtout l’ouverture
+marine et les échanges avec le domaine côtier adjacent.
+
+
+
+
+       QUALYSE                                                                        Page 2
+       Innovation
+1 - RAPPEL DU CONTEXTE
+Dans le cadre de la Directive cadre sur l’eau (DCE) de l’Union européenne des suivis de poissons
+des masses d’eau de transition (MET) sont réalisés afin d’évaluer l’état biologique des eaux
+littorales. La façade maritime du bassin hydrographique Artois-Picardie a la particularité de
+comprendre des ports de commerce parmi ses MET.
+
+La diversité des poissons des ports reste encore mal connue contrairement à celle des estuaires
+de la Somme, de la Canche et de l’Authie qui bénéficient de suivis réguliers dans le cadre de la
+DCE. Afin de disposer de données de base sur les poissons des eaux portuaires, un inventaire des
+espèces en présence est nécessaire. Cette première connaissance permettrait de définir une
+surveillance adéquate des poissons dans les ports. De plus, une meilleure appréciation des espèces
+de poissons en présence dans les estuaires pourra être mobilisée pour faire évoluer les indicateurs
+DCE, tout en apportant des informations complémentaires sur les estuaires moins suivis comme
+celui de la Slack.
+
+L’inventaire des espèces par ADN environnemental (ADNe) est une technique analytique qui se
+développe depuis plusieurs décennies. Cette méthode non-destructrice permet d’identifier une
+variété de taxons (ex : poissons, mammifères, invertébrés, plantes) dans plusieurs types de
+matrices (ex : eau, sédiment). Cette technique d’inventaire s’est considérablement développée ces
+dernières années dans les milieux aquatiques et plus particulièrement dans les eaux littorales. Il
+devient ainsi possible de réaliser des prélèvements et des analyses en routine afin d’améliorer la
+connaissance de la richesse et de la répartition de la biodiversité marine.
+
+Afin de contribuer à une meilleure compréhension de la biodiversité ichtyologique dans les
+milieux estuariens et portuaires du bassin Artois-Picardie, cette étude s’inscrit dans une
+dynamique de collaboration scientifique active avec l’Agence de l’Eau Artois-Picardie, au service
+d’un suivi environnemental renforcé, précis et rigoureux.
+
+
+
+
+       QUALYSE                                                                        Page 3
+       Innovation
+2 - MATERIELS & METHODES
+
+            2.1 -      STATIONS D’ECHANTILLONAGE
+
+ Les prélèvements réalisés ont suivi la stratégie d’échantillonnage validée par l’AEAP (cf. en
+ Annexe 1).
+
+                                            Tableau 1. Sites de prélèvements retenus
+
+                                                                                               Coordonnées GPS
+                                                                       Mode de                 (degrés décimaux)
+ Numéro station              Site                    Secteur
+                                                                      prelévement
+                                                                                           N                       E
+
+       1            Estuaire de la Somme               Aval          Navire support    50.21 2723            1 .597049
+
+       2            Estuaire de la Somme              Amont          Navire support    50.1 83567             1 .64444
+
+       3             Estuaire de l'Authie              Aval          Navire support    50.381 258            1 .573507
+
+       4             Estuaire de l'Authie             Amont          Navire support    50.369864             1 .61 3452
+
+       5            Estuaire de la Canche              Aval          Navire support    50.5481 53            1 .592585
+
+       6            Estuaire de la Canche             Amont          Navire support    50.51 9997            1 .623888
+
+       7              Port de Boulogne              Secteur 2        Navire support    50.729342             1 .566782
+
+       8              Port de Boulogne              Liane (aval)     Navire support    50.729384             1 .5921 98
+
+       9             Estuaire de la Slack              Aval             A pied         50.80601 7            1 .6031 78
+
+       10               Port de Calais              Avant Port       Navire support    50.967809             1 .844026
+
+       11               Port de Calais          Bassin des chasses      A pied         50.959048             1 .833882
+
+       12           Port Ouest Dunkerque            Avant Port       Navire support    50.5481 53            1 .592585
+
+       13           Port Ouest Dunkerque         Bassin Atlantique   Navire support    50.51 9997            1 .623888
+
+       14            Port Est Dunkerque           Bassin Mardick     Navire support    51 .039592            2.263793
+
+       15            Port Est Dunkerque          Bassin evolution    Navire support    51 .047565            2.353528
+
+
+
+
+       QUALYSE                                                                                              Page 4
+       Innovation
+La Figure 1 présente la répartition spatiale des différents points de prélèvement réalisés lors de
+la campagne ADNe au sein des estuaires et zones portuaires investigués.
+
+
+
+
+        Figure 1. Carte synthétique des différents points de prélèvements lors des campagnes ADNe.
+
+
+
+
+Les mesures in-situ ont été réalisées aux points GPS précisés dans la stratégie
+d’échantillonnage.
+
+Les cartographies associées aux transects de filtration réalisés sur l’ensemble des sites
+échantillonnés sont présentées ci-après.
+
+
+
+
+    QUALYSE                                                                                      Page 5
+    Innovation
+Estuaire de la Somme - Zone verte Aval
+
+
+
+
+Estuaire de la Somme - Zone rouge Amont
+
+
+
+
+    QUALYSE                               Page 6
+    Innovation
+Estuaire de l'Authie - Zone verte Aval
+
+
+
+
+Estuaire de l'Authie - Zone jaune Amont
+
+
+
+
+    QUALYSE                               Page 7
+    Innovation
+Estuaire de la Canche - Zone bleue Aval
+
+
+
+
+Estuaire de la Canche - Zone jaune Amont
+
+
+
+
+                    AMONT
+
+
+
+
+    QUALYSE                                Page 8
+    Innovation
+Boulogne - Secteur 2
+
+
+
+
+Boulogne - Aval Liane
+
+
+
+
+    QUALYSE             Page 9
+    Innovation
+Slack – A pied
+
+Pas de transects sur ce point.
+
+
+
+
+    QUALYSE                      Page 10
+    Innovation
+Calais – Ponton – AVANT PORT
+
+Pas de transects sur ce point.
+
+
+
+
+Calais – Bassin des chasses
+
+Pas de transects sur ce point.
+
+
+
+
+    QUALYSE                      Page 11
+    Innovation
+Dunkerque Ouest - Avant Port
+
+
+
+
+Dunkerque Ouest - Basin Atlantique ouvert
+
+
+
+
+    QUALYSE                                 Page 12
+    Innovation
+Dunkerque Est - Bassin de Mardyck
+
+
+
+
+Dunkerque Est - Bassin d'Evolution
+
+
+
+
+    QUALYSE                          Page 13
+    Innovation
+         2.2 -       PRELEVEMENTS D’EAU & MESURES IN-SITU
+
+                 2.2.1 - MESURES IN-SITU
+
+Les sites ont été caractérisés à l'aide de mesures in situ (Figure 2) :
+   - Temperature (°C)
+   - pH
+   - Oxygène dissous (mg/L)
+   - Saturation en Oxygène (%)
+   - Turbidité
+   - Conductivité
+   - Salinité
+
+
+
+
+                          Figure 2. Sonde multi paramètres physico-chimiques © NKE
+
+
+
+Toutes les coordonnées GPS des stations ont été relevées en degré minutes décimales (WGS 84).
+Toutes les informations sont détaillées dans le tableur envoyé à l’AEAP après prélèvements (cf.
+Annexe 2).
+
+
+
+                 2.2.2 - FILTRATIONS ADNe
+
+Sur chaque secteur, trois réplicats ont été filtrés simultanément à l’aide de capsules stériles
+WATERRA (Figure 3), grâce à l’utilisation de trois pompes portatives installées en parallèle au sein
+d’une mallette de terrain dédiée. Cette configuration garantit la robustesse et la comparabilité des
+réplicats en limitant les biais temporels.
+
+
+
+
+        QUALYSE                                                                       Page 14
+        Innovation
+                         Figure 3. Pompe de filtration pour ADNe avec filtre WATERRA
+
+Afin de prévenir tout risque de contamination croisée entre les sites, des kits stériles ont été utilisés
+entre chaque nouveau site d’échantillonnage. Les capsules de filtration sont positionnées en
+amont des tuyaux et des pompes minimisant ainsi les risques de contamination. La taille de pores
+des filtres à ADNe de 0.45µM (Figure 4) a été retenue afin d'assurer une détection optimale de
+l’ADN de poissons tout en tenant compte de la turbidité potentielle de l’eau.
+
+
+
+
+                        Figure 4. Capsules de filtrations (3 réplicats pour chaque secteur)
+
+
+
+
+        QUALYSE                                                                               Page 15
+        Innovation
+Les volumes filtrés pour chaque échantillon sont présentés dans le Tableau 2.
+
+Tableau 2. Localisation des sites échantillonnés et volumes d’eau filtrés par réplicat lors de la campagne ADNe réalisée
+                      dans les milieux estuariens et portuaires du bassin Artois-Picardie en 2025.
+
+
+
+
+Après filtration, le tampon de conservation (Figure 5) stérile Longmire (Edmunds et Burrows 2020)
+a été utilisé pour garantir une bonne préservation des ADN avant leur extraction. 50mL de tampon
+de conservation a été inséré dans chaque capsule après filtration pour conservation des ADNs. Les
+échantillons ont ensuite été étiquetés de manière unique avec un identifiant lisible (code
+site/date/réplicat), et placés dans une glacière isotherme avant leur dépôt dans un réfrigérateur
+une fois retournée à terre.
+
+
+
+
+                                 Figure 5. Ajout du tampon dans les filtres WATERRA
+
+
+
+
+        QUALYSE                                                                                         Page 16
+        Innovation
+Tous les filtres ont été expédiés vers notre site de Tulle par navette. Bien que les échantillons soient
+fixés avec un tampon de conservation adapté, un transport à 5 °C a été assuré afin de garantir
+l’intégrité des ADN extraits. Cette précaution limite la dégradation éventuelle des acides
+nucléiques et optimise la fiabilité des analyses ultérieures.
+
+
+
+
+       QUALYSE                                                                            Page 17
+       Innovation
+     2.3 -       ANALYSES EN LABORATOIRE
+
+             2.3.1 - EXTRACTION DE L’ADNe
+
+Avant l’extraction d’ADN, les capsules Waterra ont été agitées vigoureusement pendant 5
+minutes à l’aide d’un shaker rotatif afin de remettre en suspension l’ADN dans le tampon de
+préservation. Le tampon contenant l’ADN a ensuite été transféré dans un tube Falcon de 50 mL
+puis centrifugé 15 minutes à 15 000 g (Pont et al. 2018). L’ADN présent dans le culot a ensuite
+été extrait à l’aide du kit ZymoBIOMICS™ DNA Miniprep Kit (Zymo Research). Ce kit est
+particulièrement adapté aux échantillons environnementaux complexes, notamment ceux
+contenant une forte charge particulaire et des inhibiteurs potentiels.
+
+L’ensemble des manipulations a été réalisé en conditions contrôlées dans un laboratoire dédié
+à l’ADN environnemental, avec port d’équipements de protection individuelle et application de
+procédures strictes visant à éviter toute contamination. Les extractions ont été effectuées en
+séries, incluant des contrôles négatifs d’extraction afin de vérifier la qualité et les éventuelles
+contaminations.
+
+Les concentrations finales d’ADN ont été quantifiées au Qubit (Thermo), ce qui a permis
+d’évaluer la quantité d’ADN environnemental récupérée en fonction des différents échantillons.
+Les contrôles négatifs ont également été intégrés afin de surveiller d’éventuelles
+contaminations lors de cette étape.
+
+
+             2.3.2 - AMPLIFICATION CIBLEE
+
+Les amplifications PCR ont été réalisées dans les locaux du plateau de génomique de Tulle à
+l’aide des couples d’amorces Teleo_F et Teleo_R décrites par Valentini et al (2016) pour
+l’amplification du gène 12S chez les téléostéens, et Elas02_F et Elas02_R décrites par Taberlet et
+al (2018) chez les élasmobranches. Par la suite, les analyses et résultats obtenus pour chacun de
+ces couples d’amorces seront désignés respectivement sous les appellations Teleo et Elas02.
+
+Les réactions ont été réalisées dans un volume de 20 µL à l’aide du MasterMix Qiagen sur 45
+cycles d’amplification aux températures d’hybridations de 55°C et 54°C respectivement pour
+les amorces Teleo et Elas02.
+
+Les séquences forward des amorces ont été taguées à leur extrémité 5’ afin de pouvoir réaliser
+5 réplicas PCR sur chacun des échantillons (Figure 5). Des contrôles négatifs PCR ont été
+intégrés à chaque série d’amplification pour détecter de potentielles contaminations. Les
+produits de PCR ont ensuite été contrôlés par migration sur système capillaire (Calliper) afin de
+s’assurer de la présence de produits d’amplification aux tailles attendues. Suite à cela, les 5
+réplicas de PCR réalisés par échantillon ont été poolés dans un même tube comme représenté
+sur le schéma ci-dessous :
+
+
+
+
+    QUALYSE                                                                          Page 18
+    Innovation
+        Figure 6. Schéma représentatif de l’ajout de séquences (ou TAG) pour identifier les cinq réplicats de PCR.
+
+
+               2.3.3 - REALISATION DES LIBRAIRIES et SEQUENCAGE
+
+Les produits de PCR poolés par échantillon ont dans un premier temps été purifiés à l’aide de billes
+Ampure XP (Beckman Coulter) puis quantifiés au Qubit. Les librairies ont ensuite été réalisées à
+l’aide du Ion Plus Fragment Library Kit (Thermo) en suivant les recommandations du fournisseur
+et chacun des échantillons a été associé à un barcode unique.
+
+Enfin, la qualité du pool de librairies a été vérifiée à l’aide d’un système de migration capillaire
+(Caliper), pour contrôler la taille des fragments et l’intégrité des amplicons. La quantification du
+pool final a ensuite été réalisée par PCR quantitative à l’aide du kit Ion Universal Librairy
+Quantification (Thermo). Deux pools librairies équimolaires ont ensuite été réalisés pour les régions
+Teleo et Elas02 et déposés sur deux puces IonChip530 de 15 Gb. Le séquençage a finalement été
+réalisé sur un IonTorrent S5 Prime (Thermo).
+
+
+               2.3.4 - CONTROLES QUALITES
+
+Après filtrage qualité (trimming des amorces et élimination des séquences aberrantes), 1 384 448
+séquences et 4 768 817 séquences ont été conservées correspondant à 38% et 45% des séquences
+produites pour les marqueurs Teleo et Elas02.
+Les témoins de laboratoire ont été séquencés dans un second temps et ne présentent aucune
+séquence.
+
+
+
+
+       QUALYSE                                                                                          Page 19
+       Innovation
+          2.4 -          BIOINFORMATIQUE
+
+Les différentes étapes de l’analyse ADNe réalisée sont à retrouver sur le schéma de la figure 7.
+L’analyse des données de séquençage débute par les étapes de trimming et de démultiplexage
+des données brutes de séquençage via des scripts bioinformatiques développés par LDgenX. Ces
+étapes ont permis de supprimer les barcodes IonTorrent et d’assigner chaque séquence à un
+réplicat de PCR et à un identifiant d’échantillon. La suite des analyses a été réalisée sur les fichiers
+FastQ de séquençage par échantillon et par réplicat de PCR. Les données ont ensuite été
+intégrées dans le pipeline d’analyse SAMBA V4.0 (Noel et al. 2021) contenant les étapes suivantes :
+    -   QIIME2 pour le nettoyage des données (données manquantes au sein de la séquence,
+        longueur de la lecture différente de l’attendu, élimination des chimères de PCR) et
+        l’inférence des ASVs (clustering sous un même ASV des séquences similaires à 97%) ;
+    -   Dada2 pour le clustering des données de séquençage ;
+    -   Assignation taxonomique à l’aide de la base de références de séquences MIDORI2 (Version :
+        GenBank268_2025-08-14 ; (Leray et al. 2022)
+
+Les données brutes d’assignation ont ensuite été traitées à l’aide d’un script R interne pour
+supprimer du jeu de données (Figure 7) :
+   -  les ASVs dont l’assignation est ambigüe et/ou multiple, c’est-à-dire plusieurs identifications
+      d'espèces différentes à partir d’une même séquence ;
+   -  les ASVs dont l’abondance est maximale dans un contrôle négatif (Témoin de laboratoire
+      pour l’extraction ADN et témoins de PCR) dans le but d’éviter la prise en compte de
+      contamination potentiel de l’échantillon lors des manipulations.
+
+
+
+
+Figure 7. Schéma récapitulatif de l’analyse de données génétiques, du séquençage à la table taxonomique des espèces
+identifiées sur l’ensemble des sites du projet. Les couleurs des boîtes différencient les étapes, avec les contrôles qualités
+ et le trimming (en gris), l’analyse ADNe avec Samba (en vert) et l’analyse des données obtenues pour chaque site (en
+                                                           bleu).
+
+
+
+
+         QUALYSE                                                                                            Page 20
+         Innovation
+3 - RESULTATS
+
+          3.1 -        INFORMATIONS GENERALES SUR LE SEQUENÇAGE
+
+Les fichiers FastQ bruts obtenus après le séquençage IonTorrent ont été analysés pour vérifier leur
+qualité. Pour cela, l’outil MultiQC a été utilisé en combinant l’ensemble des fichiers de séquençage
+pour chacun des marqueurs utilisés ce qui nous a permis de valider les séquençages par couple
+d’amorces. Ensuite en parallèle, une analyse FastQC a été réalisé pour chaque échantillon un à un.
+Ces étapes de contrôle qualité ont été menées afin de détecter d’éventuelles erreurs de
+séquençage. Les résultats de ces contrôles qualités sont à retrouver dans le dossier Annexe 3.
+Au vu des profils, tous les échantillons présentent des séquençages de bonnes qualités et aucun
+échantillon n’a ainsi été écarté de l’analyse à cette étape.
+
+Le séquençage a généré un total de 3 643 284 séquences brutes pour le marqueur Teleo et 10 597
+372 séquences brutes pour le marqueur Elas02. Le nombre de séquences moyen par échantillon
+est de 79 202 séquences avec un minimum de 2 481 séquences pour l’échantillon « Estuaire verte
+3 » et un maximum de 111 594 séquences pour l’échantillon « Estuaire verte 2 » pour le marqueur
+Teleo (Figure 8). Le nombre de séquences moyen par échantillon est de 230 378 séquences avec
+un minimum de 153 674 séquences pour l’échantillon « Boulogne aval 1 » et un maximum de 540
+552 séquences pour l’échantillon « Boulogne secteur 1 » pour le marqueur Elas02 (Figure 9).
+Une synthèse du nombre de séquences par échantillon est à retrouver dans l’Annexe 4.
+
+
+
+
+ Figure 8. Nombre de séquences par prélèvement pour les deux marqueurs utilisés dans le projet, avec en (a) le nombre
+    de séquences obtenues après séquençage du marqueur Teleo et en (b) le nombre de séquences obtenues après
+séquençage du marqueur Elas02. Chaque barre correspond à un échantillon regroupé par site de prélèvement selon les
+                                                    couleurs.
+
+
+
+
+        QUALYSE                                                                                      Page 21
+        Innovation
+La taille moyenne des séquences est de 206 pb pour le marqueur Teleo et 239 pb pour le marqueur
+Elas02 (Figure 9). La longueur moyenne des séquences obtenues est conforme à la taille attendue
+des amplicons ciblés. Ce résultat reflète une amplification spécifique et une bonne qualité des
+données. La faible variabilité observée autour de cette moyenne est cohérente avec la nature
+conservée et courte des régions 12S utilisées.
+
+
+
+
+     Figure 9. Taille des reads par prélèvement pour les deux marqueurs utilisés dans le projet, avec en (a) pour les
+séquences obtenues après séquençage du marqueur Téléo, et en (b) pour les séquences obtenues après séquençage du
+ marqueur Elas02. Chaque boîte à moustache correspond à un échantillon regroupé par site de prélèvement selon les
+                                                        couleurs.
+
+
+
+
+          3.2 -        ASSIGNATION TAXONOMIQUE - ADNe
+
+L’assignation taxonomique a été réalisée par alignement des ASV contre la base de données
+MIDORI2 (Version : GenBank268_2025-08-14 ; Leray et al. 2022). Sur les 356 ASV détectés, 96 ont pu
+être assignés à une espèce appartenant à l’ichtyofaune.
+
+La fraction d’ASV non assignés au niveau de l’espèce correspond principalement à des séquences
+avec peu d’information pour une assignation précise, ou bien des groupes pour lesquels les
+espèces ont des séquences Teleo et Elas02 trop proches. Ce résultat est attendu lors d’étude ADN
+environnemental avec du séquençage en court fragment.
+La communauté dominante du jeu de données avec l’amorce Teleo est : Chordé.
+La communauté dominante du jeu de données avec l’amorce Elas02 est : Chordé.
+
+Les proportions relatives de séquences assignées montrent des variations de composition selon le
+site de prélèvement. On peut également voir que le marqueur Teleo a également amplifié d’autres
+groupes comme les échinodermes ou les arthropodes.
+
+
+
+
+        QUALYSE                                                                                      Page 22
+        Innovation
+Au total, 23 taxons ont été identifiés avec le marqueur Teleo (Figure 10) et 13 taxons avec le
+marqueur Elas02 (Figure 11). La distribution de ces taxons varie selon les sites. La liste complète des
+taxons identifiés est à retrouver en Annexe 5. Les taxons détectés ont été regroupés selon les
+guildes écologiques estuariennes proposées par (Teichert et al., 2018), afin de décrire la
+structuration fonctionnelle des assemblages observés par ADNe.
+
+
+
+
+   Figure 10. Distribution des taxons issus du séquençage Teleo selon les 16 sites d’échantillonnage. Chaque panneau
+ illustre la zone de détection des taxons. Les espèces identifiées selon les sites ont été reportées via des cercles dont la
+ taille est dépendante de l’abondance relative des séquences assignées à chaque taxon. La couleur représente l’ordre
+  taxonomique des espèces identifiées. Abréviations des guildes (DIA : espèces diadromes ; ER : espèces estuariennes
+  résidentes ; FW : espèces dulçaquicoles ; MA : espèces marines accessoires ; MJ : espèces marines juvéniles ; NA : Not
+                                                        Available).
+
+
+
+
+        QUALYSE                                                                                             Page 23
+        Innovation
+   Figure 11. Distribution des taxons issus du séquençage Elas02 selon les 16 sites d’échantillonnage. Chaque panneau
+ illustre la zone de détection des taxons. Les espèces identifiées selon les sites ont été reportées via des cercles dont la
+ taille est dépendante de l’abondance relative des séquences assignées à chaque taxon. La couleur représente l’ordre
+                                            taxonomique des espèces identifiées.
+
+
+Parmi l’ensemble des espèces identifiées, six espèces détectées avec l’amorce Teleo n’ont jamais
+été signalées dans la zone d’étude (Asterias amurensis, Macrobrachium nipponense,
+Oncorhynchus keta, Oncorhynchus tshawytscha, Sardinops sagax, Squalius lepidus), de même
+qu’une espèce détectée avec l’amorce Elas02 (Atherina hepsetus).
+
+Ces détections inattendues peuvent s’expliquer par plusieurs facteurs, tels que des erreurs
+d’assignation taxonomique liées aux bases de données de référence, la présence de séquences
+proches phylogénétiquement, des contaminations, ou encore le transport d’ADN
+environnemental depuis d’autres zones.
+
+
+Les deux marqueurs, Teleo et Elas02, mettent en évidence une structure cohérente des
+communautés ichtyologiques, caractérisée par :
+    ▪ une diversité dominée par les poissons côtiers et estuariens,
+    ▪ une représentation récurrente de plusieurs ordres (Clupeiformes, Gadiformes,
+        Perciformes),
+    ▪ et une structuration des assemblages basée à la fois sur la présence/absence et sur les
+        abondances relatives de séquences.
+Les tailles des points traduisent ici des abondances relatives issues du séquençage, permettant
+d’identifier les taxons avec une contribution relative plus élevée au signal moléculaire au sein de
+chaque site.
+
+
+
+
+        QUALYSE                                                                                             Page 24
+        Innovation
+     3.3 -         MESURES PHYSICO-CHIMIQUES
+
+Les données physico-chimiques mesurées sur les différentes stations sont présentées dans le
+tableau 3.
+
+Tableau 3. Paramètres physico-chimiques mesurés in situ lors de la campagne ADNe sur les secteurs estuariens et
+                                 portuaires du bassin Artois-Picardie en 2025
+
+
+
+
+    QUALYSE                                                                                     Page 25
+    Innovation
+4 - RICHESSES SPECIFIQUES
+ Les richesses spécifiques mesurées par ADNe à l’automne 2025 varient selon les sites, avec des
+ médianes comprises entre 5 et 9 espèces et des valeurs qui s’étendent de 2 à 13 espèces (Figure
+ 12). La variabilité intra-site est modérée à élevée selon les stations avec des amplitudes plus
+ marquées pour certains sites.
+
+ À l’échelle des estuaires, les richesses spécifiques sont comprises entre 6 et 9 espèces. L’estuaire
+ de la Somme, la baie de l’Authie et la baie de la Canche présentent des niveaux comparables,
+ bien que l’Authie montre une variabilité plus importante entre prélèvements. L’estuaire de la
+ Slack se distingue par des richesses plus faibles, avec une médiane de l’ordre de 5 à 6 espèces
+ et une dispersion réduite.
+
+ Les sites portuaires présentent des richesses spécifiques du même ordre de grandeur, voire
+ légèrement supérieures. Les ports de Boulogne et de Dunkerque (Est et Ouest) affichent des
+ médianes comprises entre 8 et 9 espèces avec des valeurs maximales plus élevées. Le site de
+ Calais présente des richesses intermédiaires avec une médiane autour de 6 à 7 espèces.
+
+ Dans l’ensemble, les résultats indiquent une cohérence des niveaux de richesse spécifique
+ entre estuaires et ports, avec une tendance à des valeurs légèrement plus élevées dans les
+ milieux portuaires. Le site de la Slack apparaît comme le plus faiblement diversifié parmi les
+ stations étudiées.
+
+
+
+
+Figure 12. Graphique en boites à moustaches représentant les richesses spécifiques observées par ADNe à l'automne
+                                           2025 par site échantillonné.
+
+
+
+
+        4.1 -         GUILDE ECOLOGIQUE
+
+ Après exclusion des taxons douteux (Sardinops sagax, Squalius lepidus, Oncorhynchus keta,
+ Oncorhynchus tshawytscha et Atherina hepsetus), la structuration des assemblages d’espèces
+ apparaît cohérente avec les guildes écologiques DCE attendues (Figure 13)
+
+
+
+
+       QUALYSE                                                                                     Page 26
+       Innovation
+Figure 23. Répartition des guildes écologiques des espèces détectées par ADNe dans les différents sites (campagne
+ automne 2025) (guildes marines juvéniles (MJ), estuariennes résidentes (ER), espèces dulçaquicoles (FW), espèces
+                               marines accessoires (MA) et espèces migratrices (DIA).
+
+L’analyse globale des guildes écologiques met en évidence une structuration fonctionnelle
+cohérente des assemblages ichtyologiques au sein des estuaires et ports étudiés. L’ensemble
+des sites est majoritairement dominé par les espèces marines juvéniles (MJ), traduisant le rôle
+fonctionnel de ces milieux côtiers et estuariens comme zones de transition et d’accueil pour les
+espèces marines utilisant les habitats littoraux peu profonds comme secteurs de croissance ou
+d’alimentation. Cette composante marine est particulièrement marquée dans les secteurs les
+plus ouverts sur le domaine côtier, notamment certains bassins portuaires et les zones aval des
+estuaires. Les espèces estuariennes résidentes (ER) constituent également une composante
+récurrente des assemblages détectés, reflétant l’importance des habitats saumâtres et
+intertidaux dans le maintien d’espèces adaptées aux fortes variations environnementales
+caractéristiques des systèmes estuariens.
+
+Les espèces marines accessoires (MA) demeurent globalement secondaires mais apparaissent
+ponctuellement dans plusieurs secteurs ouverts ou fortement connectés au domaine marin,
+traduisant des influences côtières directes. Les espèces diadromes (DIA) restent faiblement
+représentées à l’échelle globale, bien que leur détection dans certains estuaires souligne le rôle
+potentiel de ces milieux comme corridors de transition entre domaines marin et continental.
+
+Enfin, plusieurs secteurs présentent une contribution plus importante des espèces
+dulçaquicoles (FW), notamment dans certains secteurs amont estuariens ou portuaires soumis
+à des influences continentales et hydrauliques marquées. Toutefois, dans plusieurs bassins
+portuaires, certaines détections d’espèces d’eau douce doivent être interprétées avec
+prudence, celles-ci pouvant résulter du transport d’ADNe depuis l’amont des fleuves et ne pas
+nécessairement traduire une présence locale effective des espèces (Yamamoto et al. 2017). Ces
+signaux pourraient également refléter des transferts passifs d’ADN ou des contaminations
+environnementales locales.
+
+Dans l’ensemble, les profils fonctionnels observés apparaissent cohérents avec les gradients de
+salinité, de connectivité marine et de confinement hydrologique caractérisant les différents
+systèmes étudiés. Ces résultats montrent que l’approche ADNe permet de restituer de manière
+
+
+
+      QUALYSE                                                                                      Page 27
+      Innovation
+robuste les grandes structurations écologiques des assemblages ichtyologiques dans des
+milieux estuariens et portuaires complexes.
+
+
+
+
+       4.2 -         DISCUSSION DES RESULTATS DES ESTUAIRES
+
+Le Tableau 4 présente l’ensemble des espèces détectées par ADN environnemental (ADNe)
+dans les différents estuaires étudiés du bassin Artois-Picardie, en distinguant les secteurs
+échantillonnés au sein de chaque système estuarien. Pour chaque taxon, sont également
+indiqués le nom vernaculaire associé ainsi que la guilde écologique attribuée selon la typologie
+utilisée dans le cadre de la Directive Cadre sur l’Eau (DCE). Les valeurs renseignées traduisent
+la détection ou l’absence des espèces dans chacun des secteurs investigués. Les espèces
+indiquées en gras correspondent à des détections considérées comme atypiques ou
+écologiquement suspectes au regard des caractéristiques environnementales des sites étudiés
+et doivent, à ce titre, être interprétées avec prudence.
+
+Tableau 4. Répartition des espèces détectées par ADNe au sein des différents secteurs estuariens du bassin Artois-
+                               Picardie et attribution aux guildes écologiques DCE
+
+
+
+
+               4.2.1 -     ESTUAIRE DE LA SOMME
+
+La zone verte, présentant une richesse spécifique de 7 espèces, est dominée par des espèces
+marines juvéniles (MJ) et estuariennes résidentes (ER). Elle regroupe Clupea harengus, Sardina
+pilchardus, Merlangius merlangus et Dicentrarchus labrax (MJ), ainsi que Atherina presbyter
+et Pomatoschistus microps (ER). La présence de Pollachius virens (MA) traduit également une
+influence marine côtière. L’ensemble décrit un assemblage typique d’une zone estuarienne
+sous influence marine, dominée par des espèces utilisant ces habitats comme zones de
+nourricerie et de transition.
+
+La zone rouge, plus diversifiée avec 11 espèces, conserve un noyau commun composé de Clupea
+harengus, Merlangius merlangus, Pomatoschistus microps et Dicentrarchus labrax. Elle se
+distingue par une contribution importante d’espèces dulçaquicoles (FW) telles que Abramis
+
+
+      QUALYSE                                                                                       Page 28
+      Innovation
+brama, Rutilus rutilus, Perca fluviatilis, Sander lucioperca et Oncorhynchus mykiss, traduisant
+une influence continentale plus marquée. La présence de Gasterosteus aculeatus (ER) renforce
+cette signature de transition estuarienne-amont. La détection de Salmo salar (DIA), bien
+qu’écologiquement plausible au regard du caractère migrateur de l’espèce, doit néanmoins
+être interprétée avec prudence et nécessiterait d’être confirmée par des observations
+complémentaires afin de distinguer une présence effective d’un signal environnemental
+transitoire.
+
+Dans l’ensemble, les espèces identifiées apparaissent cohérentes avec leur guilde écologique,
+malgré quelques signaux nécessitant une interprétation prudente. Les résultats mettent ainsi
+en évidence un gradient fonctionnel structuré entre une zone verte à dominante marine-
+estuarienne et une zone rouge marquée par une influence continentale plus forte, confirmant
+la pertinence de l’approche ADNe pour caractériser les assemblages ichtyologiques dans le
+cadre DCE.
+
+L’analyse met en évidence une structuration nette des assemblages, avec :
+
+•   une zone verte dominée par des guildes marines et estuariennes (MJ + ER),
+
+•   une zone rouge enrichie en espèces dulçaquicoles et migratrices (FW + DIA).
+
+Le noyau d’espèces communes assure une continuité écologique entre les deux zones, tandis
+que l’augmentation de la richesse spécifique et la diversification des guildes en zone rouge
+traduisent un gradient fonctionnel cohérent entre influence marine et influence continentale.
+Dans l’ensemble, les espèces identifiées sont cohérentes avec leur guilde écologique, avec
+quelques cas nécessitant une interprétation prudente, ce qui confirme la pertinence de
+l’approche ADNe dans le cadre DCE.
+
+
+La zone verte, présentant une richesse spécifique de 6 espèces, est dominée par des espèces
+marines juvéniles (MJ) telles que Clupea harengus, Sardina pilchardus, Merlangius merlangus
+et Dicentrarchus labrax. Elle comprend également une espèce marine (MA) (Pollachius virens)
+ainsi qu’une espèce estuarienne résidente (ER) (Pomatoschistus microps). Cet assemblage
+traduit une influence principalement marine et estuarienne, cohérente avec une fonction de
+zone de transition côtière et de nourricerie.
+
+La zone jaune, plus diversifiée avec 13 espèces après exclusion des taxons douteux, conserve ce
+noyau commun mais se distingue par l’apparition d’espèces appartenant à des guildes plus
+variées. Outre les espèces marines juvéniles et estuariennes résidentes déjà présentes en zone
+verte, elle comprend Atherina presbyter et Gasterosteus aculeatus (ER), ainsi que plusieurs
+espèces dulçaquicoles (FW) : Rutilus rutilus, Perca fluviatilis et Oncorhynchus mykiss. La
+présence de Salmo salar (DIA) traduit également une connectivité avec les habitats amont. La
+détection de cette espèce migratrice, bien qu’écologiquement plausible, doit toutefois être
+interprétée avec prudence et nécessiterait d’être confirmée par des observations
+complémentaires afin de distinguer une présence effective d’un signal environnemental
+transitoire.
+
+La détection de Conger conger (MA) dans la zone jaune doit également être nuancée, cette
+espèce marine benthique n’étant pas typiquement associée aux milieux estuariens peu
+profonds ; le signal observé pourrait refléter une influence marine côtière ou un transport d’ADN
+environnemental.
+
+Dans l’ensemble, les espèces identifiées apparaissent cohérentes avec leur guilde écologique,
+malgré quelques signaux nécessitant une interprétation prudente. Les résultats mettent ainsi
+en évidence un gradient fonctionnel entre une zone verte à dominante marine-estuarienne et
+une zone jaune marquée par une influence continentale plus importante.
+
+
+
+
+    QUALYSE                                                                        Page 29
+    Innovation
+           4.2.2 - ESTUAIRE DE LA CANCHE
+
+La zone bleue présente une richesse spécifique corrigée de 9 espèces. Elle est dominée par des
+espèces marines juvéniles (MJ) avec Clupea harengus, Sardina pilchardus, Sprattus sprattus,
+Merlangius merlangus et Dicentrarchus labrax. Elle comprend également une espèce marine
+accessoire (MA), Pollachius virens, une espèce estuarienne résidente (ER), Pomatoschistus
+microps, ainsi qu’une espèce dulçaquicole (FW), Abramis bramaLa détection de cette dernière
+doit toutefois être nuancée, cette espèce d’eau douce étant peu attendue dans un secteur à
+dominante marine ; ce signal peut traduire une influence continentale diffuse ou un transport
+d’ADN depuis l’amont, potentiellement favorisé par la configuration plus resserrée de cet
+estuaire par rapport aux autres estuaires étudiés, susceptible de renforcer l’influence des
+apports continentaux et le transfert des signatures ADN vers l’aval. La présence de Salmo salar
+(DIA) complète cet assemblage.
+
+La zone jaune présente une richesse spécifique corrigée de 7 espèces. Elle conserve un noyau
+commun composé de Clupea harengus, Merlangius merlangus, Pollachius virens,
+Pomatoschistus microps et Dicentrarchus labrax, auquel s’ajoutent Abramis brama (FW) et
+Salmo salar (DIA). Par rapport à la zone bleue, l’assemblage y apparaît plus restreint, avec
+l’absence de Sardina pilchardus et Sprattus sprattus, ce qui réduit la représentation des
+espèces marines juvéniles.
+
+La détection de Salmo salar, présente dans les deux zones, reste écologiquement plausible
+compte tenu du caractère migrateur de l’espèce, mais elle gagnerait à être confirmée par des
+observations complémentaires afin de distinguer une présence effective d’un signal
+environnemental transitoire.
+
+
+
+
+           4.2.3 - ESTUAIRE DE LA SLACK
+
+L’analyse de l’estuaire de la Slack repose sur une seule station échantillonnée, ce qui limite la
+portée spatiale de l’interprétation des assemblages observés et ne permet pas d’établir de
+comparaison le long du gradient estuarien, en l’absence de stations situées dans des secteurs
+plus amont. La station présente une richesse spécifique corrigée de 6 espèces. Lors du
+prélèvement du 27/11/2025 à 15h, le coefficient de marée était de 46 avec une PM à 16h14.
+
+L’assemblage identifié est composé d’espèces appartenant à plusieurs guildes écologiques. Les
+espèces marines juvéniles (MJ) sont représentées par Clupea harengus et Dicentrarchus
+labrax, traduisant une influence marine et estuarienne cohérente avec une fonction de zone de
+transition côtière. Les espèces estuariennes résidentes (ER) sont représentées par
+Pomatoschistus microps et Gasterosteus aculeatus, deux taxons caractéristiques des milieux
+estuariens et saumâtres.
+
+L’assemblage comprend également une espèce dulçaquicole (FW), Rutilus rutilus. La présence
+de cette espèce apparaît cohérente avec les conditions faiblement saumâtres mesurées lors de
+la campagne, la salinité observée sur la station étant d’environ 4 PSU, traduisant une influence
+continentale marquée dans ce secteur estuarien. Une espèce migratrice (DIA), Salmo salar, est
+également détectée ; bien qu’écologiquement plausible au regard du cycle biologique de
+l’espèce, cette détection nécessiterait d’être confirmée par des observations complémentaires
+afin de distinguer une présence effective d’un signal environnemental transitoire.
+
+Dans l’ensemble, malgré un effort d’échantillonnage limité à une seule station, les espèces
+détectées apparaissent cohérentes avec leurs guildes écologiques respectives. Les résultats
+traduisent un assemblage mixte associant espèces marines, estuariennes et continentales dans
+un secteur soumis à une influence saumâtre marquée.
+
+
+
+
+    QUALYSE                                                                        Page 30
+    Innovation
+  L’assemblage comprend également une espèce dulçaquicole (FW), Rutilus rutilus, dont la
+  présence peut refléter une influence continentale locale ou un transfert d’ADN depuis les
+  secteurs amont du bassin versant. La détection de Salmo salar (DIA), bien qu’écologiquement
+  « plausible » au regard du caractère migrateur de l’espèce, doit être interprétée avec prudence
+  et nécessiterait une confirmation par des observations complémentaires afin de distinguer une
+  présence effective d’un signal environnemental transitoire.Dans l’ensemble, malgré un effort
+  d’échantillonnage limité à une seule station, les espèces détectées apparaissent cohérentes
+  avec leurs guildes écologiques respectives. Les résultats suggèrent un assemblage à
+  dominante marine-estuarienne, associé à une influence continentale modérée.
+
+
+
+Synthèse pour les estuaires :
+
+  L’analyse des assemblages ichtyologiques par ADNe révèle des organisations écologiques
+  distinctes entre les quatre estuaires étudiés, en lien avec la configuration spatiale des secteurs
+  échantillonnés au sein de chaque système estuarien.
+
+  Dans l’estuaire de la Somme, les deux secteurs étudiés présentent une opposition marquée
+  entre une zone aval ouverte sur les habitats intertidaux externes et une zone plus interne située
+  dans un chenal estuarien resserré. Cette structuration spatiale s’accompagne d’un contraste
+  fonctionnel net : la zone aval est dominée par les guildes marines juvéniles (MJ) et estuariennes
+  résidentes (ER), tandis que la zone interne présente une augmentation marquée des espèces
+  dulçaquicoles (FW) ainsi que la présence d’espèces migratrices (DIA).
+
+  Dans la baie de l’Authie, les secteurs échantillonnés se répartissent également entre une zone
+  externe largement ouverte sur la baie et une zone plus amont localisée dans un chenal
+  estuarien encaissé. La zone externe est principalement caractérisée par des espèces marines
+  juvéniles, alors que la zone interne montre une diversification plus importante des guildes
+  écologiques avec une représentation accrue des espèces dulçaquicoles, estuariennes
+  résidentes et migratrices.
+
+  La Canche présente une configuration plus resserrée, avec des secteurs échantillonnés localisés
+  dans un chenal estuarien relativement contraint spatialement. Les assemblages y restent
+  majoritairement dominés par les guildes marines et estuariennes dans les deux zones étudiées,
+  avec une contribution plus ponctuelle des espèces dulçaquicoles et migratrices.
+
+  L’estuaire du Slack, étudié à partir d’une seule station localisée dans un secteur étroit à
+  proximité immédiate de l’interface terre-mer, présente la richesse spécifique la plus faible
+  parmi les systèmes étudiés. L’assemblage observé reste dominé par des espèces marines
+  juvéniles et estuariennes résidentes, associées à quelques espèces dulçaquicoles et migratrices.
+
+  Dans l’ensemble, les résultats mettent en évidence un gradient récurrent entre secteurs sous
+  influence marine et secteurs plus internes marqués par une contribution accrue des espèces
+  continentales et migratrices. La composition des assemblages et la répartition des guildes
+  écologiques apparaissent cohérentes avec l’organisation spatiale des différents systèmes
+  estuariens étudiés.
+
+  Parmi les espèces identifiées après exclusion des taxons douteux, aucune espèce n’est détectée
+  simultanément dans l’ensemble des stations de tous les estuaires étudiés. En revanche,
+  plusieurs espèces présentent une distribution très largement répandue et sont retrouvées dans
+  la majorité des systèmes estuariens échantillonnés.
+
+  Les espèces les plus ubiquistes sont :
+
+      ▪     Clupea harengus ;
+
+
+
+
+          QUALYSE                                                                     Page 31
+          Innovation
+   ▪     Dicentrarchus labrax ;
+
+   ▪     Pomatoschistus microps ;
+
+   ▪     Merlangius merlangus ;
+
+   ▪     Pollachius virens ;
+
+Ces espèces constituent le « noyau faunistique » le plus récurrent des assemblages détectés par
+ADNe dans les estuaires étudiés, avec une prédominance d’espèces marines juvéniles et
+estuariennes résidentes.
+
+
+
+
+       QUALYSE                                                                   Page 32
+       Innovation
+         4.3 -         DISCUSSION DES RESULTATS DES ZONES PORTUAIRES
+
+Le Tableau 5 présente l’ensemble des espèces détectées par ADN environnemental (ADNe) dans
+les différents secteurs portuaires étudiés du bassin Artois-Picardie, incluant les ports de Boulogne-
+sur-Mer, Dunkerque et Calais. Pour chaque taxon sont précisés le nom vernaculaire associé ainsi
+que la guilde écologique attribuée selon la classification utilisée dans le cadre de la Directive Cadre
+sur l’Eau (DCE). Les valeurs indiquées correspondent à la présence ou à l’absence des espèces dans
+chacun des secteurs portuaires échantillonnés. Les espèces indiquées en gras correspondent à
+des détections considérées comme atypiques ou écologiquement peu cohérentes au regard des
+caractéristiques environnementales des secteurs étudiés ; ces occurrences doivent ainsi être
+interprétées avec prudence, notamment dans des contextes portuaires fortement anthropisés où
+des transferts indirects d’ADN ou des contaminations environnementales peuvent influencer le
+signal détecté.
+
+  Tableau 5. Répartition des espèces détectées par ADNe au sein des différents secteurs portuaires du bassin Artois-
+                                 Picardie et attribution aux guildes écologiques DCE
+
+
+
+
+                 4.3.1 - PORT DE BOULOGNE
+
+  Le secteur 2, présentant une richesse spécifique de 10 espèces, est principalement structuré par
+  les espèces marines juvéniles (MJ) : Clupea harengus, Sardina pilchardus, Sprattus sprattus,
+  Merlangius merlangus, Sparus aurata et Dicentrarchus labrax. Il comprend également deux
+  espèces marines accessoires (MA) (Pollachius virens et Merluccius merluccius), une espèce
+  estuarienne résidente (ER) (Atherina presbyter) ainsi qu’une espèce migratrice (DIA) (Salmo
+  salar). L’ensemble traduit une forte influence marine, cohérente avec un environnement
+  portuaire largement connecté aux eaux côtières.
+
+  Le secteur Aval Liane, avec une richesse spécifique de 9 espèces, conserve un noyau commun
+  composé de Clupea harengus, Sardina pilchardus, Sprattus sprattus, Merlangius merlangus,
+  Pollachius virens, Dicentrarchus labrax et Salmo salar. Il se distingue toutefois par la présence
+  de Abramis brama (FW) et Pomatoschistus microps (ER), traduisant une influence estuarienne
+  et continentale légèrement plus marquée dans ce secteur connecté à l’aval de la Liane.
+
+  La détection de Salmo salar dans les deux secteurs, bien qu’écologiquement plausible au
+  regard du caractère migrateur de l’espèce, doit néanmoins être interprétée avec prudence et
+
+
+        QUALYSE                                                                                        Page 33
+        Innovation
+nécessiterait une confirmation par des observations complémentaires afin de distinguer une
+présence effective d’un signal environnemental transitoire.
+
+Dans l’ensemble, les assemblages observés dans le port de Boulogne-sur-Mer restent dominés
+par les guildes marines juvéniles et marines accessoires, avec une contribution plus localisée
+des espèces estuariennes résidentes et dulçaquicoles dans le secteur Aval Liane.
+
+
+
+
+           4.3.2 - PORT DE DUNKERQUE OUEST
+
+Les assemblages détectés dans les secteurs étudiés du port de Dunkerque Ouest sont dominés
+par des espèces à affinité marine et estuarienne, avec une différenciation marquée entre le
+Bassin Atlantique ouvert et l’Avant-Port.
+
+Le secteur du Bassin Atlantique ouvert, présentant une richesse spécifique de 11 espèces,
+montre l’assemblage le plus diversifié des deux secteurs étudiés. Il est largement dominé par
+les espèces marines juvéniles (MJ) avec Clupea harengus, Sardina pilchardus, Merlangius
+merlangus, Sparus aurata et Dicentrarchus labrax. Plusieurs espèces estuariennes résidentes
+(ER) sont également détectées (Atherina presbyter, Gobius niger et Pomatoschistus microps),
+ainsi qu’une espèce marine accessoire (MA) (Pollachius virens). La présence de Conger conger
+(MA) reste cohérente avec les habitats artificialisés et rocheux présents dans les infrastructures
+portuaires, susceptibles d’offrir des zones refuges favorables à cette espèce benthique marine.
+La détection de Perca fluviatilis (FW), espèce dulçaquicole, apparaît en revanche peu cohérente
+avec ce secteur fortement marinisé et pourrait traduire une contamination ponctuelle ou des
+apports continentaux liés aux activités et connexions portuaires.
+
+Le secteur Avant-Port, avec une richesse spécifique de 7 espèces, présente un assemblage plus
+homogène et dominé par les guildes marines juvéniles et marines accessoires. Il regroupe
+principalement Clupea harengus, Sardina pilchardus, Merlangius merlangus, Sparus aurata,
+Dicentrarchus labrax et Pollachius virens, associés à Atherina presbyter (ER). Contrairement au
+Bassin Atlantique ouvert, aucune espèce dulçaquicole ni aucun gobie estuarien n’y sont
+détectés.
+
+Dans l’ensemble, les assemblages observés dans le port de Dunkerque Ouest traduisent une
+forte dominance des espèces marines côtières, avec une contribution estuarienne et
+continentale plus marquée dans le Bassin Atlantique ouvert que dans l’Avant-Port.Dans
+l’ensemble, les assemblages observés dans le port de Dunkerque Ouest traduisent une forte
+dominance des espèces marines côtières, avec une contribution estuarienne et continentale
+plus marquée dans le Bassin Atlantique ouvert que dans l’Avant-Port.
+
+
+
+
+           4.3.3 - PORT DE DUNKERQUE EST
+
+Les assemblages détectés dans les secteurs étudiés du port de Dunkerque Est présentent une
+structuration contrastée entre le Bassin de Mardyck et le Bassin d’Évolution, traduisant des
+influences écologiques différentes au sein du complexe portuaire.
+
+Le Bassin de Mardyck, présentant une richesse spécifique de 12 espèces, montre l’assemblage
+le plus diversifié des deux secteurs étudiés. Il est structuré par un noyau d’espèces marines
+juvéniles (MJ) composé de Clupea harengus, Sardina pilchardus, Merlangius merlangus et
+Dicentrarchus labrax. Plusieurs espèces estuariennes résidentes (ER) sont également
+détectées (Gobius niger, Pomatoschistus microps et Gasterosteus aculeatus). Ce secteur se
+distingue surtout par la détection de plusieurs espèces dulçaquicoles (FW) telles que Abramis
+brama, Rutilus rutilus, Perca fluviatilis et Sander lucioperca. La présence simultanée de ces
+
+
+    QUALYSE                                                                         Page 34
+    Innovation
+espèces dans un environnement portuaire fortement artificialisé et largement connecté aux
+eaux marines apparaît toutefois peu cohérente écologiquement et pourrait traduire des
+apports continentaux indirects, des transferts d’ADN via les réseaux hydrauliques connectés au
+port, ou des contaminations environnementales localisées.
+
+Le Bassin d’Évolution, avec une richesse spécifique de 10 espèces, présente un assemblage
+davantage dominé par les espèces marines et estuariennes. Il regroupe notamment Clupea
+harengus, Sardina pilchardus, Merlangius merlangus, Sparus aurata et Dicentrarchus labrax
+(MJ), associés à Gobius niger, Pomatoschistus microps et Atherina presbyter (ER). Deux espèces
+marines accessoires (MA), Conger conger et Pollachius virens, y sont également détectées. La
+présence de Conger conger reste cohérente avec les habitats rocheux et structures
+artificialisées disponibles dans les infrastructures portuaires.
+
+
+Dans l’ensemble, les assemblages observés dans le port de Dunkerque Est mettent en évidence
+une opposition entre un Bassin de Mardyck marqué par la détection atypique d’espèces
+continentales et un Bassin d’Évolution davantage dominé par les espèces marines et
+estuariennes côtières. La présence de ces espèces continentales dans un contexte portuaire
+fortement artificialisé doit toutefois être interprétée avec prudence. Elle pourrait résulter de
+contaminations environnementales, d’apports hydrauliques continentaux ou encore de
+transferts indirects d’ADN.
+
+
+
+
+           4.3.4 - PORT DE CALAIS
+
+Les assemblages détectés dans les secteurs étudiés du port de Calais présentent une
+structuration dominée par les espèces marines et estuariennes, avec des différences notables
+entre le secteur Ponton et le secteur échantillonné à pied.
+
+Le secteur Ponton, présentant une richesse spécifique de 13 espèces, montre l’assemblage le
+plus diversifié des deux secteurs étudiés. Il est largement dominé par les espèces marines
+juvéniles (MJ) avec Clupea harengus, Sardina pilchardus, Sprattus sprattus, Merlangius
+merlangus, Sparus aurata et Dicentrarchus labrax. Plusieurs espèces estuariennes résidentes
+(ER) sont également détectées (Atherina presbyter, Pomatoschistus microps et Gasterosteus
+aculeatus), ainsi que deux espèces marines accessoires (MA) (Conger conger et Pollachius
+virens). La présence de Conger conger reste cohérente avec les habitats artificialisés et les
+structures rocheuses présentes dans les infrastructures portuaires. La détection de Abramis
+brama et Squalius lepidus (FW) dans ce secteur fortement marinisé apparaît toutefois peu
+cohérente écologiquement et pourrait traduire des apports continentaux indirects, des
+transferts d’ADN via les réseaux hydrauliques connectés au port ou des contaminations
+environnementales ponctuelles.
+
+Le secteur échantillonné à pied, avec une richesse spécifique de 9 espèces, présente un
+assemblage plus restreint mais conservant un noyau commun composé de Clupea harengus,
+Merlangius merlangus, Pomatoschistus microps, Dicentrarchus labrax et Gasterosteus
+aculeatus. Ce secteur se distingue par la présence de plusieurs espèces dulçaquicoles (FW)
+telles que Abramis brama, Rutilus rutilus et Perca fluviatilis. La présence de ces espèces
+apparaît « plus cohérente » avec les conditions faiblement saumâtres observées localement, la
+salinité mesurée étant d’environ 5 PSU, traduisant une influence continentale marquée au sein
+de cette zone portuaire.
+
+Dans l’ensemble, les assemblages observés dans le port de Calais restent dominés par les
+guildes marines juvéniles et estuariennes résidentes, avec une contribution plus importante
+des espèces dulçaquicoles dans les secteurs soumis à une influence continentale et à des
+conditions de faible salinité.
+
+
+
+    QUALYSE                                                                       Page 35
+    Innovation
+Synthèse des zones portuaires :
+
+  L’analyse des assemblages ichtyologiques détectés par ADNe dans les ports étudiés met en
+  évidence une structuration dominée par les espèces marines juvéniles (MJ) et estuariennes
+  résidentes (ER), traduisant l’influence prédominante des environnements côtiers et des
+  interfaces portuaires ouvertes sur le milieu marin. Malgré des configurations portuaires
+  contrastées, plusieurs espèces présentent une distribution récurrente dans l’ensemble des sites
+  étudiés, constituant un noyau faunistique commun des environnements portuaires.
+
+  Les espèces les plus ubiquistes sont Clupea harengus, Merlangius merlangus et Dicentrarchus
+  labrax, détectées dans l’ensemble des ports et dans la majorité des secteurs échantillonnés.
+  Sardina pilchardus, Pollachius virens et Pomatoschistus microps sont également
+  fréquemment observés dans plusieurs secteurs portuaires. Ces assemblages traduisent une
+  forte représentation des espèces marines côtières utilisant les infrastructures portuaires
+  comme zones de transit, d’alimentation ou d’abri.
+
+  Le port de Boulogne-sur-Mer présente des assemblages dominés par les guildes marines
+  juvéniles, avec une influence estuarienne plus marquée dans le secteur Aval Liane, caractérisé
+  par la présence d’espèces estuariennes résidentes et d’une contribution ponctuelle d’espèces
+  dulçaquicoles.
+
+  Le port de Dunkerque Ouest montre une opposition entre un Bassin Atlantique ouvert plus
+  diversifié, intégrant plusieurs espèces estuariennes résidentes, et un Avant-Port dominé
+  presque exclusivement par les espèces marines juvéniles et marines accessoires. Quelques
+  espèces dulçaquicoles y sont détectées ponctuellement, mais leur présence dans ces secteurs
+  fortement marinisés pourrait davantage traduire des contaminations environnementales
+  localisées ou des apports continentaux indirects via les réseaux hydrauliques connectés au port.
+
+  Dans le port de Dunkerque Est, le Bassin de Mardyck présente également la détection de
+  plusieurs espèces dulçaquicoles au sein d’un environnement largement dominé par les
+  espèces marines et estuariennes. La présence de ces taxons pourrait refléter des apports
+  continentaux indirects ou des transferts d’ADN liés aux connexions hydrauliques du système
+  portuaire plutôt qu’une occupation effective du milieu par ces espèces. Le Bassin d’Évolution
+  apparaît quant à lui principalement structuré par les guildes marines juvéniles et estuariennes
+  résidentes.
+
+  Le port de Calais présente également une structuration contrastée entre secteurs. Le secteur
+  Ponton reste fortement dominé par les espèces marines et estuariennes, tandis que le secteur
+  échantillonné à pied, caractérisé par une faible salinité (~5 PSU), montre une représentation
+  plus importante des espèces dulçaquicoles, traduisant une influence continentale locale
+  marquée.
+
+  Dans l’ensemble, les résultats mettent en évidence un gradient fonctionnel au sein des
+  systèmes portuaires, opposant des secteurs fortement marinisés dominés par les guildes
+  marines juvéniles à des secteurs plus confinés ou soumis à des influences continentales plus
+  marquées. La composition des assemblages observés apparaît cohérente avec les
+  caractéristiques hydrologiques et fonctionnelles des différents secteurs portuaires étudiés.
+
+
+
+
+      QUALYSE                                                                       Page 36
+      Innovation
+5 - COMPARAISONS ADNe ET PECHES AU CHALUT
+
+      5.1 -       ESTUAIRES
+
+ Le Tableau 6 présente l’évolution des richesses spécifiques observées dans les estuaires de
+ l’Authie, de la Canche et de la Somme à partir des campagnes historiques de chalut à perche
+ réalisées dans le cadre du suivi DCE entre 2019 et 2025 (Duhamel et al. 2019- 2025), ainsi que les
+ richesses spécifiques obtenues par ADNe en 2025. Les valeurs manquantes correspondent aux
+ années ou campagnes pour lesquelles aucun suivi n’a été réalisé, notamment pour l’Authie et
+ la Canche qui ne bénéficient pas d’un suivi aussi régulier que celui de la Somme.
+
+ L’estuaire de la Somme présente les richesses spécifiques les plus élevées au cours du suivi
+ historique, avec des valeurs comprises entre 10 et 20 espèces selon les campagnes. Les richesses
+ les plus élevées sont observées en mai 2019 (20 espèces), mai 2025 (19 espèces) et septembre
+ 2022 (18 espèces). Les données ADNe obtenues en 2025 indiquent également une richesse
+ spécifique élevée avec 15 espèces détectées, valeur cohérente avec les niveaux historiquement
+ observés dans cet estuaire.
+
+ L’estuaire de l’Authie présente des richesses spécifiques plus variables, comprises entre 3 et 15
+ espèces selon les campagnes disponibles. Les valeurs les plus élevées sont observées en
+ septembre 2019 et mai 2021 avec 15 espèces. L’ADNe met en évidence une richesse spécifique
+ de 15 espèces en 2025, supérieure aux valeurs observées historiquement par chalut à perche
+ dans cet estuaire.
+
+ La Canche présente des richesses spécifiques comprises entre 6 et 15 espèces lors des
+ campagnes historiques disponibles. Les valeurs maximales sont observées en mai 2021 avec 15
+ espèces. Les données ADNe montrent une richesse spécifique de 9 espèces en 2025, s’inscrivant
+ dans la gamme des valeurs historiquement observées par les suivis halieutiques.
+
+ Dans l’ensemble, les richesses spécifiques obtenues par ADNe en 2025 restent cohérentes avec
+ les gammes de valeurs observées historiquement par chalut à perche dans les trois estuaires
+ étudiés. Les résultats ADNe apparaissent toutefois légèrement plus élevés pour certains
+ systèmes, notamment l’Authie, tout en conservant des ordres de grandeur compatibles avec
+ les suivis estuariens réalisés dans le cadre de la DCE.
+
+
+
+
+     QUALYSE                                                                         Page 37
+     Innovation
+Tableau 6. Évolution des richesses spécifiques observées dans les estuaires de l’Authie, de la Canche et de la Somme par
+chalut à perche (2019–2025) et comparaison avec les richesses spécifiques estimées par ADNe en automne 2025
+
+
+
+
+   La Figure 14 met en évidence la variabilité des richesses spécifiques observées entre les
+   différents traits de chalut réalisés au sein de chaque campagne dans l’estuaire de la Somme
+   entre 2019 et 2025. Les campagnes sont distinguées selon la saison d’échantillonnage,
+   printemps ou automne, et comparées aux richesses spécifiques obtenues par ADNe lors de la
+   campagne 2025.
+
+   Afin de comparer directement les assemblages détectés par chalut à perche et par ADNe,
+   l’estuaire de la Somme a été retenu comme système de référence en raison de la régularité de
+   son suivi halieutique dans le cadre de la DCE et de la disponibilité des données les plus récentes
+   acquises en 2025 lors des campagnes de printemps et d’automne.
+
+   Les richesses spécifiques observées par chalut présentent des médianes globalement
+   comprises entre 3 et 6 espèces selon les campagnes, avec une variabilité inter-campagnes
+   marquée. Les campagnes printanières montrent fréquemment des médianes légèrement plus
+   élevées, notamment en mai 2019, mai 2021 et mai 2025, où les médianes atteignent
+   respectivement environ 5 à 6 espèces. À l’inverse, certaines campagnes automnales ou
+   printanières présentent des richesses plus faibles, notamment en avril et octobre 2022,
+   caractérisées par des médianes proches de 3 espèces.
+
+   Les richesses spécifiques obtenues par ADNe à l’automne 2025 présentent une médiane plus
+   élevée à celles observées lors de la majorité des campagnes de chalut à perche, avec une
+   distribution comprise approximativement entre 3 et 9 espèces. Les valeurs observées par ADNe
+   restent néanmoins incluses dans la gamme globale des richesses historiquement observées
+   par les suivis halieutiques.
+
+   Dans l’ensemble, cette figure met en évidence que l’approche ADNe restitue des niveaux de
+   richesse spécifiques cohérents avec les tendances observées par les suivis au chalut à perche,
+
+
+
+         QUALYSE                                                                                       Page 38
+         Innovation
+  tout en révélant des richesses spécifiques plus élevées et une variabilité inter-site importante
+  lors de cette campagne automnale 2025.
+
+
+
+
+   Figure 14. Graphique en boites à moustaches représentant les richesses spécifiques observées au chalut par mois
+d’échantillonnage au printemps (vert) et en automne (orange), ainsi que celles observées lors de l’échantillonnage par
+                                      ADNe en 2025 sur l’estuaire de la somme
+
+
+
+  La Figure 15 présente la répartition relative des guildes écologiques DCE obtenues à partir des
+  assemblages ichtyologiques observés par chalut à perche et par ADNe, en regroupant
+  l’ensemble des données acquises dans les estuaires de l’Authie, de la Canche et de la Somme.
+  Les données issues du chalut intègrent l’ensemble des campagnes réalisées entre 2019 et 2025,
+  tandis que les données ADNe correspondent aux assemblages globaux obtenus lors de la
+  campagne 2025.
+
+  Dans les deux approches, les assemblages apparaissent principalement dominés par les
+  espèces marines juvéniles (MJ), qui représentent la fraction la plus importante des taxons
+  détectés. Cette dominance traduit le rôle fonctionnel majeur des estuaires comme zones de
+  transition côtière et habitats de nourricerie pour les espèces marines. Les guildes estuariennes
+  résidentes (ER) constituent également une composante importante des assemblages observés,
+  confirmant la forte contribution des espèces adaptées aux milieux saumâtres estuariens.
+
+  Les proportions relatives obtenues par ADNe montrent une structuration cohérente avec celle
+  observée par chalut à perche, avec une hiérarchie similaire des principales guildes écologiques.
+  Toutefois, l’approche ADNe met en évidence une proportion plus importante d’espèces
+  dulçaquicoles (FW) par rapport aux données de chalut. Cette différence pourrait refléter la
+  capacité intégrative de l’ADNe à détecter des signatures moléculaires issues des habitats
+  amont et des apports continentaux transitant dans les systèmes estuariens, y compris pour des
+  espèces peu ou non capturées par les engins de pêche dans les secteurs échantillonnés.
+
+
+        QUALYSE                                                                                       Page 39
+        Innovation
+Les guildes marines accessoires (MA) restent présentes dans les deux approches mais dans des
+proportions plus faibles, tandis que les espèces diadromes (DIA) représentent une fraction
+minoritaire des assemblages observés, aussi bien dans les données de pêche que dans les
+données ADNe.
+
+Les résultats ADNe intègre davantage les contributions continentales et les espèces associées
+aux habitats amont des bassins versants, tout en restituant les signatures écologiques déjà
+observées historiquement.
+
+        100%
+
+
+         90%
+
+
+         80%
+
+
+         70%
+
+
+         60%
+
+
+         50%
+
+
+         40%
+
+
+         30%
+
+
+         20%
+
+
+         10%
+
+
+          0%
+                                       Chalut                                                ADNe
+
+                                                     DIA    ER    FW    MA     MJ
+
+
+Figure 15. Répartition relative des guildes écologiques DCE des assemblages ichtyologiques observés par chalut à
+        perche (2019–2025) et par ADNe (2025) dans les estuaires de l’Authie, de la Canche et de la Somme
+
+
+
+
+     QUALYSE                                                                                        Page 40
+     Innovation
+  Focus sur l’estuaire de la Somme (campagne 2025)
+
+  Afin de comparer directement les assemblages détectés par chalut à perche et par ADNe,
+  l’estuaire de la Somme a été retenu comme système de référence en raison de la régularité de
+  son suivi halieutique dans le cadre de la DCE et de la disponibilité des données les plus récentes
+  acquises en 2025 lors des campagnes de printemps et d’automne. Cette comparaison permet
+  d’évaluer la complémentarité des deux approches sur un estuaire bénéficiant d’un historique
+  de suivi robuste.
+
+  Le diagramme de Venn (Figure 16) met en évidence une faible proportion d’espèces communes
+  entre les deux méthodes, avec seulement quatre taxons détectés simultanément par chalut à
+  perche et par ADNe : Clupea harengus, Merlangius merlangus, Pomatoschistus microps et
+  Dicentrarchus labrax. Ces espèces correspondent à des taxons caractéristiques des
+  assemblages estuariens et côtiers de la Manche orientale, fréquemment observés dans les
+  habitats de transition estuarienne. Leur détection conjointe par les deux approches souligne la
+  robustesse du signal biologique associé aux espèces les plus structurantes de l’estuaire.
+
+
+
+
+Figure 36. Diagramme de Venn représentant la répartition des espèces observées lors de l’échantillonnage au chalut et
+                                     par ADNe en baie de Somme en 2025.
+
+
+
+  Le chalut à perche (Tableau 7) met principalement en évidence des espèces benthiques et
+  démersales côtières telles que Pleuronectes platessa, Platichthys flesus, Solea solea, Limanda
+  limanda ou encore Buglossidium luteum, ainsi que plusieurs taxons associés aux habitats
+  sableux et benthiques peu profonds (Ammodytes tobianus, Echiichthys vipera, Callionymus
+  spp.). Ces espèces, directement capturées par l’engin de pêche, traduisent la forte capacité du
+  chalut à caractériser les compartiments bentho-démersaux de l’estuaire.
+
+  À l’inverse, l’ADNe détecte plusieurs espèces absentes des captures au chalut, parmi lesquelles
+  Atherina presbyter, Pollachius virens, Salmo salar, Gasterosteus aculeatus ainsi que plusieurs
+  espèces dulçaquicoles (Abramis brama, Rutilus rutilus, Perca fluviatilis, Sander lucioperca).
+  Cette différence illustre le caractère intégratif du signal ADNe, capable d’intégrer des signatures
+  biologiques provenant de différents compartiments de l’estuaire et des zones amont
+  connectées au bassin versant.
+
+  Au total, le chalut à perche met en évidence un nombre plus élevé d’espèces exclusives (21
+  taxons) que l’ADNe (14 taxons exclusifs). Cette différence s’inscrit toutefois dans un contexte
+  d’efforts d’échantillonnage très différents entre les deux approches. Les données halieutiques
+
+
+        QUALYSE                                                                                      Page 41
+        Innovation
+reposent sur plusieurs années de suivi et sur la réalisation répétée de nombreux traits de chalut
+au sein des estuaires étudiés, augmentant mécaniquement la probabilité de détection des
+espèces présentes. À l’inverse, les résultats ADNe présentés ici proviennent d’une unique
+campagne d’échantillonnage fondée sur un nombre limité de prélèvements d’eau réalisés
+ponctuellement sur quelques secteurs. L’ADNe a néanmoins permis de restituer des
+structurations écologiques cohérentes avec les grands assemblages observés par chalut à
+perche.
+
+Les différences observées entre les espèces détectées par les deux méthodes traduisent ainsi
+principalement la nature distincte des compartiments biologiques échantillonnés. Le chalut à
+perche cible préférentiellement les espèces benthiques et démersales effectivement présentes
+et capturables localement au moment du prélèvement, tandis que l’ADNe fournit une
+information plus intégrative, susceptible d’inclure des espèces mobiles, discrètes ou associées
+aux habitats connectés aux systèmes estuariens. Ces résultats soulignent ainsi la forte
+complémentarité écologique et fonctionnelle des deux approches dans la caractérisation des
+peuplements ichtyologiques estuariens.
+
+
+ Tableau 7. Comparaison des espèces détectées dans l’estuaire de la Somme par chalut à perche (campagnes
+printemps–automne 2025) et par ADNe (campagne 2025). Les valeurs “1” indiquent la détection de l’espèce par la
+                                          méthode considérée.
+                       Espèces                        Chalut            ADNe
+                       Clupea harengus                              1                1
+                       Merlangius
+                       merlangus                                    1                1
+                       Pomatoschistus
+                       microps                                      1               1
+                       Dicentrarchus labrax                         1               1
+                       Echiichthys vipera                           1               0
+                       Pleuronectes
+                       platessa                                     1               0
+                       Sprattus sprattus                            1               0
+                       Chelon ramada                                1               0
+                       Solea solea                                  1               0
+                       Ammodytes
+                       tobianus                                     1               0
+                       Buglossidium luteum                          1               0
+                       Platichthys flesus                           1               0
+                       Pomatoschistus
+                       minutus                                      1               0
+                       Syngnathus acus                              1               0
+                       Syngnathus
+                       rostellatus                                  1               0
+                       Trisopterus luscus                           1               0
+                       Limanda limanda                              1               0
+                       Anguilla anguilla                            1               0
+                       Clupeidae                                    1               0
+                       Atherina                                     1               0
+                       Ciliata mustela                              1               0
+                       Scophthalmus
+                       maximus                                      1               0
+                       Callionymus                                  1               0
+
+
+
+     QUALYSE                                                                                     Page 42
+     Innovation
+             Scophthalmus
+             rhombus               1   0
+             Trachurus trachurus   1   0
+             Atherina presbyter    0   1
+             Sardina pilchardus    0   1
+             Sardinops sagax       0   1
+             Abramis brama         0   1
+             Rutilus rutilus       0   1
+             Pollachius virens     0   1
+             Perca fluviatilis     0   1
+             Sander lucioperca     0   1
+             Oncorhynchus keta     0   1
+             Oncorhynchus
+             tshawytscha           0   1
+             Salmo salar           0   1
+             Atherina hepsetus     0   1
+             Gasterosteus
+             aculeatus             0   1
+             Oncorhynchus
+             mykiss                0   1
+
+
+
+
+QUALYSE                                    Page 43
+Innovation
+     5.2 -       ZONES PORTUAIRES
+
+Focus sur le port de Calais (campagne 2025)
+
+La comparaison entre les résultats obtenus par ADNe dans le port de Calais et les campagnes
+halieutiques réalisées au chalut à perche entre 2021 et 2022 (BAUDINIERE E., et al., 2022) met en
+évidence des convergences écologiques particulièrement intéressantes malgré des différences
+importantes dans les protocoles d’échantillonnage et les espèces détectées. Les suivis
+halieutiques historiques reposaient sur un protocole standardisé de chalut à perche réalisé
+directement dans l’avant-port et sur des stations situées à l’extérieur de l’enceinte portuaire,
+avec un ciblage préférentiel des espèces benthiques et bentho-démersales présentes
+localement.
+
+À l’inverse, les prélèvements ADNe réalisés dans cette étude ont été effectués dans des
+conditions plus contraintes. Faute d’autorisations d’accès obtenues dans les délais impartis
+auprès de la capitainerie, les prélèvements ont été collectés depuis un ponton accessible au
+sein du port ainsi qu’au niveau d’un secteur plus amont caractérisé par une salinité relativement
+faible. Malgré ce dispositif d’échantillonnage spatialement plus restreint, les données ADNe
+mettent en évidence plusieurs taxons caractéristiques déjà observés lors des campagnes
+halieutiques, notamment Clupea harengus, Merlangius merlangus, Pomatoschistus microps,
+Dicentrarchus labrax ou encore Sprattus sprattus.
+
+Cette cohérence apparaît particulièrement notable compte tenu des différences
+méthodologiques entre les deux approches. Elle suggère que l’ADNe est capable de restituer
+les grandes composantes fonctionnelles des assemblages ichtyologiques associés au système
+portuaire de Calais, même à partir d’un nombre limité de points de prélèvement et dans des
+secteurs accessibles uniquement depuis les infrastructures portuaires. L’approche ADNe met
+également en évidence plusieurs taxons non détectés lors des campagnes au chalut,
+notamment certaines espèces dulçaquicoles telles que Abramis brama, Rutilus rutilus ou
+Perca fluviatilis. La présence de ces espèces apparaît cohérente avec les faibles salinités
+mesurées dans le secteur amont échantillonné à pied, traduisant une influence continentale
+marquée dans certaines zones internes du système portuaire. D’autres détections plus
+atypiques doivent toutefois être interprétées avec prudence au regard des limites potentielles
+liées aux assignations taxonomiques et aux bases de référence moléculaires.
+
+Cette comparaison souligne le caractère complémentaire des deux approches. Le chalut à
+perche permet une caractérisation directe des espèces effectivement capturables dans les
+habitats prospectés, tandis que l’ADNe restitue une signature écologique plus intégrative du
+système portuaire, incluant potentiellement des espèces mobiles, discrètes ou associées à des
+habitats connectés au port. Cette capacité intégrative apparaît particulièrement intéressante
+dans les environnements portuaires fortement anthropisés et soumis à des contraintes d’accès
+importantes, où les possibilités d’échantillonnage conventionnel peuvent être limitées.
+
+
+
+
+    QUALYSE                                                                        Page 44
+    Innovation
+6 - CONCLUSIONS & AXES D’AMELIORATIONS
+Les résultats obtenus dans cette étude montrent que l’approche par ADN environnemental
+(ADNe), appliquée aux milieux estuariens et portuaires du bassin Artois-Picardie, a permis de
+produire des données écologiques pertinentes malgré plusieurs contraintes opérationnelles et
+environnementales. Certaines zones n’ont notamment pas pu être investiguées en raison de
+restrictions d’accès ou d’autorisations non obtenues dans les délais impartis. Par ailleurs, la
+campagne a été réalisée tardivement en saison, en fin d’automne, une période potentiellement
+moins favorable à la détection de certaines espèces en raison des variations saisonnières des
+communautés biologiques et de la dynamique du signal ADN dans la colonne d’eau.
+
+Les prélèvements réalisés ont permis de couvrir les principaux systèmes estuariens et portuaires
+ciblés et de constituer un jeu de données exploitable. Les résultats obtenus mettent en évidence
+des structurations écologiques cohérentes avec les caractéristiques fonctionnelles attendues de
+ces milieux de transition. Les volumes d’eau filtrés sont restés très variables selon les stations,
+principalement en raison des fortes turbidités observées dans plusieurs secteurs. Les volumes
+effectivement filtrés variaient entre 2 et 90 L par station, avec une moyenne d’environ 29 L répartis
+en trois réplicats. Dans certains secteurs fortement turbides, le colmatage rapide des filtres a
+fortement limité les volumes pouvant être traités. Ces contraintes sont susceptibles d’avoir affecté
+la quantité d’ADN récupérée et, par conséquent, les capacités de détection de l’approche. L’ADNe
+a permis de détecter un nombre important de taxons et de restituer des structurations
+écologiques cohérentes à l’échelle des systèmes étudiés.
+
+Les résultats obtenus sont cohérents avec les tendances historiques issues des suivis halieutiques
+réalisés par chalut à perche dans le cadre de la Directive Cadre sur l’Eau (DCE). Les grandes
+composantes fonctionnelles des assemblages ont été retrouvées entre les deux approches, avec
+une dominance récurrente des guildes marines juvéniles et estuariennes résidentes dans les
+différents estuaires étudiés.
+
+La comparaison entre les données ADNe et les inventaires réalisés par chalut à perche n’a pu être
+conduite que sur l’estuaire de la Somme, en raison du manque de données halieutiques
+comparables disponibles pour les autres systèmes étudiés. Les deux approches reposent par
+ailleurs sur des efforts d’échantillonnage très différents : les données issues du chalut résultent de
+plusieurs campagnes et de nombreux traits de pêche réalisés au sein de l’estuaire, tandis que les
+données ADNe proviennent d’une unique campagne basée sur un nombre limité de prélèvements
+d’eau. Malgré cet effort d’échantillonnage plus restreint, l’approche ADNe a permis de retrouver
+plusieurs espèces structurantes des assemblages estuariens observés historiquement par chalut
+à perche, notamment Clupea harengus, Merlangius merlangus, Pomatoschistus microps et
+Dicentrarchus labrax. Ces résultats soulignent la capacité de l’ADNe à restituer rapidement les
+principales composantes écologiques des peuplements estuariens et confirment le potentiel de
+cette approche comme outil complémentaire des suivis halieutiques classiques.
+
+La turbidité influence les performances de détection de l’ADNe (Figure 17). La relation mise en
+évidence entre la turbidité et la richesse spécifique détectée dans nos données montre une
+tendance à la diminution des richesses spécifiques lorsque les niveaux de turbidité augmentent.
+Bien que le coefficient de détermination reste modéré (R² = 0,32), cette relation apparaît
+statistiquement significative (p = 0,026). Ces résultats suggèrent que les fortes charges
+particulaires limitent l’efficacité de détection par ADNe (i.e. faible filtration, augmentation de la
+proportion d’inhibiteurs dans les échantillons). Dans les systèmes fortement turbides du bassin
+Artois-Picardie, ce facteur apparaît comme un paramètre susceptible d’influencer les capacités de
+détection de l’approche ADNe. Les résultats issus de cette première campagne exploratoire
+montrent toutefois que ces contraintes peuvent être prises en compte afin d’adapter et
+d’optimiser les futurs protocoles d’échantillonnage, de filtration et d’analyse dans ce type
+d’environnement fortement turbide.
+
+
+
+
+       QUALYSE                                                                          Page 45
+       Innovation
+Figure 17. Régression linéaire entre la turbidité en NTU et la Richesse Spécifique S observée lors des échantillons d’ADNe.
+                   Les résidus du modèle suivent les conditions d’applications, p=0,026<0,05 et R²=0,32.
+
+La sensibilité analytique peut également avoir été influencée par les choix méthodologiques liés
+aux marqueurs moléculaires utilisés. Les approches basées sur des fragments courts (200 à 250
+pb) présentent l’avantage d’amplifier des ADN potentiellement dégradés dans l’environnement,
+mais elles peuvent également réduire la résolution taxonomique et favoriser des ambiguïtés
+d’assignation lorsque plusieurs espèces phylogénétiquement proches partagent des séquences
+similaires dans les bases de référence. Certaines détections atypiques observées dans cette étude
+illustrent probablement ces limites liées à la résolution des marqueurs employés et aux
+imperfections des bases de données taxonomiques actuellement disponibles.
+
+L’approche ADNe apparaît comme un outil particulièrement complémentaire des méthodes
+halieutiques classiques (« Marine Environmental DNA » 2020). Elle permet d’accéder rapidement
+à une vision intégrative des assemblages biologiques, incluant des espèces peu capturables par
+les engins de pêche, discrètes, mobiles ou présentes dans des habitats difficilement accessibles.
+Les résultats obtenus montrent que l’ADNe fournit des informations écologiquement pertinentes
+sur la structuration des communautés ichtyologiques estuariennes et portuaires. D’un point de
+vue de la durée de vie des ADN en milieux marins et estuariens, la plupart des études rapporte une
+représentation contemporaine d’une communauté, même au-delà des variations observées au
+gré des marées quotidiennes (Kelly et al. 2018) ou de la profondeur (Deter et al. 2023). Cependant,
+il existe des cas où des espèces d’eau douce non résidentes ont été détectées dans des études
+d’ADNe marin (Yamamoto et al. 2017), et bien que cette source d’erreur puisse être écartée comme
+provenant d’un apport fluvial, les courants transportant l’ADN d’espèces marines peuvent
+constituer une source moins évidente de biais systématique (Collins et al. 2018).
+
+Un élément particulièrement marquant de cette étude réside dans le rapport entre l’effort
+d’échantillonnage mobilisé et la quantité d’informations écologiques obtenues. Les suivis
+classiques par chalut à perche nécessitent généralement une logistique importante, impliquant
+une à deux journées d’intervention, la mobilisation d’un équipage spécialisé ainsi que la réalisation
+de nombreux traits de pêche, souvent plus d’une dizaine afin de caractériser correctement les
+
+
+
+         QUALYSE                                                                                          Page 46
+         Innovation
+assemblages estuariens. À l’inverse, l’approche ADNe repose sur un protocole d’échantillonnage
+beaucoup plus léger, basé sur des prélèvements d’eau réalisés sur un nombre restreint de
+secteurs. En plus de la facilité d’échantillonnage sur le terrain, l’approche ADNe a permis de
+restituer des structurations écologiques cohérentes avec celles mises en évidence par les suivis
+halieutiques historiques. Ce constat apparaît d’autant plus notable qu’il s’agit ici d’une première
+campagne exploratoire réalisée dans des conditions peu favorables, en fin d’automne, dans des
+milieux fortement turbides et avec un nombre limité de secteurs investigués. L’approche ADNe
+présente également un intérêt notable pour la détection précoce de taxons rares, discrets ou
+faiblement capturables par les méthodes halieutiques classiques. Elle pourrait ainsi contribuer à
+améliorer la détection d’espèces nouvellement présentes dans les systèmes estuariens et
+portuaires, notamment dans un contexte de changements environnementaux et d’évolution des
+aires de répartition biogéographiques. Cette sensibilité pourrait également représenter un atout
+important pour la surveillance précoce d’espèces exotiques ou potentiellement invasives dans les
+milieux portuaires et estuariens fortement connectés aux échanges maritimes internationaux.
+
+Dans le cadre de la DCE, cette approche pourrait représenter un outil complémentaire
+particulièrement pertinent pour les suivis exploratoires, les diagnostics rapides ou encore les
+contextes où les contraintes opérationnelles, environnementales ou réglementaires limitent les
+possibilités d’échantillonnage conventionnel. Il serait également particulièrement intéressant de
+poursuivre ce travail, qui bénéficie d’un suivi halieutique historique régulier dans le cadre de la
+DCE. Dans cette perspective, la mise en place de campagnes ADNe réparties sur les quatre saisons
+permettrait d’obtenir une vision plus intégrative de la dynamique annuelle des assemblages
+ichtyologiques estuariens. Une telle approche offrirait la possibilité d’évaluer les variations
+saisonnières des communautés détectées par ADNe et de mieux caractériser la représentativité
+temporelle de cette méthode dans les systèmes estuariens.
+
+Il serait également pertinent d’intégrer un suivi simultané des paramètres de turbidité (profil
+sonde le temps de la filtration) lors des opérations de filtration afin d’évaluer plus précisément les
+relations entre charge particulaire, colmatage des filtres, volumes effectivement filtrés et
+performances de détection.
+
+Enfin, plusieurs évolutions technologiques pourraient permettre d’améliorer sensiblement la
+sensibilité de l’approche. L’utilisation de fragments moléculaires plus longs couplés aux
+technologies de séquençage longue lecture de type Nanopore pourrait améliorer la résolution
+taxonomique et limiter certaines ambiguïtés d’assignation spécifiques (Doorenspleet et al. 2025).
+
+
+
+
+       QUALYSE                                                                          Page 47
+       Innovation
+7 - BIBLIOGRAPHIE
+BAUDINIERE E., PERSOHN C., LANSHERE J., 2022 Etude de la zone subtidale dans le cadre du
+projet Calais PORT 2015, suivi de la ressource halieutique Rapport final 2021-2022, 73 p
+
+Collins, Rupert A., Owen S. Wangensteen, Eoin J. O’Gorman, Stefano Mariani, David W. Sims, et
+Martin J. Genner. 2018. « Persistence of Environmental DNA in Marine Systems ». Communications
+Biology 1 (1): 185. https://doi.org/10.1038/s42003-018-0192-6.
+
+Deter, Julie, Noémie Agel, Thoma Bockel, et David MOUILLOT. 2023. « eREF : État de référence de
+la biodiversité en vertébrés dans les masses d’eaux côtières méditerranéennes à partir de l’ADN
+environnemental ». Rapport final. 68 pages et annexes., 68.
+
+Doorenspleet, Karlijn, Lara Jansen, Saskia Oosterbroek, et al. 2025. « The Long and the Short of It:
+Nanopore-Based eDNA Metabarcoding of Marine Vertebrates Works; Sensitivity and Species-Level
+Assignment Depend on Amplicon Lengths ». Molecular Ecology Resources 25 (4): e14079.
+https://doi.org/10.1111/1755-0998.14079.
+
+Duhamel S., 2025. DCE : Suivi de l’ichtyofaune dans les masses d’eau de transition : Synthèse
+années 2019 – 2021 Baie de Somme / Baies d’Authie et de Canche et des années 2019-2024 pour le
+suivi de la baie de Somme. Rapport CSLN / Agence de l’Eau Artois-Picardie. 45 p.
+
+Duhamel S., BOQUET M., DELAGREVERIE E., Hanin C., 2025a. DCE : Suivi de l’ichtyofaune en masses
+d’eau de transition : Campagne de printemps 2025a en Baie de Somme. Rapport CSLN / Agence
+de l’Eau Artois-Picardie. 38 p.
+
+Duhamel S., Boquet M., Hanin C., 2024b. DCE : Suivi de l’ichtyofaune en masses d’eau de transition
+: Campagne d’automne 2024 en Baie de Somme. Rapport CSLN / Agence de l’Eau Artois-Picardie.
+45 p.
+
+Duhamel S., Crampon A., Hanin C., Rey M., 2022b. DCE : Suivi de l’ichtyofaune en masses d’eau de
+transition : Campagne d’automne 2022 en Baie de Somme, d’Authie et de Canche. Rapport CSLN
+/ Agence de l’Eau Artois Picardie. 67 p.
+
+Duhamel S., Dorocant L., Hanin C., Rey M., 2023b. DCE : Suivi de l’ichtyofaune en masses d’eau de
+transition : Campagne d’automne 2023 en Baie de Somme. Rapport CSLN / Agence de l’Eau Artois-
+Picardie. 39 p.
+
+Duhamel S., Dorocant L., Morvan E., Hanin C., 2024a. DCE : Suivi de l’ichtyofaune en masses d’eau
+de transition : Campagne de printemps 2024a en Baie de Somme. Rapport CSLN / Agence de l’Eau
+Artois-Picardie. 46 p.
+
+Duhamel S., Hanin C., Morvan E., 2022a. DCE : Suivi de l’ichtyofaune en masses d’eau de transition
+: Campagne de printemps 2022 en Baie de Somme, d’Authie et de Canche. Rapport CSLN / Agence
+de l’Eau Artois-Picardie. 67 p.
+
+Duhamel S., Hanin C., Morvan E., Rey M., 2021b. DCE : Suivi de l’ichtyofaune en masses d’eau de
+transition : Campagne de printemps 2021 en Baie de Somme, d’Authie et de Canche. Rapport CSLN
+/ Agence de l’Eau Artois-Picardie. 68 p.
+
+Duhamel S., Hanin C., Morvan E., Rey M., 2021c. DCE : Suivi de l’ichtyofaune en masses d’eau de
+transition : Campagne d’automne 2021 en Baie de Somme, d’Authie et de Canche. Rapport CSLN
+/ Agence de l’Eau Artois Picardie. 56 p.
+
+
+
+
+       QUALYSE                                                                        Page 48
+       Innovation
+Duhamel S., Hanin C., Rey M., 2020a. DCE : Suivi de l’ichtyofaune en masses d’eau de transition :
+Campagne de printemps 2020 en Baie de Somme. Rapport CSLN / Agence de l’Eau Artois-Picardie.
+27 p.
+Duhamel S., Hanin C., Rey M., 2020b. DCE : Suivi de l’ichtyofaune en masses d’eau de transition :
+Campagne d’automne 2020 en Baie de Somme. Rapport CSLN / Agence de l’Eau Artois-Picardie.
+37 p.
+
+Duhamel S., Hanin C., Rey M., 2023a. DCE : Suivi de l’ichtyofaune en masses d’eau de transition :
+Campagne de printemps 2023 en Baie de Somme. Rapport CSLN / Agence de l’Eau Artois-Picardie.
+42 p.
+
+Duhamel S., MOAL S., DELAGREVERIE E., Hanin C., 2025b. DCE : Suivi de l’ichtyofaune en masses
+d’eau de transition : Campagne d'automne 2025a en Baie de Somme. Rapport CSLN / Agence de
+l’Eau Artois-Picardie. 44 p.
+
+Duhamel S., Rey M & Hanin C., 2019a. DCE : Suivi de l’ichtyofaune en masses d’eau de transition :
+Campagne de printemps 2019 en Baie de Somme, d’Authie et de Canche. Rapport CSLN / Agence
+de l’Eau Artois-Picardie. 39 p.
+
+Duhamel S., Rey M & Hanin C., 2019b. DCE : Suivi de l’ichtyofaune en masses d’eau de transition :
+Campagne d’automne 2019 en Baie de Somme, d’Authie et de Canche. Rapport CSLN / Agence de
+l’Eau Artois-Picardie. 42 p.
+
+Edmunds, Richard C., et Damien Burrows. 2020. « Got Glycogen?: Development and Multispecies
+Validation of the Novel Preserve, Precipitate, Lyse, Precipitate, Purify (PPLPP) Workflow for
+Environmental DNA Extraction from Longmire’s Preserved Water Samples ». Journal of
+Biomolecular Techniques: JBT 31 (4): 125‑50. https://doi.org/10.7171/jbt.20-3104-003.
+Kelly, Ryan P., Ramón Gallego, et Emily Jacobs-Palmer. 2018. « The Effect of Tides on Nearshore
+Environmental DNA ». PeerJ 6 (mars): e4521. https://doi.org/10.7717/peerj.4521.
+
+Leray, Matthieu, Nancy Knowlton, et Ryuji J. Machida. 2022. « MIDORI2: A Collection of Quality
+Controlled, Preformatted, and Regularly Updated Reference Databases for Taxonomic
+Assignment of Eukaryotic Mitochondrial Sequences ». Environmental DNA 4 (4): 894‑907.
+https://doi.org/10.1002/edn3.303.
+
+« Marine Environmental DNA: Approaches, Applications, and Opportunities ». 2020. In Advances in
+Marine Biology, vol. 86. no 1. Academic Press. https://doi.org/10.1016/bs.amb.2020.01.001.
+
+
+Noel, Cyril, Alexandre Cormier, Laura Leroi, et Patrick Durand. 2021. « SAMBA: Standardized and
+Automated        MetaBarcoding    Analyses     workflow     ».   Prépublication,  WorkflowHub.
+https://doi.org/10.48546/WORKFLOWHUB.WORKFLOW.156.1.
+
+Pont, Didier, Mathieu Rocle, Alice Valentini, et al. 2018. « Environmental DNA Reveals Quantitative
+Patterns of Fish Biodiversity in Large Rivers despite Its Downstream Transportation ». Scientific
+Reports 8 (1): 10361. https://doi.org/10.1038/s41598-018-28424-8.
+
+Teichert N., Carassou L., Sahraoui Y., Lobry J., Lepage M., 2018b. Influence of intertidal seascape on
+the functional structure of fish assemblages: Implications for habitat conservation in estuarine
+ecosystems. Aquatic Conserv: Mar Freshw Ecosyst. 2018;1‐12.
+
+Teichert N., Lobry J., Lepage M., 2018a. Comparaison d’indicateurs de biodiversité, d’état écologique
+et de fonctionnement trophique dans les systèmes estuariens. Partie I - Fonctionnement des
+écosystèmes estuariens : analyse des indicateurs de biodiversité des assemblages de poissons.
+Rapport IRSTEA / Agence Française pour la Biodiversité. 39 -53.
+
+
+
+
+       QUALYSE                                                                          Page 49
+       Innovation
+Yamamoto, Satoshi, Reiji Masuda, Yukuto Sato, et al. 2017. « Environmental DNA Metabarcoding
+Reveals Local Fish Communities in a Species-Rich Coastal Sea ». Scientific Reports 7 (1): 40368.
+https://doi.org/10.1038/srep40368.
+
+
+
+
+       QUALYSE                                                                     Page 50
+       Innovation
+8 - ANNEXES
+Annexe 1 – Stratégie d’échantillonnage
+
+Annexe 2 – Tableur données terrain
+
+Annexe 3 - Résultats des contrôles qualités
+
+Annexe 4 - Synthèse du nombre de séquences par échantillon
+
+Annexe 5 - Liste complète des taxons identifiés
+
+
+
+
+       QUALYSE                                               Page 51
+       Innovation
+Annexe 1 - Stratégie d'échantillonnage
+Prélèvements et analyses d’eau dans les estuaires et les ports maritimes du bassin Artois-Picardie
+              pour inventorier les espèces de poissons par ADN environnemental
+
+
+                                      APPEL D’OFFRES OUVERT
+                                       à bons de commandes
+
+
+                           Proposition de stratégie d'échantillonnage
+Rappel du CCTP, réponse initiale
+
+
+
+ • Timing / temporalité
+
+ • Attribution tardive (campagne réalisée fin novembre en fonction de contions météos
+
+ • Saison : Automne pour être comparable au suivi chalut DCE ; S48 – 49
+
+ •   Les pêches CSLN montrent forte saisonnalité (ex. hareng, sprat et autres varient
+     printemps/automne).
+
+ • échantillonner préférentiellement autour de pleine mer / ±1,5 h pour couvrir filandres et
+   chenaux accessibles (contraintes logistiques identiques au chalut).
+
+ • Réplication temporelle : 3 d’eau par station sur la même journée
+
+
+
+
+ QUALYSE
+ Innovation                                                                                    1
+Estuaire de la Somme
+
+                            2 secteurs
+
+
+                           ▪ Zone verte
+                           N 50.212723
+                            E 1.597049
+
+                       ▪ Amont (zone rouge)
+                          N 50.183567
+                           E 1.644440
+
+
+
+
+ QUALYSE
+ Innovation                               2
+Estuaire de l’Authie
+
+                        2 secteurs
+
+
+                       ▪ Zone verte
+                       N 50.381258
+                        E 1.573507
+
+                       ▪ Zone jaune
+                       N 50.369864
+                        E 1.613452
+
+
+
+
+ QUALYSE
+ Innovation                           3
+Estuaire de la Canche
+
+                         2 secteurs
+
+
+                        ▪ Zone bleue
+                        N 50.548153
+                         E 1.592585
+
+                        ▪ Zone jaune
+                        N 50.519997
+                         E 1.623888
+
+
+
+
+ QUALYSE
+ Innovation                            4
+Estuaire de la Slack
+
+                        1 secteur
+                        A pied
+                       N 50.806017
+                       E 1.603178
+
+
+
+
+ QUALYSE
+ Innovation                          5
+Port Ouest de Dunkerque
+
+
+
+
+                          Point de Sécurité Capitainerie
+                                 Action requise
+
+                          Contacter la Capitainerie pour
+                              autorisation d'accès et
+                          coordination des prélèvements
+
+                           Besoin de soutien de l’AEAP
+                           pour faciliter la démarche au
+                                 regard des délais
+
+
+
+
+ QUALYSE
+ Innovation                                           6
+Port Ouest de Dunkerque
+
+                                 2 secteurs
+                           Milieu intertidal sableu
+
+                                ▪ Avant port
+                                N 50.548153
+                                E 1.592585
+
+                          ▪ Bassin Atlantique ouvert
+                               N 50.519997
+                                E 1.623888
+
+
+
+
+ QUALYSE
+ Innovation                                      7
+Port Est de Dunkerque
+
+
+
+
+                        Point de Sécurité Capitainerie
+                               Action requise
+
+                        Contacter la Capitainerie pour
+                            autorisation d'accès et
+                        coordination des prélèvements
+
+                         Besoin de soutien de l’AEAP
+                         pour faciliter la démarche au
+                               regard des délais
+
+
+
+
+ QUALYSE
+ Innovation                                         8
+Port Est de Dunkerque
+
+
+                               2 secteurs
+
+
+                         ▪ Bassin de Mardyck
+                            N 51.039592
+                            E 2.263793
+
+                         ▪ Bassin d’évolution
+                           N 51.047565
+                            E 2.353528
+
+                        Passage par le canal des
+                        Dunes après avoir réalisé
+                             Port Ouest ?
+
+
+
+
+ QUALYSE
+ Innovation                                     9
+Port de Calais
+
+                                2 secteurs
+
+                             ▪ Navire support
+                               ▪ Secteur 3
+                               N 50.969068
+                               E 1.854297
+
+
+                 Secteur 3
+                                 ▪ A pied
+                              N 50.959048
+                               E 1.833882
+                             Repérage par AEAP
+                                13/11/2025
+
+
+
+
+ QUALYSE
+ Innovation                                      11
+Port de Calais
+Données pêches historiques
+
+                             Navire support
+                               Secteur 3
+                             N 50.969068
+                              E 1.854297
+
+
+
+
+   QUALYSE
+   Innovation                                 12
+Port de Calais
+
+
+                                  A pied
+                              N 50.959048
+                               E 1.833882
+                       Repérage par AEAP 13/11/2025
+
+                     Prélèvement coté amont vers le pont
+                 Pas de risque particulier pour le prélèvement
+
+                             Accès ligne bleu
+
+                        Prélèvement Zone JAUNE
+
+
+
+
+ QUALYSE
+ Innovation                                               13
+Port de Boulogne
+
+                           2 secteurs
+
+                           ▪ Secteur 2
+                          N 50.729342
+                          E 1.566782
+
+
+                          ▪ Aval Liane
+                          N 50.729384
+                          E 1.592198
+              Secteur 2
+
+
+
+
+ QUALYSE
+ Innovation                              14
+Synthèse des stations
+                                                                                                        Coordonnées GPS
+                                                                                                        (degrés décimaux)
+              Numéro station            Site               Secteur         Mode de prélèvement
+                                                                                                    N                       E
+
+
+                    1          Estuaire de la Somme          Vert             Navire support     50.212723            1.597049
+
+
+                    2          Estuaire de la Somme         Rouge             Navire support     50.183567            1.64444
+
+
+                    3           Estuaire de l'Authie         Vert             Navire support     50.381258            1.573507
+
+
+                    4           Estuaire de l'Authie        Jaune             Navire support     50.369864            1.613452
+
+
+                    5          Estuaire de la Canche         Bleu             Navire support     50.548153            1.592585
+
+
+                    6          Estuaire de la Canche        Jaune             Navire support     50.519997            1.623888
+
+
+                    7           Estuaire de la Slack    Jaune - à pied            A pied         50.806017            1.603178
+
+
+                    8          Port Ouest Dunkerque       Avant port          Navire support     51.026687            2.182252
+
+                                                       Bassin atlantique
+                    9          Port Ouest Dunkerque                           Navire support     51.006689            2.179376
+                                                            ouvert
+
+                    10          Port Est Dunkerque      Bassin Mardick        Navire support     51.039592           2.263793
+
+
+                    11          Port Est Dunkerque     Bassin evolution       Navire support     51.047565            2.353528
+
+
+                    12             Port de Calais          Ponton             Navire support     50.969068            1.854297
+
+
+                    13             Port de Calais           A pied                A pied         50.959048            1.833882
+
+
+                    14           Port de Boulogne         Secteur 2           Navire support     50.729342            1.566782
+
+
+                    15           Port de Boulogne         Aval Liane          Navire support     50.729384            1.592198
+                                                                                                                                 15
+Annexe 2 – Tableur prélèvements ADNe
+Marché réf. 25-A.O.I-03
+
+
+
+
+Marché                    25-A.O.I-03
+Date d'envoi              23/01/2026 (Annule & Remplace)
+Acteurs                   QUALYSE + Prelev'Mar
+
+          Sites                      Secteurs              Coordonnées GPS (N)   Coordonnées GPS (E)     Dates      Heure   Temperature (°C)   pH     Oxygène (mg/L)   Oxygène sat (%)   Turbidité   Conductivité   Salinité   Volume filtré R1 (L)   Volume filtré R2 (L)   Volume filtré R3 (L)   Volume filtré moyen (L)     Vents     Coefficient   Etat mer          Difficultés rencontrées
+     Dunkerque Est               Bassin de Mardyck             51.039592              2.263793         25/11/2025   17H           10.5         NA          NA                NA             NA           NA           32               12                     11                     18                      13.7              N 30 nd        59          agitée       Problème sonde (transporteur)
+     Dunkerque Est               Bassin d'Evolution             51.047565             2.353528         25/11/2025   18H           10.9         NA          NA                NA             NA           NA           36               46                     52                     67                      55.0              N 30 nd        59          agitée       Problème sonde (transporteur)
+    Dunkerque Ouest                  Avant Port                51.026687              2.182252         26/11/2025   15H30         10           7.9         10.6              96             7           38700         35               54                     57                     63                      58.0              N 12 nd        52        peu agitée                  RAS
+    Dunkerque Ouest            Basin Atlantique ouvert         51.006689              2.179376         26/11/2025   16H15         8.7          7.9         10.8              96             4.6         38400         35               68                     64                     90                      74.0              N 12 nd        52        peu agitée                  RAS
+         Calais                        A pied                   50.959048             1.833882         27/11/2025   11H30         7.8          7.8         8.4               75             21          1990           5                7                      8                     22                      12.3             SW 10 nd        46          calme                     RAS
+                                                                                                                                                                                                                                                                                                                                                                     Accès non-disponible au site prévu
+         Calais                       Ponton                   50.967832              1.843971         27/11/2025   13H30         8.5          7.8         10.6              97            16.7         35400         34               35                     37                     50                      40.7             SW 10 nd        46        peu agitée    (demande d'autorisation d'accès
+                                                                                                                                                                                                                                                                                                                                                                                 difficile)
+          Slack                        A pied                   50.806017             1.603178         27/11/2025   15H           9.3          8.2         9.2               86             49           514           4                3                      2                      5                       3.3             SW 10 nd        46        peu agitée                  RAS
+        Boulogne                     Secteur 2                  50.729342             1.566782         28/11/2025   10H15         10.3         7.8         9.8               95             3           38300         38               53                     33                     76                      54.0             SW 15 nd        44          calme                     RAS
+        Boulogne                     Aval Liane                 50.729384             1.592198         28/11/2025   09H45         10.1         7.8         9.7               90             6           23000         20              11.5                    4.6                    7.6                      7.9             SW 15 nd        44          calme                     RAS
+    Baie de la Canche                Zone jaune                 50.519997             1.623888         01/12/2025   08H           8.1          7.97        11.7             97.2            25          27650         37               28                     27                     51                      35.3              S 35 nd        58          agitée                    RAS
+    Baie de la Canche                Zone bleue                50.548153              1.592585         01/12/2025   08H30         8.1           8          11.7             97.6            38          32280         37               23                     38                     35                      32.0              S 35 nd        58          agitée                    RAS
+     Baie de l'Authie                Zone jaune                50.369864              1.613452         02/12/2025   09H10         8.4          7.9         10               88.5            36          26700         24               19                     20                     29                      22.7             SSW 25 nd       70          calme                     RAS
+     Baie de l'Authie                Zone verte                50.381258              1.573507         02/12/2025   08H50         8.7          7.98       11.25              97             96          35000         37               11                     10                      6                       9.0             SSW 25 nd       70        peu agitée                  RAS
+  Estuaire de la Somme               Zone rouge                 50.183567              1.64444         03/12/2025   10h00         7.4          8.1         11               91.4            4.1          837           2               4.9                    11                     3.2                      6.4              SSW 16         82          calme                     RAS
+  Estuaire de la Somme               Zone verte                50.212723              1.597049         03/12/2025   9h30          9.1          7.9         12                98             69          35700         35              10.5                   10.5                    7.3                      9.4              SSW16          82          calme                     RAS
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                          23/01/2026
+

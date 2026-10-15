@@ -1,0 +1,7 @@
+Découverte de marqueurs
+
+génétiques (SNP, indel)
+
+AGCTAGCTAGCTAGC
+
+AGCTAGCHAGCTAGC

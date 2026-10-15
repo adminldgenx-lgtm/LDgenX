@@ -1,0 +1,8 @@
+level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	text
+1	1	0	0	0	0	0	0	320	190	-1	
+2	1	1	0	0	0	52	16	221	14	-1	
+3	1	1	1	0	0	52	16	221	14	-1	
+4	1	1	1	1	0	52	16	221	14	-1	
+5	1	1	1	1	1	52	17	113	13	93.139175	Bancarisation
+5	1	1	1	1	2	171	17	28	13	97.009766	des
+5	1	1	1	1	3	204	16	69	14	96.826057	données

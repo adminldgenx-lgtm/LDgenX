@@ -1,0 +1,7 @@
+Genetic Marker Discovery
+
+(SNPs, Indels)
+
+AGCTAGCTAGCTAGC
+
+AGCTAGCHAGCTAGC

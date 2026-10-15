@@ -1,0 +1,404 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/selection",
+  "final_url": "https://www.ldgenx.fr/services/selection",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:27.297868+00:00",
+  "language": "fr",
+  "title": "Sélection génomiques, analyses géntiques, plan de croisements",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Analyses de données génomique pour l'aquaculture et l'agriculture, sélection génomique et génétiques, conseil et recommandation, séquençage sur mesure"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__selection.html",
+  "raw_sha256": "0ee012af375ef77fd5fc31e53de33667e7d0d04f5e4aa18ffffd1e694d0352f9",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection-genomique",
+      "text": "Le Bar Européen",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Analyses SNPs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d893a4a-site-web-ldgenx-37/320-6a4e19d893a4a-site-web-ldgenx-37.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Développment de panels de SNPs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19e5b9e1b-site-web-ldgenx-39/320-6a4e19e5b9e1b-site-web-ldgenx-39.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyses GWAS",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d19791b-site-web-ldgenx-36/320-6a4e19d19791b-site-web-ldgenx-36.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "modèles Blup",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19deb3ac8-site-web-ldgenx-38/320-6a4e19deb3ac8-site-web-ldgenx-38.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "bar",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca5b8e1fde1-bar/356-65ca5b8e1fde1-bar.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "selection crevettes",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a228468c771a-anthony-camp-crevettes-unsplash/320-6a228468c771a-anthony-camp-crevettes-unsplash.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d893a4a-site-web-ldgenx-37/320-6a4e19d893a4a-site-web-ldgenx-37.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19e5b9e1b-site-web-ldgenx-39/320-6a4e19e5b9e1b-site-web-ldgenx-39.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d19791b-site-web-ldgenx-36/320-6a4e19d19791b-site-web-ldgenx-36.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19deb3ac8-site-web-ldgenx-38/320-6a4e19deb3ac8-site-web-ldgenx-38.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Accélérer les programmes de sélection grâce aux outils génomiques"
+    },
+    {
+      "level": 1,
+      "text": "Sélection génomique"
+    },
+    {
+      "level": 2,
+      "text": "Approches"
+    },
+    {
+      "level": 2,
+      "text": "Prestations"
+    },
+    {
+      "level": 2,
+      "text": "Cas d'études"
+    },
+    {
+      "level": 3,
+      "text": "Développement d'un panel de SNPs"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__selection.md",
+  "content_characters": 1834,
+  "content_sha256": "614294027c277095f60ac6dcd80a49d028fef47676e2127028522d645752064c",
+  "body_text": "Accélérer les programmes de sélection grâce aux outils génomiques\nSélection génomique\n        \n        LDgenX développe des outils permettant d'intégrer l'informaion génétique dans les programmes de sélection\n \n    \n            Approches\n        Technologie\nSéquençage de génome entier (WGS)\nPanels SNPAquaculture\nCroissance\nRésistance aux maladies\nRobustesseAgriculture\nSélection assistée par marqueurs\nDéveloppement variétal\n \n    \n            Prestations\n        1234\n            Cas d'études\n        \n                Le Bar Européen\n            \n            Développement d'un panel de SNPs\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__selection.json"
+}

@@ -1,0 +1,535 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/genomique-des-populations",
+  "final_url": "https://www.ldgenx.fr/services/genomique-des-populations",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:27.552865+00:00",
+  "language": "fr",
+  "title": "services génomique des populaitons",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "genomique des populations, conservation, gestions, consanguinite, hybride, fraude, douane"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__genomique-des-populations.html",
+  "raw_sha256": "9b37d2e564173bc82ae7499c91643e86a761a8de86864a04ccdb87d6b37e9784",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/conservation",
+      "text": "Diversité génétique",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/tracabilite",
+      "text": "Carte génétique",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://hal.science/hal-05490664",
+      "text": "Le vanneau huppé",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24c0084d6-site-web-ldgenx-23/320-6a4d24c0084d6-site-web-ldgenx-23.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d249d6e9ee-site-web-ldgenx-24/320-6a4d249d6e9ee-site-web-ldgenx-24.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24832e0b8-site-web-ldgenx-26/320-6a4d24832e0b8-site-web-ldgenx-26.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d2475c7869-site-web-ldgenx-27/320-6a4d2475c7869-site-web-ldgenx-27.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "snp",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "rapport type",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d242e94402-site-web-ldgenx-32/320-6a4d242e94402-site-web-ldgenx-32.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyses GWAS",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d19791b-site-web-ldgenx-36/320-6a4e19d19791b-site-web-ldgenx-36.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "analyse diversite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24dfd8ae2-site-web-ldgenx-21/320-6a4d24dfd8ae2-site-web-ldgenx-21.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "conception du projet",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d241b873c1-site-web-ldgenx-35/320-6a4d241b873c1-site-web-ldgenx-35.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "diversité génétique des truites",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/65ca481968dd5-truites/320-65ca481968dd5-truites.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "puce truite génome",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b49dce0df02-saintpe/356-62b49dce0df02-saintpe.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "vanneau huppe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a217b79cf96b-vanellus-vanellus-1/320-6a217b79cf96b-vanellus-vanellus-1.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24c0084d6-site-web-ldgenx-23/320-6a4d24c0084d6-site-web-ldgenx-23.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d249d6e9ee-site-web-ldgenx-24/320-6a4d249d6e9ee-site-web-ldgenx-24.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24832e0b8-site-web-ldgenx-26/320-6a4d24832e0b8-site-web-ldgenx-26.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d2475c7869-site-web-ldgenx-27/320-6a4d2475c7869-site-web-ldgenx-27.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a5deaf713f34-snp/320-6a5deaf713f34-snp.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d242e94402-site-web-ldgenx-32/320-6a4d242e94402-site-web-ldgenx-32.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e19d19791b-site-web-ldgenx-36/320-6a4e19d19791b-site-web-ldgenx-36.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d24dfd8ae2-site-web-ldgenx-21/320-6a4d24dfd8ae2-site-web-ldgenx-21.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4d241b873c1-site-web-ldgenx-35/320-6a4d241b873c1-site-web-ldgenx-35.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Comprendre la diversité génétique pour mieux gérer et conserver les populations"
+    },
+    {
+      "level": 1,
+      "text": "Génomique des populations"
+    },
+    {
+      "level": 2,
+      "text": "Approches"
+    },
+    {
+      "level": 2,
+      "text": "Prestations"
+    },
+    {
+      "level": 2,
+      "text": "Cas d'études"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__genomique-des-populations.md",
+  "content_characters": 3514,
+  "content_sha256": "dfb729910c1dda0cddaf32b8b7c97a5afbc5c09870ab4a00160000ccb6dc02ff",
+  "body_text": "Comprendre la diversité génétique pour mieux gérer et conserver les populations\nGénomique des populations\n        La génomique des populations permet de caractériser la diversité génétique, la connectivité et l'adaptation des populations afin d'accompagner leur conservation et leur gestion.LDgenX développe des approches sur mesure pour répondre aux enjeux de conservation, de gestion des populations et d'amélioration des connaissances scientifiques.\n            Approches\n        Séquençage de génome partiel (3D-GBS)Génotypage de milliers de marqueurs répartis sur l'ensemble du génome pour étudier la diversité génétique, la structure des populations et la connectivité.Séquençage de génome entier (WGS)Analyse exhaustive du génome pour la découverte de variants, les études d'adaptation et les analyses évolutives.Panels SNPDéveloppement de panels SNP sur mesure pour le suivi génétique, l'assignation d'individus, les tests de parenté et les programmes de conservation.Découverte de marqueurs génétiquesIdentification de SNP, indels et autres variants génétiques adaptés aux objectifs de votre projet.\n            Prestations\n        123456789\n            Cas d'études \n        \n                Diversité génétique\n            \n                Carte génétique\n            \n                Le vanneau huppé\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__genomique-des-populations.json"
+}

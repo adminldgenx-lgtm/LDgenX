@@ -1,0 +1,71 @@
+{
+  "id": "P12",
+  "title": "Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations.",
+  "authors": [
+    "Leitwein M",
+    "Gagnaire PA",
+    "Desmarais E",
+    "Guendouz S",
+    "Rohmer M",
+    "Berrebi P",
+    "Guinand B"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Journal of fish biology",
+  "year": 2016,
+  "doi": "10.1111/jfb.13131",
+  "doi_url": "https://doi.org/10.1111/jfb.13131",
+  "pmid": "27666575",
+  "pmcid": null,
+  "publication_dates": {
+    "published": [
+      [
+        2016,
+        9,
+        25
+      ]
+    ],
+    "published-print": [
+      [
+        2016,
+        12
+      ]
+    ],
+    "published-online": [
+      [
+        2016,
+        9,
+        25
+      ]
+    ],
+    "issued": [
+      [
+        2016,
+        9,
+        25
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "published_abstract_only",
+  "retrieved_content_version": "abstract_only",
+  "license_urls_for_retrieved_version": [
+    "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+  ],
+  "preprint": null,
+  "institutional_records": [
+    {
+      "title_s": [
+        "Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations"
+      ],
+      "uri_s": "https://hal.science/hal-01922655v1",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/jfb.13131",
+      "producedDate_s": "2016-12"
+    }
+  ],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

@@ -1,0 +1,394 @@
+{
+  "requested_url": "https://www.ldgenx.com/Services",
+  "final_url": "https://www.ldgenx.com/Services",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:40.319534+00:00",
+  "language": "en",
+  "title": "GenExpert - Nos services proposés détaillés - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Analyses génomiques conservation biodiversité. Expertise génétique gestion des populations. Sélection génomique, gain génétique, traçabilité d'espèces, bioinformatique"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/Services.html",
+  "raw_sha256": "49105595bb47ee0db18cd062c3821cb4b807740c732b9b9044f1d5a6585120e8",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Learn More",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "eDNA",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb2a57ce7fd-edna1/320-65cb2a57ce7fd-edna1.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "salmo trutta",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb281e45a14-truites/320-65cb281e45a14-truites.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27/default-6a5dd4c1e1f44-capture-d-e-cran-2026-07-20-a-09-55-27.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "european seabass",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/65cb2c2e6345d-bar/320-65cb2c2e6345d-bar.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4b0507e0-bioinfo/320-6a5dd4b0507e0-bioinfo.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54/320-6a5dd4bc1ccfc-capture-d-e-cran-2026-07-20-a-09-54-54.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682dedeef006f-plaquette-services/960-682dedeef006f-plaquette-services.jpg",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Our services"
+    },
+    {
+      "level": 2,
+      "text": "Environmental DNA"
+    },
+    {
+      "level": 2,
+      "text": "Population genomics"
+    },
+    {
+      "level": 2,
+      "text": "Microbial Community Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Genomic seletion"
+    },
+    {
+      "level": 2,
+      "text": "Bioinformatics"
+    },
+    {
+      "level": 2,
+      "text": "Sequencing & dPCR"
+    },
+    {
+      "level": 2,
+      "text": "Research & Development"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/Services.md",
+  "content_characters": 3189,
+  "content_sha256": "85edcbcc1285b20fa98a1e25d315267ff80c5bf99c63f46f7845d74e8cbf6c27",
+  "body_text": "Our services\nEnvironmental DNA\n        Detect and monitor biodiversity through environmental DNA (eDNA) analysis.Applications :\n> Biodiversity surveys\n> Environmental impact assessments\n> Invasive species detection\n> Protected species monitoring\n\n Learn More\n            Population genomics\n        Assess the genetic diversity, connectivity, and adaptive potential of wild populations.\n Applications:> Conservation genetics> Population management> National Action Plans (NAPs)> Inbreeding, hybridization, and individual assignmentLearn More\n            Microbial Community Analysis\n        Study bacterial, fungal, and other microbial communities using high-throughput sequencing technologies.Applications:\n> Water quality assessment\n> Agricultural soil monitoring\n> Aquaculture\n> Research\nLearn More\n            Genomic seletion\n        Develop genomic selection tools to support breeding programs in the agricultural and aquaculture sectors.Applications:\n> Aquaculture\n> Agriculture\n> Genetic improvement\n    Learn More\n            Bioinformatics\n        Transform your sequencing data into actionable insights.Applications:\n> Metabarcoding & Metagenomics\n> RAD-seq & RNA-seq\n> Whole-Genome Sequencing (WGS)\n> Epigenetics\n> Genome-Wide Association Studies (GWAS)\n    Learn More\n            Sequencing & dPCR\n        Tailored sequencing and digital PCR (dPCR) solutions for your research and development projects.Applications:\n> Amplicon sequencing\n> Short- and long-read sequencing\n> Whole and partial genome sequencing\n> Target species and genetic variant detection\n    Learn More\n            Research & Development\n        Partner with LDgenX to accelerate your research and innovation projects.Applications:\n> Grant proposal support\n> Scientific consulting\n> Project support and guidance\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/Services.json"
+}

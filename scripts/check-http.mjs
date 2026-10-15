@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
-import { pages, redirects, companyOrigin } from '../.prerender/entry-server.js';
+import { pages, redirects, companyOrigin, ready } from '../.prerender/entry-server.js';
+
+await ready;
 
 const origin = process.argv[2] || 'http://127.0.0.1:4173';
 for (const page of pages) {

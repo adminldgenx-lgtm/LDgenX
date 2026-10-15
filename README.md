@@ -52,15 +52,18 @@ Publier le contenu de `dist` sur un hébergement statique. Servir les chemins de
 Exemple Nginx, à adapter à la racine du site :
 
 ```nginx
+# Extrait : la liste complète est générée dans dist/_redirects et dist/redirects.json.
 location = /equipe { return 301 /a-propos/equipe; }
 location = /partenaires { return 301 /a-propos/partenaires; }
 location = /a-propos/innovation { return 301 /innovation; }
-location = /services/selection { return 301 /services/selection-genomique; }
+location = /cgvs { return 301 /cgvs/cgvs; }
 location = /blog { return 301 /ressources; }
 location = /actualites { return 301 /ressources; }
+location = /Services { return 301 /services; }
 location / { try_files $uri $uri/index.html =404; }
-error_page 404 /404.html;
 ```
+
+Les adresses de ldgenx.fr sont conservées telles quelles (`/services/selection` pour l’expertise, `/services/selection-genomique`, `/services/conservation` et `/services/tracabilite` pour les travaux scientifiques, `/equipe/dr-…` pour les biographies, `/cgvs/cgvs`). Les pages anglaises vivent sous `/en` avec les noms de pages de ldgenx.com ; si le domaine ldgenx.com pointe vers ce site, ses anciennes adresses (sans `/en`) redirigent vers elles (voir docs/MIGRATION.md).
 
 Les URLs canoniques utilisent `https://www.ldgenx.fr`. Pour un environnement de préproduction, protéger l’indexation au niveau de l’hébergeur. Ne pas remplacer la version officielle sans validation de l’entreprise.
 
@@ -70,11 +73,11 @@ Avec la prévisualisation de production déjà lancée, `npm run check:http` vé
 
 ## Langues
 
-Les données françaises sont regroupées dans un catalogue de locale. Le lien « EN » ouvre le site anglais officiel existant. Ajouter un catalogue anglais et vérifier les correspondances de pages avant de publier des `hreflang=en` réciproques. Aucune URL anglaise n’est inventée.
+Le site est bilingue. Chaque langue a son catalogue (`src/content/catalog.fr.ts`, `catalog.en.ts`, même forme), chargé à part : une page ne télécharge que sa langue, l’autre arrive au changement de langue. `src/content/site.ts` garde les adresses de chaque entité dans les deux langues (le build vérifie qu’il correspond aux catalogues). Chaque page déclare ses `hreflang` réciproques et `x-default` ; le plan du site les reprend. Les CGV n’existent qu’en français.
 
 ## Parcours de l’accueil
 
-Hero vidéo (un échantillon d’eau de mer où les particules forment une double hélice ; « Demander un devis » et « Découvrir nos expertises ») → faits clés sourcés → « De l’échantillon à la décision » : les sept étapes officielles le long d’une hélice d’ADN en particules (WebGL, sans bibliothèque), la caméra descendant l’hélice au fil du défilement → expertises en paysage de particules interactif (canvas) → secteurs en atlas illustré interactif (un lieu par secteur : le paysage se rapproche du lieu choisi et sa fiche s’ouvre ; eau et éoliennes animées, glisser pour explorer sur téléphone) → études (Artois-Picardie racontée sur sa carte : trait de côte OpenStreetMap tracé de la Belgique à la Somme, huit sites échantillonnés reliés à leur liste, question, démarche et apports sourcés ; puis trois études illustrées) → R&D → références en trois groupes → équipe avec portraits → appel à l’action (devis et rendez-vous).
+Hero vidéo (un échantillon d’eau de mer où les particules forment une double hélice ; « Demander un devis » et « Découvrir nos expertises ») → faits clés sourcés → « De l’échantillon à la décision » : les sept étapes officielles le long d’une hélice d’ADN en particules (WebGL, sans bibliothèque), la caméra descendant l’hélice au fil du défilement → expertises en tracé de séquençage interactif (un pic par expertise, qui s’élève au choix et ouvre sa fiche ; le paysage de particules complet reste sur la page Expertises) → secteurs en atlas illustré interactif (un lieu par secteur : le paysage se rapproche du lieu choisi et sa fiche s’ouvre ; eau et éoliennes animées, glisser pour explorer sur téléphone) → études (Artois-Picardie en parcours le long de la côte, puis les trois autres études en panneaux) → R&D → références en trois groupes → équipe avec portraits → appel à l’action (devis et rendez-vous).
 
 Les pages d’expertise et de secteur se terminent par « Votre projet en pratique » : ce qu’il est utile de préparer et ce qui est défini ensemble au cadrage. La page Expertises accueille la démarche détaillée et la FAQ ; la page Contact propose trois entrées (agenda, formulaire, e-mail), une liste de préparation, des champs de qualification (échantillons ou données, calendrier) et la FAQ.
 
@@ -86,11 +89,13 @@ Les polices se limitent à trois fichiers (Manrope 500, Inter 400 et 500). Penda
 
 La démarche détaillée (page Expertises, ancre `#demarche`) possède une image synchronisée et un sélecteur avec les noms des étapes sur desktop. Sur mobile, chaque étape possède sa propre illustration ; le sélecteur reste visible pendant le parcours. Les expertises et la FAQ disposent d’éléments dépliables natifs accessibles au clavier et au toucher. Les schémas reprennent les étapes fournies dans le contenu, avec des liens graphiques discrets entre les concepts.
 
-Sections vivantes de l’accueil : les faits clés se « décodent » à travers les quatre bases (A, C, G, T) puis affichent leur texte exact, et rejouent l’effet au survol ; la carte de l’étude Artois-Picardie anime l’eau (particules d’ADN portées par le courant côtier, `src/lib/study-flow.ts`), suit les trois étapes de la démarche qui s’enchaînent seules (survol : pause ; clic : choix) et affiche, à la demande, courants, turbidité ou marées ; elle reste visible à côté du texte sur desktop. Les autres études, les portraits de l’équipe s’inclinent vers le pointeur ; les projets de R&D ont chacun une illustration animée (lectures longues, horloge) et un pipeline parcouru par un signal. Tout s’arrête hors écran et sous `prefers-reduced-motion`.
+Sections vivantes de l’accueil : les faits clés se « décodent » à travers les quatre bases (A, C, G, T) puis affichent leur texte exact ; l’étude Artois-Picardie est un parcours le long de la côte tenu à l’écran pendant le défilement (`src/sections/StudyJourney.tsx`, `src/lib/study-journey.ts`) : la caméra plonge de la France à la Côte d’Opale, longe les huit sites, puis la carte montre courants, turbidité ou marées ; les autres études s’ouvrent en panneaux ; le laboratoire R&D joue les quatre étapes de chaque projet sur un même canevas (`src/lib/lab-scenes.ts`) ; les références tournent en orbite autour de LDgenX ; l’équipe se tient sur une scène où une personne à la fois passe dans la lumière.
+
+Pages intérieures : un même kit (`src/components/AmbientField.tsx`, `Decode.tsx`, `Steps.tsx`, `TiltLink` dans `ui.tsx`) — fil de lecture sous l’en-tête, hélice de points derrière les titres sans image, photo d’en-tête qui s’ouvre et dérive, étapes qui s’allument à la lecture, listes qui arrivent une à une, cartes qui s’inclinent vers le pointeur, faits qui se décodent, sommaire d’article qui suit la lecture. Les grandes sections de l’accueil sont reprises là où le contenu est le même : paysage des expertises (Expertises), atlas (Applications), parcours de l’étude (sa page), laboratoire (Innovation et projets), orbite (À propos, Partenaires), scène de l’équipe (À propos, Équipe). Tout s’arrête hors écran et sous `prefers-reduced-motion`.
 
 Aucun texte n’est rendu sous 12 px ; les textes de lecture font 15 à 17 px.
 
-Le traitement éditorial privilégie les photographies, les titres et des libellés lisibles. Les numérotations décoratives, pastilles, cercles de flèches, faux avatars à initiales, annotations marketing sur les photos et mots géants de fond ont été supprimés. Les seuls pictogrammes d’interface restants servent aux contrôles : menu, fermeture, dépliage et recherche. Les noms des partenaires sont composés typographiquement : les logos publiés sur le site officiel sont des vignettes basse résolution.
+Le traitement éditorial privilégie les photographies, les titres et des libellés lisibles. Les numérotations décoratives, pastilles, cercles de flèches, faux avatars à initiales, annotations marketing sur les photos et mots géants de fond ont été supprimés. Les seuls pictogrammes d’interface restants servent aux contrôles : menu, fermeture, dépliage et recherche. Les noms des partenaires sont composés typographiquement sur l’accueil ; la page partenaires montre les logos publiés, recadrés.
 
 Les animations sont concentrées dans `src/components/motion.tsx` et `src/styles/global.css`. Un observateur unique déclenche les entrées ; le suivi de l’étape active ne lit les positions que lorsque le parcours est à proximité de l’écran, au maximum une fois par frame.
 
@@ -108,4 +113,4 @@ Le bouton devient « Envoyer ma demande », la mention de consentement et la pol
 
 ## Avant la mise en ligne
 
-Consulter [docs/CONTENT-SOURCES.md](docs/CONTENT-SOURCES.md) pour les sources, limites factuelles et éléments à confirmer : informations légales, traitement des e-mails, éventuelle livraison anglaise, résultats scientifiques non publiés et catalogue de matériel. La reconstruction locale ne déploie pas le site officiel.
+Consulter [docs/CONTENT-SOURCES.md](docs/CONTENT-SOURCES.md) pour les sources, limites factuelles et éléments à confirmer : informations légales, traitement des e-mails, portraits et droits des figures. La migration des contenus de ldgenx.fr et ldgenx.com, la table des adresses et les décisions attendues du client sont dans [docs/MIGRATION.md](docs/MIGRATION.md). La reconstruction locale ne déploie pas le site officiel.

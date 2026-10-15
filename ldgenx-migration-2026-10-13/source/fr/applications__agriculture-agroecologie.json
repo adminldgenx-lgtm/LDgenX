@@ -1,0 +1,298 @@
+{
+  "requested_url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+  "final_url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:02.043321+00:00",
+  "language": "fr",
+  "title": "l'ADN pour l'agriculture et l'agroécologie, sélection génétiques",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "etude microbiennes, qualité des sols, état de santé, amélioration génétiques, détection de pathogènes, eDNA, pollution, biologie, microoganismes, bactéries"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/applications__agriculture-agroecologie.html",
+  "raw_sha256": "0e72513696b99b154a80089785813a1130949478154d8ebcb7b424afdd6329bd",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communauté microbienne",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Agriculture & Agroécologie"
+    },
+    {
+      "level": 1,
+      "text": "Des solutions génomiques pour accompagner la transition écologique"
+    },
+    {
+      "level": 2,
+      "text": "Applications"
+    },
+    {
+      "level": 2,
+      "text": "Services associés"
+    },
+    {
+      "level": 2,
+      "text": "Exemple de projets"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/applications__agriculture-agroecologie.md",
+  "content_characters": 1585,
+  "content_sha256": "f2daa0a73e7aff2888be0dfbdff904afe18d96ca9cf603a913f038f3a2bfeff0",
+  "body_text": "Agriculture & Agroécologie\nDes solutions génomiques pour accompagner la transition écologiqueLes approches génomiques permettent aujourd'hui de mieux comprendre les écosystèmes agricoles, de développer de nouveaux outils de sélection et d'évaluer l'impact des activités humaines sur l'environnement.LDgenX accompagne les acteurs publics et privés dans leurs projets de recherche, de surveillance et d'innovation.\n            Applications\n         Sélection variétale et amélioration génétique Développement de marqueurs moléculaires Étude des microbiomes des sols Suivi de la biodiversité agricole Évaluation de la santé des sols Métagénomique environnementale Recherche de gènes d'intérêt agronomique Développement de programmes de sélection assistée par marqueurs\n            Services associés \n        \n                ADN environnemental                       \n            \n                Séquençage & dPCR                         \n            \n                Analyse des communauté microbienne\n            \n                Bioinformatique                                \n            \n            Exemple de projets\n        \n        Analyse de microbiomes de sols agricoles\n    \n        Développement d'outils de détection ciblée par dPCR\n    \n        Développement de marqueurs génétiques pour la sélection\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/applications__agriculture-agroecologie.json"
+}

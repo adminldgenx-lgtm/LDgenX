@@ -1,0 +1,802 @@
+Delpuech et al. Genet Sel Evol  (2021) 53:49
+https://doi.org/10.1186/s12711-021-00642-1                                                                                                                          Ge n e t i c s
+                                                                                                                                                                    Se l e c t i o n
+                                                                                                                                                                    Ev o l u t i o n
+
+ RESEARCH ARTICLE                                                                                                                                         Open Access
+
+Identification of genomic regions affecting
+production traits in pigs divergently selected
+for feed efficiency
+Emilie Delpuech1, Amir Aliakbari1, Yann Labrune1, Katia Fève1, Yvon Billon2, Hélène Gilbert1 and
+Juliette Riquet1*
+
+
+
+  Abstract
+  Background: Feed efficiency is a major driver of the sustainability of pig production systems. Understanding the bio-
+  logical mechanisms that underlie these agronomic traits is an important issue for environment questions and farms’
+  economy. This study aimed at identifying genomic regions that affect residual feed intake (RFI) and other production
+  traits in two pig lines divergently selected for RFI during nine generations (LRFI, low RFI; HRFI, high RFI).
+  Results: We built a whole dataset of 570,447 single nucleotide polymorphisms (SNPs) in 2426 pigs with records for 24
+  production traits after both imputation and prediction of genotypes using pedigree information. Genome-wide asso-
+  ciation studies (GWAS) were performed including both lines (global-GWAS) or each line independently (LRFI-GWAS
+  and HRFI-GWAS). Forty-five chromosomal regions were detected in the global-GWAS, whereas 28 and 42 regions were
+  detected in the HRFI-GWAS and LRFI-GWAS, respectively. Among these 45 regions, only 13 were shared between at
+  least two analyses, and only one was common between the three GWAS but it affects different traits. Among the five
+  quantitative trait loci (QTL) detected for RFI, two were close to QTL for meat quality traits and two pinpointed novel
+  genomic regions that harbor candidate genes involved in cell proliferation and differentiation processes of gastroin-
+  testinal tissues or in lipid metabolism-related signaling pathways. In most cases, different QTL regions were detected
+  between the three designs, which suggests a strong impact of the dataset structure on the detection power and
+  could be due to the changes in allelic frequencies during the establishment of lines.
+  Conclusions: In addition to efficiently detecting known and new QTL regions for feed efficiency, the combination
+  of GWAS carried out per line or simultaneously using all individuals highlighted chromosomal regions that affect pro-
+  duction traits and presented significant changes in allelic frequencies across generations. Further analyses are needed
+  to estimate whether these regions correspond to traces of selection or result from genetic drift.
+
+
+Background                                                                                environmental footprints of production [2]. In pig pro-
+Feed efficiency is a major driver of the sustainability of                                duction, the cost of feeding is usually measured by com-
+pig production systems. It represents from 50 to 83% of                                   puting the feed conversion ratio (FCR). Indeed, FCR is
+production costs depending on countries and systems                                       a ratio between two traits of interest in most breeding
+[1]. Feed efficiency is also a major lever to reduce the                                  schemes (feed intake and growth rate), and its incorpora-
+                                                                                          tion in selection indexes makes it difficult to accurately
+                                                                                          anticipate responses to selection on this trait and the
+*Correspondence: juliette.riquet@inrae.fr
+1
+                                                                                          correlated traits [3]. In 1963, Koch et al. [4] proposed
+  GenPhySE, Université de Toulouse, INRAE, ENVT, 31320 Castanet‑Tolosan,
+France
+                                                                                          residual feed intake (RFI) as an alternative to quantify
+Full list of author information is available at the end of the article                    feed efficiency and overcome the limits of FCR. RFI is the
+
+                                        © The Author(s) 2021. This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing,
+                                        adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and
+                                        the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material
+                                        in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material
+                                        is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the
+                                        permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://​creat​iveco​
+                                        mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​mmons.​org/​publi​cdoma​in/​
+                                        zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Delpuech et al. Genet Sel Evol   (2021) 53:49                                                                         Page 2 of 15
+
+
+
+
+difference between individual feed intakes and predicted            Design
+feed intake for the animals’ maintenance and production             The data were obtained from a divergent selection exper-
+requirements. It is generally computed as a multiple lin-           iment on RFI carried out at the INRAE experimental unit
+ear regression of daily feed intake on production traits            GenESI since 2000 (Surgères, France, https://​doi.​org/​10.​
+(growth rate and body composition traits in growing                 15454/1.​55724​15481​18584​7E12), on growing pigs from
+animals), and on the average metabolic body weight of               the French Large-White (LW) population. Selection pro-
+the animal during the growth period, as an indicator of             cedures were previously described by Gilbert et al. [5]. In
+maintenance requirements. As a result, selection for RFI            brief, the lines were established from 30 matings of LW
+generates limited correlated responses on the other pro-            animals (F0). From these litters, 116 males were tested
+duction traits, as shown in several selection experiments           to select the six most efficient (LRFI) and six least effi-
+in pigs [5, 6], and other species [7]. However, recording           cient (HRFI) males as founders of two divergent lines,
+accurately individual feed intake for pigs raised in groups         and about 40 pairs of sibs were randomly assigned to
+is costly, and large efforts are devoted to facilitate the          each line. In the following generations, from G1 to G9,
+improvement of feed efficiency, by either identifying bio-          96 males from each line were tested for RFI to select six
+markers [8, 9] or genomic markers (for instance [10, 11]).          extreme low or high boars depending on the line. In addi-
+In spite of these efforts, the difficulty to identify quantita-     tion, 35 to 40 females were randomly chosen within-line
+tive trait loci (QTL) or genomic variants that affect feed          in each generation to produce the next generation. No
+efficiency related traits is illustrated by the PigQTLDB            selection was applied for females. After nine generations
+statistics [12]: only 394 QTL are listed for feed conver-           of selection, an average inbreeding of 19% was estimated
+sion traits, and 350 for feed intake traits, whereas more           in the lines. From G1, matings were organized for at
+than 2000 are reported for growth traits, and more than             least two successive litters. Until G5, the first litter pro-
+3200 for fatness traits (PigQTLDB, accessed September               vided boar candidates for selection and future breeding
+2020, https://​www.​anima​lgeno​me.​org/​cgi-​bin/​QTLdb/​          females, and castrated males and females from the sec-
+SS/​index). Genomic information acquired from estab-                ond parity were tested to evaluate the direct and corre-
+lished divergent lines for the trait of interest can be used        lated responses to selection on major production traits,
+to increase the power of detection of genomic variants              including carcass composition and meat quality traits.
+for lowly heritable or highly polygenic traits, such as RFI         In generation G9, the responses to selection reached
+in pigs [10] and litter traits in rabbits [13].                     − 165 g/day (LRFI line–HRFI line) for RFI (3.84 genetic
+   In this study, our aim was to identify genomic regions           standard deviations (σg)), and − 270 g/day for DFI (2.11
+that affect RFI and other production traits in two pig              σg) (Table 1). After G5, selection was applied to parity 4
+lines that have been divergently selected for RFI during            or 5, and responses to selection were measured on pigs
+nine generations [5], by combining extensive genotyping             born in parities 2 and 3. Hereafter, the breeding animals
+of all breeding animals of the lines, and extensive pheno-          are called “breeders” and animals tested for responses to
+typing of their progeny. GWAS were applied to growth,               selection are called “response animals”.
+feed intake and feed efficiency, carcass composition and
+meat quality traits on the full dataset. Different subsets of
+the population were used to be able to suggest biological           Phenotypes
+hypotheses regarding the genetic background of the traits           For this study, 2426 phenotyped response animals were
+in the two divergent lines, and to decipher whether the             used, which corresponds to about 48 females and 48
+chromosomal regions that affecting RFI differ between               castrated males per line in each generation G1 to G5,
+lines.                                                              plus 700 response animals per line distributed in gen-
+                                                                    erations G6 to G9. All animals were raised during the
+                                                                    growing-finishing period (~ 28 kg to ~ 107 kg) in the
+Methods                                                             same growing-finishing unit comprising four rooms of
+Ethic statement                                                     four pens, each equipped with a single-place electronic
+All pigs were reared in compliance with national regu-              feeder (ACEMA 64; Skiold Acemo, Pontivy, France).
+lations and according to procedures approved by the                 Each animal had records for body weight (BW0 at
+French Veterinary Services at INRAE experimental facili-            the start of the test and BW1 before slaughter) and
+ties. The care and use of pigs were performed following             daily feed intake (DFI) to compute average daily gain
+the guidelines edited by the French Ministries of High              (ADG) and feed conversion ratio (FCR) during the test
+Education, Research and Innovation, and of Agriculture              period. The dressing percentage (DP) was computed
+and Food (http://​ethiq​ue.​ipbs.​fr/​sdv/​chart​eexpe​anima​le.​   based on weight records of warm carcass at slaughter.
+pdf ).                                                              Twenty four hours after slaughter, backfat thickness
+Delpuech et al. Genet Sel Evol         (2021) 53:49                                                                                                        Page 3 of 15
+
+
+
+
+Table 1 Number of QTL identified for each trait with the three groups of association studies
+Trait                          h2                     Genetic differences in G9          Global                    HRFI                    LRFI                   Total
+                                                      (σg)
+
+DFI                            0.41                   2.11                                 2                        1                       3                       6
+ADG                            0.5                    0.15                                 1                         3                                              4
+FCR                            0.42                   2.46                                 2                                                2                       4
+RFI                            0.13                   3.84                                 3                                                2                       5
+carcBFT                        0.4                    0.037                                4                         1                      4                       9
+a*_GM                          0.29                   0.38                                 2                                                1                       3
+a*_GS                          0.26                   0.12                                                          4                       4                       8
+b*_GM                          0.24                   0.09                                 1                                                1                       2
+b*_GS                          0.32                   1.14                                 6                         4                      1                      11
+L*_GM                          0.2                    0.38                                 1                         5                                              6
+L*_GS                          0.33                   2.12                                 2                        3                       4                       9
+pH24h_AD                       0.41                   1.39                                 2                                                3                       5
+pH24h_GS                       0.39                   1.98                                 4                        1                       1                       6
+pH24h_LM                       0.32                   1.45                                 4                        3                       4                      11
+pH24h_SM                       0.38                   1.74                                 3                        1                       1                       5
+WHC                            0.04                   0.68                                 3                         5                                              8
+MQI                            0.33                   1.92                                 4                        1                       1                       6
+LMCcalc                        0.59                   1.31                                 3                                                1                       4
+DP                             0.36                   0.93                                 3                         1                      6                      10
+Belly_W                        0.28                   1.90                                                                                  2                       2
+BF_W                           0.43                   0.9                                  2                        1                       3                       6
+Ham_W                          0.51                   0.97                                 2                        1                       1                       4
+Loin_W                         0.54                   1.69                                 2                                                1                       3
+Shoulder_W                     0.38                   1.11                                                          1                       1                       2
+Total                                                                                    56                        36                      47                     139
+Association studies on the full population (global-GWAS, Global) and for each line separately (HRFI-GWAS, HRFI and LRFI-GWAS, LRFI) were performed. Traits with more
+                                                                                                                         ­ 2 = heritability, and responses to selection
+than three different QTL between the HRFI-GWAS and LRFI-GWAS analyses are indicated in italic characters. For each trait h
+expressed in genetic standard deviations of the trait are reported as computed by Gilbert et al. [27]
+DFI: daily feed intake; ADG: average daily gain; FCR: feed conversion ratio; RFI: residual feed intake; carcBFT: backfat thickness measured on carcass; a*_GM: a*
+measured on the gluteus medius muscle; a*_GS: a* measured on the gluteus superficialis muscle; b*_GM: b* measured on the gluteus medius muscle; b*_GS: b*
+measured on the gluteus superficialis muscle; L*_GM: L* measured on the gluteus medius muscle; L*_GS: L* measured on the gluteus superficialis muscle; pH24h_AD:
+pH 24 h after slaughter measured on the adductor femoris muscle; pH24h_GS: pH 24 h after slaughter measured on the gluteus superficialis muscle; pH24h_LM: pH
+24 h after slaughter measured on the longissimus dorsi muscle; pH24h_SM: pH 24 h after slaughter measured on the semimembranosus muscle; WHC: water holding
+capacity of the gluteus superficialis muscle; MQI: meat quality index; LMCcalc: lean meat content of the carcass; DP: carcass dressing percentage; Belly_W: belly weight;
+BF_W: backfat weight; Ham_W: ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight
+
+
+
+
+measured on carcass (carcBFT), and the weights of ham                                  capacity (WHC) assessed on GS according to the pro-
+(Ham_W), loin (Loin_W), belly (Belly_W), shoulder                                      cedure described by Charpentier et al. [15]. Finally, a
+(Shoulder_W), and backfat (BF_W), following a stand-                                   meat quality index (MQI) was calculated from measure-
+ardized cut, were recorded on the cold half carcass. The                               ments of the pH on SM, L* on GS and WHC according
+lean meat content (LMCcalc) was estimated from a lin-                                  to the model proposed by Tribout et al. [16]. RFI was
+ear combination of the weights of carcass ham, loin, and                               defined as the residual of a multiple linear regression
+backfat, expressed as a percentage of the half-carcass                                 as follows: RFI = DFI − (1.48 × ADG) + (23.2 × LMC-
+weight [14]: LMC (%) = 25.08 − 1.23 backfat (%) + 0.87                                 calc) − (99.1 × AMBW), where AMBW is the average
+loin (%) + 0.73 ham (%). Meat quality measurements                                     metabolic body weight during the test period and is
+included pH on the adductor femoris (AD), semimem-                                     equal to ­(BW11.6 − ­BW01.6)/[1.6 (BW1 − BW0)] [17].
+branosus (SM), gluteus superficialis (GS), and longissi-                               Contemporary group (group of around 45 animals born
+mus dorsi muscles (LM), colorimetry L*, a* and b* on                                   in the same week and contemporarily tested in a given
+GS and gluteus medius muscle (GM), and water-holding                                   room), gender and pen size were added as fixed effects
+                                                                                       in the model, as described by Gilbert et al. [5].
+Delpuech et al. Genet Sel Evol   (2021) 53:49                                                                      Page 4 of 15
+
+
+
+
+Genotyping                                                      distributed along the 18 pig autosomes were available for
+Genomic DNA was purified from individual biological             1632 breeding animals.
+samples of the sires and dams of all generations using             To evaluate imputation accuracy, first, five successive
+standard protocols. Over the time of the study, two dif-        batches of 1000 SNPs were randomly selected among the
+ferent Illumina medium-density SNP chips were used              common SNPs between the 60 and 70K SNP chips. For
+according to the genotyping protocols defined by the            each SNP batch, the genotypes of these SNPs were set
+supplier (Technological Center, Genomics and Tran-              as missing for all animals genotyped with the 60K SNPs
+scriptomics Platform, CRCT Toulouse). A first genotyp-          chip and imputed from the 70K SNPs chip information.
+ing batch comprising 286 animals (12 sires from each            Therefore, 5000 SNPs with real and imputed genotypes
+generation G0 to G6, and G0, G3 and G6 dams) was                were used to compute Pearson’s correlations for each of
+genotyped for 64,232 SNPs using the Porcine SNP60v2             the 286 pigs with 60K genotypes. Similarly, five batches of
+BeadChip (60K SNPs chip), and a second batch of 1356            1000 SNPs were randomly selected among the common
+animals (complementary breeding animals of the gen-             SNPs between both MD SNP chips, animals genotyped
+erations G0 to G6 and sires and dams of the following           with the 70K SNPs array were re-coded as missing, and
+generations) was genotyped using the Porcine HD Array           Pearson’s correlations between true and imputed geno-
+GGP chip comprising 68,516 SNPs (70K SNPs chip).                types were computed for the 1346 animals with 70K SNP
+Genotypes were obtained using the Genome Studio soft-           genotypes. Then, to evaluate the imputation quality to
+ware (V2.0.4) and coded as 0, 1 and 2 corresponding,            the HD level, the same strategy of removing successively
+respectively, to individuals homozygous for the minor           five batches of 1000 SNPs from the data was applied
+allele, heterozygous and homozygous for the major allele.       using SNPs that were in common among the three chips.
+In addition, 32 G0 founders equally distributed between         In addition, a leave-one-out approach was applied to the
+the lines (12 G0 sires, and 20 G0 dams that contributed         32 individuals with HD genotypes to evaluate the impu-
+most to the subsequent generations based on pedigree            tation accuracy.
+information) were genotyped with the Affymetrix Axiom              In addition, a multi-dimensional scaling (MDS) analy-
+Porcine HD Genotyping Array chip (Gentyane Platform,            sis was performed using the cmdscale() function in the R
+UMR 1095 INRAE Clermont-Ferrand) consisting of                  software (V.3.6.2, R Core Team 2019) based on a identity-
+658,692 SNPs (650K SNPs chip).                                  by-state matrix constructed with the PLINK software
+  For each SNP panel, quality control was performed             [18].
+using the PLINK software (V1.90) [18]: SNPs with a
+call frequency (CF) lower than 95% and a minor allele           Predicted genotypes in response animals
+frequency (MAF) lower than 1% were excluded, and                Response animals did not have genotypes themselves. An
+animals with a call rate (CR) lower than 90% were dis-          average expected genotype was computed for each ani-
+carded. Deviations from Hardy–Weinberg equilibrium              mal from the imputed 650K genotypes of their parents.
+were also assessed with a p-value of 1  ­ 0–10. Unmapped        For each SNP, each individual was given the average gen-
+SNPs and SNPs located on the sex chromosomes were               otype of the parents (0, 0.5, 1, 1.5 or 2), thus within a lit-
+removed based on the Sscrofa11.1 assembly of the refer-         ter, all animals were assigned the same genotypes. Thus,
+ence genome (https://​www.​ensem​bl.​org/​Sus_​scrofa/​Info/​   depending on the class of genotypes, the obtained geno-
+Index) [19].                                                    type represented an approximation of the real genotype:
+                                                                (i) genotypes 0 and 2 were certain, as they resulted from
+Imputation of genotypes                                         two homozygous parents for the same allele (0 × 0 0 and
+Two successive imputations were performed using the             2 × 2 2), (ii) genotypes 0.5 and 1.5 included combina-
+FImpute software [20]. A first level of imputation was          tions of a homozygous genotype for one allele and a het-
+performed with markers on the 60K and 70K SNPs                  erozygous genotype (0 × 1 0 or 1 and 1 × 2 1 or 2), and
+chips, based on 29,957 common SNPs, to homogenize               (iii) genotype 1 was the most heterogeneous class, with a
+the medium-density genotyping data available for the            mixture of true genotypes (0 × 2 1) and uncertain geno-
+1632 breeders of the lines. This leads to an intermedi-         types (1 × 1 0 or 1 or 2). Animals whose parents had a
+ate dataset of 66,988 SNPs that are imputed from both           missing genotype were excluded from the analysis.
+medium-density (MD) chips (60K and 70K SNPs chips).
+In a second step, the genotypes of the high-density (HD)        Genome‑wide association studies
+SNPs chip were imputed for all breeders using the HD            GWAS analyses were performed using the GEMMA soft-
+SNP genotypes of the 32 G0 founders. A set of common            ware (version 0.97) [21] on response animals with their
+45,708 SNPs was available between the MD imputed                own phenotypes and their average genotypes from the
+genotypes and the HD SNP chip. Finally, 570,447 SNPs            parents. Phenotypes were adjusted for significant fixed
+Delpuech et al. Genet Sel Evol   (2021) 53:49                                                                     Page 5 of 15
+
+
+
+
+effects and covariates (pen size, herd, sex, and contem-         chromosome. For each chromosome, this number was
+porary groups for in vivo measurements, slaughter date           the number of principal components required to describe
+as fixed effects, and slaughter age as covariate for traits      99.6% of the genotype variability, obtained from a princi-
+recorded at the abattoir, and slaughter BW as covariate          pal component analysis applied to the correlation matrix
+for carcBFT) using linear models as proposed in Aliak-           between genotypes of the SNPs on the considered chro-
+bari et al. [22]. The resulting residues were integrated as      mosome (square root ­(r2) of linkage disequilibrium (LD)
+phenotypes in GEMMA. To account for the structure of             between each pair of SNPs, Gao et al. [25]). The result-
+the population in the GWAS analyses, a pedigree rela-            ing genome-wide threshold (4.5 corresponding to 1690
+tionship matrix A was computed. Association analyses             independent tests) was used to select significant associa-
+were performed on the 24 traits available for the 2426           tions for each type of analysis. In addition, a cut-off of 3
+response animals.                                                (chromosome-wide threshold) was used only to assess
+   The statistical model used to test one marker at a time       whether a significant region identified in one analysis was
+was y = xβ + Zu + ε, where y is the vector of adjusted           suggestive in another one.
+phenotypes for all individuals; x is a vector of genotypes         To define QTL intervals, the genome was divided into
+at the tested marker; β is the effect of the tested marker; u    1-Mb windows following the Sscrofa11.1 assembly of
+is a vector of random additive genetic effects distributed       the reference genome. First, for each analysis (HRFI-
+according to N (0, Aτ −1 ), with  the ratio of the additive    GWAS, LRFI-GWAS and global-GWAS performed for
+genetic variance and the residual variance τ −1 and Z the        each trait), the 1-Mb windows with at least one SNP
+incidence matrix (identity matrix in this case); ε is a vec-     with a significant p-value at 5% genome-wide (−log10(p-
+tor of residuals N (0, Iτ −1 ), with I the identity matrix. In   value) ≥ 4.5) were retained, and adjacent windows with
+GEMMA, an efficient exact algorithm is implemented to            significant signals were combined into a single "QTL-
+first estimate , and next derive β and τ for each marker      window" per trait. In a second step, all the QTL windows
+[23].                                                            were combined across traits using the same approach
+   Three types of populations were considered for GWAS.          as above: adjacent and overlapping QTL-windows were
+First, the full dataset, which combines the two lines, was       fused, thus allowing the definition of a complete list of
+analyzed in a global analysis (thereafter called global-         "QTL-regions". When a QTL-region was significant for
+GWAS). Then, to evaluate if some QTL were segregat-              several traits, for each one, the most significant marker
+ing in one line only, the analyses were repeated within          and the associated allelic substitution effect was retained
+line (thereafter called lines-GWAS, or HRFI-GWAS and             to tag the QTL (trait × region) for this trait in further
+LRFI-GWAS when only one line was referred to).                   analyses – thereafter called SNP-QTL.
+   For each analysis, the distributions of the test statis-        The QTL positions were compared to previously
+tics of the GWAS of each trait were checked using quan-          mapped QTL in pigs using the pigQTLdb database [12],
+tile–quantile plots (Q-Q plot), and we computed the              and QTL significant for RFI trait were screened for func-
+regression coefficients of the observed to the expected          tional candidate genes using the Ensembl annotation
+distribution under H  ­ 0. Inflation factors were on average     V.101 (August 2020).
+1.17 ± 0.15 for all analyses, indicating low deviations from
+the distribution of the test statistic under H­ 0. However, a    Changes in allelic frequencies of SNP‑QTL
+correction factor was applied to all the analyses to con-        The power of detection in GWAS is strongly influenced
+trol type-I errors, by dividing each chi square statistic by     by the allelic frequencies of the analyzed markers [26].
+the corresponding inflation factor, following the genomic        Within each QTL region, the different SNP-QTL were
+control approach proposed by Devlin and Roeder [24].             considered to examine the changes in allele frequencies
+The test nominal p-values were computed according to             with line selection. It should be noted that in addition to
+this new chi square statistic.                                   selection, changes in allele frequencies can also be due to
+   To account for the multiple testing issue in the com-         genetic drift, especially in small closed populations. For
+putation of genome-wide type-I errors, the significance          instance, under the Wright-Fisher model (panmixia, no
+threshold was obtained after a Bonferroni correction as          selection, N = 40) in our lines, genetic drift would result
+follows:                                                         in generation 9 in standard deviations of allele frequen-
+                                                               cies of 0.164 for SNPs with an initial frequency of 0.5.
+                                   0.05                          However, our objective was not to test if allele frequen-
+      −log10 nbchr                                       ,
+                   i=1 number of independent testsi )
+                                                                 cies responded to selection, but to illustrate changes in
+                                                                 allele frequencies with time, accounting for all genera-
+ where the number of independent tests was computed              tions, in QTL regions. These SNP-QTL allele frequen-
+as the sum of the number of independent tests for each           cies were estimated for the response animal genotypes,
+Delpuech et al. Genet Sel Evol   (2021) 53:49                                                                             Page 6 of 15
+
+
+
+
+i.e. from their average genotypes. To investigate how         First, the imputation of the missing genotypes on each
+selection affected allele frequencies, and thus power of      MD support (60K and 70K SNP chips) allowed us to
+detection, allele frequencies were computed by adding         obtain genotypes for 66,988 SNPs for all sires and dams.
+animals from one generation at a time, starting from          The imputation accuracy was on average 0.995 regard-
+G1 individuals only. Then, the allele frequencies by add-     less of the generation of the imputed individuals (see
+ing G2 response animals were obtained by combining            Additional file 3: Figures S1a and 1b). A second run of
+genotypes of G1 and G2 response animals, and so on            imputation was applied to all breeding animals from
+until G9. The estimated frequencies in G9 (using all the      the 32 founder individuals genotyped with the HD SNP
+animals from G1 to G9) corresponded to the informa-           chip. The imputation accuracy was also high, with aver-
+tiveness of the markers used in the main lines-GWAS.          age accuracies around 0.979 (see Additional file 3: Figure
+In each line, a regression of the generation number (1        S1c). A few animals in G0 and G3 had accuracies lower
+to 9) on the SNP allele frequencies was then applied to       than 0.97. The accuracy estimated via the leave-one-out
+test changes in allelic frequencies on cumulative datasets    approach confirmed the values estimated with the cor-
+across generations. For each SNP-QTL, the significance        relations, with an average of 0.975 (see Additional file 3:
+of the slope was tested in each line using a Wald test. The   Figure S1d). In total, genotypes for 570,447 SNPs were
+comparison of the slopes (the regression coefficients of      obtained for all parents from G0 to G9.
+the allelic frequencies) between lines highlighted four         An MDS analysis was performed on the genotype
+distinct cases: (i) markers with frequencies that did not     matrix to represent the changes in genomic content of
+change with line selection (no slope differed from zero       the lines with generations (Fig. 1). The first component
+with the Wald tests), (ii) markers co-selected in the two     corresponded to the dispersion of individuals according
+lines (slopes differed from zero and had identical signs),    to the lines, and the second component corresponded to
+(iii) markers selected in opposite directions in the lines    the successive generations in both lines.
+(slopes differed from zero with different signs), and (iv)
+markers with frequencies that changed in one line only        Genome‑wide association studies
+(slope different from zero in one line only). Using only      From the imputed genotypes of all parents, an aver-
+the significant slope values, a QTL evolution score was       age genotype was computed for all response animals.
+computed for each SNP-QTL as (9 generations * (|slope         Thus, genotypes coded 0, 0.5, 1, 1.5 or 2 were avail-
+HRFI| +|slope LRFI|)) and to summarize their evolution per    able for 2426 individuals. In total, the design included
+trait, an average score over all SNP-QTL for each trait       596 full-sib families including 4.07 (± 2.9) individu-
+was computed.                                                 als on average. Within a sibling, all individuals shared
+
+Results
+Quality control and imputation of genotypes
+True SNP genotyping data were available for all sires
+and dams from G0 to G9. The quality control of the
+genotypes was carried out first for each SNP chip inde-
+pendently. With a CR threshold of 90%, 10 animals geno-
+typed with the 70k SNP chip and no individual genotyped
+with the 60K and 650K SNP chips were discarded (see
+Additional file 1: Table S1). For the SNPs, 15,114 SNPs
+from the 60K SNP chip (5776 for CF < 95% and 9125 for
+MAF < 1%), 11,891 SNPs from the 70K SNP chip (5323
+for CF < 95% and 6568 for MAF < 1%), and 99,587 SNPs
+from the HD SNP chip (53,735 for CF < 95% and 45,852
+for MAF < 1%) were removed. No SNP was removed with
+the Hardy–Weinberg equilibrium filter. In total, geno-
+types of 286 animals for 49,118 SNPs from the 60k SNP
+chip, genotypes for 1346 animals for 56,625 SNPs from
+the 70K SNP chip, and finally genotypes for 32 animals
+for 559,105 SNPs from the HD SNP chip were retained            Fig. 1 The first two axes of the multidimensional scaling (MDS)
+for further analyses (see Additional file 2: Table S2).        analysis, based on the 570,447 genotypes. Points represent
+  To obtain HD genotypes for all parents in the design,        individuals (corresponding to all sires and dams of the population,
+                                                               N = 1632) and colors are generations
+two successive runs of imputations were performed.
+Delpuech et al. Genet Sel Evol     (2021) 53:49                                                                                               Page 7 of 15
+
+
+
+
+the same average genotype. The proportions of the five                         regions) or 8 Mb (1 region) were significant for at least
+possible genotypes were estimated for each SNP and                             one trait, corresponding to 56 QTL-windows (trait
+each individual in the design, with indication of their                        × region) for the global-GWAS. For all traits (except
+uncertainty. For each SNP, the proportion of certain                           Belly_W, Shoulder_W and a*_GS), at least one QTL was
+genotypes, corresponding to classes 0, 1 (half of them)                        detected in these analyses (Fig. 2), the list and charac-
+and 2, represented 1276 genotypes on average, i.e. 53%                         teristics of these QTL are reported in Additional file 5:
+of the individuals, with a median of 1130 genotypes                            Table S3.
+that are certain, this proportion being higher for SNPs                          To assess whether the identified QTL regions were
+with an extreme MAF. In addition, for each individual,                         identical and shared between the two lines, comple-
+among the 66,988 SNPs for the MD imputed genotypes                             mentary GWAS analyses were performed per line,
+considered in the calculation, from 31,132 to 40,852                           using either the set of individuals from G1 to G9 of the
+SNPs (an average of 35,232 SNPs) were predicted with                           HRFI line or the set of individuals from G1 to G9 of the
+certainty (see Additional file 4: Figure S2).                                  LRFI line. The QTL identified with the three analyses
+  First, association studies corresponding to global-                          were compared (Table 1 and Fig. 2). As an example of
+GWAS were carried out on all response animals, for                             the outcome of these analyses, Manhattan plots for RFI
+each of the 24 traits. Significant regions were selected                       obtained with the global-GWAS and lines-GWAS are
+by applying a genome-wide threshold of 4.5. Forty-five                         reported in Additional file 6: Figure S3. For the analy-
+regions of 1 Mb (31 regions), 2 Mb (6 regions), 3 Mb (7                        ses performed by line, the number of regions detected
+
+
+
+
+  Fig. 2 Location of all SNP-QTL identified on the 18 autosomes from the Global-GWAS, LRFI-GWAS and HRFI-GWAS. The SNP-QTL corresponding to
+  Global-GWAS are represented by horizontal bars, LRFI-GWAS by arrows to the right of the chromosomes and HRFI-GWAS by arrows to the left of the
+  chromosomes. Each color represents one of the 24 traits; LRFI: low RFI line; HRFI: high RFI line; DFI: daily feed intake; ADG: average daily gain; FCR:
+  feed conversion ratio; RFI: residual feed intake; carcBFT: backfat thickness measured on carcass; a*_GM: a* measured on the gluteus medius muscle;
+  a*_GS: a* measured on the gluteus superficialis muscle; b*_GM: b* measured on the gluteus medius muscle; b*_GS: b* measured on the gluteus
+  superficialis muscle; L*_GM: L* measured on the gluteus medius muscle; L*_GS: L* measured on the gluteus superficialis muscle; pH24h_AD: pH 24 h
+  after slaughter measured on the adductor femoris muscle; pH24h_GS: pH 24 h after slaughter measured on the gluteus superficialis muscle; pH24h_
+  LM: pH 24 h after slaughter measured on the longissimus dorsi muscle; pH24h_SM: pH 24 h after slaughter measured on the semimembranosus
+  muscle; WHC: water holding capacity of the gluteus superficialis muscle; MQI: meat quality index; LMCcalc: lean meat content of the carcass; DP:
+  carcass dressing percentage; Belly_W: belly weight; BF_W: backfat weight; Ham_W: ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight
+Delpuech et al. Genet Sel Evol      (2021) 53:49                                                                                                 Page 8 of 15
+
+
+
+
+for a trait could differ between lines. For instance, more                       intake, and feed efficiency were detected, including five
+loci were detected in the HRFI line for ADG, b*_GS,                              regions associated with RFI and four with FCR.
+L*_GM and WHC, whereas more regions were detected                                   Thirteen regions were shared between the 45 regions
+in the LRFI line for carcBFT, pH24h_AD and DP. In the                            identified in the global-GWAS and the 69 unique
+HRFI line, 36 QTL were identified in 28 regions, and                             regions from the analyses per line, with only five com-
+in the LRFI line, 47 QTL were identified in 42 regions.                          mon regions between the global-GWAS and HRFI-
+Only one region overlapped between the two lines: on                             GWAS analyses, nine common regions between the
+SSC6, a region located between 7 to 10 Mb affected                               global-GWAS and LRFI-GWAS, and the SSC6 region
+pH24h_LM in LRFI and L*_GS, b*_GS, and MQI in                                    described above detected in the three analyses (Fig. 3a).
+HRFI, which are highly correlated traits related to meat                         Among these regions, only nine QTL (trait x region) were
+quality (Fig. 3).                                                                identified jointly in the global-GWAS and in one of the
+  Cut weights were the traits with the smallest num-                             lines-GWAS (Fig. 3b), and none was shared in the three
+ber of QTL (1 to 3 per analysis) (Table 1). Meat qual-                           analyses. Thus, very few QTL were common between
+ity measurements had the largest number of QTL (up                               the three GWAS (Fig. 2). To assess whether a SNP-QTL
+to 6). Nineteen regions associated with growth, feed                             significant in one analysis reached significance or sug-
+                                                                                 gestive thresholds in the other analyses, their p-values
+                                                                                 were compared. First, in the comparison between the
+                                                                                 lines-GWAS (Fig. 4a), most of the SNP-QTL detected via
+                                                                                 HRFI-GWAS had −log10(p-values) generally lower than
+                                                                                 the suggestive threshold of 3 in the LRFI-GWAS. Similar
+                                                                                 results were obtained comparing SNP-QTL of the LRFI-
+                                                                                 GWAS to their p-values with the HRFI-GWAS. For the
+                                                                                 SNP-QTL significant in the global-GWAS, the −log10(p-
+                                                                                 values) with the lines-GWAS were intermediate and
+                                                                                 exceeded the suggestive threshold in one of the lines for
+                                                                                 several QTL.
+  Fig. 3 Comparison of GWAS results obtained from Global-GWAS
+  (Global), HRFI-GWAS (HRFI) and LRFI-GWAS (LRFI). a Comparison of
+                                                                                    In addition, for the SNP-QTL corresponding to the
+  the number of identical regions and b comparison of the number of              QTL detected in the line analyses (HRFI-GWAS and
+  identical QTL (trait x region)                                                 LRFI-GWAS), the −log10(p-values) obtained in the
+
+
+
+
+  Fig. 4 Plot of the − ­log10(p-value) of the SNP-QTL. The − ­log10(p-value) are obtained in first case with the two lines analyses for all SNP-QTL
+  detected for the lines or the global analyses (a), and in second case obtained with the global analysis for SNP-QTL detected with the GWAS
+  performed per line (b)
+Delpuech et al. Genet Sel Evol     (2021) 53:49                                                                                            Page 9 of 15
+
+
+
+
+global-GWAS were also low (Fig. 4b), with more than                           was detected, initially more than 63% of the SNP-QTL
+the half (56.6%) of the SNP-QTL having -log10(p-values)                       showed small differences in line frequency (< 0.1) and
+lower than 3.                                                                 less than 11% of the SNP-QTL showed a difference in
+                                                                              line frequency greater than 0.2. These SNP-QTL were not
+Change in allele frequencies across generations                               particularly detected in one or the other type of analysis.
+The allele frequencies of the SNP-QTL detected either                         Next, to better describe the changes in allele frequency
+in the global-GWAS or lines-GWAS were evaluated in                            across generations, frequencies of SNP-QTL from the
+G1 to G9 to reflect the informativeness of these GWAS                         global-GWAS and lines-GWAS were successively esti-
+(called G9 hereafter) and in G1. When the SNP-QTL was                         mated in each line by adding data from the next genera-
+detected in the global-GWAS, all response animals were                        tion to the previous generations: G1 allele frequencies
+used to compute the frequencies; for SNP-QTL from the                         were obtained from G1 individuals only, G2 allele fre-
+lines-GWAS, only the animals of the significant analysis                      quencies were obtained from G1 and G2 individuals
+(HRFI-GWAS or LRFI-GWAS) were used. The resulting                             etc. Using the nine resulting frequencies computed for
+frequency histograms are shown in Fig. 5. In G1 only, the                     each line, a linear regression of the generation number
+distribution of the allelic frequencies of the SNP-QTL of                     on the allele frequencies was applied within line (Fig. 7).
+the global-GWAS and that of the SNP-QTL of the lines-                         The comparison between lines of the regression coeffi-
+GWAS did not differ significantly (Fig. 5a). In G9, the                       cients of the allelic frequencies highlighted four distinct
+distribution of the SNP-QTL allelic frequencies differed                      cases (Fig. 8). Altogether, the allelic frequencies of 4.5%
+largely between the two types of analyses (Fig. 5b): 85.5%                    of the SNP-QTL did not change with selection (Fig. 7a),
+of the SNP-QTL of the global-GWAS remained in the                             24.8% of the markers were co-selected in the two lines
+same range of frequencies, between 0.2 and 0.6, whereas                       (Fig. 7b), 41.3% evolved in opposite directions in the two
+only 57.7% of the SNP-QTL of the lines-GWAS had                               lines (divergence) (Fig. 7c), and 29.3% of the markers had
+allele frequencies within that range of values (P < 0.001                     frequencies that changed in one line only (17.3% in LRFI
+for a ­Chi2 with 1 df, when comparing between the two                         and 12% in HRFI) (Fig. 7d). Again no difference in the
+types of analyses the number of SNP-QTL with frequen-                         distribution of the SNP-QTL by category was identified
+cies between 0.2 and 0.6 with the number of SNP-QTL                           in either type of analysis (p-value = 0.51 for a ­Chi2 with
+with other frequencies). In addition, 9% of the SNP-QTL                       3 df ).
+of the lines-GWAS had a frequency higher than 0.6,                               For RFI in the two lines, four of the five detected QTL
+whereas no marker reached such frequencies among the                          corresponded to regions that were selected in opposite
+SNP-QTL of the global-GWAS.                                                   directions in the lines, with strong differences in line fre-
+   In addition to the estimation of the global allelic fre-                   quencies: two RFI SNP-QTL showed differences in allelic
+quencies, we evaluated if in each line the detected SNP-                      frequency between lines greater than 0.2 in G1 and the
+QTL in each type of analysis evolved differently. First,                      other two RFI SNP-QTL showed large changes in allelic
+the differences in allele frequency between the HRFI                          frequency (regression slope > 0.024/generation). To sum-
+and LRFI lines were estimated in the G1 generation (at                        marize the changes in SNP-QTL allele frequencies for
+the beginning of the selection) (Fig. 6). Regardless of the                   each trait, an average evolution score between G1 and
+analysis (global- or lines-GWAS) in which the SNP-QTL                         G9 was computed using the estimated evolution scores
+
+
+
+
+  Fig. 5 Distribution of SNP-QTL allele frequencies of Global-GWAS (in grey) and Lines-GWAS (in black). Distribution representing individuals from the
+  line of the significant analysis a in G1 generation (G1 individuals only) and b in G9 generation (G1 to G9 individuals)
+Delpuech et al. Genet Sel Evol    (2021) 53:49                                                                                              Page 10 of 15
+
+
+
+
+ Fig. 6 Distribution of differences in allele frequencies between the lines. The differences in allele frequencies are the absolute values between lines
+ for SNP-QTL resulting from the Global-GWAS and Lines-GWAS in G1
+
+
+
+
+  Fig. 7 Linear regression of the generation number on the allele frequencies computed in each line. Allele frequencies were estimated in the two
+  lines by combining, for each generation, individuals of the generation n with the previous ones (animals from generation G1 to G n-1). Allelic
+  frequencies evolutions are reported for SNP-QTL corresponding to a no-evolution, b co-evolution in both lines, c opposite-evolution, and d
+  evolution only in one line, situations
+Delpuech et al. Genet Sel Evol     (2021) 53:49                                                                                              Page 11 of 15
+
+
+
+
+ Fig. 8 Slopes of the linear regression equations of the allele frequencies on the nine generations. Slopes were calculated in each line, for all
+ SNP-QTL identified with Global-GWAS (in grey) and Lines-GWAS (in black). Four situations (differentiated by different labels) were identified
+ according to the significance of the slope (different from zero with p < 0.05 with a Wald test) in one or the two lines
+
+
+
+of the different SNP-QTL detected for each trait. These                        responses to the selection on feed consumption, growth
+averages were between 0.09 (Shoulder_W) and 0.35                               and meat quality traits via measurements at the slaugh-
+(RFI). A correlation coefficient of 0.63 was then estimated                    terhouse. After nine generations of selection, around
+between the genetic line differences in G9 computed pre-                       2500 "response animals" had phenotypes. These indi-
+viously for the 24 different traits [27] (Table 1) and these                   viduals have the advantage of having individual records
+averages (Fig. 9).                                                             for unmeasured traits in breeders (post-mortem meas-
+                                                                               urements). To optimize the costs, we genotyped all 1632
+Discussion                                                                     breeders on MD SNP chips to exhaustively survey the
+The objective of this study was to identify QTL that                           segregating alleles in the design. In addition, the 32 main
+affect RFI and production traits in pig lines that have                        contributors to the design were chosen from the G0 sires
+been divergently selected for RFI and to understand if                         and dams to be genotyped using the HD SNP chip, and
+the traits had different genetic backgrounds between the                       an imputation step was carried out to have HD geno-
+lines. By optimizing the genotyping to reach a sufficient                      types for all breeding individuals. The strong pedigree
+power of detection of QTL in the full design and in the                        relationships in the design enabled a very good quality of
+two lines, separately, QTL were detected for all traits and                    HD imputation, since they help to better detect long hap-
+hypotheses about the trait genetic background in the two                       lotypes used to infer missing SNPs [28]. A second step
+lines can be formulated.                                                       was carried out, so that each response non-genotyped
+                                                                               animal could have a genotype. Such imputation of non-
+Using average parental genotypes to detect QTL                                 genotyped animals has been used in cattle [29] as part
+While the use of SNP chips now enables the genotyp-                            of genomic evaluations to increase the size of reference
+ing of an individual at a reasonable cost, the genotyping                      populations. In cattle, the most common situation is to
+of a design comprising several thousands of individuals                        determine by imputation the genotypes of the dams of
+still represents a significant investment. In each genera-                     the bulls, knowing the genotypes of the maternal grand-
+tion of our design, at least two parities were produced,                       sire, one (or more) offspring and the sires with which
+one to select future breeders, and one to control the                          they were mated [30]. In such cases, the strategy takes
+Delpuech et al. Genet Sel Evol    (2021) 53:49                                                                                             Page 12 of 15
+
+
+
+
+ Fig. 9 Genetic differences in G9 between the two lines. The genetic differences were expressed in genetic standard deviations of the trait (σg)
+ as a function of the average evolution of allelic frequencies in the QTL regions of the trait between the two lines. The magnitude of the genetic
+ correlation between each trait and RFI is indicated with a grey gradient; DFI: daily feed intake; ADG: average daily gain; FCR: feed conversion ratio;
+ RFI: residual feed intake; carcBFT: backfat thickness measured on carcass; a*_GM: a* measured on the gluteus medius muscle; a*_GS: a* measured on
+ the gluteus superficialis muscle; b*_GM: b* measured on the gluteus medius muscle; b*_GS: b* measured on the gluteus superficialis muscle; L*_GM:
+ L* measured on the gluteus medius muscle; L*_GS: L* measured on the gluteus superficialis muscle; pH24h_AD: pH 24 h after slaughter measured on
+ the adductor femoris muscle; pH24h_GS: pH 24 h after slaughter measured on the gluteus superficialis muscle; pH24h_LM: pH 24 h after slaughter
+ measured on the longissimus dorsi muscle; pH24h_SM: pH 24 h after slaughter measured on the semimembranosus muscle; WHC: water holding
+ capacity of the gluteus superficialis muscle; MQI: meat quality index; LMCcalc: lean meat content of the carcass; DP: carcass dressing percentage;
+ Belly_W: belly weight; BF_W: backfat weight; Ham_W: ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight
+
+
+
+
+advantage of family information (Mendelian rule of allele                     from reaching the threshold of significance in the global-
+transmission) and combines it with allele frequencies                         GWAS. Although the number of individuals included in
+and LD between markers at the population level. In our                        the global-GWAS was more than twice that in the line
+case, at each generation n, all response animals had both                     analyses, the addition of individuals belonging to the
+parents genotyped at generation n-1. Given these trio                         other line seems to have reduced the power of detection
+structures, an expected genotype at each position could                       of QTL segregating in the first line. Even if the allelic fre-
+be deduced from the genotypes of the parents using sim-                       quencies of the SNP-QTL detected in the global-GWAS
+ple segregation rules: since the genotypes were coded as                      or lines-GWAS were comparable in G1, they largely dif-
+an allelic dosage for one reference allele, the genotype                      fered after nine generations of selection, i.e. more SNPs
+expectation for each offspring was simply the average of                      with low allele frequencies were identified with the lines-
+the genotypes of its two parents. As a result, 2426 ani-                      GWAS. The pedigree kinship matrix was used in the
+mals with genotypes (predicted) and phenotypes were                           GWAS model to correct for the strong genomic structure
+available for subsequent GWAS analyses.                                       of the population. Although this classical approach is
+                                                                              successful to control type-I errors of the analyses, it also
+Understanding the differences in the regions detected                         limits the power of detection of QTL in highly differen-
+between analyses                                                              tiated regions between lines, since their link with trait
+The regions detected with each type of analysis (global-                      variability would be absorbed into the additive genetic
+or lines-GWAS) were very different and only 10 among                          component of the model. Thus, global-GWAS essentially
+the 129 detected QTL were shared between global-                              allow the detection of regions that segregate at inter-
+GWAS and lines-GWAS. The SNP-QTL detected with                                mediate frequencies in both lines. As an alternative, the
+the global-GWAS were far from reaching the threshold                          analyses carried out by line allow the detection of regions
+of significance in the lines-GWAS. Similarly, most of                         that are close to fixation with selection in one of the lines.
+the SNP-QTL detected with the lines-GWAS were far                             From these results, it seems that the power of detection
+Delpuech et al. Genet Sel Evol   (2021) 53:49                                                                   Page 13 of 15
+
+
+
+
+related to allele frequencies in each line is the main dif-      In addition to regulating the size of HDL particles, this
+ference between QTL-SNPs detected with the lines-                protein may be involved in the metabolism of cholesterol.
+GWAS and global-GWAS. Thus, given the power of the               PLTP-KO mice absorb less cholesterol than wild-type
+design, it is likely that the biological pathways involved in    mice, and also have a deficient secretion in the intestine
+RFI variability in the two lines are similar, but with dif-      [37].
+ferent contributions to the trait in each line, contrary to
+some previous hypotheses [10, 27].                               Potential pleiotropic effects
+                                                                 The large number of traits recorded in our design and the
+Comparison with published regions                                known genetic correlations between these traits [27] ena-
+Among the five QTL detected for RFI, three regions               ble the detection of pleiotropic regions, i.e. regions that
+were detected close to previously published RFI QTL.             affect multiple traits. Among the four regions detected
+The region on SSC14 at 130–131 Mb is close to the                for FCR, no QTL co-localized with a RFI QTL. For the
+region described by Do et al. [31] who proposed G-pro-           other traits, only two QTL were detected within 10 Mb of
+tein-coupled receptor kinase 5 (GRK5) (129,114,449–              the RFI QTL: one QTL at 8 Mb influencing pH24h_LM
+129,343,412 bp) as a candidate gene. Wang et al. [32]            on SSC9 between 1 and 2 Mb, and one QTL on pH24h_
+reported that a GRK5 deficiency led to insulin resist-           AD at 1 Mb of the QTL for RFI located at 113–114 Mb
+ance and hepatic steatosis, and to decreases in diet-            on SSC14. Compared to the previously published QTL
+induced obesity and adipogenesis in mice. At the position        regions for RFI, we identified only one QTL for DFI in the
+131,181,710–131,579,703 bp, FGFR2 (fibroblast growth             region described by Guo et al. [38] on SSC3 between 126
+factor receptor 2) could also be an interesting candidate        and 128 Mb. In spite of the reported correlations between
+gene. All four FGF receptors and several FGF ligands are         these traits and RFI, among the 36 QTL detected in our
+present in the intestine and are key players in control-         study for DFI, MQI, WHC, pH24h_AD, pH24h_GS, and
+ling cell proliferation, differentiation, epithelial cell res-   pH24h_SM, only one QTL co-located with the RFI QTL
+titution, and stem cell maintenance. FGFR2 is expressed          identified in our study or in previously published studies.
+in the human ileum and throughout adult mouse intes-
+tine [33]. The second region closest to published RFI            Changes in QTL allele frequencies and trait responses
+QTL is the 184–186 Mb interval on SSC13 near the                 to selection
+QTL reported by Bai et al. [34] and Do et al. [31]. In this      The allele frequencies of the majority of the detected
+region, TMPRSS15 (transmembrane serine protease 15) is           regions changed between generations G1 and G9, with
+an interesting candidate gene. This gene encodes an intes-       more than 70% of the regions for which SNP-QTL
+tinal enzyme that is responsible for initiating the activa-      evolved in opposite directions or in one line only. How-
+tion of pancreatic proteolytic proenzymes. It catalyzes          ever, the magnitude of the changes in allelic frequencies
+the conversion of trypsinogen to trypsin, which in turn          of the QTL regions varied among the traits, and was
+activates other proenzymes including chymotrypsino-              strongly correlated with previously reported line dif-
+gen procarboxypeptidases and proelastases. TMPRSS15              ferences in G9 [27]. Indeed, the regions with the larg-
+has been associated to enterokinase deficiency, a life-          est changes in allelic frequencies were detected for RFI,
+threatening intestinal malabsorption disorder charac-            which was the trait used for selection. For the other
+terized by diarrhea and failure to thrive [35]. On SSC17,        traits, the higher the genetic correlation with RFI, the
+two RFI QTL have been published by Do et al. [31] close          higher the variation in allelic frequency of the associ-
+to the SOGA1 gene (suppressor of glucose, autophagy-             ated QTL regions. As a result, QTL that affect FCR,
+associated protein 1, 40,020,107–40,098,992 bp) and by           DFI and MQI showed the largest changes in allelic fre-
+Onteru et al. [10] close to the DOK5 gene (docking pro-          quency with generations. The responses of QTL that
+tein 5, 55,391,074–55,541,561 bp). These two QTL sur-            affect meat quality traits are consistent with the high and
+round the region that we detected and could correspond           early responses to selection previously detected in this
+to a unique QTL. At position 48,090,077–48,100,816 bp            experimental population for these traits [5]. Altogether,
+and at position 48,132,911–48,149,732 bp, respectively,          our analyses underline a clear relationship between
+PLTP and ZNF335 are additional candidate genes. In               the quantitative responses to selection of the traits and
+humans, Coleman et al. [36] identified the region encod-         the changes in allelic frequencies in some QTL regions,
+ing ZNF335 as a susceptibility locus for the coeliac dis-        which potentially point out to chromosomal regions that
+ease, a chronic immune-mediated disease triggered by             were selected during the experiment. Nevertheless, it is
+the ingestion of gluten [36]. The PLTP (phospholipid             important to note that changes in allelic frequencies can
+transfer protein) transfers phospholipids from triglycer-        also result from genetic drift. In such populations with a
+ide-rich lipoproteins to high-density lipoprotein (HDL).         small effective size and strong directional selection, the
+Delpuech et al. Genet Sel Evol        (2021) 53:49                                                                                                    Page 14 of 15
+
+
+
+
+power of detection of signatures of selection using stand-                          between true and imputed genotypes after imputation to 650K SNPs from
+ard methodologies [39] can be low due to the major effect                           the imputed medium density genotypes. (d) Correlations between true
+of genetic drift on the changes in allele frequencies. How-                         and imputed genotypes based on the leave-one-out cross-validation.
+ever, recently-developed new methods, based on genetic                              Additional file 4: Figure S2. Proportion of certain expected genotypes
+time series could provide new insights for the detection                            per animal, per SNP and in relation to the MAF of the SNPs. The proportion
+                                                                                    of certain genotypes corresponds to expected genotypes from parents
+of regions under selection in small populations [40].                               which are homozygous for the same allele or homozygous for opposite
+                                                                                    alleles, and half of the genotypes from matings of two heterozygous
+                                                                                    parents were also taken into account. This proportion was studied per
+                                                                                    individual for the 66,988 SNPs of the 60K SNPs chip (a), per SNP for the
+Conclusions                                                                         2426 pigs (b) and finally per SNP while taking into account the MAF of
+In this study, our aim was to characterize the molecular                            each SNP (c).
+architecture of RFI in two lines that have been divergently                         Additional file 5: Table S3. QTL regions detected with the three groups
+selected for this trait. In addition to efficiently detecting                       of association studies. These QTL regions were found from the full
+                                                                                    population (Global-GWAS) and from each line separately (HRFI-GWAS and
+known and new QTL regions, the combination of GWAS                                  LRFI-GWAS). DFI: daily feed intake; ADG: average daily gain; FCR: feed con-
+performed per line or simultaneously using all individu-                            version ratio; RFI: residual feed intake; carcBFT: backfat thickness measured
+als allowed the identification of candidate regions on the                          on carcass; a*_GM: a* measured on the gluteus medius muscle; a*_GS: a*
+                                                                                    measured on the gluteus superficialis muscle; b*_GM: b* measured on the
+genome and to understand how the genomes of both                                    gluteus medius muscle; b*_GS: b* measured on the gluteus superficialis
+lines have evolved. Analyzing the allelic frequencies from                          muscle; L*_GM: L* measured on the gluteus medius muscle; L*_GS: L*
+G1 to G9, we identified that most of the differences in the                         measured on the gluteus superficialis muscle; pH24h_AD: pH 24 h after
+                                                                                    slaughter measured on the adductor femoris muscle; pH24h_GS: pH 24 h
+results of QTL detection between the global or the two                              after slaughter measured on the gluteus superficialis muscle; pH24h_LM:
+lines-GWAS were due to differences in informativity of                              pH 24 h after slaughter measured on the longissimus dorsi muscle; pH24h_
+the SNP-QTL in the two lines after nine generations of                              SM: pH 24 h after slaughter measured on the semimembranosus muscle;
+                                                                                    WHC: water holding capacity of the gluteus superficialis muscle; MQI: meat
+selection. Even if we cannot distinguish whether these
+                                                                                    quality index; LMCcalc: lean meat content of the carcass; DP: carcass dress-
+evolutions in allelic frequencies are a direct effect of                            ing percentage; Belly_W: belly weight; BF_W: backfat weight; Ham_W:
+the directional selection or are due to drift, the regions                          ham weight; Loin_W: loin weight; Shoulder_W: shoulder weight
+detected can explain the responses to selection of differ-                          Additional file 6: Figure S3. Manhattan plots for GWAS of RFI trait in
+ent traits reported before. In addition, we conclude that                           global, HRFI line or LRFI line populations. The plot shows the − log10(p-
+                                                                                    values) for all SNPs in the analysis against their genomic position.
+the majority of the QTL regions followed divergent pat-                             Changes in color represent different chromosomes. The dashed line
+terns in the lines, and that the same metabolic pathways                            represents the threshold for genome wide significance (threshold of
+were certainly involved in both lines. We identified sev-                           -log10(p-value) = 4.5).
+
+eral new regions that underlie RFI variability and propose
+new candidate genes that complement the data acquired                             Acknowledgements
+                                                                                  The authors would like to thank (i) the experimental farm staff for data collec-
+in previously published analyses.                                                 tion, samples management and breeding of the animals and (ii) both technol-
+                                                                                  ogy platforms, CRCT and Gentyane, for the genotyping.
+Supplementary Information
+                                                                                  Authors’ contributions
+The online version contains supplementary material available at https://​doi.​
+                                                                                  ED performed the statistical analyses and wrote the first draft of the paper. YB
+org/​10.​1186/​s12711-​021-​00642-1.
+                                                                                  and KF organized the data acquisition. ED and YL performed the imputation
+                                                                                  and quality control of the genotypic data. ED, AA, YL, HG and JR participated in
+  Additional file 1: Table S1. Number of animals used for the analyses            the design of the study. JR and HG provided scientific supervision. All authors
+  after quality control. Details of the number of animals before and after        read and approved the final manuscript.
+  application of a filter on the call rate (CR) were given for chips (60K, 70K
+  and 650K SNPs chips), imputation levels (MD/HD imputation) and average          Funding
+  genotypes calculated from the genotypes of both parents (HD predicted).         This study and the two first authors were financially supported by the French
+                                                                                  National Research Agency via the PIG_FEED and MicroFeed projects, under
+  Additional file 2: Table S2. Number of SNPs used for the analyses after         grants ANR-08-GENM-038 and ANR-16-CE20-0003.
+  quality control. Details of the number of SNPs before and after application
+  of filters on the call frequency (CF) and the frequency of minor allele (MAF)   Availability of data and materials
+  were given for chips (60K, 70K and 650K SNPs chips), imputation levels          The datasets used and/or analysed during the current study are available from
+  (MD imputation and HD imputation) and average genotypes calculated              the corresponding author on reasonable request.
+  from the genotypes of both parents (HD predicted).
+  Additional file 3: Figure S1. Correlations between true and imputed
+  genotypes for animals genotyped on 60K, 70K or 650K SNPs chip. For
+                                                                                  Declarations
+  each analysis, correlations were estimated setting 5000 SNPs as missing (5
+                                                                                  Ethics approval and consent to participate
+  batches of 1000 SNPs) on one chip among SNPs in common between the
+                                                                                  All pigs were reared in compliance with national regulations and according to
+  two arrays used. Animals are sorted and colored by generation. Correla-
+                                                                                  procedures approved by the French Veterinary Services at INRA experimental
+  tions between true and imputed genotypes (a) for the 286 animals geno-
+                                                                                  facilities. The care and use of pigs were performed following the guidelines
+  typed with the 60K SNPs chip using animals with 70K genotypes as refer-
+                                                                                  edited by the French Ministries of High Education, Research and Innovation,
+  ence population, and (b) for the 1346 animals genotyped with the 70K
+                                                                                  and of Agriculture and Food (http://​ethiq​ue.​ipbs.​fr/​sdv/​chart​eexpe​anima​le.​
+  SNPs chip using animals with 60K genotypes as reference. (c) Correlations
+                                                                                  pdf ).
+Delpuech et al. Genet Sel Evol           (2021) 53:49                                                                                                         Page 15 of 15
+
+
+
+
+Consent for publication                                                                   18. Purcell S, Neale B, Todd-Brown K, Thomas L, Ferreira MAR, Bender D, et al.
+Not applicable.                                                                               PLINK: a tool set for whole-genome association and population-based link-
+                                                                                              age analyses. Am J Hum Genet. 2007;81:559–75.
+Competing interests                                                                       19. Warr A, Affara N, Aken B, Beiki H, Bickhart DM, Billis K, et al. An improved
+The authors declare that they have no competing interests.                                    pig reference genome sequence to enable pig genetics and genomics
+                                                                                              research. GigaScience. 2020;9:1–14.
+Author details                                                                            20. Sargolzaei M, Chesnais JP, Schenkel FS. A new approach for efficient
+1
+  GenPhySE, Université de Toulouse, INRAE, ENVT, 31320 Castanet‑Tolosan,                      genotype imputation using information from relatives. BMC Genomics.
+France. 2 GenESI, INRAE, 17700 Surgères, France.                                              2014;15:478.
+                                                                                          21. Zhou X, Stephens M. Genome-wide efficient mixed-model analysis for
+Received: 27 October 2020 Accepted: 28 May 2021                                               association studies. Nat Genet. 2012;44:821–4.
+                                                                                          22. Aliakbari A, Delpuech E, Labrune Y, Riquet J, Gilbert H. The impact of training
+                                                                                              on data from genetically-related lines on the accuracy of genomic predic-
+                                                                                              tions for feed efficiency traits in pigs. Genet Sel Evol. 2020;52:57.
+                                                                                          23. Zhou X, Carbonetto P, Stephens M. Polygenic modeling with Bayesian
+References                                                                                    sparse linear mixed models. PLoS Genet. 2013;9:e1003264.
+1. McGlone J, Pond W. Pig production: biological principles and applications.             24. Devlin B, Roeder K. Genomic control for association studies. Biometrics.
+    Florence: Thomson/Delmar Learning. 2003.                                                  1999;55:997–1004.
+2. Soleimani T, Gilbert H. Evaluating environmental impacts of selection for              25. Gao X. Multiple testing corrections for imputed SNPs. Genet Epidemiol.
+    residual feed intake in pigs. Animal. 2020;14:2598–608.                                   2011;35:154–8.
+3. Webb AJ, King JWB. Selection for improved food conversion ratio on ad libi-            26. Korte A, Farlow A. The advantages and limitations of trait analysis with
+    tum group feeding in pigs. Anim Sci. 1983;37:375–85.                                      GWAS: a review. Plant Methods. 2013;9:29.
+4. Koch RM, Swiger LA, Chambers D, Gregory KE. Efficiency of feed use in beef             27. Gilbert H, Billon Y, Brossard L, Faure J, Gatellier P, Gondret F, et al. Review:
+    cattle. J Anim Sci. 1963;22:486–94.                                                       divergent selection for residual feed intake in the growing pig. Animal.
+5. Gilbert H, Bidanel J-P, Gruand J, Caritez J-C, Billon Y, Guillouet P, et al. Genetic       2017;11:1427–39.
+    parameters for residual feed intake in growing pigs, with emphasis on                 28. Ullah E, Mall R, Abbas MM, Kunji K, Nato AQ, Bensmail H, et al. Comparison
+    genetic relationships with carcass and meat quality traits. J Anim Sci.                   and assessment of family- and population-based genotype imputation
+    2007;85:3182–8.                                                                           methods in large pedigrees. Genome Res. 2019;29:125–34.
+6. Cai W, Casey DS, Dekkers JCM. Selection response and genetic parameters                29. Bouwman AC, Hickey JM, Calus MP, Veerkamp RF. Imputation of non-geno-
+    for residual feed intake in Yorkshire swine. J Anim Sci. 2008;86:287–98.                  typed individuals based on genotyped relatives: assessing the imputation
+7. Drouilhet L, Achard CS, Zemb O, Molette C, Gidenne T, Larzul C, et al. Direct              accuracy of a real case scenario in dairy cattle. Genet Sel Evol. 2014;46:6.
+    and correlated responses to selection in two lines of rabbits selected for            30. Pimentel EC, Wensch-Dorendorf M, König S, Swalve HH. Enlarging a train-
+    feed efficiency under ad libitum and restricted feeding: I. Production traits             ing set for genomic selection by imputation of un-genotyped animals in
+    and gut microbiota characteristics. J Anim Sci. 2016;94:38–48.                            populations of varying genetic architecture. Genet Sel Evol. 2013;45:12.
+8. Ramayo-Caldas Y, Ballester M, Sánchez JP, González-Rodríguez O, Revilla                31. Do DN, Ostersen T, Strathe AB, Mark T, Jensen J, Kadarmideen HN. Genome-
+    M, Reyer H, et al. Integrative approach using liver and duodenum RNA -                    wide association and systems genetic analyses of residual feed intake, daily
+    Seq data identifies candidate genes and pathways associated with feed                     feed consumption, backfat and weight gain in pigs. BMC Genet. 2014;15:27.
+    efficiency in pigs. Sci Rep. 2018;8:558.                                              32. Wang L, Shen M, Wang F, Ma L. GRK5 ablation contributes to insulin resist-
+9. Messad F, Louveau I, Koffi B, Gilbert H, Gondret F. Investigation of muscle                ance. Biochem Biophys Res Commun. 2012;429:99–104.
+    transcriptomes using gradient boosting machine learning identifies                    33. Danopoulos S, Schlieve CR, Grikscheit TC, Alam DA. Fibroblast growth fac-
+    molecular predictors of feed efficiency in growing pigs. BMC Genomics.                    tors in the gastrointestinal tract: twists and turns. Dev Dyn. 2017;246:344–52.
+    2019;20:659.                                                                          34. Bai C, Pan Y, Wang D, Cai F, Yan S, Zhao Z, et al. Genome-wide association
+10. Onteru SK, Gorbach DM, Young JM, Garrick DJ, Dekkers JCM, Rothschild MF.                  analysis of residual feed intake in Junmu No. 1 White pigs. Anim Genet.
+    Whole genome association studies of residual feed intake and related traits               2017;48:686–90.
+    in the pig. PLoS One. 2013;8:e61756.                                                  35. Holzinger A, Maier EM, Bück C, Mayerhofer PU, Kappler M, Haworth JC,
+11. Ding R, Yang M, Wang X, Quan J, Zhuang Z, Zhou S, et al. Genetic archi-                   et al. Mutations in the Proenteropeptidase gene are the molecular cause of
+    tecture of feeding behavior and feed efficiency in a Duroc pig population.                congenital enteropeptidase deficiency. Am J Hum Genet. 2002;70:20–5.
+    Front Genet. 2018;9:220.                                                              36. Coleman C, Quinn EM, Ryan AW, Conroy J, Trimble V, Mahmud N, et al. Com-
+12. Hu Z-L, Park CA, Reecy JM. Building a livestock genetic and genomic                       mon polygenic variation in coeliac disease and confirmation of ZNF335 and
+    information knowledgebase through integrative developments of Animal                      NIFA as disease susceptibility loci. Eur J Hum Genet. 2016;24:291–7.
+    QTLdb and CorrDB. Nucleic Acids Res. 2019;47:D701–10.                                 37. Liu R, Iqbal J, Yeang C, Wang DQ, Hussain MM, Jiang X-C. Phospholipid
+13. Sosa-Madrid BS, Santacreu MA, Blasco A, Fontanesi L, Pena RN, Ibáñez-                     transfer protein–deficient mice absorb less cholesterol. Arterioscler Thromb
+    Escriche N. A genomewide association study in divergently selected lines                  Vasc Biol. 2007;27:2014–21.
+    in rabbits reveals novel genomic regions associated with litter size traits. J        38. Guo YM, Zhang ZY, Ma JW, Ai HS, Ren J, Huang LS. A genomewide associa-
+    Anim Breed Genet. 2020;137:123–38.                                                        tion study of feed efficiency and feeding behaviors at two fattening stages
+14. Daumas G. Taux de muscle des pièces et appréciation de la composi-                        in a White Duroc × Erhualian F2 population. J Anim Sci. 2015;93:1481–9.
+    tion corporelle des carcasses. In: Proceedings of the 50th Journées de la             39. Fariello MI, Boitard S, Naya H, SanCristobal M, Servin B. Detecting signatures
+    Recherche Porcine: 6–7 February 2008; Paris. 2008;40:61–8.                                of selection through haplotype differentiation among hierarchically struc-
+15. Charpentier J, Monin G, Ollivier L. Correlations between carcass charac-                  tured populations. Genetics. 2013;193:929–41.
+    teristics and meat quality in Large White pigs. In: Proceedings of the 2nd            40. Paris C, Servin B, Boitard S. Inference of selection from genetic time series
+    International Symposium on Conditions and Meat Quality of Pigs: 22-24                     using various parametric approximations to the Wright-Fisher model. G3
+    March 1971; Zeist. 1971.                                                                  (Bethesda). 2019;9:4073–86.
+16. Tribout T, Caritez J-C, Gogué J, Gruand J, Bouffaud M, Billon Y, et al. Estima-
+    tion, par utilisation de semence congelée, du progrès génétique réalisé en
+    France entre 1977 et 1998 dans la race porcine Large White : résultats pour
+                                                                                          Publisher’s Note
+                                                                                          Springer Nature remains neutral with regard to jurisdictional claims in pub-
+    quelques caractères de production et de qualité des tissus gras et maigres.
+                                                                                          lished maps and institutional affiliations.
+    In: Proceedings of the 34th Journées de la Recherche Porcine:3-5 February
+    2004; Paris. 2004;36:275–82.
+17. Noblet J, Karege C, Dubois S, van Milgen J. Metabolic utilization of energy
+    and maintenance requirements in growing pigs: effects of sex and geno-
+    type. J Anim Sci. 1999;77:1208–16.
+

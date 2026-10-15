@@ -10,7 +10,8 @@ import {
 } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { copy, services } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
+import type { Expertise } from '../content/fr';
 import { Photo, TextLink } from '../components/ui';
 import {
   AnimatedHeading,
@@ -56,7 +57,7 @@ const PEAKS: Peak[] = [
     rgb: [111, 214, 224],
   },
   {
-    slug: 'selection-genomique',
+    slug: 'selection',
     short: 'Sélection',
     x: 0.24,
     z: 1.06,
@@ -83,9 +84,8 @@ const PEAKS: Peak[] = [
     rgb: [124, 196, 255],
   },
 ];
-const items = PEAKS.map((peak) => ({ peak, service: services.find((s) => s.slug === peak.slug)! }));
-const others = services.filter((s) => !PEAKS.some((p) => p.slug === s.slug));
-type Item = (typeof items)[number];
+// Summits are matched to expertises by id, the same in every language.
+type Item = { peak: Peak; service: Expertise };
 
 const BASE: RGB = [96, 140, 186];
 const SELECTED: RGB = [150, 222, 74];
@@ -280,7 +280,21 @@ const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 
 
 type Phase = 'globe' | 'spreading' | 'ready';
 
-export function ExpertiseLandscape() {
+export function ExpertiseLandscape({
+  title,
+  allLink = true,
+}: {
+  /** The band's heading; the Expertises page gives its own, its hero already says this one. */
+  title?: string;
+  allLink?: boolean;
+} = {}) {
+  const { copy, services, ui } = useCatalog();
+  const r = useRoutes();
+  const items: Item[] = PEAKS.map((peak) => ({
+    peak,
+    service: services.find((s) => s.id === peak.slug)!,
+  }));
+  const others = services.filter((s) => !PEAKS.some((p) => p.slug === s.id));
   const mobile = useMediaQuery('(max-width: 800px)');
   // Up to tablet width the card docks under the landscape, with the list of expertises.
   const docked = useMediaQuery('(max-width: 1250px)');
@@ -691,6 +705,29 @@ export function ExpertiseLandscape() {
 
   return (
     <section className="landscape-section">
+      {/* The heading comes first: on the homepage it carries the reader on from the chain of
+          stages above, in the same dark chapter. */}
+      <div className="landscape-band">
+        <div className="container landscape-band-inner">
+          <div>
+            <p className="eyebrow eyebrow-light">{ui.landscape.eyebrow}</p>
+            <AnimatedHeading className="display-small" text={title ?? copy.home.servicesTitle} />
+          </div>
+          <div className="landscape-band-aside">
+            <p>{copy.home.servicesIntro}</p>
+            <p className="landscape-also">
+              {ui.landscape.also}{' '}
+              {others.map((s, i) => (
+                <span key={s.id}>
+                  {i > 0 && ' · '}
+                  <Link to={r.service(s.id)}>{s.title}</Link>
+                </span>
+              ))}
+            </p>
+            {allLink && <TextLink to={r.services}>{copy.labels.allServices}</TextLink>}
+          </div>
+        </div>
+      </div>
       <div
         ref={stage}
         className="landscape-stage"
@@ -707,7 +744,7 @@ export function ExpertiseLandscape() {
             <path key={placement.line} d={placement.line} pathLength={1} />
           </svg>
         )}
-        <div className="landscape-points" role="group" aria-label="Explorer les expertises">
+        <div className="landscape-points" role="group" aria-label={ui.landscape.explore}>
           {items.map(({ peak, service }, i) => (
             <button
               key={peak.slug}
@@ -740,14 +777,14 @@ export function ExpertiseLandscape() {
               }}
             >
               <span className="landscape-label" aria-hidden="true">
-                {mobile ? peak.short : service.title}
+                {mobile ? (ui.landscape.short[peak.slug] ?? peak.short) : service.title}
               </span>
               <span className="landscape-dot" aria-hidden="true" />
             </button>
           ))}
         </div>
         <p className="landscape-hint" aria-hidden="true">
-          {docked ? 'Touchez un sommet' : 'Survolez un sommet'}
+          {docked ? ui.landscape.hintTouch : ui.landscape.hintHover}
         </p>
         {!docked && current && cardState !== 'closed' && placement && (
           <ExpertiseCard
@@ -772,7 +809,7 @@ export function ExpertiseLandscape() {
         )}
       </div>
       {docked && (
-        <div className="landscape-chips" role="group" aria-label="Choisir une expertise">
+        <div className="landscape-chips" role="group" aria-label={ui.landscape.choose}>
           {items.map(({ peak, service }, i) => (
             <button
               key={peak.slug}
@@ -788,27 +825,6 @@ export function ExpertiseLandscape() {
       {docked && current && cardState !== 'closed' && (
         <ExpertiseCard item={current} state={cardState} docked />
       )}
-      <div className="landscape-band">
-        <div className="container landscape-tag-row">
-          <p className="landscape-tag">Nos expertises</p>
-        </div>
-        <div className="container landscape-band-inner">
-          <AnimatedHeading className="display-small" text={copy.home.servicesTitle} />
-          <div className="landscape-band-aside">
-            <p>{copy.home.servicesIntro}</p>
-            <p className="landscape-also">
-              Également :{' '}
-              {others.map((s, i) => (
-                <span key={s.slug}>
-                  {i > 0 && ' · '}
-                  <Link to={`/services/${s.slug}`}>{s.title}</Link>
-                </span>
-              ))}
-            </p>
-            <TextLink to="/services">{copy.labels.allServices}</TextLink>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
@@ -833,6 +849,8 @@ function ExpertiseCard({
   onPointerLeave?: () => void;
 }) {
   const { service } = item;
+  const { ui } = useCatalog();
+  const r = useRoutes();
   return (
     <div
       ref={cardRef}
@@ -852,10 +870,10 @@ function ExpertiseCard({
           <Photo name={service.image} alt="" sizes="340px" />
         </figure>
         <div className="landscape-card-body">
-          <p className="landscape-card-label">Expertise</p>
+          <p className="landscape-card-label">{ui.landscape.cardLabel}</p>
           <h3>{service.title}</h3>
           <p className="landscape-card-text">{service.scope}</p>
-          <ul className="landscape-card-tags" aria-label="Approches">
+          <ul className="landscape-card-tags" aria-label={ui.landscape.approaches}>
             {service.approaches.slice(0, 3).map((a) => (
               <li key={a.title}>{a.title}</li>
             ))}
@@ -863,10 +881,10 @@ function ExpertiseCard({
         </div>
         <Link
           className="landscape-card-link"
-          to={`/services/${service.slug}`}
+          to={r.service(service.id)}
           tabIndex={measuring ? -1 : undefined}
         >
-          <span>Découvrir l’expertise</span>
+          <span>{ui.landscape.discover}</span>
           <ArrowRight size={17} strokeWidth={1.8} aria-hidden="true" />
         </Link>
       </div>

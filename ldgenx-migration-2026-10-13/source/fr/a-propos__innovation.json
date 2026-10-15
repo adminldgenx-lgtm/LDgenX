@@ -1,0 +1,288 @@
+{
+  "requested_url": "https://www.ldgenx.fr/a-propos/innovation",
+  "final_url": "https://www.ldgenx.fr/a-propos/innovation",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:02.042535+00:00",
+  "language": "fr",
+  "title": "Innovation DeepTech | DNA EcoTrace et eDNAClock",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "LDgenX entreprise innovente, statut JEI, Découvrez DNA EcoTrace, eDNAClock et les projets DeepTech développés par LDgenX pour la surveillance de la biodiversité."
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/a-propos__innovation.html",
+  "raw_sha256": "64469101654b1fdbc96a3fc9a63d765dbdeab373f9bc0bc04519e0b0ab13692d",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Prendre Rendez-vous",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Développer les outils génomiques de demain pour mieux comprendre et préserver la biodiversité"
+    },
+    {
+      "level": 1,
+      "text": "L'innovation est au cœur de LDgenX"
+    },
+    {
+      "level": 1,
+      "text": "Une entreprise DeepTech"
+    },
+    {
+      "level": 1,
+      "text": "Collaborons ensemble"
+    },
+    {
+      "level": 1,
+      "text": "Projets innovants"
+    },
+    {
+      "level": 3,
+      "text": "DNA Ecotrace"
+    },
+    {
+      "level": 3,
+      "text": "eDNA clock"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/a-propos__innovation.md",
+  "content_characters": 2543,
+  "content_sha256": "2a51156f05ba7b18a8c15f3f23043e666de7c8c840555b8d550ce2c77bed8afb",
+  "body_text": "Développer les outils génomiques de demain pour mieux comprendre et préserver la biodiversité\nL'innovation est au cœur de LDgenX\n        Nous développons de nouvelles approches combinant ADN environnemental, séquençage de nouvelle génération, intelligence artificielle et bioinformatique afin de rendre le suivi de la biodiversité plus accessible, plus rapide et plus performant.\nNotre objectif :transformer les données génétiques en outils d'aide à la décision pour les acteurs de l'environnement, de l'agriculture et de l'aquaculture.\n    \n        Une entreprise DeepTech\n        \n        LDgenX est une jeune entreprise française innovante (JEI) spécialisée dans la génomique appliquée.\nNos projets de recherche et développement sont soutenus par plusieurs dispositifs d'innovation nationaux.\nCréaliaBpifrancePôle Universitaire d'InnovationInstituts de recherche (Ifremer, INRAE)\n        Collaborons ensemble\n        Vous souhaitez développer une nouvelle méthode, construire un projet collaboratif ou explorer de nouvelles applications de la génomique ?Notre équipe est ouverte aux collaborations scientifiques, techniques et industrielles.\n                Prendre Rendez-vous\n            \n        Projets innovants\n        \n            DNA Ecotrace\n        \n        DNA EcoTrace est un projet innovant développé par LDgenX visant à automatiser et simplifier le suivi de la biodiversité grâce à l'ADN environnemental.\nLe projet combine :\nÉchantillonnage non invasifSéquençage longue lectureIntelligence artificielleAnalyse automatisée des donnéesRestitution simplifiée des résultats\nL'objectif est de permettre aux gestionnaires, collectivités, bureaux d'études et entreprises d'accéder à des informations fiables sur l'état des écosystèmes.\n    \n            eDNA clock\n        eDNAClock est un projet innovant visant estimer l'âge des poissons à partir des traces d'ADN présentes dans l'environnement.\nEn combinant ADN environnemental, épigénétique et séquençage de nouvelle génération, ce projet explore le potentiel des « horloges épigénétiques » pour caractériser la structure démographique des populations aquatiques .\n Applications : gestion des ressources halieutiques, conservation des espèces et surveillance des écosystèmes aquatiques.\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/a-propos__innovation.json"
+}

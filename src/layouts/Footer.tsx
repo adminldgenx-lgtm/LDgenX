@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
-import { company, services, applications } from '../content/fr';
+import { Link, useLocation } from 'react-router-dom';
+import { useCatalog, useRoutes, type Locale } from '../i18n';
+import { bases } from '../lib/routes';
+import { getPage } from '../lib/pages';
 
 export function Footer() {
+  const { company, copy, services, applications, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.footer;
+  const meta = getPage(useLocation().pathname);
+  const other: Locale = meta.locale === 'fr' ? 'en' : 'fr';
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link to="/" className="footer-lockup" aria-label="LDgenX — Accueil">
+          <Link to={r.home} className="footer-lockup" aria-label={ui.common.homeLink}>
             <img
               src="/brand/lockup-navy-160.webp"
               srcSet="/brand/lockup-navy-96.webp 343w, /brand/lockup-navy-160.webp 570w"
@@ -18,30 +25,32 @@ export function Footer() {
             />
           </Link>
           <p>
-            La génomique appliquée.
+            {t.tagline[0]}
             <br />
-            La connaissance du vivant.
+            {t.tagline[1]}
           </p>
         </div>
         <div>
-          <p className="footer-label">Expertises</p>
+          <p className="footer-label">{t.expertises}</p>
           {services.slice(0, 6).map((s) => (
-            <Link key={s.slug} to={`/services/${s.slug}`}>
+            <Link key={s.id} to={r.service(s.id)}>
               {s.title}
             </Link>
           ))}
+          <Link to={r.service('materiel')}>{t.links.equipment}</Link>
         </div>
         <div>
-          <p className="footer-label">Explorer</p>
-          <Link to="/applications">Nos applications</Link>
-          <Link to="/etudes-de-cas">Études de cas</Link>
-          <Link to="/innovation">Innovation</Link>
-          <Link to="/a-propos/equipe">Notre équipe</Link>
-          <Link to="/a-propos/partenaires">Partenaires</Link>
-          <Link to="/ressources">Ressources & Expertise</Link>
+          <p className="footer-label">{t.explore}</p>
+          <Link to={r.applications}>{t.links.applications}</Link>
+          <Link to={r.studies}>{t.links.studies}</Link>
+          <Link to={r.innovations}>{t.links.innovation}</Link>
+          <Link to={r.team}>{t.links.team}</Link>
+          <Link to={r.publications}>{t.links.publications}</Link>
+          <Link to={r.partners}>{t.links.partners}</Link>
+          <Link to={r.resources}>{t.links.resources}</Link>
         </div>
         <div className="footer-contact">
-          <p className="footer-label">Parlons science</p>
+          <p className="footer-label">{t.talk}</p>
           <a className="footer-email" href={`mailto:${company.email}`}>
             {company.email}
           </a>
@@ -50,27 +59,35 @@ export function Footer() {
             <br />
             {company.city}
           </p>
-          <Link to="/contact">Demander un devis</Link>
+          <Link to={r.contact}>{copy.labels.quote}</Link>
           <a href={company.appointment} target="_blank" rel="noreferrer">
-            Prendre rendez-vous
+            {copy.labels.appointment}
+            <span className="sr-only">{ui.common.newTab}</span>
           </a>
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} LDgenX · Tous droits réservés</span>
+        <span>
+          © {new Date().getFullYear()} {t.rights}
+        </span>
         <div>
-          <Link to="/mentions-legales">Mentions légales</Link>
-          <Link to="/politique-confidentialite">Confidentialité</Link>
+          <Link to={r.legal}>{t.legal}</Link>
+          <Link to={r.privacy}>{t.privacy}</Link>
+          <Link to={r.terms} hrefLang="fr">
+            {t.terms}
+          </Link>
           <a href={company.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
-            <span className="sr-only"> (nouvel onglet)</span>
+            <span className="sr-only">{ui.common.newTab}</span>
           </a>
-          <a href={company.english}>English</a>
+          <Link to={meta.alternates[other] ?? bases[other].home} hrefLang={other} lang={other}>
+            {t.otherLanguage}
+          </Link>
         </div>
       </div>
-      <nav className="sr-only" aria-label="Secteurs d’application">
+      <nav className="sr-only" aria-label={t.sectors}>
         {applications.map((a) => (
-          <Link key={a.slug} to={`/applications/${a.slug}`}>
+          <Link key={a.id} to={r.application(a.id)}>
             {a.title}
           </Link>
         ))}

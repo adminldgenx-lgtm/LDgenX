@@ -1,0 +1,71 @@
+{
+  "prices": [
+    {
+      "item_as_published": "Pompe triple modèle 1",
+      "amount": 1900,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/c89adf8d8398__default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5f94c9b24-site-web-ldgenx-44/default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    },
+    {
+      "item_as_published": "Pompe triple modèle 2",
+      "amount": 2100,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/c89adf8d8398__default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5f94c9b24-site-web-ldgenx-44/default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    },
+    {
+      "item_as_published": "Capsules + tampon de préservation",
+      "amount": 40,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/c89adf8d8398__default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5f94c9b24-site-web-ldgenx-44/default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    },
+    {
+      "item_as_published": "Stickpump",
+      "amount": 1270,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/77af31dc88f8__default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5faed8f0e-site-web-ldgenx-45/default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    },
+    {
+      "item_as_published": "Filtres (carte Stickpump)",
+      "amount": 18,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/77af31dc88f8__default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5faed8f0e-site-web-ldgenx-45/default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    },
+    {
+      "item_as_published": "Torpille",
+      "amount": 1400,
+      "currency": "EUR",
+      "tax_basis_as_published": "HT",
+      "source_asset_path": "assets/images/c64a3ed24807__default-6a4e603cb9218-site-web-ldgenx-46.png",
+      "source_asset_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e603cb9218-site-web-ldgenx-46/default-6a4e603cb9218-site-web-ldgenx-46.png",
+      "source_page": "https://www.ldgenx.fr/services/materiel",
+      "verification": "visually_checked_transcription_of_published_image",
+      "current_commercial_validity": "client_to_confirm"
+    }
+  ],
+  "note": "These transcribe currently published images, not a quote or a promise of current availability. The Torpille card is cropped at the bottom; no complete second line has been inferred."
+}

@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">1749</journal-id><journal-id journal-id-type="pmc-domain">eva</journal-id><journal-title-group><journal-title>Evolutionary Applications</journal-title><abbrev-journal-title>Evol Appl</abbrev-journal-title></journal-title-group><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC8549618</article-id><article-id pub-id-type="pmcaid">8549618</article-id><article-id pub-id-type="pmcaiid">8549618</article-id><article-id pub-id-type="pmid">34745334</article-id><article-id pub-id-type="doi">10.1111/eva.13235</article-id><title-group><article-title>Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Leitwein</surname><given-names initials="M">Maeva</given-names></name><xref ref-type="aff" rid="eva13235-aff-0001">1</xref><xref ref-type="author-notes" rid="_fncrsp93pmc__">✉</xref></contrib><contrib><name name-style="western"><surname>Laporte</surname><given-names initials="M">Martin</given-names></name><xref ref-type="aff" rid="eva13235-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Le Luyer</surname><given-names initials="J">Jeremy</given-names></name><xref ref-type="aff" rid="eva13235-aff-0002">2</xref></contrib><contrib><name name-style="western"><surname>Mohns</surname><given-names initials="K">Kayla</given-names></name><xref ref-type="aff" rid="eva13235-aff-0003">3</xref></contrib><contrib><name name-style="western"><surname>Normandeau</surname><given-names initials="E">Eric</given-names></name><xref ref-type="aff" rid="eva13235-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Withler</surname><given-names initials="R">Ruth</given-names></name><xref ref-type="aff" rid="eva13235-aff-0003">3</xref></contrib><contrib><name name-style="western"><surname>Bernatchez</surname><given-names initials="L">Louis</given-names></name><xref ref-type="aff" rid="eva13235-aff-0001">1</xref></contrib></contrib-group><aff id="eva13235-aff-0001"><label>
+<sup>1</sup>
+</label>Institut de Biologie Intégrative et des Systèmes (IBIS), Université Laval, Québec, QC, Canada</aff><aff id="eva13235-aff-0002"><label>
+<sup>2</sup>
+</label>Ifremer, IRD, Institut Louis‐Malardé, Univ Polynésie Française, EIO, Tahiti, France</aff><aff id="eva13235-aff-0003"><label>
+<sup>3</sup>
+</label>Department of Fisheries and Oceans Canada, Pacific Biological Station, Nanaimo, BC, Canada</aff><author-notes><fn id="correspondenceTo"><label>*</label><p>
+
+<bold>Correspondence</bold>
+, 
+Maeva Leitwein, Institut de Biologie Intégrative et des Systèmes (IBIS), Université Laval, Québec, QC G1V 0A6, Canada. 
+Email: <email>maeva.leitwein.pro@gmail.com</email>
+
+</p></fn><fn id="_fncrsp93pmc__"><label>✉</label><p>Corresponding author.</p></fn></author-notes><pub-date><day>4</day><month>5</month><year>2021</year></pub-date><volume>14</volume><issue>10</issue><fpage>2402</fpage><page-range>2402–2413</page-range><pub-history><event event-type="pmc-release"><date><day>4</day><month>11</month><year>2021</year></date></event></pub-history><permissions><copyright-statement>© 2021 The Authors. <italic>Evolutionary Applications</italic> published by John Wiley &amp; Sons Ltd</copyright-statement><license><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402.pdf" content-type="pmc-pdf"><?cloudpmc-path 6d4b/8549618/5bf31c3742a5/EVA-14-2402.pdf?><?cloudpmc-bucket app?><?size 871897?></self-uri><abstract id="eva13235-abs-0001"><title>Abstract</title><p>Human activities induce direct or indirect selection pressure on natural population and may ultimately affect population's integrity. While numerous conservation programs aimed to minimize human‐induced genomic variation, human‐induced environmental variation may generate epigenomic variation potentially affecting fitness through phenotypic modifications. Major questions remain pertaining to how much epigenomic variation arises from environmental heterogeneity, whether this variation can persist throughout life, and whether it can be transmitted across generations. We performed whole genome bisulfite sequencing (WGBS) on the sperm of genetically indistinguishable hatchery and wild‐born migrating adults of Coho salmon (<italic>Oncorhynchus kisutch</italic>) from two geographically distant rivers at different epigenome scales. Our results showed that coupling WGBS with fine‐scale analyses (local and chromosomal) allows the detection of parallel early‐life hatchery‐induced epimarks that differentiate wild from hatchery‐reared salmon. Four chromosomes and 183 differentially methylated regions (DMRs) displayed a significant signal of methylation differentiation between hatchery and wild‐born Coho salmon. Moreover, those early‐life epimarks persisted in germ line cells despite about 1.5 year spent in the ocean following release from hatchery, opening the possibility for transgenerational inheritance. Our results strengthen the hypothesis that epigenomic modifications environmentally induced during early‐life development persist in germ cells of adults until reproduction, which could potentially impact their fitness.</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> conservation, developmental plasticity, epigenomic, fisheries, fitness, hatchery, salmonid</p></sec></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Revised 2021 Mar 18; Received 2021 Jan 19; Accepted 2021 Mar 25; Collection date 2021 Oct.</p></sec></notes></front><body><sec id="eva13235-sec-0001" disp-level="1"><label>1.</label><title>INTRODUCTION</title><p>Understanding the evolutionary consequences of anthropogenic pressures on species biodiversity is needed to establish suitable conservation programs (Allendorf, <xref rid="eva13235-bib-0003" ref-type="bibr">2017</xref>; Allendorf &amp; Hard, <xref rid="eva13235-bib-0004" ref-type="bibr">2009</xref>; Allendorf et al., <xref rid="eva13235-bib-0005" ref-type="bibr">2010</xref>; Benestan et al., <xref rid="eva13235-bib-0013" ref-type="bibr">2016</xref>; Frankham, <xref rid="eva13235-bib-0029" ref-type="bibr">2008</xref>; Hendry et al., <xref rid="eva13235-bib-0033" ref-type="bibr">2008</xref>; Palumbi, <xref rid="eva13235-bib-0049" ref-type="bibr">2001</xref>). Human activities may induce direct selection pressures on natural populations or indirect selection pressures by altering the species environment (Hendry et al., <xref rid="eva13235-bib-0033" ref-type="bibr">2008</xref>; Laporte et al., <xref rid="eva13235-bib-0039" ref-type="bibr">2016</xref>). Modifications in species’ environment can also cause epigenomic modifications (Angers et al., <xref rid="eva13235-bib-0007" ref-type="bibr">2010</xref>; Faulk &amp; Dolinoy, <xref rid="eva13235-bib-0027" ref-type="bibr">2011</xref>; Metzger &amp; Schulte, <xref rid="eva13235-bib-0046" ref-type="bibr">2017</xref>) including DNA methylation, histone modifications, small RNA sequences, and nucleosome positioning (Laubach et al., <xref rid="eva13235-bib-0041" ref-type="bibr">2018</xref>; Lowdon et al., <xref rid="eva13235-bib-0044" ref-type="bibr">2016</xref>; Richards et al., <xref rid="eva13235-bib-0055" ref-type="bibr">2017</xref>). Such epigenomic modifications may in turn affect gene expression, especially during embryogenesis (Faulk &amp; Dolinoy, <xref rid="eva13235-bib-0027" ref-type="bibr">2011</xref>), and generate lifelong phenotypic variation, as reported for a variety of organisms (Verhoeven et al., <xref rid="eva13235-bib-0064" ref-type="bibr">2016</xref>). Consequently, such human‐induced environmental change may modulate the individual phenotypes and consequently affect both the effect of natural selection and fitness (Angers et al., <xref rid="eva13235-bib-0007" ref-type="bibr">2010</xref>; Aubin‐Horth &amp; Renn, <xref rid="eva13235-bib-0010" ref-type="bibr">2009</xref>; Laubach et al., <xref rid="eva13235-bib-0041" ref-type="bibr">2018</xref>; Pfennig et al., <xref rid="eva13235-bib-0052" ref-type="bibr">2010</xref>; Scoville &amp; Pfrender, <xref rid="eva13235-bib-0059" ref-type="bibr">2010</xref>). Major questions remain about how much epigenomic variation arises from environmental heterogeneity, whether this variation can persist throughout life, and whether such variation is reset between generations or, alternately, can be transmitted from one generation to the next (Danchin et al., <xref rid="eva13235-bib-0022" ref-type="bibr">2019</xref>; Vineis et al., <xref rid="eva13235-bib-0065" ref-type="bibr">2017</xref>). Inheritance of environmentally induced epigenomic variation, the part that is not erased during gametogenesis or embryonic development, represents a molecular mechanism of potential evolutionary significance in natural populations (Aller et al., <xref rid="eva13235-bib-0006" ref-type="bibr">2018</xref>; Jablonka &amp; Raz, <xref rid="eva13235-bib-0035" ref-type="bibr">2009</xref>; Lind &amp; Spagopoulou, <xref rid="eva13235-bib-0043" ref-type="bibr">2018</xref>). Indeed, the persistence of epigenomic variation acquired during early‐life development up to adulthood and its transmission via germ line cells may have either adaptive and maladaptive effects in subsequent generations (Aller et al., <xref rid="eva13235-bib-0006" ref-type="bibr">2018</xref>; Lind &amp; Spagopoulou, <xref rid="eva13235-bib-0043" ref-type="bibr">2018</xref>; Verhoeven et al., <xref rid="eva13235-bib-0064" ref-type="bibr">2016</xref>; Vineis et al., <xref rid="eva13235-bib-0065" ref-type="bibr">2017</xref>). Elucidating the differential effects of experiencing distinct human‐induced environments during development on the epigenome and the persistence of this alteration throughout life and meiotic cell line differentiation represents a major step toward understanding the evolutionary role of epigenetic variation (Angers et al., <xref rid="eva13235-bib-0007" ref-type="bibr">2010</xref>; Richards et al., <xref rid="eva13235-bib-0055" ref-type="bibr">2017</xref>; Verhoeven et al., <xref rid="eva13235-bib-0064" ref-type="bibr">2016</xref>).</p><p>Anadromous salmon and trout of the genus <italic>Oncorhynchus</italic> are species of great socio‐economic interest on the Pacific Coast of North America that have been heavily impacted by human activities, through supplemented by extensive hatchery production in numerous river systems (Flagg &amp; Nash, <xref rid="eva13235-bib-0028" ref-type="bibr">1999</xref>). These species represent excellent systems for assessing the effects of epigenomic variation and its persistence through time for animals experiencing very different juvenile and adult environments. Indeed, juveniles are born and rear in freshwater until undertaking a marine feeding migration that lasts one to three years depending on species prior to return to freshwater for reproduction (Alerstam et al., <xref rid="eva13235-bib-0001" ref-type="bibr">2003</xref>). Moreover, hatchery‐born salmon often display maladaptive traits in the natural environment, resulting in reduced survival and reproductive success despite weak genetic differentiation between hatchery and wild‐born fish allowing studying the effect of epigenomic variation without strong underlying genomic effects. (Araki &amp; Schmid, <xref rid="eva13235-bib-0009" ref-type="bibr">2010</xref>; Chittenden et al., <xref rid="eva13235-bib-0019" ref-type="bibr">2008</xref>, <xref rid="eva13235-bib-0018" ref-type="bibr">2010</xref>; Christie et al., <xref rid="eva13235-bib-0020" ref-type="bibr">2014</xref>, <xref rid="eva13235-bib-0021" ref-type="bibr">2016</xref>; Evans et al., <xref rid="eva13235-bib-0026" ref-type="bibr">2014</xref>; Irvine et al., <xref rid="eva13235-bib-0034" ref-type="bibr">2013</xref>; Neff et al., <xref rid="eva13235-bib-0047" ref-type="bibr">2015</xref>; Zimmerman et al., <xref rid="eva13235-bib-0068" ref-type="bibr">2015</xref>). For Coho salmon (<italic>Oncorhynchus kisutch</italic>), a lower reproductive success for hatchery‐born individuals spawning in the wild has been documented (Neff et al., <xref rid="eva13235-bib-0047" ref-type="bibr">2015</xref>). Furthermore, a recent study documented the absence of genome‐wide genetic differentiation between wild and hatchery‐produced juvenile Coho salmon within a given river systems, but parallel epigenetic differentiation involving the same differentially methylated regions (DMRs) in muscle tissue between hatchery and wild Coho from two geographically distinct watersheds (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>). These observations support the hypothesis of an epigenomic basis for developmental plasticity that could affect the fitness of hatchery‐born salmon. Similar early life, environmentally induced epigenetic modifications have also been observed in the sperm of adult Steelhead trout (<italic>Oncorhynchus mykiss</italic>; Gavery et al., <xref rid="eva13235-bib-0032" ref-type="bibr">2018</xref>) and Atlantic salmon (<italic>Salmo salar</italic>; Rodriguez Barreto et al., <xref rid="eva13235-bib-0056" ref-type="bibr">2019</xref>), suggesting the persistence of epigenetic modification induced during hatchery rearing until adulthood after a long period of time spent in the open ocean, with potential for transgenerational inheritance. A follow‐up study on Steelhead based on simulated wild and hatchery environments did not reveal significant differences in patterns of sperm methylation due to the rearing treatment, therefore suggesting limited potential for intergenerational transmission (Gavery et al., <xref rid="eva13235-bib-0031" ref-type="bibr">2019</xref>). Therefore, there is still disagreement in the literature which raised unresolved questions pertaining to the temporal persistence of hatchery‐induced epigenetic reprogramming. All of these previous studies utilized reduced representation (RRBS) methods, which provide only a limited subsample of the epigenome.</p><p>For comparative purposes with previous studies, and also because it is the most widespread mechanism of epigenetic modifications (Angers et al., <xref rid="eva13235-bib-0008" ref-type="bibr">2020</xref>), we focused on the analysis of DNA methylation. We also analyzed more than one river system which allowed testing for parallelism of similar epigenomic modifications. Then, we assessed epigenomic variation over the entire epigenome by means of Whole Genome Bisulfite Sequencing (WGBS) with the goal of assessing whether (i) environmentally induced epigenomic modifications in early development persist throughout life after spending at least one year in the open ocean and (ii) the modifications are transmitted through germ lines cells, and thus potentially heritable. To do so, we compared methylation profiles in sperm from wild and hatchery‐born adult Coho salmon from two geographically remote rivers at three levels: epigenomic, epichromosomal, and local differentially methylated regions (DMRs). Analyzing fish of the same age from two hatchery river systems allowed circumventing interpretation issues caused by variation in relatedness or other factors that may occur within population. Finally, hatchery‐induced DNA methylation persisted in germ cells which could provide a mechanism for at least partial transgenerational inheritance of epigenetic modifications caused by hatchery rearing.</p></sec><sec id="eva13235-sec-0002" disp-level="1"><label>2.</label><title>METHODS</title><sec id="eva13235-sec-0003" disp-level="2"><label>2.1.</label><title>Sampling</title><p>Coho salmon milt (sperm) samples were collected in Quinsam and Conuma hatcheries, British Columbia, Canada. Both hatcheries are part of the Salmon Enhancement Progam (SEP) and are separated by approximately 100 km (located on watersheds on the northeast (Quinsam) and northwest (Conuma) sides of Vancouver Island). The hatcheries operate with a primary production strategy (PPS) [(see Le Luyer et al. (<xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>) for more details)]. Briefly, the aim of such “integrated” hatchery programs is to use all local returning fish, both wild and hatchery, as broodstock to minimize genetic differentiation between the hatchery and wild spawning environments. In this study, returning adult males were sampled before spawning at Quinsam and Conuma hatcheries, on November 1 and 2, 2017, respectively. At both sites, hatchery‐born and wild fish were distinguished by the presence (wild) or absence (hatchery) of their adipose fins, as hatchery‐produced fish have their adipose fin clipped off before release. Milt was collected from 24 mature male Coho salmon, including 12 individuals from each of Quinsam hatchery (seven wild and five hatchery males) and Conuma hatchery (six wild and six hatchery males) that had spent 6 or 18 months in the sea before return to their river of origin for spawning. Sampled fish had swum voluntarily into a hatchery concrete holding pond with flowing water, been held for approximately two weeks, and were transferred to a large tank with flowing water on the day of sampling (Nov. 1–2, 2017). Fish were euthanized and sampled for several tissues, including milt. All samples were stored in the fridge (4°C) for 24–48 h and then transferred into a −80°C freezer.</p></sec><sec id="eva13235-sec-0004" disp-level="2"><label>2.2.</label><title>DNA extraction and whole genome bisulfite sequencing</title><p>Genomic DNA was extracted following a protocol of universal and rapid salt‐extraction (Aljanabi &amp; Martinez, <xref rid="eva13235-bib-0002" ref-type="bibr">1997</xref>). DNA quality control, library preparation, and 100 bp paired‐end sequencing on an Illumina HiSeqX (two individuals per lane) were performed at the McGill University and Génome Québec Innovation Centre (Montréal, QC).</p></sec><sec id="eva13235-sec-0005" disp-level="2"><label>2.3.</label><title>Methylation calling</title><p>The WGBS reads were trimmed and quality filtered (min quality = 25, min length = 100 bp) with fastp (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/OpenGene/fastp" ext-link-type="uri">https://github.com/OpenGene/fastp</ext-link> [Chen et al., <xref rid="eva13235-bib-0017" ref-type="bibr">2018</xref>]). In order to avoid confusing false epigenetic variation with existing C‐T polymorphisms, we masked the reference genome (NCBI assembly GCA_002021735.1; Okis_V1) from C‐T polymorphism identified with whole genome resequencing of 20 Coho salmon (940,406 SNPs, maf = 0.05) from four British Columbia rivers, using BEDtools <italic>maskfasta</italic> v2.26.0 (Quinlan &amp; Hall, <xref rid="eva13235-bib-0053" ref-type="bibr">2010</xref>) as in Le Luyer et al. (<xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>). WGBS trimmed reads were mapped against the masked Coho genome with WALT v1.0 (4; <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/smithlabcode/walt" ext-link-type="uri">https://github.com/smithlabcode/walt</ext-link> [Chen et al., <xref rid="eva13235-bib-0016" ref-type="bibr">2016</xref>]) by using default parameters and a maximum allowed mapping for a read (−k) of 10. The symmetric CpG methylation levels of individuals were estimated with MethPipe v.3.4.3 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/smithlabcode/methpipe" ext-link-type="uri">https://github.com/smithlabcode/methpipe</ext-link>). All symmetric CpG sites with &lt;10× coverage were removed. The relationship between the number of symmetric CpG sites and the linkage group length was assessed by performing linear mixed models in the R package “LME4” (Bates et al., <xref rid="eva13235-bib-0012" ref-type="bibr">2015</xref>: 4). The number of symmetric CpG sites was treated as a dependent variable whereas the linkage group length was designated an explanatory term and individuals were treated as random effects in the model. The explanatory and dependent variables were scaled (i.e., center and reduced). We computed the conditional <italic>R</italic>
+<sup>2</sup> to quantify the proportions of variance explained by the explanatory variable and individual effects.</p></sec><sec id="eva13235-sec-0006" disp-level="2"><label>2.4.</label><title>Genotyping for genetic data</title><p>For genomic analysis, SNPs were called with <italic>Freebayes</italic> v1.3.2‐38‐g71a3e1c (Garrison &amp; Marth, <xref rid="eva13235-bib-0030" ref-type="bibr">2012</xref>) from the WGBS mapped reads considering reads with good alignment with a minimum mapping quality of 20 and a minimum coverage of 10. We then used <italic>VCFtools</italic> (Danecek et al., <xref rid="eva13235-bib-0023" ref-type="bibr">2011</xref>) to kept biallelic markers with a minimum and maximum depth of coverage between 5× and 100×, a minimum allele frequency of 0.01, a minimum quality of 20, and a maximum of 20% of missing data. Then all C/T and A/G polymorphism were removed to avoid false positives due to the bisulfite treatment. We used the function “<italic>daisy</italic>” available in the ape R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>) to calculate an Euclidian distance matrix. Then, the function “<italic>pcoa</italic>” in the ape R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>) was used to perform a principal coordinates analysis (PCoA) based on the distance‐based matrix; to be consistent and comparable to the previous study (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>) only the axes representing at least 3% of the variation were retained for the distance‐based redundancy analysis (db‐RDA). Then, the 22 retained axes were used as response matrix with the rearing environment (hatchery vs. wild) and river of origin (Quinsam vs. Conuma) variables used as explanatory matrix in the db‐RDA, using the function “<italic>ordistep”</italic> in the vegan R package (Oksanen et al., <xref rid="eva13235-bib-0048" ref-type="bibr">2019</xref>). The genetic differentiation (<italic>F</italic>
+<sub>ST</sub>) between individuals from both rivers and rearing environment (wild vs. hatchery) was estimated with <italic>VCFtools</italic> (Danecek et al., <xref rid="eva13235-bib-0023" ref-type="bibr">2011</xref>) based on Weir and Cockerham's calculation. <italic>T</italic>‐test was performed in order to test if genetic differentiation were significantly different between rivers and rearing environment.</p></sec><sec id="eva13235-sec-0007" disp-level="2"><label>2.5.</label><title>Environmental effects on individual methylation profile</title><p>For each individual, a genome‐wide mean methylation was estimated over 1 kb windows (step = 1 kb, size = 1 kb), and only 1 kb regions with at least 3 symmetric CpGs were kept (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>). The windows approach was performed in order to reduce computing time. We then calculated an Euclidian distance matrix with the function “<italic>daisy</italic>” available in the ape R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>). Principal coordinates analysis (PCoA) was performed on the distance‐based matrix with the function “<italic>pcoa”</italic> in the ape R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>); only the axes representing at least 3% of the variation were retained for the distance‐based redundancy analysis (db‐RDA). Then, the 19 retained axes were used as response matrix with the rearing environment (hatchery vs. wild) and river of origin (Quinsam vs. Conuma) variables used as explanatory matrix in the db‐RDA, using the function “<italic>ordistep</italic>” in the vegan R package (Oksanen et al., <xref rid="eva13235-bib-0048" ref-type="bibr">2019</xref>). The effect of each significant variable (river and rearing environment) was examined in partial db‐RDA for controlling the shared effect between variables (river and rearing environment).</p><p>To assess fine‐scale information in the genome, we looked at local differentiation within a chromosome by performing separate analyses for each chromosome. Thus, db‐RDA was performed for each chromosome after the PCoA and the distance‐based matrix transformation. Partial db‐RDAs were then performed to test for the effect of each significant variable (river and rearing environment) controlled by the other variable. The correlation between the <italic>R</italic>
+<sup>2</sup> of each model and linkage group size was tested using Spearman test in R (Team <xref rid="eva13235-bib-0061" ref-type="bibr">2014</xref>).</p></sec><sec id="eva13235-sec-0008" disp-level="2"><label>2.6.</label><title>Detection of differentially methylated regions</title><p>The identification of differentially methylated regions (DMRs) between hatchery‐born and wild individuals was based on the dispersion shrinkage method implemented in the package DSS (Dispersion Shrinkage for Sequencing data (Park &amp; Wu, <xref rid="eva13235-bib-0051" ref-type="bibr">2016</xref>). We used a multifactor generalized linear model in which the symmetric CpG methylation level was treated as the dependent variable and the environmental variables (rearing environment and river) as explanatory terms, with their interaction also included in the model (methylation data ~ rearing environment + river + rearing environment:river). In order to call DMRs, we set a minimum sequenced length of 100 bp containing at least 10 CpGs sites, a <italic>p</italic>‐value threshold (<italic>p</italic>.<italic>threshold</italic>) of 0.01 in order to keep DMR with strong signals (Rougeux et al., <xref rid="eva13235-bib-0057" ref-type="bibr">2019</xref>), a maximum distance of 50 bp to merge two DMR (<italic>dis</italic>.<italic>merge</italic>) and a threshold of 0.4 for percentage of CG sites with significant p‐value (<italic>pct</italic>.<italic>sig</italic>). The same approach was used to call DMRs between rivers (Conuma and Quinsam). To control for false‐positive discovery, we performed 100 random assignations of individuals to the hatchery or wild‐born groups within each river (it should be noted here that some individuals might be assigned to their true groups during random assignation) and then call parallel DMRs between hatchery and wild‐born individuals. Figure <xref rid="eva13235-sup-0003" ref-type="supplementary-material">S3</xref> displayed the number of DMRs found at each run with a mean of 107.6 [IC 95%: 65.95–183.025] and indicates a <italic>p</italic> &lt; 0.01 to find 212 DMRs or more in our dataset, which supports the observation that our DMRs are unlikely to be the results of false discovery rate. Finally, with the goal of removing potential false discovery DMRs, we kept only DMRs with a mean methylation differentiation between wild and hatchery higher than 10%. The correlations between the number and length of DMRs and the chromosome size were tested using Spearman test in R (Team, <xref rid="eva13235-bib-0061" ref-type="bibr">2014</xref>). The mean read depth and mean percentage of methylation per rearing environment were plot for each CpG within and around (200 bp for graphic representation) of each DMR with R (Team, <xref rid="eva13235-bib-0061" ref-type="bibr">2014</xref>). In order to visualize individual variation, individual methylation was also plotted for each DMRs and its surrounding region. Partial redundancy analyses (pRDA) were performed in order to quantify the proportion of CpGs variation within DMRs explained either by the rearing environment or the genetic variation among individuals, using the function “<italic>rda</italic>” and “<italic>varpart</italic>” available in the vegan R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>). Genetic variation was estimated from 7151 SNPs obtained from our dataset after filtering for CT and GA polymorphism and removing SNPs with more than three individuals with missing data. Principal coordinates analyses on Euclidean distance from CpGs variation of both DMRs types (Rearing environment and River of origin) and 0–1–2 SNPs matrix were produced to estimate their relative proportion of variation using the function “<italic>pcoa</italic>” and “<italic>dist</italic>” in the ape R package (Paradis et al., <xref rid="eva13235-bib-0050" ref-type="bibr">2004</xref>). A broken‐stick distribution was used to select the number of axes to keep for DMRs‐CpGs variation, while 14 axes representing 90% of the genetic variation were retained.</p></sec><sec id="eva13235-sec-0009" disp-level="2"><label>2.7.</label><title>Annotation</title><p>We annotated the Coho salmon genome (<italic>Oncorhynchus kisutch</italic>, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ncbi.nlm.nih.gov/genome/?term=txid8019" ext-link-type="uri">https://www.ncbi.nlm.nih.gov/genome/?term=txid8019[orgn]</ext-link>) with the published transcripts accompanying this genome using GAWN v0.3.3 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/enormandeau/gawn" ext-link-type="uri">https://github.com/enormandeau/gawn</ext-link>) in order to find transcripts that were close to DMRs. GAWN used GMAP version 2018‐07‐04 to align the transcripts to the genome. For DMRs associated with the rearing environments, we identified the overlapping transcripts by using BEDtools intersect v2.26.0 (26). We also performed the analyses again after adding 5 kbp around each DMR to include potential genes associated with, but not directly overlapping, the DMRs. We then used Go_enrichment (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/enormandeau/go_enrichment" ext-link-type="uri">https://github.com/enormandeau/go_enrichment</ext-link>) to annotate the same transcriptome by blasting the transcripts on the swissprot database (blast tools 2.7.1, swissprot from 2018‐05‐01). We proceeded to test for the presence of over‐ and under‐represented GO terms using GOAtools (v0.6.1, ‐‐<italic>p</italic> val = .05). We filtered the outputs of GOAtools to keep only GO terms at a level of 3 or less and an FDR value ≤0.1.</p></sec></sec><sec id="eva13235-sec-0010" disp-level="1"><label>3.</label><title>RESULTS</title><p>Whole Genome Bisulfite Sequencing (WGBS) performed on 24 adult male Coho salmon sperm samples produced a mean of 189 ± 20 million of reads per individual of which 92 ± 11 million of reads per individual (49%) were successfully mapped to the reference genome masked for cytosine to thymine (C‐T) polymorphism. A mean of 11 ± 2.8 million of symmetric cytosine‐phosphate‐guanine context (CpGs) per individual with at least 10X coverage was retrieved, with a mean of 0.3 ± 0.1 million of symmetric CpG per chromosome. The number of symmetric CpG was strongly correlated with chromosome length (<italic>R</italic>
+<sup>2</sup> conditional = 0.95, Figure <xref rid="eva13235-sup-0001" ref-type="supplementary-material">S1</xref>).</p><sec id="eva13235-sec-0011" disp-level="2"><label>3.1.</label><title>No evidence for genome‐wide genetic differentiation</title><p>No significant genome‐wide genetic differentiation was observed between wild and hatchery‐born individuals within each river. Thus, after filtering for CT/AG polymorphism and quality, we obtained a total of 23,442 SNPs on which we performed a distance‐based redundancy analysis (db‐RDA) on Euclidean distance to test for the effect of river and rearing environment on genetic variance partitioning. The genetic variation was significantly explained by the river of origin (<italic>p</italic> &lt; 0.001) with an adjusted <italic>R</italic>
+<sup>2</sup> of 0.025, but not by rearing environment (<italic>p</italic> = 0.23). Moreover, the extent of genetic differentiation (<italic>F</italic>
+<sub>ST</sub>) was ten times greater between Coho from Conuma and Quinsam rivers (<italic>F</italic>
+<sub>ST</sub> = 0.013) than between wild and hatchery individuals (<italic>F</italic>
+<sub>ST</sub> &lt; 0.001; <italic>t</italic>‐test <italic>p</italic> &lt; 0.001). <italic>F</italic>
+<sub>ST</sub> &lt; 0.001 indicates that hatchery and wild Coho within a same river are genetically indistinguishable, as previously reported (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>).</p></sec><sec id="eva13235-sec-0012" disp-level="2"><label>3.2.</label><title>Rearing environment effect on epigenomic variation</title><p>We assessed the mean methylation level over non‐overlapping windows of 1 kb along the genome. The db‐RDA performed at a global scale (whole genome) to evaluate overall pattern of methylation variation among adult males using rearing environment and river of origin as explanatory variables was significant (<italic>p</italic> &lt; 0.002) with an adj. <italic>R</italic>
+<sup>2</sup> of 0.02 (Figure <xref rid="eva13235-sup-0002" ref-type="supplementary-material">S2</xref>). However, partial db‐RDA confirmed that genome‐wide epigenetic variation was explained more by the river of origin [adj. <italic>R</italic>
+<sup>2</sup> = 0.013, <italic>p</italic> = 0.01] than rearing environment [adj. <italic>R</italic>
+<sup>2</sup> = 0.008, <italic>p</italic> = 0.07] (Figure <xref rid="eva13235-sup-0002" ref-type="supplementary-material">S2</xref>).</p><p>The same analytical approach was applied at the chromosomal scale, whereby db‐RDA was performed for each of the 30 chromosomes independently. This analysis showed that similar epigenetic modifications induced by hatchery‐rearing environment persisted on specific chromosomes and in parallel in the two river systems until adulthood after more than one year of growth spent in the open ocean. Thus, components of epigenetic alteration caused by hatchery rearing that have persisted in parallel among adult males from both rivers of origin were not randomly distributed but significantly concentrated on specific chromosomes. Models were significant (<italic>p</italic> &lt; 0.05) for 28 chromosomes with an adj. <italic>R</italic>
+<sup>2</sup> ranging from 0.009 to 0.029 (Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S1</xref> for details). Rearing environment significantly explained epigenetic variance observed on four chromosomes presented in Figure <xref rid="eva13235-fig-0001" ref-type="fig">1</xref> (<italic>p</italic> &lt; 0.05; Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S1</xref>). Rearing environment significantly explained the epigenomic variation for LG 9, 13, 15, and 21 with an adj. <italic>R</italic>
+<sup>2</sup> of 0.012 (<italic>p</italic> = 0.03), 0.012 (<italic>p</italic> = 0.04), 0.012 (<italic>p</italic> = 0.04), and 0.011 (<italic>p</italic> = 0.05), respectively (Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S1</xref>). Moreover, there was no significant relationship between the adj. <italic>R</italic>
+<sup>2</sup> and chromosome size (<italic>ρ</italic>
+<sub>Spearman</sub> = −0.28; <italic>p</italic> = 0.123), indicating that the extent of persisting epigenetic differentiation between hatchery and wild adult males is not directly affected by the number of CpG sites occurring on a given chromosome.</p><fig id="eva13235-fig-0001" position="float"><?disp-level 3?><label>FIGURE 1</label><caption><p>Local distance‐based analysis (db‐RDA) performed with average methylation level through 1 kb window‐size on Coho salmon milt samples for chromosomes 9, 13, 15, and 21. Symbols represent the river: circles for Conuma and squares for Quinsam. Colors represent rearing environment: blue for hatchery‐born and orange for wild individuals. All db‐RDA were significant and explained 1.1%–2.9% of the global DNA methylation variation (adj. <italic>R</italic>
+<sup>2</sup> is displayed in upper left of each graph). Partial db‐RDA revealed that river of origin and rearing environment explained, respectively, 1.4%–1.7% and 1.1%–1.2% of the variation after controlling for the other variable</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-1" xlink:href="EVA-14-2402-g001.jpg"><?cloudpmc-path blobs/6d4b/8549618/65cf55e6dcef/EVA-14-2402-g001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1036?><?original-width 1064?><?scaled-height 690?><?scaled-width 709?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="EVA-14-2402-g001.gif"><?cloudpmc-path blobs/6d4b/8549618/8327ea07a32b/EVA-14-2402-g001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="eva13235-sec-0013" disp-level="2"><label>3.3.</label><title>Comparison of DMRs induced by rearing environment between life stages</title><p>A total of 212 DMRs (min. length 100, minCG 10, <italic>p</italic>
+<sub>threshold</sub> = 0.01) were identified between wild and hatchery‐born adult males (Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S2</xref>), ranging from 105 to 1429 bp in size and distributed among 29 chromosomes. Randomizations have been performed to fully control for false positive DMRs discovery, the probability to obtain 212 parallel DMRs was &lt;0.01 (see Section <xref rid="eva13235-sec-0002" ref-type="sec">2</xref> for details). There was no correlation between DMR length and chromosome size (<italic>ρ</italic>
+<sub>Spearman</sub> = −0.007; <italic>p</italic> = 0.912) but the number of DMRs increased with chromosome size (<italic>ρ</italic>
+<sub>Spearman</sub> = 0.36; <italic>p</italic> = 0.05). The mean difference between hatchery and wild‐born methylation ranged from 0.4% to 73% we kept a total of 183 DMRs with a mean methylation difference higher than 10% for subsequent analyses (Figure <xref rid="eva13235-fig-0002" ref-type="fig">2</xref> and Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S2</xref>). All DMRs and the 200 bp region around them are presented in Appendix <xref rid="eva13235-sup-0006" ref-type="supplementary-material">S1</xref>; as an example, DMR 61 on chromosome 6 displaying the higher differentiation between the mean methylation of hatchery and wild‐born individuals (73%) is presented in Figure <xref rid="eva13235-fig-0003" ref-type="fig">3</xref>. In order to highlight the individual variation, the individual methylation value per CpGs for each of the 183 DMRs, is presented in Appendix <xref rid="eva13235-sup-0007" ref-type="supplementary-material">S2</xref>. As previously observed at the smolt (juvenile) stage, we found a significant over‐representation of hypermethylated DMRs (<italic>n</italic> = 116) relative to hypomethylated DMRs (<italic>n</italic> = 67) in the sperm of hatchery‐born adult males in both rivers (χ<sup>2</sup> = 61.84, <italic>p</italic> &lt; 0.001). Finally, we performed partial redundancy analyses where genetic variation was estimated from 7151 filtered SNPs to ensure that the rearing environment significantly explains the variation of observed DMRs between hatchery and wild‐born Coho, as opposed to the sole genetic effect. We observed that rearing environment explained 51.4% of DMRs CpGs variation after controlling by genetic variation, while genetic variation explained 44.1% of that variation.</p><fig id="eva13235-fig-0002" position="float"><?disp-level 3?><label>FIGURE 2</label><caption><p>Circle plot showing the 183 differentially methylated regions (DMRs) between hatchery and wild adult fish in milt tissue Only the chromosomes (<italic>n</italic> = 30) containing DMRs are represented. Red points indicate hypermethylated and blue points hypomethylated DMRs for the hatchery fish. The overlapping transcripts are represented and details can be found in Table <xref rid="eva13235-sup-0005" ref-type="supplementary-material">S4</xref>. Chromosomes for which db‐RDA were significant are presented in gray</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-3" xlink:href="EVA-14-2402-g002.jpg"><?cloudpmc-path blobs/6d4b/8549618/2c84db2342f6/EVA-14-2402-g002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1069?><?original-width 1064?><?scaled-height 712?><?scaled-width 709?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="EVA-14-2402-g002.gif"><?cloudpmc-path blobs/6d4b/8549618/c753b4957da5/EVA-14-2402-g002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><fig id="eva13235-fig-0003" position="float"><?disp-level 3?><label>FIGURE 3</label><caption><p>Mean percentage of methylation (a) and read depth (b) for hatchery (blue) and wild‐born (yellow) individuals for each CpGs among and around (200 bp) DMRs 61 (pink area) on chromosome 6</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-5" xlink:href="EVA-14-2402-g003.jpg"><?cloudpmc-path blobs/6d4b/8549618/cdb07471e536/EVA-14-2402-g003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 530?><?original-width 1064?><?scaled-height 353?><?scaled-width 709?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="EVA-14-2402-g003.gif"><?cloudpmc-path blobs/6d4b/8549618/05a3a9b1e131/EVA-14-2402-g003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>In parallel, a total of 305 DMRs (min. length 100, minCG 10, <italic>p</italic>
+<sub>threshold</sub> = 0.01) were identified between Conuma and Quinsam river ranging from 103 to 1562 bp in size and distributed among the 30 chromosomes (Table <xref rid="eva13235-sup-0004" ref-type="supplementary-material">S3</xref>). However, 90.4% of the CpG variation within the 305 DMRs identified between rivers was explained by the genetic variation, whereas no variation was significantly explained by the rearing environment.</p></sec><sec id="eva13235-sec-0014" disp-level="2"><label>3.4.</label><title>Functional annotation of DMRs</title><p>Among the 183 DMRs found between wild and hatchery adult males, 58 overlapped with unique transcripts. We observed a significant over‐representation of hypermethylated DMRs (<italic>n</italic> = 36) relatively to hypomethylated DMRs (<italic>n</italic> = 22) in the sperm of hatchery fish (χ<sup>2</sup> = 19.19, <italic>p </italic>= 6.8e‐5; Table <xref rid="eva13235-sup-0005" ref-type="supplementary-material">S4</xref>). The gene ontology (GO) analysis did not reveal significant enrichment of biological processes but three transcripts were associated with brain development, seven with cellular homeostasis, three with immune response, and eight with multicellular organism development and apoptosis processes.</p></sec></sec><sec id="eva13235-sec-0015" disp-level="1"><label>4.</label><title>DISCUSSION</title><p>Environmentally induced epigenomic modifications through human activities may generate adaptive or maladaptive plasticity (Angers et al., <xref rid="eva13235-bib-0007" ref-type="bibr">2010</xref>; Aubin‐Horth &amp; Renn, <xref rid="eva13235-bib-0010" ref-type="bibr">2009</xref>; Laubach et al., <xref rid="eva13235-bib-0041" ref-type="bibr">2018</xref>; Scoville &amp; Pfrender, <xref rid="eva13235-bib-0059" ref-type="bibr">2010</xref>; Vogt, <xref rid="eva13235-bib-0066" ref-type="bibr">2017</xref>) and persistence of early‐life maladaptive epimarks until reproduction can affect individual fitness (Vineis et al., <xref rid="eva13235-bib-0065" ref-type="bibr">2017</xref>). Moreover, post‐meiotic retention of the epigenetic modifications in gametes opens the possibility of transgenerational transmission with potential evolutionary consequences within populations (Donkin &amp; Barrès, <xref rid="eva13235-bib-0025" ref-type="bibr">2018</xref>; Kekäläinen et al., <xref rid="eva13235-bib-0037" ref-type="bibr">2018</xref>; Rodriguez Barreto et al., <xref rid="eva13235-bib-0056" ref-type="bibr">2019</xref>). Consequently, assessing the effects of early‐life‐induced epigenomic modifications is of prime importance to establish conservation management strategies, especially since hatchery‐produced salmonids commonly perform poorly compared to their wild congeners (Chittenden et al., <xref rid="eva13235-bib-0019" ref-type="bibr">2008</xref>, <xref rid="eva13235-bib-0018" ref-type="bibr">2010</xref>; Irvine et al., <xref rid="eva13235-bib-0034" ref-type="bibr">2013</xref>; Zimmerman et al., <xref rid="eva13235-bib-0068" ref-type="bibr">2015</xref>) even in absence of significant genetic differentiation between them (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>). Indeed, hatchery‐reared Coho salmon display lower swimming endurance, survival, and predator avoidance (Chittenden et al., <xref rid="eva13235-bib-0018" ref-type="bibr">2010</xref>) and lower reproductive success (Neff et al., <xref rid="eva13235-bib-0047" ref-type="bibr">2015</xref>) than their wild counterparts. Results of Le Luyer et al. (<xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>) previously identified DMRs associated with genes functionally relevant to swimming capacity and cognition in hatchery‐reared juveniles, which supported the hypothesis that epigenomic modifications induced early in life by the rearing environment may be partly responsible for the reduced performance, yet conclusions could not be transposed to returning adults. These findings established a possible role for environmentally induced epigenomic modifications affecting performance of juvenile Coho in nature. Here, performing WGBS on adult male Coho salmon returning from their oceanic migration, we provided evidence for parallel (shared) differentiation of DNA methylation in the sperm of hatchery and wild salmon from two independent river systems. These differences were not distributed randomly across the genome but were significantly associated with four specific chromosomes. Remarkably, epigenetic differentiation between hatchery‐reared and wild Coho occurred without significant genetic difference between them. This provides evidence that epigenome modification occurring during early development in a hatchery can persist after more than one year spent at sea until adulthood. As such, our results support the view that epigenomic modifications occurring during hatchery‐rearing represent a potential molecular mechanism explaining the previously documented reduced fitness of hatchery‐born adult Coho salmon (Christie et al., <xref rid="eva13235-bib-0020" ref-type="bibr">2014</xref>; Neff et al., <xref rid="eva13235-bib-0047" ref-type="bibr">2015</xref>). Moreover, the fact that hatchery‐wild epigenetic differentiation at specific chromosomes was maintained throughout meiotic divisions opens the possibility of transgenerational inheritance through male germ cells. This highlights the importance for hatchery management strategies to create environmental conditions as close as possible to wild conditions in order to reduce epigenomic differences between wild and hatchery‐born Coho to ultimately reduce fitness differences.</p><p>In Coho salmon, development of spermatogonia (i.e., differentiation of primordial germ cells into testicular tissue) occurs early in larval development, that is several weeks after hatching (Devlin &amp; Nagahama, <xref rid="eva13235-bib-0024" ref-type="bibr">2002</xref>). This strengthens the hypothesis that DNA methylation reprogramming induced as early as embryogenesis might provide a hatchery‐induced epigenetic memory that could persist until adulthood (Vineis et al., <xref rid="eva13235-bib-0065" ref-type="bibr">2017</xref>). The finding of epigenomic modifications in sperm, after meiotic cell division, also indicates potential for transgenerational inheritance of the environmentally induced paternal methylome. Previous studies on early embryos in zebrafish (<italic>Danio rerio</italic>) showed that DNA methylation was inherited by the progeny from the sperm methylome in spite of a whole DNA reprogramming during embryogenesis (Jiang et al., <xref rid="eva13235-bib-0036" ref-type="bibr">2013</xref>). More recently, the study Barreto et al. (<xref rid="eva13235-bib-0056" ref-type="bibr">2019</xref>) on Atlantic salmon (<italic>S. salar</italic>) revealed that a small number of methylation marks associated with captive‐rearing in sperm cells remain in the offspring beyond developmental reprogramming. Our study adds to these previous observations in controlled conditions by extending to an analysis of adult fish in the wild returning from their marine migration. Moreover, we also document that similar epigenetic modifications have been retained and transmitted to germ cells independently in different hatcheries. Taken together, if the epigenome of males is actually transmitted to the next generation, this could represent one way by which captive‐rearing may negatively impact the fitness of progeny. This is consequential for salmon conservation and the management of extensive hatchery production and supplementation of salmonids throughout the world as they strengthen the hypothesis that epigenomic modifications caused by environmental conditions during early‐life stage can be transmitted to the next generation and may partly account for the reduced fitness of hatchery‐produced fish in nature, even in absence of genetic differences between wild and hatchery fish (Christie et al., <xref rid="eva13235-bib-0021" ref-type="bibr">2016</xref>). A possible link between the paternal rearing environment and progeny adaptation or maladaptation to its rearing environment is of fundamental evolutionary consequence for natural populations. This is also fundamental for conservation programs involving habitat alteration for breeding adults. In a situation where there is no evidence for genetic differences between hatchery‐reared and wild fish from the same river (as here, see also Christie et al. (Christie et al., <xref rid="eva13235-bib-0021" ref-type="bibr">2016</xref>)), our results further support the possibility that the fitness of hatchery‐reared salmonids once released in the wild could be increased by adapting management strategies aiming at minimizing environmental differences between hatchery and wild rearing conditions. Indeed, it has been documented that maladaptive effect of captivity can emerge after a single generation spent in hatchery (Christie et al., <xref rid="eva13235-bib-0021" ref-type="bibr">2016</xref>), highlighting the importance of early‐life rearing conditions. For example, reducing the density of fish in those captive environment could be a first step toward an improved hatchery‐rearing environment (i.e., closer to the natural environment; Thompson &amp; Blouin, <xref rid="eva13235-bib-0063" ref-type="bibr">2015</xref>) as well as replicating intricacies of natural breeding behavior (Thériault et al., <xref rid="eva13235-bib-0062" ref-type="bibr">2011</xref>).</p><p>The fact that the variance in methylation at the genome scale explained by rearing environment and shared between populations from both rivers is only marginally significant is not unexpected given that salmon have 30 chromosomes and it is entirely plausible that epimarks acquired during early development do not persist equally among all chromosomes. Also, while DMRs are evenly distributed across chromosomes, retention of parallel epigenetic differences between wild and hatchery‐born adult Coho are mainly found on four specific chromosomes. This could be the result of stronger local effects allowing the detection of a significant signal at the chromosomal level. Moreover, we observed a significant enrichment for hypermethylated DMRs in hatchery‐born salmon. This pattern is also consistent with previous studies that reported significantly more hypermethylated than hypomethylated DMRs for hatchery‐born salmon (i.e., for juvenile Coho salmon (Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>), adult Steelhead trout (Gavery et al., <xref rid="eva13235-bib-0032" ref-type="bibr">2018</xref>), adult Altantic salmon (Rodriguez Barreto et al., <xref rid="eva13235-bib-0056" ref-type="bibr">2019</xref>)).</p><p>It is noteworthy that the proportion of epigenetic variance explained by the rearing environment and shared between river systems (<italic>R</italic>
+<sup>2</sup> = 1.2%) on those four chromosomes is almost equal to that explained by the river of origin which is <italic>R</italic>
+<sup>2</sup> = 1.5% despite the fact that there is a clear genetic differentiation between salmon from both rivers but absence of significant genetic difference between hatchery vs. wild fish within each river. Also, the absence of genotypic differentiation between wild and hatchery‐born Coho and the fact that shared DMRs were observed in genetically distinct populations rule out the possibility that the observed modifications reflect relatedness among individuals. By showing that hatchery salmon are genetically much more similar (if not identical) to the wild counterpart from the same river than to hatchery salmon from the second river, our results strengthen the likelihood that early‐life hatchery‐rearing conditions may account for observed fitness differentials between wild and hatchery‐born individuals (Chittenden et al., <xref rid="eva13235-bib-0019" ref-type="bibr">2008</xref>, <xref rid="eva13235-bib-0018" ref-type="bibr">2010</xref>; Irvine et al., <xref rid="eva13235-bib-0034" ref-type="bibr">2013</xref>; Zimmerman et al., <xref rid="eva13235-bib-0068" ref-type="bibr">2015</xref>). Genetic variation explained 44.1% of methylation of DMRs between hatchery and wild‐born Coho. Partial genetic control of methylation variation was expected considering that more than 97% of CpGs variation was associated to genetic basis in humans (Zaghlool et al., <xref rid="eva13235-bib-0067" ref-type="bibr">2016</xref>), and that important genetic variation associated to DNA methylation has been reported in whitefish (<italic>Coregonus</italic> sp.), another member of the salmonid family (Rougeux et al., <xref rid="eva13235-bib-0057" ref-type="bibr">2019</xref>). Nevertheless, genetic variation did not explain the majority of the DMRs variation given that rearing environment explained 51.4% by itself, which supports the hypothesis that the rearing environment plays an important role in inducing these DMRs. Conversely, individual genetic variation explained 90.4% of the methylation variation for the DMRs associated to the river of origin. This highlights both the interplay between individual's genetic variation and methylation as previously documented in <italic>Coregonus</italic> species (Laporte et al., <xref rid="eva13235-bib-0038" ref-type="bibr">2019</xref>; Rougeux et al., <xref rid="eva13235-bib-0057" ref-type="bibr">2019</xref>) and the importance of the rearing environment in inducing methylation reprogramming.</p><p>Discrepancy between our results and those of Gavery et al. (<xref rid="eva13235-bib-0031" ref-type="bibr">2019</xref>) who observed no significant difference in the sperm methylome due to the rearing treatment in experimental conditions could be explained by several and non‐exclusive factors. First, as previously performed by Le Luyer et al. (<xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>), Gavery et al. (<xref rid="eva13235-bib-0031" ref-type="bibr">2019</xref>) used the reduced representation of the methylome (RRBS), screening about 5% of the genome, compared to the whole genome bisulfite sequencing (WGBS) used in our study. The latter approach provides a higher resolution that may have allowed locating DMRs found on specific chromosomes that could have been missed using RRBS. For instance, Le Luyer et al. (<xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>) identified 395,000 CpG sites using RRBS, in contrast to approximately 11,000,000 CpG sites identified here using WGBS, that is about 28 times more. Additionally, it is possible that the simulated stream and hatchery environments did not induce the same type of epigenomic modifications (i.e., reversible or permanent) as observed in wild and hatchery environments. This is supported by the fact that Gavery et al. (<xref rid="eva13235-bib-0032" ref-type="bibr">2018</xref>) observed epigenetic differences between wild and hatchery‐born Steelhead trout where wild fish were born and reared in their natural environment. Also, subsequent common growth in a tank compared to common growth in the sea may have different effects on the methylome. Moreover, all of the eggs used in the Gavery et al. (<xref rid="eva13235-bib-0031" ref-type="bibr">2019</xref>) experiment were fertilized and grown to the “eyed egg” stage in the hatchery. It may be that much of the hatchery‐induced embryonic methylome occurs in this early developmental period, which is supported by the study of Barreto et al. (Rodriguez Barreto et al., <xref rid="eva13235-bib-0056" ref-type="bibr">2019</xref>). Finally, it is also possible that the effect of hatchery rearing on epigenetic reprogramming varies among species, thus calling for more empirical studies on other species. This highlights the sensitivity of epigenomic modifications and the importance to consider it in conservation biology and for future management strategies.</p><p>Among the 183 parallel DMRs found in this study, 58 were located within gene body (Baerwald et al., <xref rid="eva13235-bib-0011" ref-type="bibr">2016</xref>; Le Luyer et al., <xref rid="eva13235-bib-0042" ref-type="bibr">2017</xref>), which suggests a potential role in regulating gene expression. For example, early brain development is a critical period and environmental stress occurring during this critical period may drastically impact fish (Browman, <xref rid="eva13235-bib-0015" ref-type="bibr">1989</xref>). Indeed, reduced brain size has been documented in hatchery‐reared rainbow trout compared to their wild congeners (Marchetti &amp; Nevitt, <xref rid="eva13235-bib-0045" ref-type="bibr">2003</xref>). Hypothetically, reduced brain development could reflect the hatchery hypermethylated regions associated with brain development in the current study (Table <xref rid="eva13235-sup-0005" ref-type="supplementary-material">S4</xref>) and result in greater vulnerability to predation and lower survival in the wild (Marchetti &amp; Nevitt, <xref rid="eva13235-bib-0045" ref-type="bibr">2003</xref>). Similarly, wild Coho salmon were less resistant to disease after seven months of hatchery rearing (Salonius &amp; Iwama, <xref rid="eva13235-bib-0058" ref-type="bibr">1993</xref>) and hatchery‐reared individuals displayed lower swimming performance than wild Coho after seawater exposure (Brauner et al., <xref rid="eva13235-bib-0014" ref-type="bibr">1994</xref>). Hypermethylation of genomic regions associated with immune response could underlie the disease susceptibility observed in hatchery fish and attributed to stress factors in the hatchery environment (Rehman et al., <xref rid="eva13235-bib-0054" ref-type="bibr">2017</xref>; Salonius &amp; Iwama, <xref rid="eva13235-bib-0058" ref-type="bibr">1993</xref>).</p><p>Conversely, hypomethylated regions associated with cell maturation and lipid metabolic process observed in hatchery individuals could explain the difference in body morphology observed between wild and hatchery‐reared Coho salmon individuals (Swain et al., <xref rid="eva13235-bib-0060" ref-type="bibr">1991</xref>). In Chinook salmon (<italic>O</italic>. <italic>tshawytscha</italic>) hatchery individuals matured precociously compared to wild individuals (Larsen et al., <xref rid="eva13235-bib-0040" ref-type="bibr">2006</xref>), a possible outcome of the hypomethylated regions containing cell maturation genes found in our study. Hypomethylated sperm DMRs associated with metabolism were previously observed in juvenile white muscle. However, as no significant gene ontology enrichment was observed in this study, identification of the possible roles of the hypo‐ or hypermethylated transcripts remains hypothetical. Admittedly, these scenarios remain hypothetical until further studies providing evidence for variation in gene expression related to methylation level are performed to confirm the epigenetic regulation of genes important to individual fitness in fish.</p><p>To conclude, we documented the parallel persistence after more than one year spent at sea of similar environmentally induced epigenomic reprogramming acquired during early development in genetically distinct hatchery‐reared Coho salmon from two populations and demonstrated the potential for its inheritance through male germ cells. Whereas parallel environmentally induced epigenomic variation at the global scale (i.e., whole epigenome) was only marginally significant, we were able to detect epigenomic variation caused by rearing environment both at specific chromosomes and independent of chromosome size and at a local scale with 183 significant DMRs observed. As such, this study illustrates the benefits of performing whole genome bisulfite sequencing (WGBS) to dissect patterns of epigenomic variation at various genomic scales. Our results are also important for salmon conservation as they add further support to the view that environmental conditions during early development may account for at least some of the reduced fitness of the hatchery salmon in the wild which may also be transmitted to the next generation. Our study also further illustrates the relevance and importance of considering not only the genetic consequences, but also the epigenetic consequences of captive breeding in evaluating the costs and benefits of large‐scale supplementation programs to enhance wild populations.</p></sec><sec id="sec16" disp-level="1"><title>Supporting information</title><supplementary-material id="eva13235-sup-0001" position="float"><caption><p>Fig S1</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s004.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/1521a02ec181/EVA-14-2402-s004.pdf?><?cloudpmc-bucket app?><?size 57314?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0002" position="float"><caption><p>Fig S2</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s005.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/e43204e1948a/EVA-14-2402-s005.pdf?><?cloudpmc-bucket app?><?size 5333?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0003" position="float"><caption><p>Fig S3</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s006.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/cd5aa1f660a6/EVA-14-2402-s006.pdf?><?cloudpmc-bucket app?><?size 9284?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0004" position="float"><caption><p>Table S1‐S3</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s007.xlsx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.spreadsheetml.sheet"><?cloudpmc-path 6d4b/8549618/7b3b53e33a92/EVA-14-2402-s007.xlsx?><?cloudpmc-bucket app?><?size 66492?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0005" position="float"><caption><p>Table S4</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s002.xlsx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.spreadsheetml.sheet"><?cloudpmc-path 6d4b/8549618/418badb6152c/EVA-14-2402-s002.xlsx?><?cloudpmc-bucket app?><?size 64254?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0006" position="float"><caption><p>Appendix S1</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s003.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/06b12af0fd50/EVA-14-2402-s003.pdf?><?cloudpmc-bucket app?><?size 949619?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="eva13235-sup-0007" position="float"><caption><p>Appendix S2</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/ea34a97290ec/EVA-14-2402-s001.pdf?><?cloudpmc-bucket app?><?size 2574183?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec><sec id="eva13235-sec-0016" sec-type="ack" disp-level="1"><title>ACKNOWLEDGMENTS</title><p>We thank Clément Rougeux for his help and advice with the methylation analyses. We thank Hao Wu for his help with methylation calling. We also thank David Willis and Esther Guimond, as well as the personnel at the Conuma and Quinsam hatcheries, of the Fisheries and Oceans Salmon Enhancement Program for sampling advice and assistance. We are grateful to editor W. Andriuzzi, P. Shulte, and two anonymous referees for their constructive comments on a previous version of this manuscript. This research was carried out in conjunction with EPIC4 (Enhanced Production in Coho: Culture, Community, Catch), a project supported by the government of Canada through Genome Canada, Genome British Columbia, and Genome Quebec.</p></sec><sec id="notes1" disp-level="1"><p>
+
+Leitwein M, Laporte M, Le Luyer J, et al. Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration. Evol Appl. 2021;14:2402–2413. 10.1111/eva.13235
+
+</p></sec><sec id="eva13235-sec-0018" disp-level="1"><title>DATA AVAILABILITY STATEMENT</title><p>The sequences reported in this paper will be available in the National Center for Biotechnology Information Sequence Read Archive, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ncbi.nlm.nih.gov/sra/" ext-link-type="uri">https://www.ncbi.nlm.nih.gov/sra/</ext-link> (BioProject accession no. PRJNA678281).</p></sec><sec id="eva13235-bibl-0001" sec-type="ref-list" disp-level="1"><title>REFERENCES</title><sec id="eva13235-bibl-0001_sec2" disp-level="2"><ref-list><ref id="eva13235-bib-0001"><mixed-citation id="eva13235-cit-0001"><named-content content-type="citation-string">
+
+Alerstam, T.
+, 
+Hedenström, A.
+, &amp; 
+Åkesson, S.
+ (2003). Long‐distance migration: Evolution and determinants. Oikos, 103(2), 247–260. 10.1034/j.1600-0706.2003.12559.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1034/j.1600-0706.2003.12559.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oikos&amp;title=Long‐distance migration: Evolution and determinants&amp;author=T. Alerstam&amp;author=A. Hedenström&amp;author=S. Åkesson&amp;volume=103&amp;issue=2&amp;publication_year=2003&amp;pages=247-260&amp;doi=10.1034/j.1600-0706.2003.12559.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0002"><mixed-citation id="eva13235-cit-0002"><named-content content-type="citation-string">
+
+Aljanabi, S. M.
+, &amp; 
+Martinez, I.
+ (1997). Universal and rapid salt‐extraction of high quality genomic DNA for PCR‐based techniques. Nucleic Acids Research, 25(22), 4692–4693.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/25.22.4692"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC147078"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="9358185"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Research&amp;title=Universal and rapid salt‐extraction of high quality genomic DNA for PCR‐based techniques&amp;author=S. M. Aljanabi&amp;author=I. Martinez&amp;volume=25&amp;issue=22&amp;publication_year=1997&amp;pages=4692-4693&amp;pmid=9358185&amp;doi=10.1093/nar/25.22.4692&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0003"><mixed-citation id="eva13235-cit-0003"><named-content content-type="citation-string">
+
+Allendorf, F. W.
+ (2017). Genetics and the conservation of natural populations: Allozymes to genomes. Molecular Ecology, 26(2), 420–430. 10.1111/mec.13948
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/mec.13948"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27933683"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Genetics and the conservation of natural populations: Allozymes to genomes&amp;author=F. W. Allendorf&amp;volume=26&amp;issue=2&amp;publication_year=2017&amp;pages=420-430&amp;pmid=27933683&amp;doi=10.1111/mec.13948&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0004"><mixed-citation id="eva13235-cit-0004"><named-content content-type="citation-string">
+
+Allendorf, F. W.
+, &amp; 
+Hard, J. J.
+ (2009). Human‐induced evolution caused by unnatural selection through harvest of wild animals. Proceedings of the National Academy of Sciences, 106(Supplement 1), 9987–9994. 10.1073/pnas.0901069106
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.0901069106"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2702803"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19528656"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proceedings of the National Academy of Sciences&amp;title=Human‐induced evolution caused by unnatural selection through harvest of wild animals&amp;author=F. W. Allendorf&amp;author=J. J. Hard&amp;volume=106&amp;issue=Supplement 1&amp;publication_year=2009&amp;pages=9987-9994&amp;pmid=19528656&amp;doi=10.1073/pnas.0901069106&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0005"><mixed-citation id="eva13235-cit-0005"><named-content content-type="citation-string">
+
+Allendorf, F. W.
+, 
+Hohenlohe, P. A.
+, &amp; 
+Luikart, G.
+ (2010). Genomics and the future of conservation genetics. Nature Reviews Genetics, 11(10), 697–709. 10.1038/nrg2844
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nrg2844"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20847747"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature Reviews Genetics&amp;title=Genomics and the future of conservation genetics&amp;author=F. W. Allendorf&amp;author=P. A. Hohenlohe&amp;author=G. Luikart&amp;volume=11&amp;issue=10&amp;publication_year=2010&amp;pages=697-709&amp;pmid=20847747&amp;doi=10.1038/nrg2844&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0006"><mixed-citation id="eva13235-cit-0006"><named-content content-type="citation-string">
+
+Aller, E. S. T.
+, 
+Jagd, L. M.
+, 
+Kliebenstein, D. J.
+, &amp; 
+Burow, M.
+ (2018). Comparison of the relative potential for epigenetic and genetic variation to contribute to trait stability. G3: Genes, Genomes, Genetics, 8(5), 1733–1746. 10.1534/g3.118.200127
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1534/g3.118.200127"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5940164"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29563187"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=G3: Genes, Genomes, Genetics&amp;title=Comparison of the relative potential for epigenetic and genetic variation to contribute to trait stability&amp;author=E. S. T. Aller&amp;author=L. M. Jagd&amp;author=D. J. Kliebenstein&amp;author=M. Burow&amp;volume=8&amp;issue=5&amp;publication_year=2018&amp;pages=1733-1746&amp;pmid=29563187&amp;doi=10.1534/g3.118.200127&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0007"><mixed-citation id="eva13235-cit-0007"><named-content content-type="citation-string">
+
+Angers, B.
+, 
+Castonguay, E.
+, &amp; 
+Massicotte, R.
+ (2010). Environmentally induced phenotypes and DNA methylation: How to deal with unpredictable conditions until the next generation and after. Molecular Ecology, 19(7), 1283–1295. 10.1111/j.1365-294X.2010.04580.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1365-294X.2010.04580.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20298470"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Environmentally induced phenotypes and DNA methylation: How to deal with unpredictable conditions until the next generation and after&amp;author=B. Angers&amp;author=E. Castonguay&amp;author=R. Massicotte&amp;volume=19&amp;issue=7&amp;publication_year=2010&amp;pages=1283-1295&amp;pmid=20298470&amp;doi=10.1111/j.1365-294X.2010.04580.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0008"><mixed-citation id="eva13235-cit-0008"><named-content content-type="citation-string">
+
+Angers, B.
+, 
+Perez, M.
+, 
+Menicucci, T.
+, &amp; 
+Leung, C.
+ (2020). Sources of epigenetic variation and their applications in natural populations. Evolutionary Applications, 13(6), 1262–1278. 10.1111/eva.12946
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/eva.12946"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7359850"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32684958"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Evolutionary Applications&amp;title=Sources of epigenetic variation and their applications in natural populations&amp;author=B. Angers&amp;author=M. Perez&amp;author=T. Menicucci&amp;author=C. Leung&amp;volume=13&amp;issue=6&amp;publication_year=2020&amp;pages=1262-1278&amp;pmid=32684958&amp;doi=10.1111/eva.12946&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0009"><mixed-citation id="eva13235-cit-0009"><named-content content-type="citation-string">
+
+Araki, H.
+, &amp; 
+Schmid, C.
+ (2010). Is hatchery stocking a help or harm?: Evidence, limitations and future directions in ecological and genetic surveys. Aquaculture, 308, S2–S11.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aquaculture&amp;title=Is hatchery stocking a help or harm?: Evidence, limitations and future directions in ecological and genetic surveys&amp;author=H. Araki&amp;author=C. Schmid&amp;volume=308&amp;publication_year=2010&amp;pages=S2-S11&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0010"><mixed-citation id="eva13235-cit-0010"><named-content content-type="citation-string">
+
+Aubin‐Horth, N.
+, &amp; 
+Renn, S. C. P.
+ (2009). Genomic reaction norms: Using integrative biology to understand molecular mechanisms of phenotypic plasticity. Molecular Ecology, 18(18), 3763–3780. 10.1111/j.1365-294X.2009.04313.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1365-294X.2009.04313.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19732339"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Genomic reaction norms: Using integrative biology to understand molecular mechanisms of phenotypic plasticity&amp;author=N. Aubin‐Horth&amp;author=S. C. P. Renn&amp;volume=18&amp;issue=18&amp;publication_year=2009&amp;pages=3763-3780&amp;pmid=19732339&amp;doi=10.1111/j.1365-294X.2009.04313.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0011"><mixed-citation id="eva13235-cit-0011"><named-content content-type="citation-string">
+
+Baerwald, M. R.
+, 
+Meek, M. H.
+, 
+Stephens, M. R.
+, 
+Nagarajan, R. P.
+, 
+Goodbla, A. M.
+, 
+Tomalty, K. M. H.
+, 
+Thorgaard, G. H.
+, 
+May, B.
+, &amp; 
+Nichols, K. M.
+ (2016). Migration‐related phenotypic divergence is associated with epigenetic modifications in rainbow trout. Molecular Ecology, 25(8), 1785–1800. 10.1111/mec.13231
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/mec.13231"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4641842"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25958780"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Migration‐related phenotypic divergence is associated with epigenetic modifications in rainbow trout&amp;author=M. R. Baerwald&amp;author=M. H. Meek&amp;author=M. R. Stephens&amp;author=R. P. Nagarajan&amp;author=A. M. Goodbla&amp;volume=25&amp;issue=8&amp;publication_year=2016&amp;pages=1785-1800&amp;pmid=25958780&amp;doi=10.1111/mec.13231&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0012"><mixed-citation id="eva13235-cit-0012"><named-content content-type="citation-string">
+
+Bates, D.
+, 
+Mächler, M.
+, 
+Bolker, B.
+, &amp; 
+Walker, S.
+ (2015). Fitting linear mixed‐effects models using Lme4. Journal of Statistical Software, 67(1), 1–48. 10.18637/jss.v067.i01
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18637/jss.v067.i01"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Statistical Software&amp;title=Fitting linear mixed‐effects models using Lme4&amp;author=D. Bates&amp;author=M. Mächler&amp;author=B. Bolker&amp;author=S. Walker&amp;volume=67&amp;issue=1&amp;publication_year=2015&amp;pages=1-48&amp;doi=10.18637/jss.v067.i01&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0013"><mixed-citation id="eva13235-cit-0013"><named-content content-type="citation-string">
+
+Benestan, L. M.
+, 
+Ferchaud, A.‐L.
+, 
+Hohenlohe, P. A.
+, 
+Garner, B. A.
+, 
+Naylor, G. J. P.
+, 
+Baums, I. B.
+, 
+Schwartz, M. K.
+, 
+Kelley, J. L.
+, &amp; 
+Luikart, G.
+ (2016). Conservation genomics of natural and managed populations: Building a conceptual and practical framework. Molecular Ecology, 25(13), 2967–2977. 10.1111/mec.13647
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/mec.13647"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27086132"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Conservation genomics of natural and managed populations: Building a conceptual and practical framework&amp;author=L. M. Benestan&amp;author=A.‐L. Ferchaud&amp;author=P. A. Hohenlohe&amp;author=B. A. Garner&amp;author=G. J. P. Naylor&amp;volume=25&amp;issue=13&amp;publication_year=2016&amp;pages=2967-2977&amp;pmid=27086132&amp;doi=10.1111/mec.13647&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0014"><mixed-citation id="eva13235-cit-0014"><named-content content-type="citation-string">
+
+Brauner, C. J.
+, 
+Iwama, G. K.
+, &amp; 
+Randall, D. J.
+ (1994). The effect of short‐duration seawater exposure on the swimming performance of wild and hatchery‐reared juvenile Coho salmon (<italic>Oncorhynchus kisutch</italic>) during smoltification. Canadian Journal of Fisheries and Aquatic Sciences, 51(10), 2188–2194. 10.1139/f94-220
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/f94-220"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Canadian Journal of Fisheries and Aquatic Sciences&amp;title=The effect of short‐duration seawater exposure on the swimming performance of wild and hatchery‐reared juvenile Coho salmon (Oncorhynchus kisutch) during smoltification&amp;author=C. J. Brauner&amp;author=G. K. Iwama&amp;author=D. J. Randall&amp;volume=51&amp;issue=10&amp;publication_year=1994&amp;pages=2188-2194&amp;doi=10.1139/f94-220&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0015"><mixed-citation id="eva13235-cit-0015"><named-content content-type="citation-string">
+
+Browman, H. I.
+ (1989). Embryology, ethology and ecology of ontogenetic critical periods in fish. Brain, Behavior and Evolution, 34(1), 5–12. 10.1159/000116486
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1159/000116486"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="2684340"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Brain, Behavior and Evolution&amp;title=Embryology, ethology and ecology of ontogenetic critical periods in fish&amp;author=H. I. Browman&amp;volume=34&amp;issue=1&amp;publication_year=1989&amp;pages=5-12&amp;pmid=2684340&amp;doi=10.1159/000116486&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0016"><mixed-citation id="eva13235-cit-0016"><named-content content-type="citation-string">
+
+Chen, H.
+, 
+Smith, A. D.
+, &amp; 
+Chen, T.
+ (2016). WALT: Fast and accurate read mapping for bisulfite sequencing. Bioinformatics, 32(22), 3507–3509. 10.1093/bioinformatics/btw490
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btw490"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5181568"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27466624"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=WALT: Fast and accurate read mapping for bisulfite sequencing&amp;author=H. Chen&amp;author=A. D. Smith&amp;author=T. Chen&amp;volume=32&amp;issue=22&amp;publication_year=2016&amp;pages=3507-3509&amp;pmid=27466624&amp;doi=10.1093/bioinformatics/btw490&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0017"><mixed-citation id="eva13235-cit-0017"><named-content content-type="citation-string">
+
+Chen, S.
+, 
+Zhou, Y.
+, 
+Chen, Y.
+, &amp; 
+Jia, G. U.
+ (2018). Fastp: An ultra‐fast all‐in‐one FASTQ preprocessor. Bioinformatics, 34(17), i884–i890. 10.1093/bioinformatics/bty560
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/bty560"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6129281"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30423086"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=Fastp: An ultra‐fast all‐in‐one FASTQ preprocessor&amp;author=S. Chen&amp;author=Y. Zhou&amp;author=Y. Chen&amp;author=G. U. Jia&amp;volume=34&amp;issue=17&amp;publication_year=2018&amp;pages=i884-i890&amp;pmid=30423086&amp;doi=10.1093/bioinformatics/bty560&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0018"><mixed-citation id="eva13235-cit-0018"><named-content content-type="citation-string">
+
+Chittenden, C. M.
+, 
+Biagi, C. A.
+, 
+Davidsen, J. G.
+, 
+Davidsen, A. G.
+, 
+Kondo, H.
+, 
+McKnight, A.
+, 
+Pedersen, O.‐P.
+, 
+Raven, P. A.
+, 
+Rikardsen, A. H.
+, 
+Mark Shrimpton, J.
+, 
+Brett Zuehlke, R.
+, 
+McKinley, S.
+, &amp; 
+Devlin, R. H.
+ (2010). Genetic versus rearing‐environment effects on phenotype: Hatchery and natural rearing effects on hatchery‐ and wild‐born Coho salmon. PLoS One, 5(8), e12261. 10.1371/journal.pone.0012261
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1371/journal.pone.0012261"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2924375"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20808853"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=PLoS One&amp;title=Genetic versus rearing‐environment effects on phenotype: Hatchery and natural rearing effects on hatchery‐ and wild‐born Coho salmon&amp;author=C. M. Chittenden&amp;author=C. A. Biagi&amp;author=J. G. Davidsen&amp;author=A. G. Davidsen&amp;author=H. Kondo&amp;volume=5&amp;issue=8&amp;publication_year=2010&amp;pages=e12261&amp;pmid=20808853&amp;doi=10.1371/journal.pone.0012261&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0019"><mixed-citation id="eva13235-cit-0019"><named-content content-type="citation-string">
+
+Chittenden, C. M.
+, 
+Sura, S.
+, 
+Butterworth, K. G.
+, 
+Cubitt, K. F.
+, 
+Plantalech Manel‐la, N.
+, 
+Balfry, S.
+, 
+Økland, F.
+, &amp; 
+McKinley, R. S.
+ (2008). Riverine, estuarine and marine migratory behaviour and physiology of wild and hatchery‐reared Coho salmon <italic>Oncorhynchus kisutch</italic> (Walbaum) smolts descending the Campbell River, BC, Canada. Journal of Fish Biology, 72(3), 614–628. 10.1111/j.1095-8649.2007.01729.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1095-8649.2007.01729.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Fish Biology&amp;title=Riverine, estuarine and marine migratory behaviour and physiology of wild and hatchery‐reared Coho salmon Oncorhynchus kisutch (Walbaum) smolts descending the Campbell River, BC, Canada&amp;author=C. M. Chittenden&amp;author=S. Sura&amp;author=K. G. Butterworth&amp;author=K. F. Cubitt&amp;author=N. Plantalech Manel‐la&amp;volume=72&amp;issue=3&amp;publication_year=2008&amp;pages=614-628&amp;doi=10.1111/j.1095-8649.2007.01729.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0020"><mixed-citation id="eva13235-cit-0020"><named-content content-type="citation-string">
+
+Christie, M. R.
+, 
+Ford, M. J.
+, &amp; 
+Blouin, M. S.
+ (2014). On the reproductive success of early‐generation hatchery fish in the wild. Evolutionary Applications, 7(8), 883–896. 10.1111/eva.12183
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/eva.12183"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4211718"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25469167"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Evolutionary Applications&amp;title=On the reproductive success of early‐generation hatchery fish in the wild&amp;author=M. R. Christie&amp;author=M. J. Ford&amp;author=M. S. Blouin&amp;volume=7&amp;issue=8&amp;publication_year=2014&amp;pages=883-896&amp;pmid=25469167&amp;doi=10.1111/eva.12183&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0021"><mixed-citation id="eva13235-cit-0021"><named-content content-type="citation-string">
+
+Christie, M. R.
+, 
+Marine, M. L.
+, 
+Fox, S. E.
+, 
+French, R. A.
+, &amp; 
+Blouin, M. S.
+ (2016). A single generation of domestication heritably alters the expression of hundreds of genes. Nature Communications, 7, 10676. 10.1038/ncomms10676
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ncomms10676"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4757788"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26883375"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature Communications&amp;title=A single generation of domestication heritably alters the expression of hundreds of genes&amp;author=M. R. Christie&amp;author=M. L. Marine&amp;author=S. E. Fox&amp;author=R. A. French&amp;author=M. S. Blouin&amp;volume=7&amp;publication_year=2016&amp;pages=10676&amp;pmid=26883375&amp;doi=10.1038/ncomms10676&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0022"><mixed-citation id="eva13235-cit-0022"><named-content content-type="citation-string">
+
+Danchin, E.
+, 
+Pocheville, A.
+, 
+Rey, O.
+, 
+Pujol, B.
+, &amp; 
+Blanchet, S.
+ (2019). Epigenetically facilitated mutational assimilation: Epigenetics as a hub within the inclusive evolutionary synthesis. Biological Reviews, 94(1), 259–282. 10.1111/brv.12453
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/brv.12453"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biological Reviews&amp;title=Epigenetically facilitated mutational assimilation: Epigenetics as a hub within the inclusive evolutionary synthesis&amp;author=E. Danchin&amp;author=A. Pocheville&amp;author=O. Rey&amp;author=B. Pujol&amp;author=S. Blanchet&amp;volume=94&amp;issue=1&amp;publication_year=2019&amp;pages=259-282&amp;doi=10.1111/brv.12453&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0023"><mixed-citation id="eva13235-cit-0023"><named-content content-type="citation-string">
+
+Danecek, P.
+, 
+Auton, A.
+, 
+Abecasis, G.
+, 
+Albers, C. A.
+, 
+Banks, E.
+, 
+DePristo, M. A.
+, 
+Handsaker, R. E.
+, 
+Lunter, G.
+, 
+Marth, G. T.
+, 
+Sherry, S. T.
+, 
+McVean, G.
+, 
+Durbin, R.
+, &amp; 1000 Genomes Project Analysis Group
+. (2011). The variant call format and VCFtools. Bioinformatics, 27(15), 2156–2158. 10.1093/bioinformatics/btr330
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btr330"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3137218"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21653522"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=The variant call format and VCFtools&amp;author=P. Danecek&amp;author=A. Auton&amp;author=G. Abecasis&amp;author=C. A. Albers&amp;author=E. Banks&amp;volume=27&amp;issue=15&amp;publication_year=2011&amp;pages=2156-2158&amp;pmid=21653522&amp;doi=10.1093/bioinformatics/btr330&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0024"><mixed-citation id="eva13235-cit-0024"><named-content content-type="citation-string">
+
+Devlin, R. H.
+, &amp; 
+Nagahama, Y.
+ (2002). Sex determination and sex differentiation in fish: An overview of genetic, physiological, and environmental influences. Aquaculture, 208(3), 191–364. 10.1016/S0044-8486(02)00057-1
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S0044-8486(02)00057-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aquaculture&amp;title=Sex determination and sex differentiation in fish: An overview of genetic, physiological, and environmental influences&amp;author=R. H. Devlin&amp;author=Y. Nagahama&amp;volume=208&amp;issue=3&amp;publication_year=2002&amp;pages=191-364&amp;doi=10.1016/S0044-8486(02)00057-1&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0025"><mixed-citation id="eva13235-cit-0025"><named-content content-type="citation-string">
+
+Donkin, I.
+, &amp; 
+Barrès, R.
+ (2018). Sperm epigenetics and influence of environmental factors. Molecular Metabolism, 14, 1–11. 10.1016/j.molmet.2018.02.006
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molmet.2018.02.006"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6034033"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29525406"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Metabolism&amp;title=Sperm epigenetics and influence of environmental factors&amp;author=I. Donkin&amp;author=R. Barrès&amp;volume=14&amp;publication_year=2018&amp;pages=1-11&amp;pmid=29525406&amp;doi=10.1016/j.molmet.2018.02.006&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0026"><mixed-citation id="eva13235-cit-0026"><named-content content-type="citation-string">
+
+Evans, M. L.
+, 
+Wilke, N. F.
+, 
+O’Reilly, P. T.
+, &amp; 
+Fleming, I. A.
+ (2014). Transgenerational effects of parental rearing environment influence the survivorship of captive‐born offspring in the wild. Conservation Letters, 7(4), 371–379. 10.1111/conl.12092
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/conl.12092"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Conservation Letters&amp;title=Transgenerational effects of parental rearing environment influence the survivorship of captive‐born offspring in the wild&amp;author=M. L. Evans&amp;author=N. F. Wilke&amp;author=P. T. O’Reilly&amp;author=I. A. Fleming&amp;volume=7&amp;issue=4&amp;publication_year=2014&amp;pages=371-379&amp;doi=10.1111/conl.12092&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0027"><mixed-citation id="eva13235-cit-0027"><named-content content-type="citation-string">
+
+Faulk, C.
+, &amp; 
+Dolinoy, D. C.
+ (2011). Timing is everything. Epigenetics, 6(7), 791–797. 10.4161/epi.6.7.16209
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.4161/epi.6.7.16209"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3230539"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21636976"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Epigenetics&amp;title=Timing is everything&amp;author=C. Faulk&amp;author=D. C. Dolinoy&amp;volume=6&amp;issue=7&amp;publication_year=2011&amp;pages=791-797&amp;pmid=21636976&amp;doi=10.4161/epi.6.7.16209&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0028"><mixed-citation id="eva13235-cit-0028"><named-content content-type="citation-string">
+
+Flagg, T. A.
+, &amp; 
+Nash, C. E.
+ (1999). “A Conceptual Framework for Conservation Hatchery Strategies for Pacific Salmonids (US Department of Commerce, Washington, DC), NOAA Technical Memorandum NMFS‐NWFSC‐38.”</named-content></mixed-citation></ref><ref id="eva13235-bib-0029"><mixed-citation id="eva13235-cit-0029"><named-content content-type="citation-string">
+
+Frankham, R.
+ (2008). Genetic adaptation to captivity in species conservation programs. Molecular Ecology, 17(1), 325–333. 10.1111/j.1365-294X.2007.03399.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1365-294X.2007.03399.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18173504"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Genetic adaptation to captivity in species conservation programs&amp;author=R. Frankham&amp;volume=17&amp;issue=1&amp;publication_year=2008&amp;pages=325-333&amp;pmid=18173504&amp;doi=10.1111/j.1365-294X.2007.03399.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0030"><mixed-citation id="eva13235-cit-0030"><named-content content-type="citation-string">
+
+Garrison, E.
+, &amp; 
+Marth, G.
+ (2012). Haplotype‐Based Variant Detection from Short‐Read Sequencing. <italic>ArXiv:1207.3907</italic>
+<italic>[q‐Bio]</italic>.</named-content></mixed-citation></ref><ref id="eva13235-bib-0031"><mixed-citation id="eva13235-cit-0031"><named-content content-type="citation-string">
+
+Gavery, M. R.
+, 
+Nichols, K. M.
+, 
+Berejikian, B. A.
+, 
+Tatara, C. P.
+, 
+Goetz, G. W.
+, 
+Dickey, J. T.
+, 
+Van Doornik, D. M.
+, &amp; 
+Swanson, P.
+ (2019). Temporal dynamics of DNA methylation patterns in response to rearing juvenile steelhead (<italic>Oncorhynchus mykiss</italic>) in a hatchery versus simulated stream environment. Genes, 10(5), 356. 10.3390/genes10050356
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/genes10050356"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6563097"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31075961"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genes&amp;title=Temporal dynamics of DNA methylation patterns in response to rearing juvenile steelhead (Oncorhynchus mykiss) in a hatchery versus simulated stream environment&amp;author=M. R. Gavery&amp;author=K. M. Nichols&amp;author=B. A. Berejikian&amp;author=C. P. Tatara&amp;author=G. W. Goetz&amp;volume=10&amp;issue=5&amp;publication_year=2019&amp;pages=356&amp;pmid=31075961&amp;doi=10.3390/genes10050356&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0032"><mixed-citation id="eva13235-cit-0032"><named-content content-type="citation-string">
+
+Gavery, M. R.
+, 
+Nichols, K. M.
+, 
+Goetz, G. W.
+, 
+Middleton, M. A.
+, &amp; 
+Swanson, P.
+ (2018). Characterization of genetic and epigenetic variation in sperm and red blood cells from adult hatchery and natural‐origin steelhead, <italic>Oncorhynchus mykiss</italic>
+. G3: Genes, Genomes, Genetics, 8(11), 3723–3736. 10.1534/g3.118.200458
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1534/g3.118.200458"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6222570"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30275172"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=G3: Genes, Genomes, Genetics&amp;title=Characterization of genetic and epigenetic variation in sperm and red blood cells from adult hatchery and natural‐origin steelhead, Oncorhynchus mykiss&amp;author=M. R. Gavery&amp;author=K. M. Nichols&amp;author=G. W. Goetz&amp;author=M. A. Middleton&amp;author=P. Swanson&amp;volume=8&amp;issue=11&amp;publication_year=2018&amp;pages=3723-3736&amp;pmid=30275172&amp;doi=10.1534/g3.118.200458&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0033"><mixed-citation id="eva13235-cit-0033"><named-content content-type="citation-string">
+
+Hendry, A. P.
+, 
+Farrugia, T. J.
+, &amp; 
+Kinnison, M. T.
+ (2008). Human influences on rates of phenotypic change in wild animal populations. Molecular Ecology, 17(1), 20–29. 10.1111/j.1365-294X.2007.03428.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1365-294X.2007.03428.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18173498"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Human influences on rates of phenotypic change in wild animal populations&amp;author=A. P. Hendry&amp;author=T. J. Farrugia&amp;author=M. T. Kinnison&amp;volume=17&amp;issue=1&amp;publication_year=2008&amp;pages=20-29&amp;pmid=18173498&amp;doi=10.1111/j.1365-294X.2007.03428.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0034"><mixed-citation id="eva13235-cit-0034"><named-content content-type="citation-string">
+
+Irvine, J. R.
+, 
+O’Neill, M.
+, 
+Godbout, L.
+, &amp; 
+Schnute, J.
+ (2013). Effects of smolt release timing and size on the survival of hatchery‐origin Coho salmon in the Strait of Georgia. Progress in Oceanography, 115, 111–118. 10.1016/j.pocean.2013.05.014
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.pocean.2013.05.014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Progress in Oceanography&amp;title=Effects of smolt release timing and size on the survival of hatchery‐origin Coho salmon in the Strait of Georgia&amp;author=J. R. Irvine&amp;author=M. O’Neill&amp;author=L. Godbout&amp;author=J. Schnute&amp;volume=115&amp;publication_year=2013&amp;pages=111-118&amp;doi=10.1016/j.pocean.2013.05.014&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0035"><mixed-citation id="eva13235-cit-0035"><named-content content-type="citation-string">
+
+Jablonka, E.
+, &amp; 
+Raz, G.
+ (2009). Transgenerational epigenetic inheritance: Prevalence, mechanisms, and implications for the study of heredity and evolution. The Quarterly Review of Biology, 84(2), 131–176. 10.1086/598822
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1086/598822"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19606595"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The Quarterly Review of Biology&amp;title=Transgenerational epigenetic inheritance: Prevalence, mechanisms, and implications for the study of heredity and evolution&amp;author=E. Jablonka&amp;author=G. Raz&amp;volume=84&amp;issue=2&amp;publication_year=2009&amp;pages=131-176&amp;pmid=19606595&amp;doi=10.1086/598822&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0036"><mixed-citation id="eva13235-cit-0036"><named-content content-type="citation-string">
+
+Jiang, L.
+, 
+Zhang, J.
+, 
+Wang, J.‐J.
+, 
+Wang, L. U.
+, 
+Zhang, L. I.
+, 
+Li, G.
+, 
+Yang, X.
+, 
+Ma, X.
+, 
+Sun, X.
+, 
+Cai, J.
+, 
+Zhang, J.
+, 
+Huang, X.
+, 
+Yu, M.
+, 
+Wang, X.
+, 
+Liu, F.
+, 
+Wu, C.‐I.
+, 
+He, C.
+, 
+Zhang, B. O.
+, 
+Ci, W.
+, &amp; 
+Liu, J.
+ (2013). Sperm, but not oocyte, DNA methylome is inherited by zebrafish early embryos. Cell, 153(4), 773–784. 10.1016/j.cell.2013.04.041
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2013.04.041"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4081501"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23663777"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=Sperm, but not oocyte, DNA methylome is inherited by zebrafish early embryos&amp;author=L. Jiang&amp;author=J. Zhang&amp;author=J.‐J. Wang&amp;author=L. U. Wang&amp;author=L. I. Zhang&amp;volume=153&amp;issue=4&amp;publication_year=2013&amp;pages=773-784&amp;pmid=23663777&amp;doi=10.1016/j.cell.2013.04.041&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0037"><mixed-citation id="eva13235-cit-0037"><named-content content-type="citation-string">
+
+Kekäläinen, J.
+, 
+Oskoei, P.
+, 
+Janhunen, M.
+, 
+Koskinen, H.
+, 
+Kortet, R.
+, &amp; 
+Huuskonen, H.
+ (2018). Sperm pre‐fertilization thermal environment shapes offspring phenotype and performance. The Journal of Experimental Biology, 221(20), jeb181412. 10.1242/jeb.181412
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1242/jeb.181412"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30171097"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The Journal of Experimental Biology&amp;title=Sperm pre‐fertilization thermal environment shapes offspring phenotype and performance&amp;author=J. Kekäläinen&amp;author=P. Oskoei&amp;author=M. Janhunen&amp;author=H. Koskinen&amp;author=R. Kortet&amp;volume=221&amp;issue=20&amp;publication_year=2018&amp;pages=jeb181412&amp;pmid=30171097&amp;doi=10.1242/jeb.181412&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0038"><mixed-citation id="eva13235-cit-0038"><named-content content-type="citation-string">
+
+Laporte, M.
+, 
+Le Luyer, J.
+, 
+Rougeux, C.
+, 
+Dion‐Côté, A. M.
+, 
+Krick, M.
+, &amp; 
+Bernatchez, L.
+ (2019). DNA methylation reprogramming, TE derepression, and postzygotic isolation of nascent animal species. Science Advances, 5(10), eaaw1644. 10.1126/sciadv.aaw1644
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/sciadv.aaw1644"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6795504"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31663013"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science Advances&amp;title=DNA methylation reprogramming, TE derepression, and postzygotic isolation of nascent animal species&amp;author=M. Laporte&amp;author=J. Le Luyer&amp;author=C. Rougeux&amp;author=A. M. Dion‐Côté&amp;author=M. Krick&amp;volume=5&amp;issue=10&amp;publication_year=2019&amp;pages=eaaw1644&amp;pmid=31663013&amp;doi=10.1126/sciadv.aaw1644&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0039"><mixed-citation id="eva13235-cit-0039"><named-content content-type="citation-string">
+
+Laporte, M.
+, 
+Pavey, S. A.
+, 
+Rougeux, C.
+, 
+Pierron, F.
+, 
+Lauzent, M.
+, 
+Budzinski, H.
+, 
+Labadie, P.
+, 
+Geneste, E.
+, 
+Couture, P.
+, 
+Baudrimont, M.
+, &amp; 
+Bernatchez, L.
+ (2016). RAD sequencing reveals within‐generation polygenic selection in response to anthropogenic organic and metal contamination in North Atlantic Eels. Molecular Ecology, 25(1), 219–237. 10.1111/mec.13466
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/mec.13466"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26562221"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=RAD sequencing reveals within‐generation polygenic selection in response to anthropogenic organic and metal contamination in North Atlantic Eels&amp;author=M. Laporte&amp;author=S. A. Pavey&amp;author=C. Rougeux&amp;author=F. Pierron&amp;author=M. Lauzent&amp;volume=25&amp;issue=1&amp;publication_year=2016&amp;pages=219-237&amp;pmid=26562221&amp;doi=10.1111/mec.13466&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0040"><mixed-citation id="eva13235-cit-0040"><named-content content-type="citation-string">
+
+Larsen, D. A.
+, 
+Beckman, B. R.
+, 
+Strom, C. R.
+, 
+Parkins, P. J.
+, 
+Cooper, K. A.
+, 
+Fast, D. E.
+, &amp; 
+Dickhoff, W. W.
+ (2006). Growth modulation alters the incidence of early male maturation and physiological development of hatchery‐reared spring Chinook salmon: A comparison with wild fish. Transactions of the American Fisheries Society, 135(4), 1017–1032. 10.1577/T05-200.1
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1577/T05-200.1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Transactions of the American Fisheries Society&amp;title=Growth modulation alters the incidence of early male maturation and physiological development of hatchery‐reared spring Chinook salmon: A comparison with wild fish&amp;author=D. A. Larsen&amp;author=B. R. Beckman&amp;author=C. R. Strom&amp;author=P. J. Parkins&amp;author=K. A. Cooper&amp;volume=135&amp;issue=4&amp;publication_year=2006&amp;pages=1017-1032&amp;doi=10.1577/T05-200.1&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0041"><mixed-citation id="eva13235-cit-0041"><named-content content-type="citation-string">
+
+Laubach, Z. M.
+, 
+Perng, W.
+, 
+Dolinoy, D. C.
+, 
+Faulk, C. D.
+, 
+Holekamp, K. E.
+, &amp; 
+Getty, T.
+ (2018). Epigenetics and the maintenance of developmental plasticity: Extending the signalling theory framework. Biological Reviews, 93(3), 1323–1338. 10.1111/brv.12396
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/brv.12396"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29356358"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biological Reviews&amp;title=Epigenetics and the maintenance of developmental plasticity: Extending the signalling theory framework&amp;author=Z. M. Laubach&amp;author=W. Perng&amp;author=D. C. Dolinoy&amp;author=C. D. Faulk&amp;author=K. E. Holekamp&amp;volume=93&amp;issue=3&amp;publication_year=2018&amp;pages=1323-1338&amp;pmid=29356358&amp;doi=10.1111/brv.12396&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0042"><mixed-citation id="eva13235-cit-0042"><named-content content-type="citation-string">
+
+Le Luyer, J.
+, 
+Laporte, M.
+, 
+Beacham, T. D.
+, 
+Kaukinen, K. H.
+, 
+Withler, R. E.
+, 
+Leong, J. S.
+, 
+Rondeau, E. B.
+, 
+Koop, B. F.
+, &amp; 
+Bernatchez, L.
+ (2017). Parallel epigenetic modifications induced by hatchery rearing in a Pacific salmon. Proceedings of the National Academy of Sciences, 114(49), 12964–12969. 10.1073/pnas.1711229114
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.1711229114"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5724268"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29162695"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proceedings of the National Academy of Sciences&amp;title=Parallel epigenetic modifications induced by hatchery rearing in a Pacific salmon&amp;author=J. Le Luyer&amp;author=M. Laporte&amp;author=T. D. Beacham&amp;author=K. H. Kaukinen&amp;author=R. E. Withler&amp;volume=114&amp;issue=49&amp;publication_year=2017&amp;pages=12964-12969&amp;pmid=29162695&amp;doi=10.1073/pnas.1711229114&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0043"><mixed-citation id="eva13235-cit-0043"><named-content content-type="citation-string">
+
+Lind, M. I.
+, &amp; 
+Spagopoulou, F.
+ (2018). Evolutionary consequences of epigenetic inheritance. Heredity, 121(3), 205–209. 10.1038/s41437-018-0113-y
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41437-018-0113-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6082883"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29976958"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Heredity&amp;title=Evolutionary consequences of epigenetic inheritance&amp;author=M. I. Lind&amp;author=F. Spagopoulou&amp;volume=121&amp;issue=3&amp;publication_year=2018&amp;pages=205-209&amp;pmid=29976958&amp;doi=10.1038/s41437-018-0113-y&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0044"><mixed-citation id="eva13235-cit-0044"><named-content content-type="citation-string">
+
+Lowdon, R. F.
+, 
+Jang, H. S.
+, &amp; 
+Wang, T.
+ (2016). Evolution of epigenetic regulation in vertebrate genomes. Trends in Genetics, 32(5), 269–283. 10.1016/j.tig.2016.03.001
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.tig.2016.03.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4842087"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27080453"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trends in Genetics&amp;title=Evolution of epigenetic regulation in vertebrate genomes&amp;author=R. F. Lowdon&amp;author=H. S. Jang&amp;author=T. Wang&amp;volume=32&amp;issue=5&amp;publication_year=2016&amp;pages=269-283&amp;pmid=27080453&amp;doi=10.1016/j.tig.2016.03.001&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0045"><mixed-citation id="eva13235-cit-0045"><named-content content-type="citation-string">
+
+Marchetti, M. P.
+, &amp; 
+Nevitt, G. A.
+ (2003). Effects of hatchery rearing on brain structures of rainbow trout, <italic>Oncorhynchus mykiss</italic>
+. Environmental Biology of Fishes, 66(1), 9–14. 10.1023/A:1023269221678
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1023/A:1023269221678"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Environmental Biology of Fishes&amp;title=Effects of hatchery rearing on brain structures of rainbow trout, Oncorhynchus mykiss&amp;author=M. P. Marchetti&amp;author=G. A. Nevitt&amp;volume=66&amp;issue=1&amp;publication_year=2003&amp;pages=9-14&amp;doi=10.1023/A:1023269221678&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0046"><mixed-citation id="eva13235-cit-0046"><named-content content-type="citation-string">
+
+Metzger, D. C. H.
+, &amp; 
+Schulte, P. M.
+ (2017). Persistent and plastic effects of temperature on DNA methylation across the genome of threespine stickleback (<italic>Gasterosteus aculeatus</italic>). Proceedings of the Royal Society B: Biological Sciences, 284(1864), 20171667. 10.1098/rspb.2017.1667
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1098/rspb.2017.1667"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5647309"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28978736"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proceedings of the Royal Society B: Biological Sciences&amp;title=Persistent and plastic effects of temperature on DNA methylation across the genome of threespine stickleback (Gasterosteus aculeatus)&amp;author=D. C. H. Metzger&amp;author=P. M. Schulte&amp;volume=284&amp;issue=1864&amp;publication_year=2017&amp;pages=20171667&amp;pmid=28978736&amp;doi=10.1098/rspb.2017.1667&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0047"><mixed-citation id="eva13235-cit-0047"><named-content content-type="citation-string">
+
+Neff, B. D.
+, 
+Garner, S. R.
+, 
+Fleming, I. A.
+, &amp; 
+Gross, M. R.
+ (2015). Reproductive success in wild and hatchery male Coho salmon. Royal Society Open Science, 2(8), 150161. 10.1098/rsos.150161
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1098/rsos.150161"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4555853"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26361548"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Royal Society Open Science&amp;title=Reproductive success in wild and hatchery male Coho salmon&amp;author=B. D. Neff&amp;author=S. R. Garner&amp;author=I. A. Fleming&amp;author=M. R. Gross&amp;volume=2&amp;issue=8&amp;publication_year=2015&amp;pages=150161&amp;pmid=26361548&amp;doi=10.1098/rsos.150161&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0048"><mixed-citation id="eva13235-cit-0048"><named-content content-type="citation-string">
+
+Oksanen, J. F.
+, 
+Blanchet, G.
+, 
+Friendly, M.
+, 
+Kindt, R.
+, 
+Legendre, P.
+, 
+McGlinn, D.
+, 
+Minchin, P. R.
+, 
+O’Hara, R. B.
+, 
+Simpson, G. L.
+, 
+Peter Solymos, M.
+, 
+Stevens, H. H.
+, 
+Szoecs, E.
+, &amp; 
+Wagner, H.
+
+2019. Vegan: Community Ecology Package.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Vegan: Community Ecology Package&amp;author=J. F. Oksanen&amp;author=G. Blanchet&amp;author=M. Friendly&amp;author=R. Kindt&amp;author=P. Legendre&amp;publication_year=2019&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0049"><mixed-citation id="eva13235-cit-0049"><named-content content-type="citation-string">
+
+Palumbi, S.
+ (2001). The evolution explosion: How humans cause rapid evolutionary change. W.W. Norton &amp; Co.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=The evolution explosion: How humans cause rapid evolutionary change&amp;author=S. Palumbi&amp;publication_year=2001&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0050"><mixed-citation id="eva13235-cit-0050"><named-content content-type="citation-string">
+
+Paradis, E.
+, 
+Claude, J.
+, &amp; 
+Strimmer, K.
+ (2004). APE: Analyses of phylogenetics and evolution in R language. Bioinformatics, 20(2), 289–290. 10.1093/bioinformatics/btg412
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btg412"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="14734327"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=APE: Analyses of phylogenetics and evolution in R language&amp;author=E. Paradis&amp;author=J. Claude&amp;author=K. Strimmer&amp;volume=20&amp;issue=2&amp;publication_year=2004&amp;pages=289-290&amp;pmid=14734327&amp;doi=10.1093/bioinformatics/btg412&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0051"><mixed-citation id="eva13235-cit-0051"><named-content content-type="citation-string">
+
+Park, Y.
+, &amp; 
+Wu, H.
+ (2016). Differential methylation analysis for BS‐Seq data under general experimental design. Bioinformatics, 32(10), 1446–1453. 10.1093/bioinformatics/btw026
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btw026"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC12157722"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26819470"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=Differential methylation analysis for BS‐Seq data under general experimental design&amp;author=Y. Park&amp;author=H. Wu&amp;volume=32&amp;issue=10&amp;publication_year=2016&amp;pages=1446-1453&amp;pmid=26819470&amp;doi=10.1093/bioinformatics/btw026&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0052"><mixed-citation id="eva13235-cit-0052"><named-content content-type="citation-string">
+
+Pfennig, D. W.
+, 
+Wund, M. A.
+, 
+Snell‐Rood, E. C.
+, 
+Cruickshank, T.
+, 
+Schlichting, C. D.
+, &amp; 
+Moczek, A. P.
+ (2010). Phenotypic plasticity’s impacts on diversification and speciation. Trends in Ecology &amp; Evolution, 25(8), 459–467. 10.1016/j.tree.2010.05.006
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.tree.2010.05.006"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20557976"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trends in Ecology &amp; Evolution&amp;title=Phenotypic plasticity’s impacts on diversification and speciation&amp;author=D. W. Pfennig&amp;author=M. A. Wund&amp;author=E. C. Snell‐Rood&amp;author=T. Cruickshank&amp;author=C. D. Schlichting&amp;volume=25&amp;issue=8&amp;publication_year=2010&amp;pages=459-467&amp;pmid=20557976&amp;doi=10.1016/j.tree.2010.05.006&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0053"><mixed-citation id="eva13235-cit-0053"><named-content content-type="citation-string">
+
+Quinlan, A. R.
+, &amp; 
+Hall, I. M.
+ (2010). BEDTools: A flexible suite of utilities for comparing genomic features. Bioinformatics, 26(6), 841–842. 10.1093/bioinformatics/btq033
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btq033"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2832824"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20110278"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=BEDTools: A flexible suite of utilities for comparing genomic features&amp;author=A. R. Quinlan&amp;author=I. M. Hall&amp;volume=26&amp;issue=6&amp;publication_year=2010&amp;pages=841-842&amp;pmid=20110278&amp;doi=10.1093/bioinformatics/btq033&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0054"><mixed-citation id="eva13235-cit-0054"><named-content content-type="citation-string">
+
+Rehman, S.
+, 
+Gora, A. H.
+, 
+Ahmad, I.
+, &amp; 
+Rasool, S. I.
+ (2017). Stress in aquaculture hatcheries: Source, impact and mitigation. International Journal of Current Microbiology and Applied Sciences, 6(10), 3030–3045.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=International Journal of Current Microbiology and Applied Sciences&amp;title=Stress in aquaculture hatcheries: Source, impact and mitigation&amp;author=S. Rehman&amp;author=A. H. Gora&amp;author=I. Ahmad&amp;author=S. I. Rasool&amp;volume=6&amp;issue=10&amp;publication_year=2017&amp;pages=3030-3045&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0055"><mixed-citation id="eva13235-cit-0055"><named-content content-type="citation-string">
+
+Richards, C. L.
+, 
+Alonso, C.
+, 
+Becker, C.
+, 
+Bossdorf, O.
+, 
+Bucher, E.
+, 
+Colomé‐Tatché, M.
+, 
+Durka, W.
+, 
+Engelhardt, J.
+, 
+Gaspar, B.
+, 
+Gogol‐Döring, A.
+, 
+Grosse, I.
+, 
+van Gurp, T. P.
+, 
+Heer, K.
+, 
+Kronholm, I.
+, 
+Lampei, C.
+, 
+Latzel, V.
+, 
+Mirouze, M.
+, 
+Opgenoorth, L.
+, 
+Paun, O.
+, … 
+Verhoeven, K. J. F.
+ (2017). Ecological plant epigenetics: Evidence from model and non‐model species, and the way forward. Ecology Letters, 20(12), 1576–1590. 10.1111/ele.12858
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/ele.12858"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29027325"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Ecology Letters&amp;title=Ecological plant epigenetics: Evidence from model and non‐model species, and the way forward&amp;author=C. L. Richards&amp;author=C. Alonso&amp;author=C. Becker&amp;author=O. Bossdorf&amp;author=E. Bucher&amp;volume=20&amp;issue=12&amp;publication_year=2017&amp;pages=1576-1590&amp;pmid=29027325&amp;doi=10.1111/ele.12858&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0056"><mixed-citation id="eva13235-cit-0056"><named-content content-type="citation-string">
+
+Rodriguez Barreto, D.
+, 
+Deiene, C. G.
+, 
+de Leaniz, E.
+, 
+Verspoor, H. S.
+, 
+Coulson, M.
+, &amp; 
+Consuegra, S.
+ (2019). DNA methylation changes in the sperm of captive‐reared fish: A route to epigenetic introgression in wild populations. Molecular Biology and Evolution, 36(10), 2205–2211. 10.1093/molbev/msz135
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/molbev/msz135"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6759066"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31180510"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Biology and Evolution&amp;title=DNA methylation changes in the sperm of captive‐reared fish: A route to epigenetic introgression in wild populations&amp;author=D. Rodriguez Barreto&amp;author=C. G. Deiene&amp;author=E. de Leaniz&amp;author=H. S. Verspoor&amp;author=M. Coulson&amp;volume=36&amp;issue=10&amp;publication_year=2019&amp;pages=2205-2211&amp;pmid=31180510&amp;doi=10.1093/molbev/msz135&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0057"><mixed-citation id="eva13235-cit-0057"><named-content content-type="citation-string">
+
+Rougeux, C.
+, 
+Laporte, M.
+, 
+Gagnaire, P.‐A.
+, &amp; 
+Bernatchez, L.
+ (2019). The role of genomic vs. epigenomic variation in shaping patterns of convergent transcriptomic variation across continents in a young species complex. BioRxiv 784231. 10.1101/784231
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1101/784231"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BioRxiv&amp;title=The role of genomic vs. epigenomic variation in shaping patterns of convergent transcriptomic variation across continents in a young species complex&amp;author=C. Rougeux&amp;author=M. Laporte&amp;author=P.‐A. Gagnaire&amp;author=L. Bernatchez&amp;publication_year=2019&amp;doi=10.1101/784231&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0058"><mixed-citation id="eva13235-cit-0058"><named-content content-type="citation-string">
+
+Salonius, K.
+, &amp; 
+Iwama, G. K.
+ (1993). Effects of early rearing environment on stress response, immune function, and disease resistance in juvenile Coho (<italic>Oncorhynchus kisutch</italic>) and Chinook salmon (<italic>O. tshawytscha</italic>). Canadian Journal of Fisheries and Aquatic Sciences, 50(4), 759–766. 10.1139/f93-087.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/f93-087"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Canadian Journal of Fisheries and Aquatic Sciences&amp;title=Effects of early rearing environment on stress response, immune function, and disease resistance in juvenile Coho (Oncorhynchus kisutch) and Chinook salmon (O. tshawytscha)&amp;author=K. Salonius&amp;author=G. K. Iwama&amp;volume=50&amp;issue=4&amp;publication_year=1993&amp;pages=759-766&amp;doi=10.1139/f93-087&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0059"><mixed-citation id="eva13235-cit-0059"><named-content content-type="citation-string">
+
+Scoville, A. G.
+, &amp; 
+Pfrender, M. E.
+ (2010). Phenotypic plasticity facilitates recurrent rapid adaptation to introduced predators. Proceedings of the National Academy of Sciences of the United States of America, 107(9), 4260–4263. 10.1073/pnas.0912748107
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.0912748107"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2840169"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20160080"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proceedings of the National Academy of Sciences of the United States of America&amp;title=Phenotypic plasticity facilitates recurrent rapid adaptation to introduced predators&amp;author=A. G. Scoville&amp;author=M. E. Pfrender&amp;volume=107&amp;issue=9&amp;publication_year=2010&amp;pages=4260-4263&amp;pmid=20160080&amp;doi=10.1073/pnas.0912748107&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0060"><mixed-citation id="eva13235-cit-0060"><named-content content-type="citation-string">
+
+Swain, D. P.
+, 
+Riddell, B. E.
+, &amp; 
+Murray, C. B.
+ (1991). Morphological differences between hatchery and wild populations of Coho salmon (<italic>Oncorhynchus kisutch</italic>): Environmental versus genetic origin. Canadian Journal of Fisheries and Aquatic Sciences, 48(9), 1783–1791. 10.1139/f91-210
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/f91-210"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Canadian Journal of Fisheries and Aquatic Sciences&amp;title=Morphological differences between hatchery and wild populations of Coho salmon (Oncorhynchus kisutch): Environmental versus genetic origin&amp;author=D. P. Swain&amp;author=B. E. Riddell&amp;author=C. B. Murray&amp;volume=48&amp;issue=9&amp;publication_year=1991&amp;pages=1783-1791&amp;doi=10.1139/f91-210&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0061"><mixed-citation id="eva13235-cit-0061"><named-content content-type="citation-string">
+Team, R. Core
+. 2014. R: A language and environment for statistical computing. R Foundation for Statistical Computing. 2013. ISBN 3‐900051‐07‐0.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=R: A language and environment for statistical computing&amp;publication_year=2014&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0062"><mixed-citation id="eva13235-cit-0062"><named-content content-type="citation-string">
+
+Thériault, V.
+, 
+Moyer, G. R.
+, 
+Jackson, L. S.
+, 
+Blouin, M. S.
+, &amp; 
+Banks, M. A.
+ (2011). Reduced reproductive success of hatchery Coho salmon in the wild: Insights into most likely mechanisms. Molecular Ecology, 20(9), 1860–1869. 10.1111/j.1365-294X.2011.05058.x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/j.1365-294X.2011.05058.x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21438931"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Reduced reproductive success of hatchery Coho salmon in the wild: Insights into most likely mechanisms&amp;author=V. Thériault&amp;author=G. R. Moyer&amp;author=L. S. Jackson&amp;author=M. S. Blouin&amp;author=M. A. Banks&amp;volume=20&amp;issue=9&amp;publication_year=2011&amp;pages=1860-1869&amp;pmid=21438931&amp;doi=10.1111/j.1365-294X.2011.05058.x&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0063"><mixed-citation id="eva13235-cit-0063"><named-content content-type="citation-string">
+
+Thompson, N. F.
+, &amp; 
+Blouin, M. S.
+ (2015). The effects of high rearing density on the potential for domestication selection in hatchery culture of steelhead (<italic>Oncorhynchus mykiss</italic>). Canadian Journal of Fisheries and Aquatic Sciences, 72(12), 1829–1834. 10.1139/cjfas-2015-0233
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/cjfas-2015-0233"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Canadian Journal of Fisheries and Aquatic Sciences&amp;title=The effects of high rearing density on the potential for domestication selection in hatchery culture of steelhead (Oncorhynchus mykiss)&amp;author=N. F. Thompson&amp;author=M. S. Blouin&amp;volume=72&amp;issue=12&amp;publication_year=2015&amp;pages=1829-1834&amp;doi=10.1139/cjfas-2015-0233&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0064"><mixed-citation id="eva13235-cit-0064"><named-content content-type="citation-string">
+
+Verhoeven, K. J. F.
+, 
+von Holdt, B. M.
+, &amp; 
+Sork, V. L.
+ (2016). Epigenetics in ecology and evolution: What we know and what we need to know. Molecular Ecology, 25(8), 1631–1638. 10.1111/mec.13617
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/mec.13617"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26994410"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Ecology&amp;title=Epigenetics in ecology and evolution: What we know and what we need to know&amp;author=K. J. F. Verhoeven&amp;author=B. M. von Holdt&amp;author=V. L. Sork&amp;volume=25&amp;issue=8&amp;publication_year=2016&amp;pages=1631-1638&amp;pmid=26994410&amp;doi=10.1111/mec.13617&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0065"><mixed-citation id="eva13235-cit-0065"><named-content content-type="citation-string">
+
+Vineis, P.
+, 
+Chatziioannou, A.
+, 
+Cunliffe, V. T.
+, 
+Flanagan, J. M.
+, 
+Hanson, M.
+, 
+Kirsch‐Volders, M.
+, &amp; 
+Kyrtopoulos, S.
+ (2017). Epigenetic memory in response to environmental stressors. The FASEB Journal, 31(6), 2241–2251. 10.1096/fj.201601059RR
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1096/fj.201601059RR"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28280003"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The FASEB Journal&amp;title=Epigenetic memory in response to environmental stressors&amp;author=P. Vineis&amp;author=A. Chatziioannou&amp;author=V. T. Cunliffe&amp;author=J. M. Flanagan&amp;author=M. Hanson&amp;volume=31&amp;issue=6&amp;publication_year=2017&amp;pages=2241-2251&amp;pmid=28280003&amp;doi=10.1096/fj.201601059RR&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0066"><mixed-citation id="eva13235-cit-0066"><named-content content-type="citation-string">
+
+Vogt, G.
+ (2017). Facilitation of environmental adaptation and evolution by epigenetic phenotype variation: insights from clonal, invasive, polyploid, and domesticated animals. Environmental Epigenetics, 3(1), dvx002. 10.1093/eep/dvx002
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/eep/dvx002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5804542"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29492304"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Environmental Epigenetics&amp;title=Facilitation of environmental adaptation and evolution by epigenetic phenotype variation: insights from clonal, invasive, polyploid, and domesticated animals&amp;author=G. Vogt&amp;volume=3&amp;issue=1&amp;publication_year=2017&amp;pages=dvx002&amp;pmid=29492304&amp;doi=10.1093/eep/dvx002&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0067"><mixed-citation id="eva13235-cit-0067"><named-content content-type="citation-string">
+
+Zaghlool, S. B.
+, 
+Al‐Shafai, M.
+, 
+Al, W. A.
+, 
+Muftah, P. K.
+, 
+Gieger, C.
+, 
+Waldenberger, M.
+, 
+Falchi, M.
+, &amp; 
+Suhre, K.
+ (2016). Mendelian inheritance of trimodal CpG methylation sites suggests distal Cis‐acting genetic effects. Clinical Epigenetics, 8(1), 124. 10.1186/s13148-016-0295-1
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13148-016-0295-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5120560"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27895808"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Clinical Epigenetics&amp;title=Mendelian inheritance of trimodal CpG methylation sites suggests distal Cis‐acting genetic effects&amp;author=S. B. Zaghlool&amp;author=M. Al‐Shafai&amp;author=W. A. Al&amp;author=P. K. Muftah&amp;author=C. Gieger&amp;volume=8&amp;issue=1&amp;publication_year=2016&amp;pages=124&amp;pmid=27895808&amp;doi=10.1186/s13148-016-0295-1&amp;"/></mixed-citation></ref><ref id="eva13235-bib-0068"><mixed-citation id="eva13235-cit-0068"><named-content content-type="citation-string">
+
+Zimmerman, M. S.
+, 
+Irvine, J. R.
+, 
+O’Neill, M.
+, 
+Anderson, J. H.
+, 
+Greene, C. M.
+, 
+Weinheimer, J.
+, 
+Trudel, M.
+, &amp; 
+Rawson, K.
+ (2015). Spatial and temporal patterns in smolt survival of wild and hatchery Coho salmon in the Salish Sea. Marine and Coastal Fisheries, 7(1), 116–134. 10.1080/19425120.2015.1012246
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/19425120.2015.1012246"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Marine and Coastal Fisheries&amp;title=Spatial and temporal patterns in smolt survival of wild and hatchery Coho salmon in the Salish Sea&amp;author=M. S. Zimmerman&amp;author=J. R. Irvine&amp;author=M. O’Neill&amp;author=J. H. Anderson&amp;author=C. M. Greene&amp;volume=7&amp;issue=1&amp;publication_year=2015&amp;pages=116-134&amp;doi=10.1080/19425120.2015.1012246&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><caption><p>Fig S1</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s004.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/1521a02ec181/EVA-14-2402-s004.pdf?><?cloudpmc-bucket app?><?size 57314?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material2_reqid_" position="float"><caption><p>Fig S2</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s005.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/e43204e1948a/EVA-14-2402-s005.pdf?><?cloudpmc-bucket app?><?size 5333?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material3_reqid_" position="float"><caption><p>Fig S3</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s006.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/cd5aa1f660a6/EVA-14-2402-s006.pdf?><?cloudpmc-bucket app?><?size 9284?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material4_reqid_" position="float"><caption><p>Table S1‐S3</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s007.xlsx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.spreadsheetml.sheet"><?cloudpmc-path 6d4b/8549618/7b3b53e33a92/EVA-14-2402-s007.xlsx?><?cloudpmc-bucket app?><?size 66492?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material5_reqid_" position="float"><caption><p>Table S4</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s002.xlsx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.spreadsheetml.sheet"><?cloudpmc-path 6d4b/8549618/418badb6152c/EVA-14-2402-s002.xlsx?><?cloudpmc-bucket app?><?size 64254?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material6_reqid_" position="float"><caption><p>Appendix S1</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s003.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/06b12af0fd50/EVA-14-2402-s003.pdf?><?cloudpmc-bucket app?><?size 949619?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material7_reqid_" position="float"><caption><p>Appendix S2</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EVA-14-2402-s001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 6d4b/8549618/ea34a97290ec/EVA-14-2402-s001.pdf?><?cloudpmc-bucket app?><?size 2574183?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec><sec id="_adda93_" xml:lang="en" sec-type="data-availability-statement" disp-level="2"><title>Data Availability Statement</title><p>The sequences reported in this paper will be available in the National Center for Biotechnology Information Sequence Read Archive, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ncbi.nlm.nih.gov/sra/" ext-link-type="uri">https://www.ncbi.nlm.nih.gov/sra/</ext-link> (BioProject accession no. PRJNA678281).</p></sec></sec></body></article>

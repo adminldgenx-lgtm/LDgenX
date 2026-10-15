@@ -1,19 +1,23 @@
-import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { applications, studies, resources, team, partners } from '../content/fr';
-import { Photo, Reveal } from '../components/ui';
-import { usePointerVars } from '../components/motion';
+import { useCatalog, useRoutes } from '../i18n';
+import type { Catalog } from '../content/catalog';
+import { Photo, Reveal, TiltLink } from '../components/ui';
+import { useRef, type CSSProperties } from 'react';
+import { useReducedMotion, useSeen } from '../components/motion';
+import { DecodeOnce } from '../components/Decode';
 
 export function ApplicationGrid() {
+  const { applications } = useCatalog();
+  const r = useRoutes();
   return (
     <div className="application-grid">
       {applications.map((s, i) => (
         <Reveal
-          key={s.slug}
+          key={s.id}
           className={`application-tile application-tile-${i}`}
           delay={(i % 2) * 0.08}
         >
-          <Link to={`/applications/${s.slug}`}>
+          <Link to={r.application(s.id)}>
             <Photo
               name={s.image}
               alt=""
@@ -30,102 +34,75 @@ export function ApplicationGrid() {
   );
 }
 
+/** Facts of a study; their values decode, one after another, when they come into view. */
 export function StudyFacts({ facts }: { facts: { label: string; value: string }[] }) {
+  const ref = useRef<HTMLDListElement>(null);
+  const seen = useSeen(ref);
+  const reduced = useReducedMotion();
   return (
-    <dl className="study-facts">
-      {facts.map((f) => (
+    <dl ref={ref} className="study-facts">
+      {facts.map((f, i) => (
         <div key={f.label}>
           <dt>{f.label}</dt>
-          <dd>{f.value}</dd>
+          <dd>
+            <DecodeOnce text={f.value} play={seen && !reduced} delay={150 + i * 160} />
+          </dd>
         </div>
       ))}
     </dl>
   );
 }
 
-export function StudyGrid({ all = false }: { all?: boolean }) {
-  return (
-    <div className={`study-grid ${all ? 'study-grid-all' : ''}`}>
-      {studies.slice(0, all ? 4 : 2).map((s, i) => (
-        <Reveal key={s.slug} delay={(i % 2) * 0.1}>
-          <Link className="editorial-item study-card" to={`/etudes-de-cas/${s.slug}`}>
-            <div className="editorial-image">
-              <Photo name={s.image} alt="" sizes="(max-width: 700px) 90vw, 50vw" />
-            </div>
-            <p className="item-category">{s.category}</p>
-            <h3>{s.title}</h3>
-            <StudyFacts facts={s.facts} />
-          </Link>
-        </Reveal>
-      ))}
-    </div>
-  );
-}
-
-export function ResourceGrid({ items = resources }: { items?: typeof resources }) {
+export function ResourceGrid({ items }: { items?: Catalog['resources'] }) {
+  const { resources } = useCatalog();
+  const r = useRoutes();
   return (
     <div className="resource-grid">
-      {items.map((r, i) => (
-        <Reveal key={r.slug} delay={i * 0.06}>
-          <Link className="editorial-item" to={`/ressources/${r.slug}`}>
+      {(items ?? resources).map((item, i) => (
+        <Reveal key={item.id} delay={i * 0.06}>
+          <TiltLink className="editorial-item" to={r.resource(item.id)}>
             <div className="editorial-image">
-              <Photo name={r.image} alt="" sizes="(max-width: 700px) 90vw, 33vw" />
+              <Photo name={item.image} alt="" sizes="(max-width: 700px) 90vw, 33vw" />
             </div>
-            <p className="item-category">{r.category}</p>
-            <h3>{r.title}</h3>
-            <p>{r.intro}</p>
-          </Link>
+            <p className="item-category">{item.category}</p>
+            <h3>{item.title}</h3>
+            <p>{item.intro}</p>
+          </TiltLink>
         </Reveal>
       ))}
     </div>
   );
 }
 
-export function TeamList({ detailed = false }: { detailed?: boolean }) {
-  return (
-    <div className={`team-list ${detailed ? 'team-list-detailed' : ''}`}>
-      {team.map((p, i) => (
-        <Reveal key={p.name} className="team-person" delay={i * 0.12}>
-          <TeamPortrait photo={p.photo} />
-          <div>
-            <h3>{p.name}</h3>
-            <p className="team-role">{p.role}</p>
-            {detailed && <p className="team-bio">{p.bio}</p>}
-          </div>
-        </Reveal>
-      ))}
-    </div>
-  );
-}
-
-/** A portrait that leans towards the pointer, the face moving a little less than the frame. */
-function TeamPortrait({ photo }: { photo: string }) {
-  const ref = useRef<HTMLElement>(null);
-  usePointerVars(ref, 6);
-  return (
-    <figure ref={ref} className="team-portrait">
-      <Photo name={photo} alt="" sizes="(max-width: 700px) 90vw, 30vw" />
-      <span className="team-portrait-glare" aria-hidden="true" />
-    </figure>
-  );
-}
-
+/** The partners as published on ldgenx.fr: one wall of logos per group, each logo lifting into
+ *  colour as the wall comes into view. */
 export function PartnerList() {
+  const { partnerIntro } = useCatalog();
   return (
     <div className="partner-groups">
-      {partners.map((p) => (
-        <Reveal key={p.title} className="partner-group">
-          <div>
-            <h2>{p.title}</h2>
-            <p>{p.description}</p>
-          </div>
-          <ul>
-            {p.names.map((name) => (
-              <li key={name}>{name}</li>
-            ))}
-          </ul>
-        </Reveal>
+      {partnerIntro.groups.map((group) => (
+        <PartnerGroup key={group.title} group={group} />
       ))}
     </div>
+  );
+}
+
+function PartnerGroup({ group }: { group: Catalog['partnerIntro']['groups'][number] }) {
+  const ref = useRef<HTMLUListElement>(null);
+  const seen = useSeen(ref);
+  return (
+    <Reveal className="partner-group">
+      <div>
+        <h2>{group.title}</h2>
+        {group.text && <p>{group.text}</p>}
+      </div>
+      <ul ref={ref} className="partner-logos" data-seen={seen || undefined}>
+        {group.members.map((m, i) => (
+          <li key={m.logo} style={{ '--i': i } as CSSProperties}>
+            <img src={`/partners/${m.logo}.webp`} alt={m.name} loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
+    </Reveal>
   );
 }

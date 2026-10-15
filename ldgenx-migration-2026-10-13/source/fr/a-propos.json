@@ -1,0 +1,298 @@
+{
+  "requested_url": "https://www.ldgenx.fr/a-propos",
+  "final_url": "https://www.ldgenx.fr/a-propos",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:58.052966+00:00",
+  "language": "fr",
+  "title": "LDgenX Analyse & expertise génomique pour la conservation ",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "ADNe Expert génétique génomique conservation protection de la biodiversité Identification et Inventaire espèces gestion sélection bioinformatique séquençage ONT"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/a-propos.html",
+  "raw_sha256": "7dce8453914e7d8353f7f11775eaadf5c6544d73ce74b7c9f95f4f4be4e5f71a",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "riviere",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62a9d2962acf8-img-20190805-111018/320-62a9d2962acf8-img-20190805-111018.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Montage projet LDgenX",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6852e0a31ff62-plaquette-services/488-6852e0a31ff62-plaquette-services.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "A propos de LDgenX"
+    },
+    {
+      "level": 2,
+      "text": "La génomique au service de la biodiversité, de l'agriculture et de l'aquaculture"
+    },
+    {
+      "level": 2,
+      "text": "Notre expertise"
+    },
+    {
+      "level": 2,
+      "text": "Notre mission"
+    },
+    {
+      "level": 2,
+      "text": "Une entreprise DeepTech innovante"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/a-propos.md",
+  "content_characters": 2908,
+  "content_sha256": "ee8ea4bb2deff9b70b46c66013fca63568e78bcda9dd03fcd70a081861d1b5d0",
+  "body_text": "A propos de LDgenX\nLa génomique au service de la biodiversité, de l'agriculture et de l'aquaculture\n        LDgenX est une entreprise DeepTech spécialisée dans les applications de la génomique à la conservation de la biodiversité, à l'agriculture durable et à l'aquaculture.\n Nous accompagnons les acteurs publics et privés dans leurs projets de recherche, de surveillance environnementale et d'innovation grâce à des solutions combinant ADN environnemental, génomique des populations, séquençage haut débit, dPCR et bioinformatique.\n Notre ambition est de rendre les technologies génomiques accessibles et utiles à la prise de décision pour répondre aux défis environnementaux d'aujourd'hui et de demain.\n            Notre expertise\n        Forte de plus de 10 années d'expérience en génomique et bioinformatique, l'équipe LDgenX intervient sur l'ensemble de la chaîne de valeur :\n  Conception scientifique des projets Stratégie d'échantillonnage Analyses moléculaires Développement d'outils génétiques Séquençage et dPCR Analyses bioinformatiques Interprétation et valorisation des résultats\n \nNous développons des solutions adaptées aux besoins spécifiques de chaque projet afin d'apporter des résultats robustes et directement exploitables.\n            Notre mission\n        Nous sommes convaincus que les outils génomiques constituent un levier majeur pour améliorer la connaissance, la gestion et la préservation du vivant.Notre mission est d'accompagner les gestionnaires, chercheurs, collectivités, bureaux d'études et entreprises dans l'utilisation de ces technologies afin de produire des données fiables pour éclairer leurs décisions.\n            Une entreprise DeepTech innovante\n        L'innovation est au cœur du développement de LDgenX.\n Nous menons des activités de recherche et développement visant à concevoir les outils génomiques de demain pour la surveillance de la biodiversité et la gestion durable des ressources naturelles.\n Nos projets sont soutenus par plusieurs dispositifs d'innovation et partenaires institutionnels :Label DeepTechBourse French Tech EmergenceCréaliaBpifrancePôle Universitaire d'InnovationInstituts de recherche et universités partenaires\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/a-propos.json"
+}

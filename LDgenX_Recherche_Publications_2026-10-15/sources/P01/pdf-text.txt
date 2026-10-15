@@ -1,0 +1,945 @@
+                                                                                                                                                                GBE
+
+Strong Parallel Differential Gene Expression Induced by
+Hatchery Rearing Weakly Associated with Methylation
+Signals in Adult Coho Salmon (O. kisutch)
+Maeva Leitwein1,2,*, Kyle Wellband1,3, Hugo Cayuela1,4,5, Jérémy Le Luyer6, Kayla Mohns7,
+Ruth Withler7, and Louis Bernatchez 1
+
+1
+    Institut de Biologie Intégrative et des Systèmes (IBIS), Université Laval, Québec, QC, Canada G1V 0A6
+2
+    Centre pour la Biodiversité Marine, l’exploitation et la Conservation, Université de Montpellier, Centre National de la Recherche
+Scientiﬁque, Ifremer, Institut de Recherche pour le Développement, Palavas-les-Flots, France
+3
+    Fisheries and Oceans Canada, Paciﬁc Science Enterprise Centre, West Vancouver, BC, Canada V7V 1N6
+4
+    Department of Ecology and Evolution, University of Lausanne, 1015 Lausanne, Switzerland
+5
+    Laboratoire de Biométrie et Biologie Evolutive, Université Lyon 1, CNRS, UMR 5558, F-769622 Villeurbanne, France
+6
+    Ifremer, UMR 241 Ecosystèmes Insulaires Océaniens, Centre Ifremer du Paciﬁque, BP 49, 98719 Tahiti, French Polynesia
+7
+    Department of Fisheries and Oceans Canada, Paciﬁc Biological Station, Nanaimo, BC, Canada V9T 6N7
+
+*Corresponding author: E-mail: maeva.leitwein.pro@gmail.com.
+Accepted: 07 March 2022
+
+
+
+Abstract
+Human activities and resource exploitation led to a massive decline of wild salmonid populations, consequently, numerous
+conservation programs have been developed to supplement wild populations. However, many studies documented re-
+duced ﬁtness of hatchery-born relative to wild ﬁsh. Here, by using both RNA sequencing and Whole Genome Bisulﬁte
+Sequencing of hatchery and wild-born adult Coho salmon (Oncorhynchus kisutch) originating from two previously studied
+river systems, we show that early-life hatchery-rearing environment-induced signiﬁcant and parallel gene expression dif-
+ferentiation is maintained until Coho come back to their natal river for reproduction. A total of 3,643 genes differentially
+expressed and 859 coexpressed genes were downregulated in parallel in hatchery-born ﬁsh from both rivers relative to
+their wild congeners. Among those genes, 26 displayed a signiﬁcant relationship between gene expression and the median
+gene body methylation and 669 single CpGs displayed a signiﬁcant correlation between methylation level and the asso-
+ciated gene expression. The link between methylation and gene expression was weak suggesting that DNA methylation
+is not the only player in mediating hatchery-related expression differences. Yet, signiﬁcant gene expression differentiation
+was observed despite 18 months spent in a common environment (i.e., the sea). Finally, the differentiation is observed in
+parallel in two different river systems, highlighting the fact that early-life environment may account for at least some of the
+reduced ﬁtness of the hatchery salmon in the wild. These results illustrate the relevance and importance of considering
+both epigenome and transcriptome to evaluate the costs and beneﬁts of large-scale supplementation programs.
+Key words: gene expression, epigenomic, hatchery, conservation, ﬁtness, salmonid.
+
+
+
+
+© The Author(s) 2022. Published by Oxford University Press on behalf of Society for Molecular Biology and Evolution.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https://creativecommons.org/licenses/by-nc/4.0/), which permits
+non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact journals.permissions@oup.com
+
+
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036                           Advance Access publication 11 March 2022                                                   1
+Leitwein et al.                                                                                                     GBE
+
+  Signiﬁcance
+  Massive Coho salmon population declines led to the supplementation of hatchery-born ﬁsh into the wild. However, des-
+  pite the apparent absence of genetic differentiation, hatchery ﬁsh still display a lower ﬁtness compared with their wild
+  congeners. Here we highlight, in parallel in two distinct river systems, that early-life hatchery environment induces both
+  signiﬁcant gene expression and epigenomic (i.e., DNA methylation) differentiation that may account for the reduced
+  ﬁtness of hatchery ﬁsh in nature. However, the link between patterns of epigenomic and that of gene expression
+  was weak, which suggests that DNA methylation is not the only player in mediating hatchery-related expression differ-
+  ences. Finally, our results also indicate that the dynamic of epigenomic variation should be considered to further evaluate
+  the costs and beneﬁts of large-scale supplementation with captive bred ﬁsh.
+
+
+
+Introduction                                                         with wild congeners in the steelhead trout (Oncorhynchus
+                                                                     mykiss) (Christie et al. 2016). These differences may impact
+Worldwide exploitation of wild animals and plants by
+                                                                     hatchery-born ﬁsh ﬁtness as differentially expressed genes
+means of ﬁshing, hunting, and other harvesting activities
+                                                                     were involved in immunity and metabolism (Christie et al.
+along with rapid environmental changes is rapidly depleting
+                                                                     2016). As a consequence, it is highly relevant to understand
+their abundance (Laikre et al. 2010). Numerous conserva-
+                                                                     the possible role of non-genetic processes underlying such
+tion programs have thus been developed toward the goal
+                                                                     “maladaptive” phenotypic plasticity inducing ﬁtness
+of rehabilitating declining or threatened species through
+                                                                     reduction.
+the release of captive or cultivated breeds (Olney et al.
+                                                                        Indeed, it has been well documented that non-genetic
+1994; Waples and Drake 2004; Allendorf et al. 2010;
+                                                                     sources of heterogeneity may induce phenotypic plasticity
+Laikre et al. 2010; Allendorf 2017). However, although
+                                                                     (Long et al. 2017; Capp 2021) with important evolutionary
+translocation or supplementation of captive species can
+                                                                     consequences, either in an adaptive or maladaptive manner
+lead to demographic increases in population size, they
+                                                                     (Aubin-Horth and Renn 2009). In particular, epigenomic
+may also come with negative genetic effects on wild popu-
+                                                                     variations such as DNA methylation, histone modiﬁcation,
+lations (i.e., loss of genetic diversity, local adaptation, or lo-
+                                                                     small RNA sequences, or nucleosome positioning
+cal population structure) (Frankham 2008; Laikre et al.
+                                                                     (Richards et al. 2017; Laubach et al. 2018) have the poten-
+2010; Allendorf 2017) as well as reduction in ﬁtness (Ford
+                                                                     tial to modulate gene expression and thus the phenotypic
+2002; Araki et al. 2007; Araki et al. 2008). Salmonid species
+                                                                     response to environmental stressors (Verhoeven et al.
+are among the most exploited and farmed ﬁsh worldwide
+                                                                     2016a). Consequently, epigenomic variation may play
+due to their major socioeconomic value (Aas et al. 2018).
+                                                                     an important role in evolution by inﬂuencing the effect of
+Consequently, numerous wild salmonid populations have
+                                                                     natural selection and ﬁtness of natural populations
+undergone dramatic declines leading to the establishment
+                                                                     (Pfennig et al. 2010; Ecker et al. 2018; Laubach et al.
+of a broad diversity of management and conservation pro-
+                                                                     2018; Strader et al. 2020).
+grams (Noakes et al. 2000; Utter 2004; Irvine and
+                                                                        Major questions remain about how environmentally in-
+Fukuwaka 2011; Aas et al. 2018).
+                                                                     duced epigenomic modiﬁcations inﬂuence individual gene
+   Despite massive supplementation programs, numerous
+wild salmonid populations are still declining (Augerot               expression and in turn its potential role for species evolution
+2005; Araki et al. 2008). Many studies have focused on               (Aller et al. 2018; Ecker et al. 2018; Capp 2021; Christensen
+how genetic differentiation induced by selection during              et al. 2021). For example, both positive and negative corre-
+hatchery rearing may impact ﬁtness in the wild (Allendorf            lations between gene expression and DNA methylation
+et al. 2010; Araki and Schmid 2010; Mäkinen et al. 2015;             have been observed in human cancer cell suggesting both
+Christie et al. 2016). Although integrated hatchery man-             direct and indirect effects of DNA methylation (Long et al.
+agement programs aim to minimize the potential genetic               2017). Additionally, there is conﬂicting evidence pertaining
+differentiation, many studies have documented that                   to genomic regions in regulating expression with DNA
+hatchery-born salmon display maladaptive traits and re-              methylation in gene promoters (Lowdon et al. 2016), en-
+duced ﬁtness in the natural environment compared with                hancers (Bogdanović et al. 2016), and ﬁrst introns
+their wild counterpart despite negligible to weak genetic            (Anastasiadi et al. 2018). Recently, Lioznova et al. (2019)
+differentiation between them (Araki et al. 2007;                     demonstrated that methylation at a single CpG site could
+Chittenden et al. 2010; Christie et al. 2014; Neff et al.            be more predictive of the level of gene expression than
+2015; Christie et al. 2016; Le Luyer et al. 2017). For ex-           the average promoter/gene body methylation rate; they de-
+ample, it has been shown that a single generation of hatch-          ﬁned such sites as “CpGs trafﬁc lights” (CpGs TL) (Lioznova
+ery rearing leads to the differential expression of 723 genes        et al. 2019).
+
+
+2 Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036 Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                                        GBE
+
+    For Coho salmon (Oncorhynchus kysutch), early-life en-          methylation within the associated promoter/gene body to
+vironmentally induced epimarks (i.e. DNA methylation) dur-          search for CpG TL (i.e. CpGs with a signiﬁcant correlation
+ing hatchery rearing have been documented both in                   between methylation and the associated gene expression)
+juveniles (Le Luyer et al. 2017) and in germ line cell of ma-       (Lioznova et al. 2019). Finally, we compared genes with a
+ture males (Leitwein et al. 2021) suggesting a possible role        signiﬁcant correlation between methylation and gene ex-
+of epigenomic modiﬁcations in the observed lower repro-             pression for both methods and performed a gene ontology
+ductive success of hatchery-born individuals (Neff et al.           analysis to retrieve the biological processes being involved.
+2015). However, a mechanistic link between differential
+methylation, gene expression, and the resulting phenotypic
+differences observed between wild and hatchery-born indi-           Results
+viduals (Neff et al. 2015) remains unclear although it has
+been recently reported in Atlantic Salmon (Salmo salar)             Differentially Expressed Genes
+that environmental stressors (i.e. increased temperature            RNA sequencing performed on the 47 Coho salmon livers
+and hypoxia) induced epigenetic marks that correlated               generated an average of 57.4 million pair-end reads per
+with gene expression, implying epigenetically mediated              sample (range: 33.6–118.7 M) and expression was quanti-
+physiological acclimation to environmental changes                  ﬁed for 25,246 genes that passed minimum coverage re-
+(Beemelmanns et al. 2021). This study thus strengthens              quirements. We used a negative-binomial generalized
+the hypothesis that hatchery-induced early-life epigenomic          linear model as implemented in edgeR (Robinson et al.
+marks may affect gene expression and thus be partly re-             2010) to test for differential expression due to factors of
+sponsible for the observed reduced ﬁtness in hatchery-born          rearing environment, sex, river, and all possible interac-
+individuals. However, DNA methylation can be reversible             tions. Overall, no gene showed signiﬁcant interactions be-
+(Edwards et al. 2017) and the dynamics of methylation is            tween sex and rearing environment or between sex and
+still unclear. Consequently, additional research is needed          river, whereas, eight genes had a signiﬁcant interaction be-
+to enlighten how early-life epigenomic modiﬁcations may             tween river and rearing environment. Using global false dis-
+modulate ﬁtness through gene regulation and its potential           covery rates (FDRs), we identiﬁed 3,643 genes that were
+role in evolution (Angers et al. 2010; Verhoeven et al. 2016;       differentially expressed in parallel between hatchery and
+Richards et al. 2017).                                              wild-born Coho from Conuma and Quinsam river systems
+    Our previous studies on DNA methylation in this system          (ﬁgs. 1 and 2). A larger proportion of genes (χ2df = 1 =9.2,
+were performed on both white muscle tissue and sperm (Le            P-value = 0.002) were downregulated (52.5%; 1,913
+Luyer et al. 2017; Leitwein et al. 2021). Because it may be         genes) in hatchery ﬁsh compared with wild ﬁsh (47.5%;
+tissue speciﬁc (Blake et al. 2020; Laporte et al. 2019), doc-       1,730 genes). We also identiﬁed 4,801 genes that were dif-
+umenting patterns of DNA methylation in various types of            ferentially expressed between populations from the two riv-
+tissues are necessary toward a full understanding of epi-           ers (ﬁg. 1). A larger proportion of genes (χ2df = 1 = 8.7,
+genetic variation in adaptation and evolution (Pfennig              P-value = 0.003) were upregulated (52.1%; 2,503 genes)
+et al. 2010; Ecker et al. 2018; Laporte et al. 2019; Strader        in the Conuma River population compared with that of
+et al. 2020; Anastasiadi et al. 2021). In this study, we per-       the Quinsam River population (47.9%; 2,298 genes). Sex
+formed tissue-matched RNA sequencing and Whole                      had the strongest main effect on gene expression with
+Genome Bisulﬁte Sequencing (WGBS) on liver tissue from              8,852 genes differentially expressed between males and fe-
+the hatchery and wild-born adult Coho salmon originating            males. Overexpression of genes (51.3%; 4,537 genes) was
+from two previously studied river systems. In doing so, our
+goals were to assess whether 1) there are signiﬁcant and
+parallel differences in gene expression between hatchery
+and wild-born adult individuals from two different river sys-
+tems and whether 2) patterns of gene expression were as-
+sociated with variation in DNA methylation. To do so, we
+ﬁrst searched for differentially expressed genes between
+hatchery and wild-born adult individuals. Then, we per-
+formed a gene network analysis to identify networks of co-
+expressed genes associated with the rearing environment
+(i.e. wild or hatchery) and their associated biological pro-
+cesses. To investigate the relationship between gene ex-
+pression and methylation, we assessed methylation at
+two levels; ﬁrst, we estimated the median promoter/gene                  FIG. 1.—Patterns of shared differentially expressed (DE) genes de-
+body methylation. Then, we used single dinucleotide CpG             tected across the three main effects of rearing environment, sex, and river.
+
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036    Advance Access publication 11 March 2022                                      3
+Leitwein et al.                                                                                                                      GBE
+
+
+                                                                                                                    Sex
+                                                                                                                    River
+                                                                                                                    Rearing
+                                                                                                                    Environment
+
+
+
+
+                                                                                                                     Log CPM Sex
+                                                                                                                       10       F
+                                                                                                                       5        M
+                                                                                                                       0     River
+                                                                                                                       −5       conuma
+                                                                                                                       −10      quinsam
+                                                                                                                             Rearing
+                                                                                                                             Environment
+                                                                                                                                hatchery
+                                                                                                                                wild
+
+
+
+
+     FIG. 2.—Patterns of DE genes (N = 3,643) in the liver between hatchery- and wild-reared Coho salmon. Expression values are TMM-normalized and log-
+transformed CPM sequencing reads. Samples and genes are clustered on the x- and y-axes, respectively, using Euclidean distance.
+
+
+
+4 Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036 Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                                                    GBE
+
+     A                                                                      B
+
+
+
+
+     FIG. 3.—WGCNA; (A) representation of the ﬁve modules of the coexpressed genes in liver tissue and their correlation coefﬁcient with the rearing envir-
+onment and P-values in brackets. (B) Representation of the 859 genes of the darkorange module membership (correlation with the main axis of module vari-
+ation) and the gene signiﬁcance which is the absolute value of the correlation between hatchery origin and gene expression.
+
+
+signiﬁcantly more common in males (χ2df = 1 = 5.6, P-value                       progesterone) biological processes (supplementary table
+= 0.03) than females (48.7%; 4,315 genes). There was                             S1, Supplementary Material online). The ﬁve modules all
+considerable overlap of genes (N = 3,943) displaying the in-                     showed a negative correlation with the rearing environ-
+ﬂuence of multiple main effects on their expression (ﬁg. 1).                     ment (ﬁg. 3A), which indicated that globally, genes of
+This degree of overlap was statistically much higher than                        this module are downregulated in hatchery-born adult
+would be expected by chance (N permutations: 1,000,                              Coho compared with adult wild-born Coho. For the darkor-
+mean + SD overlap expected: 3,166 + 34.9, P , 0.001).                            ange module, there was a strong correlation between gene
+This pattern was primarily driven by the excessive overlap                       module membership (correlation with the main axis of
+of differentially expressed genes (N = 1,444; ﬁg. 1) identi-                     module variation) and gene signiﬁcance (absolute value
+ﬁed between rivers and rearing environments (N permuta-                          of the correlation between hatchery origin and gene ex-
+tions: 1,000, mean + SD overlap expected: 692 + 21.8,                            pression) for genes in the dark orange module (r = 0.63,
+P , 0.001).                                                                      P , 0.001, ﬁg. 3B). The darkorange module contained
+                                                                                 443 of the genes (51.6% of the module) that were also
+Gene Network Analysis                                                            identiﬁed as being differentially expressed between rearing
+                                                                                 environments. The other four modules were enriched for
+Weighted gene coexpression network analysis (WGCNA)
+                                                                                 biological functions in phagocytosis (coral), endosome to
+identiﬁed 25 modules of coexpressed genes in liver tissue.
+                                                                                 lysosome transition (lightcoral), regulation of growth and
+Twenty coexpressed modules exhibited correlations
+                                                                                 differentiation of skeletal muscle (bisque4), and mitochon-
+(P , 0.05) with at least one of the explanatory variables
+                                                                                 drial gene expression as well as overlap with elements of
+(i.e. rearing environment, sex, river; supplementary
+                                                                                 the immune signaling pathways identiﬁed in the darkor-
+ﬁg. S1, Supplementary Material online). Among these,
+                                                                                 ange module (lightsteelblue1) (supplementary table S1,
+ﬁve modules showed a signiﬁcant correlation with the rear-
+                                                                                 Supplementary Material online).
+ing environment (FDR , 0.05; ﬁg. 3A). The module having
+the strongest correlation with rearing environment (i.e. dar-
+korange, r = −0.61, P = 5.8 × 10−6; ﬁg. 3A) comprised                            Methylation
+859 genes and was enriched for the immune system (i.e. tu-                       WGBS was performed for 47 individuals and produced a
+mor necrosis factor [TNF] and Interleukin [IL]-1β signaling                      mean of 225 million of reads per individual. A mean of
+and inﬂammatory responses) as well as circadian rhythm                           147 million of reads per individual was mapped to the ref-
+and response to reproductive hormone (i.e. estradiol and                         erence genome masked for cytosine to thymine (C–T)
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036               Advance Access publication 11 March 2022                                      5
+Leitwein et al.                                                                                                                                          GBE
+
+Table 1
+Summary of the relationship between gene expression and methylation of the differentially expressed (DE) genes between wild and hatchery-born
+individuals and the genes from the darkorange module (DO)
+Analyses          Region           Gene_id          Intercept     Slope       P-value       R2m       FDR       Mean          Sd          Mean            Sd         N CpG
+                                                                                                                meth         meth        logCPM        logCPM          TL
+DE and DO       GeneBody       LOC109865485           4.801       −0.354     4.43E−05       0.149    0.040       0.231       0.210        6.808          0.968          0
+DE              GeneBody       LOC109867584           0.769       −0.299     2.07E−04       0.204    0.081       0.766       0.214        1.099          0.900          2
+DE              GeneBody       nfkbie                −0.239       −0.299     5.70E−05       0.198    0.041       0.531       0.387       −0.353          0.897          0
+DE              GeneBody       LOC109898445           2.122       −0.287     6.60E−06       0.265    0.024       0.830       0.156        3.053          0.720          2
+DE              GeneBody       LOC109902736           0.880       −0.283     1.43E−05       0.231    0.026       0.721       0.176        1.308          0.759          1
+DE              GeneBody       LOC109864871           1.302       −0.243     2.57E−05       0.129    0.031       0.806       0.227        1.858          0.758          3
+DE              GeneBody       LOC109893103           0.774       −0.242     2.26E−04       0.172    0.081       0.734       0.218        1.055          0.709          0
+DE and DO       GeneBody       LOC109898379           2.917        0.138     1.01E−04       0.129    0.052       0.771       0.327        4.241          0.454          0
+DE              GeneBody       LOC109874102          −0.658        0.250     7.26E−05       0.187    0.043       0.775       0.330       −0.977          0.724          1
+DE              GeneBody       LOC109895975           2.424        0.631     1.61E−04       0.157    0.072       0.564       0.428        3.861          2.044          0
+DE              Promoter       LOC109870111           1.992        0.136     8.64E−05       0.147    0.100       0.637       0.334        2.856          0.437          0
+DE              Promoter       nek9                   1.886        0.187     2.89E−05       0.175    0.050       0.564       0.418        2.707          0.500          0
+DE              Promoter       LOC109870513           0.727        0.216     1.80E−05       0.247    0.050       0.666       0.359        1.072          0.569          0
+DO              GeneBody       LOC109865878           4.614       −0.215     6.67E−04       0.121    0.056       0.076       0.121        6.653          0.718          0
+DO              GeneBody       LOC109903482          −1.818       −1.024     5.83E−13       0.685    0.000       0.674       0.267       −2.567          1.680          6
+DO              GeneBody       LOC109887160           2.675       −0.471     1.77E−03       0.115    0.099       0.859       0.103        3.792          1.767          0
+DO              GeneBody       LOC109885345           2.506       −0.263     1.87E−03       0.145    0.099       0.626       0.360        3.568          0.938          0
+DO              GeneBody       LOC109907184           2.927        0.091     1.28E−03       0.164    0.090       0.836       0.278        4.233          0.291          1
+DO              GeneBody       LOC109882707           1.039        0.110     5.61E−04       0.218    0.053       0.585       0.413        1.501          0.307          1
+DO              GeneBody       jak1                   2.668        0.137     1.63E−03       0.124    0.099       0.772       0.312        3.867          0.485          0
+DO              GeneBody       dhx57                  2.041        0.185     1.57E−03       0.124    0.099       0.936       0.080        2.954          0.686          0
+DO              GeneBody       LOC109889095           2.040        0.185     5.08E−04       0.219    0.053       0.553       0.432        2.996          0.564          1
+DO              GeneBody       LOC109909164           1.085        0.188     7.27E−04       0.125    0.056       0.816       0.286        1.558          0.598          0
+DO              GeneBody       LOC109874412           1.494        0.306     4.99E−04       0.111    0.053       0.807       0.242        2.174          1.156          1
+DO              GeneBody       LOC109871914           1.376        0.332     1.85E−04       0.166    0.026       0.810       0.291        2.018          1.000          0
+DO              GeneBody       LOC109906505           2.086        0.438     1.17E−04       0.201    0.020       0.820       0.209        2.961          1.255         11
+DO              GeneBody       LOC109883217          −0.928        0.515     5.36E−05       0.256    0.015       0.803       0.209       −1.346          1.415          1
+    Region, region of the analyses (i.e., gene body or promotor); Gene_id, gene identiﬁcation; Intercept, value of the model intercept; Slope, value of the slope coefﬁcient;
+R²m, value of the marginal correlation; FDR, false discovery rate; Mean meth, mean methylation of the region; Sd meth, standard error of the mean methylation; Mean
+logCPM, mean of the gene expression (in count per million); Sd logCPM, standard error of the mean gene expression; N CpG TL, number of CpGs TL detected.
+
+
+polymorphism. Finally, a mean of 17 million symmetric CpG                                 slope coefﬁcient ranging from −0.354 to 0.631 (table 1
+context cytosines with at least 10× coverages were re-                                    and ﬁg. 4A). We also detected three genes for which
+trieved per individual.                                                                   gene expression was positively correlated with median
+                                                                                          methylation within the putative promoter region, with a
+Relationship Between Methylation and Gene Expression                                      slope coefﬁcient ranging from 0.727 to 1.992 (table 1,
+                                                                                          ﬁg. 4A). For the 859 genes comprised within the darkor-
+Median Promoter/Gene Body Methylation                                                     ange module, 16 genes displayed a signiﬁcant correlation
+Linear mixed models (LMMs) were built to evaluate the re-                                 between gene expression and methylation within the
+lationship between gene expression of the 3,643 differen-                                 gene body (table 1, ﬁg. 4D, supplementary ﬁg. 6,
+tially expressed genes and the 859 genes belonging to the                                 Supplementary Material online). Only two of these genes
+darkorange module and median methylation across gene                                      were identiﬁed in the differential expression analysis.
+body (hereafter: median gene methylation) and putative                                    Eleven and ﬁve genes displayed a positive and a negative
+promoter regions (5 kb region before the gene body; here-                                 correlation, respectively, with a slope coefﬁcient ranging
+after: median promoter methylation). For the 3,643 genes                                  from −1.024 to 0.515 (table 1, ﬁg. 4E).
+identiﬁed as differentially expressed between hatchery
+and wild ﬁsh, we found 10 genes for which gene expression
+was associated with median methylation within gene body                                   CpG “Trafﬁc Light”
+(table 1, ﬁg. 4A, supplementary ﬁg. 2, Supplementary                                      A total of 316,244 ﬁltered CpGs within the gene body of the
+Material online). Seven and three genes displayed a nega-                                 3,643 differentially expressed genes and 58,847 ﬁltered
+tive and a positive correlation between the gene expression                               CpGs within their putative promoter regions were kept for
+and the median gene methylation, respectively, with a                                     further analysis. For the 859 genes within the darkorange
+
+
+6 Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036 Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                                                                                                                            GBE
+
+  A                                DE genes Median Methylation            B                               DE genes CpGs TL Methylation            C                                  DE genes
+
+                             1.0                                                                    1.0
+                                                                                                                                                                    300
+
+
+
+                                                             ●                                      0.5
+   GLM slope coefficients
+
+
+
+
+                                                                          GLM slope coefficients
+
+
+
+
+                                                                                                                                                  Number of Genes
+                             0.5
+                                                                                                                                                                    200
+                                                                                                    0.0
+
+
+
+
+                             0.0                                                                   −0.5                                                             100
+
+
+
+
+                                                                                                   −1.0
+
+                            −0.5                                                                                                                                         0
+
+                                         Promoter        Gene Body                                              Promoter       Gene Body                                         1       2       3   4   5   6       7    8   9
+
+                                                                                                                                                                             Number of CpGs TL within Gene Body
+
+
+
+  D                                Darkorange Module Median Methylation   E                               Darkorange Module CpGs TL methylation   F                                  Darkorange Module genes
+
+                                                                                                    1.0
+
+
+                             0.5
+                                                                                                                                                                    60
+                                                                                                    0.5
+   GLM slope coefficients
+
+
+
+
+                                                                          GLM slope coefficients
+
+
+
+
+                                                                                                                                                  Number of Genes
+                             0.0
+                                                                                                    0.0
+                                                                                                                                                                    40
+
+
+
+                            −0.5
+                                                                                                   −0.5
+                                                                                                                                                                    20
+
+
+
+                            −1.0                             ●                                     −1.0
+
+                                                                                                                                                                     0
+
+                                         Promoter        Gene Body                                              Promoter       Gene Body                                     1       2       3   4   5   6   7   8       9 10 11
+
+                                                                                                                                                                             Number of CpGs TL within Gene Body
+
+     FIG. 4.—Relationship between methylation and gene expression of the 3,643 DE genes between wild and hatchery-born individuals (A) slope coefﬁcient
+of the generalized linear model (GLM) of the median gene methylation (orange circle) and median gene promotor methylation (5 kb; blue circle) and the gene
+expression models, (B) slope coefﬁcient of the GLM of CpG Trafﬁc Light methylation and the expression of the associated genes (orange circle) and the asso-
+ciated promotor regions (blue circle). (C) Histogram of the number of CpGs TL per DE genes. Relationship between methylation and gene expression of the
+859 coexpressed genes of the darkorange (DO) module: (D) slope coefﬁcient of the GLM models of the median gene methylation (orange circle) and the gene
+expression, (E) slope coefﬁcient of the GLM models of the CpG Trafﬁc Light methylation and the expression of the associated genes (orange circle) and the
+associated promotor regions (blue circle). (F) Histogram of the number of CpGs TL per DO genes.
+
+
+
+module, a total of 69,365 and 13,501 ﬁltered CpGs within                                                                    contained 2 CpGs TL, 22 genes contained 3 CpG TL, 2 genes
+the gene body and their putative promoter regions, respect-                                                                 contained 4 CpG TL, and 3 genes contained 5, 7, and 9
+ively, were kept for further analysis. As for the average                                                                   CpGs TL (ﬁg. 4C). In the putative promoter region, we found
+methylation analysis, we used LMMs to evaluate the rela-                                                                    nine genes with one CpG TL and two genes with three CpG
+tionship between methylation l and gene expression levels.                                                                  TLs within the 5 kb before the gene body.
+CpGs for which methylation signiﬁcantly explained gene ex-                                                                     A total of 142 CpG TLs were observed among 95 genes
+pression (FDR , 0.1) were considered as CpGs TL. A total of                                                                 of the darkorange module and 1 within the promotor re-
+527 and 12 CpG TL were found within the gene body and                                                                       gion with a slope coefﬁcient ranging from −1.05 to 0.62
+the promoter region of 399 and 11 genes differentially ex-                                                                  and 1.47, respectively (ﬁg. 4E). A total of 74 genes con-
+pressed between wild and hatchery with a slope coefﬁcient                                                                   tained 1 CpG TL, 15 genes contained 2 CpGs TL, 1 gene
+ranging from −0.80 to 0.61 and −0.76 to 0.51, respectively                                                                  with either 3, 5, 7, and 11 CpG TLs, and 2 genes with 6
+(ﬁg. 4B). A total of 311 genes contained 1 CpG TL, 61 genes                                                                 CpG TLs (ﬁg. 4F).
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036                                                           Advance Access publication 11 March 2022                                                                    7
+Leitwein et al.                                                                                                                                               GBE
+
+                       1.0
+
+
+                       0.8
+
+
+                       0.6
+
+
+                       0.4
+
+
+                       0.2
+  Slope Coefficient
+
+
+
+
+                       0.0
+
+
+                      −0.2
+
+
+                      −0.4
+
+
+                      −0.6
+
+
+                      −0.8
+
+
+                      −1.0
+
+
+
+
+                             1   2   3   4   5   6   7   8   9   10   11   12   13      14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30
+
+                                                                                 LGs
+
+
+
+     FIG. 5.—Slope coefﬁcient of the GLM models showing the relationship between gene expression of DE genes (violet) and DO modules genes (orange) and
+methylation of each CpG TL (diamond) and median gene body methylation (square). The relative position of each CpG TL (diamond) and genes (square) is
+reported for each 30 Coho salmon linkage groups.
+
+
+Genes Found by Both Methods                                                            correlated with gene expression was associated with genes
+Five of the 10 genes displaying a signiﬁcant correlation be-                           enriched for telomerase-related functions and hyperosmotic
+tween gene expression and the median methylation of the                                response (supplementary table S3, Supplementary Material
+gene body also contained at least one CpG TL (table 1). The                            online).
+median CpG methylation, gene expression, gene models,
+and CpG TL models of these ﬁve genes are presented in                                  Discussion
+Supplementary ﬁgs. 3–5, Supplementary Material online
+                                                                                       Dramatic declines of wild salmonid populations in the
+(see table 1 for gene names). For example, gene
+                                                                                       1990s led to the establishment of conservation and hatch-
+LOC109864871 on chromosome 19 displayed the stron-
+                                                                                       eries programs with the goal of restoring depleted popula-
+gest R² (R²c = 0.759, table 1) and contained three CpG
+                                                                                       tions. Despite these efforts, and hatchery programs
+TLs (table 1). The distribution of the CpGTL and the 10
+                                                                                       speciﬁcally managed to minimize genetic differences be-
+genes are represented in ﬁg. 5.
+                                                                                       tween wild and captive bred ﬁsh, hatchery-born individuals
+   For the darkorange genes analysis, we found 7 of the 16
+                                                                                       generally display a lower reproductive success than their
+genes that displayed a signiﬁcant correlation between the
+                                                                                       wild counterparts in natural habitats (Christie et al. 2014;
+gene expression and the median methylation of the gene
+                                                                                       Neff et al. 2015). Lower relative ﬁtness of hatchery ﬁsh in
+body also contained at least one CpG TL (table 1).
+                                                                                       the natural environment (Araki et al. 2008) has been re-
+Median methylation, gene expression, gene models, and
+                                                                                       ported even after a single generation of hatchery rearing
+CpG TL models of those seven genes are presented in
+                                                                                       (Araki et al. 2007; Christie et al. 2016). Here, we observed
+supplementary ﬁgs. 6–9, Supplementary Material online
+                                                                                       pronounced differential gene expression in parallel be-
+(please refer to table 1 for gene names).
+                                                                                       tween hatchery and wild-born adult Coho salmon from
+                                                                                       two river systems after almost 2 years spent growing in
+Gene Ontology Terms                                                                    the same environment (i.e., at sea) and about 1.5 years
+CpG TLs located in gene bodies were associated with genes                              spent in the hatchery environment. The extent of parallel
+enriched for biological functions in brain and nervous sys-                            differential gene expression between wild and hatchery
+tem development, regulation of synaptic transmission,                                  Coho was on the same order (80%, i.e., 3,643 vs. 4,537
+and response to stimulus (supplementary table S2,                                      differentially expressed genes) than that observed between
+Supplementary Material online). CpG TLs located in gene                                Coho from these two river systems. Moreover, parallel
+promoter regions were enriched for genes associated with                               downregulation of gene expression in hatchery-born indivi-
+response to testosterone and long-term memory. In con-                                 duals occurred despite no detectable genome-wide genetic
+trast, median gene methylation that correlated with gene ex-                           differentiation between hatchery and wild ﬁsh from a given
+pression was associated with genes enriched for immune                                 river (Le Luyer et al. 2017; Leitwein et al. 2021). Differential
+system processes including regulation of interferon gamma                              expression targeted important biological processes related
+production (supplementary table S3, Supplementary                                      to the immune response that were downregulated in
+Material online). Median promotor methylation that                                     hatchery-born ﬁsh, thus strengthening the hypothesis
+
+
+8 Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036 Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                               GBE
+
+that early-life environment may have a signiﬁcant impact             have been linked with the ability to successfully migrate and
+on individual ﬁtness. It has been documented that variation          reproduce, thus potentially impacting ﬁtness (Miller et al.
+in the level of gene expression variation can be attributed          2011). The consistency of differential expression of immune
+to epigenomic variations (Elowitz et al. 2002; Pujadas               system processes between hatchery and wild ﬁsh across
+and Feinberg 2012; Ecker et al. 2018) underlying                     species and life stages, as well as the obvious link between
+genotype-by-environment interactions (Christensen et al.             immune system functions and salmon ﬁtness, suggests that
+2021). Yet, we did not detect broad associations between             hatchery-induced reductions in ﬁtness may be at least part-
+differential DNA methylation and the observed gene ex-               ly mediated through a reduction of immune system
+pression differences in this study based on WGBS.                    competency.
+Nevertheless, we observed several signiﬁcant relationships              Hatchery ﬁsh also showed a lower expression of genes
+between gene expression and the whole gene body methy-               involved in the circadian rhythm which could have import-
+lation as well as methylation at a single CpGs. These results        ant ﬁtness consequences. Circadian rhythm may be subject
+strengthen the emerging view that the dynamic control of             to strong selective environmental pressures as, for example,
+gene expression by DNA methylation is not straightforward            feeding during day light highly increases the risk of preda-
+and involves complex, rather than direct associations (Jones         tion and inversely feeding at night may decrease the food
+2012; Baubec and Schübeler 2014; Ambrosi et al. 2017).               availability (Yerushalmi and Green 2009). Alteration of
+Below we discuss the relevance of our results for under-             the circadian rhythmicity occurring when food is continu-
+standing the ﬁtness consequences of hatchery rearing                 ously available in the hatchery environment can lead to ma-
+and the role that methylation plays in mediating the under-          ladaptative activity behavior of hatchery ﬁsh into the wild
+lying gene expression differences.                                   (Alioravainen et al. 2019). Finally, differential expression
+                                                                     of genes implicated in hormonal production may also dir-
+                                                                     ectly be related to the individual ﬁtness as a seasonal pro-
+Early-Life Environment-Induced Differential Gene                     duction of gametes that mismatch the natural hatching
+Expression                                                           period will result in a lower reproductive success
+The hypothesis of a negative hatchery-rearing effect on in-          (Fregeneda-Grandes et al. 2013; Christie et al. 2014).
+dividual ﬁtness has previously been supported by the obser-          Altogether, such differential gene expression observed be-
+vation of pronounced gene expression differences between             tween hatchery and wild ﬁsh in different salmonid species
+recently hatched hatchery and wild juvenile Rainbow Trout            and in the absence of apparent genetic differences bring in-
+(O. mykiss) in the absence of genetic differences between            creasing support to the hypothesis that early-life rearing en-
+them (Christie et al. 2016). Here, we found 3,643 genes              vironment could have a signiﬁcant impact on individual
+that were differentially expressed in parallel between wild          ﬁtness.
+and hatchery-born adults from two different river systems.
+This is particularly noteworthy as the ﬁsh in our study ﬁrst
+experienced hatchery conditions during the ﬁrst year and             Sex and Population Effects on Patterns of Gene
+half of their existence, followed by more than 18 months             Expression
+in a common growing environment (i.e., the sea). This re-            In addition to the differential expression observed due to
+sult provides compelling evidence that environmental ex-             rearing environments, we reported strong gene expression
+posure during early developmental stages exerts a strong             differences between sexes (8,852 genes) and rivers (4,537
+and lasting effect on the physiology of individuals and likely       genes). Strong patterns of differential gene expression be-
+has a non-negligible inﬂuence on their ﬁtness (Le Luyer              tween sexes were expected as sex-biased gene expression is
+et al. 2017; Leitwein et al. 2021).                                  a widely accepted mechanism for resolving sexual conﬂict
+   The gene coexpression module that had the strongest               in highly sexually dimorphic species (Mank 2017), which
+association with rearing environment (i.e., darkorange:              is consistent with the sexual dimorphism and pronounced
+859 genes) was enriched for immune systems response                  differences in gene expression observed in salmonids, for
+processes (speciﬁcally early inﬂammatory responses                   instance in Brook Charr, Salvelinus fontinalis (Sutherland
+mediated by TNF and IL-1 signaling) that were downregu-              et al. 2019). More surprising was the fact that a signiﬁcant
+lated in hatchery-born individuals. Reduced disease resist-          number of differentially expressed genes observed be-
+ance for hatchery-reared Coho salmon has previously                  tween populations from the two rivers (1,444 genes) was
+been reported (Salonius and Iwama 1993) and is consistent            also differentially expressed between rearing environ-
+with our gene expression results. Differential regulation of         ments. The lack of widespread evidence for an interaction
+genes involved in the immune system has also been re-                effect between river and rearing environment suggests
+ported in hatchery-reared Rainbow Trout (Christie et al.             that these genes are differentially expressed in the same dir-
+2016). In Sockeye Salmon (Oncorhynchus nerka), differ-               ection but to a higher degree in one population over the
+ences in expression of genes involved in the immune system           other. Several processes involved in the response to a viral
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036     Advance Access publication 11 March 2022                        9
+Leitwein et al.                                                                                                       GBE
+
+pathogen were among the most overrepresented among                   downregulation of the associated gene (ucp2)
+the differentially regulated genes between rivers. A disease         (Beemelmanns et al. 2021). Clearly then, the relationship
+outbreak in one population would explain both the river-             between methylation and gene expression is not straight-
+speciﬁc differential expression patterns and the signiﬁcant          forward and more complex than previously believed
+overlap between main effects. As discussed above, immune             (Jones 2012; Baubec and Schübeler 2014; Ambrosi et al.
+response expression pathways appear to be impaired in                2017). As in Lioznova et al. (2019), we also reported that
+hatchery-reared ﬁsh and a disease outbreak in one river              methylation at a single CpG can be signiﬁcantly correlated
+would generate both river-speciﬁc patterns of expression,            with the associated gene expression and that signiﬁcant re-
+whereas, altering the nature of expression differences be-           lationship may be missed by only considering whole gene
+tween hatchery and wild ﬁsh.                                         body methylation. Whereas, this indicates that methylation
+                                                                     at single CpG sites should be considered in future studies,
+                                                                     this also strengthens the fact that patterns of DNA methy-
+Weak Link Between Cis-Acting DNA Methylation and                     lation are dynamic and context-dependent (Beemelmanns
+Gene Regulation                                                      et al. 2021). We did not ﬁnd support for
+The role of methylation in dynamically regulating gene ex-           methylation-inﬂuenced differentially expressed genes to
+pression remains debated in the literature, especially be-           be “core” modules genes (i.e., high intramodule connectiv-
+cause the molecular mechanisms driving expression are                ity) with expected pleiotropic effects on the expression of
+not fully understood (Long et al. 2017; Anastasiadi et al.           many other genes. This suggests that methylation effects
+2018). Here, our results reveal at least some degree of link-        at key genes with subsequent cascading effects on gene ex-
+age between gene expression and both the gene body me-               pression are not widespread and does not explain the lack
+dian methylation and methylation at single CpGs. Here and            of widespread methylation-expression associations.
+in previous studies, by comparing two river systems, we ob-              It is possible that methylation of genomic features outside
+served signiﬁcant differences in patterns of methylation be-         the regions we characterized have an inﬂuence on the ob-
+tween genetically similar hatchery and wild-born Coho (Le            served expression patterns we report. The limited availability
+Luyer et al. 2017; Leitwein et al. 2021), which indicates that       of other epigenomic-related resources for Coho salmon
+early-life environment has a signiﬁcant impact on the                (e.g., chromatin accessibility, histone modiﬁcations,
+methylation pattern and may play an important role in evo-           transcription-factor binding positions, etc.) prevented us
+lution by impacting population ﬁtness (Pfennig et al. 2010;          from identifying other genomic features (e.g., enhancers)
+Ecker et al. 2018; Laubach et al. 2018; Strader et al. 2020).        that are known to interact with methylation patterns to as-
+However, we detected only a small proportion of genes                sess more complex associations of DNA methylation with
+where environmentally induced DNA methylation differ-                gene expression. Indeed, in humans, methylation at enhan-
+ence was signiﬁcantly associated with that of gene expres-           cers has been reported to correlate better with expression
+sion. These results are broadly similar to those of other            than methylation of promotors (Fleischer et al. 2017).
+recent work in this species that also found weak linkages            Thus, our associations of DNA methylation and gene expres-
+between methylation and gene expression underlying                   sion should be considered a conservative estimate of the
+genotype-by-environment interactions in this species                 inﬂuence of DNA methylation on gene expression.
+(Christensen et al. 2021). The small proportion of differen-         Another important consideration is the possibility that
+tially expressed genes for which we observed a correlation           hatchery-associated differential DNA methylation inﬂuences
+between DNA methylation and gene expression suggests                 developmental checkpoints and has long-lasting effects on
+that cis-acting DNA methylation is not the primary mechan-           expression patterns that are not captured in our study.
+ism mediating the entire breadth of hatchery-related gene            Future work will need to reﬁne our understanding of the se-
+expression differences. Whereas, WGBS is one of the more             quence and timing of hatchery-related differential methyla-
+robust methods to detect genome-wide DNA methylation,                tion as well as cell- and tissue-speciﬁc patterns of differential
+it is biased toward characterizing high-density CpG regions          methylation to uncover the speciﬁc ways in which the hatch-
+(Beck et al. 2021) and thus power to detect DNA methyla-             ery environment alters ﬁsh phenotype.
+tion associations with gene expression in genomic regions
+of lower CpG density may have been lower than expected.
+    Moreover, although we reported genes for which hyper-            Implication for Conservation
+methylated regions are associated with downregulation                To conclude, we demonstrate in two Coho populations
+genes, as classically observed (Edwards et al. 2017), we             from distinct river systems, that early-life hatchery
+also observed hyper-methylated regions associated with               environment-induced pronounced and parallel gene ex-
+upregulated genes. Such a relationship has previously                pression differentiation (80% of the level observed be-
+been observed in Atlantic Salmon where hypo-methylated               tween rivers) as well as epimarks that persist after 10
+promoter CpG sites were positively correlated with                   months in the same marine growing environment. These
+
+
+10    Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036   Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                             GBE
+
+results further support the hypothesis that despite hatchery         and 100 bp paired-end sequencing on an Illumina HiSeqX
+effort to diminish hatchery and wild-born genetic differen-          (two individuals per lane) were performed at the McGill
+tiation, for instance, by implementing integrated hatchery           University and Génome Québec Innovation Centre
+program (Araki et al. 2008), early-life hatchery-rearing en-         (Montréal, Ontario, Canada). One individual (one hatchery-
+vironment reduced ﬁtness in the wild. Our study also high-           born female from Quinsam) did not pass DNA quality con-
+lights the fact that hatcheries should consider the                  trol and was excluded from this study, leaving a total of 47
+development of environmental rearing conditions that mi-             Coho salmon samples for statistical analyses.
+mic, as close as possible, wild conditions to limit gene ex-
+pression      differentiation  occurring     during     early        RNA Extraction and RNA Sequencing
+developmental stages. On a broader scale, whereas, the               RNA was extracted from the liver using RNeasy Kits (Qiagen
+link between methylation and gene expression remains                 Inc., Toronto, Ontario, Canada) following the manufac-
+weak, dynamics of epigenomic patterns should be consid-              turer’s instructions using on the column DNase treatment.
+ered in the management and conservation of salmonids                 RNA quality was veriﬁed using Agilent RNA 6000 Nano chips
+strategies to evaluate the cost and beneﬁts of large-scale           on the Agilent 2100 Bioanalyzer (Agilent Technologies Inc.,
+supplementation with captive bred ﬁsh.                               Santa Clara, California, USA). Only samples with an RNA in-
+                                                                     tegrity number ≥ 7 were used for further analysis. RNAseq
+Methods                                                              libraries were prepared at the Centre d’Expertise et de
+                                                                     Services Génome Québec (Montréal, Québec, Canada)
+Sampling                                                             using the NEBNext Ultra II Directional mRNA Library Prep
+Genetically, indistinguishable hatchery and wild Coho sal-           Kit (New England Biolabs Ltd., Whitby, Ontario, Canada).
+mon (Le Luyer et al. 2017; Leitwein et al. 2021) were                Individually barcoded libraries were pooled and sequenced
+sampled in the Quinsam and Conuma river systems in                   with 100 bp paired-end sequencing in a single lane of an
+British Columbia (Canada). Both Quinsam and Conuma                   S4 ﬂow cell on a NovaSeq 6000 (Illumina Inc., San Diego,
+hatcheries are part of Fisheries and Oceans Canada’s                 California, USA).
+Salmon Enhancement Program that has a primary produc-
+tion strategy (see Le Luyer et al. 2017 for more details).           Differential Gene Expression
+Brieﬂy, the aim of these “integrated” hatchery programs              RNA sequencing reads were adaptor- and quality-trimmed
+is to use all local returning ﬁsh, both wild and hatchery            using fastp v0.20.0 (Chen et al. 2018) requiring a minimum
+ﬁsh, as broodstock to minimize genetic differentiation be-           length of 80 bp and implementing the “–poly_X” option to
+tween the two systems. Returning adults were sampled be-             additionally trim trailing polyA homopolymers. Transcript
+fore spawning at Quinsam and Conuma hatcheries, on                   expression levels were quantiﬁed with Salmon v1.1.0 using
+November 1 and 2, 2017, respectively. For each sampling              decoy-aware selective mapping (Patro et al. 2017) based on
+site, hatchery-born ﬁsh were identiﬁed by their clipped adi-         the gene annotation of the Coho salmon reference gen-
+pose ﬁne. The livers of 48 adult Coho salmon returning to            ome (Okis_V1, NCBI RefSeq: GCF_002021735.1).
+their natal river after spending about 1.5 years in the ocean        Transcript quantiﬁcation data were processed using the
+were sampled, including 24 ﬁsh from Quinsam hatchery                 tximport v1.12.3 package (Soneson et al. 2015) within
+(seven wild and ﬁve hatchery males, six wild and six hatch-          the R v3.6.3 statistical environment (Team 2015) to gener-
+ery females) and 24 ﬁsh from Conuma hatchery (six wild               ate estimates of gene expression level, whereas, correcting
+and six hatchery males, seven wild and ﬁve hatchery fe-              for sample-speciﬁc transcript length differences. We tested
+males). Fish were kept in a large holding tank with ﬂowing           for differential expression using negative-binomial general-
+water before being euthanized and sampled. All samples               ized linear models with quasi-likelihood tests as implemen-
+were stored in RNAlater in the fridge (4 °C) for 24 h and            ted in the edgeR v3.26.8 package (Robinson et al. 2010).
+then transferred into a −80°C freezer. Livers were used be-          Models were ﬁt with the same design as the methylation
+cause of their relative homogeneity compared with other              data with main factors of river, sex, and rearing environ-
+organs and it also displays the strongest gene expression            ment, as well as all possible interactions. FDRs (Benjamini
+activity (in terms of the number of genes being expressed            and Hochberg 1995) were calculated and differential ex-
+in this organ) compared with brain, gills, and kidneys in sal-       pression was determined at FDR , 0.05.
+monid migratory species (Giger et al. 2007).
+                                                                     Gene Network Analysis
+DNA Extraction and WGBS                                              We deﬁned coexpressed networks of genes using WGCNA
+Genomic DNA was extracted following a protocol of uni-               as implemented in the WGCNA v1.69 package in R
+versal and rapid salt extraction (Aljanabi and Martinez              (Langfelder and Horvath 2008). We used trimmed mean of
+1997). DNA quality control, WGBS library preparation,                M values (TMM)-normalized, log-transformed read counts
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036     Advance Access publication 11 March 2022                     11
+Leitwein et al.                                                                                                     GBE
+
+per million (CPM) for all 25,246 expressed unigenes in the cal-      rearing environment (see “Results” section). We then built
+culation of gene–gene adjacencies (correlations). A signed-          LMMs where the TMM-normalized log-transformed CPM
+hybrid adjacency matrix for all pairs of genes was constructed       gene expression was introduced as the response variable
+using the robust biweight midcorrelation raised to the power         and the standardized (i.e., center-reduced) median methy-
+of nine to approximate a scale-free network. The adjacency           lation was included as the explanatory variable. River of ori-
+matrix was then transformed into a topological overlap dis-          gin, rearing environment, and sex were incorporated as
+similarity matrix and a combination of hierarchical clustering       random effects in the model. P-values were computed to
+and a dynamic tree-cutting algorithm were used to ﬁrst de-           evaluate the signiﬁcance of the models. Correction for mul-
+ﬁne and then merge coexpressed modules of genes (min-                tiple testing was corrected by performing the Benjamini and
+imum module size of 30 genes).                                       Hochberg FDR correction (FDR , 0.1) (Benjamini and
+   Gene expression modules (i.e. ﬁrst module eigenvector:            Hochberg 1995). All analyses were performed using the R
+ﬁrst axis of a principal component analysis conducted on             package “LME4” (Team 2015).
+the expression of all module genes) were correlated with
+factors (sex, river of origin, and rearing conditions) using         Fine Scale CpG TL
+the biweight midcorrelation. Modules with a signiﬁcant
+                                                                     The link between methylation and gene expression is not
+correlation (P , 0.05) were retained for further analysis.
+                                                                     straightforward and remains debated (Lioznova et al.
+For each signiﬁcant module-trait correlation, we assessed
+                                                                     2019). Considering only the median gene and promotor
+the biweight midcorrelation of each module gene with
+                                                                     methylation might result in missed local (single CpG) effects
+the phenotype to infer the “gene signiﬁcance.” Gene sig-
+                                                                     of methylation where the signal can be swamped when
+niﬁcance was then correlated with module membership (bi-
+                                                                     averaging across the gene body. Following the approach
+weight midcorrelation of gene expression versus the
+                                                                     used in a previous study (Lioznova et al. 2019), we examined
+module eigenvector) to validate module correlations with
+                                                                     the relationship between single CpG methylation levels and
+each factor and identify core genes in the module.
+                                                                     gene expression by performing LMM for each CpG within
+                                                                     the gene body and within the 5 kb putative promoter region
+Methylation Calling                                                  before the gene body of the 3,643 differentially expressed
+The WGBS reads were trimmed and quality ﬁltered (min                 genes between wild and hatchery-born Coho and for the
+quality = 25, min length = 100 bp) with fastp (https://              859 genes from the darkorange module. Only CpGs present
+github.com/OpenGene/fastp [Chen et al. 2018]). To avoid              in at least 90% of the individuals and for which at least 80%
+interpreting false epigenetic variation with existing C–T            of the individuals displayed a methylation value greater than
+polymorphism, we masked the reference genome (NCBI as-               zero were kept to build the models. As previously, the
+sembly GCA_002021735.1; Okis_V1) from C–T poly-                      TMM-normalized gene expression in CPM was log + squared
+morphism identiﬁed with whole genome resequencing of                 transformed and introduced as the response variable, the
+20 Coho salmon (940,406SNPs, maf = 0.05) from four                   methylation (standardized) was introduced as the explana-
+British Columbia rivers, using BEDtools maskfasta v2.26.0            tory variable and the river of origin, rearing environment,
+(Quinlan and Hall 2010) as in Le Luyer et al. (2017). WGBS           and sex as random effects. FDR (Benjamini and Hochberg
+trimmed reads were mapped against the masked coho gen-               1995) was applied to P-values of each model. Only CpGs
+ome with WALT v1.0 (Chen et al. 2016; https://github.com/            with FDR lower than 0.1 were considered as CpG TL.
+smithlabcode/walt) by using default parameters and a max-
+imum allowed mapping for a read (-k) of 10. Individual’s             GO Terms Analysis
+symmetric CpG methylation levels were estimated with
+                                                                     To test for enrichment of biological functions, in particular
+MethPipe      v.3.4.3    (https://github.com/smithlabcode/
+                                                                     groups of genes (e.g., differentially expressed, inﬂuenced
+methpipe). All symmetric CpG sites with less than 10X cov-
+                                                                     by methylation, module membership, etc.), we ﬁrst gener-
+erages were removed.
+                                                                     ated Gene Ontology (GO) functional annotation for all
+                                                                     genes found in the NCBI gene annotation for the Okis_V1
+Relationship Between Methylation and Expression                      genome assembly used for mapping (NCBI accession:
+To assess the relationship between gene expression and               GCA_002021735.1). We aligned protein sequences for
+methylation levels, we ﬁrst computed for each individual             all genes against the SWISS-PROT database (accessed
+the median of methylation level within the gene body and             December 2019) using the blastp program with default set-
+within the 5 kb region (i.e. putative promoter regions) up-          tings from the BLAST+ v2.6.0 command line application
+stream (5′ -end) of the gene body for the 3,643 differentially       (Camacho et al. 2009). We then used the software
+expressed genes between hatchery and wild-born Coho                  Blast2GO v5.2.5 (Conesa et al. 2005) to map GO terms
+and the 859 genes within the darkorange module which                 from the top 20 blast hits for each sequence requiring a
+was the module having the strongest correlation with                 e-value , 1e−5 to retain matches. Using this annotation,
+
+
+12    Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036   Advance Access publication 11 March 2022
+Parallel Differential Gene Expression                                                                                                  GBE
+
+we performed enrichment tests with the topGO v2.38.1                             Allendorf FW, Hohenlohe PA, Luikart G. 2010. Genomics and the fu-
+package in R (Alexa and Rahnenführer 2021). Enrichment                               ture of conservation genetics. Nat Rev Genet. 11(10):697–709.
+                                                                                 Aller EST, Jagd LM, Kliebenstein DJ, Burow M. 2018. Comparison of
+of GO biological functions was tested based on the
+                                                                                     the relative potential for epigenetic and genetic variation to con-
+“weight01” (Alexa et al. 2006) algorithm and Fisher’s                                tribute to trait stability. G3 (Bethesda, Md.) 8(5):1733–1746.
+Exact Tests. Unless speciﬁed, the entire set of expressed                        Ambrosi C, Manzo M, Baubec T. 2017. Dynamics and context-
+genes (N = 25,246) was used as the reference gene set.                               dependent roles of DNA methylation. J Mol Biol. 429(10):
+                                                                                     1459–1475.
+                                                                                 Anastasiadi D, Esteve-Codina A, Piferrer F. 2018. Consistent inverse
+Supplementary Material                                                               correlation between DNA methylation of the ﬁrst intron and
+                                                                                     gene expression across tissues and species. Epigenetics
+Supplementary data are available at Genome Biology and                               Chromatin 11(1):37.
+Evolution online.                                                                Anastasiadi D, Venney CJ, Bernatchez L, Wellenreuther M. 2021.
+                                                                                     Epigenetic inheritance and reproductive mode in plants and ani-
+                                                                                     mals. Trends Ecol Evol. 36(12):1124–1140.
+Acknowledgments                                                                  Angers B, Castonguay E, Massicotte R. 2010. Environmentally induced
+We thank Martin Laporte for his help and advice with the                             phenotypes and DNA methylation: how to deal with unpredictable
+                                                                                     conditions until the next generation and after. Mol Ecol. 19(7):
+methylation analyses. We are also grateful to David Willis                           1283–1295.
+and Esther Guimond, as well as the personnel at the                              Araki H, Berejikian BA, Ford MJ, Blouin MS. 2008. Fitness of
+Conuma and Quinsam hatcheries, of the Fisheries and                                  hatchery-reared salmonids in the wild. Evol Appl. 1(2):342–355.
+Oceans Salmon Enhancement Program for sampling advice                            Araki H, Cooper B, Blouin MS. 2007. Genetic effects of captive breed-
+and assistance. We are also grateful to editor J. Storz and                          ing cause a rapid, cumulative ﬁtness decline in the wild. Science
+                                                                                     318(5847):100–103.
+anonymous reviewers for their very valuable comments
+                                                                                 Araki H, Schmid C. 2010. Is hatchery stocking a help or harm?: evi-
+that helped improving the manuscript. This research was                              dence, limitations and future directions in ecological and genetic
+carried out in conjunction with EPIC4 (Enhanced                                      surveys. Aquaculture 308:S2–S11.
+Production in Coho: Culture, Community, Catch), a project                        Aubin-Horth N, Renn SCP. 2009. Genomic reaction norms: using inte-
+supported by the government of Canada through Genome                                 grative biology to understand molecular mechanisms of phenotyp-
+                                                                                     ic plasticity. Mol Ecol. 18(18):3763–3780.
+Canada, Genome British Columbia, and Genome Quebec.
+                                                                                 Augerot X. 2005. Atlas of Paciﬁc salmon. Integr Comp Biol. 45(5):
+                                                                                     952–952.
+                                                                                 Baubec T, Schübeler D. 2014. Genomic patterns and context speciﬁc
+Data Availability
+                                                                                     interpretation of DNA methylation. Curr Opin Genet Dev. 25-
+The sequences reported in this paper will be available in the                        (avril):85–92.
+National Center for Biotechnology Information Sequence                           Beck D, Ben Maamar M, Skinner MK. 2021. Genome-wide CpG dens-
+Read Archive, https://www.ncbi.nlm.nih.gov/sra/ (BioPro                              ity and DNA methylation analysis method (MeDIP, RRBS, and
+                                                                                     WGBS) comparisons. Epigenetics. 1–13. doi:10.1080/15592294.
+ject accession no. PRJNA678281 Run accessions                                        2021.1924970
+SRR19843920-SRR19843966).                                                        Beemelmanns A, et al. 2021. DNA methylation dynamics in Atlantic
+                                                                                     Salmon (Salmo salar) challenged with high temperature and moder-
+                                                                                     ate hypoxia. Front Mar Sci. 7:2296–7745. doi:10.3389/fmars.2020.
+Literature Cited                                                                     604878
+Team, R. Core. 2015. R: A language and environment for statistical               Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a
+    computing [Internet]. Vienna, Austria: R Foundation for                          practical and powerful approach to multiple testing. J R Stat Soc
+    Statistical Computing; 2013. Document freely available on the                    Series B Methodol. 57(1):289–300.
+    internet at: http://www.r-project.org                                        Blake LE, et al. 2020. A comparison of gene expression and DNA
+Aas Ø, et al. 2018. Salmonid stocking in ﬁve north Atlantic jurisdic-                methylation patterns across tissues and species. Genome
+    tions: identifying drivers and barriers to policy change. Aquatic                Res. 30(2):250–262. doi:10.1101/gr.254904.119
+    Conserv: Mar Freshw Ecosyst. 28(6):1451–1464.                                Bogdanović O, et al. 2016. Active DNA demethylation at enhancers dur-
+Alexa A, Rahnenführer J. 2021. topGO: enrichment analysis for gene                   ing the vertebrate phylotypic period. Nat Genet. 48(4):417–426.
+    ontology. R package version 2.44.0., 2021.                                   Camacho C, et al. 2009. BLAST+: architecture and applications. BMC
+Alexa A, Rahnenführer J, Lengauer T. 2006. Improved scoring of func-                 Bioinform. 10(décembre):421.
+    tional groups from gene expression data by decorrelating GO                  Capp J-P. 2021. Interplay between genetic, epigenetic, and gene ex-
+    graph structure. Bioinformatics 22(13):1600–1607.                                pression variability: considering complexity in evolvability. Evol
+Alioravainen N, et al. 2019. Post-release exploration and diel activity of           Appl. 14(4):893–901.
+    hatchery, wild and crossbred strain brown trout in semi-natural              Chen H, Smith AD, Chen T. 2016. WALT: fast and accurate read mapping
+    streams. EcoEvoRxiv. Available from: http://dx.doi.org/10.32942/                 for bisulﬁte sequencing. Bioinformatics 32(22):3507–3509.
+    osf.io/qx8ny.                                                                Chen S, Zhou Y, Chen Y, Gu J. 2018. Fastp: an ultra-fast all-in-one
+Aljanabi SM, Martinez I. 1997. Universal and rapid salt-extraction of                FASTQ preprocessor. Bioinformatics 34(17):i884–i890.
+    high quality genomic DNA for PCR-based techniques. Nucleic                   Chittenden CM, et al. 2010. Genetic versus rearing-environment
+    Acids Res. 25(22):4692–4693.                                                     effects on phenotype: hatchery and natural rearing effects
+Allendorf FW. 2017. Genetics and the conservation of natural popula-                 on Hatchery- and Wild-Born Coho Salmon. PLoS One 5(8):
+    tions: allozymes to genomes. Mol Ecol. 26(2):420–430.                            e12261.
+
+
+
+Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036                 Advance Access publication 11 March 2022                               13
+Leitwein et al.                                                                                                                       GBE
+
+Christensen KA, et al. 2021. Assessing the effects of                           Mäkinen H, Vasemägi A, McGinnity P, Cross TF, Primmer CR. 2015.
+     genotype-by-environment interaction on epigenetic, transcrip-                  Population genomic analyses of early-phase Atlantic Salmon
+     tomic, and phenotypic response in a Paciﬁc salmon. G3                          (Salmo salar) domestication/captive breeding. Evol Appl. 8(1):
+     (Bethesda) 11(2):jkab021.                                                      93–107.
+Christie MR, Ford MJ, Blouin MS. 2014. On the reproductive success of           Mank JE. 2017. The Transcriptional architecture of phenotypic di-
+     early-generation hatchery ﬁsh in the wild. Evol Appl. 7(8):883–896.            morphism. Nat Ecol Evol. 1(janvier):0006.
+Christie MR, Marine ML, Fox SE, French RA, Blouin MS. 2016. A single            Miller KM, et al. 2011. Genomic signatures predict migration
+     generation of domestication heritably alters the expression of hun-            and spawning failure in wild Canadian salmon. Science 331(6014):
+     dreds of genes. Nat Commun. 7(février):10676.                                  214–217.
+Conesa A, et al. 2005. Blast2GO: a universal tool for annotation, visu-         Neff BD, Garner SR, Fleming IA, Gross MR. 2015. Reproductive success
+     alization and analysis in functional genomics research.                        in wild and hatchery male coho salmon. Royal Soc Open Sci. 2(8):
+     Bioinformatics 21(18):3674–3676.                                               150161.
+Ecker S, Pancaldi V, Valencia A, Beck S, Paul DS. 2018. Epigenetic and          Noakes DJ, Beamish RJ, Kent ML. 2000. On the decline of Paciﬁc sal-
+     transcriptional variability shape phenotypic plasticity. BioEssays             mon and speculative links to salmon farming in British Columbia.
+     40(2):1700148.                                                                 Aquaculture 183(3–4):363–386.
+Edwards JR, Yarychkivska O, Boulard M, Bestor TH. 2017. DNA methy-              Olney PJS, Mace GM, Feistner A, editors. 1994. Creative conservation:
+     lation and DNA methyltransferases. Epigenetics Chromatin 10:23.                interactive management of wild and captive animals. London;
+Elowitz MB, Levine AJ, Siggia ED, Swain PS. 2002. Stochastic gene ex-               New York: Chapman & Hall.
+     pression in a single cell. Science 297(5584):1183–1186.                    Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. 2017. Salmon
+Fleischer T, et al. 2017. DNA methylation at enhancers identiﬁes dis-               provides fast and bias-aware quantiﬁcation of transcript expres-
+     tinct breast cancer lineages. Nat Commun. 8(1):1379.                           sion. Nat Methods 14(4):417–419.
+Ford MJ. 2002. Selection in captivity during supportive breeding may            Pfennig DW, et al. 2010. Phenotypic plasticity’s impacts on diversiﬁca-
+     reduce ﬁtness in the wild. Conserv Biol. 16(3):815–825.                        tion and speciation. Trends Ecol Evol. 25(8):459–467.
+Frankham R. 2008. Genetic adaptation to captivity in species conserva-          Pujadas E, Feinberg AP. 2012. Regulated noise in the epigenetic
+     tion programs. Mol Ecol. 17(1):325–333.                                        landscape of development and disease. Cell 148(6):1123–1131.
+Fregeneda-Grandes JM, et al. 2013. Seasonal and sex-related varia-              Quinlan AR, Hall IM. 2010. BEDTools: a ﬂexible suite of utilities for
+     tions in serum steroid hormone levels in wild and farmed brown                 comparing genomic features. Bioinformatics 26(6):841–842.
+     trout Salmo trutta L. in the north-west of Spain. J Water Health           Richards CL, et al. 2017. Ecological plant epigenetics: evidence from
+     11(4):720–728.                                                                 model and non-model species, and the way forward. Ecol Lett. 20-
+Giger T, et al. 2007. The genetic basis of smoltiﬁcation: functional gen-           (12):1576–1590.
+     omics tools facilitate the search for the needle in the Haystack. In Sea   Robinson MD, McCarthy DJ, Smyth GK. 2010. EdgeR: a bioconductor
+     trout: biology, conservation and management: John Wiley & Sons,                package for differential expression analysis of digital gene expres-
+     Ltd. p. 183–95. doi:10.1002/9780470996027.ch13.                                sion data. Bioinformatics 26(1):139–140.
+Irvine JR, Fukuwaka M-A. 2011. Paciﬁc Salmon abundance trends and               Salonius K, Iwama GK. 1993. Effects of early rearing environment on
+     climate change. ICES J Mar Sci. 68(6):1122–1130.                               stress response, immune function, and disease resistance in
+Jones PA. 2012. Functions of DNA methylation: islands, start sites,                 Juvenile Coho (Oncorhynchus kisutch) and Chinook Salmon (O.
+     gene bodies and beyond. Nat Rev Genet. 13(7):484–492.                          tshawytscha). Can J Fish Aquat Sci. 50(4):759–766.
+Laikre L, Schwartz MK, Waples RS, Ryman N, GeM Working Group,                   Soneson C, Love MI, Robinson MD. 2015. Differential analyses for
+     and others. 2010. Compromising genetic diversity in the wild: un-              RNA-Seq: transcript-level estimates improve gene-level inferences.
+     monitored large-scale release of plants and animals. Trends Ecol               F1000Research 4:1521.
+     Evol. 25(9):520–529.                                                       Strader ME, et al. 2020. Examining the role of DNA methylation in tran-
+Langfelder P, Horvath S. 2008. WGCNA: an R package for weighted                     scriptomic plasticity of early stage sea urchins: developmental and
+     correlation network analysis. BMC Bioinform. 9(1):559.                         maternal effects in a Kelp Forest Herbivore. Front Mar Sci. 7:
+Laporte M, et al. 2019. DNA methylation reprogramming, TE derepres-                 2296–7745. doi:10.3389/fmars.2020.00205
+     sion, and postzygotic isolation of nascent animal species. Sci Adv.        Sutherland BJG, Prokkola JM, Audet C, Bernatchez L. 2019. Sex-speciﬁc
+     5(10):eaaw1644.                                                                co-expression networks and sex-biased gene expression in
+Laubach ZM, et al. 2018. Epigenetics and the maintenance of develop-                the Salmonid Brook Charr Salvelinus Fontinalis. G3 9(3):
+     mental plasticity: extending the signalling theory framework. Biol             955–968.
+     Rev. 93(3):1323–1338.                                                      Utter F. 2004. Population genetics, conservation and evolution in sal-
+Leitwein M, et al. 2021. Epigenomic modiﬁcations induced by hatchery                monids and other widely cultured ﬁshes: some perspectives over
+     rearing persist in germ line cells of adult salmon after their oceanic         six decades. J Fish Biol. 65(s1):323–324.
+     migration. Evol Appl. 14:2402–2413. doi:10.1111/eva.13235                  Verhoeven KJF, vonHoldt BM, Sork VL. 2016. Epigenetics in ecology
+Le Luyer J, et al. 2017. Parallel epigenetic modiﬁcations induced by                and evolution: what we know and what we need to know. Mol
+     hatchery rearing in a Paciﬁc Salmon. Proc Natl Acad Sci. 114(49):              Ecol. 25(8):1631–1638.
+     12964–12969.                                                               Waples RS, Drake J. 2004. Risk/beneﬁt considerations for marine stock
+Lioznova AV, et al. 2019. CpG trafﬁc lights are markers of regulatory               enhancement: a Paciﬁc Salmon perspective. In Stock enhancement
+     regions in human genome. BMC Genomics 20(1):102.                               and sea ranching. John Wiley & Sons, Ltd. p. 260–306. doi:10.
+Long MD, Smiraglia DJ, Campbell MJ. 2017. The genomic impact of                     1002/9780470751329.ch22
+     DNA CpG methylation on gene expression; relationships in pros-             Yerushalmi S, Green RM. 2009. Evidence for the adaptive signiﬁcance
+     tate cancer. Biomolecules 7(1):15.                                             of circadian rhythms. Ecol Lett. 12(9):970–981.
+Lowdon RF, Jang HS, Wang T. 2016. Evolution of epigenetic regulation
+     in vertebrate genomes. Trends Genet 32(5):269–283.                         Associate editor: Jay Storz
+
+
+
+
+14    Genome Biol. Evol. 14(4) https://doi.org/10.1093/gbe/evac036              Advance Access publication 11 March 2022
+

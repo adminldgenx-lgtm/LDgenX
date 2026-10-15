@@ -1,0 +1,59 @@
+{
+  "id": "P15",
+  "title": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs.",
+  "authors": [
+    "Aliakbari A",
+    "Delpuech E",
+    "Labrune Y",
+    "Riquet J",
+    "Gilbert H"
+  ],
+  "team_members": [
+    "Emilie Delpuech"
+  ],
+  "journal": "Genetics, selection, evolution : GSE",
+  "year": 2020,
+  "doi": "10.1186/s12711-020-00576-0",
+  "doi_url": "https://doi.org/10.1186/s12711-020-00576-0",
+  "pmid": "33028194",
+  "pmcid": "PMC7539441",
+  "publication_dates": {
+    "published": [
+      [
+        2020,
+        10,
+        7
+      ]
+    ],
+    "published-print": [
+      [
+        2020,
+        12
+      ]
+    ],
+    "published-online": [
+      [
+        2020,
+        10,
+        7
+      ]
+    ],
+    "issued": [
+      [
+        2020,
+        10,
+        7
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+  "access_level": "published_fulltext_pdf",
+  "retrieved_content_version": "version_of_record",
+  "license_urls_for_retrieved_version": [
+    "http://creativecommons.org/licenses/by/4.0/"
+  ],
+  "preprint": null,
+  "institutional_records": [],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

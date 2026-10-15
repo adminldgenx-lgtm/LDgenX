@@ -1,0 +1,342 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/conservation",
+  "final_url": "https://www.ldgenx.com/services/conservation",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:38.836585+00:00",
+  "language": "en",
+  "title": "GenExpert - Description d'études de conservation - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Page description d'études de biodiversité Leitwein, conservation des espèces, idées d'études conservation et biodiversité, outils génomiques pour la biodiversité"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__conservation.html",
+  "raw_sha256": "9a96325d132dc71273963ea76649ba797ddc4e88cd2a9d4a1cc93639fff2c86f",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "text": "Leitwein et al. 2016",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "text": "Leitwein et al. 2016",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+      "text": "2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b59e82220f4-tableau/433-62b59e82220f4-tableau.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "ancestralité domestique",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b97365b32db-introgression/960-62b97365b32db-introgression.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "allele deletaire",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b9a2ee6154e-deletaire/391-62b9a2ee6154e-deletaire.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Conservation"
+    },
+    {
+      "level": 3,
+      "text": "Genetic diversity of trout in the Orb River"
+    },
+    {
+      "level": 3,
+      "text": "Genomic landscape of domestic ancestry in brook trout"
+    },
+    {
+      "level": 3,
+      "text": "Effects of introducing domestic alleles"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__conservation.md",
+  "content_characters": 4777,
+  "content_sha256": "daa0bf17d67e8fbec83ffdba80144bb8dde4f2c589a6b235e1b0e79744d526e4",
+  "body_text": "Conservation\n        \n            Genetic diversity of trout in the Orb River\n        \n        The use of 196K SNPs markers allowed us to estimate the genetic diversity and the inbreeding index of the common (Salmo trutta), wild (La Mare, Gravezon and Orb) and domestic (Atlantic and Mediterranean) trout populations of the Orb basin.\nWe were able to highlight that the wild Gravezon population had lower genetic diversity and high inbreeding rates compared to the wild La Mare and L'orb populations (Table 1; Leitwein et al. 2016).\nFurthermore, we demonstrated that the Mediterranean domestic strain was very low in diversity and highly inbred in contrast to the Atlantic domestic strain, which had higher genetic diversity.\nThese results demonstrate that the Mediterranean domestic strain requires special management to increase genetic diversity.\n    Table 1 from Leitwein et al. 2016, Journal of Fish Biology.\nSummarize for each wild river in the Orb basin (La Mare, Gravezon, and Orb) and for the two domestic strains (Atlantic and Mediterranean), of (N) number of individuals, (x) average number of SNPs markers, (He) expected heterozygosity, (Ho) observed heterozygosity, (Fis) inbreeding index, and (π) nucleotide diversity. ***significant value p<0.0001\n    \n            Genomic landscape of domestic ancestry in brook trout\n        \n        The brook trout (Salvelinus fontinalis) is a species of high socio-economic interest in Canada. In the province of Quebec, a domesticated strain was created about 100 years ago in order to repopulate the rivers for sport fishing. Each year more than 650 tons of brook trout are released into Canadian rivers, promoting hybridization events between domestic and wild individuals (Leitwein et al. 2019).\nUsing 11,803 SNP markers, the ancestry of individuals could be inferred and the proportion of domestic alleles in wild rivers estimated. Using the linkage information and the proportion of domestic ancestry, it was possible to identify the hybrid classes of individuals. Individuals were categorized as either (i) \"recent hybrids\" i.e., offspring of early generations of interbreeding between wild and domestic individuals (<10 generations); or (ii) \"ancient hybrids\" i.e., offspring from distant mixing (>10 generations). Once individuals were assigned to their hybrid class, the rate of introgression of domestic alleles along the genome could be estimated. This approach revealed high variability, with genomic regions of high and low domestic ancestry, which are likely to be under natural selection (Figure 1; Leitwein et al. 2019).  \n \n    Figure 1 from Leitwein et al. 2019. Molecular Ecology.\nDomestic ancestry rates along the 41 brook trout linkage groups (LG) for individuals in the recent hybrid category.\nEffects of introducing domestic alleles\n        \nIn the case of brook trout, we were able to observe variations of domestic ancestry in wild populations. For hybrid individuals, beneficial effects of the introgression of domestic alleles in wild populations were mainly observed. The domestic alleles bring (i) diversity in regions of the \"wild\" genome with low genetic diversity and (ii) potentially deleterious recessive alleles.\nHowever, beyond these potential beneficial effects, purging effects of domesticated alleles have also been observed. These mechanisms reflect negative effects of introducing domestic alleles into certain regions of the genome (Leitwein et al. 2019 et 2021).\nFor example, on linkage group 26 (Figure 2) we can observe an excess of domestic ancestry associated with potentially domestic recessive alleles. \n    Figure 2 from Leitwein et al. 2019 Molecular Ecology.\nExcess or deficit of domestic ancestry as a function of the presence of non-deleterious or potentially deleterious alleles for linkage group 26 in ancient hybrid brook trout individuals.\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__conservation.json"
+}

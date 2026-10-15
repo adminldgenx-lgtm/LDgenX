@@ -1,0 +1,180 @@
+{
+  "note": "Liens repérés dans les articles : ils peuvent désigner des logiciels ou données de référence, pas uniquement le jeu de données propre à l’étude. Vérifier avant téléchargement ou utilisation.",
+  "resources": [
+    {
+      "publication_id": "P01",
+      "article_doi": "10.1093/gbe/evac036",
+      "url": "https://github.com/OpenGene/fastp",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P01",
+      "article_doi": "10.1093/gbe/evac036",
+      "url": "https://github.com/smithlabcode/walt",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P01",
+      "article_doi": "10.1093/gbe/evac036",
+      "url": "https://github.com/smithlabcode/methpipe",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P01",
+      "article_doi": "10.1093/gbe/evac036",
+      "url": "https://www.ncbi.nlm.nih.gov/sra/",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P01",
+      "article_doi": "10.1093/gbe/evac036",
+      "url": "https://doi.org/10.32942/osf.io/qx8ny",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P02",
+      "article_doi": "10.1093/evolut/qpac028",
+      "url": "https://github.com/enormandeau/wgs_sample_preparation",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P02",
+      "article_doi": "10.1093/evolut/qpac028",
+      "url": "https://github.com/clairemerot/angsd_pipeline",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P03",
+      "article_doi": "10.3390/genes12040524",
+      "url": "https://doi.org/10.5061/dryad.s5qt3",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P03",
+      "article_doi": "10.3390/genes12040524",
+      "url": "http://https//Github.Com/Thierrygosselin/Stackr",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://github.com/OpenGene/fastp",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://github.com/smithlabcode/walt",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://github.com/smithlabcode/methpipe",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://github.com/enormandeau/gawn",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://github.com/enormandeau/go_enrichment",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P04",
+      "article_doi": "10.1111/eva.13235",
+      "url": "https://www.ncbi.nlm.nih.gov/sra/",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P05",
+      "article_doi": "10.1111/mec.15566",
+      "url": "https://github.com/enormandeau/stacks_workflow",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P05",
+      "article_doi": "10.1111/mec.15566",
+      "url": "https://github.com/enormandeau/gawn",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P05",
+      "article_doi": "10.1111/mec.15566",
+      "url": "https://github.com/thierrygosselin/stackr",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P05",
+      "article_doi": "10.1111/mec.15566",
+      "url": "https://github.com/thierrygosselin/radiator",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P07",
+      "article_doi": "10.1111/mec.15256",
+      "url": "https://github.com/mleitwein/local_ancestry_inference_with_ELAI",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P07",
+      "article_doi": "10.1111/mec.15256",
+      "url": "https://github.com/QuentinRougemont/gbs_synonymy_with_genome",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P07",
+      "article_doi": "10.1111/mec.15256",
+      "url": "https://doi.org/10.5061/dryad.s5qt3",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P07",
+      "article_doi": "10.1111/mec.15256",
+      "url": "https://github.com/thierrygosselin/stackr",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P10",
+      "article_doi": "10.1534/g3.116.038497",
+      "url": "https://github.com/enormandeau/mapcomp/",
+      "kind": "code_or_software",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    },
+    {
+      "publication_id": "P13",
+      "article_doi": "10.1186/s12711-023-00805-2",
+      "url": "https://www.ncbi.nlm.nih.gov/sra/PRJNA915039",
+      "kind": "data_repository_reference",
+      "status": "link_observed_in_article_not_fetched_or_content_validated"
+    }
+  ]
+}

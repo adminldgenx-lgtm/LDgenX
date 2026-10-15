@@ -1,0 +1,75 @@
+{
+  "id": "P07",
+  "title": "The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations.",
+  "authors": [
+    "Leitwein M",
+    "Cayuela H",
+    "Ferchaud AL",
+    "Normandeau É",
+    "Gagnaire PA",
+    "Bernatchez L"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Molecular ecology",
+  "year": 2019,
+  "doi": "10.1111/mec.15256",
+  "doi_url": "https://doi.org/10.1111/mec.15256",
+  "pmid": "31579957",
+  "pmcid": null,
+  "publication_dates": {
+    "published": [
+      [
+        2019,
+        10,
+        22
+      ]
+    ],
+    "published-print": [
+      [
+        2019,
+        11
+      ]
+    ],
+    "published-online": [
+      [
+        2019,
+        10,
+        22
+      ]
+    ],
+    "issued": [
+      [
+        2019,
+        10,
+        22
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "preprint_fulltext_html",
+  "retrieved_content_version": "preprint",
+  "license_urls_for_retrieved_version": [
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  ],
+  "preprint": {
+    "doi": "10.1101/702696",
+    "url": "https://doi.org/10.1101/702696",
+    "license_as_reported": "cc_by_nc_nd",
+    "version": "1"
+  },
+  "institutional_records": [
+    {
+      "title_s": [
+        "The role of recombination on genome‐wide patterns of local ancestry exemplified by supplemented brook charr populations"
+      ],
+      "uri_s": "https://hal.science/hal-02395970v1",
+      "docType_s": "ART",
+      "doiId_s": "10.1111/mec.15256",
+      "producedDate_s": "2019-11-08"
+    }
+  ],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

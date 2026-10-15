@@ -1,0 +1,320 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/traceability",
+  "final_url": "https://www.ldgenx.com/services/traceability",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:51.753224+00:00",
+  "language": "en",
+  "title": "GenExpert - Description d'études de traçabilité - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Détails d'utilisation d'outils génomiques et bio-informatiques pour la traçabilité d'espèces cibles, identification d'échappées, pisciculture, souche sauvage, domestiquée"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__traceability.html",
+  "raw_sha256": "416089ef19c6efcbc3d35b279a0df14eb9193ba9888190bc5bd9b891557df25f",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. (2018)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. 2018",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. 2018",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+      "text": "Saint-Pé et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+      "text": "Saint-Pé et al (2019)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b48c6a407bd-admixture/960-62b48c6a407bd-admixture.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "leitwein et al 2018",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b48e92c3b00-time/461-62b48e92c3b00-time.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "puce truite",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62b49dce0df02-saintpe/460-62b49dce0df02-saintpe.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Traceability"
+    },
+    {
+      "level": 3,
+      "text": "Example of genomic analysis for traceability - Trout of the Orb"
+    },
+    {
+      "level": 3,
+      "text": "Development of genomic tools - The high density trout chip"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__traceability.md",
+  "content_characters": 3525,
+  "content_sha256": "d59b000f227b7123a95cfb70835f64034df26520c3c94f5faf8ddac67fbd8d3f",
+  "body_text": "Traceability\n        \n             Example of genomic analysis for traceability - Trout of the Orb\n        \nThe Orb (Hérault) Mediterranean basin, a river in the south of France with a surface area of 1580 km2, has been supplemented with domestic trout (Salmo trutta) of Atlantic and Mediterranean origin since the end of the 1960s. The objective is to increase the local Mediterranean populations for recreational fishing.\nIn the study by Leitwein et al. (2018), the use of 86,175 SNPs (single nucleotide polymorphisms) markers from RAD sequencing, allowed to identify the proportion of domestic (Atlantic and Mediterranean) alleles in wild populations of the Orb basin.\nThis unable the identification of domestic Atlantic individuals (i.e. escaped from fish farms) in the Gravezon river, individuals of Mediterranean domestic origin in the Mare river, as well as hybrid individuals with Atlantic and Mediterranean domestic alleles in the three wild rivers (Figure 1).\n    Figure 1 from Leitwein et al. 2018, Molecular Ecology.\nEach bar represents the proportion of Atlantic domestic ancestry in blue, Mediterranean domestic in red and wild in green for the three populations of Gravezon (Grav), Mare (Mare) and Orb (Orb).\n    \n        Studying the distribution of Atlantic and Mediterranean domestic haplotypes (segments) allowed to estimate the age of supplementation for each of the three rivers.\nThe study show that Atlantic domestic individuals were introduced on average 24.01 generations ago in the Gravezon river, 22.31 generations in the Mare river and 30.9 generations ago in the Orb river (Figure 2).\nSimilarly, the time of domestic Mediterranean trout introduction was estimated at 11.51 generations in the Gravezon River, 25.07 generations in the Mare River and 23.23 in the Orb River (Figure 2).\n \n    Figure 2 from Leitwein et al. 2018, Molecular Ecology.\nTime in number of generations since the introduction of Atlantic domestic (blue) and Mediterranean domestic (red) individuals in the three populations Gravezon, La Mare and Orb.\nDevelopment of genomic tools - The high density trout chip\n        \n        As a result of this study, we developed a high-density chip of 12,204 SNPs markers distributed homogeneously along the 40 linkage groups (LG) of the trout (Salmo Trutta) (Figure 3 ; Saint-Pé et al. 2019). \nThis chip allows for low-cost, consistent, and comparable management between different population genetic studies.\nThe chip is both effective in distinguishing trout of Atlantic and Mediterranean origins as well as hybridization levels.\n \n    Figure 3 from Saint-Pé et al (2019), BMC genomics.\nPositions (in centiMorgan) of the 12,204 SNPs markers along the 40 linkage groups of the common trout (Salmo trutta).\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__traceability.json"
+}

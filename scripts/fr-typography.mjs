@@ -9,7 +9,7 @@ const check = process.argv.includes('--check');
 const fix = (text) =>
   text
     .replace(/(\S) ([?!;])/g, '$1 $2')
-    .replace(/(\S) :(?=\s|$)/g, '$1 :')
+    .replace(/(\S) :(?=\s|$|['"`])/g, '$1 :')
     .replace(/« /g, '« ')
     .replace(/ »/g, ' »');
 
@@ -22,7 +22,9 @@ const kinds = new Set([
   ts.SyntaxKind.JsxText,
 ]);
 let changed = 0;
-for (const file of globSync('src/**/*.{ts,tsx}')) {
+// English catalogues (*.en.ts, en.ts) follow English typography.
+const french = (file) => !/(^|[/.])en\.tsx?$/.test(file);
+for (const file of globSync('src/**/*.{ts,tsx}').filter(french)) {
   const source = await readFile(file, 'utf8');
   const tree = ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
   const edits = [];

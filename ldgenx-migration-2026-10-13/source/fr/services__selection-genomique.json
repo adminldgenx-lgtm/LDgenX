@@ -1,0 +1,320 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/selection-genomique",
+  "final_url": "https://www.ldgenx.fr/services/selection-genomique",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:27.510156+00:00",
+  "language": "fr",
+  "title": "LDgenX - Description d'études de sélection génomique - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Utilisation génomique et bioinformatique, estimation des paramètres génétiques, sélection, plan d'accouplement, reproducteurs, identification de gènes d'intérêts"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__selection-genomique.html",
+  "raw_sha256": "5add50652cf3e615992544d2e9039075cc0d139bd20c1b0e24c52135e77a29f4",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1101/2022.05.31.494209",
+      "text": "Delpuech et al. 2022",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://doi.org/10.1101/2022.05.31.494209",
+      "text": "Delpuech et al. (2022)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.3389/fgene.2021.665920",
+      "text": "Griot et al. 2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "text": "Aliakbari et al. 2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "text": "Aliakbari et al. (2021)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "GWAS génétique sélection marqueurs génétiques SNP BLUP",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c59a94b88e5-figure2-manhattan-plot/570-62c59a94b88e5-figure2-manhattan-plot.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Sélection BLUP GBLUP corrélation",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c5b4d05e451-gebv-rfi/570-62c5b4d05e451-gebv-rfi.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Sélection Génomique"
+    },
+    {
+      "level": 3,
+      "text": "Identification de gènes de résistance pour la nodavirose chez le bar"
+    },
+    {
+      "level": 3,
+      "text": "Etudes des valeurs génétiques pour la sélection de caractère d'intérêts"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__selection-genomique.md",
+  "content_characters": 4052,
+  "content_sha256": "e0f4e5108736952ce0b7028695a3d87fabecf150d255f00ffb64f62288ca58d6",
+  "body_text": "Sélection Génomique\n        \n            Identification de gènes de résistance pour la nodavirose chez le bar\n        \n        Le séquençage de génome entier de près de 400 bars a permis la cartographie fine du phénotype de résistance à la nodavirose chez le bar européen (Dicentrachus labrax).\nLa combinaison de données de séquençage haut-débit avec des données de génotypages de moyenne densité (~57K marqueurs SNPs) et des données phénotypiques, a mis en évidence une association forte entre un locus de caractère quantitatif (QTL) du groupe de liaison 12 (LG12) et la survie des bars face à une infection à la nodavirose (Figure 1, Delpuech et al. 2022).\nA partir de l'annotation du génome de bar, disponible en libre accès sur les bases de données publiques, nous avons pu identifier deux gènes d'intérets dont ZDHHC14 et IFI6. La mise en évidence d'une protéine induite par un interféron dans les mécanismes de survie à la nodavirose est une avancée considérable dans le domaine.\nLes écloseries peuvent dès lors utiliser ces connaissances pour l'amélioration de la sélection génomique de leurs lignées dans le but de développer des bars plus résistants.\n    Figure 1 extraite de Delpuech et al. (2022), bioRxiv.\nManhattan plot représentant les associations génétiques-phénotypes obtenues à l'issu de l'étude de la résistance à la nodavirose chez le bar européen.\n    \n            Etudes des valeurs génétiques pour la sélection de caractère d'intérêts\n        \n        La sélection génomique a été utilisée pour améliorer de très nombreux caractères d'intérêts possédant une hératibilité assez élevée. Par exemple, ce type d'approche a été appliqué avec succès à de nombreuses espèces d'élevages, et récemment sur des espèces aquacoles pour la résistance à des pathogènes. Elle a permis un gain génétique de 12,5 % en moyenne par génération pour la résistance à différentes maladies. La sélection génomique est donc une approche prometteuse pour lutter contre des maladies affectant les populations sauvages comme les populations domestiques (Griot et al. 2021).\nD'autre part, dans un article de référence pour la prédiction génomique, Aliakbari et al. 2021 ont mis en évidence une prédiction génomique similaire en utilisant soit (i) un jeu de données dit d'entraînement comprenant des animaux de lignées génétiquement apparentées, soit (ii) un ensemble d'entraînement provenant de la population ciblée. De plus, dans les cas où il est possible de combiner des données apparentées et des données de la population cible, la précision ne pourra qu'augmenter pour des caractères (Figure 3).\nCes résultats de génétique quantitative donnent une meilleure connaissance pour la conception des populations de référence, en particulier pour initier la sélection génomique dans des populations où le nombre d'échantillons historiques est faible.\n    Figure 3 extraite de Aliakbari et al. (2021).\nCorrélations entre GEBVp et GEBVw, et leurs barres d'erreur pour les lignes HRFI (a) et LRFI (b).\n*=Différence significative avec le scénario 1 (contrôle) selon le test t de Williams à un niveau de 0,05.\nRFI=apport alimentaire résiduel, ADG=gain moyen journalier, FCR=indice de consommation, DFI=apport alimentaire journalier, BFT=épaisseur du gras dorsal.\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__selection-genomique.json"
+}

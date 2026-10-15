@@ -1,0 +1,742 @@
+Delpuech et al. Genetics Selection Evolution (2023) 55:30                                                                         Genetics Selection Evolution
+https://doi.org/10.1186/s12711-023-00805-2
+
+
+
+
+ RESEARCH ARTICLE                                                                                                                                               Open Access
+
+Whole‐genome sequencing identifies
+interferon‑induced protein IFI6/IFI27‑like
+as a strong candidate gene for VNN resistance
+in European sea bass
+Emilie Delpuech1,2* , Marc Vandeputte1,2, Romain Morvezen3, Anastasia Bestin3, Mathieu Besson3,
+Joseph Brunier4, Aline Bajek4, Boudjema Imarazene5, Yoannah François3,6, Olivier Bouchez7, Xavier Cousin1,2,
+Charles Poncet8, Thierry Morin6, Jean‑Sébastien Bruant5, Béatrice Chatain1, Pierrick Haffray3,
+Florence Phocas2 and François Allal1
+
+
+
+  Abstract
+  Background Viral nervous necrosis (VNN) is a major disease that affects European sea bass, and understanding the
+  biological mechanisms that underlie VNN resistance is important for the welfare of farmed fish and sustainability of
+  production systems. The aim of this study was to identify genomic regions and genes that are associated with VNN
+  resistance in sea bass.
+  Results We generated a dataset of 838,451 single nucleotide polymorphisms (SNPs) identified from whole-genome
+  sequencing (WGS) in the parental generation of two commercial populations (A: 2371 individuals and B: 3428
+  individuals) of European sea bass with phenotypic records for binary survival in a VNN challenge. For each popula‑
+  tion, three cohorts were submitted to a red-spotted grouper nervous necrosis virus (RGNNV) challenge by immer‑
+  sion and genotyped on a 57K SNP chip. After imputation of WGS SNPs from their parents, quantitative trait loci (QTL)
+  were mapped using a Bayesian sparse linear mixed model (BSLMM). We found several QTL regions that were specific
+  to one of the populations on different linkage groups (LG), and one 127-kb QTL region on LG12 that was shared by
+  both populations and included the genes ZDHHC14, which encodes a palmitoyltransferase, and IFI6/IFI27-like, which
+  encodes an interferon-alpha induced protein. The most significant SNP in this QTL region was only 1.9 kb downstream
+  of the coding sequence of the IFI6/IFI27-like gene. An unrelated population of four large families was used to validate
+  the effect of the QTL. Survival rates of susceptible genotypes were 40.6% and 45.4% in populations A and B, respec‑
+  tively, while that of the resistant genotype was 66.2% in population B and 78% in population A.
+  Conclusions We have identified a genomic region that carries a major QTL for resistance to VNN and includes the
+  ZDHHC14 and IFI6/IFI27-like genes. The potential involvement of the interferon pathway, a well-known anti-viral
+  defense mechanism in several organisms (chicken, human, or fish), in survival to VNN infection is of particular interest.
+  Our results can lead to major improvements for sea bass breeding programs through marker-assisted genomic selec‑
+  tion to obtain more resistant fish.
+
+
+*Correspondence:
+Emilie Delpuech
+emilie.delpuech@inrae.fr
+Full list of author information is available at the end of the article
+
+
+                                             © The Author(s) 2023. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which
+                                             permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the
+                                             original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or
+                                             other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line
+                                             to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory
+                                             regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this
+                                             licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+                                             mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                   Page 2 of 12
+
+
+
+
+Background                                                     marker-assisted selection requires the identification of
+Sustainable development of aquaculture depends                 the causative variant or tightly linked DNA variants. [24,
+strongly on the ability to control the epidemics that can      25]. The purpose of the present study was to identify can-
+impact farms [1]. Viral nervous necrosis (VNN), also           didate SNPs or other DNA variants for marker-assisted
+called viral encephalopathy and retinopathy (VER), is          selection to improve resistance of European sea bass to
+caused by the single-stranded positive-sense RNA nerv-         VNN. To this end, we imputed whole-genome sequences
+ous necrosis virus (NNV) and is a major threat to the          on 5779 sea bass from two French breeding programs
+marine and freshwater fish farming industry, worldwide.        that were challenged with VNN and performed a GWAS
+It is responsible for increased mortality and reduced          with a Bayesian sparse linear mixed model (BSLMM) to
+feed conversion ratio and animal welfare, thus affecting       identify the main genomic region of interest, which was
+both production and economic viability of farms [2]. The       then validated in an independent population.
+European sea bass is one of the many species that are
+affected by this disease [3]. Because a warm environment       Methods
+is compatible with the occurrence of VNN [3–6], Euro-          Ethical statement
+pean sea bass can be highly impacted by this virus in the      All infection challenges were carried out according to
+Mediterranean area and can devastate an entire produc-         the European guidelines (Directive 2010–63-EU) and the
+tion of susceptible larvae and juveniles, with a mortality     corresponding French legislation. Animal experimental
+rate that can reach 90% or more, while adults can also be      procedures were approved by the ethics committee on
+impacted [3, 7]. Infected fish display abnormal swimming       animal experimentation COMETH ANSES/ENVA/UPC
+behavior [8], which is the main clinical sign, but they also   No.16 and were authorized by the French Ministry of
+show severe neurological disorders due to intensive vacu-      Higher Education, Research and Innovation under num-
+olation of the retina and the nervous system [9], and a        bers 2017022816255366, 29/01/13-5 and 10/03/15-1.
+rapid mortality peak, usually on the 10th day post-infec-
+tion [10].                                                     Populations and experimental design
+   Several vaccination studies have been conducted for         Discovery populations
+this disease, with very positive recent results [11] but       In total, 5799 European sea bass (Dicentrarchus labrax)
+these vaccines cannot yet be applied on larvae or early        from two commercial populations were used to identify
+juveniles, for which this approach remains a challenge         QTL for resistance to VNN. These animals were pro-
+[12, 13]. Genetic improvement is another potential             duced by artificial mating and originated from two dif-
+approach to improve disease resistance in aquaculture, in      ferent French hatcheries designated as pop A and pop
+general [14], and specifically VNN resistance [15]. Recent     B. These populations are independent of each other
+studies have shown that European sea bass exhibits             but both originated from Mediterranean and Atlantic
+genetic variation in resistance to VNN with a heritabil-       European sea bass (see Additional file 1: Fig. S1). The
+ity ranging from 0.26 to 0.43 [10, 16–19]. After validating    2371 individuals from pop A and the 3428 individuals
+the possibility to select and improve fish for resistance to   from pop B were distributed into six cohorts (3 for pop
+NNV [14], dissection of the genetic architecture VNN           A, referred to as A_1, A_2 and A_3, and 3 for pop B,
+resistance in several European sea bass populations is a       referred to B_1, B_2 and B_3). The A_1 and B_1 cohorts
+necessary step to better understand the molecular archi-       (see below) were previously studied in Griot et al. [10].
+tecture of infection-resistant fish and enable marker-           For pop A, the individuals from the three cohorts were
+assisted selection [20]. In this regard, genome-wide           not related and distributed as follows: 671 individuals
+association studies (GWAS) have become a powerful tool         in cohort A_1, derived from a partly factorial mating
+and are commonly applied in animal breeding [21, 22].          of 56 sires and 19 dams, 650 individuals in cohort A_2,
+Previously, GWAS for VNN resistance have been per-             derived from a partly factorial mating of 58 sires and 16
+formed on European sea bass populations with 17K to            dams, and 1050 individuals in cohort A_3 derived from
+52K single nucleotide polymorphisms (SNPs) [10, 18, 23],       a partly factorial mating of 60 sires and 20 dams. Due
+and on Asian sea bass with 66K SNPs [19]. These stud-          to budget constraints, only the 174 sires (not the dams)
+ies reported the identification of quantitative trait loci     of these individuals were sampled for genome sequenc-
+(QTL) and SNPs that are associated with survival rate of       ing. For pop B, cohorts B_1 and B_2 were related and
+sea bass exposed to NNV. In particular, a QTL was iden-        B_3 was more distantly related. Cohort B_1 included
+tified on linkage group (LG)12 in several populations of       1083 individuals derived from a partly factorial mating
+European sea bass [10, 18]. In these studies, the location     of 40 sires and 14 dams, cohort B_2 included 1087 indi-
+of this QTL was, however, imprecise and population-            viduals derived from a partly factorial mating of 41 sires
+dependent. Implementation of efficient and accurate            and 15 dams, and cohort B_3 included 1258 individuals
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                                  Page 3 of 12
+
+
+
+
+derived from a partly factorial mating of 48 sires and 27                  then identified by matrix-assisted laser desorption/ioni-
+dams. For pop B, all parents of cohorts B_2 and B_3 were                   zation time-of-flight (MALDI-TOF) mass spectrometry.
+sampled for sequencing, while only some pairs of parents
+were sampled for cohort B_1 but only one parent (mostly                    Validation population
+the mothers) provided enough DNA to be sequenced for                       For the validation population, four full-sib families that
+some individuals. Thus, for pop B, 159 parents were sam-                   were previously experimentally challenged with VNN, as
+pled for whole-genome sequencing. Full information is in                   described by Griot et al. [10] (NEM10, NEM12, SEM8
+Table 1.                                                                   and WEM18), were used. The challenge method was the
+   The fish from the cohorts were challenged with VNN                      same described above. In total, 1536 fish from these fami-
+on the SYSAAF-ANSES Fortior Genetics platform                              lies were challenged with NNV during 32 days. All eight
+(ANSES, Plouzané, France). For all challenges, fish were                   parents of these four families were sampled for whole-
+maintained in filtered seawater in a flow-through sys-                     genome sequencing.
+tem at a temperature of 27 ± 2 °C. Infectious challenges
+were performed separately but followed the same pro-                       Whole‑genome sequencing and variant calling
+cedure for all cohorts, i.e. in tanks of the same size (400                In total, pectoral fin biopsies of 333 parents of individu-
+L) and with a density below 35 kg/m3. All fish used for                    als that were challenged with VNN were collected to
+the challenge were individually tagged with RFID glass                     obtain whole-genome sequencing (WGS) data, includ-
+tags and acclimatized for a three-week period before the                   ing 174 parents from pop A and 159 parents from pop B.
+challenge. Infection with the red-spotted grouper nerv-                    The eight parents of the validation population were also
+ous necrosis virus (RGNNV) strain W80 was performed                        sequenced (see details in Table 1). Genomic DNA was
+during 4 h in a static bath of aerated seawater containing                 extracted using the standard phenol–chloroform proto-
+1 × ­105 ­TCID50/mL of the virus. Mortality was recorded                   col at the GeT-PlaGe core facility, INRAE Toulouse, to
+daily during the challenge period of on average 32 days.                   perform DNA sequencing. DNA-seq libraries were pre-
+Fish that died during the challenge were categorized as                    pared according to manufacturer’s protocols using the
+susceptible and those that survived were considered                        Illumina TruSeq Nano DNA HT Library Prep kit. Briefly,
+resistant. To confirm the presence of the NNV virus                        DNA was fragmented by sonication, size selection was
+in fish that died and eliminate the possible impact of                     performed using SPB beads (kit beads), and adaptors
+unwanted bacterial coinfections, bacteriological and viral                 were ligated for traceability and sequencing. Library
+analyses were performed before the challenges and dur-                     quality was assessed using an Advanced Analytical Frag-
+ing peak mortality. Virologic analyses consisted of inject-                ment Analyzer and libraries were quantified by quantita-
+ing a homogenized mixture of eye and brain sampled                         tive PCR using the Kapa Library Quantification kit. DNA
+from a random dead fish on SSN1 (Striped Snakehead                         sequencing was performed on an Illumina NovaSeq6000
+fish; Ophicephalus striatus) cells [26]. After 5 days of                   using a paired-end read length of 2 × 150 bp with the Illu-
+incubation, when cytopathic effects were observed on the                   mina NovaSeq6000 Reagent kits.
+cells, virus identification was performed by immunofluo-                      The resulting sequencing reads were aligned to the
+rescence using anti-NNV antibodies. For bacteriological                    European sea bass reference genome that consists of 24
+analyses, spleen and kidney were sampled from dead fish                    LG (seabass_V1.0) using the Burrows-Wheeler Aligner
+and streaked on culture plates. The isolated bacteria were                 (BWA, v.2.1) method with default parameters [27].
+
+
+
+Table 1 Description of the two commercial populations and the validation population (IFREMER) that were challenged with VNN
+Population                                                             Population A                Population B                IFREMER
+
+Cohorts                                                                A_1        A_2     A_3      B_1      B_2      B_3       Validation
+Average weight                                                         8          6       25       31       7        11        8
+Average survival rate (%)                                              65.4       76.3    44.6     58.7     66.5     38.6      57.7
+Number of individuals challenged and genotyped                         1146       765     1148     1150     1246     1480      1536
+Number of individuals challenged and genotyped passing filters         1015       652     1051     1096     1182     1293      1520
+Number of parents (Sire/Dam)                                           56/19      58/16   60/20    40/14    41/15    48/27     4/4
+Number of parents sequenced (Sire/Dam)                                 56/0       58/0    60/0     20/9     41/15    48/26     4/4
+Number of individuals genotyped with sequenced parents                 671        650     1050     1083     1087     1258      1334
+Total of individuals genotyped with sequenced parents per population   2371                        3428                        1334
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                         Page 4 of 12
+
+
+
+
+SAMtools (v1.6) was used for handling SAM/BAM file              challenged offspring were used as target for pop A, pop B,
+formats [28] and duplicated reads were marked with              and the validation population.
+the Picard tool (http://​broad​insti​tute.​github.​io/​picard      To reduce the number of high-effect SNPs in the asso-
+v.2.21.1). After mapping, SNPs and InDels were called           ciation analyses of populations A and B, a subset of the
+using the DeepVariant (v.1.1.0) tool [29] to retain all types   imputed WGS SNPs was created from filters on linkage
+of variants present in the analyzed populations. Next, the      disequilibrium. Two successive filters were applied to
+dataset for which SNPs were detected with a minimum             have the same set of SNPs across the populations and to
+read mapping quality of 30 and with coverage higher             avoid redundancy among SNPs. First, we retained the
+than 4 was kept using BCFtools (v.1.13) [28]. The second        SNPs that were shared among pop A, pop B, and the vali-
+step of filtering was performed with the PLINK software         dation populations. Second, within each population, we
+(v.1.9) [30, 31] to remove SNPs that had: (1) a missing         filtered the remaining SNPs based on linkage disequilib-
+rate higher than 10%, (2) a minor allele frequency (MAF)        rium (LD) between all pairs of SNPs, with an upper limit
+lower than 1%, and (3) more than two identified alleles.        of ­r2 = 0.8 within 200-kb windows, using the PLINK soft-
+Finally, the output VCF files were converted to PLINK           ware (v.1.9) [30, 31]. And finally, common SNPs after fil-
+format and SNP genotypes were coded as 0, 1, and 2,             tering on LD in each population were selected.
+corresponding to the homozygous genotype for the ref-
+erence allele from the published genome (seabass_V1.0),         Bayesian sparse linear mixed model for genome‑wide
+the heterozygous genotype, and the homozygous geno-             association studies
+type for the alternative allele.                                The GWAS was conducted separately for each popula-
+                                                                tion by using a BSLMM that assumes that each of the
+                                                                SNPs has at least a relatively small effect but some SNPs
+SNP chip genotyping and imputation to whole‑genome              may have a large effect [30, 31]. Therefore, BSLMM is
+sequence                                                        capable of adapting to different genetic architectures of
+                                                                the studied trait, from the infinitesimal polygenic model
+56,730 SNPs using the ThermoFisher Axiom™ Sea Bass
+Samples from the challenged cohorts were genotyped for
+                                                                to a model that assumes that only a very small propor-
+57k SNP array DlabChip, at the Gentyane genotyping              tion of all variants affect the phenotype. The general lin-
+platform (INRAE, Clermont-Ferrand, France). In total,           ear model that was fitted, separately for each population,
+3059, 3876, and 1536 individuals from pop A, pop B, and         to binary survival phenotypes adjusted for an estimate of
+the validation population, respectively, were genotyped.        the cohort effect obtained from a linear model (as recom-
+                                                                mended in the GEMMA manual to avoid the problem of
+omAnalysisSuite™ software. Preliminary quality controls
+Genotype calling was done using the ThermoFisher Axi-
+                                                                covariates identical to some of the genotypes) can be pre-
+were applied with cut-off values of 95% for SNP calling         sented as follows:
+rate, 90% for sample calling rate, and the "Run PS Sup-
+                                                                     y = 1n µ + Xβ + u + ε,
+plemental" option to regenerate SNP metrics to select
+the SNPs that were identified as polymorphic by the soft-       where y is the n-vector of adjusted survival phenotypes,
+ware. Two other filtering steps were applied to the geno-       1n is an n-vector of 1s, 1n µ is a scalar representing the
+types of challenged individuals from pop A and B with           phenotype mean, X is an n × p matrix of genotypes
+the PLINK software (v.1.9) [30, 31], to remove (1) SNPs         measured on n individuals at p SNPs, β is the correspond-
+with a MAF less than 5% and (2) SNPs with a p-value for         ing p-vector of the SNP effects; u is a vector of random
+the Hardy–Weinberg test less than the ­10–8 threshold.          additive genetic effects that are assumed distributed
+The output VCF files were converted to PLINK format             according to N (0, Kσb2 ), where σb2 the additive genetic
+and were coded as 0, 1, and 2, as described above for the       variance and K is the genomic relationship matrix; and ε
+sequencing data. Parentage assignment of the challenged         is a n-vector of residuals that are assumed distributed as
+fish to their sequenced parents was performed with the          N (0, Iσe2 ), where σe2 is the variance of the residual errors.
+APIS R package [32] based on genotypes of a randomly            Assuming K = XXT /p, the SNP effects can be decom-
+sampled 1000 SNPs with a MAF around 0.5, with the               posed into two parts: a p-vector α, which captures the
+positive assignment error rate set at 1%.                       small effects that all SNPs have, and the p-vector β, which
+   Imputation of the WGS SNPs to the offspring that             captures the additional effects of some large-effect SNPs.
+were genotyped with the 57k SNP array DlabChip was              In the above model, u = Xα can be viewed as the com-
+performed using the FImpute software (v.3) [33], while          bined effect of all small-effect SNPs, and the total effect
+accounting for pedigree information. The SNPs that were         size for a SNP i is γi = αi + βi. The individual SNP effects
+identified based on the WGS variant calling of the par-         γi were sampled from a mixture of two normal distribu-
+ents were used as reference and the 57K genotypes of the        tions, γi ∼ πN (0, σα2 + σβ2 ) + (1 − π)N (0, σβ2 ) where σα2 is
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                     Page 5 of 12
+
+
+
+
+the variance of the small SNP effects, σ2 is the additional    function of the genotype of SNPs located in those
+                                         β
+variance associated with large SNP effects, and π is the       regions. For this purpose, we standardized the survival
+proportion of SNPs with large effects.                         rate in each cohort to a survival rate of 50% after a probit
+  The BSLMM was implemented using the genome-wide              transformation to allow all cohorts to be compared. Then,
+efficient mixed model association (GEMMA) software             the percent survival of each genotype for the peak SNP
+[34]. In GEMMA, we applied a linear BSLMM model                was recalculated for each cohort. Finally, survival rates
+using a Markov chain Monte Carlo (MCMC) method, as             of the studied SNPs were averaged by cohort to facilitate
+proposed by Zhou et al. [34]. In total, 5 million iterations   discussion of the results. In addition, an ANOVA was
+(-s option) were performed with a burn-in of 100,000 and       performed using R to calculate statistically significant
+samples recorded every 10 iterations for further analysis.     differences in survival between Resistant (R) and Suscep-
+To ensure convergence of the distribution of the hyper-        tible (S) genotypes within a population (by cohort) and
+parameter π, the minimum and maximum numbers of                across the three populations.
+SNPs that were sampled to be included in the model with           Functional analysis of the identified QTL regions was
+large effects were set to 5 (-smin option) and 100 (-smax      performed by linking variants detected in the whole-
+option), respectively. These threshold values were based       genome sequences of the parents with the annotated
+on an initial run with default values that indicated that      reference genome assembly of the European sea bass.
+the median number of SNPs that had a large effect was          All annotated genes positioned within the QTL region
+about 20.                                                      were reported. To understand the role of the variants in
+                                                               the coding regions of the identified genes, all SNPs iden-
+                                                               tified in the variant calling step were annotated based
+QTL identification and annotation
+                                                               on the UCSC annotation [39] of the European sea bass
+The BSLMM uses a MCMC algorithm for sampling from
+                                                               reference genome with the SnpEff software (v.5.0) and
+the posterior distribution to obtain all parameters values,
+                                                               default parameters [40]. SnpEff annotates variants in the
+including SNP effect estimates β , the hyper-parameter π,
+                                                               VCF files based on their position and reference annota-
+and a posterior inclusion probability (PIP) for each SNP
+                                                               tion. Each SNP was classified as coding or non-coding,
+that indicates the proportion of samples in which that
+                                                               the impact (from high to low) of each SNP was identified
+SNP was classified as having a large effect. This propor-
+                                                               and, finally, each SNP was assigned to the functional class
+tion can be used for QTL mapping as it indicates the
+                                                               of non-synonymous or synonymous (silent).
+strength of the evidence that the SNP has a larger effect.
+Following Barbieri and Berger [35], regions whose SNPs
+have a PIP higher than 0.5 were selected (since SNPs           Results
+                                                               VNN phenotypes
+from these regions are included in the model in most of
+the iterations). As a complementary approach, to define a      The six challenges for the six cohorts of pop A and B were
+less stringent threshold, Stephens and Balding [36] pro-       conducted over approximately 32 days. Presence and
+posed to calculate a Bayes factor (BF) for a SNP as            absence of NNV and pathogenic bacteria were confirmed
+          PIP                                                  on several subsets of dead fish during the infection, vali-
+BF = (1−PIP)
+        π    .                                                 dating NNV-related deaths. Survival rates ranged from
+        (1−π)
+   As proposed by Kass and Raftery [37], the natural loga-     44.5 to 76.3% for the pop A cohorts and from 38.6 to
+rithm transformation of the BF (logBF) was computed as         66.5% for the pop B cohorts. For the validation popu-
+twice the natural logarithm of the BF to produce values        lation, the average survival rate was 56% (Table 1). The
+within the same range as the usual likelihood ratio test       peak of mortality was between 5- and 15-days post-infec-
+values, thus facilitating the determination of thresh-         tion for all cohorts (Fig. 1).
+olds to declare QTL. A threshold logBF ≥ 10 was used
+to declare very strong evidence for a QTL, following           From whole‑genome sequences to imputed
+Michenet et al. [38]. The BSLMM results were visualized        whole‑genome variants
+via a Manhattan plot, with negative values for logBF set       We generated WGS at an average coverage of 19-fold
+equal to 0. Peak SNPs were identified using the thresh-        for 174 sires from pop A, 159 parents (126 sires and 53
+old logBF ≥ 10, showing strong evidence for a QTL. The         dams) from pop B, and the eight parents (4 sires and
+credibility interval for the QTL included every SNP with       4 dams) of the validation population. Variant calling
+a logBF > 5 within a 100-kb sliding window from the peak       identified around 8 million raw variants. Quality con-
+SNP. This procedure was repeated for each of the identi-       trol of the WGS SNPs was first carried out by popu-
+fied QTL regions.                                              lation. All sequenced individuals were retained. The
+   To determine how QTL regions affected VNN resist-           number of SNPs removed based on MAF (less than 15%),
+ance, we analyzed survival of challenged bars as a             SNP call rate (less than 95%), and Hardy-Weindberg
+Delpuech et al. Genetics Selection Evolution     (2023) 55:30                                                                 Page 6 of 12
+
+
+
+
+                                                                            pop B, combining the three cohorts for each population.
+                                                                            The estimated proportion of genetic variance explained
+                                                                            by the polygenic component was 61% for pop A and 62%
+                                                                            for pop B. The BSLMM association analysis identified
+                                                                            11 QTL regions for pop A and 12 QTL regions for pop
+                                                                            B as having large effects on VNN resistance, with strong
+                                                                            evidence for these QTL (Table 2). In pop A, QTL were
+                                                                            detected on LG1A, LG3, LG4, LG7, LG8, LG12, LG15,
+                                                                            LG22-25, and LGX. In pop B, QTL detected were located
+                                                                            on LG1B, LG7, LG8, LG9, LG12, LG13, LG14, and LG15
+ Fig. 1 Evolution of the Kaplan–Meier cumulative survival to a              (Fig. 2).
+ VNN infection challenge for each cohort from two commercial                  When the results for pop A and B were compared, sev-
+ populations and a validation population. Results are in purple for pop
+ A (A_1, A_2, A_3), in green for pop B (B_1, B_2, B_3), and in yellow for
+                                                                            eral significant SNPs with a strong effect for both popula-
+ the validation population                                                  tions were detected on LG8 and LG12. On LG8, the QTL
+                                                                            region between 1,423,728 bp and 3,198,660 bp (LG8_
+                                                                            QTL_1) was shared between the two populations. This
+                                                                            QTL explained 2.6% of the total genetic variance in pop
+(p-value > ­10–8) filters are reported in Additional file 2:                A and 3.1% in pop B. Based on logBF, four shared QTL
+Table S1. In total, 2,506,457 and 2,436,692 SNPs were                       regions were identified on LG12: LG12_QTL_1 between
+retained for pop A and B, respectively.                                     4,717,307 pb and 7,246,406 pb, LG12_QTL_2 between
+   From the 5799 57K genotypes obtained for pop A                           8,671,217 pb and 8,797,942 pb, LG12_QTL_3 between
+and B, respectively, 688 and 277 animals with a call rate                   9,118,505 pb and 9,821,502 pb and LG12_QTL_4
+threshold less than 90% or based on pedigree data were                      between 12,167,000 pb and 19,133,722 pb. The 126,725-
+removed, i.e. keeping only individuals that were chal-                      pb long LG12_QTL_2 QTL region had a major effect in
+lenged and that had at least one parent sequenced. After                    both populations, with the major SNP, at 8,797,936 pb,
+SNP filtering based on MAF (less than 10%), call fre-                       explaining 21.8% of the total genetic variance in pop A
+quency (less than 95%), and the Hardy–Weinberg equi-                        and 20.3% in pop B. For all the other shared QTL regions
+librium, 40,743 SNPs and 36,862 SNPs were retained for                      on LG12, the major SNPs explained only a small propor-
+pop A and B, respectively. Thus, genotypes of 2371 pop                      tion of the genetic variance (less than 2%).
+A animals for 40,743 SNPs and genotypes of 3428 pop B
+animals for 36,862 SNPs were retained for further analy-
+ses (for more details see Additional file 2: Table S1).                     LG12 QTL effect and candidate genes
+   After the imputation step for pop A and B, we obtained                   Survival rates for the genotypes at the SNP with the high-
+genotypes for 2,506,457 and 2,436,691 imputed WGS                           est logBF value were calculated for the LG12_QTL_2
+SNPs for 2371 and 3428 challenged animals in pop A and                      for both commercial populations and in the validation
+pop B, respectively. Based on an r­2 > 0.8 in 200-kb win-                   population.
+dows, 1,457,298 WGS SNPs and 1,457,105 WGS SNPs                               In Fig. 3, the resistant genotypes at the peak SNP for
+were retained for pop A and pop B, respectively. Finally,                   LG12_QTL_2 (LG12_8797936) are annotated “RR”, “RS”
+to perform GWAS on pop A and B, a common subset of                          and “SS” for resistant, heterozygous, and susceptible
+SNPs was created after applying LD filters to each popu-                    genotypes, respectively, which is the major SNP. At this
+lation, which included 838,451 imputed WGS SNPs.                            SNP, the reference allele G corresponds to the resistant
+   For the validation population, the same filters as                       allele (R) and the alternative allele T is the susceptibility
+described above were used. For the WGS of the eight                         allele (S). The flanking sequences of the LG12_8797936
+parents, 2,392,123 WGS SNPs were retained. For the                          SNP for the reference and alternative alleles are in Addi-
+57K genotyping data of the challenged individuals, geno-                    tional file 3. In pop A, the average survival rate was 78%
+types of 1334 individuals for 43,004 SNPs were retained.                    for the resistant genotype and 40.6% for the susceptible
+The imputation step resulted in a genetic marker set of                     genotype. In pop B, resistant and susceptible genotypes
+2,392,123 WGS imputed SNPs for the challenged valida-                       were associated with average survival rates of 66.2 and
+tion population individuals.                                                45.4%, respectively. Survival rates were very similar in the
+                                                                            validation populations, i.e. 39.9% for the susceptible gen-
+                                                                            otype and 63.8% for the resistant genotype. An ANOVA
+QTL detection for VNN resistance                                            analysis was performed on the R and S genotypes of
+The estimates of the genomic heritability of binary sur-                    the LG12_8797936 SNP regarding the VNN resistance
+vival on the observed scale were 0.22 in pop A and 0.21 in                  for pop A, pop B, and the validation population. The
+Delpuech et al. Genetics Selection Evolution           (2023) 55:30                                                                                          Page 7 of 12
+
+
+
+
+Table 2 QTL regions identified in the GWAS, ranked by their position on the genome
+QTL-ID                         LG                       Start (bp)                   End (bp)                    PIP                  logBF                  Population
+
+LG1A_QTL                       LG1A                     10,107,908                   10,111,686                  0.02                 10.3                   pop A
+LG1B_QTL                       LG1B                     13,152,351                   13,885,885                  0.04                 10.9                   pop B
+LG3_QTL                        LG3                      10,137,843                   10,137,843                  0.03                 10.6                   pop A
+LG4_QTL                        LG4                      23,334,300                   23,618,451                  0.22                 15.2                   pop A
+LG7_QTL_1                      LG7                        7,828,421                   7,828,421                  0.03                 10.6                   pop B
+LG7_QTL_2                      LG7                      21,062,741                   21,062,741                  0.03                 10.9                   pop A
+LG8_QTL_1                      LG8                        1,423,728                   3,198,660                  0.38                 16.4                   pop A/pop B
+LG8_QTL_2                      LG8                      20,789,708                   22,055,049                  0.05                 12                     pop A
+LG9_QTL                        LG9                        4,532,879                   6,335,544                  0.18                 14.4                   pop B
+LG12_QTL_1                     LG12                       4,717,307                   7,246,406                  0.2                  14.6                   pop A/pop B
+LG12_QTL_2                     LG12                       8,671,217                   8,797,942                  0.59                 18.5                   pop A/pop B
+LG12_QTL_3                     LG12                       9,118,505                   9,821,502                  0.36                 16.2                   pop A/pop B
+LG12_QTL_4                     LG12                     12,167,000                   19,133,722                  0.3                  16                     pop A/pop B
+LG13_QTL                       LG13                     11,019,998                   11,019,998                  0.15                 14                     pop B
+LG14_QTL                       LG14                     26,274,292                   26,276,196                  0.07                 12.1                   pop B
+LG15_QTL                       LG15                       5,885,758                   5,885,758                  0.04                 11                     pop B
+LG15_QTL                       LG15                     24,678,361                   24,678,361                  0.07                 12.3                   pop B
+LG22-25_QTL                    LG22-25                    4,185,377                   4,185,377                  0.03                 10.5                   pop A
+TL-ID QTL identifiers, LG linkage group, bp base pair, PIP posterior inclusion probability, logBF logarithm of Bayes Factor, Population population identification of the QTL
+region
+
+
+
+
+  Fig. 2 Manhattan plots of for VNN resistance in European sea bass
+  populations A (a) and B (b). The red dashed line represents the logBF
+  threshold of 10, corresponding to strong evidence for the presence
+  of a QTL
+
+
+                                                                                          Fig. 3 Average standardised survival rate for the peak SNP in the
+                                                                                          LG12_QTL_2. Each point corresponds to a weighted mean of the
+average standardized survival for each population is                                      average survival rate found in each cohort. The standard deviation of
+shown in Fig. 3 and Table 3 shows the statistical differ-                                 survival among the three cohorts is reported for each population
+ences between genotypes for each cohort. For the other
+QTL regions identified on LG12, the peak SNP showed a
+significant impact on survival rate only in the population                              alpha-induced protein, and ZDHHC14, which encodes a
+in which it was detected, especially for QTL_LG12_1 and                                 zinc finger palmitoyltransferase. The IFI6/IFI27-like gene
+QTL_LG12_3 (data not shown).                                                            is 903 pb long with four exons and the ZDHHC14 gene is
+  Based on the UCSC genome annotation database,                                         44.4 kb long with nine exons, respectively, and they are at
+two genes were located in the LG12_QTL_2 region                                         1.9 and 6 kb from the SNP with the highest logBF of the
+(Fig. 4), i.e. IFI6/IFI27-like, which encodes an interferon                             LG12_QTL_2.
+Delpuech et al. Genetics Selection Evolution                 (2023) 55:30                                                                                                     Page 8 of 12
+
+
+
+
+Table 3 ANOVA for the effect of the genotype at the LG12_8797936 variant on VNN resistance for each population and cohort
+Population                       Cohort                      N                       df                   Mean squares                         P value                        Statistical
+                                                                                                                                                                              significance
+
+Pop A                            –                           2371                    2                    14.85                                4.22E−28                       ***
+                                 A_1                          671                    2                      5.55                               9.65E−12                       ***
+                                 A_2                          650                    2                      3.00                               4.34E−08                       ***
+                                 A_3                         1050                    2                      7.31                               6.41E−14                       ***
+Pop B                            –                           3428                    2                      0.77                               4.53E−02                       *
+                                 B_1                        1083                     2                      6.20                               4.53E−12                       ***
+                                 B_2                        1258                     2                      0.17                               4.61E−01
+                                 B_3                        1087                     2                      1.14                               8.04E−03                       **
+Validation                       –                          1334                     2                      6.81                               4.53E−13                       ***
+N number of European seabass, df degree of freedom
+Statistical significance = significant codes 0: ‘***’ < 0.001: ‘**’ < 0.01: ‘*’ < 0.05: ‘.’ < 0.1: ‘’ < 1; Cohort = code "-" corresponds to full populations, i.e. including the three
+cohorts
+
+
+
+
+  Fig. 4 Results for the LG12_QTL_2 region showing the SNPs with their genomic positions and the identified genes. The graph displays the logBF
+  value on the y-axis and the physical position on the x-axis. Each point represents a variant in the QTL region, colored according to their LD (based
+  on the squared coefficient of correlation, ­r2 measure) with the characteristic variant of this QTL (red point). The red dashed lines indicate the
+  logBF = 10 threshold
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                      Page 9 of 12
+
+
+
+
+  Analyses of the SNPs in the LG12_QTL_2 region did             seems to be of special interest as a QTL was found on
+not identify causal variants that impact the coding region      this chromosome in all studies and populations, except in
+of the IFI6/IFI27-like gene since all SNPs are positioned       one experimental family in [10].
+in non-coding downstream sequences, in particular                 Whole-genome sequencing of the parents of 57K geno-
+the LG12_8797936 SNP with the strongest effect in the           typed offspring was used to finely map SNPs and InDels
+GWAS. For the ZDHHC14 gene, LG12_8746942 was                    to identify candidate genes for VNN resistance. Whole-
+found to be the SNP most strongly associated with the           genome sequence variants contain more causal muta-
+resistance phenotype and the SnpEff approach showed             tions than the SNP genotyping arrays that are available
+that it is located within the coding sequence of the            for European sea bass, which means that our study is
+ZDHHC14 gene, but with no impact on protein structure.          more likely to detect causal mutations. The relevance of
+                                                                using sequence data for mapping traits in farm animals
+Discussion                                                      was shown in the 1000 bull genomes program [42]. We
+In the present study, our aim was to use a combination of       conducted whole-genome association studies for VNN
+whole-genome sequencing, 57K genotyping, and GWAS               survival using imputed sequence data and Bayesian fine
+approaches to identify QTL for VNN resistance in Euro-          mapping was performed to accurately map candidate
+pean sea bass and to characterize the QTL using public          variants for this binary trait. Several QTL regions were
+functional annotation. Our results show that heritabil-         identified in the two commercial populations studied,
+ity estimates for VNN survival using imputed genotypes          but with most QTL regions revealed only in one of the
+(0.21–0.22 on the observed scale) are of the same mag-          two populations. Indeed, when we studied the survival
+nitude as those obtained in previous studies on NNV-            rates associated with the genotypes of the peak SNPs
+infected sea bass, i.e. 0.08 to 0.23 on the observed scale in   in these regions, they affected VNN survival only in the
+[10, 23] and 0.15 to 0.43 on the liability scale in [18, 41].   population in which they were detected. The only peak
+The differences between the estimates of NNV survival in        SNP that had a strong association with survival in both
+sea bass among all these studies can be due to differences      populations was the LG12_8797936 SNP in the LG12_
+in the number of breeders used to obtain challenged             QTL_2. The effect of this SNP was further validated
+individuals, the number of experimental individuals, the        using the unrelated validation population, which also
+method of infection during viral challenges, the age and        showed a fairly significant effect on survival rate associ-
+size at challenge, the genetic origin of the fish, and the      ated with the resistant and susceptible genotypes at this
+experimental design [41].                                       SNP (Fig. 3). The LG12_8797936 SNP that characterizes
+  Previous studies on the genetic architecture of VNN           this QTL region was associated with a survival rate that
+resistance in European sea bass revealed several genomic        increases from 40% for the susceptible genotype to nearly
+regions with one or more significant SNPs. The majority         80% for the resistant genotype in pop A, thus revealing
+of the previously reported QTL were based on a defined          a strong impact of this QTL. In pop B, the effect of this
+chromosome-wide significance threshold. Based on RAD            SNP on survival rates was slightly less strong, at 45 and
+sequencing, Palaiokostas et al. [18] identified QTL on          64% for the susceptible and resistant genotypes, respec-
+chromosomes 3, 20, and 25 but the nomenclature that             tively. In the validation population, the survival rates for
+they used does not match with the LG nomenclature               the susceptible and resistant genotypes were 40 and 64%,
+used in our study. However, after performing Blast on           respectively. For the other SNPs present in the 127kb
+the European sea bass reference genome (seabass_V1.0)           LG12_QTL_2, the survival rates were not significantly
+for these QTL regions, we were able to localise them on         different between genotypes at the SNP for all three
+LG6 (for which we found no QTL) and LG12 (for which             populations, whereas SNP LG12_8797936 showed a sig-
+we found three QTL). Based on the use of the 57k SNP            nificant difference in survival rate compared to genotypes
+array DlabChip and a Bayesian approach, Griot et al.            for commercial populations studied (Pop A and Pop B).
+[10] identified, in pop A and B, seven QTL regions (LG3,        In contrast, the two QTL that were identified at each end
+LG8, LG14, LG15, LG19 and LG20) and a large QTL on              of LG12 appeared to be characteristic of a single popula-
+LG12, and this large QTL region on LG12 was confirmed           tion. Thus, our focus was on the genomic region shared
+in three of the four experimental families in the valida-       by both pop A and B.
+tion population with an interval mapping approach.                Finding the causal variants that underlie a QTL is a
+One highly significant QTL on LG12 was reported to be           very difficult task, and very few causal variants have
+shared between pop A and B. More recently, Vela-Avitúa          been identified to date. Using sequence data, we were
+et al. [23] also identified a QTL with a strong effect on       able to refine the QTL region associated with VNN
+LG12 within a 7-Mb region on a different population,            resistance and identify the genes located in this region,
+using the same 57k SNP array DlabChip. Thus, LG12               although prioritization of the putative causal genes is
+Delpuech et al. Genetics Selection Evolution   (2023) 55:30                                                        Page 10 of 12
+
+
+
+
+challenging with the current state of annotation of the             The SNP with the strongest effect on the survival rate in
+European sea bass genome, which counts 23,382 cod-               the LG12_QTL_2 region is 3.7 kb downstream from the
+ing genes and 35,707 transcribed genes [39]. In spite            IFI6/IFI27-like gene that encodes an interferon-inducible
+of these limitations, the genes that are located within          protein. In most cells, interferon response is a major first
+the QTL region on LG12, i.e., the 127-kb region that             line of defense against viral infection. Viral infection trig-
+spanned the most significant SNPs, were searched                 gers the production of interferon, which binds to ubiqui-
+using the European sea bass genome (seabass_V1.0                 tously expressed receptors on nearby cells and induces a
+[39]) and two genes separated by 3.6 kb, ZDHHC14                 powerful transcriptional program that comprises hun-
+and IFI6/IFI27-like were identified as strong candi-             dreds of interferon-stimulated genes [45]. Initially dis-
+dates. Neither of these genes were reported in previous          covered in chicken, interferon and its essential role in
+association studies for survival to VNN. Interestingly,          orchestrating the immune response to viral infection
+LG12_QTL_2 and these two genes are located more                  have since then been identified in all vertebrates, includ-
+than 2.5 Mb away from the QTL region identified by               ing in fish [46]. The IFI6/IFI27-like gene, which encodes
+Vela-Avitúa et al. [23], which includes the HSP70 gene.          a small 130 amino acid interferon-inducible protein from
+This may be a consequence of the much higher preci-              the IFI6 family and has four conserved paralogues in
+sion of our localization, as the LG12_QTL_2 region is            humans (IFI6, IFI27, IFI27L1 and IFI27L2), is involved in
+only 127 kb long, while the region identified in [23] was        several processes of the regulation of human viral attacks
+7 Mb long. Another difference between our study and              in response to type I interferon (I-IFN) [47, 48]. For hepa-
+that of [23] is the way the infectious challenge was per-        titis B virus (HBV) replication, in vivo analysis based on
+formed, with the latter infecting fish by injection, while       the combined injection of an IFI6/IFI27-like expression
+we induced infection via contamination of the circulat-          plasmid and HBV revealed significant inhibition of HBV
+ing water, i.e. the virus was present in the aquatic envi-       DNA replication and gene expression [49]. The same
+ronment, as is the case for the fish in rearing facilities       mechanism was also reported for the hepatitis C virus
+(tanks, sea cage). As a result, the defence mechanisms           [50]. In several fish species, including Atlantic halibut,
+involved in the immune response may differ between               turbot, grouper, Asian sea bass, and European sea bass
+the two studies. Interestingly, the HSP70 gene was also          [51–55], VNN infection induces expression of interferon
+as identified differentially expressed in a study that           and interferon-related genes. In particular, I-IFN was
+compared NNV infected and non-infected cell lines of             shown to reduce RGNNV replication and thus protect
+European sea bass [43]. This study identified genes that         fish against this virus in grouper fish [51, 55]. Based on
+are triggered by infection but these genes are not nec-          these results, a similar study on European sea bass identi-
+essarily those involved in disease resistance.                   fied the I-IFN system as an important player in its pro-
+  As for the variants identified in our study, the               tection against RGNNV infection using different in vivo
+LG12_8746942 SNP is located in the coding region of the          approaches [52]. Thus, based on the results obtained
+ZDHHC14 gene, which encodes a palmitoyltransferase               on the regulation of viral infections in humans but also
+that can catalyze the addition of palmitate onto vari-           in several aquaculture species, resistance to NNV in
+ous protein substrates. A recent study linked this reac-         sea bass could be related to the interferon pathway via
+tion with inhibition of NNV in vitro and showed that             the regulation of the IFI6/IFI27-like protein encoded
+inhibition of protein palmitoylation and phospholipid            by the gene positioned on LG12. Additional functional
+synthesis, which involve lipid metabolism, significantly         approaches need to be conducted on both the IFI6/IFI27-
+decreased RGNNV replication [43], noting that viruses            like and ZDHHC14 genes to evaluate their impact on
+hijack host cell metabolism to ensure their own replica-         immune mechanisms of European sea bass against VNN.
+tion. However, in vitro experiments showed that zinc fin-
+ger DHHC domain–containing palmitoyltransferases can             Conclusions
+enhance the activity of interferon-induced transmem-             We identified candidate genes associated with resist-
+brane protein 3 (IFITM3), which is a cellular endosome-          ance to VNN in European sea bass using sequence data
+and lysosome-localized protein that restricts numerous           GWAS. Based on dense genotypic information, the
+virus infections, and its activation by ZDHHC has anti-          BSLMM approach was performed to refine the GWAS.
+viral properties [44]. In addition to the lesions in the liver   Among the identified putative QTL, two were shared
+and spleen tissues, lipid droplets present in the necrotic       between the two commercial populations that were
+nerve cells are used by the virus for replication [15].          studied, among which QTL LG12_QTL_2 that car-
+As these symptoms occur in sea bass during infection             ries the IFI6/IFI27-like and ZDHHC14 genes, the role
+with NNV, the ZDHHC14 gene is of great interest and              of which should be further clarified using other func-
+deserves to be analyzed further via functional analyses.         tional approaches. For practical application in selective
+Delpuech et al. Genetics Selection Evolution          (2023) 55:30                                                                                   Page 11 of 12
+
+
+
+
+breeding, the LG12_8797936 SNP identified in this QTL                                by the French Ministry of Higher Education, Research and Innovation under
+                                                                                     numbers 2017022816255366, 29/01/13-5 and 10/03/15-1.
+and located near the IFI6/IFI27-like gene, has a high
+potential for successful marker-assisted selection, since                            Consent for publication
+we show that the susceptible and resistant genotypes                                 Not applicable.
+had a similar effect on survival to VNN infection in inde-                           Competing interests
+pendent populations. This is a major advance to improve                              JB, ABa, BI, JSB are running the commercial breeding programs which pro‑
+the resistance of cultured populations of European sea                               vided fish for the present experiment. RM, ABe, MB and PH are advising them
+                                                                                     on the design and operation of these breeding programs. The other authors
+bass to one of its main infectious diseases.                                         declare no competing interests.
+
+Supplementary Information                                                            Author details
+                                                                                     1
+                                                                                       MARBEC, Univ. Montpellier, CNRS, Ifremer, IRD, INRAE, 34250 Pala‑
+The online version contains supplementary material available at https://​doi.​
+                                                                                     vas‑Les‑Flots, France. 2 Université Paris-Saclay, INRAE, AgroParisTech, GABI,
+org/​10.​1186/​s12711-​023-​00805-2.
+                                                                                     78350 Jouy‑en‑Josas, France. 3 SYSAAF, Station LPGP/INRAE, Campus de
+                                                                                     Beaulieu, 35042 Rennes, France. 4 Ecloserie Marine de Gravelines-Ichtus, Gloria
+  Additional file 1: Figure S1. PCA on genotypes of commercial popula‑               Maris Group, 59273 Gravelines, France. 5 Fermes Marines Du Soleil, 17840 La
+  tions (pop A and pop B) and wild populations in the Atlantic (Atl) and             Brée Les Bains, France. 6 ANSES, Unit Virology, Immunology and Ecotoxicology
+  Eastern Mediterranean (East-Med). Principal component analysis (PCA)               of Fish, Technopôle Brest-Iroise, 29280 Plouzané, France. 7 US 1426, GeT-PlaGe,
+  using genotypic data from two commercial populations and two wild                  INRAE, Genotoul, Castanet‑Tolosan, France. 8 INRAE-UCA, UMR 1095 GDEC,
+  populations, one from the Atlantic strain (Atl) and the other from the West        63000 Clermont‑Ferrand, France.
+  Mediterranean strain (East-Med).
+  Additional file 2: Table S1. Number of SNPs removed after several qual‑            Received: 28 June 2022 Accepted: 18 April 2023
+  ity filters. Details of the number of SNPs removed with quality controls
+  applied on whole-genome sequences and 57K SNP chip data.
+  Additional file 3: Flanking 50-bp sequences for the top associated
+  SNPs in LG12_QTL_2. Genomic sequences flanking the IFI6/IFI27-like                 References
+  and ZDHHC14 SNPs computed from Dicentrarchus labrax genome                         1. Fernández Sánchez JL, Le Breton A, Brun E, Vendramin N, Spiliopou‑
+  (seabass_V1.0).                                                                        los G, Furones D, et al. Assessing the economic impact of diseases in
+                                                                                         Mediterranean grow-out farms culturing European sea bass. Aquaculture.
+                                                                                         2022;547: 737530.
+Acknowledgements
+                                                                                     2. Lama R, Pereiro P, Valenzuela-Muñoz V, Gallardo-Escárate C, Tort L,
+The authors would like to thank the different technical platforms: (i) the Fortior
+                                                                                         Figueras A, et al. RNA-Seq analysis of European sea bass (Dicentrarchus
+Genetics platform (ANSES, Plouzané, France) for performing the challenges, (ii)
+                                                                                         labrax L.) infected with nodavirus reveals powerful modulation of the
+the INRAE genotyping platform Gentyane (INRAE, Clermont-Ferrand, France)
+                                                                                         stress response. Vet Res. 2020;51:64.
+for the production of genotype data, (iii) the GeT-PlaGe genomic platform
+                                                                                     3. Doan QK, Vandeputte M, Chatain B, Morin T, Allal F. Viral encephalopathy
+(INRAE, Castanet-Tolosan, France), and (iv) the Pôle de Calcul et de Don‑
+                                                                                         and retinopathy in aquaculture: a review. J Fish Dis. 2017;40:717–42.
+nées Marines (PCDM) for providing DATARMOR storage and computational
+                                                                                     4. Breuil G, Bonami JR, Pepin JF, Pichot Y. Viral infection (picorna-like virus)
+resources. Finally, we thank Dr. Ronan Griot for the first analyses performed on
+                                                                                         associated with mass mortalities in hatchery-reared sea-bass (Dicentrar-
+the GeneSea project data that have been included in this article.
+                                                                                         chus labrax) larvae and juveniles. Aquaculture. 1991;97:109–16.
+                                                                                     5. Vendramin N, Zrncic S, Padros F, Oraic D, Le Breton A, Zarza C, et al. Fish
+Author contributions
+                                                                                         health in Mediterranean Aquaculture, past mistakes and future chal‑
+ED performed the bioinformatic and statistical analyses and wrote the first
+                                                                                         lenges. Bull Eur Assoc Fish Pathol. 2016;36:38–45.
+draft of the paper. Aba, JB, BI and JSB organized the breeding of European sea
+                                                                                     6. Toffan A, Panzarin V, Toson M, Cecchettin K, Pascoli F. Water temperature
+bass. ABe and MB organized the data acquisition. ED, FA, MV, FP, ABe, MB, ABa,
+                                                                                         affects pathogenicity of different betanodavirus genotypes in experimen‑
+BI, PH and RM participated in the design of the study. MV, FP and FA provided
+                                                                                         tally challenged Dicentrarchus labrax. Dis Aquat Organ. 2016;119:231–8.
+scientific supervision. All authors read and approved the final manuscript.
+                                                                                     7. Le Breton A, Grisez L, Sweetman J, Ollevier F. Viral nervous necrosis (VNN)
+                                                                                         associated with mass mortalities in cage-reared sea bass, Dicentrarchus
+Funding
+                                                                                         labrax (L.). J Fish Dis. 1997;20:145–51.
+This work was financially supported by the GeneSea and MedMax projects
+                                                                                     8. Munday BL, Kwang J, Moody N. Betanodavirus infections of teleost fish: a
+(no. R FEA470016FA1000005 and FEA470020FA1000002) funded by the French
+                                                                                         review. J Fish Dis. 2002;25:127–42.
+Government and the European Union (EMFF, European Maritime and Fisheries
+                                                                                     9. Costa JZ, Thompson KD. Understanding the interaction between
+Fund) at the “Appels à projets Innovants” managed by France Agrimer.
+                                                                                         Betanodavirus and its host for the development of prophylactic meas‑
+                                                                                         ures for viral encephalopathy and retinopathy. Fish Shellfish Immunol.
+Availability of data and materials
+                                                                                         2016;53:35–49.
+Individual whole-genome sequencing data from the parents of the validation
+                                                                                     10. Griot R, Allal F, Phocas F, Brard-Fudulea S, Morvezen R, Bestin A, et al.
+population are available from NCBI SRA under the BioProject access code
+                                                                                         Genome-wide association studies for resistance to viral nervous necrosis
+PRJNA915039 (https://​www.​ncbi.​nlm.​nih.​gov/​sra/​PRJNA​915039). The other
+                                                                                         in three populations of European sea bass (Dicentrarchus labrax) using a
+datasets used and/or analyzed during the current study are available for scien‑
+                                                                                         novel 57k SNP array DlabChip. Aquaculture. 2021;530: 735930.
+tific purposes from the corresponding author upon reasonable request.
+                                                                                     11. Gonzalez-Silvera D, Guardiola FA, Espinosa C, Chaves-Pozo E, Esteban
+                                                                                         MÁ, Cuesta A. Recombinant nodavirus vaccine produced in bacteria
+Declarations                                                                             and administered without purification elicits humoral immunity and
+                                                                                         protects European sea bass against infection. Fish Shellfish Immunol.
+Ethics approval and consent to participate                                               2019;88:458–63.
+All infection challenges were carried out according to the European guide‑           12. Gomez-Casado E, Estepa A, Coll JM. A comparative review on European-
+lines (Directive 2010–63-EU) and the corresponding French legislation. Animal            farmed finfish RNA viruses and their vaccines. Vaccine. 2011;29:2657–71.
+experiment procedures were approved by the ethics committee on animal                13. Buonocore F, Nuñez-Ortiz N, Picchietti S, Randelli E, Stocchi V, Guerra
+experimentation COMETH ANSES/ENVA/UPC No.16 and were authorized                          L, et al. Vaccination and immune responses of European sea bass
+Delpuech et al. Genetics Selection Evolution             (2023) 55:30                                                                                      Page 12 of 12
+
+
+
+
+      (Dicentrarchus labrax L.) against betanodavirus. Fish Shellfish Immunol.           39. Tine M, Kuhl H, Gagnaire P-A, Louro B, Desmarais E, Martins RST, et al.
+      2019;85:78–84.                                                                         European sea bass genome and its variation provide insights into adapta‑
+14.   Gjedrem T. Disease resistant fish and shellfish are within reach: a review. J          tion to euryhalinity and speciation. Nat Commun. 2014;5:5770.
+      Mar Sci Eng. 2015;3:146–53.                                                        40. Cingolani P, Platts A, Wang LL, Coon M, Nguyen T, Wang L, et al. A
+15.   Yang Z, Yue GH, Wong S-M. VNN disease and status of breeding for resist‑               program for annotating and predicting the effects of single nucleotide
+      ance to NNV in aquaculture. Aquac Fish. 2022;7:147–57.                                 polymorphisms, SnpEff. Fly (Austin). 2012;6:80–92.
+16.   Gjedrem T, Robinson N. Advances by selective breeding for aquatic spe‑             41. Faggion S, Bertotto D, Babbucci M, Dalla Rovere G, Franch R, Bovolenta
+      cies: a review. Agric Sci. 2014;5:1152–8.                                              M, et al. Resistance to viral nervous necrosis in European sea bass (Dicen-
+17.   Doan QK, Vandeputte M, Chatain B, Haffray P, Vergnet A, Breuil G, et al.               trarchus labrax L.): heritability and relationships with body weight, cortisol
+      Genetic variation of resistance to Viral Nervous Necrosis and genetic cor‑             concentration, and antibody titer. Genet Sel Evol. 2021;53:32.
+      relations with production traits in wild populations of the European sea           42. Daetwyler HD, Capitan A, Pausch H, Stothard P, van Binsbergen R,
+      bass (Dicentrarchus labrax). Aquaculture. 2017;478:1–8.                                Brøndum RF, et al. Whole-genome sequencing of 234 bulls facilitates
+18.   Palaiokostas C, Cariou S, Bestin A, Bruant J-S, Haffray P, Morin T, et al.             mapping of monogenic and complex traits in cattle. Nat Genet.
+      Genome-wide association and genomic prediction of resistance to viral                  2014;46:858–65.
+      nervous necrosis in European sea bass (Dicentrarchus labrax) using RAD             43. Huang Y, Zhang Y, Zheng J, Wang L, Qin Q, Huang X. Metabolic profiles of
+      sequencing. Genet Sel Evol. 2018;50:30.                                                fish nodavirus infection in vitro: RGNNV induced and exploited cellular
+19.   Wang L, Liu P, Huang S, Ye B, Chua E, Wan ZY, et al. Genome-wide asso‑                 fatty acid synthesis for virus infection. Cell Microbiol. 2020;22: e13216.
+      ciation study identifies loci associated with resistance to viral nervous          44. McMichael TM, Zhang L, Chemudupati M, Hach JC, Kenney AD, Hang HC,
+      necrosis disease in Asian seabass. Mar Biotechnol (NY). 2017;19:255–65.                et al. The palmitoyltransferase ZDHHC20 enhances interferon-induced
+20.   Griot R, Allal F, Phocas F, Brard-Fudulea S, Morvezen R, Haffray P, et al.             transmembrane protein 3 (IFITM3) palmitoylation and antiviral activity. J
+      Optimization of genomic selection to improve disease resistance in                     Biol Chem. 2017;292:21517–26.
+      two marine fishes, the European sea bass (Dicentrarchus labrax) and the            45. Wu X, Dao Thi VL, Huang Y, Billerbeck E, Saha D, Hoffmann H-H, et al.
+      Gilthead sea bream (Sparus aurata). Front Genet. 2021;12: 665920.                      Intrinsic immunity shapes viral resistance of stem cells. Cell. 2018;172:423-
+21.   Correa K, Lhorente JP, Bassini L, López ME, Di Genova A, Maass A, et al.               438.e25.
+      Genome wide association study for resistance to Caligus rogercresseyi              46. Rauta PR, Nayak B, Das S. Immune system and immune responses in fish
+      in Atlantic salmon (Salmo salar L.) using a 50K SNP genotyping array.                  and their role in comparative immunity study: a model for higher organ‑
+      Aquaculture. 2017;472:61–5.                                                            isms. Immunol Lett. 2012;148:23–33.
+22.   Zhou T, Liu S, Geng X, Jin Y, Jiang C, Bao L, et al. GWAS analysis of QTL for      47. Schoggins JW, Wilson SJ, Panis M, Murphy MY, Jones CT, Bieniasz P, et al.
+      enteric septicemia of catfish and their involved genes suggest evolution‑              A diverse range of gene products are effectors of the type I interferon
+      ary conservation of a molecular mechanism of disease resistance. Mol                   antiviral response. Nature. 2011;472:481–5.
+      Genet Genomics. 2017;292:231–42.                                                   48. Parker N, Porter ACG. Identification of a novel gene family that includes
+23.   Vela-Avitúa S, Thorland I, Bakopoulos V, Papanna K, Dimitroglou A, Kot‑                the interferon-inducible human genes 6–16 and ISG12. BMC Genomics.
+      taras E, et al. Genetic basis for resistance against viral nervous necrosis:           2004;5:8.
+      GWAS and potential of genomic prediction explored in farmed European               49. Sajid M, Ullah H, Yan K, He M, Feng J, Shereen MA, et al. The functional
+      sea bass (Dicentrarchus labrax). Front Genet. 2022;13: 804584.                         and antiviral activity of interferon alpha-inducible IFI6 against hepatitis B
+24.   Dekkers JCM, Hospital F. The use of molecular genetics in the improve‑                 virus replication and gene expression. Front Immunol. 2021;12: 634937.
+      ment of agricultural populations. Nat Rev Genet. 2002;3:22–32.                     50. Qi H, Chu V, Wu NC, Chen Z, Truong S, Brar G, et al. Systematic identifica‑
+25.   Dekkers JCM. Commercial application of marker- and gene-assisted                       tion of anti-interferon function on hepatitis C virus genome reveals p7 as
+      selection in livestock: strategies and lessons. J Anim Sci. 2004;82:E313–28.           an immune evasion protein. Proc Natl Acad Sci USA. 2017;114:2018–23.
+26.   Castric J, Thiéry R, Jeffroy J, de Kinkelin P, Raymond JC. Sea bream Sparus        51. Chen Y-M, Kuo C-E, Chen G-R, Kao Y-T, Zou J, Secombes CJ, et al.
+      aurata, an asymptomatic contagious fish host for nodavirus. Dis Aquat                  Functional analysis of an orange-spotted grouper (Epinephelus coioides)
+      Organ. 2001;47:33–8.                                                                   interferon gene and characterisation of its expression in response to
+27.   Li H, Durbin R. Fast and accurate short read alignment with Burrows-                   nodavirus infection. Dev Comp Immunol. 2014;46:117–28.
+      Wheeler transform. Bioinformatics. 2009;25:1754–60.                                52. Carballo C, Garcia-Rosado E, Borrego JJ, Alonso MC. SJNNV down-
+28.   Danecek P, Bonfield JK, Liddle J, Marshall J, Ohan V, Pollard MO, et al.               regulates RGNNV replication in European sea bass by the induction of the
+      Twelve years of SAMtools and BCFtools. GigaScience. 2021;10:giab008.                   type I interferon system. Vet Res. 2016;47:6.
+29.   Yun T, Li H, Chang P-C, Lin MF, Carroll A, McLean CY. Accurate, scalable           53. Huang Y, Huang X, Cai J, OuYang Z, Wei S, Wei J, et al. Identification of
+      cohort variant calls using DeepVariant and GLnexus. Bioinformatics.                    orange-spotted grouper (Epinephelus coioides) interferon regulatory
+      2020;36:5582–9.                                                                        factor 3 involved in antiviral immune response against fish RNA virus. Fish
+30.   Purcell S, Neale B, Todd-Brown K, Thomas L, Ferreira MAR, Bender D, et al.             Shellfish Immunol. 2015;42:345–52.
+      PLINK: a tool set for whole-genome association and population-based                54. Krishna Priya RS, Premraj A, Sivakumar KC, Sajeevan TP. Identification
+      linkage analyses. Am J Hum Genet. 2007;81:559–75.                                      of two ISG15 homologues involved in host immune response against
+31.   Chang CC, Chow CC, Tellier LC, Vattikuti S, Purcell SM, Lee JJ. Second-                RGNNV in Asian seabass (Lates calcarifer). Fish Shellfish Immunol Rep.
+      generation PLINK: rising to the challenge of larger and richer datasets.               2022;3: 100054.
+      GigaScience. 2015;4:7.                                                             55. Thanasaksiri K, Sakai N, Yamashita H, Hirono I, Kondo H. Influence of
+32.   Griot R, Allal F, Brard-Fudulea S, Morvezen R, Haffray P, Phocas F, et al. APIS:       temperature on Mx gene expression profiles and the protection of seven‑
+      an auto-adaptive parentage inference software that tolerates missing                   band grouper, Epinephelus septemfasciatus, against red-spotted grouper
+      parents. Mol Ecol Resour. 2020;20:579–90.                                              nervous necrosis virus (RGNNV) infection after poly (I:C) injection. Fish
+33.   Sargolzaei M, Chesnais JP, Schenkel FS. A new approach for efficient                   Shellfish Immunol. 2014;40:441–5.
+      genotype imputation using information from relatives. BMC Genomics.
+      2014;15:478.
+34.   Zhou X, Carbonetto P, Stephens M. Polygenic modeling with Bayesian                 Publisher’s Note
+      sparse linear mixed models. PLoS Genet. 2013;9: e1003264.                          Springer Nature remains neutral with regard to jurisdictional claims in pub‑
+35.   Barbieri MM, Berger JO. Optimal predictive model selection. Ann Stat.              lished maps and institutional affiliations.
+      2004;32:870–97.
+36.   Stephens M, Balding DJ. Bayesian statistical methods for genetic associa‑
+      tion studies. Nat Rev Genet. 2009;10:681–90.
+37.   Kass RE, Raftery AE. Bayes factors. J Am Stat Assoc. 1995;90:773–95.
+38.   Michenet A, Barbat M, Saintilan R, Venot E, Phocas F. Detection of quanti‑
+      tative trait loci for maternal traits using high-density genotypes of Blonde
+      d’Aquitaine beef cattle. BMC Genet. 2016;17:88.
+

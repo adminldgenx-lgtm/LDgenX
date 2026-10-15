@@ -1,0 +1,73 @@
+{
+  "id": "P02",
+  "title": "Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish.",
+  "authors": [
+    "Venney CJ",
+    "Cayuela H",
+    "Rougeux C",
+    "Laporte M",
+    "Mérot C",
+    "Normandeau E",
+    "Leitwein M",
+    "Dorant Y",
+    "Præbel K",
+    "Kenchington E",
+    "Clément M",
+    "Sirois P",
+    "Bernatchez L"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Evolution; international journal of organic evolution",
+  "year": 2023,
+  "doi": "10.1093/evolut/qpac028",
+  "doi_url": "https://doi.org/10.1093/evolut/qpac028",
+  "pmid": "36622671",
+  "pmcid": null,
+  "publication_dates": {
+    "published": [
+      [
+        2022,
+        12,
+        8
+      ]
+    ],
+    "published-print": [
+      [
+        2023,
+        1,
+        23
+      ]
+    ],
+    "published-online": [
+      [
+        2022,
+        12,
+        8
+      ]
+    ],
+    "issued": [
+      [
+        2022,
+        12,
+        8
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "preprint_fulltext_html",
+  "retrieved_content_version": "preprint",
+  "license_urls_for_retrieved_version": [
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  ],
+  "preprint": {
+    "doi": "10.1101/2021.01.28.428603",
+    "url": "https://doi.org/10.1101/2021.01.28.428603",
+    "license_as_reported": "cc_by_nc_nd",
+    "version": "1"
+  },
+  "institutional_records": [],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

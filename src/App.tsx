@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState, type ComponentType } from 'react';
+import { use, useEffect, useRef, useState, type ComponentType } from 'react';
 import { Navigate, useLocation, useNavigationType } from 'react-router-dom';
-import { getPage, redirects, type PageKind, type PageMeta } from './lib/pages';
+import { getPage, localeAt, redirects, type PageKind, type PageMeta } from './lib/pages';
+import { catalogs, loadCatalog } from './content/catalog';
 import { Header } from './layouts/Header';
 import { Footer } from './layouts/Footer';
 import { SEO } from './components/SEO';
@@ -15,18 +16,31 @@ import {
   ResourcesPage,
   ArticlePage,
 } from './pages/Editorial';
-import { AboutPage, TeamPage, PartnersPage, LegalPage, PrivacyPage } from './pages/Company';
+import {
+  AboutPage,
+  TeamPage,
+  PartnersPage,
+  LegalPage,
+  PrivacyPage,
+  PersonPage,
+  TermsPage,
+} from './pages/Company';
+import { WorkPage } from './pages/Works';
+import { ResearchPage } from './pages/Research';
+import { LocaleProvider, useCatalog, useRoutes } from './i18n';
 import { ContactPage } from './pages/Contact';
 
 function NotFound() {
+  const t = useCatalog().ui.notFound;
+  const r = useRoutes();
   return (
     <section className="not-found">
-      <Eyebrow>404 · une autre piste à explorer</Eyebrow>
-      <h1>Cette page nous échappe.</h1>
-      <p>Retrouvez les expertises et les ressources de LDgenX.</p>
-      <Button to="/">Revenir à l’accueil</Button>
-      <Button to="/services" variant="outline">
-        Explorer les expertises
+      <Eyebrow>{t.eyebrow}</Eyebrow>
+      <h1>{t.title}</h1>
+      <p>{t.text}</p>
+      <Button to={r.home}>{t.home}</Button>
+      <Button to={r.services} variant="outline">
+        {t.services}
       </Button>
     </section>
   );
@@ -39,6 +53,10 @@ const templates: Record<PageKind, ComponentType<{ meta: PageMeta }>> = {
   application: ApplicationPage,
   studies: StudiesPage,
   study: StudyPage,
+  work: WorkPage,
+  person: PersonPage,
+  publications: ResearchPage,
+  terms: TermsPage,
   innovations: InnovationsPage,
   innovation: InnovationPage,
   about: AboutPage,
@@ -52,12 +70,48 @@ const templates: Record<PageKind, ComponentType<{ meta: PageMeta }>> = {
   'not-found': NotFound,
 };
 
+/** A hairline under the header that fills as the page is read. */
+function ReadingProgress() {
+  const bar = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.current?.style.setProperty(
+        '--read',
+        String(max > 0 ? Math.min(1, window.scrollY / max) : 0),
+      );
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+  return (
+    <div className="reading-progress" aria-hidden="true">
+      <span ref={bar} />
+    </div>
+  );
+}
+
 // Scroll position of each history entry, so Back and Forward return where the visitor was.
 const scrollPositions = new Map<string, number>();
 
 export function App() {
   const location = useLocation();
   const navigationType = useNavigationType();
+  // Moving to the other language waits for its catalogue; the navigation is a transition, so
+  // the current page stays on screen meanwhile.
+  const locale = localeAt(location.pathname);
+  if (!catalogs[locale]) use(loadCatalog(locale));
   const meta = getPage(location.pathname);
   const Page = templates[meta.kind];
   const initial = useRef(true);
@@ -81,12 +135,18 @@ export function App() {
       cancelAnimationFrame(frame);
     };
   }, []);
+  // Only a change of page (or anchor) moves the scroll and focus; a change of the query alone
+  // (filters, an open publication) leaves the reader where they are.
+  const place = useRef(location.pathname + location.hash);
   useEffect(() => {
     entryKey.current = location.key;
     if (initial.current) {
       initial.current = false;
       return;
     }
+    const here = location.pathname + location.hash;
+    if (here === place.current) return;
+    place.current = here;
     const saved = navigationType === 'POP' ? scrollPositions.get(location.key) : undefined;
     const target = location.hash && document.getElementById(location.hash.slice(1));
     // The page jumps without the stylesheet's smooth scrolling, which would otherwise carry on
@@ -105,9 +165,10 @@ export function App() {
   }, [location.pathname, location.hash, location.key, navigationType]);
   const normalized = location.pathname.replace(/\/+$/, '') || '/';
   return (
-    <>
+    <LocaleProvider locale={meta.locale}>
       <SEO meta={meta} />
       <Header />
+      {meta.kind !== 'home' && <ReadingProgress />}
       <main
         id="main"
         tabIndex={-1}
@@ -118,6 +179,6 @@ export function App() {
       </main>
       <Footer />
       {redirects[normalized] && <Navigate to={redirects[normalized]} replace />}
-    </>
+    </LocaleProvider>
   );
 }

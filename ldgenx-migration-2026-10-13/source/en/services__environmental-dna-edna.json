@@ -1,0 +1,526 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/environmental-dna-edna",
+  "final_url": "https://www.ldgenx.com/services/environmental-dna-edna",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:39.026610+00:00",
+  "language": "en",
+  "title": "",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": ""
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__environmental-dna-edna.html",
+  "raw_sha256": "f5dfe20a8fac197d1fcd319fe70436e984d07a00042e73e8101c8f99ed23f299",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental",
+      "text": "Read more",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "project",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9de2c4d9-project/320-6a5de9de2c4d9-project.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "probe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9d48d446-probe/320-6a5de9d48d446-probe.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "extraction",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9af5a808-extraction/320-6a5de9af5a808-extraction.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "sequencing",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaee7d0bc-sequencing/320-6a5deaee7d0bc-sequencing.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "dPCR",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9a669ccb-dpcr/320-6a5de9a669ccb-dpcr.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "bioinf",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de971cebfe-bioinfo/320-6a5de971cebfe-bioinfo.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "stat",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb078a06a-stat/320-6a5deb078a06a-stat.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "diversity",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99cb94a7-diversity/320-6a5de99cb94a7-diversity.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "visualisation",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99179950-datavisualisation/320-6a5de99179950-datavisualisation.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "report",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9eecd4bd-report/320-6a5de9eecd4bd-report.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "AO",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37/433-6a5df7c7151cb-capture-d-e-cran-2026-07-20-a-11-58-37.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06/433-6a5df7f67468d-capture-d-e-cran-2026-07-20-a-11-59-06.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02/398-6a5df83609abc-capture-d-e-cran-2026-07-20-a-11-58-02.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5df86fc606c-biotope/398-6a5df86fc606c-biotope.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9de2c4d9-project/320-6a5de9de2c4d9-project.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9d48d446-probe/320-6a5de9d48d446-probe.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9af5a808-extraction/320-6a5de9af5a808-extraction.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deaee7d0bc-sequencing/320-6a5deaee7d0bc-sequencing.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9a669ccb-dpcr/320-6a5de9a669ccb-dpcr.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de971cebfe-bioinfo/320-6a5de971cebfe-bioinfo.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5deb078a06a-stat/320-6a5deb078a06a-stat.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99cb94a7-diversity/320-6a5de99cb94a7-diversity.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de99179950-datavisualisation/320-6a5de99179950-datavisualisation.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5de9eecd4bd-report/320-6a5de9eecd4bd-report.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 2,
+      "text": "Monitor biodiversity using environmental DNA (eDNA)"
+    },
+    {
+      "level": 2,
+      "text": "Environmental DNA (eDNA)"
+    },
+    {
+      "level": 2,
+      "text": "Approches"
+    },
+    {
+      "level": 2,
+      "text": "Services"
+    },
+    {
+      "level": 2,
+      "text": "Case study"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__environmental-dna-edna.md",
+  "content_characters": 3310,
+  "content_sha256": "0b92ccf4c5e204441938da82dc9cd49bdd683d70c6a6837f85517ce78442cd27",
+  "body_text": "Monitor biodiversity using environmental DNA (eDNA)\nEnvironmental DNA (eDNA) \n        Environmental DNA (eDNA) enables the detection and identification of species present in an ecosystem from water, soil, sediment, or biofilm samples.LDgenX provides tailored eDNA solutions to support biodiversity monitoring, conservation, and environmental impact assessments.\n            Approches\n        Metabarcoding\nBiodiversity assessment using targeted genetic markers (e.g. 12S, COI, 18S, ITS).Metagenomics\nComprehensive analysis of biological communities through untargeted sequencing.\n Targeted dPCR\nUltra-sensitive detection and quantification of target species or pathogens using digital PCR (dPCR).\n Long-Read Sequencing\nEnhanced taxonomic resolution and expanded analytical capabilities through long-read sequencing technologies.\n            Services\n        12345678910\n            Case study\n        Ichthyological Survey for the Artois–Picardie Water Agency\n                Read more\n            Detection and monitoring of fish communities in turbid waters using environmental DNA (eDNA)Baseline Marine Biodiversity Assessment at a Pilot Site\n        Biodiversity Monitoring of Offshore Wind Farms\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__environmental-dna-edna.json"
+}

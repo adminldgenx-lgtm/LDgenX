@@ -1,9 +1,11 @@
 import { ChevronDown } from 'lucide-react';
-import { copy, faq, projectPractice } from '../content/fr';
+import { useCatalog } from '../i18n';
 import { AnimatedHeading } from '../components/motion';
 import { Eyebrow, ProjectActions, Reveal } from '../components/ui';
+import { LiveList } from '../components/Steps';
 
 export function ProjectPractice({ intro }: { intro: string }) {
+  const { projectPractice } = useCatalog();
   return (
     <section className="section-space practice-section">
       <div className="container practice-layout">
@@ -18,19 +20,11 @@ export function ProjectPractice({ intro }: { intro: string }) {
         <div className="practice-lists">
           <Reveal className="practice-list">
             <h3>{projectPractice.prepareTitle}</h3>
-            <ul>
-              {projectPractice.prepare.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <LiveList items={projectPractice.prepare} className="live-list-light" />
           </Reveal>
           <Reveal className="practice-list" delay={0.08}>
             <h3>{projectPractice.defineTitle}</h3>
-            <ul>
-              {projectPractice.define.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <LiveList items={projectPractice.define} className="live-list-light" />
           </Reveal>
         </div>
       </div>
@@ -38,13 +32,14 @@ export function ProjectPractice({ intro }: { intro: string }) {
   );
 }
 
-export function Faq({ title = 'Les réponses\navant le premier échange.' }: { title?: string }) {
+export function Faq({ title }: { title?: string }) {
+  const { copy, faq, ui } = useCatalog();
   return (
     <section className="section-space faq-section">
       <div className="container faq-layout">
         <div>
           <Eyebrow>{copy.labels.faq}</Eyebrow>
-          <AnimatedHeading className="display-small" text={title} />
+          <AnimatedHeading className="display-small" text={title ?? ui.faqTitle} />
         </div>
         <div className="faq-list">
           {faq.map((item, i) => (

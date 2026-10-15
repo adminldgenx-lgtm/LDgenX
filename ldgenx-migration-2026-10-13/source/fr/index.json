@@ -1,0 +1,1000 @@
+{
+  "requested_url": "https://www.ldgenx.fr/",
+  "final_url": "https://www.ldgenx.fr/",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:57.958236+00:00",
+  "language": "fr",
+  "title": "LDgenX - Analyse et expertise génomique pour la conservation de la biodiversité",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "ADNe Expert génétique génomique conservation protection de la biodiversité Identification espèces traçabilité gestion sélection bioinformatique séquençage ONT dPCR"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/index.html",
+  "raw_sha256": "61b951bf4fb7894d9722544c0209a077bf8a19cd36ac6166eb6a7c9a6f9f775d",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://bluetechshow.fr/",
+      "text": "ici",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Demandez un devis",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Prenez un rendez-vous",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://cal.com/ldgenx-echange/decouverte",
+      "text": "Prenez un rendez-vous",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/partenaires-2",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Nos services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environemental (ADNe)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection génomique",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "BlueTechShow salon 2026",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6ac390fdf3d19-format-bo-photo-2/550-6ac390fdf3d19-format-bo-photo-2.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "saumon biodiversité ADNe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b9a9e79d2a9-coho/218-62b9a9e79d2a9-coho.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Biodiverstité et conservation",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45332923190-site-web-ldgenx-11/default-6a45332923190-site-web-ldgenx-11.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Aquaculture et pêche",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4533deefa53-site-web-ldgenx-16/default-6a4533deefa53-site-web-ldgenx-16.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Agriculture et agroécologie",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a453351240ca-site-web-ldgenx-12/default-6a453351240ca-site-web-ldgenx-12.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Environnement et bureaux d'études",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45337fc5bd8-site-web-ldgenx-15/default-6a45337fc5bd8-site-web-ldgenx-15.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "R&D",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a45301e431df-site-web-ldgenx-5/default-6a45301e431df-site-web-ldgenx-5.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Energies marines renouvelables",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4534a28b4db-site-web-ldgenx-17/default-6a4534a28b4db-site-web-ldgenx-17.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Crealia",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf5730837-2/default-6a58cf5730837-2.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "incubateur",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3f3381a-4/default-6a58ce3f3381a-4.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "BPI FRANCE label deep tech",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce5d175ed-6/default-6a58ce5d175ed-6.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "celimer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce48cb100-5/default-6a58ce48cb100-5.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pôle mer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce75efb5e-8/default-6a58ce75efb5e-8.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "incubateur mbs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce8553e5b-9/default-6a58ce8553e5b-9.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Montpellier buisness school",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3071ab9-3/default-6a58ce3071ab9-3.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "inra start and grow",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce0c9879c-1/default-6a58ce0c9879c-1.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pepite deeptech",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce6b93374-7/default-6a58ce6b93374-7.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "université montpellier",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce93a36e4-10/default-6a58ce93a36e4-10.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "université de corse",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea108230-11/default-6a58cea108230-11.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "ifremer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea9c5855-12/default-6a58cea9c5855-12.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "inrae",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceb2adde4-13/default-6a58ceb2adde4-13.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "cbrs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cebe7bb09-14/default-6a58cebe7bb09-14.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "EPHE",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cec8d30cf-15/default-6a58cec8d30cf-15.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Marbec",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ced440ab3-16/default-6a58ced440ab3-16.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Fédération Nationale des Chasseurs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceef0f4e3-17/default-6a58ceef0f4e3-17.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Qualyse",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cefb9082b-18/default-6a58cefb9082b-18.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Pays de l'ours",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf0c8ff4c-19/default-6a58cf0c8ff4c-19.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "BARBA",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf17b7070-20/default-6a58cf17b7070-20.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "biotope",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf236cbc7-21/default-6a58cf236cbc7-21.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Plastic at sea",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf2dd2c6a-22/default-6a58cf2dd2c6a-22.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Line Up ocean",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf3bdc741-23/default-6a58cf3bdc741-23.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Agence de l'eau",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf46d80f4-24/default-6a58cf46d80f4-24.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf5730837-2/default-6a58cf5730837-2.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3f3381a-4/default-6a58ce3f3381a-4.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce5d175ed-6/default-6a58ce5d175ed-6.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce48cb100-5/default-6a58ce48cb100-5.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce75efb5e-8/default-6a58ce75efb5e-8.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce8553e5b-9/default-6a58ce8553e5b-9.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3071ab9-3/default-6a58ce3071ab9-3.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce0c9879c-1/default-6a58ce0c9879c-1.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce6b93374-7/default-6a58ce6b93374-7.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce93a36e4-10/default-6a58ce93a36e4-10.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea108230-11/default-6a58cea108230-11.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea9c5855-12/default-6a58cea9c5855-12.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceb2adde4-13/default-6a58ceb2adde4-13.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cebe7bb09-14/default-6a58cebe7bb09-14.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cec8d30cf-15/default-6a58cec8d30cf-15.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ced440ab3-16/default-6a58ced440ab3-16.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceef0f4e3-17/default-6a58ceef0f4e3-17.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cefb9082b-18/default-6a58cefb9082b-18.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf0c8ff4c-19/default-6a58cf0c8ff4c-19.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf17b7070-20/default-6a58cf17b7070-20.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf236cbc7-21/default-6a58cf236cbc7-21.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf2dd2c6a-22/default-6a58cf2dd2c6a-22.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf3bdc741-23/default-6a58cf3bdc741-23.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf46d80f4-24/default-6a58cf46d80f4-24.png",
+          "attribute": "background-or-thumbnail"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LDgenX"
+    },
+    {
+      "level": 3,
+      "text": "Révélez la biodiversité grâce à l'ADN"
+    },
+    {
+      "level": 1,
+      "text": "Le BlueTechShow revient pour sa 4ème édition !"
+    },
+    {
+      "level": 2,
+      "text": "Nos secteurs d'activité"
+    },
+    {
+      "level": 2,
+      "text": "Pourquoi choisir LDgenX ?"
+    },
+    {
+      "level": 2,
+      "text": "Une innovation reconnue et soutenue"
+    },
+    {
+      "level": 2,
+      "text": "DNA EcoTrace"
+    },
+    {
+      "level": 1,
+      "text": "Ils sont à nos côtés et nous font confiance :"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/index.md",
+  "content_characters": 7414,
+  "content_sha256": "76a63cee41cb3db86d1c9155650e12945c4ad6d4ed40b2248dc34e72e5c9b557",
+  "body_text": "LDgenX\n        \n            Révélez la biodiversité grâce à l'ADN\nLe BlueTechShow revient pour sa 4ème édition ! \n        Retrouvez une partie de l'équipe LDgenX \nle 20 et 21 octobre 2026\nà Canet-en-Rousillon ! \nPour plus d'informations, RDV ici.\n    \n                A propos\n            LDgenX accompagne les acteurs publics et privés dans leurs projets de surveillance de la biodiversité, de conservation des espèces, d'agriculture et d'aquaculture durable grâce à la génomique.\nDe l'échantillonnage à l'interprétation des données, notre équipe de plus de 10 ans d'expérience transforme l'information génétique en outils d'aide à la décision.\n \n    \n                Demandez un devis \n            Prenez un rendez-vous\n                Nos services\n            ADN environemental (ADNe)Détection et suivi des espèces grâce à l'analyse des traces d'ADN présentes dans l'environnement.Génomique des populationsÉtude de la diversité génétique, de la connectivité et de l'adaptation des populations.Analyse des communautés microbiennesCaractérisation des communautés bactériennes, fongiques et microbiennes par séquençage haut débit.Sélection génomiqueDéveloppement d'outils génétiques pour les programmes de sélection.BioinformatiqueAnalyse, traitement et interprétation des données génomiques.Séquençage & dPCR\n        Séquençage d’amplicons, courts et long fragments. Mise au point et analyses en digital PCR (dPCR)\n    \n            Nos secteurs d'activité\n        \n            Pourquoi choisir LDgenX ?\n \n        ✓ Expertise scientifique reconnue\n✓ Accompagnement de A à Z\n✓ Solutions sur mesure\n✓ Technologies de pointe\n✓ Entreprise DeepTech française\n            Une innovation reconnue et soutenue\n        LDgenX est une entreprise DeepTech spécialisée dans la génomique appliquée à la biodiversité.\nNos développements sont soutenus par CREALIA, BPI France les grands instituts de recherche publique (Ifremer, INRAE, Université de Corse). \n    \n            DNA EcoTrace\n        \n        Notre projet innovant de surveillance de la biodiversité par ADN environnemental combine :\n✓ échantillonnage non invasif \n✓ séquençage longue lecture \n✓ intelligence artificielle \n✓ restitution simplifiée des résultats\n    \n        Ils sont à nos côtés et nous font confiance :\n        123456789101112131415161718192021222324\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/index.json"
+}

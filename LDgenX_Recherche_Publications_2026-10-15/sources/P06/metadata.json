@@ -1,0 +1,62 @@
+{
+  "id": "P06",
+  "title": "Using Haplotype Information for Conservation Genomics.",
+  "authors": [
+    "Leitwein M",
+    "Duranton M",
+    "Rougemont Q",
+    "Gagnaire PA",
+    "Bernatchez L"
+  ],
+  "team_members": [
+    "Maeva Leitwein"
+  ],
+  "journal": "Trends in ecology & evolution",
+  "year": 2020,
+  "doi": "10.1016/j.tree.2019.10.012",
+  "doi_url": "https://doi.org/10.1016/j.tree.2019.10.012",
+  "pmid": "31810774",
+  "pmcid": null,
+  "publication_dates": {
+    "published": [
+      [
+        2020,
+        3
+      ]
+    ],
+    "published-print": [
+      [
+        2020,
+        3
+      ]
+    ],
+    "issued": [
+      [
+        2020,
+        3
+      ]
+    ]
+  },
+  "publication_status": "published",
+  "legacy_website_source": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+  "access_level": "published_fulltext_html",
+  "retrieved_content_version": "version_of_record",
+  "license_urls_for_retrieved_version": [
+    "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+  ],
+  "preprint": null,
+  "institutional_records": [
+    {
+      "title_s": [
+        "Using Haplotype Information for Conservation Genomics"
+      ],
+      "uri_s": "https://hal.science/hal-02395119v1",
+      "docType_s": "ART",
+      "doiId_s": "10.1016/j.tree.2019.10.012",
+      "producedDate_s": "2019-12",
+      "fileMain_s": "https://hal.science/hal-02395119/document",
+      "licence_s": "https://about.hal.science/hal-authorisation-v1/"
+    }
+  ],
+  "retrieved_at": "2026-10-15T11:55:29.871752+00:00"
+}

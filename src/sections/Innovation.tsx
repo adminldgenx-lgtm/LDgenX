@@ -1,206 +1,183 @@
-import { useRef, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-import { copy, innovations } from '../content/fr';
-import { AnimatedHeading, useNearViewport, usePointerVars } from '../components/motion';
+import { useCatalog, useRoutes } from '../i18n';
+import {
+  AnimatedHeading,
+  useNearViewport,
+  usePointerVars,
+  useReducedMotion,
+} from '../components/motion';
 import { Eyebrow, Reveal, TextLink } from '../components/ui';
+import { createLab } from '../lib/lab-scenes';
 
-/* "La recherche comme moteur": the two R&D projects, each with a moving illustration of its
-   idea and its four stages as a pipeline that a signal runs through. The illustrations are
-   pictures of the principle (long reads being read; a clock of marks on the DNA), not data. */
+/* "La recherche comme moteur": the two R&D projects in one lab. A switch picks the project; its
+   four stages play as four scenes on one canvas, in step with their names. It plays by itself,
+   holds while pointed at, and a stage can be chosen. The scenes picture the principle of each
+   project, not data. */
+
+const STEP_MS = 2400;
+type Auto = 'all' | 'project' | 'off';
 
 export function InnovationShowcase() {
-  const ref = useRef<HTMLElement>(null);
-  const live = useNearViewport(ref, '0px');
-  usePointerVars(ref);
+  const section = useRef<HTMLElement>(null);
+  const live = useNearViewport(section, '0px');
+  usePointerVars(section);
+  const { copy, ui } = useCatalog();
+  const r = useRoutes();
   return (
-    <section ref={ref} className="innovation-section" data-live={live || undefined}>
+    <section ref={section} className="innovation-section lab-section" data-live={live || undefined}>
       <div className="container">
         <div className="innovation-heading">
           <div>
-            <Eyebrow light>La recherche comme moteur</Eyebrow>
+            <Eyebrow light>{ui.lab.eyebrow}</Eyebrow>
             <AnimatedHeading className="display-large" text={copy.home.innovationTitle} />
           </div>
           <Reveal>
             <p>{copy.home.innovationIntro}</p>
-            <TextLink to="/innovation">{copy.labels.innovation}</TextLink>
+            <TextLink to={r.innovations}>{copy.labels.innovation}</TextLink>
           </Reveal>
         </div>
-        <div className="innovation-projects">
-          {innovations.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.12}>
-              <Link className="innovation-project" to={`/innovation/${project.slug}`}>
-                <div className="innovation-visual" aria-hidden="true">
-                  {i === 0 ? <ReadsVisual /> : <ClockVisual />}
-                </div>
-                <span className="item-category">{project.label}</span>
-                <h3>{project.title}</h3>
-                <p>{project.intro}</p>
-                <ol className="innovation-pipeline">
-                  {project.steps.map((step, k) => (
-                    <li key={step} style={{ '--i': k } as CSSProperties}>
-                      {step}
-                    </li>
-                  ))}
-                </ol>
-                <span className="innovation-read">Explorer le projet</span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <Lab />
         <div className="innovation-support">
-          <p>Recherche soutenue par Bpifrance et Créalia Occitanie.</p>
+          <p>{ui.lab.support}</p>
         </div>
       </div>
     </section>
   );
 }
 
-// A small seeded generator: the same picture on the server and in the browser.
-function seeded(seed: number) {
-  return () => {
-    seed = (seed + 0x6d2b79f5) | 0;
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
+/** The lab: both projects with a switch, or, with `only`, one project's four stages. */
+export function Lab({ only }: { only?: number }) {
+  const { innovations, ui } = useCatalog();
+  const r = useRoutes();
+  const root = useRef<HTMLDivElement>(null);
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const live = useNearViewport(root, '0px');
+  const reduced = useReducedMotion();
+  const [chosen, setProject] = useState(0);
+  const project = only ?? chosen;
+  const [step, setStep] = useState(0);
+  const [auto, setAuto] = useState<Auto>(only === undefined ? 'all' : 'project');
+  const [hold, setHold] = useState(false);
+  const state = useRef({ project, step });
+  state.current = { project, step };
+  const playing = auto !== 'off' && live && !hold && !reduced;
+  const current = innovations[project];
 
-const READ_COLOURS = ['#73b50f', '#4f9fc4', '#c3dc9c', '#2f6f99'];
-const READS = (() => {
-  const random = seeded(7);
-  return Array.from({ length: 7 }, (_, row) => {
-    const segments: { x: number; width: number; colour: string; opacity: number }[] = [];
-    let x = random() * 20;
-    while (x < 560) {
-      const width = 10 + random() * 64;
-      segments.push({
-        x,
-        width: Math.min(width, 560 - x),
-        colour: READ_COLOURS[Math.floor(random() * READ_COLOURS.length)],
-        opacity: 0.35 + random() * 0.5,
-      });
-      x += width + 5 + random() * 12;
+  const advance = () => {
+    if (step < 3) setStep(step + 1);
+    else {
+      setStep(0);
+      if (auto === 'all') setProject((project + 1) % innovations.length);
     }
-    return { y: 30 + row * 20, duration: 16 + random() * 14, segments };
-  });
-})();
+  };
 
-/** DNA EcoTrace: long reads stream past a reading head, which lights them as they cross. */
-function ReadsVisual() {
-  const rows = (bright: boolean) =>
-    READS.map((row, r) => (
-      <g
-        key={r}
-        className="reads-row"
-        style={{ animationDuration: `${row.duration.toFixed(1)}s` } as CSSProperties}
-      >
-        {[0, 560].map((offset) =>
-          row.segments.map((s, k) => (
-            <rect
-              key={`${offset}-${k}`}
-              x={s.x + offset}
-              y={row.y}
-              width={s.width}
-              height={6}
-              rx={3}
-              fill={bright ? '#e9f6d2' : s.colour}
-              opacity={bright ? 1 : s.opacity}
-            />
-          )),
-        )}
-      </g>
-    ));
-  return (
-    <svg className="reads-visual" viewBox="0 0 560 180" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="reads-fade" x1="0" x2="1">
-          <stop offset="0" stopColor="white" stopOpacity="0" />
-          <stop offset="0.18" stopColor="white" stopOpacity="1" />
-          <stop offset="0.82" stopColor="white" stopOpacity="1" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
-        </linearGradient>
-        <mask id="reads-mask">
-          <rect width="560" height="180" fill="url(#reads-fade)" />
-        </mask>
-        <clipPath id="reads-head">
-          <rect x="326" y="0" width="22" height="180" />
-        </clipPath>
-        <linearGradient id="reads-glow" x1="0" x2="1">
-          <stop offset="0" stopColor="#73b50f" stopOpacity="0" />
-          <stop offset="0.5" stopColor="#73b50f" stopOpacity="0.32" />
-          <stop offset="1" stopColor="#73b50f" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <g mask="url(#reads-mask)">
-        <g className="reads-stream">{rows(false)}</g>
-        <rect
-          className="reads-head-glow"
-          x="300"
-          y="12"
-          width="74"
-          height="156"
-          fill="url(#reads-glow)"
-        />
-        <g clipPath="url(#reads-head)">
-          <g className="reads-stream">{rows(true)}</g>
-        </g>
-        <line className="reads-head" x1="337" x2="337" y1="14" y2="166" />
-      </g>
-    </svg>
-  );
-}
-
-/** eDNAClock: a hand sweeps a ring of marks, which glow as it passes and slowly fade; growth
- *  rings widen from the centre. */
-function ClockVisual() {
-  const ticks = Array.from({ length: 72 }, (_, i) => {
-    const angle = (i / 72) * Math.PI * 2 - Math.PI / 2;
-    const long = i % 6 === 0;
-    const r1 = long ? 54 : 58,
-      r2 = 68;
-    return {
-      x1: 280 + Math.cos(angle) * r1,
-      y1: 90 + Math.sin(angle) * r1,
-      x2: 280 + Math.cos(angle) * r2,
-      y2: 90 + Math.sin(angle) * r2,
-      i,
+  const lab = useRef<ReturnType<typeof createLab>>(null);
+  useEffect(() => {
+    const element = canvas.current;
+    if (!element || (!live && !reduced)) return;
+    lab.current ??= createLab(element);
+    const current = lab.current;
+    if (!current) return;
+    // Reduced motion: each change settles the scene at once, without animating it.
+    if (reduced) {
+      const now = performance.now();
+      for (let k = 0; k < 120; k++) current.draw(now + k * 16, state.current);
+      return;
+    }
+    current.wake();
+    let frame = 0;
+    const loop = (now: number) => {
+      current.draw(now, state.current);
+      frame = requestAnimationFrame(loop);
     };
-  });
+    frame = requestAnimationFrame(loop);
+    const resize = new ResizeObserver(() => current.resize());
+    resize.observe(element);
+    return () => {
+      cancelAnimationFrame(frame);
+      resize.disconnect();
+    };
+  }, [live, reduced, reduced ? project : 0, reduced ? step : 0]);
+
+  const single = only !== undefined;
   return (
-    <svg className="clock-visual" viewBox="0 0 560 180" preserveAspectRatio="xMidYMid slice">
-      <g className="clock-rings">
-        {[0, 1, 2].map((k) => (
-          <circle
-            key={k}
-            cx="280"
-            cy="90"
-            r="44"
-            style={{ animationDelay: `${k * 2}s` } as CSSProperties}
-          />
-        ))}
-      </g>
-      <circle className="clock-track" cx="280" cy="90" r="76" />
-      <g className="clock-ticks">
-        {ticks.map((t) => (
-          <line key={t.i} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />
-        ))}
-      </g>
-      <g className="clock-marks">
-        {ticks.map((t) => (
-          <line
-            key={t.i}
-            x1={t.x1}
-            y1={t.y1}
-            x2={t.x2}
-            y2={t.y2}
-            style={{ animationDelay: `${((t.i / 72) * 12 - 12).toFixed(3)}s` } as CSSProperties}
-          />
-        ))}
-      </g>
-      <g className="clock-hand">
-        <line x1="280" y1="90" x2="280" y2="16" />
-      </g>
-      <circle className="clock-centre" cx="280" cy="90" r="3.5" />
-    </svg>
+    <Reveal className={`lab ${single ? 'lab-single' : ''}`}>
+      <div ref={root} className="lab-root">
+        {!single && (
+          <div className="lab-projects">
+            <div className="lab-tabs" role="tablist" aria-label={ui.lab.projects}>
+              {innovations.map((p, i) => (
+                <button
+                  key={p.slug}
+                  type="button"
+                  role="tab"
+                  id={`lab-tab-${p.slug}`}
+                  aria-selected={i === project}
+                  aria-controls="lab-panel"
+                  className="lab-project"
+                  onClick={() => {
+                    setProject(i);
+                    setStep(0);
+                    setAuto('project');
+                  }}
+                >
+                  <span className="lab-project-label">{p.label}</span>
+                  <span className="lab-project-title">{p.title}</span>
+                  <span className="lab-project-headline">{p.headline}</span>
+                </button>
+              ))}
+            </div>
+            <div className="lab-about" key={current.slug}>
+              <p>{current.intro}</p>
+              <Link className="lab-read" to={r.innovation(current.id)}>
+                {ui.lab.explore} {current.title}
+              </Link>
+            </div>
+          </div>
+        )}
+
+        <div
+          id={single ? undefined : 'lab-panel'}
+          role={single ? undefined : 'tabpanel'}
+          aria-labelledby={single ? undefined : `lab-tab-${current.slug}`}
+          className="lab-panel"
+        >
+          <div
+            className="lab-stage"
+            onPointerEnter={(e) => e.pointerType === 'mouse' && setHold(true)}
+            onPointerLeave={() => setHold(false)}
+          >
+            <canvas ref={canvas} className="lab-canvas" aria-hidden="true" />
+            <p className="lab-caption">{ui.common.illustration}</p>
+          </div>
+          <ol className="lab-steps" data-paused={!playing || undefined}>
+            {current.steps.map((name, i) => (
+              <li key={name} data-state={i < step ? 'done' : i === step ? 'now' : undefined}>
+                <button
+                  type="button"
+                  aria-current={i === step ? 'step' : undefined}
+                  onClick={() => {
+                    setStep(i);
+                    setAuto('off');
+                  }}
+                >
+                  <span className="lab-step-bar" aria-hidden="true">
+                    {i === step && auto !== 'off' && !reduced && (
+                      <span
+                        key={`${project}-${step}`}
+                        style={{ '--step': `${STEP_MS}ms` } as CSSProperties}
+                        onAnimationEnd={advance}
+                      />
+                    )}
+                  </span>
+                  <span className="lab-step-name">{name}</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </Reveal>
   );
 }

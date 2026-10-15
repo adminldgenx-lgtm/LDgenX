@@ -1,0 +1,786 @@
+Aliakbari et al. Genet Sel Evol (2020) 52:57
+https://doi.org/10.1186/s12711-020-00576-0                                                                                                                          Ge n e t i c s
+                                                                                                                                                                    Se l e c t i o n
+                                                                                                                                                                    Ev o l u t i o n
+
+ RESEARCH ARTICLE                                                                                                                                         Open Access
+
+The impact of training on data
+from genetically‑related lines on the accuracy
+of genomic predictions for feed efficiency traits
+in pigs
+Amir Aliakbari* , Emilie Delpuech, Yann Labrune, Juliette Riquet and Hélène Gilbert
+
+
+  Abstract
+  Background: Most genomic predictions use a unique population that is split into a training and a validation set.
+  However, genomic prediction using genetically heterogeneous training sets could provide more flexibility when
+  constructing the training sets in small populations. The aim of our study was to investigate the potential of genomic
+  prediction of feed efficiency related traits using training sets that combine animals from two different, but genetically-
+  related lines. We compared realized prediction accuracy and prediction bias for different training set compositions for
+  five production traits.
+  Results: Genomic breeding values (GEBV) were predicted using the single-step genomic best linear unbiased pre-
+  diction method in six scenarios applied iteratively to two genetically-related lines (i.e. 12 scenarios). The objective for
+  all scenarios was to predict GEBV of pigs in the last three generations (~ 400 pigs, G7 to G9) of a given line. For each
+  line, a control scenario was set up with a training set that included only animals from that line (target line). For all
+  traits, adding more animals from the other line to the training set did not increase prediction accuracy compared to
+  the control scenario. A small decrease in prediction accuracies was found for average daily gain, backfat thickness, and
+  daily feed intake as the number of animals from the target line decreased in the training set. Including more animals
+  from the other line did not decrease prediction accuracy for feed conversion ratio and residual feed intake, which
+  were both highly affected by selection within lines. However, prediction biases were systematic for these cases and
+  might be reduced with bivariate analyses.
+  Conclusions: Our results show that genomic prediction using a training set that includes animals from genetically-
+  related lines can be as accurate as genomic prediction using a training set from the target population. With combined
+  reference sets, accuracy increased for traits that were highly affected by selection. Our results provide insights into the
+  design of reference populations, especially to initiate genomic selection in small-sized lines, for which the number of
+  historical samples is small and that are developed simultaneously. This applies especially to poultry and pig breeding
+  and to other crossbreeding schemes.
+
+
+                                                                                          Background
+                                                                                          Given the large economic impact of feed efficiency in
+                                                                                          the swine industry, its evaluation requires accurate esti-
+                                                                                          mation of breeding values (BV) and selection of animals
+                                                                                          [1]. The most commonly used criterion to measure feed
+*Correspondence: amir.alikbari@inrae.fr                                                   efficiency in livestock species is feed conversion ratio
+GenPhySE, Université de Toulouse, INRAE, 31326 Castanet‑Tolosan, France
+
+
+                                        © The Author(s) 2020. This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing,
+                                        adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and
+                                        the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material
+                                        in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material
+                                        is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the
+                                        permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creat​iveco​
+                                        mmons​.org/licen​ses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creat​iveco​mmons​.org/publi​cdoma​in/
+                                        zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                 Page 2 of 15
+
+
+
+
+(FCR) and is defined as feed intake per unit of live weight   can differ between populations, [15, 16]. Another limita-
+gain [2]. However, in 1963, residual feed intake (RFI) was    tion for across-breed genomic prediction is the inconsist-
+introduced in cattle as an alternative criterion for feed     ency of linkage disequilibrium (LD) between markers and
+efficiency [3]. In general, FCR and RFI are highly geneti-    quantitative trait loci (QTL) between breeds, which is
+cally correlated [4]. Nevertheless, selection of animals      one of the assumptions of most genomic prediction mod-
+based on FCR can be accompanied by undesirable cor-           els [17].
+related responses in other traits such as appetite [5, 6],       Given the presence of (ancestral) relationships between
+whereas selection for RFI is almost independent of these      animals and the greater consistency of LD between
+traits since RFI is feed intake adjusted for production       genetically-related lines within a breed than between
+trait by linear regression. Due to the high cost of meas-     breeds that have been separated for decades, using a
+uring daily feed intake (DFI), and thus RFI and FCR [7],      multi-line reference population may be more beneficial
+fewer phenotypic records are available, which reduces         than using a multi-breed reference population [16]. How-
+the accuracy of selection. Genomic selection has the          ever, the changes in allele frequency since separation of
+potential to improve pig feed efficiency in some popu-        the lines may still represent a challenge for using a multi-
+lations [8, 9]. Recent advances in genomic evaluation         line reference population [21]. To the best of our knowl-
+methodologies, such as single-step genomic best linear        edge, the use of a multi-line genomic evaluation strategy
+unbiased prediction (ssGBLUP), enable more accurate           in small, related lines using real data has not been stud-
+evaluations in small populations. The ssGBLUP com-            ied, in spite of the existence of numerous related lines
+bines phenotypic, genotypic, and pedigree information         worldwide. Our hypothesis was that, in small porcine
+in a single genomic evaluation of animals [10–13]. The        populations with few available ancestral samples, i.e. for
+number of animals in the reference population has been        which it is not possible to build large reference popula-
+shown to affect the accuracy of genomic predictions [14].     tions, including information from a genetically-related
+Multi-breed or admixed genomic evaluations have been          line in the training population could provide similar
+proposed to increase the number of animals in reference       prediction accuracies as a within-line training popula-
+sets for small populations [15], resulting in increases in    tion. Therefore, we explored reference populations with
+prediction accuracy in some cases [16]. A study on multi-     different structures that combined data from two lines
+breed genomic evaluation using real data from Holstein        that descended from a common origin, and compared
+and Jersey bulls showed that using a combined reference       the prediction accuracy obtained with that obtained
+population resulted in comparable accuracies of genomic       when only information from the target line was used for
+estimated breeding values (GEBV) in purebred validation       training.
+sets, or exceeded that achieved with a purebred refer-
+ence population of the same breed [17]. Adding a smaller      Methods
+population, i.e. Brown Swiss, to a reference population       Population and data structure
+of Holstein and Jersey bulls resulted in slight increases     The data were collected during a selection experiment
+in accuracy of predictions when breeds were considered        that was conducted at INRAE (UE GenESI, Surgères,
+as a single, joint population, while slight increases in      France,      https​://doi.org/10.15454​/1.55724​15481​18584​
+accuracy were also observed if the breeds were treated        7E12) on French Large White pigs. Two lines were estab-
+as genetically-related traits [18]. Simulation studies with   lished by nine generations of divergent selection for RFI
+mixed reference populations also showed increases in          from 2000 to 2015 [22]. The G0 generation resulted from
+prediction accuracy. A simulation study on genomic pre-       the mating of 30 boars and 30 gilts from generation F0
+diction across multiple populations in cattle showed that     using artificial insemination. Among the G0 animals,
+adding relatively few individuals from another popula-        116 boar candidates for selection from all 30 litters were
+tion to a training set substantially increased the accuracy   tested for RFI to select six extreme founder boars for each
+of predictions in the first population, regardless of the     line (LRFI: low RFI, and HRFI: high RFI). The two lines
+heritability ­(h2) or marker density [19]. Another simu-      were initiated by mating the selected boars to about 35
+lation study reported that genomic predictions using a        random G0 gilts per line. Inbreeding was minimized at
+combined versus a single reference population increased       each generation. The development of each line continued
+the accuracy of genomic predictions by 25%, with traits       with the selection of six boars out of 96 tested candidates
+with a lower heritability benefiting more from the com-       in each generation from G1 to G9. In each generation, at
+bination of populations [20]. However, using a combined       least one additional parity was produced to evaluate cor-
+reference population can be challenging if relationships      related responses to selection for production traits on
+between populations are absent: allele frequencies at the     both females and castrated males (henceforth referred to
+marker and/or causal loci, or causal variants themselves,     as response animals). Selection candidates were evaluated
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                   Page 3 of 15
+
+
+
+
+for RFI from 35 to 95 kg of body weight (BW), and             for each trait, records from selection candidates were
+response animals were evaluated from 10 weeks of age          standardized to the variance of the corresponding trait in
+until slaughter (105 kg BW until G5 and 115 kg BW from        the response animals as:
+G6 onwards). Animals were raised in four pens per batch
+and at least four batches per generation. Test pens were                    ysij
+equipped with single-place electronic feeders ACEMA64              yRij =        σRi
+                                                                            σsi
+(ACEMO, France). Animals were offered ad libitum
+access to a pelleted diet based on cereals and soya bean      where yRij is the standardized trait i ( i = 1,… 5) for selec-
+meal containing 10 MJ net energy (NE)/kg and 160 g CP/        tion candidate j, ysij is the record of trait i measured on
+kg, with a minimum of 0.80 g digestible Lys/MJ NE. In         animal j , σsi is the phenotypic standard deviation of trait
+each generation, boars were selected based on a fixed RFI     i measured on selection candidates, and σRi is the pheno-
+selection index that was established from pre-computed        typic standard deviation of trait i measured on females
+phenotypic correlations between DFI (g/day) and average       and castrated males in the response batches. Descriptive
+daily gain (ADG, g/day) between 35 and 95 kg BW, and          statistics of these traits are in Table 2.
+live backfat thickness (BFT, mm) at 95 kg BW [23], as RFI
+= DFI − 1.06 × ADG − 37 × BFT. The average metabolic          Single nucleotide polymorphism (SNP) genotyping data
+BW (AMBW) was the same for all selection candidates           and imputation
+and therefore excluded from the selection index equa-         SNP genotyping data were available for all selected boars
+tion. Selection candidates had records for feed intake,       and their mates from G0 to G9, additional pigs from
+body weight, and live body composition traits. In addi-       response batches of G6 to G8, and all selection candi-
+tion to these phenotypes, gilts and castrated males had       dates in G9. In total, 1647 animals had SNP genotypes,
+records for carcass composition traits [23]. For the pre-     of which 286 animals were genotyped with the Porcine
+sent study, RFI, FCR, DFI, ADG and BFT were analyzed.         SNP60v2 BeadChip (Illumina) (64,232 SNPs) and 1361
+These traits were available for both selection candidates     animals with the GGP Porcine HD Array (Illumina)
+and response animals. The number of observations for          (68,516 SNPs). Genotype quality control excluded SNPs
+the five traits for each line are in Table 1. RFI of selec-   with a call rate lower than 95%, individuals with a call
+tion candidates was computed between 35 and 95 kg BW          rate lower than 90%, SNPs that were not in Hardy–Wein-
+as the residual of a multiple linear regression of DFI on     berg equilibrium (p < 10−10), SNPs with a minor allele
+the traits included in the selection index. For gilts and     frequency lower than 0.01, and individuals with parent–
+castrated males from the correlated response batches,         offspring incompatibility (e.g., opposite homozygotes)
+RFI was estimated from 10 weeks of age to slaughter           with at least one parent. The PLINK software was used
+as the residual of a multiple linear regression of DFI on     for SNP and individual genotype quality control [24].
+AMBW, ADG from 10 weeks of age to slaughter, carcass          SNPs on the sex chromosomes were removed. After
+BFT (carcBFT), and lean meat content (LMC; computed           quality control of each SNP chip dataset, the SNPs pre-
+from cut weights) at slaughter. AMBW was included to          sent in each panel were imputed to the alternative panel
+account for maintenance requirements and the other            using the FImpute software [25] in a single step. The two
+traits were included to account for production require-       SNP chips shared 42,800 SNPs. The number of geno-
+ments. [22]. Fixed effects included in the regression         typed animals retained after imputation was 1643, and
+model to compute RFI of response animals were sex, pen        the final genotype dataset contained 64,233 informative
+size, contemporary group and BW at the beginning of the       SNPs. Thus, all animals had equal genotypic information.
+test. Complete pedigree information was collected from        Genotypes were coded as 0, 1, or 2 for later calculation of
+F0 to G9, plus up to 10 generations of ancestors, and con-    the genomic relationship matrix. The number of animals
+tained 7046 animals (Table 1).                                with genotype data per generation and line is in Table 1.
+
+Combining and standardizing traits                            Model and analyses
+Preliminary analyses on the five traits showed high           Predictions obtained with BLUP are based on the assump-
+genetic correlations between similar traits measured in       tion of no genetic differences between subpopulations [26,
+selection candidate and response animals (> 0.80 ± 0.11,      27]. Therefore, to account for selection in our dataset, all
+except 0.75 ± 0.08 between live BFT and carcass BFT).         genetic and genomic analyses were carried out with bivari-
+Therefore, to increase the amount of information, corre-      ate approaches, i.e. the five other traits were individually
+sponding traits in selection candidate and response ani-      paired with the selection index in two-trait model analyses.
+mals were combined for further analyses. Since animals        By including the selection criterion, the analyses of other
+differed in age and BW when measurements were taken,
+Aliakbari et al. Genet Sel Evol       (2020) 52:57                                                                                                            Page 4 of 15
+
+
+
+
+Table 1 Numbers of animals in the pedigree and data structure
+                                     Ancestors        F0        G0       HRFI
+
+                                                                         G0      G1        G2       G3       G4       G5        G6       G7       G8       G9        Total
+
+Pedigree                              159              67       104      48       216      297      277       260      270      795      474       292      280      3209
+Pedigree only                                                              1        2       89        78       62       68      352      149         5        0        806
+Pedigree and genotype only                                               41        41       42        44       36       47       40        35       42       91        459
+ADG
+ Phenotype only                                                            0      167      160      149       156      149      304      194       148       93      1520
+ Phenotype and genotype                                                    6        6         6        6        6        6       71        73       66       92        338
+ Missing                                                                   0        0         0        0        0        0       28        23       31        4         86
+BFT
+ Phenotype only                                                            0      167      160      149       156      149      237      176        62       84      1340
+ Phenotype and genotype                                                    6        6         6        6        6        6       71        73       66       92        338
+ Missing                                                                   0        0         0        0        0        0       95        41      117       13        266
+DFI
+ Phenotype only                                                            0      166      160      149       156      149      263      182       138       93      1456
+ Phenotype and genotype                                                    6        6         6        6        6        6       71        73       66       92        338
+ Missing                                                                   0        1         0        0        0        0       69        35       41        4        150
+FCR
+ Phenotype only                                                            0      166      160      148       156      149      263      182       138       93      1455
+ Phenotype and genotype                                                    4        6         6        6        6        6       71        73       66       92        336
+ Missing                                                                   2        1         0        1        0        0       69        35       41        4        153
+RFI
+ Phenotype only                                                            0      164      159      146       156      143      185      147        56       80      1236
+ Phenotype and genotype                                                    6        6         6        6        6        6       71        73       66       92        338
+ Missing                                                                   0        3         1        3        0        6      147        70      123       17        370
+                                     Ancestors        0         G0       LRFI
+
+                                                                         G0      G1        G2       G3       G4       G5        G6       G7       G8       G9        Total
+
+Pedigree                              159              67       104      46       203      303      314       327      357      826      481       344      280      3481
+Pedigree only                                                              0        1       98      100       107      130      337      132         8        0        913
+Pedigree and genotype only                                               40        35       40        41       43       43       48        55       48       93        486
+ADG
+ Phenotype only                                                            0      161      159      167       171      178      359      211       203       95      1704
+ Phenotype and genotype                                                    6        6         6        6        6        6       74        73       74       90        347
+ Missing                                                                   0        0         0        0        0        0         8       10       11        2         31
+BFT
+ Phenotype only                                                            0      161      159      167       171      178      284      206       105       86      1517
+ Phenotype and genotype                                                    6        6         6        6        6        6       74        73       74       90        347
+ Missing                                                                   0        0         0        0        0       83       15      109         1        1        218
+DFI
+ Phenotype only                                                            0      160      159      167       171      178      316      206       194       95      1646
+ Phenotype and genotype                                                    6        6         6        6        6        6       74        73       74       90        347
+ Missing                                                                   0        1         0        0        0        0       51        15       20        2         89
+FCR
+ Phenotype only                                                            0      159      159      167       171      178      316      208       195       95      1648
+ Phenotype and genotype                                                    6        6         6        6        6       74       73        74       90                 347
+ Missing                                                                   0        2         0        0        0        0       51        13       19        2         87
+RFI
+ Phenotype only                                                            0      160      158      161       171      173      230      165       101       80      1399
+ Phenotype and genotype                                                    6        6         6        6        6        6       74        73       74       90        347
+ Missing                                                                   0        1         1        6        0        5      137        56      113       17        336
+
+HRFI high RFI line, LRFI low RFI line, Ancestors animals before the base generation, F0 base generation, G0 to G9 generations of selection 0 to 9, RFI residual feed intake,
+ADG average daily gain, FCR feed conversion ratio, DFI daily feed intake, BFT backfat thickness
+Aliakbari et al. Genet Sel Evol       (2020) 52:57                                                                                                            Page 5 of 15
+
+
+
+
+Table 2 Descriptive statistics of the data for the studied traits in the HRFI and LRFI lines
+Line                  Trait                 Number of records            Minimum                      Maximum                      Average                    Coefficient
+                                                                                                                                                              of variation
+
+HRFI                  ADG                   1868                           0.44                        1.07                          0.76                     11.03
+                      BFT                   1687                           9.67                       49.27                         27.33                     26.62
+                      DFI                   1802                           1.37                        3.20                          2.18                     12.54
+                      FCR                   1799                           2.13                        3.81                          2.8                      9.26
+                      RFI                   1581                         − 0.29                        0.86                          0.05                     –
+LRFI                  ADG                   2053                           0.45                        1.06                          0.76                     10.69
+                      BFT                   1866                          10.00                       44.63                         26.45                     24.60
+                      DFI                   1995                           1.05                        2.92                          2.01                     12.91
+                      FCR                   1997                           1.72                        3.70                          2.60                     9.11
+                      RFI                   1748                         − 0.56                        0.46                        − 0.04                     –
+HRFI high RFI line, LRFI low RFI line, ADG average daily gain (kg/day), BFT backfat thickness (mm), DFI daily feed intake (kg/day), FCR feed conversion ratio (kg/kg), RFI
+residual feed intake (kg/day)
+
+
+
+
+traits are conditioned based on all the information that was                            matrices of litter and residual effects, respectively. I
+used for selection [28–30].                                                             denotes the identity matrix.
+  Preliminary analyses were carried out using a general lin-                               Genomic breeding values were estimated using ssG-
+ear model in R (glm procedure) to evaluate the significance                             BLUP with the same models in the BLUPF90 software,
+(p < 0.05) of fixed environmental sources of variation. The                             with the previously estimated (co)variances and using
+significant fixed factors included pen size (5 levels: 8, 9, 10,                        the H matrix, which is a combined relationship matrix of
+11, 12 pigs per pen), herd of birth (2 levels), sex (3 levels),                         the A matrix and marker-based relationship matrix (G)
+and contemporary groups (CG, 99 levels). BW at slaugh-                                  of genotyped animals [10, 12]. The G matrix was con-
+ter was fitted in the model as a covariate only for BFT. CG                             structed and scaled by 2 {pi (1 − pi )}, where pi is the
+were defined as animals born in the same week and raised                                frequency of the second allele at locus i , following Van-
+in the same enclosure. Litter was fitted as a random envi-                              Raden [32]. Computation of the H matrices used out-
+ronmental source of variation and its significance at the 5%                            puts of BLUPF90 (G) and the full A matrix, which was
+level was determined using a likelihood ratio test.                                     obtained using the AGHmatrix R package [33]. In all
+  The genetic analyses were performed using the                                         scenarios, G had similar average diagonal elements as the
+AIREMLF90 and BLUPF90 software [31] for the BLUP and                                    pedigree relationship matrix for the genotyped animals
+ssGBLUP methods, respectively. Prior to ssGBLUP evalua-                                 ( A22).
+tions, the variance components of the traits were obtained
+using the restricted maximum likelihood algorithm imple-
+                                                                                        Scenarios
+mented in AIREMLF90. These analyses were performed
+                                                                                        Two symmetric series of six scenarios, one for each line,
+using all available data and only the full pedigree relation-
+                                                                                        were defined for genomic prediction. An overview of the
+ship matrix (A). Variance components were estimated with
+                                                                                        scenarios is shown in Fig. 1. In all scenarios, genotyped
+the bivariate animal mixed model as follows:
+                                                                                        animals of the last three generations (G7 to G9, 433 pigs
+                                                                                        for the LRFI and 399 pigs for the HRFI line) were consid-
+       y = Xb + Z1 a + Z2 l + e                                                         ered for validation in a given line (target line), and their
+                                                                                        information was removed from the training dataset.
+where y is the vector of observations for the index and                                   The training sets were structured based on which gen-
+one of the five studied traits, b is the vector of fixed                                erations and line were used. Scenario 1 comprised only
+effects (described above), a is the vector of additive                                  animals from the target line and was the control scenario
+genetic effects, l is the vector of litter effects, and e is the                        since it represented a routine genomic prediction design
+vector of random residuals. X, Z1 and Z2 are the inci-                                  where all data would be available from the same line. All
+dence matrices for b, a , and l , respectively. Distributions                           other scenarios were compared to this control scenario
+assumed for the random terms are a ∼ N (0, G0 ⊗ A),                                     to evaluate which combination of training populations
+l ∼ N (0, Rl ⊗ I), e ∼ N (0, Re ⊗ I), where G0 is a 2 × 2                               from the two lines achieved a prediction accuracy simi-
+symmetric (co)variance matrix of direct additive genetic                                lar to the control scenario. Scenarios 2 and 3 included
+effects, and Rl and Re are 2 × 2 symmetric (co)variances                                the training set of scenario 1 and in addition, either the
+Aliakbari et al. Genet Sel Evol    (2020) 52:57                                                                                   Page 6 of 15
+
+
+
+
+  Fig. 1 Design of scenarios to predict validation animals in HRFI (a) and LRFI (b) lines
+
+
+
+animals from G4 to G9 (scenario 2), or G7 to G9 (sce-                           Accuracy and bias of genomic predictions
+nario 3) of the other line.                                                     Usually the correlation between the vector of estimated
+   For scenarios 4 to 6, animals from the target line in the                    breeding values (EBV ) to be evaluated and the vector
+training set were limited to the three generations nearest                      of true breeding values (TBV ), r(TBV, EBV), cannot be
+to the validation set (G4 to G6). In scenarios 4 and 5, the                     computed. In the literature, multiple criteria have been
+contribution to the training set of the animals from the                        proposed to quantify and compare prediction accura-
+other line was as in scenario 2 (G4 to G9) and scenario                         cies of genomic predictions between training and vali-
+3 (G7 to G9), respectively. For scenario 6, the number of                       dation set structures and between prediction methods.
+animals in the training set was close to that of scenario                       Cross-validation
+                                                                                                approaches are often conducted based
+1 and only animals from the G9 generation of the other                          on r EBV, y ∗ , where y ∗ is either the vector of phe-
+                                                                                     
+
+line. Performance data of animals from the generation                           notypes adjusted for fixed effects or the vector of der-
+and line combinations that did not contribute to the                            egressed EBV   of the validation
+                                                                                                                 set. Thus, a widely used
+training or validation sets were removed from the analy-                        criterion is r EBV, y ∗ / h2 , where h2 is the heritability
+sis, but their pedigree information was kept in order to                        of the trait. However, this criterion requires all the gen-
+trace relationships back to the founding generation. For                        otyped animals to have a sufficiently accurate y ∗ value
+example, phenotypes and genotypes of animals from G0                            [34]. When y ∗ is an adjusted phenotype of the animal’s
+to G3 of both lines were removed for scenario 4, since                          own measurement, it suffers from the inability to adjust
+they were not part of the training or validation sets. The                      for the random residual effects. In the optimum situa-
+number of genotyped animals in the training and valida-                         tion, the expected value of the correlation would then be
+tion sets for the 12 scenarios are in Table 3.                                  the square root of heritability [35]. Alternatively, using an
+Aliakbari et al. Genet Sel Evol          (2020) 52:57                                                                                              Page 7 of 15
+
+
+
+
+Table 3 Number of genotyped animals in the training                             Table 4 Estimates     of             variance         components           (SE)
+and validation sets for the six scenarios for the HRFI                          of the studied traits
+and LRFI validation sets
+                                                                                Trait         Phenotypic variance            Heritability        Litter ­effectsa
+                  HRFI                                  LRFI
+                                                                                ADG           5811.70 (164.75)               0.25 (0.04)         0.10 (0.02)
+                  Training         Validation           Training   Validation   BFT             14.37 (0.47)                 0.36 (0.05)         0.12 (0.02)
+Scenario 1          398            399                   400       433          DFI               0.04 (0.001)               0.24 (0.04)         0.09 (0.02)
+Scenario 2        1051             399                  1005       433          FCR               0.04 (0.001)               0.24 (0.04)         0.07 (0.02)
+Scenario 3          831            399                   799       433          RFI               0.01 (0.004)               0.12 (0.02)         0.08 (0.02)
+Scenario 4          859            399                   825       433          ADG average daily gain (g/day), BFT backfat thickness (mm), DFI daily feed intake
+Scenario 5          639            399                   619       433          (kg/day), FCR feed conversion ratio (kg/kg), RFI residual feed intake (kg/day)
+                                                                                a
+                                                                                    As a proportion of phenotypic variance
+Scenario 6          389            399                   403       433
+HRFI high RFI line, LRFI low RFI line
+
+                                                                                psych R package [36–38]. Significant differences between
+                                                                                each scenario and the control scenario (scenario 1) are
+EBV obtained from a complete dataset as the best pre-                           reported to identify the scenarios that provide prediction
+dictor of TBV would cause autocorrelation between the                           accuracies similar to the control scenario.
+reference and evaluated EBV when the training and vali-
+dation sets are closely related through the pedigree, lead-                     Relationships between training and validation sets
+ing to higher correlations [35]. Legarra and Reverter [34]                      For each scenario, the maximum, average, and minimum
+proposed to complement the cross-validation approach                            relationship coefficients between training and validation
+with a semi-parametric approach that can be used in a                           sets in the H matrix were computed. To distinguish the
+large number of cases, with the advantage of not requir-                        strength of relationships originating from the two lines,
+ing knowledge of the TBV or adjustment of phenotypes.                           all three measurements were computed separately for
+The underlying assumptions of this approach are (1) the                         pigs of the validation set with the subset of the training
+variance components are similar in the training and vali-                       set that belonged to (1) the target line and (2) the other
+dation datasets, and (2) the validation set is sufficiently                     line. The average relationships were calculated as the
+diverse and large (i.e. composed of various families). In                       mean of the off-diagonal elements of the corresponding
+brief, with their approach, the correlation between EBV                         relationship matrices for the genotyped individuals.
+using part of the dataset (partial) and EBV obtained using
+the whole dataset results in an estimator of the ratio of                       Results
+the accuracies of the EBV from these two datasets. We                           Variance components
+followed this approach to evaluate the potential for                            The five studied traits showed low to moderate herit-
+genomic prediction when including data from a related                           abilities that ranged from 0.12 ± 0.02 (RFI) to 0.36 ± 0.05
+line compared to genomic prediction using all data                              (BFT) (Table 4). The ratio of litter effect variance to phe-
+from the target line, which will be referred to as G ­ EBVw                     notypic variance (l2) was lower than the heritability for
+(GEBV obtained using the whole dataset), i.e., to obtain                        all traits, ranging from 0.07 ± 0.02 (FCR) to 0.12 ± 0.02
+­GEBVw for the validation set of each line, two separate                        (BFT).
+ssGBLUP analyses were performed (one per line). G    ­ EBVp
+ (GEBV obtained using partial dataset) were the GEBV                            Prediction accuracies
+ obtained from the six scenarios for the validation sets                        Prediction accuracies, r GEBVp , GEBVw , for the dif-
+                                                                                                                          
+ in each target line. The criterion for prediction accuracy                     ferent scenarios are shown in Fig. 2 for the two lines.
+ for each trait and each scenario was then the correlation                     Accuracies ranged from 0.07 to 0.73, depending on the
+ between GEBVp and GEBVw , r GEBVp , GEBVw . Bias of
+                                                   
+                                                                                validation line, trait, and scenario. The tested scenarios
+ the genomic predictions was computed as the deviation                          could be classified into two groups based on their design
+ of the regression coefficient of GEBVw on GEBVp from 1,                        and how it affected the prediction accuracy of each trait.
+ as also proposed in [34].                                                      Removing the earlier generations of the target line from
+    Standard errors ofthe prediction accuracy correlations,                    the training set (from scenarios 1, 2, 3 to scenarios 4, 5,
+ r, were obtained as       1 − r2 /(n − 2) , where n is the
+                                        
+                                                                                6) tended to decrease the prediction accuracy for ADG,
+ number of animals used to obtain correlations in the vali-                     BFT, and DFI, while FCR and RFI showed different pat-
+dation sets. Differences between correlations in different                      terns in response to changes in the structure of the train-
+scenarios were tested using the Williams t-test in the                          ing set.
+Aliakbari et al. Genet Sel Evol    (2020) 52:57                                                                                                   Page 8 of 15
+
+
+
+
+   The differences in prediction accuracies for ADG, BFT                          to scenario 2, and scenario 1 to scenario 4 for the LRFI
+and DFI from scenario 1 to scenario 2 and 3 showed that                           target line, which were the scenarios with the maximum
+the inclusion of different generations of the other line in                       number of individuals from the other line in the training
+the training set led to marginal changes in accuracy, with                        set. In the other scenarios, the prediction accuracies for
+decreased correlations in most cases (BFT in the HRFI                             RFI were similar or higher than for scenario 1.
+line and DFI). In scenarios 4, 5, and 6, the proportion of                          The prediction accuracies for FCR in all scenarios,
+animals from the target line was low in the training set                          except scenario 6, were higher for validation animals in
+compared to scenarios 1, 2, and 3. This reduction gen-                            the HRFI line than in the LRFI line. The average differ-
+erally led to a decrease in the prediction accuracies for                         ences in accuracy by trait ranged from + 0.07 for ADG to
+ADG, BFT, and DFI compared to scenario 1. However,                                + 0.40 for RFI (Fig.2).
+these differences in accuracy were only significant for
+ADG and BFT in the HRFI line and for DFI in the LRFI                              Prediction biases
+line.                                                                             Overall, regression coefficients of GEBVw on GEBVp were
+   Scenarios for FCR and RFI showed different patterns                            consistently below 1 for FCR and RFI for both validation
+compared to the previous traits. Prediction accuracies for                        sets (Fig. 3). Regression coefficients for these two traits
+FCR followed a pattern similar to those of the other traits                       also showed more variation across the scenarios com-
+for all scenarios, except for scenario 3, which showed a                          pared to ADG, BFT and DFI.
+17 to 21% higher accuracy compared to scenario 1. Pre-                              Bias for GEBV in the HRFI validation set followed the
+diction accuracies for RFI decreased from scenario 1                              same trend, but at different magnitudes, for all traits,
+
+
+
+
+  Fig. 2 Correlations between GEBVp and GEBVw, and their SE as error bars for the HRFI (a) and LRFI (b) lines. *Significant difference with scenarios 1
+  (control) based on the Williams t-test at a 0.05 level. RFI residual feed intake, ADG average daily gain, FCR feed conversion ratio, DFI daily feed intake,
+  BFT backfat thickness
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                                                 Page 9 of 15
+
+
+
+
+except ADG (Fig. 3a). On average, scenarios 1, 2, and 3                         Relationships between and within training and validation
+showed less biases than scenario 4, 5, and 6 for BFT, DFI,                      sets
+and FCR. The regression coefficient in scenario 1 was                           Relationships between the validation set and the training
+equal to 0.98 for RFI, slightly higher than 1 for BFT (1.08)                    individuals from the target line were on average higher in
+and DFI (1.19), and lower than 1 for ADG (0.83) and FCR                         scenarios 4 to 6 than in scenarios 1 to 3 (Fig. 4a and c).
+(0.74).                                                                         The highest average was obtained for scenario 4 (around
+  Prediction of GEBV for the LRFI validation set did                            0.25) and the smallest average for scenarios 1 and 3
+not follow the same pattern of change across scenarios                          (around 0.16 and 0.17). The maximum relationship coef-
+between the traits. Regression coefficients of all scenar-                      ficient between these two cohorts was greater than 0.66
+ios showed biases smaller than 1 for BFT, FCR, and RFI                          for all scenarios, with the smallest maximum found for
+(Fig. 3b). Biases were smallest for DFI (scenario 6) and                        scenario 1 when the training set included only individuals
+ADG (scenarios 1, 5 and 6). Overall, biases of GEBV for                         from the target line, and the highest maximum for sce-
+this line were moderate for scenario 6 compared to the                          nario 4 (around 0.78), when the relative number of ani-
+other scenarios, except for BFT (0.53). Biases were larger                      mals from the other line in the training set was larger.
+for scenarios 2 and 4, compared to scenarios 5 and 6, for                          Relationship coefficients between the validation set
+all traits except for BFT.                                                      and the training individuals of the other line were lower
+                                                                                than those with the training individuals of the target line,
+                                                                                but the maximum values were reached for scenario 6, i.e.
+                                                                                equal to 0.18 and 0.20 for the HRFI and LRFI target lines,
+
+
+
+
+  Fig. 3 Bias (regression coefficients of GEBVw on GEBVp) for the HRFI (a) and LRFI (b) lines. RFI residual feed intake, ADG average daily gain, FCR feed
+  conversion ratio, DFI daily feed intake, BFT backfat thickness
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                                         Page 10 of 15
+
+
+
+
+  Fig. 4 Average, minimum and maximum relationship coefficients in the H matrix between individuals of the validation set, and individuals of the
+  training set from the target line and from the reverse line, for a and b the HRFI target line, for c and d the LRFI target line
+
+
+
+
+respectively (Fig. 4b and d). All other scenarios had lower                 the genomic prediction of feed efficiency related traits
+maximum relationships, ranging from 0.12 to 0.15.                           in lines that are small or do not have much data avail-
+                                                                            able. Multiplying by ~ 2.5 (scenario 2), ~ 2 (scenarios 3
+Discussion                                                                  and 4), and ~ 1.5 times (scenario 5) the number of gen-
+The aim of our study was to investigate different com-                      otyped individuals in the training set by recruiting ani-
+binations of two lines derived from a common origin                         mals from the other line show no or little increase of
+to evaluate the potential of building a training set for                    prediction accuracy. This would probably not justify the
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                               Page 11 of 15
+
+
+
+
+additional genotyping costs involved. However, they can       target line for the GEBV predictions, but this resulted in
+be considered for practical implementation of combined        increases in biases by 0.016 to 0.121 in all situations but
+training sets since, in most cases, the prediction accura-    one (results not shown). In practice, scaling the observa-
+cies obtained in scenarios 5 and 6 were similar to those      tions by the residual or phenotypic standard deviations,
+of the control scenario 1. These scenarios reflect most       or accounting for the heterogeneity of residual variance
+of the practical situations targeted in our study. Indeed,    across lines, could be considered to account for such dif-
+for breeding programs in small populations, phenotypic        ferences, as proposed by Reverter et al. [43] for hetero-
+or genotypic information of individuals from earlier gen-     geneous variances across herds. An alternative could be
+erations might not be available, and the sampling size        to run bivariate analyses to consider correlated traits
+in recent generations might be limited to a few hun-          in the two lines, instead of a single trait across the two
+dred. Our results show that, a training population that       lines. Nevertheless, in our populations, estimates of the
+includes recent generations of one population and data        genetic variance of RFI as the trait under selection were
+from a more distant subpopulation, could be a solution        consistent over the nine generations in each line. There-
+to achieve prediction accuracies similar to what would be     fore, differences in observed accuracy and bias between
+achieved if data were available for individuals of the same   lines could not be explained by the heterogeneity of the
+population. This could even improve the prediction accu-      genetic variance over the nine generations for the trait
+racies for traits under selection.                            under selection.
+
+Computation of prediction accuracies and biases               Prediction accuracies for production traits
+Variance components of the evaluated traits were esti-        Although production traits and ssGBLUP have been
+mated using the A matrix on the full dataset with both        discussed in the literature, few investigations have ana-
+lines combined. All estimated heritabilities were in the      lyzed such traits in pigs with this method. Therefore,
+range of values reported in the literature for these traits   in the discussion that follows, we refer to published
+[8, 39–42]. Using these variance components, the accu-        genomic prediction studies on these traits that often
+racy of GEBV was computed for the six scenarios to pre-       use other methods. Our objective in this part is to vali-
+dict validation animals from each line using ssGBLUP.         date the prediction accuracies obtained with scenario 1,
+Prediction accuracies were computed using a cross-            in which the structure of the training population is close
+validation method combined with a semi-parametric             to those of previous studies. When comparing studies,
+approach [30]. Indeed, in our case, accuracies of the         it is worth noting that ssGBLUP generally has a higher
+adjusted phenotypes or of deregressed      EBV were too    accuracy than the usual GBLUP or Bayesian approaches
+low to be used in a criterion such as r GEBVp , y∗ / h2 ,     that use only data of genotyped animals. Thus in theory,
+since only two-thirds of the individuals had their own        the comparisons should favor ssGBLUP approaches.
+phenotype. This would result in larger standard errors        However, most previous studies were based on predic-
+of the correlations and, thus, less power to test differ-     tion to a single generation of candidates, which could
+ences between scenarios, as shown in Additional file 1:       favor higher prediction accuracies. In spite of these dif-
+Figures S1 and S2. The underlying assumptions of the          ferences, overall, our estimates were within the range of
+semi-parametric approach are that (1) the validation set      accuracies reported in the literature, except for FCR and
+is sufficiently diverse and large (i.e. composed of various   RFI, for which accuracies were higher in the HRFI valida-
+families), and (2) variance components are similar in the     tion set and lower in the LRFI line than those reported
+training and validation datasets. The first assumption was    in the literature. In an investigation on 8113 Danish
+well covered in our study, since all breeding individu-       Duroc pigs with 60K imputed
+                                                                                              SNP genotyping infor-
+als, plus some progeny of each family, were phenotyped        mation, an r GEBVp , y∗ / h2 of 0.41 was reported for
+and genotyped. The second assumption was potentially          ADG    [41]. In
+                                                                            a study with 620 commercial boars, an
+less covered, which could explain some of the biases          r GEBVp , y∗ / h2 of 0.61 was reported for BFT with
+                                                               
+
+in prediction observed. Indeed, when estimating vari-         ridge regression BLUP (RR-BLUP) and of 0.56 with Bayes-
+ance components separately in the two lines, different        ian LASSO [39]. A similar value of 0.55 was reported
+residual variances were estimated for some traits, result-    for
+                                                                Danish Duroc
+                                                                             pigs [41]. Zhang et al. [9] reported an
+ing in lower heritability estimates for DFI (24%), FCR        r GEBVp , y∗ / h2 of 0.38 for DFI in a Duroc popula-
+(43%), and RFI (22%) in the LRFI line than in the HRFI        tion using a 80K SNP chip and the GBLUP method in a
+line. Legarra and Reverter [30] indicated that inflation of   design with 1167 training animals and 196 validation ani-
+predictions in one or the other dataset due to changes in     mals. They reported a higher accuracy (0.45) when using
+variances can cause biased GEBV. Thus, we also tested         a 650k SNP chip and the BayesB method. Prediction
+the use of estimates of variance components from the          accuracies of GEBV for FCR and RFI are rarely reported
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                  Page 12 of 15
+
+
+
+
+in the literature. Christensen et al. [8] reported a predic-   Impact of selection on accuracy and bias of predictions
+tion accuracy of 0.16 for FCR using a bivariate ssGBLUP        The changes of accuracy across the scenarios were
+model. Jiao et al. [42] obtained a low prediction
+                                                accuracy     more diverse for RFI and FCR, with either increases or
+of 0.09 for RFI (measured as r GEBVp , y∗ / h2 ) using         relatively similar accuracies compared to scenario 1. In
+the BayesA method with 1047 training animals and 516           some cases, the accuracy even increased as genotypes
+validation animals for the Duroc boars. Thus, overall in       of closer generations were eliminated from the training
+pig studies, prediction accuracies are low to moderate for     set, which could be regarded as an effect of the differ-
+ADG and BFT, and low for feed efficiency traits.               ent relationships between training and validation sets in
+                                                               these scenarios. Regarding the low prediction accuracy
+                                                               reported for FCR and RFI in our results and in the lit-
+Prediction accuracies depending on the training set            erature, denser SNP genotyping could probably increase
+composition                                                    the accuracy of predictions by better capturing the dif-
+Compared to FCR and RFI, ADG, BFT, and DFI showed              ferences in LD between the lines. In addition, for low
+different changes in prediction accuracy compared to           heritability traits, such as RFI in our study, large training
+scenario 1 when the structure of the training set was          populations have been reported to increase the accuracy
+changed. For ADG, BFT, and DFI, removing the ear-              of GEBV [47–49]. However, given that scenarios 5 and
+lier generations of the target line from the training set      6 resulted in accuracies that were comparable to that of
+(from scenarios 2 and 3 to scenarios 4, 5 and 6) gener-        the control scenario for FCR and in greater accuracies
+ally decreased prediction accuracy to a lesser extent. The     for RFI, they can be considered as optimum scenarios
+average and maximum relationships between the valida-          for an across-line genomic prediction program. Based on
+tion set and the training subsets were higher in scenarios     results from simulation, Pszczola et al. [50] declared that
+4, 5, and 6 than in scenario 1. The maximum relationship       minimizing relationships within the reference popula-
+between the validation set and the training subsets, which     tion and maximizing them between training and valida-
+was previously recommended as an indicator of poten-           tion sets maximizes the accuracy of genomic predictions.
+tial accuracies [44], was lowest in scenario 1 and highest     This means that including a diverse set of animals in the
+in scenario 4, likely due to changes in allele frequencies     training set is desirable to some extent. This is consistent
+between the early and late generations within a line. This     with our results for FCR and RFI, for which selection cre-
+implies that the general decrease in accuracy in the sce-      ated two diverse sets of animals. For example, in scenario
+narios 4, 5, and 6 could be attributed neither to these        6, including animals from G4 to G6 of the target line in
+changes in relationships between sets, nor to the differ-      the training set provided sufficient genetic links between
+ences in prediction accuracies between lines. Moreover,        training and validation sets, and animals from the G9
+the accuracy of GEBV resulting from ssGBLUP analyses           generation of the other line provided additional diversity
+should be less sensitive to the structure of the set of gen-   to the training set. Overall, it seems that including ani-
+otyped animals, and accordingly, to the strength of rela-      mals from later generations of both lines (more diverse
+tionships between and within training and validation sets      animals) in the training set contributed to higher accura-
+[45] because the H matrix aggregates information from          cies of GEBV in the validation set for FCR and RFI. This
+both A and A22. This structure of the H matrix has two         might be because the SNP effects segregating in the vali-
+major effects on the GEBV of a given animal: first, it con-    dation set were better estimated with such a training set.
+tributes the parent average EBV of the animal using the          Overall, the comparison of accuracies between scenar-
+A matrix, and second, it adjusts for the different levels of   ios 4 to 6 and scenario 1 did not show an obvious effect of
+relationships of the animal with other genotyped animals       the removal of data of earlier generations from the train-
+using the A22 matrix [45, 46]. de Roos et al. [19] reported    ing dataset. In a study using six levels of truncated data of
+that the benefits of combining populations in a training       past generations, accuracies of GEBV of young genotyped
+set are greatest when the populations have diverged for        pigs were very similar for various reproductive traits [51].
+only a few generations and when the heritability of the
+trait is low. They also showed that increasing the num-        Bias of genomic predictions
+ber of animals from a given population in the training set     Our results showed that GEBV were more biased for
+increased prediction accuracy in that population. Con-         traits that were more affected by selection, especially
+sidering that de Roos et al. [19] did not include the effect   when early generations of the target line were not
+of selection in their simulations, this could partly explain   included in the training set. The scenarios that yielded
+our results for ADG, BFT, and DFI.                             better accuracies were not those with the smaller biases,
+                                                               except for FCR and RFI, for which predictions were low
+                                                               and their regression coefficients were systematically
+Aliakbari et al. Genet Sel Evol   (2020) 52:57                                                                                Page 13 of 15
+
+
+
+
+below 1. The average and maximum relationships               Conclusions
+between training and validation sets did not affect the      The results of our study show that genomic prediction
+prediction biases in the same way for all traits, which      using a training set that includes animals from related
+could be due to the effect of selection. Selection in his-   lines selected in different directions could be as accu-
+torical generations has been shown to result in consider-    rate as genomic prediction using a within-line training
+able biases in EBV or GEBV [34, 52]. Tonussi et al. [53]     set. Thus, this can be a solution to create a reference set
+emphasized that, to have accurate and unbiased GEBV          in the case of small populations, or when ancestral sam-
+with the ssGBLUP method, the G matrix should be com-         ples are not available at low additional costs. Combined
+patible with the A22. Inappropriate merging of these         reference sets had better prediction accuracies for traits
+matrices can originate from ignoring inbreeding in the       that were highly affected by selection, which can be
+structure of A and from changes in allele frequencies at     attributed to the inclusion of more diverse animals in the
+QTL for the traits under selection. In our scenarios, the    training set. Overall, among all evaluated scenarios, sce-
+effect of selection in the last three generations of the     narios 5 and 6 showed optimal accuracies in most cases,
+validation sets was not explicitly accounted for. However,   which is consistent with our hypothesis that data from a
+changes in marker allele frequencies in those generations    related line can be used in a combined training popula-
+were accounted for through the G matrix. Furthermore,        tion for genomic predictions without losing prediction
+the (co)variances used for genomic predictions were          accuracy. Our results also proved that absence of phe-
+obtained from bivariate analyses including the selec-        notypic records from past generations did not affect pre-
+tion criterion using the whole dataset (including valida-    diction accuracy but increased bias of predictions. Some
+tion generations). Therefore, there should be no effect of   of these issues could be solved by using bivariate analy-
+selection on the estimations of the variance components,     ses or models with heterogeneous variances to better
+and the prediction bias of the GEBVs should not be due       account for changes in variances with selection in differ-
+to biased variance components. Computing separate            ent lines. Taken together, the results of our study provide
+accuracies and biases for sires (heavily selected) versus    insights into the design of reference populations for small
+dams (not directly selected), could enable quantification    populations, particularly when lines are being developed
+of the effect of selection on the prediction biases. How-    simultaneously, which is common in poultry and pig
+ever, on the one hand, the dams had lower individual         industries, and some plant breeding plans. This strategy
+accuracies (no own phenotype), and on the other hand,        can be recommended to initiate a genomic selection pro-
+only 18 sires were selected per line in these generations.   gram when historical samples are not available, or when
+Therefore, the resulting prediction accuracies and biases    two lines are considered and genotyping costs need to be
+differed between sires and dams due to factors other than    limited.
+just the effect of selection and no clear conclusion could
+be reached. Finally, it should be mentioned that these       Supplementary information
+three generations were combined into the validation set      Supplementary information accompanies this paper at https​://doi.
+in our study to have enough individuals, but in practice,    org/10.1186/s1271​1-020-00576​-0.
+new candidates to be predicted pertain to a single unse-
+lected cohort, therefore this selection effect would be        Additional file 1. Figure S1. Correlation between GEBVp and y∗ and
+                                                               their SE as bars for the HRFI (a) and LRFI (b) lines. No scenario resulted in
+small and likely negligible.                                   correlations that differed from those with scenario 1 based on a Williams
+  Heritability, marker density and size of the training        t-test at 5%. RFI residual feed intake, ADG average daily gain, FCR feed
+population have been shown to be important factors to          conversion ratio, DFI daily feed intake, BFT backfat thickness. Figure S2.
+                                                               Correlation between GEBVp and y∗ divided by the square root of the
+control biases of prediction [54]. Therefore, the biases       heritability of corresponding traits for the HRFI (a) and LRFI (b) lines. RFI
+for some scenarios in this study could be explained by         residual feed intake, ADG average daily gain, FCR feed conversion ratio, DFI
+the low to medium heritability of the traits, the medium       daily feed intake, BFT backfat thickness.
+marker density information, and the small number of
+individuals in the training population. Testing similar      Acknowledgements
+prediction scenarios while ignoring pedigree relation-       The authors thank Andres Legarra for his comments and help. This study was
+                                                             financially supported by the French National Research Agency via the Micro-
+ships in the non-genotyped generations would lead to         Feed project, under grant ANR-16-CE20-0003. The authors would like to thank
+substantially biased predictions, especially for traits      the experimental farm staff for data collection and breeding of the animals.
+affected by selection (for instance, 1.61 for RFI predic-    The authors are also grateful to Yvette Steyn for proof-reading the manuscript.
+tions in the HRFI line for scenario 6). Combining full       Authors’ contributions
+pedigree and genomic information appeared to limit           AA performed the statistical analyses and wrote the first draft of the paper. ED
+bias, which is consistent with Tonussi et al. [53].          and YL performed the imputation and quality control of the genotypic data.
+                                                             AA, JR and HG participated in the design of the study. HG provided scientific
+                                                             supervision. All authors read and approved the final manuscript.
+Aliakbari et al. Genet Sel Evol       (2020) 52:57                                                                                                       Page 14 of 15
+
+
+
+
+Competing interests                                                                  22. Gilbert H, Billon Y, Brossard L, Faure J, Gatellier P, Gondret F, et al. Review:
+The authors declare that they have no competing interests.                               divergent selection for residual feed intake in the growing pig. Animal.
+                                                                                         2017;11:1427–39.
+Received: 23 September 2019 Accepted: 21 September 2020                              23. Gilbert H, Bidanel J-P, Gruand J, Caritez J-C, Billon Y, Guillouet P, et al.
+                                                                                         Genetic parameters for residual feed intake in growing pigs, with empha-
+                                                                                         sis on genetic relationships with carcass and meat quality traits. J Anim
+                                                                                         Sci. 2007;85:3182–8.
+                                                                                     24. Purcell S, Neale B, Todd-Brown K, Thomas L, Ferreira MA, Bender D, et al.
+References                                                                               PLINK: a tool set for whole-genome association and population-based
+1. Patience JF, Rossoni-Serão MC, Gutiérrez NA. A review of feed efficiency              linkage analyses. Am J Hum Genet. 2007;81:559–75.
+    in swine: biology and application. J Anim Sci Biotechnol. 2015;6:33.             25. Sargolzaei M, Chesnais JP, Schenkel FS. A new approach for efficient
+2. Gaines AM, Peterson BA, Mendoza OF. Herd management factors that                      genotype imputation using information from relatives. BMC Genomics.
+    influence whole herd feed efficiency. In: Patience JF, editor. Feed effi-            2014;15:478.
+    ciency in swine. Wageningen: Wageningen Academic Publishers; 2012. p.            26. Careau V, Wolak ME, Carter PA, Garland T Jr. Limits to behavioral evolution:
+    15–39.                                                                               the quantitative genetics of a complex trait under directional selection.
+3. Koch RM, Swiger LA, Chambers D, Gregory KE. Efficiency of feed use in                 Evolution. 2013;67:3102–19.
+    Beef cattle. J Anim Sci. 1963;22:486–94.                                         27. Hadfield JD, Wilson AJ, Garant D, Sheldon BC, Kruuk LE. The misuse of
+4. Hoque MA, Suzuki K, Kadowaki H, Shibata T, Oikawa T. Genetic param-                   BLUP in ecology and evolution. Am Nat. 2010;175:116–25.
+    eters for feed efficiency traits and their relationships with growth and         28. Fernando R, Gianola D. Statistical inferences in populations undergoing
+    carcass traits in Duroc pigs. J Anim Breed Genet. 2007;124:108–16.                   selection or non-random mating. In: Gianola D, Hammond K, editors.
+5. Ollivier L, Gueblez R, Webb AJ, van der Steen HAM. Breeding goals for                 Advances in statistical methods for genetic improvement of livestock.
+    nationally and internationally operating pig breeding organisations. In:             Berlin: Springer; 1990. p. 437–53.
+    Proceedings of the 4th World Congress on Genetics applied to Livestock           29. Henderson C. Accounting for selection and mating biases in genetic
+    Production: 23–27 July 1990. Edinburgh; 1990                                         evaluations. In: Gianola D, Hammond K, editors. Advances in statistical
+6. Pym RAE, Nicholls PJ. Selection for food conversion in broilers: direct and           methods for genetic improvement of livestock. Berlin: Springer; 1990. p.
+    correlated responses to selection for body-weight gain, food consump-                413–36.
+    tion and food conversion ratio. Br Poult Sci. 1979;20:73–86.                     30. Sorensen D, Fernando R, Gianola D. Inferring the trajectory of genetic
+7. Rexroad C, Vallet J, Matukumalli LK, Reecy J, Bickhart D, Blackburn H, et al.         variance in the course of artificial selection. Genet Res. 2001;77:83–94.
+    Genome to phenome: improving animal health, production and well-                 31. Misztal I, Tsuruta S, Lourenco D, Masuda Y, Aguilar I, Legarra A, et al.
+    being a new USDA blueprint for animal genome research 2018–2027.                     Manual for BLUPF90 family of programs. Athens: University of Giorgia;
+    Front Genet. 2019;10:327.                                                            2018.
+8. Christensen OF, Madsen P, Nielsen B, Ostersen T, Su G. Single-step meth-          32. VanRaden PM. Efficient methods to compute genomic predictions. J
+    ods for genomic evaluation in pigs. Animal. 2012;6:1565–71.                          Dairy Sci. 2008;91:4414–23.
+9. Zhang C, Kemp RA, Stothard P, Wang Z, Boddicker N, Krivushin K, et al.            33. Amadeu RR, Cellon C, Olmstead JW, Garcia AA, Resende MF Jr, Muñoz PR.
+    Genomic evaluation of feed efficiency component traits in Duroc pigs                 AGHmatrix: R package to construct relationship matrices for autotetra-
+    using 80 K, 650 K and whole-genome sequence variants. Genet Sel Evol.                ploid and diploid species: a blueberry example. Plant Genome. 2016.
+    2018;50:14.                                                                          https​://doi.org/10.3835/plant​genom​e2016​.01.0009.
+10. Legarra A, Aguilar I, Misztal I. A relationship matrix including full pedigree   34. Legarra A, Reverter A. Semi-parametric estimates of population accuracy
+    and genomic information. J Dairy Sci. 2009;92:4656–63.                               and bias of predictions of breeding values and future phenotypes using
+11. Misztal I, Legarra A, Aguilar I. Computing procedures for genetic evalu-             the LR method. Genet Sel Evol. 2018;50:53.
+    ation including phenotypic, full pedigree, and genomic information. J            35. Gunia M, Saintilan R, Venot E, Hoze C, Fouilloux MN, Phocas F. Genomic
+    Dairy Sci. 2009;92:4648–55.                                                          prediction in French Charolais beef cattle using high-density single
+12. Aguilar I, Misztal I, Johnson D, Legarra A, Tsuruta S, Lawlor T. Hot topic:          nucleotide polymorphism markers. J Anim Sci. 2014;92:3258–69.
+    a unified approach to utilize phenotypic, full pedigree, and genomic             36. Steiger JH. Tests for comparing elements of a correlation matrix. Psychol
+    information for genetic evaluation of Holstein final score. J Dairy Sci.             Bull. 1980;87:245–51.
+    2010;93:743–52.                                                                  37. Williams EJ. The comparison of regression variables. J R Stat Soc Series B
+13. Christensen OF, Lund MS. Genomic prediction when some animals are                    Stat Methodol. 1959;21:396–9.
+    not genotyped. Genet Sel Evol. 2010;42:2.                                        38. Revelle WR. Package Psych V1.8.12: Procedures for psychological, psy-
+14. VanRaden PM, O’Connell JR, Wiggans GR, Weigel KA. Genomic evalua-                    chometric, and personality research. Evanston: Northwestern University;
+    tions with many more genotypes. Genet Sel Evol. 2011;43:10.                          2019.
+15. Carillier C, Larroque H, Robert-Granie C. Comparison of joint versus             39. de Campos CF, Lopes MS, Silva FF, Veroneze R, Knol EF, Lopes PS, et al.
+    purebred genomic evaluation in the French multi-breed dairy goat                     Genomic selection for boar taint compounds and carcass traits in a com-
+    population. Genet Sel Evol. 2014;46:67.                                              mercial pig population. Livest Sci. 2015;174:10–7.
+16. Lund MS, Su G, Janss L, Guldbrandtsen B, Brøndum RF. Genomic evalua-             40. Do DN, Janss LL, Strathe AB, Jensen J, Kadarmideen H, editors. Genomic
+    tion of cattle in a multi-breed context. Livest Sci. 2014;166:101–10.                prediction and genomic variance partitioning of daily and residual feed
+17. Hayes BJ, Bowman PJ, Chamberlain AC, Verbyla K, Goddard ME. Accuracy                 intake in pigs using Bayesian Power Lasso models. In: Proceedings of the
+    of genomic breeding values in multi-breed dairy cattle populations.                  10th World Congress on Genetics Applied to Livestock Production: 17–22
+    Genet Sel Evol. 2009;41:51.                                                          Aug 2014; Vancouver, 2014.
+18. Olson KM, VanRaden PM, Tooker ME. Multibreed genomic evalua-                     41. Guo X, Christensen OF, Ostersen T, Wang Y, Lund MS, Su G. Genomic pre-
+    tions using purebred Holsteins, Jerseys, and Brown Swiss. J Dairy Sci.               diction using models with dominance and imprinting effects for backfat
+    2012;95:5378–83.                                                                     thickness and average daily gain in Danish Duroc pigs. Genet Sel Evol.
+19. de Roos AP, Hayes BJ, Goddard ME. Reliability of genomic predictions                 2016;48:67.
+    across multiple populations. Genetics. 2009;183:1545–53.                         42. Jiao S, Maltecca C, Gray KA, Cassady JP. Feed intake, average daily gain,
+20. Zhang S-Y, Olasege BS, Liu D-Y, Wang Q-S, Pan Y-C, Ma P-P. The genetic               feed efficiency, and real-time ultrasound traits in Duroc pigs: I. Genetic
+    connectedness calculated from genomic information and its effect on                  parameter estimation and accuracy of genomic prediction. J Anim Sci.
+    the accuracy of genomic prediction. PLoS One. 2018;13:e0201400.                      2014;92:2377–86.
+21. Fangmann A, Bergfelder-Drüing S, Tholen E, Simianer H, Erbe M. Can               43. Reverter A, Tier B, Johnston DJ, Graser HU. Assessing the efficiency of
+    multi-subpopulation reference sets improve the genomic predictive abil-              multiplicative mixed model equations to account for heterogeneous
+    ity for pigs? J Anim Sci. 2015;93:5618–30.                                           variance across herds in carcass scan traits from beef cattle. J Anim Sci.
+                                                                                         1997;75:1477–85.
+Aliakbari et al. Genet Sel Evol     (2020) 52:57                                                                                                       Page 15 of 15
+
+
+
+
+44. Clark SA, Hickey JM, Daetwyler HD, van der Werf JH. The importance of          52. Bijma P. Accuracies of estimated breeding values from ordinary genetic
+    information on relatives for the prediction of genomic breeding values             evaluations do not reflect the correlation between true and esti-
+    and the implications for the makeup of reference data sets in livestock            mated breeding values in selected populations. J Anim Breed Genet.
+    breeding schemes. Genet Sel Evol. 2012;44:4.                                       2012;129:345–58.
+45. Lourenco DA, Fragomeni BO, Tsuruta S, Aguilar I, Zumbach B, Hawken RJ,         53. Tonussi RL, de Oliveira Silva RM, Magalhães AFB, Espigolan R, Peripolli
+    et al. Accuracy of estimated breeding values with genomic information              E, Olivieri BF, et al. Application of single step genomic BLUP under dif-
+    on males, females, or both: an example on broiler chicken. Genet Sel Evol.         ferent uncertain paternity scenarios using simulated data. PLoS One.
+    2015;47:56.                                                                        2017;12:e0181752.
+46. Misztal I, Tsuruta S, Aguilar I, Legarra A, VanRaden P, Lawlor T. Methods to   54. Karimi K, Sargolzaei M, Plastow GS, Wang Z, Miar Y. Opportunities for
+    approximate reliabilities in single-step genomic evaluation. J Dairy Sci.          genomic selection in American mink: a simulation study. PLoS One.
+    2013;96:647–54.                                                                    2019;14:e0213873.
+47. Goddard M. Genomic selection: prediction of accuracy and maximisation
+    of long term response. Genetica. 2009;136:245–57.
+48. Hayes BJ, Bowman PJ, Chamberlain A, Goddard M. Invited review:                 Publisher’s Note
+    genomic selection in dairy cattle: Progress and challenges. J Dairy Sci.       Springer Nature remains neutral with regard to jurisdictional claims in pub-
+    2009;92:433–43.                                                                lished maps and institutional affiliations.
+49. Hoze C, Fritz S, Phocas F, Boichard D, Ducrocq V, Croiseau P. Efficiency of
+    multi-breed genomic selection for dairy cattle breeds with different sizes
+    of reference population. J Dairy Sci. 2014;97:3918–29.
+50. Pszczola M, Strabel T, Mulder HA, Calus MP. Reliability of direct genomic
+    values for animals with different relationships within and to the reference
+    population. J Dairy Sci. 2012;95:389–400.
+51. Lourenco DA, Misztal I, Tsuruta S, Aguilar I, Lawlor TJ, Forni S, et al. Are
+    evaluations on young genotyped animals benefiting from the past
+    generations? J Dairy Sci. 2014;97:3930–42.
+
+
+
+
+                                                                                       Ready to submit your research ? Choose BMC and benefit from:
+
+                                                                                         • fast, convenient online submission
+                                                                                         • thorough peer review by experienced researchers in your field
+                                                                                         • rapid publication on acceptance
+                                                                                         • support for research data, including large and complex data types
+                                                                                         • gold Open Access which fosters wider collaboration and increased citations
+                                                                                         • maximum visibility for your research: over 100M website views per year
+
+                                                                                       At BMC, research is always in progress.
+
+                                                                                       Learn more biomedcentral.com/submissions
+

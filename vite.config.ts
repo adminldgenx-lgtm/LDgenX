@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { pages, redirects } from './src/lib/pages';
+import { pagePaths, redirects } from './src/lib/pages';
 
 export default defineConfig(() => ({
   // Vite's development router remains client-rendered. The production preview
@@ -24,7 +24,7 @@ export default defineConfig(() => ({
             res.end();
             return;
           }
-          if (pages.some((p) => p.path === path)) {
+          if (pagePaths.includes(path)) {
             req.url = `${path === '/' ? '' : path}/index.html${url.search}`;
             next();
             return;

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { copy, workflow } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
 import { AnimatedHeading, useMediaQuery, useReducedMotion } from '../components/motion';
 import { Eyebrow, Photo, Reveal } from '../components/ui';
 import { createDnaScene, loadParticles } from '../lib/dna-scene';
@@ -11,23 +11,16 @@ import { createDnaScene, loadParticles } from '../lib/dna-scene';
    scrolling moves the camera along the helix and the stages arrive in turn in the two free
    corners. Positions along the helix are chapter markers only: they map nothing in the molecule. */
 
-const STAGES = workflow.length;
-// The three movements of the chain, as the earlier diagram named them.
-const PART = [
-  'Sur le terrain',
-  'Sur le terrain',
-  'Au laboratoire',
-  'Au laboratoire',
-  'Vers la connaissance',
-  'Vers la connaissance',
-  'Vers la connaissance',
-];
+// The seven steps of the workflow, the same in every catalogue.
+const STAGES = 7;
 const MODEL_CREDIT = 'https://sketchfab.com/3d-models/dna-547d42f6c0184232a945051b6952a39e';
 
 type Corner = 'start' | 'end';
 const cornerOf = (index: number): Corner => (index % 2 === 0 ? 'start' : 'end');
 
 export function DnaProcess() {
+  const { copy, workflow, ui } = useCatalog();
+  const r = useRoutes();
   const reduced = useReducedMotion();
   const compact = useMediaQuery('(max-width: 800px)');
   const track = useRef<HTMLDivElement>(null);
@@ -165,7 +158,7 @@ export function DnaProcess() {
   // The way out of the sequence, offered with the last stage.
   const cta = (
     <div className="dna-cta" data-shown={active === STAGES - 1 || undefined}>
-      <Link className="dna-cta-button" to="/contact">
+      <Link className="dna-cta-button" to={r.contact}>
         <span>{copy.labels.contact}</span>
         <ArrowRight size={18} strokeWidth={1.8} aria-hidden="true" />
       </Link>
@@ -176,7 +169,7 @@ export function DnaProcess() {
     <section className="dna-process" data-static={reduced || undefined}>
       <div className="container section-heading process-heading dna-process-intro">
         <div>
-          <Eyebrow>Comprendre pour agir</Eyebrow>
+          <Eyebrow>{ui.dna.eyebrow}</Eyebrow>
           <AnimatedHeading className="display-large" text={copy.home.introductionTitle} />
         </div>
         <Reveal className="section-heading-aside" delay={0.1}>
@@ -220,7 +213,7 @@ export function DnaProcess() {
             ))
           )}
           {!reduced && (
-            <nav className="dna-rail" aria-label="Les étapes de la démarche">
+            <nav className="dna-rail" aria-label={ui.dna.rail}>
               <ol>
                 {workflow.map((s, i) => (
                   <li key={s.title}>
@@ -240,12 +233,12 @@ export function DnaProcess() {
           )}
           {!reduced && !compact && cta}
           <p className="dna-credit">
-            Modèle 3D d’après{' '}
+            {ui.dna.credit}{' '}
             <a href={MODEL_CREDIT} target="_blank" rel="noreferrer">
               « DNA », LucasPresoto
-              <span className="sr-only"> (nouvel onglet)</span>
+              <span className="sr-only">{ui.common.newTab}</span>
             </a>
-            , CC BY 4.0, adapté
+            {ui.dna.creditLicence}
           </p>
         </div>
       </div>
@@ -265,6 +258,7 @@ export function DnaProcess() {
 /** One stage: its image in a bubble, the movement it belongs to, its title, its text and what
  *  it involves in practice. */
 function StageCard({ index, side = 'start' }: { index: number; side?: Corner }) {
+  const { workflow, ui } = useCatalog();
   const step = workflow[index];
   return (
     <article className="dna-stage" data-side={side} style={{ '--i': index } as CSSProperties}>
@@ -275,13 +269,13 @@ function StageCard({ index, side = 'start' }: { index: number; side?: Corner }) 
         </svg>
       </figure>
       <div className="dna-stage-body">
-        <p className="dna-stage-part">{PART[index]}</p>
+        <p className="dna-stage-part">{ui.dna.parts[index]}</p>
         <h3>{step.title}</h3>
         <p className="dna-stage-text">{step.text}</p>
-        <div className="dna-stage-detail">
-          <p className="dna-stage-detail-label">En pratique</p>
-          <p>{step.detail}</p>
-        </div>
+        <p className="dna-stage-detail">
+          <span className="dna-stage-detail-label">{ui.dna.practice}</span>
+          {step.detail}
+        </p>
       </div>
     </article>
   );

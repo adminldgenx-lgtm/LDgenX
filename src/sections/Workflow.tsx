@@ -1,10 +1,11 @@
 import { useRef } from 'react';
-import { workflow, copy } from '../content/fr';
-import { visualCopy } from '../content/visuals.fr';
+import { useCatalog, useRoutes } from '../i18n';
 import { AnimatedHeading, useActiveRow, useReducedMotion } from '../components/motion';
 import { Eyebrow, Photo, PhotoStack, TextLink } from '../components/ui';
 
 export function Workflow() {
+  const { workflow, copy, ui } = useCatalog();
+  const r = useRoutes();
   const section = useRef<HTMLElement>(null);
   const rows = useRef<(HTMLDivElement | null)[]>([]);
   const active = useActiveRow(section, rows);
@@ -25,7 +26,7 @@ export function Workflow() {
       <div className="container workflow-layout">
         <div className="workflow-sticky">
           <div>
-            <Eyebrow>Notre approche</Eyebrow>
+            <Eyebrow>{ui.workflow.eyebrow}</Eyebrow>
             <AnimatedHeading className="display-small" text={copy.home.workflowTitle} />
             <p>{copy.home.workflowIntro}</p>
           </div>
@@ -36,7 +37,7 @@ export function Workflow() {
             sizes="(max-width: 800px) 1px, 40vw"
           />
           <StagePicker active={active} onChange={goToStep} className="workflow-desktop-picker" />
-          <TextLink to="/contact">{copy.labels.contact}</TextLink>
+          <TextLink to={r.contact}>{copy.labels.contact}</TextLink>
         </div>
         <div className="workflow-steps">
           <StagePicker active={active} onChange={goToStep} className="workflow-mobile-picker" />
@@ -73,6 +74,7 @@ function StagePicker({
   onChange: (index: number) => void;
   className: string;
 }) {
+  const { workflow, visualCopy } = useCatalog();
   return (
     <label className={`workflow-stage-picker ${className}`}>
       <span>{visualCopy.workflow.caption}</span>

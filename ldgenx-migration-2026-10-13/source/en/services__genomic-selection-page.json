@@ -1,0 +1,308 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/genomic-selection-page",
+  "final_url": "https://www.ldgenx.com/services/genomic-selection-page",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:45.184664+00:00",
+  "language": "en",
+  "title": "GenExpert - Description d'études de sélection génomique - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Utilisation génomique et bioinformatique, estimation des paramètres génétiques, schémas de sélection, plan d'accouplement, reproducteurs, identification de gènes d'intérêts"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__genomic-selection-page.html",
+  "raw_sha256": "ccbd4caee411f4cb237d433464fe8c125a60b2091d73ab77d8ca9844fc730660",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1101/2022.05.31.494209",
+      "text": "Delpuech et al. 2022",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://doi.org/10.1101/2022.05.31.494209",
+      "text": "Delpuech et al. (2022)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.3389/fgene.2021.665920",
+      "text": "Griot et al. 2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "text": "Aliakbari et al. 2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "text": "Aliakbari et al. (2021)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62c59a94b88e5-figure2-manhattan-plot/570-62c59a94b88e5-figure2-manhattan-plot.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62c5b4d05e451-gebv-rfi/570-62c5b4d05e451-gebv-rfi.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Genomic selection"
+    },
+    {
+      "level": 3,
+      "text": "Identification of genes resistance for Viral Nervous Necrosis in the European Sea bass"
+    },
+    {
+      "level": 3,
+      "text": "Studies of genetic values for the selection of traits of interest"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__genomic-selection-page.md",
+  "content_characters": 3321,
+  "content_sha256": "03927812dbb9f8117bebcf971b91968a50e0b3319913316f9ace7aa4c293eef5",
+  "body_text": "Genomic selection\n        \n             Identification of genes resistance for Viral Nervous Necrosis in the European Sea bass\n        \nWhole genome sequencing technology allowed fine mapping of the Viral Nervous Necrosis (VNN) resistance phenotype in European sea bass (Dicentrachus labrax).\nCombining high-throughput sequencing data, medium-density genotyping data (~57K SNPs markers) and phenotypic data, allowed to unravel a strong association between a quantitative trait locus (QTL) in linkage group 12 (LG12) and sea bass survival in the face of VNN infection (Figure 1; Delpuech et al. 2022).\nFrom the available Sea bass genome annotation, we were able to identify two genes of interest (ZDHHC14 and IFI6). This reveals the major role of a protein induced by an interferon in the survival mechanisms of VNN wich is a considerable advance in the field.\nHatcheries facilities can now use this knowledge to improve the genomic selection of their lineages in order to develop more resistant bars.\n \n    Figure 1 from Delpuech et al. (2022), bioRxiv.\nManhattan plot representing the genetic-phenotype associations obtained from the study of VNN resistance in European sea bass.\n    \n             Studies of genetic values for the selection of traits of interest\n        \n        Genomic selection has been used to improve many traits of interest with high heritability. For example, this type of approach has been successfully applied to many farmed species, and recently to aquaculture species for pathogen resistance. It has allowed a genetic gain of 12.5% on average per generation for resistance to different diseases. Genomic selection is therefore a promising approach to control diseases affecting both wild and domestic populations (Griot et al. 2021).\nOn the other hand,  Aliakbari et al. 2021 highlighted similar genomic prediction using either (i) a so-called training set comprising animals of genetically related lines or (ii) a training set from the target population. Furthermore, in cases where it is possible to combine related data with data from the target population, the accuracy will only increase for traits (Figure 3).\nThese quantitative genetic results provide better knowledge for designing reference populations, especially for initiating genomic selection in populations where the number of historical samples is low.\n    Figure 3 from Aliakbari et al. (2021).\nCorrelations between GEBVp and GEBVw, and their error bars for the HRFI (a) and LRFI (b) lines.\n    \n        *=Significant difference with scenario 1 (control) according to Williams t-test at 0.05 level.\nRFI=residual feed intake, ADG=average daily gain, FCR=Feed conversion ratio, DFI=daily feed intake, BFT=backfat thickness\n\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__genomic-selection-page.json"
+}

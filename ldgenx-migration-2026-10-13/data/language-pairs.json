@@ -1,0 +1,128 @@
+{
+  "pairs": [
+    {
+      "fr": "https://www.ldgenx.fr/",
+      "en": "https://www.ldgenx.com/",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services",
+      "en": "https://www.ldgenx.com/services",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "en": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "en": "https://www.ldgenx.com/services/population-genomics",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "en": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/selection",
+      "en": "https://www.ldgenx.com/services/genomic-selection",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/bioinformatique",
+      "en": "https://www.ldgenx.com/services/bioinformatics",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "en": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/materiel",
+      "en": "https://www.ldgenx.com/services/equipment",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/conservation",
+      "en": "https://www.ldgenx.com/services/conservation",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/tracabilite",
+      "en": "https://www.ldgenx.com/services/traceability",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/services/selection-genomique",
+      "en": "https://www.ldgenx.com/services/genomic-selection-page",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/applications",
+      "en": "https://www.ldgenx.com/applications",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "en": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "en": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "en": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "en": "https://www.ldgenx.com/applications/environment-consultancies",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/a-propos",
+      "en": "https://www.ldgenx.com/about-us",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/a-propos/equipe",
+      "en": "https://www.ldgenx.com/about-us/team",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/a-propos/partenaires",
+      "en": "https://www.ldgenx.com/about-us/partners",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/a-propos/innovation",
+      "en": "https://www.ldgenx.com/about-us/innovation",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "en": "https://www.ldgenx.com/team/dr-maeva-leitwein",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "en": "https://www.ldgenx.com/team/dr-emilie-delpuech",
+      "status": "observed_page_pair"
+    },
+    {
+      "fr": "https://www.ldgenx.fr/contact",
+      "en": "https://www.ldgenx.com/contact",
+      "status": "observed_page_pair"
+    }
+  ],
+  "unpaired_fr": [
+    "https://www.ldgenx.fr/cgvs/cgvs"
+  ],
+  "note": "Pairing is a migration proposal based on matching page topics; no hreflang has been deployed."
+}

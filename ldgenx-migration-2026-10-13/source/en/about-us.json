@@ -1,0 +1,286 @@
+{
+  "requested_url": "https://www.ldgenx.com/about-us",
+  "final_url": "https://www.ldgenx.com/about-us",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:19.273897+00:00",
+  "language": "en",
+  "title": "GenExpert - Bureau d'études pour la conservation et la biodiversité",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "GenExpert génétique de la conservation, protection de la biodiversité, Identification d'espèces, traçabilité, sélection génomique, bioinformatiques"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/about-us.html",
+  "raw_sha256": "53a2672f96f8ab4b83a3e60e8401234db34b241d5077535113ba3a08fcb9f561",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "riviere",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/62a9d2962acf8-img-20190805-111018/320-62a9d2962acf8-img-20190805-111018.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682dedeef006f-plaquette-services/423-682dedeef006f-plaquette-services.jpg",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "About LDgenX"
+    },
+    {
+      "level": 2,
+      "text": "Genomics for Biodiversity, Agriculture & Aquaculture"
+    },
+    {
+      "level": 2,
+      "text": "Our Expertise"
+    },
+    {
+      "level": 2,
+      "text": "Our Mission"
+    },
+    {
+      "level": 2,
+      "text": "An Innovative DeepTech Company"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/about-us.md",
+  "content_characters": 2607,
+  "content_sha256": "ff6ce623aaec6f5282721c989b0f0a9d2eea8d42e84a97fc950cb662e41494ec",
+  "body_text": "About LDgenX\nGenomics for Biodiversity, Agriculture & Aquaculture\n        LDgenX is a DeepTech company specializing in the application of genomics to biodiversity conservation, sustainable agriculture, and aquaculture.We support public and private organizations in their research, environmental monitoring, and innovation projects through solutions combining environmental DNA (eDNA), population genomics, high-throughput sequencing, digital PCR (dPCR), and bioinformatics.\n Our ambition is to make genomic technologies accessible and actionable, empowering better decision-making to address today's and tomorrow's environmental challenges.\n            Our Expertise\n        With over 10 years of experience in genomics and bioinformatics, the LDgenX team provides expertise across the entire project lifecycle:\nScientific project design\nSampling strategy\nMolecular analyses\nGenetic tool development\nSequencing and digital PCR (dPCR)\nBioinformatics analyses\nData interpretation and reporting\n \nWe develop tailored solutions to meet the specific needs of each project, delivering robust, reliable and actionable results.\n            Our Mission\n        We believe that genomic technologies are a powerful tool to improve our understanding, management and conservation of biodiversity.Our mission is to support environmental managers, researchers, public authorities, consulting firms and industry partners in harnessing these technologies to generate reliable data that inform evidence-based decision-making.\n            An Innovative DeepTech Company\n        Innovation is at the core of LDgenX's development.We conduct research and development to design the next generation of genomic tools for biodiversity monitoring and the sustainable management of natural resources.\n Our innovation projects are supported by leading funding programs and institutional partners, including:DeepTech LabelFrench Tech Emergence GrantCréaliaBpifranceUniversity Innovation Hub (Pôle Universitaire d'Innovation)Partner research institutes and universities\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/about-us.json"
+}

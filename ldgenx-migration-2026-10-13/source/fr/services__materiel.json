@@ -1,0 +1,390 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/materiel",
+  "final_url": "https://www.ldgenx.fr/services/materiel",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:27.407644+00:00",
+  "language": "fr",
+  "title": "Matériel d'échantillonnage de l'ADNe LDGENX",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Description du matériel d'échantillonnage, triple pompes, capsules de filtrations, trorpilles et filtres d'échantillonnage pour l'ADNe"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__materiel.html",
+  "raw_sha256": "143b181f8a6f1e4e630d5e0272bea6b59d6ed675abba1af4606130e85d9d46b2",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "prix pompes ADNe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5f94c9b24-site-web-ldgenx-44/default-6a4e5f94c9b24-site-web-ldgenx-44.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Pompe triple ADNe interieur",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6997116c1be13-20251013-145600/320-6997116c1be13-20251013-145600.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Pompe triple ADNe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6997101e811fe-20251013-145507/320-6997101e811fe-20251013-145507.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Capsules waterra ",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971e6cf08f6-waterra/320-69971e6cf08f6-waterra.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pris stick pump et filtres",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e5faed8f0e-site-web-ldgenx-45/default-6a4e5faed8f0e-site-web-ldgenx-45.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "stick pump",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971dd9992cc-stickpump/320-69971dd9992cc-stickpump.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "sequench",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13/default-69971de3208ea-capture-d-e-cran-2026-02-19-a-14-41-13.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "prix torpille",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a4e603cb9218-site-web-ldgenx-46/default-6a4e603cb9218-site-web-ldgenx-46.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "torpille tractée",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/69981cc10bc2a-20260219-155036/251-69981cc10bc2a-20260219-155036.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "torpilles échantillonnafe",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/69cbf4b816737-torpille/251-69cbf4b816737-torpille.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Matériel d'échantillonnage"
+    },
+    {
+      "level": 1,
+      "text": "Pompe triple"
+    },
+    {
+      "level": 1,
+      "text": "Stick pump"
+    },
+    {
+      "level": 1,
+      "text": "Torpille"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__materiel.md",
+  "content_characters": 2776,
+  "content_sha256": "546a940afa6303ee668cd63683e331f82d4b8a585e386d5cca9297b45cfb1b0e",
+  "body_text": "Matériel d'échantillonnage\nPompe triple\n        Trois filtrations séparées en parallèles avec capsules Waterra\nTaille tuyaux d'entrée : 12 mm diamètre ou 4 mm diamètre\n\n\nHauteur maximum entre la surface de l'eau et la pompe :\n\n1.5 m avec tuyaux de 12 mm de diamètre et 5 m avec tuyau de 4mm de diamètre (modèle 1) \n3 m avec tuyaux de 12 mm de diamètre et 15 m avec tuyau de 6mm de diamètre (modèle 2) \n \nVitesse pompage effective: 3L/min (modèle 1) ou 10L/min (modèle 2)\n\n\nTrois débimètres intégrés\n\n\nAutonomie 8h (modèle 1) ou 10 h (modèle 2) batterie lithium-ion Opti Battery incluse\n\nTaille de pores: 0.1 µm, 0.22 µm, 0.45 µm, 1.2 µm et 5 µm\n        Stick pump\n        Quatres filtres en parallèleVitesse de pompage 40 L/minUn débitmètre intégréBatterie Makita 18V non incluseFiltre en nylon de 20 µm ou 5 µm et 47 mm de diamètre\n        Torpille\n        Trois filtrations en parallèles\n \nVolume filtré par dépression dépendant de la vitesse (env. 50L/filtre en 10 min à 6 noeuds)\n Filtre en nylon de 20 µm ou 5 µm et 47 mm de diamètre\n \nTractée derrière un bateau\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__materiel.json"
+}

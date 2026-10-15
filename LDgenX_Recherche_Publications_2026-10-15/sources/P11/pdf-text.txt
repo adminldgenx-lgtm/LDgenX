@@ -1,0 +1,1130 @@
+Received: 27 May 2016     | Accepted: 10 August 2016
+DOI: 10.1111/eva.12416
+
+
+ORIGINAL ARTICLE
+
+
+
+
+Ancestry and adaptive evolution of anadromous, resident,
+and adfluvial rainbow trout (Oncorhynchus mykiss) in the San
+Francisco bay area: application of adaptive genomic variation
+to conservation in a highly impacted landscape
+
+Maeva Leitwein1,2 | John Carlos Garza2,3 | Devon E Pearse2,3
+
+1
+ Technopôle Brest-Iroise, rue Dumont
+d’Urville, Institut Universitaire Européen de       Abstract
+la Mer (IUEM), University of Brest, Plouzané,       The streams draining of into San Francisco Bay, California, have been impacted by
+France
+2
+                                                    habitat alteration for over 150 years, and roads, dams, water diversions, and other
+ Institute of Marine Sciences, University of
+California, Santa Cruz, CA, USA                     impediments now block the paths of many aquatic migratory species. These changes
+3
+ Fisheries Ecology Division, Southwest              can affect the genetic structure of fish populations, as well as driving adaptive evolu-
+Fisheries Science Center, National Marine
+                                                    tion to novel environmental conditions. Here, we determine the evolutionary relation-
+Fisheries Service, Santa Cruz, CA, USA
+                                                    ships of San Francisco Bay Area steelhead/rainbow trout (Oncorhynchus mykiss)
+Correspondence
+                                                    populations and show that (i) they are more closely related to native coastal steelhead
+Devon E Pearse, Fisheries Ecology Division,
+Southwest Fisheries Science Center,                 than to the California Central Valley lineage, with no evidence of introgression by do-
+National Marine Fisheries Service, Santa
+                                                    mesticated hatchery rainbow trout, (ii) populations above and below barriers within
+Cruz, CA, USA.
+Email: devon.pearse@noaa.gov                        watersheds are each other’s closest relatives, and (iii) adaptive genomic variation as-
+                                                    sociated with migratory life-­history traits in O. mykiss shows substantial evolutionary
+Present address
+Maeva Leitwein, Institut des Sciences de            differences between fish above and below dams. These findings support continued
+l’Evolution de Montpellier (ISEM), UMR
+                                                    habitat restoration and protection of San Francisco Bay Area O. mykiss populations
+5554, Université de ́Montpellier,
+Montpellier, Cedex 5, France                        and demonstrate that ecological conditions in novel habitats above barriers to ana-
+                                                    dromy influence life-­history evolution. We highlight the importance of considering the
+                                                    adaptive landscape in conservation and restoration programs for species living in
+                                                    highly modified habitats, particularly with respect to key life-­history traits.
+
+                                                    KEYWORDS
+                                                    adaptive genomic variation, conservation, evolution, life history, steelhead
+
+
+
+
+1 | INTRODUCTION                                                                    environmental conditions can in turn lead to directional change in the
+                                                                                    frequency of variants in specific genomic regions (Houde, Fraser, &
+Many animal populations are threatened by human impacts and ac-                     Hutchings, 2010; Lamaze, Garant, & Bernatchez, 2013; Pearse, Miller,
+celerating global climate change (Urban, 2015), which affect biodi-                 Abadía-­Cardoso, & Garza, 2014; Reed et al., 2015). In addition, in-
+versity at multiple scales: individual, population, species, community,             creased phenotypic plasticity may allow organisms in variable environ-
+and ecosystem (Rands et al., 2010). Species can respond to environ-                 ments to match their phenotype with the optimum trait value (Tufto,
+mental change by moving to the most suitable habitat (Harrisson,                    2000) leading to an increase in mean population fitness (Ezard, Prizak,
+Pavlova, Telonis-­Scott, & Sunnucks, 2014), or through rapid changes                & Hoyle, 2014). Thus, both intra-­ and interpopulation diversity can
+in their phenotype (Darimont et al., 2009). Rapid adaptation to novel               be important in a variable environment and contribute to long-­term
+
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium,
+provided the original work is properly cited.
+
+56   |   © 2016 The Authors. Evolutionary Applications          wileyonlinelibrary.com/journal/eva                      Evolutionary Applications 2017; 10: 56–67
+         published by John Wiley & Sons Ltd
+Leitwein et al.                                                                                                                                   | 57
+population viability (i.e., the “portfolio effect,” Schindler et al., 2010;    by distance, which is influenced by major geographic features but
+Carlson & Satterthwaite, 2011).                                                has also changed over time (Pearse, Martinez, & Garza, 2011). When
+    Wild fish populations are impacted by climate change as well as            barriers to movement prevent migration among populations, genetic
+local anthropogenic modification, including dams, water diversions,            divergence increases. Similarly, artificial propagation and stocking of
+and other development in riverine habitats. In western North America,          domesticated hatchery trout strains with non-­native ancestry can
+much of the landscape has been heavily affected by anthropogenic im-           alter existing population genetic structure and also may negatively
+pacts over the past century (Nehlsen, Williams, & Lichatowich, 1991).          impact fitness in natural populations through introgression and loss of
+Barriers to migration and habitat fragmentation have many conse-               local adaptation (Champagnon, Elmberg, Guillemain, Gauthier-­Clerc,
+quences for migratory populations, including reduced population sizes          & Lebreton, 2012; McLean, Bentzen, & Quinn, 2003). Nonetheless,
+leading to increased genetic drift (Clemento, Anderson, Boughton,              millions of juvenile hatchery trout are released each year in California
+Girman, & Garza, 2009), as well as local adaptation and rapid evolu-           (Leitritz, 1970). In general, these hatchery fish have reduced repro-
+tion resulting from divergent selection for different phenotypes within        ductive success and fitness relative to wild fish (McLean et al., 2003)
+each new habitat (Crozier et al., 2008; Keeley, Parkinson, & Taylor,           and may contribute to the decline of wild populations (Augerot, 2005).
+2007). As a result, migratory fish impacted by habitat fragmentation           Thus, the identification of native-­lineage populations isolated above
+are a primary target of conservation efforts (NMFS, 2012; Brown et al.,        dams is an important aspect of conservation genetic studies of these
+2013).                                                                         fish populations.
+    Numerous rivers and streams drain into San Francisco Bay, ­almost             Expression of life-­history variation, such as the timing of migration
+all of which are impacted by humans via dams, water diversions, and            and maturation, may differ in relation to the phylogeographic struc-
+estuary and coastal wetland modifications (Goals Project, 2015).               ture of populations (Arciniega et al., 2016; Vähä et al., 2011). This
+These watersheds shelter the salmonid species Oncorhynchus mykiss              phenotypic variation may be influenced by a combination of plasticity
+(Walbaum), a widespread fish native to western North America that              and heritable variation in salmonid fishes, including O. mykiss (Abadía-­
+has been introduced all over the world for recreational fishing (Pascual       Cardoso, Anderson, Pearse, & Garza, 2013; Liedvogel, Åkesson, &
+et al., 2001) and aquaculture (Cowx, 2005–2013). Steelhead, the anad-          Bensch, 2011; Phillis et al., 2016; Quinn, Kinnison, & Unwin, 2001).
+romous form of the species, typically spend ~1–2 years in freshwater           Such specific genomic regions have been linked to migratory timing
+before undergoing “smoltification,” a suite of morphological, physio-          in Salmo salar (e.g., clock gene, O’Malley, Ford, & Hard, 2010) as well
+logical, and behavioral changes, and migrating to the sea to grow for          as the differential expression of age at return in males and females
+1–3 years before finally returning to freshwater one or more times to          (Barson et al., 2015). Similarly, rapid adaptation of specific genomic
+spawn. The resident form of O. mykiss, known as rainbow trout, lives           regions related to anadromy is expected in response to barriers to mi-
+exclusively in freshwater and does not migrate to the sea. These two           gration such as dams or waterfalls (Martínez, Garza, & Pearse, 2011).
+life-­history forms can coexist in the same river, with an essentially         However, anadromous traits may persist above barriers, despite
+continuous spectrum of life-­history variation represented in some             strong selection against this trait because of phenotypic plasticity,
+populations (Hayes et al., 2012; McPhee et al., 2007; Shapovalov &             negative correlation with other traits (e.g., male maturation, Thrower,
+Taft, 1954). Currently, steelhead populations along the West Coast             Hard, & Joyce, 2004), or because some aspects of the migratory life
+are managed as distinct population segments (DPSs), which are delin-           history are selectively favored despite the lack of access to the ocean.
+eated based on geographic, ecological, and genetic variation (Federal          Martínez et al. (2011) identified a specific genomic region implicated
+Register, 2006). The San Francisco Bay steelhead populations are in-           in migratory behavior in O. mykiss. Subsequent analyses have charac-
+cluded in the Central California Coast Steelhead DPS (Federal Register,        terized a large genomic region on chromosome Omy5, here referred
+2006), which is distinct from the Central Valley Steelhead DPS, whose          to as the Omy5 Migration Associated Region (MAR), that is, strongly
+members migrate through San Francisco Bay during their anadromous              associated with life history of populations of steelhead and rainbow
+migrations from the Sacramento and San Joaquin Rivers. Importantly,            trout (Hecht, Thrower, Hale, Miller, & Nichols, 2012; Miller et al.,
+under the DPS system, only the migratory form of the species re-               2012; Pearse et al., 2014). Adaptive genetic variation in this region is
+ceives protection under the US Endangered Species Act (ESA; Federal            associated with both lineage-­specific and environmental differences
+Register, 2006), highlighting the critical importance of understanding         among populations (Abadía-­Cardoso et al., 2016; Pearse & Garza,
+the genetic basis of life-­history variation in this species (Pearse et al.,   2015). Interestingly, alleles associated with anadromous migration
+2014).                                                                         have been observed at relatively high frequencies in some popula-
+    Migration is an important determinant of steelhead population              tions isolated above dams (Pearse et al., 2014). Because dams create
+structure, and numerous studies have examined the genetic structure            reservoirs behind them, they create a different selective environment
+of O. mykiss populations in California coastal and Central Valley water-       than other above-­barrier habitats (i.e., waterfalls) and may support
+sheds (Arciniega et al., 2016; Clemento et al., 2009; Garza et al., 2014;      adfluvial populations in which fish migrate between stream and lake
+Nielsen, Carpanzano, Fountain, & Gan, 1997; Nielsen, Pavey, Wiacek,            (reservoir) habitats (Holecek, Scarnecchia, & Miller, 2012). This po-
+& Williams, 2005; Pearse, Donohoe, & Garza, 2007; Pearse & Garza,              tential for the evolution of migratory behavior in populations of O.
+2015). Garza et al. (2014) highlighted the correlation between genetic         mykiss above some dams has important implications for restoration
+variation and geographic distance, a relationship known as isolation           and recovery efforts.
+58   |                                                                                                                                 Leitwein et al.
+
+
+     Here, we evaluate the population genetic structure of O. mykiss in    loading dye, and an internal size standard, then denatured at 95°C for
+the San Francisco Bay Area using a combination of 14 microsatellites       3 min, and electrophoresed on an ABI 3730 DNA Analyzer (Applied
+and 92 single nucleotide polymorphism (SNP) loci and test for signals      Biosystems). All genotypes were called independently by two peo-
+of local adaptation to migratory opportunities. First, we evaluate the     ple using GeneMapper software (Applied Biosystems). Discrepancies
+evolutionary ancestry of San Francisco Bay Area populations to deter-      were resolved by reconciling the two calls, by regenotyping, or by de-
+mine whether they are more closely related to the coastal steelhead        letion of that genotype from the dataset.
+or Central Valley evolutionary lineages, and whether the release of           All samples were also genotyped at 95 SNP loci previously devel-
+large numbers of hatchery rainbow trout of diverse origins in many         oped and used for parentage and population genetic analysis in O.
+of the reservoirs in the study area have affected the genetic structure    mykiss (Abadía-­Cardoso, Clemento, & Garza, 2011; Abadía-­Cardoso
+of the species. Introductions and artificial propagation can have many     et al., 2013; Pearse & Garza, 2015), which include three SNPs located
+consequences on native populations, and understanding them is im-          on chromosome Omy5, two of which are tightly linked, produced
+portant for establishing effective conservation and management strat-      identical genotypes in almost all individuals, and are representative of
+egies (McLean et al., 2003). Second, we use two SNP loci linked to the     the Omy5 MAR haplotypes (Pearse et al., 2014). Genotypes were ob-
+chromosome Omy5 MAR to test the hypothesis that genetic variation          tained using TaqMan assays (Applied Biosystems) on 96.96 Dynamic
+associated with migratory life history may be favoured above dams          SNP Genotyping Arrays in the EP1 Genotyping System (Fluidigm).
+with large reservoirs that can support an adfluvial population (Holecek    Pre-­amplification PCR was performed with the diluted DNA at 2:1,
+et al., 2012; Pearse et al., 2014). Together, these analyses will inform   and then, the pre-­amplification mix was diluted 4:1 with 2 μM Tris.
+ongoing and future management of this protected species and provide        The sample mix contained the following: 2.5 μl of the pre-­amp mix as
+insight into the potential for the evolutionary application of adaptive    template, 2.5 μl TaqMan Universal Master Mix, 2.5 μl 20 × Loading
+genomic variation in conservation.                                         Reagent, 0.10 μl dH2O and 0.05 μl AmpliTaq Gold enzyme (Applied
+                                                                           Biosystems). The assay mix contained 1.3 μl TaqMan Assay, 2.5 μl
+                                                                           Assay Loading Reagent, 0.25 μl ROX and 1 μl dH2O. Assays and sam-
+2 | MATERIALS AND METHODS
+                                                                           ples were loaded into the array, with two no-­template negative con-
+                                                                           trols included in each genotyping array. Genotypes were called using
+2.1 | Samples
+                                                                           Fluidigm SNP Genotyping Analysis Software v3.1.1.
+Adult and juvenile O. mykiss were sampled from 28 locations in six
+different areas around San Francisco Bay and from seven hatchery
+                                                                           2.3 | Data analysis
+rainbow trout strains that have been stocked widely in California and
+elsewhere (Fig. 1; Table 1). Fish were captured from January 2002 to       The microsatellite and SNP data from San Francisco Bay O. mykiss were
+September 2013 using a variety of methods, including traps, electro-       combined with data previously collected from a range of California
+fishing, and seine nets. Fish sampled in the same location in different    populations, as well as hatchery rainbow trout strains commonly used
+years were combined for analyses. Tissue samples for DNA extrac-           in California to evaluate their influence on population structure. We
+tion consisted of a small piece of caudal fin (approximately 5 mm2)        first removed the two loci located in the Omy5 MAR (Omy11448-­87,
+desiccated on blotter paper until DNA extraction. In addition, previ-      Omy121006-­131), as well as a third locus (Omy127236-­583) that is
+ously published data (Abadía-­Cardoso et al., 2016; Clemento et al.,       partially linked to these loci (Pearse et al., 2014). The microsatellite
+2009; Garza et al., 2014; Pearse & Garza, 2015) from populations of        locus Ots3M was also removed due to missing data, leaving a final
+O. mykiss representing the Northern California (NC), California Central    set of 106 loci (92 SNP loci and 14 microsatellites) for further anal-
+Valley (CCV), Central California Coast (CCC), and South-­Central           ysis. Observed heterozygosity (HO), expected heterozygosity (HE;
+California Coast (SCCC) DPSs were included in the analysis for com-        Nei, 1987), and number of alleles were calculated for each popula-
+parison with San Francisco Bay Area populations (Table 2).                 tion with the Microsatellite Toolkit (Park, 2001), and allelic richness
+                                                                           (AR) was calculated to account for sample size effects using the
+                                                                           rarefaction method in the program HP-­RARE and a base sample of
+2.2 | Genetic data collection
+                                                                           16 gene copies (Kalinowski, 2005). Pairwise FST values between all
+Genomic DNA was extracted from all tissue samples using Qiagen             pairs of San Francisco Bay populations were calculated using the θ
+DNeasy Tissue Kits on a BioRobot 3000 (Qiagen) following the               estimator of Weir and Cockerham (1984) in Genetix (Belkhir, Borsa,
+manufacturer’s protocols. Extracted DNA was diluted with dH2O at           Chikhi, Raufaste, & Bonhomme, 1996), with 100 permutations to test
+20:1 for microsatellites and 2:1 for SNPs. Diluted samples were used       whether values were significantly different from zero.
+for polymerase chain reaction (PCR) amplification of 15 microsatel-           To identify ancestry and population structure and assign individ-
+lite loci previously used in population genetic studies of O. mykiss       ual fish to their population of origin, we used two analysis methods
+(Garza et al., 2014). PCR was carried out in 15 μl volumes containing:     based on individual genotypes rather than on population samples.
+4 μl DNA template (1:20); 1.5 μl 10× Buffer, 0.95 μl MgCl2 (25 mM),        First, clustering analyses were conducted using a Bayesian model-­
+0.6 μl dNTPs (10 mM), 1 μl Primers (5 μM), 6.95 μl dH2O, and 0.045 μl      based method implemented in the program structure v2.2 (Pritchard,
+Taq DNA polymerase. PCR products were mixed with formamide,                Stephens, & Donnelly, 2000), in which each individual’s genotype is
+Leitwein et al.                                                                                                                                                 | 59
+
+
+
+
+                                                                    Na
+                                                                      pa
+                                                So
+
+
+
+
+                                                                        R
+                                                   nom
+                      Pe
+                         t   al
+                                                      aC
+                               um
+                                    a                                 4#
+                                        R              k
+
+                                        #              3#
+                                        2
+                             Mille
+                                   rC           k
+                                        #
+                                            1
+
+
+
+
+                                                                                                Alameda Ck
+                                                                                                     #
+                                                     Sa                                               5
+                                                        n
+                                                            M
+                                                                     #
+                                                                      22                                                7   !Indian
+                                                       Ck ate
+                                                                o                       k
+                                                                                                 Guadalupe R                #6               Ck
+                                                                                     oC
+                                                                                   u it
+                                                                                isq #                                        !       Ar
+                                                                                                                                        ro
+                                                                                    C k ent e
+
+
+
+
+                                                                              c                                                  8           yo
+                                                                            an #20                                                                H
+                                                                         Fr       21      #19                   9                                     on
+                                                                                        an
+
+
+
+
+                                                                       n
+                                                                                                    Ck
+
+
+
+
+                                                                    Sa                     #17              ##                                             do
+                                                                                   Perm
+
+
+
+                                                                                                  oga
+
+
+
+
+                                                                                                         10
+                                                                                                                    Co
+
+
+
+
+                                                                                  St
+                                                                                                                        yo
+                                                                                                    at
+
+
+
+
+                                                                                     ev
+                                                                                         18!
+                                                                                                                           te
+
+
+
+
+                                                                                   C k ens
+                                                                                                Sar
+
+
+
+
+                                                                                                  # #13
+                                                                                                                             Ck
+
+
+
+
+                                                                                                  16
+                                                                            k
+                                                                           ll C
+
+
+
+
+                                                                                                       !        !11
+                                                                                                  14                              Lla
+                                                                        de
+
+
+
+
+                                                                                                  Lo                                ga
+                                                                                                     sG       15
+                                                                                                                        !
+                                                                                                                        12       !     sC
+                                                                        d
+
+
+
+
+                                                                                          Sa
+
+
+
+
+                                                                                                           at!
+                                                                     Wa
+
+
+
+
+                                                                                                                                 28                k
+                                                                           #23                               os
+                                                                                             n
+
+
+
+
+                                                                                                                C                !
+                                                                                            Lo
+
+
+
+
+                                                                                                                    k                             Uv
+                                                                                                                                 27                 as
+                                                                                                r en
+
+
+
+
+                                                                                            #                                         h  Ck
+                                                                                            24
+                                                                                                 zo
+
+
+
+
+                                                                                                                                 d fis #
+                                                                                                                              Bo Ck 26
+                                                                                                   R
+
+
+
+
+                                        Kilometers
+                                                                                                                                             #
+                                                                                                                                       R    25
+                                                                                                                                  ro
+                  0            10           20     30                       40                                               Paja
+
+
+
+
+F I G U R E 1 Map showing locations of population samples around San Francisco Bay. Sample sites are indicated by numbered triangles, and
+migration barriers are shown by bars, with sites above reservoir-­forming dams indicated by dots with size proportional to reservoir volume.
+60   |                                                                                                                                        Leitwein et al.
+
+
+T A B L E 1 Descriptive summary statistics for 28 populations of Oncorhynchus mykiss from basins in San Francisco (SF) Bay Area and the
+central California coast, as well as sampled hatchery rainbow trout strains
+
+ Region                         #/Name                                          Barrier       N            HE           HO           NA             AR
+                                                    a
+ North SF Bay                   1/Miller Ck.                                    Below          31          0.39         0.40          6.33          4.75
+                                2/Petaluma R.                                   Below          16          0.39         0.42          6.00          5.04
+                                3/Sonoma Ck.                                    Below          76          0.41         0.40          9.86          5.90
+                                4/Napa R.                                       Below          74          0.42         0.40         11.36          5.95
+ Alameda Creek                  5/Alameda-­Stonybrook Ck.                       Above          25          0.28         0.31          3.29          2.93
+                                6/Alameda-­Mainstem                             Above         152          0.39         0.38          8.21          4.67
+                                7/Alameda-­Indian Ck.                           Above          92          0.39         0.38          7.64          4.59
+                                8/Alameda-­Arroyo Hondo                         Above         208          0.41         0.40         11.36          5.44
+ South SF Bay                   9/Coyote Ck.                                    Below         129          0.40         0.38         12.00          5.82
+                                10/Guadalupe-­Mainstem                          Below         141          0.40         0.39          9.07          4.78
+                                11/Guadalupe-­Reservoir                         Above          20          0.39         0.41          5.43          4.54
+                                12/Guadalupe-­Herbert Ck.                       Above          51          0.40         0.40          7.14          4.97
+                                13/Guadalupe-­Los Gatos Ck.                     Below          62          0.41         0.42          8.57          5.54
+                                14/Guadalupe-­Lexington Res.                    Above          30          0.39         0.35          6.79          4.78
+                                15/Guadalupe-­Austrian                          Above          20          0.35         0.34          5.14          4.04
+                                16/Saratoga Ck.                                 Below          86          0.37         0.36          5.36          3.77
+                                17/Stevens Ck.                                  Below          17          0.40         0.40          6.71          5.59
+                                18/Stevens Res.                                 Above          20          0.37         0.36          6.86          5.34
+                                19/Permanente Ck.                               Below          20          0.20         0.20          2.43          2.12
+                                20/San Francisquito Ck.a                        Below          29          0.41         0.41          7.71          5.54
+                                21/San Francisquito-­Los Trancos Ck.            Below          24          0.39         0.40          6.38          4.69
+ West SF Bay                    22/San Mateo Ck.                                Below          96          0.41         0.40          8.36          4.78
+ Coastal/Monterey Bay           23/Waddell Ck.a                                 Below          31          0.40         0.40          7.36          4.85
+                                                        a
+                                24/San Lorenzo R.                               Below          69          0.42         0.41         11.00          5.90
+                                25/Pajaro-­Uvas Ck.                             Below          44          0.41         0.42          6.93          4.67
+                                26/Pajaro-­Bodfish Ck.                          Below          57          0.42         0.44          8.14          5.21
+                                27/Pajaro-­Uvas Res.                            Above          24          0.41         0.41          8.29          5.74
+                                28/Pajaro-­Chesbro Res.                         Above          19          0.39         0.41          5.64          4.71
+ Hatchery Trout strains         Colemana                                        –              47          0.37         0.36          6.43          4.42
+                                        a
+                                Virginia                                        –              48          0.31         0.30          6.21          4.33
+                                Whitneya                                        –              48          0.36         0.36          6.43          4.14
+                                            a
+                                Wyoming                                         –              47          0.37         0.38          6.29          4.51
+                                Kamloopsa                                       –              47          0.27         0.27          7.29          4.50
+                                                a
+                                Eagle Lake                                      –              47          0.29         0.28          5.00          3.84
+                                Mount Shastaa                                   –              47          0.35         0.34          5.07          3.60
+                                                                                              Mean         0.38         0.38          7.33          4.80
+
+N, sample size; HE, expected heterozygosity; HO, observed heterozygosity; NA, observed number of alleles for microsatellite loci; AR, allelic richness for
+microsatellite loci. Barrier indicates the location of the sampling site as either A, above or B, below one or more impassable dams. Numbers (#) correspond
+to locations in Fig. 1. Ck., Creek; R., River; Res., Reservoir.
+a
+ The microsatellite and/or SNP data for these populations were previously published in Clemento et al. (2009), Garza et al. (2014), and/or Abadía-­Cardoso
+et al. (2016).
+
+
+fractionally assigned to a hypothesized number of genetic groups,               genetic association, and the optimal number of genetic groups was
+K, without regard of the original geographic location. Analyses were            evaluated using the method of Evanno, Regnaut, and Goudet (2005)
+conducted over a range of values from K = 2–15. Multiple runs                   implemented in STRUCTURE HARVESTER (Earl & vonHoldt, 2011).
+were performed for each K value to evaluate consistent patterns of              Results from structure consist of individual proportional assignments
+Leitwein et al.                                                                                                                | 61
+T A B L E 2 Oncorhynchus mykiss populations from areas included in
+                                                                             sta
+previous studies
+                                                                           ha
+                                                                                       tS
+                                                                                             un
+                                                                             ke                   Mo
+                                                                           La
+                                                                                       gle
+  Region                Tributary                                DPS
+                                                                                             Ea
+                                                                           ps
+                                                                                oo
+                                                                                       ml
+                                                                                           Ka
+                                     a
+  North Coast           Mattole R.                               NC        ing
+                                                                                 om
+                                                                                         Wy
+
+                        Gualala R.a
+                                                                           ey
+                                                                                itn
+                                                                                       Wh
+
+
+                        North Fork American R.b
+                                                                           a
+  Central Valley/                                                CCV
+                                                                                   i
+                                                                               gin
+                                                                                      Vir
+
+   Sacramento R.        Yuba R.b
+                                                                             n
+                                                                           ma                                     le
+                                                                                                             Co           y
+                                                                                                                      Re
+                                                                                                                  is
+                                                                                                             Lu
+                        McCloud R.b
+                                                                                                                           .
+                                                                                                        a  n           Ck
+                                                                                                r k S edes
+                                                                                           Fo             pu              .
+                                                                                        st           lsi               Ck
+
+                        Battle Ck.b
+                                                                                  W  e            a                w
+                                                                                              -S               llo
+                                                                                           R.              Wi ur R
+                                                                                                                          .
+                                                                                      ez
+                                                                                  Yn                           gS
+                                                                              nta                           Bi
+
+                        Deer Ck.b
+                                                                           Sa                                          C k.
+                                                                                                                    a
+                                                                                                                jar
+                                                                                                            sa
+                                                                                                       as               R.
+                                                                                                  .-T                el
+  South-­Central        Carmel R.a                               SCCC                     a sR                a  rm s.
+                                                                                    a lin                   C
+                                                                                                                  o  Re .
+                                                                                  S                              r es
+                                                                                                            sb
+   Coast
+                                                                                                        he as R
+                                                    c
+                        Salinas R.-­Tassajara Ck.
+                                                                                                o-C Uv
+                                                                                            jar o-                       k.
+                                                                                        Pa ajar                     hC
+                                                                                             P                  fis
+
+                        Big Sur R.a
+                                                                                                            od
+                                                                                                     o -B
+                                                                                               ja  r                     k.
+                                                                                           Pa                       sC
+                                                                                                                va
+                                                                                                           o-U
+                        Willow Ck.a
+                                                                                                     j a r
+                                                                                               Pa                       R.
+                                                                                                                    zo
+                                                                                                                en
+
+                        Santa Ynez R.-­Salsipuedes Ck.c
+                                                                                                            or
+  Southern                                                       SC                              S  a  nL
+                                                                                                                   ell
+                                                                                                                        Ck
+
+   California
+                                                                                                              dd
+                                                    d                                                    Wa
+                        West Fork San Luis Rey                             k.
+                                                                                  oC
+                                                                               ate
+
+DPS indicates the distinct population segments.
+                                                                                             nM
+                                                                                                   Sa
+                                                                                                                        k.
+                                                                                                                  sC
+NC, Northern California; CCV, California Central Valley; SCCC, South-­
+                                                                                                               co        k
+                                                                                                          ran o C
+                                                                                                     s T quit k.
+Central California Coast; SC, Southern California.
+                                                                                                  o
+                                                                                              o-L        cis e C
+                                                                                         q uit Fran nent es.
+                                                                                       s                           R
+a
+                                                                                     ci        n          a s            .
+  Garza et al. (2014)
+                                                                                 ran       Sa Perm ven s Ck
+                                                                              nF                          e
+                                                                                                      St even
+                                                                           Sa                           St
+b
+  Pearse and Garza (2015)                                                                                               k .
+                                                                                                                  aC
+                                                                                                               og
+c                                                                                                          rat
+  Clemento et al. (2009)                                                                              Sa
+                                                                                                                   tri
+                                                                                                                       an
+d
+  Abadía-­Cardoso et al. (2016)
+                                                                                                               us
+                                                                                                             -A Res.
+                                                                                                         pe
+                                                                                                 d alu gton
+                                                                                               a          n
+                                                                                            Gu Lexi                     k.
+                                                                                              pe
+                                                                                                 -                sC
+                                                                                          alu                 ato
+                                                                                     u ad             o  sG
+                                                                                   G               -L                     .
+                                                                                               pe                    Ck
+(Q values) to each K genetic cluster and were visualized using the
+                                                                                           alu                  ert
+                                                                                        ad
+                                                                                    Gu                      erb
+                                                                                                      e -H
+                                                                                                                  r v oir
+                                                                                                    p
+
+programs CLUMPP and distruct (Jakobsson & Rosenberg, 2007;
+                                                                                                                 e
+                                                                                               alu            es
+                                                                                            ad             -R
+                                                                                        Gu            pe
+                                                                                                 alu
+                                                                                              ad
+Rosenberg, 2004). To complement the structure analysis, an individual-­
+                                                                                          G u
+                                                                                                                       m
+                                                                                                                  ste
+                                                                                                              ain
+                                                                                                           -M
+based principal component analysis (PCA) was performed with the R                                  l u pe
+                                                                                                 a
+                                                                                              ad
+                                                                                          Gu
+
+package “adegenet” (Jombart, 2008), combining the multivariate infor-
+mation into a few synthesized variables.
+                                                                             .
+                                                                           Ck
+                                                                                    te
+                                                                                       yo
+                                                                                             Co
+
+    Unrooted neighbor-­joining trees were constructed using matrices
+of chord genetic distance (Cavalli-­Sforza & Edwards, 1967), using the
+software package PHYLIP v3.5c (Felsenstein, 1993). For this analy-         o
+                                                                               nd
+                                                                                  Ho
+
+sis, an additional two microsatellite and three SNP loci were removed
+                                                                                           yo
+                                                                                              ro       r
+                                                                                                   a-A
+                                                                                                          ed
+                                                                                                               am
+because of missing data in one of the populations. Tree topology
+                                                                                                                     Al
+
+
+
+was determined by the neighbor-­joining algorithm, and the consense          k.
+                                                                           nC
+                                                                                       dia
+program of PHYLIP was used to perform 1000 bootstraps of the dis-                           -In
+                                                                                                me
+                                                                                                  da
+                                                                                                           a
+                                                                                                              Al
+tance matrix. The resulting trees were visualized using TreeView (Page,
+2001).
+                                                                           m
+                                                                                ste
+                                                                                         ain
+                                                                                      a-M             d
+    Finally, patterns of variation on chromosome Omy5 were eval-
+                                                                                                   me     a
+                                                                                                           Al
+                                                                             k.
+uated based on the two loci known to be under selection and as-
+                                                                           kC
+                                                                                       oo      r
+                                                                                            yb
+                                                                           R.                        on
+                                                                                                  St
+sociated with life-­history patterns in coastal California populations
+                                                                                 pa                     a-
+                                                                                       Na                     ed
+                                                                                                                   am
+                                                                                                                      Al
+
+(Omy114448-­87 and Omy121006-­131). These two loci are in                  Ck
+                                                                             .
+                                                                                    ma
+                                                                                         no
+near-­perfect linkage disequilibrium (LD) in coastal-­lineage O. my-                aR
+                                                                                um k.
+                                                                                       .      So
+
+                                                                             tal
+kiss (Abadía-­Cardoso et al., 2011; Pearse et al., 2014), but have
+                                                                                    C
+                                                                           Pe iller
+                                                                             M        .
+                                                                                    Ck
+                                                                                 er
+reduced LD in at least some Central Valley lineage populations of
+                                                                              De
+
+                                                                           .
+O. mykiss (Abadía-­Cardoso et al., 2016; Pearse & Garza, 2015).
+                                                                            Ck
+                                                                                    ttle
+                                                                                         Ba
+                                                                              .
+                                                                           dR
+                                                                                    ou
+                                                                              .          Cl
+                                                                           aR          b     Mc
+                                                                                    Yu
+
+F I G U R E 2 Plots from the program distruct representing Structure
+                                                                           R.
+                                                                                    an
+                                                                                 ric
+                                                                                            me
+runs for neutral loci with K = 2. Each individual is represented by a
+                                                                                                  kA      r
+                                                                           R.                          Fo
+                                                                                 la                            rth
+                                                                                    ala                            No
+single vertical line, with colors indicating their proportional ancestry
+                                                                                           Gu
+                                                                           R.
+                                                                                 ole
+in two genetic groups
+                                                                                          tt
+                                                                                       Ma
+62   |                                                                                                                                  Leitwein et al.
+
+
+Thus, to further evaluate the association between these two loci,          data based on the Evanno method was K = 2. For K = 2, all 10
+the discordance in genotype and allele frequency estimates for all         runs converged to the same result, with an abrupt shift in ances-
+populations were compared and LD, which represents the nonran-             try observed between coastal and Central Valley lineages (Fig. 2).
+dom association of alleles at different loci (Slatkin, 2008), was es-      All San Francisco Bay Area populations shared strong ancestry
+timated via the correlation coefficient (r2) between the two Omy5          with the coastal lineage, while hatchery trout strains are clearly
+markers for each population using the R package genetics (Warnes           derived from the Central Valley lineage (Fig. 2). Six individuals in
+& Leisch, 2006). For these analyses, the Kamloops hatchery strain          the Coyote Ck. population and one individual in Stevens Ck. res-
+and McCloud River population sample were removed, as all individ-          ervoir had significant Central Valley lineage ancestry, and there
+uals were monomorphic at Omy114448 and/or Omy121006, so LD                 were weak signals of Central Valley ancestry in some other popu-
+between them could not be evaluated. Finally, to quantify the asso-        lations, most notably Saratoga Ck. Results with higher values of
+ciation between habitat type and adaptive genomic variation, the           K were also concordant with these overall patterns of population
+frequencies of alleles at the linked Omy5 loci were used as an indi-       genetic associations. The principal component analysis (PCA) for
+cator of Omy5 MAR resident (RS)-­and anadromous (AD)-­associated           the San Francisco Bay populations, hatchery strains, and coastal
+haplotypes (Abadía-­Cardoso et al., 2016; Pearse & Garza, 2015;            and Central Valley populations showed a similar, clear primary di-
+Pearse et al., 2014). For all of the above, comparisons between pair       chotomy between coastal/San Francisco Bay and hatchery/Central
+and group mean values of diversity statistics were performed with          Valley fish (Fig. 3).
+t-­tests (Student 1908) and ANOVA in the R software package (R
+Core Team, 2015).
+                                                                           3.3 | Population analyses
+                                                                           Phylogeographic analysis with the full dataset revealed strong clus-
+3 | RESULTS                                                                tering separating coastal and San Francisco Bay populations from
+                                                                           all hatchery strains and Central Valley populations (Fig. 4). All San
+A total of 1,419 genotypes from San Francisco Bay Area popula-             Francisco Bay Area populations clustered closely together, indicating
+tions were included in the present analysis (Table 1). These data          low genetic differentiation among them, and strong bootstrap support
+were combined with genotype data from 331 fish representing                was observed among most populations within the same basin, includ-
+hatchery rainbow trout strains and 704 fish from Central Valley,           ing those above and below barrier dams (Fig. 4).
+Monterey Bay, and other coastal California streams. Thus, a com-
+bined dataset of genotypes for 2,454 individuals was used in this
+                                                                           3.4 | Chromosome Omy5
+study.
+                                                                           Linkage disequilibrium (r2) between the two loci located in the Omy5
+                                                                           MAR ranged from 1 (perfect linkage) to <0.1 (very low) and was signifi-
+3.1 | Population genetic diversity
+                                                                           cantly lower in Central Valley populations and hatchery strains than in
+Observed (HO) and expected (HE) heterozygosity ranged from 0.20–           coastal or San Francisco Bay Area populations, both above and below
+0.42 and 0.20–0.44, respectively (Table 1), with mean values of 0.38       barriers (ANOVA, p  .001, Fig. 5a). Similarly, allele frequencies for the
+and 0.38, respectively, over the 34 population samples evaluated.          Omy5 MAR loci varied significantly among population groups (ANOVA,
+Allelic richness (AR) ranged from 2.12 (Permanente Creek) to 5.95
+(Napa River). Mean HO, HE, and AR were not significantly different
+                                                                                                                                        Central Valley
+between populations above and below dams, but were all significantly                                                                    Coastal
+                                                                                                                                        Hatchery trout
+higher in wild San Francisco Bay populations than in the hatchery                                                                       SFBay
+
+trout strains (HO: 0.38 vs. 0.32, p < .05; HE: 0.38 vs. 0.33, p < .05;
+                                                                                          5
+
+
+
+
+AR: 4.92 vs. 4.19, p < .05). Pairwise FST values among all populations
+                                                                          PCA 2 [7.66%]
+
+
+
+
+ranged from 0.030–0.095, and all values were significantly different
+from zero. As expected, given the known relationship between ge-
+                                                                                          0
+
+
+
+
+netic diversity and FST (Pearse et al., 2007), there was a strong nega-
+tive correlation between population mean pairwise FST values and
+allelic richness (R2 = .90).
+                                                                                          5
+
+
+
+
+3.2 | Individual analyses
+                                                                                              –5      0              5             10               15
+Individual-­based analysis with the program structure identified                                             PCA 1 [19.78%]
+
+ancestry and assigned fish to their populations of origin. In gen-
+                                                                           F I G U R E 3 Principal component analysis showing relative genetic
+eral, consistent patterns of variation were observed across runs           distances between individuals with coastal, San Francisco (SF) Bay
+with K = 2–15, and the number of cluster groups that best fit the          Area, Central Valley, and hatchery trout strain ancestry
+Leitwein et al.                                                                                                                                                                             | 63
+                               Perm
+                                   anen
+                                                                                                                   (A)
+                                         te(B)                                                                                        1.00
+
+
+
+
+                                                                         (B)
+                                                                    toga
+                                                                Sara
+
+
+
+
+                                                                                                             Linkage disequilibrium
+                                                                               San Lorenzo(B)                                         0.75
+
+
+
+
+                                                       teo(B)
+                                                                                  Carmel
+                                                                                   Willow
+
+
+
+
+                                                 San Ma
+Alameda-                                                                          Salsipuedes                                         0.50
+                                       97                                             ra
+  Stonybrook(A)                                                                  saja       s(A)
+         Petaluma(B)                                                         Tas ro-Uvas Re
+Guadalupe                                 89                                Pa ja   Pajaro-Chesbro Res(A)
+            -Los Gatos(B                        b
+                                                         c
+                          )                 a                                    Alameda-Mainstem(A)
+       Coyote(B)                                                         Alameda-ArroyoHondo(A)
+  Los Trancos(B)                                                                Alameda-Indian(A)                                     0.25
+                                   )
+                             ito(B        a = 64
+        Miller(B)      cisqu
+                  Fran                    b = 60 91                             Gualala WF San Luis Rey(A)
+              San                         c = 70
+                                                    60
+                                                 60
+           Kamloops(H)                                                                                                                0.00
+                                                        79                                 Mattole
+                  Whitney(H)                                                             NF America
+                                               60                                                   n
+                                                                                                                   (B) 100
+                                                                                  Cole
+                                                                                      man
+   Mount Shasta(H)                                                                       (H)
+                                                                               Wyoming(H)
+
+                                                                                                                                       75
+                                                                    McCloud
+           Virginia(H)
+
+
+
+
+                                                                                                             Mean frequency
+                         Eagle Lake(H)
+
+                                                                                                                                       50
+F I G U R E 4 Unrooted neighbor-­joining tree constructed with
+chord distances from population samples described in Tables 1 and
+2. Bootstrap values show percent out of 1,000 replicates, with only
+                                                                                                                                       25
+values >50% reported. For San Francisco Bay Area populations,
+A=above barrier and B=below barrier, and H=hatchery trout. Dashed
+lines are approximately half the actual branch length, and dotted lines
+                                                                                                                                        0
+connect population names to branch tips
+                                                                                                                                             CV    Hatchery   Coastal      SFA        SFB
+                                                                                                                                                        Population group
+p  .001, Fig. 5b). Within the San Francisco Bay Area, most above-­
+barrier populations had low frequencies of alleles associated with ana-                                      F I G U R E 5 Mean values of (A) linkage disequilibrium (r2) and
+                                                                                                             (B) frequency of alleles associated with migratory behavior on
+dromy, and thus the migratory AD haplotype, while significantly higher
+                                                                                                             chromosome Omy5 for five groups of populations: Central Valley
+frequencies were consistently observed in below-­barrier populations
+                                                                                                             (CV), hatchery trout strains, coastal steelhead, and San Francisco Bay
+(above = 49.50 and below = 71.31, p < .05, Fig. 5b). However, most                                           above-­(SFA) and below-­barrier (SFB) populations
+barriers in the present study were formed by dams that created reser-
+voirs rather than being natural waterfall barriers, and several of these
+above-­dam populations possessed relatively high frequencies of the
+anadromy-­associated Omy5 alleles. Among these, a strong correlation
+was observed between nominal reservoir volume and Omy5 migratory                                                                      80
+(AD) haplotype frequency among the nine above-­barrier populations
+that had access to a downstream reservoir (R2 = .69, p < .01; Fig. 6).
+                                                                                                             Mean frequency
+
+
+
+
+                                                                                                                                      60
+
+
+4 | DISCUSSION                                                                                                                        40
+
+Evaluation of microsatellite and SNP marker data demonstrated that
+San Francisco Bay Area O. mykiss populations are primarily derived                                                                    20
+from native coastal steelhead ancestry, and no significant hatchery
+rainbow trout introgression was detected in any population. This pat-
+tern is supported by (i) structure clustering and PCA analyses showing                                                                        8         9           10           11
+that fish from San Francisco Bay Area streams align with coastal popu-                                                                            Ln of reservoir volume (m3)
+lations; (ii) the unrooted neighbor-­joining tree, in which San Francisco
+                                                                                                             F I G U R E 6 Relationship between the nominal capacity of
+Bay Area populations branch with coastal populations to the exclusion
+                                                                                                             surveyed reservoirs and the observed frequency of anadromy-­
+of Central Valley populations and hatchery rainbow trout strains; and
+                                                                                                             associated alleles for chromosome Omy5 loci (R2=.69, p < .01).
+(iii) the strong linkage disequilibrium between two loci located in the                                      Reservoir volume data were obtained from California Department of
+Omy5 Migration Associated Region (MAR), which is similar to the LD                                           Water Resources (DWR 2015)
+64   |                                                                                                                                  Leitwein et al.
+
+
+observed in coastal O. mykiss (Abadía-­Cardoso et al., 2016; Pearse &       adopt a resident life history (Phillis et al., 2016). Thus, a decrease of
+Garza, 2015; Pearse et al., 2014).                                          the anadromy-­associated AD haplotype, and conversely an increase
+     The population genetic results clearly distinguish all San             of the RS haplotype, is expected in natural above-­barrier populations.
+Francisco Bay populations from the hatchery trout strains and               In contrast, there are fundamental differences in the selective envi-
+Central Valley populations, which cluster together since these trout        ronment of populations above dams with reservoirs. First, fish may
+strains were domesticated primarily from Central Valley source pop-         be physically unable to pass downstream over the dam and out of the
+ulations (Busack & Gall, 1980). Thus, the original O. mykiss popu-          reservoir, except during rare spill events, preventing them from leaving
+lations trapped upstream during dam construction have not been              the population. In addition, fish may be able to exploit reservoirs as
+significantly introgressed or replaced by non-­native hatchery trout        feeding and rearing habitat, particularly large reservoirs, migrating up-
+despite the extensive history of stocking above some dams in the            river to spawn as adfluvial trout (Holecek et al., 2012; Thrower, Joyce,
+study area. Moreover, San Francisco Bay Area O. mykiss popula-              Celewycz, & Malecha, 2008). Finally, ecological conditions in streams
+tions above and below barriers within the same basin are generally          flowing into the reservoir may not support resident trout, reducing the
+more closely related to each other than to populations from other           relative reproductive success of fish that do not migrate down to the
+streams. These results are consistent with the general patterns ob-         reservoir.
+served in most coastal steelhead populations (Clemento et al., 2009;           Our results support the hypothesis that access to a reservoir for
+Pearse et al., 2009). In contrast, a recent study of Central Valley O.      O. mykiss populations above dams can lead to retention of the ge-
+mykiss populations found a general lack of similarity between above         netic variants and migratory behavior associated with anadromy. For
+and below barriers in the same basin and highly modified popula-            example, trout in Arroyo Hondo and Indian Creek, which flow into
+tion structure (Pearse & Garza, 2015). Similarly, a recent study in         the large Calaveras and San Antonio Reservoirs of Alameda Creek, re-
+Southern California found many cases in which O. mykiss popula-             spectively, are known to display adfluvial migration (Leidy, Becker, &
+tions with native ancestry had been completely replaced by hatch-           Harvey, 2005; SFPUC 2009), and these populations had the highest
+ery rainbow trout (Abadía-­Cardoso et al., 2016). Thus, although the        observed frequencies of Omy5 MAR migratory alleles. Together, these
+evolutionary impacts of hatchery trout stocking on native popula-           results support the hypothesis that the presence of large reservoirs,
+tions vary among locations, our study strongly confirms the native          along with other environmental factors, has the potential to support
+coastal ancestry of O. mykiss in the streams of the San Francisco Bay       an adfluvial life history in O. mykiss populations trapped above dams,
+Area and also suggests that the decreased isolation by distance seen        which may be particularly important for females (Rundio et al. 2012). It
+in modern coastal California O. mykiss relative to historical museum        is interesting to note that, unlike the environment encountered by truly
+specimens (Pearse et al., 2011) results primarily from habitat frag-        anadromous fish, adfluvial reservoir trout remain entirely in freshwater,
+mentation rather than introgression by hatchery trout.                      so the physiological osmoregulatory switch to a saltwater environment
+     In addition to the presumably neutral genetic markers used in          must be decoupled from the rest of this complex migratory phenotype.
+the population genetic analysis, we assayed two SNP loci located            Smoltification involves morphological, physiological, and behavior
+in the MAR on chromosome Omy5, a large genomic region that is               changes regulated by a complex genetic network, including the large
+strongly associated with the expression of migratory life-­history traits   MAR on chromosome Omy5, candidate loci located on chromosomes
+in coastal steelhead (Martínez et al., 2011; Pearse et al., 2014). We       Omy10, Omy12, and Omy14, among others (e.g., Hecht et al., 2012;
+found strong linkage disequilibrium (LD) between the two Omy5 MAR           Martínez et al., 2011), and also has the potential for epigenetic con-
+loci for all coastal and San Francisco Bay populations, but reduced LD      trol (Baerwald et al., 2015) and differential gene expression (McKinney
+in the Central Valley populations and hatchery trout, consistent with       et al., 2015). It is important to note that the markers used here are not
+previous studies using these loci (Abadía-­Cardoso et al., 2016; Pearse     the causative genetic loci on Omy5 and in fact may not be in perfect
+& Garza, 2015) and supporting our conclusion based on neutral ge-           linkage with the causative loci, as their LD is reduced in the Central
+netic markers that San Francisco Bay populations are of predominantly       Valley populations (Pearse & Garza, 2015). Thus, the genomic mech-
+coastal origin. These results confirm and extend the finding that the       anism for the physiological decoupling in these adfluvial populations
+MAR haplotypes represent a large block of linked loci on chromosome         remains unknown. A draft rainbow trout genome has recently been
+Omy5 (Pearse et al., 2014), likely maintained by a chromosomal inver-       published (Berthelot et al., 2014), and additional work on an improved
+sion (Lowry & Willis, 2010).                                                assembly is underway to further characterize this region of Omy5.
+     Patterns of Omy5 MAR allele frequency variation among San
+Francisco Bay Area O. mykiss populations were similar to those seen in
+                                                                            4.1 | Conservation implications
+coastal steelhead (Abadía-­Cardoso et al., 2016; Pearse & Garza, 2015;
+Pearse et al., 2014), with a significantly lower frequency of the AD        San Francisco Bay Area watersheds and streams have been heavily
+haplotype in above-­barrier populations compared with those below           impacted by human habitat alterations, but are also the subject of
+barriers to migration. However, several above-­barrier populations had      significant restoration efforts at both local and regional scales (Goals
+a relatively high frequency of anadromy-­associated alleles. Natural wa-    Project, 2015). The US Endangered Species Act (ESA) has protected
+terfall barriers stop upstream fish migration, but fish may freely pass     steelhead since 1997, but only naturally spawned, anadromous indi-
+downstream over the falls, while fish remaining above the falls must        viduals below natural and artificial migration barriers benefit from this
+Leitwein et al.                                                                                                                                             | 65
+protection. In this study, O. mykiss populations above and below bar-           Augerot, X. (2005). Atlas of Pacific salmon. Berkeley, CA: University of
+riers in the same San Francisco Bay Area watersheds showed shared                   California Press.
+                                                                                Baerwald, M. R., Meek, M. H., Stephens, M. R., Nagarajan, R. P., Goodbla, A.
+ancestry and close genetic relationships with each other, indicating
+                                                                                    M., Tomalty, K. M., … Nichols, K. M. (2015). Migration-­related pheno-
+a lack of introgression from non-­native rainbow trout or hatchery                  typic divergence is associated with epigenetic modifications in rainbow
+steelhead. In addition to their native ancestry, some above-­barrier                trout. Molecular Ecology, 25, 1785–1800.
+fish populations upstream of large reservoirs still possess adaptive            Barson, N. J., Aykanat, T., Hindar, K., Baranski, M., Bolstad, G. H., Fiske,
+                                                                                    P., ... Primmer, C. (2015). Sex-­dependent dominance at a single locus
+genomic variation associated with anadromy, highlighting their impor-
+                                                                                    maintains variation in age at maturity in salmon. Nature, 528, 405–408.
+tance for the conservation of life-­history variation in this species. To       Belkhir, K., Borsa, P., Chikhi, L., Raufaste, N., & Bonhomme, F. (1996).
+maintain the potential for populations to adapt to future changes, it               GENETIX 4.05, logiciel sous Windows TM pour la génétique des pop-
+is crucial to conserve both neutral and adaptive genetic diversity such             ulations. Laboratoire génome, populations, interactions, CNRS UMR
+                                                                                    5000.
+as the adaptive genomic variation represented by the Omy5 MAR.
+                                                                                Berthelot, C., Brunet, F., Chalopin, D., Juanchich, A., Bernard, M., Noël, B., ...
+Ultimately, efforts to conserve steelhead populations could poten-                  Guiguen, Y. (2014). The rainbow trout genome provides novel insights
+tially benefit by explicitly using information about such variation to              into evolution after whole-­genome duplication in vertebrates. Nature
+inform conservation and recovery planning (Pearse, 2016).                           Communications, 5, 3657.
+                                                                                Brown, J. J., Limburg, K. E., Waldman, J. R., Stephenson, K., Glenn, E.
+                                                                                    P., Juanes, F., & Jordaan, A. (2013). Fish and hydropower on the US
+ACKNOWLE DGE ME N TS                                                                Atlantic coast: Failed fisheries policies from half-­way technologies.
+                                                                                    Conservation Letters, 6, 280–286.
+We thank V. Apkenas and C. Columbus for assistance with labora-                 Busack, C. A., & Gall, G. A. E. (1980). Ancestry of artificially propagated
+tory analyses, S. John for Fig. 1, and A. Clemento and D. Rundio for                California rainbow trout strains. California Fish and Game, 66, 17–24.
+                                                                                Carlson, S. M., & Satterthwaite, W. H. (2011). Weakened portfolio effect in
+comments on the draft manuscript. We further thank D. Salsbery,
+                                                                                    a collapsed salmon population complex. Canadian Journal of Fisheries
+M. Moore, and L. Porcella of the Santa Clara Valley Water District                  and Aquatic Sciences, 68, 1579–1589.
+(SCVWD), B. Sak, S. Chenue, and E. Natesan of the San Francisco                 Cavalli-Sforza, L. L., & Edwards, A. W. F. (1967). Phylogenetic analy-
+Public Utilities Commission (SFPUC), J. Koehler of the Napa County                  sis. Models and estimation procedures. American Journal of Human
+                                                                                    Genetics, 19, 233–257.
+Resource Conservation District and G. Becker of the Center for
+                                                                                Champagnon, J., Elmberg, J., Guillemain, M., Gauthier-Clerc, M., & Lebreton,
+Ecosystem Management and Restoration for sample collection. This                    J.-D. (2012). Conspecifics can be aliens too: A review of effects of re-
+study was partially funded by the SCVWD and the SFPUC, and M.                       stocking practices in vertebrates. Journal for Nature Conservation, 20,
+L. was partially supported by the LabexMer and Brest Métropole                      231–241.
+                                                                                Clemento, A. J., Anderson, E. C., Boughton, D., Girman, D., & Garza, J. C.
+Océane.
+                                                                                    (2009). Population genetic structure and ancestry of Oncorhynchus
+                                                                                    mykiss populations above and below dams in south-­central California.
+                                                                                    Conservation Genetics, 10, 1321–1336.
+DATA ARCHIVING STATEMENT                                                        Cowx, I. G. 2005–2013. Cultured aquatic species information pro-
+                                                                                    gramme. Oncorhynchus mykiss. FAO Fisheries and aquaculture on-
+                                                                                    line. Retrieved from: http://www.fao.org/fishery/culturedspecies/
+All data for this study are permanently archived at the Southwest                   Oncorhynchus_mykiss.
+Fisheries Science Center Fisheries Ecology Division (https://swfsc.             Crozier, L., Hendry, A., Lawson, P., Quinn, T., Mantua, N., Battin, J., …
+noaa.gov/FED/).                                                                     Huey, R. (2008). Potential responses to climate change in organisms
+                                                                                    with complex life histories: Evolution and plasticity in Pacific salmon.
+                                                                                    Evolutionary Applications, 1, 252–270.
+REFERENCES                                                                      Darimont, C. T., Carlson, S. M., Kinnison, M. T., Paquet, P. C., Reimchen, T.
+                                                                                    E., & Wilmers, C. C. (2009). Human predators outpace other agents of
+Abadía-Cardoso, A., Anderson, E. C., Pearse, D. E., & Garza, J. C. (2013).          trait change in the wild. Proceedings of the National Academy of Sciences,
+    Large-­scale parentage analysis reveals reproductive patterns and               106, 952–954.
+    heritability of spawn timing in a hatchery population of steelhead          DWR. (2015). Department of water resources. Dams within the jurisdiction
+    (Oncorhynchus mykiss). Molecular Ecology, 22, 4733–4746.                        of the State of California. Retrieved from http://www.water.ca.gov/.
+Abadía-Cardoso, A., Clemento, A. J., & Garza, J. C. (2011). Discovery and           Accessed 12/05/15.
+    characterization of single nucleotide polymorphisms in steelhead/rain-      Earl, D. A., & vonHoldt, B. M. (2011). Structure harvester: A website and
+    bow trout, Oncorhynchus mykiss.. Molecular Ecology Resources, 11(Suppl.         program for visualizing Structure output and implementing the Evanno
+    1), 31–49.                                                                      method. Conservation Genetics Resources, 4, 359–361.
+Abadía-Cardoso, A., Pearse, D. E., Jacobson, S., Marshall, J., Dalrymple, D.,   Evanno, G., Regnaut, S., & Goudet, J. (2005). Detecting the number of clus-
+    Kawasaki, F., … Garza, J. C. (2016). Population genetic structure and           ters of individuals using the software structure: A simulation study.
+    ancestry of steelhead/rainbow trout (Oncorhynchus mykiss) in southern           Molecular Ecology, 14, 2611–2620.
+    California and Baja California coastal rivers and streams. Conservation     Ezard, T. H., Prizak, R., & Hoyle, R. B. (2014). The fitness costs of adaptation
+    Genetics, 17, 675–689.                                                          via phenotypic plasticity and maternal effects. Functional Ecology, 28,
+Arciniega, M., Clemento, A. J., Miller, M. R., Peterson, M., Garza, J. C., &        693–701.
+    Pearse, D. E. (2016). Parallel evolution of the summer steelhead eco-       Federal Register. (2006). Endangered and threatened species: Final list-
+    type in multiple populations from Oregon and Northern California.               ing determinations for 10 distinct population segments of west coast
+    Conservation Genetics, 16, 277–287.                                             steelhead. US Federal Register, 71, 833–862.
+66   |                                                                                                                                                    Leitwein et al.
+
+
+Felsenstein, J. (1993). PHYLIP: phylogenetic inference package. Version 3.5              trout (Oncorhynchus mykiss) through the adult stage. Canadian Journal
+    c.                                                                                   of Fisheries and Aquatic Sciences, 60, 433–440.
+Garza, J. C., Gilbert-Horvath, E. A., Spence, B. C., Williams, T. H., Fish, H.,      McPhee, M., Utter, F., Stanford, J., Kuzishchin, K., Savvaitova, K., Pavlov,
+    Gough, S. A., … Anderson, E. C. (2014). Population structure of steel-               D., & Allendorf, F. (2007). Population structure and partial anadromy
+    head in coastal California. Transactions of the American Fisheries Society,          in Oncorhynchus mykiss from Kamchatka: Relevance for conserva-
+    143, 134–152.                                                                        tion strategies around the Pacific Rim. Ecology of Freshwater Fish, 16,
+Goals Project. (2015). The Baylands and Climate Change: What We Can                      539–547.
+    Do. Baylands Ecosystem Habitat Goals Science Update 2015, prepared               Miller, M. R., Brunelli, J. P., Wheeler, P. A., Liu, S., Rexroad, C. E., Palti, Y.,
+    by the San Francisco Bay Area Wetlands Ecosystem Goals Project.                      … Thorgaard, G. H. (2012). A conserved haplotype controls parallel
+    California State Coastal Conservancy, Oakland, CA.                                   adaptation in geographically distant salmonid populations. Molecular
+Harrisson, K. A., Pavlova, A., Telonis-Scott, M., & Sunnucks, P. (2014). Using           Ecology, 21, 237–249.
+    genomics to characterize evolutionary potential for conservation of              Nehlsen, W., Williams, J. E., & Lichatowich, J. A. (1991). Pacific salmon
+    wild populations. Evolutionary Applications, 7, 1008–1025.                           at the crossroads: Stocks at risk from California, Oregon, Idaho, and
+Hayes, S. A., Hanson, C. V., Pearse, D. E., Bond, M. H., Garza, J. C., &                 Washington. Fisheries, 16, 4–21.
+    MacFarlane, R. B. (2012). Should I stay or should I go? The influence of         Nei, M. (1987). Molecular evolutionary genetics. New York: Columbia
+    genetic origin on emigration behavior and physiology of resident and                 University Press.
+    anadromous juvenile Oncorhynchus mykiss. North American Journal of               Nielsen, J. L., Carpanzano, C., Fountain, M. C., & Gan, A. C. (1997).
+    Fisheries Management, 32, 772–780.                                                   Mitochondrial DNA and nuclear microsatellite diversity in hatchery
+Hecht, B. C., Thrower, F. P., Hale, M. C., Miller, M. R., & Nichols, K. M. (2012).       and wild Oncorhynchus mykiss from freshwater habitats in Southern
+    Genetic architecture of migration-­related traits in rainbow and steel-              California. Transactions of the American Fisheries Society, 126, 397–417.
+    head trout, Oncorhynchus mykiss. G3 (Bethesda, MD.), 2, 1113–1127.               Nielsen, J. L., Pavey, S. A., Wiacek, T., & Williams, I. (2005). Genetics of
+Holecek, D. E., Scarnecchia, D. L., & Miller, S. E. (2012). Smoltification in            Central Valley O. mykiss populations: drainage and watershed-scale
+    an impounded, adfluvial Redband Trout population upstream from an                    analyses. San Francisco Estuary and Watershed Science. 3(2).
+    impassable dam: Does it persist? Transactions of the American Fisheries          NMFS. (2012). Southern California Steelhead Recovery Plan, Southwest
+    Society, 141, 68–75.                                                                 Region. Long Beach, CA: Protected Resources Division.
+Houde, A. L. S., Fraser, D. J., & Hutchings, J. A. (2010). Reduced anti-­            O’Malley, K. G., Ford, M. J., & Hard, J. J. (2010). Clock polymorphism
+    predator responses in multi-­generational hybrids of farmed and wild                 in Pacific salmon: Evidence for variable selection along a latitudi-
+    Atlantic salmon (Salmo salar L.). Conservation Genetics, 11, 785–794.                nal gradient. Proceedings. Biological sciences/The Royal Society, 277,
+Jakobsson, M., & Rosenberg, N. A. (2007). CLUMPP: A cluster matching and                 3703–3714.
+    permutation program for dealing with label switching and multimodal-             Page, R. (2001). TreeView version 1.6. 6. Glasgow: University of Glasgow.
+    ity in analysis of population structure. Bioinformatics, 23, 1801–1806.          Park, S. (2001). Microsatellite Toolkit. Dublin: Department of Genetics,
+Jombart, T. (2008). Adegenet: A R package for the multivariate analysis of               Trinity College.
+    genetic markers. Bioinformatics, 24, 1403–1405.                                  Pascual, M., Bentzen, P., Riva Rossi, C., Mackey, G., Kinnison, M. T., &
+Kalinowski, S. T. (2005). HP-­rare 1.0: A computer program for performing                Walker, R. (2001). First documented case of anadromy in a population
+    rarefaction on measures of allelic richness. Molecular Ecology Notes, 5,             of introduced rainbow trout in Patagonia, Argentina. Transactions of the
+    187–189.                                                                             American Fisheries Society, 130, 53–67.
+Keeley, E. R., Parkinson, E., & Taylor, E. (2007). The origins of ecotypic varia-    Pearse, D. E. (2016). Saving the Spandrels? Adaptive genomic variation in
+    tion of rainbow trout: A test of environmental vs. genetically based dif-            conservation and fisheries management. Journal of Fish Biology, doi:
+    ferences in morphology. Journal of Evolutionary Biology, 20, 725–736.                10.1111/jfb.13168 [Epub ahead of print]
+Lamaze, F. C., Garant, D., & Bernatchez, L. (2013). Stocking impacts the ex-         Pearse, D. E., Donohoe, C. J., & Garza, J. C. (2007). Population genetics of
+    pression of candidate genes and physiological condition in introgressed              steelhead (Oncorhynchus mykiss) in the Klamath River. Environmental
+    brook charr (Salvelinus fontinalis) populations. Evolutionary Applications,          Biology of Fishes, 80, 377–387.
+    6, 393–407.                                                                      Pearse, D. E, & Garza, J. C. (2015). You can’t unscramble an egg: Population
+Leidy, R. A., Becker, G. S., & Harvey, B. N. (2005). Historical distribution             genetic structure of Oncorhynchus mykiss in the California Central
+    and current status of steelhead/rainbow trout (Oncorhynchus mykiss) in               Valley inferred from combined microsatellite and SNP data. San
+    streams of the San Francisco Estuary, California. Oakland, CA: Center for            Francisco Estuary and Watershed Science, 13, Article 3. http://escholar-
+    Ecosystem Management and Restoration.                                                ship.org/uc/item/8dk7m218
+Leitritz, E. (1970). A history of California’s fish hatcheries. Department of Fish   Pearse, D. E., Hayes, S. A., Bond, M. H., Hanson, C. V., Anderson, E. C.,
+    and Game. 1870–1960. Retrieved from http://escholarship.org/uc/                      MacFarlane, R. B., & Garza, J. C. (2009). Over the falls? Rapid evolution
+    item/2z8648k3.                                                                       of ecotypic differentiation in steelhead/rainbow trout (Oncorhynchus
+Liedvogel, M., Åkesson, S., & Bensch, S. (2011). The genetics of migration               mykiss). Journal of Heredity, 100, 515–525.
+    on the move. Trends in Ecology & Evolution, 26, 561–569.                         Pearse, D. E., Martinez, E., & Garza, J. C. (2011). Disruption of historical
+Lowry, D. B., & Willis, J. H. (2010). A widespread chromosomal inversion                 patterns of isolation by distance in coastal steelhead. Conservation
+    polymorphism contributes to a major life-­history transition, local adap-            Genetics, 12, 691–700.
+    tation, and reproductive isolation. PLoS Biology, 8, 1000500.                    Pearse, D. E., Miller, M. R., Abadía-Cardoso, A., & Garza, J. C. (2014).
+Martínez, A., Garza, J. C., & Pearse, D. E. (2011). A microsatellite genome              Rapid parallel evolution of standing variation in a single, complex,
+    screen identifies chromosomal regions under differential selection                   genomic region is associated with life history in steelhead/rain-
+    in steelhead and rainbow trout. Transactions of the American Fisheries               bow trout. Proceedings. Biological sciences/The Royal Society, 281,
+    Society, 140, 829–842.                                                               20140012.
+McKinney, G. J., Hale, M. C., Goetz, G., Gribskov, M., Thrower, F. P., &             Phillis, C. C., Moore, J. W., Buoro, M., Hayes, S. A., Garza, J. C., & Pearse, D.
+    Nichols, K. M. (2015). Ontogenetic changes in embryonic and brain                    E. (2016). Shifting thresholds: Rapid evolution of migratory life histories
+    gene expression in progeny produced from migratory and resident                      in steelhead/rainbow trout, Oncorhynchus mykiss. Journal of Heredity,
+    Oncohynchus mykiss. Molecular Ecology, 24, 1792–1809.                                107, 51–60.
+McLean, J. E., Bentzen, P., & Quinn, T. P. (2003). Differential reproductive         Pritchard, J. K., Stephens, M., & Donnelly, P. (2000). Inference of population
+    success of sympatric, naturally spawning hatchery and wild steelhead                 structure using multilocus genotype data. Genetics, 155, 945–959.
+Leitwein et al.                                                                                                                                                  | 67
+Quinn, T. P., Kinnison, M. T., & Unwin, M. J. (2001). Evolution of chinook           Shapovalov, L., & Taft, A. C. (1954). The life histories of the steelhead rain-
+    salmon (Oncorhynchus tshawytscha) populations in New Zealand:                        bow trout (Salmo gairdneri gairdneri) and silver salmon (Oncorhynchus
+    Pattern, rate, and process. Genetica, 112, 493–513.                                  kisutch) with special reference to Waddell Creek, California, and recom-
+R Core Team. (2015). R: A Language and Environment for Statistical                       mendations regarding their management. California Department of Fish
+    Computing. Vienna: R Foundation for Statistical Computing. https:                    and Game Fish Bulletin, 98, 1–375.
+    www.R-project.org.                                                               Slatkin, M. (2008). Linkage disequilibrium— understanding the evolutionary
+Rands, M. R., Adams, W. M., Bennun, L., Butchart, S. H., Clements, A.,                   past and mapping the medial future. Nature Reviews Genetics, 9, 477–485.
+    Coomes, D., … Scharlemann, J. P. (2010). Biodiversity conservation:              Student. (1908). The probable error of a mean. Biometrika, 6, 1–25.
+    Challenges beyond 2010. Science, 329, 1298–1303.                                 Thrower, F. P., Hard, J. J., & Joyce, J. E. (2004). Genetic architecture of growth
+Reed, T. E., Prodöhl, P., Hynes, R., Cross, T., Ferguson, A., & McGinnity, P.            and early life history transitions in anadromous and derived freshwater
+    (2015). Quantifying heritable variation in fitness-­related traits of wild,          populations of steelhead. Journal of Fish Biology, 65, 286–307.
+    farmed and hybrid Atlantic salmon families in a wild river environment.          Thrower, F. P., Joyce, J. E., Celewycz, A. G., & Malecha, P. W. (2008). The po-
+    Heredity, 115, 173–184.                                                              tential importance of reservoirs in the western United States for the re-
+Rosenberg, N. A. (2004). DISTRUCT: A program for the graphical display of                covery of endangered populations of anadromous steelhead. American
+    population structure. Molecular Ecology Notes, 4, 137–138.                           Fisheries Society Symposium, 62, 309–324.
+Rundio, D. E., Williams, T. H., Pearse, D. E., & Lindley, S. T. (2012). Male-        Tufto, J. (2000). The evolution of plasticity and nonplastic spatial and tem-
+    biased sex ratio of nonanadromous Oncorhynchus mykiss in a partially                 poral adaptations in the presence of imperfect environmental cues. The
+    migratory population in California. Ecology of Freshwater Fish, 21,                  American Naturalist, 156, 121–130.
+    293–299.                                                                         Urban, M. C. (2015). Accelerating extinction risk from climate change.
+Schindler, D. E., Hilborn, R., Chasco, B., Boatright, C. P., Quinn, T. P., Rogers,       Science, 348, 571–573.
+    L. A., & Webster, M. S. (2010). Population diversity and the portfolio           Vähä, J. P., Erkinaro, J., Niemelä, E., Primmer, C. R., Saloniemi, I., Johansen,
+    effect in an exploited species. Nature, 465, 609–612.                                M., … Brørs, S. (2011). Temporally stable population specific differences
+SFPUC. (2009). San Antonio creek, Indian creek and Arroyo Hondo fish trap-               in run timing of one sea winter Atlantic salmon returning to a large river
+    ping data summary 2005. Sunol, CA: San Francisco Public Utilities                    system. Evolutionary Applications, 4, 39–53.
+    Commission, Natural Resources and Lands Management Division,                     Warnes, G., & Leisch, F. (2006). Genetics: population genetics. R Package,
+    Fisheries and Wildlife Section. 57 pp.                                               version 1.2.1.
+

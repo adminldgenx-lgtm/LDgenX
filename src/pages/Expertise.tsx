@@ -1,13 +1,8 @@
-import { pageCopy } from '../content/pages.fr';
-import { Link } from 'react-router-dom';
-import {
-  services,
-  applications,
-  studies,
-  copy,
-  type Expertise as ExpertiseData,
-  type Sector,
-} from '../content/fr';
+import { useRef, type CSSProperties } from 'react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import type { Expertise as ExpertiseData, Sector } from '../content/fr';
+import type { CaseRef, EquipmentItem } from '../content/types';
+import { useCatalog, useRoutes } from '../i18n';
 import { type PageMeta } from '../lib/pages';
 import {
   PageHero,
@@ -15,47 +10,95 @@ import {
   Photo,
   Reveal,
   TextLink,
+  TiltLink,
   FinalCTA,
   SectionHeading,
+  Button,
 } from '../components/ui';
-import { ServicesExplorer } from '../sections/Services';
+import { AnimatedHeading, useSeen } from '../components/motion';
+import { AmbientField } from '../components/AmbientField';
+import { LiveList, StepRows } from '../components/Steps';
+import { ExpertiseLandscape } from '../sections/ExpertiseLandscape';
+import { ApplicationAtlas } from '../sections/ApplicationAtlas';
 import { ApplicationGrid, StudyFacts } from '../sections/Collections';
 import { Workflow } from '../sections/Workflow';
+import { PublicationLinks, researchLink } from './Research';
+import { CustomAssay } from '../sections/CustomAssay';
+import { ErcModule } from '../sections/Erc';
 import { Faq, ProjectPractice } from '../sections/Practice';
 
-function RelatedServices({ slugs }: { slugs: string[] }) {
+function RelatedServices({ ids }: { ids: string[] }) {
+  const { services } = useCatalog();
+  const r = useRoutes();
   return (
     <div className="related-links">
-      {slugs
-        .map((slug) => services.find((s) => s.slug === slug))
+      {ids
+        .map((id) => services.find((s) => s.id === id))
         .filter((s): s is ExpertiseData => Boolean(s))
-        .map((s) => (
-          <Link className="related-link" key={s.slug} to={`/services/${s.slug}`}>
-            <Photo name={s.image} alt="" sizes="(max-width: 700px) 90vw, 33vw" />
-            <div>
-              <h3>{s.title}</h3>
-            </div>
-            <p>{s.short}</p>
-          </Link>
+        .map((s, i) => (
+          <Reveal key={s.id} delay={i * 0.1}>
+            <TiltLink className="related-link" to={r.service(s.id)}>
+              <span className="related-picture">
+                <Photo name={s.image} alt="" sizes="(max-width: 700px) 90vw, 33vw" />
+              </span>
+              <div>
+                <h3>{s.title}</h3>
+              </div>
+              <p>{s.short}</p>
+            </TiltLink>
+          </Reveal>
         ))}
     </div>
   );
 }
 
-function RelatedStudy({ slug }: { slug: string }) {
-  const study = studies.find((s) => s.service === slug);
+/** The team's articles that share this expertise's field: the topics put forward first. */
+function RelatedPublications({ id }: { id: string }) {
+  const { research, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.research;
+  const featured = research.featured.map((f) => f.publication);
+  const items = research.publications
+    .filter((p) => p.services.includes(id))
+    .sort(
+      (a, b) =>
+        Number(featured.includes(b.id)) - Number(featured.includes(a.id)) || b.year - a.year,
+    );
+  if (!items.length) return null;
+  return (
+    <section className="section-space related-publications">
+      <div className="container">
+        <SectionHeading
+          eyebrow={t.relatedEyebrow}
+          title={t.relatedTitle}
+          link={{
+            to: researchLink(r.publications, { expertise: id }),
+            label: t.relatedAll(items.length),
+          }}
+        />
+        <PublicationLinks items={items.slice(0, 3)} />
+        <p className="related-publications-note">{t.servicesNote}</p>
+      </div>
+    </section>
+  );
+}
+
+function RelatedStudy({ id }: { id: string }) {
+  const { studies, ui } = useCatalog();
+  const r = useRoutes();
+  const study = studies.find((s) => s.service === id);
   if (!study) return null;
   return (
     <section className="section-space studies-section">
       <div className="container">
         <SectionHeading
-          eyebrow="Un éclairage concret"
+          eyebrow={ui.expertisePage.insight}
           title={study.title}
           body={study.subtitle}
-          link={{ to: `/etudes-de-cas/${study.slug}`, label: 'Explorer cette étude' }}
+          link={{ to: r.study(study.id), label: ui.expertisePage.exploreStudy }}
         />
         <Reveal className="case-sheet">
-          <p className="case-sheet-title">En bref</p>
+          <p className="case-sheet-title">{ui.common.inBrief}</p>
           <StudyFacts facts={study.facts} />
         </Reveal>
       </div>
@@ -64,38 +107,23 @@ function RelatedStudy({ slug }: { slug: string }) {
 }
 
 export function ServicesPage({ meta }: { meta: PageMeta }) {
+  const { pageCopy, copy, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.expertisePage;
   return (
     <>
       <PageHero meta={meta} {...pageCopy.services} />
-      <section className="section-space" aria-labelledby="services-title">
-        <div className="container">
-          <h2 id="services-title" className="sr-only">
-            Nos expertises
-          </h2>
-          <ServicesExplorer />
-        </div>
-      </section>
+      <ExpertiseLandscape title={ui.landscape.pageTitle} allLink={false} />
       <section className="detail-section">
         <div className="container detail-intro">
+          <div>
+            <Eyebrow>{t.approachEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.approachTitle} />
+          </div>
           <Reveal>
-            <Eyebrow>Une approche qui vous ressemble</Eyebrow>
-            <h2>
-              La question d’abord.
-              <br />
-              La technologie ensuite.
-            </h2>
-          </Reveal>
-          <Reveal>
-            <p>
-              Votre objectif est notre point de départ. Une étude complète, une étape d’analyse ou
-              un développement spécifique : nous échangeons avec vous pour définir les expertises
-              utiles.
-            </p>
-            <p className="detail-note">
-              Les matrices, les données disponibles et les besoins d’interprétation sont abordés
-              ensemble au cadrage du projet.
-            </p>
-            <TextLink to="/contact">{copy.labels.contact}</TextLink>
+            <p>{t.approachText}</p>
+            <p className="detail-note">{t.approachNote}</p>
+            <TextLink to={r.contact}>{copy.labels.contact}</TextLink>
           </Reveal>
         </div>
       </section>
@@ -107,15 +135,16 @@ export function ServicesPage({ meta }: { meta: PageMeta }) {
 }
 
 export function ServicePage({ meta }: { meta: PageMeta }) {
-  const s = services.find((s) => s.slug === meta.slug)!;
-  const dark = ['bioinformatique', 'sequencage-dpcr', 'recherche-developpement'].includes(s.slug);
+  const { services, applications, equipment, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.expertisePage;
+  const s = services.find((s) => s.id === meta.id)!;
+  const dark = ['bioinformatique', 'sequencage-dpcr', 'recherche-developpement'].includes(s.id);
   const related = services
     .filter(
-      (r) =>
-        r.slug !== s.slug &&
-        (r.slug === 'bioinformatique' ||
-          r.slug === 'sequencage-dpcr' ||
-          r.slug === 'adn-environnemental-adne'),
+      (x) =>
+        x.id !== s.id &&
+        ['bioinformatique', 'sequencage-dpcr', 'adn-environnemental-adne'].includes(x.id),
     )
     .slice(0, 3);
   return (
@@ -130,89 +159,96 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
       />
       <section className="detail-section">
         <div className="container detail-intro">
-          <Reveal>
-            <Eyebrow>Votre besoin scientifique</Eyebrow>
-            <h2>
-              {s.slug === 'materiel'
-                ? 'Tout commence sur le terrain.'
-                : 'La bonne approche commence par votre question.'}
-            </h2>
-          </Reveal>
+          <div>
+            <Eyebrow>{t.needEyebrow}</Eyebrow>
+            <AnimatedHeading text={s.id === 'materiel' ? t.needField : t.needQuestion} />
+          </div>
           <Reveal>
             <p>{s.need}</p>
           </Reveal>
         </div>
       </section>
+      {s.id === 'materiel' && <EquipmentShowcase items={equipment} />}
       <section className="approach-section">
         <div className="container approach-layout">
-          <Reveal className="approach-heading">
-            <Eyebrow>Les approches à mobiliser</Eyebrow>
-            <h2>
-              Des outils choisis
-              <br />
-              pour leur sens.
-            </h2>
-            <p>
-              Le choix des méthodes est guidé par l’objectif scientifique et le contexte de votre
-              projet.
-            </p>
-          </Reveal>
-          <div>
-            {s.approaches.map((a) => (
-              <Reveal key={a.title} className="approach-row">
-                <div>
-                  <h3>{a.title}</h3>
-                  <p>{a.text}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="approach-heading">
+            <Eyebrow>{t.methodsEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.methodsTitle} />
+            <Reveal delay={0.1}>
+              <p>{t.methodsText}</p>
+            </Reveal>
           </div>
+          <StepRows items={s.approaches} />
         </div>
       </section>
+      {s.id === 'sequencage-dpcr' && <CustomAssay />}
+      {s.prestations.length > 0 && (
+        <section className="section-space prestation-section">
+          <div className="container prestation-layout">
+            <div>
+              <Eyebrow>{t.prestationsEyebrow}</Eyebrow>
+              <AnimatedHeading text={t.prestationsTitle} />
+              <Reveal delay={0.1}>
+                <p>{t.prestationsText}</p>
+              </Reveal>
+            </div>
+            <LiveList className="prestation-list" items={s.prestations} />
+          </div>
+        </section>
+      )}
       <section className="use-section">
+        <AmbientField tone="dark" className="use-field" />
         <div className="container use-layout">
-          <Reveal>
-            <Eyebrow light>Champs d’application</Eyebrow>
-            <h2>
-              Des analyses reliées
-              <br />à vos enjeux.
-            </h2>
-          </Reveal>
-          <ul className="use-list">
-            {s.uses.map((u) => (
-              <li key={u}>{u}</li>
-            ))}
-          </ul>
+          <div>
+            <Eyebrow light>{t.usesEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.usesTitle} />
+          </div>
+          <LiveList className="use-list" items={s.uses} />
         </div>
       </section>
+      {s.cases.length > 0 && (
+        <section className="section-space cases-section">
+          <div className="container">
+            <Eyebrow>{t.casesEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.casesTitle} />
+            <CaseCards cases={s.cases} />
+          </div>
+        </section>
+      )}
       <ProjectPractice intro={s.delivery} />
-      <RelatedStudy slug={s.slug} />
+      <RelatedStudy id={s.id} />
+      <RelatedPublications id={s.id} />
       <section className="section-space">
         <div className="container">
-          <Eyebrow>Vos secteurs d’application</Eyebrow>
-          <h2>La génomique sur votre terrain.</h2>
+          <Eyebrow>{t.sectorsEyebrow}</Eyebrow>
+          <AnimatedHeading text={t.sectorsTitle} />
           <div className="related-links">
             {s.sectors
-              .map((slug) => applications.find((a) => a.slug === slug))
+              .map((id) => applications.find((a) => a.id === id))
               .filter((a): a is Sector => Boolean(a))
-              .map((a) => (
-                <Link className="related-link" key={a.slug} to={`/applications/${a.slug}`}>
-                  <Photo name={a.image} alt="" />
-                  <div>
-                    <h3>{a.title}</h3>
-                  </div>
-                </Link>
+              .map((a, i) => (
+                <Reveal key={a.id} delay={i * 0.1}>
+                  <TiltLink className="related-link" to={r.application(a.id)}>
+                    <span className="related-picture">
+                      <Photo name={a.image} alt="" />
+                    </span>
+                    <div>
+                      <h3>{a.title}</h3>
+                    </div>
+                  </TiltLink>
+                </Reveal>
               ))}
           </div>
         </div>
       </section>
       <section className="section-space delivery-section">
         <div className="container">
-          <Eyebrow>Expertises complémentaires</Eyebrow>
-          <h2>Aller plus loin, ensemble.</h2>
-          <RelatedServices slugs={related.map((r) => r.slug)} />
+          <Eyebrow>{t.moreEyebrow}</Eyebrow>
+          <AnimatedHeading text={t.moreTitle} />
+          <RelatedServices ids={related.map((x) => x.id)} />
           <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-            Présentation officielle de cette expertise
+            {t.official}
+            <span className="sr-only">{ui.common.newTab}</span>
           </a>
         </div>
       </section>
@@ -221,14 +257,140 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
   );
 }
 
+/** The cases shown on an expertise page: a picture and a title, linked to the study, the
+ *  scientific work or the publication when there is one. */
+function CaseCards({ cases }: { cases: CaseRef[] }) {
+  const { ui } = useCatalog();
+  const r = useRoutes();
+  return (
+    <div className="case-cards">
+      {cases.map((c, i) => {
+        const body = (
+          <>
+            <span className="case-card-picture">
+              {c.image && <Photo name={c.image} alt="" sizes="(max-width: 700px) 90vw, 30vw" />}
+            </span>
+            <span className="case-card-title">{c.title}</span>
+            {c.link?.kind === 'external' && (
+              <ArrowUpRight className="case-card-out" size={16} aria-hidden="true" />
+            )}
+          </>
+        );
+        return (
+          <Reveal key={c.title} delay={(i % 3) * 0.08} className="case-card-slot">
+            {!c.link ? (
+              <div className="case-card">{body}</div>
+            ) : c.link.kind === 'external' ? (
+              <a className="case-card tilt" href={c.link.href} target="_blank" rel="noreferrer">
+                {body}
+                <span className="sr-only">{ui.common.newTab}</span>
+              </a>
+            ) : (
+              <TiltLink className="case-card" to={r.link(c.link)}>
+                {body}
+              </TiltLink>
+            )}
+          </Reveal>
+        );
+      })}
+    </div>
+  );
+}
+
+/** The sampling equipment: for each tool, its pictures, its characteristics and its published
+ *  prices. Pictures follow one another while the tool is in view. */
+function EquipmentShowcase({ items }: { items: EquipmentItem[] }) {
+  const { ui, copy } = useCatalog();
+  const t = ui.equipment;
+  const price = new Intl.NumberFormat(ui.htmlLang, {
+    style: 'currency',
+    currency: 'EUR',
+    maximumFractionDigits: 0,
+  });
+  return (
+    <section className="section-space equipment-section" aria-label={t.eyebrow}>
+      <div className="container">
+        <div className="equipment-head">
+          <div>
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <AnimatedHeading text={t.title} />
+          </div>
+          <Reveal delay={0.1}>
+            <p>{t.text}</p>
+          </Reveal>
+        </div>
+        <div className="equipment-list">
+          {items.map((item) => (
+            <EquipmentCard key={item.id} item={item} format={(n) => price.format(n)} />
+          ))}
+        </div>
+        <Reveal className="equipment-foot">
+          <p>{t.priceNote}</p>
+          <Button>{copy.labels.quote}</Button>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function EquipmentCard({ item, format }: { item: EquipmentItem; format: (n: number) => string }) {
+  const { ui } = useCatalog();
+  const t = ui.equipment;
+  const ref = useRef<HTMLElement>(null);
+  const seen = useSeen(ref);
+  return (
+    <Reveal className="equipment-card-slot">
+      <article ref={ref} className="equipment-card" data-seen={seen || undefined}>
+        <div
+          className="equipment-pictures"
+          data-count={item.images.length}
+          style={{ '--count': item.images.length } as CSSProperties}
+        >
+          {item.images.map((image, i) => (
+            <figure key={image.name} style={{ '--i': i } as CSSProperties}>
+              <Photo name={image.name} alt={image.alt} sizes="(max-width: 800px) 90vw, 30vw" />
+            </figure>
+          ))}
+        </div>
+        <div className="equipment-body">
+          <h3>{item.name}</h3>
+          <p className="equipment-summary">{item.summary}</p>
+          <h4>{t.specs}</h4>
+          <ul className="equipment-specs">
+            {item.specs.map((spec) => (
+              <li key={spec}>{spec}</li>
+            ))}
+          </ul>
+          <h4>{t.prices}</h4>
+          <dl className="equipment-prices">
+            {item.prices.map((p) => (
+              <div key={p.label}>
+                <dt>{p.label}</dt>
+                <dd>
+                  {format(p.amount)} {ui.common.excludingTax}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
 export function ApplicationsPage({ meta }: { meta: PageMeta }) {
+  const { pageCopy, ui } = useCatalog();
+  const t = ui.expertisePage;
   return (
     <>
       <PageHero meta={meta} {...pageCopy.applications} />
+      <ApplicationAtlas />
       <section className="section-space applications-section" aria-labelledby="sectors-title">
         <div className="container">
+          <Eyebrow>{t.allSectorsEyebrow}</Eyebrow>
+          <AnimatedHeading text={t.allSectorsTitle} />
           <h2 id="sectors-title" className="sr-only">
-            Les secteurs d’application
+            {t.sectorsSr}
           </h2>
           <ApplicationGrid />
         </div>
@@ -239,51 +401,112 @@ export function ApplicationsPage({ meta }: { meta: PageMeta }) {
 }
 
 export function ApplicationPage({ meta }: { meta: PageMeta }) {
-  const s = applications.find((s) => s.slug === meta.slug)!;
+  const { applications, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.expertisePage;
+  const s = applications.find((s) => s.id === meta.id)!;
+  const related = s.related && applications.find((a) => a.id === s.related!.id);
   return (
     <>
       <PageHero meta={meta} eyebrow={s.title} title={s.headline} intro={s.intro} image={s.image} />
       <section className="detail-section">
         <div className="container approach-layout">
-          <Reveal className="approach-heading">
-            <Eyebrow>Vos questions de terrain</Eyebrow>
-            <h2>
-              Votre contexte
-              <br />
-              guide la démarche.
-            </h2>
-            <p>
-              Avant de choisir une technologie, nous prenons le temps de comprendre la question, le
-              milieu et les informations dont vous avez besoin.
-            </p>
-          </Reveal>
+          <div className="approach-heading">
+            <Eyebrow>{t.fieldEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.fieldTitle} />
+            <Reveal delay={0.1}>
+              <p>{t.fieldText}</p>
+            </Reveal>
+          </div>
           <div>
-            {s.needs.map((n) => (
-              <Reveal key={n.title} className="approach-row">
-                <div>
-                  <h3>{n.title}</h3>
-                  <p>{n.text}</p>
-                </div>
-              </Reveal>
-            ))}
+            <StepRows items={s.needs} />
             <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-              Référence LDgenX
+              {t.reference}
+              <span className="sr-only">{ui.common.newTab}</span>
             </a>
           </div>
         </div>
       </section>
+      {s.approaches && (
+        <section className="section-space sector-approaches">
+          <div className="container">
+            <Eyebrow>{t.approachesEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.approachesTitle} />
+            <ol className="sector-approach-list">
+              {s.approaches.map((a, i) => (
+                <li key={a.title}>
+                  <Reveal delay={i * 0.06}>
+                    <h3>{a.title}</h3>
+                    <p>{a.text}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+      {(s.uses.length > 0 || s.examples.length > 0) && (
+        <section className="use-section">
+          <AmbientField tone="dark" className="use-field" />
+          <div className="container use-layout use-layout-pair">
+            {s.uses.length > 0 && (
+              <div>
+                <Eyebrow light>{t.applicationUses}</Eyebrow>
+                <LiveList className="use-list" items={s.uses} />
+              </div>
+            )}
+            {s.examples.length > 0 && (
+              <div>
+                <Eyebrow light>{t.applicationExamples}</Eyebrow>
+                <LiveList className="use-list" items={s.examples} />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+      {s.erc && <ErcModule />}
+      {s.deliverables && (
+        <section className="section-space sector-deliverables">
+          <div className="container approach-layout">
+            <div className="approach-heading">
+              <Eyebrow>{t.deliverablesEyebrow}</Eyebrow>
+              <AnimatedHeading text={t.deliverablesTitle} />
+              <Reveal delay={0.1}>
+                <p>{t.deliverablesText}</p>
+                <Button to={r.contact}>{t.nextStep}</Button>
+              </Reveal>
+            </div>
+            <LiveList className="live-list-light sector-deliverable-list" items={s.deliverables} />
+          </div>
+        </section>
+      )}
       <section className="section-space">
         <div className="container">
-          <SectionHeading
-            eyebrow="Les expertises à mobiliser"
-            title="La génomique au service\nde votre problématique."
-            body="Du prélèvement à l’interprétation, nous relions les expertises au besoin identifié avec vous."
-          />
-          <RelatedServices slugs={s.services} />
+          <SectionHeading eyebrow={t.relatedEyebrow} title={t.relatedTitle} body={t.relatedBody} />
+          <RelatedServices ids={s.services} />
         </div>
       </section>
-      <ProjectPractice intro="Présentez-nous le contexte, le site ou la population étudiée, les objectifs et les données existantes. Ce premier échange permet de cadrer le besoin et de discuter des étapes d’accompagnement." />
-      <RelatedStudy slug={s.services[0]} />
+      {related && (
+        <section className="sector-related">
+          <div className="container">
+            <TiltLink className="sector-related-link" to={r.application(related.id)}>
+              <span className="sector-related-picture">
+                <Photo name={related.image} alt="" sizes="160px" />
+              </span>
+              <span className="sector-related-body">
+                <span className="sector-related-question">{s.related!.text}</span>
+                <span className="sector-related-title">
+                  {t.seeAlso} · {related.title}
+                </span>
+                <span className="sector-related-scope">{related.scope}</span>
+              </span>
+              <ArrowRight className="sector-related-arrow" size={20} aria-hidden="true" />
+            </TiltLink>
+          </div>
+        </section>
+      )}
+      <ProjectPractice intro={t.practiceIntro} />
+      <RelatedStudy id={s.services[0]} />
       <FinalCTA />
     </>
   );

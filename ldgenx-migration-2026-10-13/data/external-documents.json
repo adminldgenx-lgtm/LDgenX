@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "requested_url": "https://www.eau-artois-picardie.fr/sites/default/files/rapport_final_adne_estuaires_et_ports_aeap_0.pdf",
+      "final_url": "https://www.eau-artois-picardie.fr/sites/default/files/rapport_final_adne_estuaires_et_ports_aeap_0.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at": "2026-10-13T14:44:21.415895+00:00",
+      "local_path": "assets/documents/rapport_final_adne_estuaires_et_ports_aeap_0.pdf",
+      "bytes": 5116674
+    },
+    {
+      "requested_url": "https://www.eau-artois-picardie.fr/sites/default/files/presentation_reunion_de_restitution_adne_estuaires_et_ports_aeap_30062026_0.pdf",
+      "final_url": "https://www.eau-artois-picardie.fr/sites/default/files/presentation_reunion_de_restitution_adne_estuaires_et_ports_aeap_30062026_0.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at": "2026-10-13T14:44:31.316496+00:00",
+      "local_path": "assets/documents/presentation_reunion_de_restitution_adne_estuaires_et_ports_aeap_30062026_0.pdf",
+      "bytes": 2018421
+    }
+  ]
+}

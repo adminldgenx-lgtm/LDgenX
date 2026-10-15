@@ -1,7 +1,9 @@
 import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import { pages, redirects, companyOrigin } from '../.prerender/entry-server.js';
+import { pages, redirects, companyOrigin, ready } from '../.prerender/entry-server.js';
+
+await ready;
 
 const titles = new Set(),
   descriptions = new Set();
@@ -56,7 +58,9 @@ for (const page of pages) {
       );
     links++;
   }
-  for (const match of html.matchAll(/<meta (?:property|name)="(?:og|twitter):image" content="([^"]+)"/g)) {
+  for (const match of html.matchAll(
+    /<meta (?:property|name)="(?:og|twitter):image" content="([^"]+)"/g,
+  )) {
     const url = new URL(match[1]);
     assert.equal(url.origin, companyOrigin, `${page.path}: social image on another origin`);
     await access(path.join('dist', url.pathname.slice(1)));

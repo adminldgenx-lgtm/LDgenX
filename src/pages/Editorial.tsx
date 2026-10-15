@@ -1,23 +1,55 @@
-import { pageCopy } from '../content/pages.fr';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react';
 import { Search } from 'lucide-react';
-import { innovations, studies, resources, services } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
 import { type PageMeta } from '../lib/pages';
-import { PageHero, Photo, Reveal, Eyebrow, FinalCTA, TextLink, Button } from '../components/ui';
-import { StudyGrid, ResourceGrid, StudyFacts } from '../sections/Collections';
-import { ScientificDiagram } from '../components/ScientificDiagram';
+import {
+  PageHero,
+  Photo,
+  Reveal,
+  Eyebrow,
+  FinalCTA,
+  TextLink,
+  TiltLink,
+  Button,
+} from '../components/ui';
+import { AnimatedHeading, useActiveRow } from '../components/motion';
+import { AmbientField } from '../components/AmbientField';
+import { LiveList, StepRows } from '../components/Steps';
+import { ResourceGrid, StudyFacts } from '../sections/Collections';
+import { StudyPanels } from '../sections/StudyPanels';
+import { StudyJourney } from '../sections/StudyJourney';
+import { Lab } from '../sections/Innovation';
+import { StudyResults } from '../sections/StudyResults';
+import { WorkCards } from './Works';
 
 export function StudiesPage({ meta }: { meta: PageMeta }) {
+  const { pageCopy, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.studyPage;
   return (
     <>
       <PageHero meta={meta} {...pageCopy.studies} />
-      <section className="section-space" aria-labelledby="studies-title">
+      <section className="section-space studies-more" aria-labelledby="studies-title">
         <div className="container">
           <h2 id="studies-title" className="sr-only">
-            Les études
+            {t.studiesSr}
           </h2>
-          <StudyGrid all />
+          <StudyPanels all label={ui.panels.allLabel} />
+        </div>
+      </section>
+      <section className="section-space delivery-section" aria-label={t.worksEyebrow}>
+        <div className="container">
+          <div className="detail-intro works-intro">
+            <div>
+              <Eyebrow>{t.worksEyebrow}</Eyebrow>
+              <AnimatedHeading text={t.worksTitle} />
+            </div>
+            <Reveal>
+              <p>{t.worksText}</p>
+              <TextLink to={r.publications}>{t.publications}</TextLink>
+            </Reveal>
+          </div>
+          <WorkCards />
         </div>
       </section>
       <FinalCTA />
@@ -25,57 +57,63 @@ export function StudiesPage({ meta }: { meta: PageMeta }) {
   );
 }
 export function StudyPage({ meta }: { meta: PageMeta }) {
-  const s = studies.find((s) => s.slug === meta.slug)!;
-  const service = services.find((x) => x.slug === s.service)!;
+  const { studies, services, featuredStudy, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.studyPage;
+  const s = studies.find((s) => s.id === meta.id)!;
+  const service = services.find((x) => x.id === s.service)!;
   const rows = [
-    { label: 'Le contexte', text: s.context },
-    { label: 'La question', text: s.question },
-    { label: 'L’approche', text: s.approach },
-    ...(s.result ? [{ label: 'Les enseignements', text: s.result }] : []),
+    { title: t.context, text: s.context },
+    { title: t.question, text: s.question },
+    { title: t.approach, text: s.approach },
+    ...(s.result ? [{ title: t.lessons, text: s.result }] : []),
   ];
+  const journey = s.id === featuredStudy.slug;
   return (
     <>
       <PageHero meta={meta} eyebrow={s.category} title={s.title} intro={s.subtitle} />
-      <section className="detail-section">
-        <div className="container">
-          <Reveal className="article-wide-image">
-            <Photo name={s.image} alt={('imageAlt' in s && s.imageAlt) || ''} eager />
-          </Reveal>
-          <Reveal className="case-sheet">
-            <p className="case-sheet-title">En bref</p>
-            <StudyFacts facts={s.facts} />
-          </Reveal>
-          <div className="case-content">
-            {rows.map((r) => (
-              <Reveal className="case-row" key={r.label}>
-                <div>
-                  <h2>{r.label}</h2>
-                </div>
-                <p>{r.text}</p>
-              </Reveal>
-            ))}
-            {!s.result && (
-              <p className="form-note">
-                Cette présentation s’appuie sur le sujet cité par LDgenX. Les résultats détaillés ne
-                sont pas publiés dans la source consultée.
-              </p>
-            )}
-            <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-              Consulter la référence publiée
-            </a>
+      {journey ? (
+        <>
+          <h2 className="sr-only">{t.alongCoast}</h2>
+          <StudyJourney />
+          <StudyResults />
+        </>
+      ) : (
+        <section className="detail-section">
+          <div className="container">
+            <Reveal className="article-wide-image">
+              <Photo name={s.image} alt={('imageAlt' in s && s.imageAlt) || ''} eager />
+            </Reveal>
+            <Reveal className="case-sheet">
+              <p className="case-sheet-title">{ui.common.inBrief}</p>
+              <StudyFacts facts={s.facts} />
+            </Reveal>
+            <div className="case-content">
+              <StepRows items={rows} as="h2" className="case-steps" />
+              {!s.result && <p className="form-note">{t.noResults}</p>}
+              <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
+                {t.reference}
+                <span className="sr-only">{ui.common.newTab}</span>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <section className="section-space">
         <div className="container detail-intro">
-          <Reveal>
-            <Eyebrow>L’expertise associée</Eyebrow>
-            <h2>{service.title}</h2>
-          </Reveal>
+          <div>
+            <Eyebrow>{t.expertiseEyebrow}</Eyebrow>
+            <AnimatedHeading text={service.title} />
+          </div>
           <Reveal>
             <p>{service.short}</p>
-            <TextLink to={`/services/${service.slug}`}>Explorer cette expertise</TextLink>
+            <TextLink to={r.service(service.id)}>{t.exploreExpertise}</TextLink>
           </Reveal>
+        </div>
+      </section>
+      <section className="section-space studies-more">
+        <div className="container">
+          <StudyPanels all exclude={s.id} label={ui.panels.otherLabel} />
         </div>
       </section>
       <FinalCTA />
@@ -84,45 +122,45 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
 }
 
 export function InnovationsPage({ meta }: { meta: PageMeta }) {
+  const { pageCopy, companyStory, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.innovationPage;
   return (
     <>
-      <PageHero meta={meta} {...pageCopy.innovations} image="innovation" dark />
-      <section className="section-space delivery-section">
+      <PageHero meta={meta} {...pageCopy.innovations} image="equipe-maxime" dark />
+      <section className="innovation-section lab-band" aria-label={t.sr}>
         <div className="container">
-          {innovations.map((p) => (
-            <Reveal className="innovation-overview detail-intro" key={p.slug}>
-              <div className="innovation-overview-image">
-                <Photo name={p.image} alt="" />
-              </div>
-              <div>
-                <Eyebrow>{p.label}</Eyebrow>
-                <h2>{p.title}</h2>
-                <p className="innovation-overview-intro">{p.intro}</p>
-                <TextLink to={`/innovation/${p.slug}`}>Explorer le projet</TextLink>
-              </div>
-            </Reveal>
-          ))}
+          <Lab />
         </div>
       </section>
       <section className="use-section">
+        <AmbientField tone="dark" className="use-field" />
         <div className="container detail-intro">
+          <div>
+            <Eyebrow light>{t.collaborationEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.collaborationTitle} />
+          </div>
           <Reveal>
-            <Eyebrow light>Collaborations scientifiques</Eyebrow>
-            <h2>
-              L’innovation se
-              <br />
-              construit ensemble.
-            </h2>
-          </Reveal>
-          <Reveal>
-            <p>
-              Développer une méthode, explorer une nouvelle application ou construire un projet
-              collaboratif : notre équipe est ouverte aux collaborations scientifiques, techniques
-              et industrielles.
-            </p>
-            <Button variant="light" to="/services/recherche-developpement">
-              Notre accompagnement R&D
+            <p>{t.collaborationText}</p>
+            <Button variant="light" to={r.service('recherche-developpement')}>
+              {t.collaborationAction}
             </Button>
+          </Reveal>
+        </div>
+      </section>
+      <section className="section-space">
+        <div className="container detail-intro">
+          <div>
+            <Eyebrow>{t.deeptechEyebrow}</Eyebrow>
+            <AnimatedHeading text={ui.about.deeptechTitle} />
+            <Reveal delay={0.1}>
+              <p>{companyStory.deeptech}</p>
+              <p className="detail-note">{companyStory.status}</p>
+            </Reveal>
+          </div>
+          <Reveal>
+            <p className="support-title">{t.supportsTitle}</p>
+            <LiveList items={companyStory.supports} />
           </Reveal>
         </div>
       </section>
@@ -132,7 +170,10 @@ export function InnovationsPage({ meta }: { meta: PageMeta }) {
 }
 
 export function InnovationPage({ meta }: { meta: PageMeta }) {
-  const p = innovations.find((p) => p.slug === meta.slug)!;
+  const { innovations, services, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.innovationPage;
+  const p = innovations.find((p) => p.id === meta.id)!;
   return (
     <>
       <PageHero
@@ -146,51 +187,53 @@ export function InnovationPage({ meta }: { meta: PageMeta }) {
       <section className="detail-section">
         <div className="container">
           <div className="detail-intro">
-            <Reveal>
+            <div>
               <Eyebrow>{p.label}</Eyebrow>
-              <h2>
-                {p.title}
-                <br />
-                Une voie à explorer.
-              </h2>
-            </Reveal>
+              <AnimatedHeading text={`${p.title}\n${t.projectSubtitle}`} />
+            </div>
             <Reveal>
               <p>{p.body}</p>
-              <p className="detail-note">
-                Ce projet relève de la recherche et du développement. Les objectifs présentés ne
-                constituent pas une promesse de résultat ou une performance commerciale annoncée.
-              </p>
+              <p className="detail-note">{t.projectNote}</p>
             </Reveal>
           </div>
-          <ScientificDiagram steps={p.steps} />
+        </div>
+      </section>
+      <section className="innovation-section lab-band" aria-label={t.principle}>
+        <div className="container">
+          <Lab only={innovations.indexOf(p)} />
           <a
             className="source-link"
             href="https://www.ldgenx.fr/a-propos/innovation"
             target="_blank"
             rel="noreferrer"
           >
-            Présentation officielle des projets
+            {t.official}
+            <span className="sr-only">{ui.common.newTab}</span>
           </a>
         </div>
       </section>
       <section className="section-space">
         <div className="container">
-          <Eyebrow>Explorer la recherche</Eyebrow>
-          <h2>Des expertises qui se rencontrent.</h2>
+          <Eyebrow>{t.exploreEyebrow}</Eyebrow>
+          <AnimatedHeading text={t.exploreTitle} />
           <div className="related-links">
             {services
               .filter((s) =>
                 ['adn-environnemental-adne', 'bioinformatique', 'recherche-developpement'].includes(
-                  s.slug,
+                  s.id,
                 ),
               )
-              .map((s) => (
-                <Link key={s.slug} className="related-link" to={`/services/${s.slug}`}>
-                  <Photo name={s.image} alt="" />
-                  <div>
-                    <h3>{s.title}</h3>
-                  </div>
-                </Link>
+              .map((s, i) => (
+                <Reveal key={s.id} delay={i * 0.1}>
+                  <TiltLink className="related-link" to={r.service(s.id)}>
+                    <span className="related-picture">
+                      <Photo name={s.image} alt="" />
+                    </span>
+                    <div>
+                      <h3>{s.title}</h3>
+                    </div>
+                  </TiltLink>
+                </Reveal>
               ))}
           </div>
         </div>
@@ -201,12 +244,14 @@ export function InnovationPage({ meta }: { meta: PageMeta }) {
 }
 
 export function ResourcesPage({ meta }: { meta: PageMeta }) {
-  const [category, setCategory] = useState('Tout explorer');
+  const { pageCopy, resources, ui } = useCatalog();
+  const t = ui.resourcesPage;
+  const [category, setCategory] = useState(t.all);
   const [query, setQuery] = useState('');
-  const categories = ['Tout explorer', ...new Set(resources.map((r) => r.category))];
+  const categories = [t.all, ...new Set(resources.map((r) => r.category))];
   const filtered = resources.filter(
     (r) =>
-      (category === 'Tout explorer' || r.category === category) &&
+      (category === t.all || r.category === category) &&
       `${r.title} ${r.intro} ${r.category}`
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
@@ -225,38 +270,33 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
       <section className="section-space delivery-section" aria-labelledby="resources-title">
         <div className="container">
           <h2 id="resources-title" className="sr-only">
-            Explorer les ressources
+            {t.sr}
           </h2>
-          <div className="filters" role="group" aria-label="Filtrer les ressources">
+          <div className="filters" role="group" aria-label={t.filters}>
             {categories.map((c) => (
               <button key={c} aria-pressed={category === c} onClick={() => setCategory(c)}>
                 {c}
               </button>
             ))}
             <label className="resource-search">
-              <span className="sr-only">Rechercher une ressource</span>
+              <span className="sr-only">{t.search}</span>
               <input
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Rechercher un sujet"
+                placeholder={t.placeholder}
               />
               <Search size={15} aria-hidden="true" />
             </label>
           </div>
           <div aria-live="polite">
-            <span className="sr-only">
-              {filtered.length} ressource{filtered.length > 1 ? 's' : ''}
-            </span>
+            <span className="sr-only">{t.count(filtered.length)}</span>
             {filtered.length ? (
               <div className="filter-results" key={`${category}|${query.trim()}`}>
                 <ResourceGrid items={filtered} />
               </div>
             ) : (
-              <p className="no-results">
-                Aucune ressource pour cette recherche. Essayez un autre sujet ou sélectionnez « Tout
-                explorer ».
-              </p>
+              <p className="no-results">{t.empty}</p>
             )}
           </div>
         </div>
@@ -267,7 +307,13 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
 }
 
 export function ArticlePage({ meta }: { meta: PageMeta }) {
-  const r = resources.find((r) => r.slug === meta.slug)!;
+  const { resources, ui } = useCatalog();
+  const routes = useRoutes();
+  const t = ui.resourcesPage;
+  const r = resources.find((r) => r.id === meta.id)!;
+  const body = useRef<HTMLDivElement>(null);
+  const parts = useRef<(HTMLElement | null)[]>([]);
+  const reading = useActiveRow(body, parts);
   return (
     <>
       <PageHero meta={meta} eyebrow={r.category} title={r.title} intro={r.intro} />
@@ -277,28 +323,39 @@ export function ArticlePage({ meta }: { meta: PageMeta }) {
             <Photo name={r.image} alt="" eager />
           </div>
           <div className="article-layout">
-            <nav className="article-aside" aria-label="Sommaire de l’article">
-              <p>DANS CETTE RESSOURCE</p>
+            <nav className="article-aside" aria-label={t.contents}>
+              <p>{t.contentsTitle}</p>
               {r.sections.map((s, i) => (
-                <a key={s.title} href={`#partie-${i + 1}`}>
+                <a
+                  key={s.title}
+                  href={`#partie-${i + 1}`}
+                  aria-current={i === reading ? 'location' : undefined}
+                >
                   {s.title}
                 </a>
               ))}
             </nav>
-            <div className="article-content">
+            <div ref={body} className="article-content">
               {r.sections.map((s, i) => (
                 <Reveal key={s.title}>
-                  <section id={`partie-${i + 1}`}>
+                  <section
+                    id={`partie-${i + 1}`}
+                    ref={(el) => {
+                      parts.current[i] = el;
+                    }}
+                    data-reading={i === reading || undefined}
+                  >
                     <h2>{s.title}</h2>
                     <p>{s.text}</p>
                   </section>
                 </Reveal>
               ))}
               <a className="source-link" href={r.source} target="_blank" rel="noreferrer">
-                Source : présentation scientifique LDgenX
+                {t.source}
+                <span className="sr-only">{ui.common.newTab}</span>
               </a>
               <div className="article-service">
-                <TextLink to={`/services/${r.service}`}>Découvrir l’expertise associée</TextLink>
+                <TextLink to={routes.service(r.service)}>{t.expertise}</TextLink>
               </div>
             </div>
           </div>

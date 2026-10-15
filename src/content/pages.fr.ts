@@ -122,7 +122,8 @@ export const formCopy = {
     submit: 'Préparer mon e-mail',
   },
   direct: {
-    privacyAfter: '. J’accepte que ces informations soient transmises à l’équipe LDgenX pour répondre à ma demande.',
+    privacyAfter:
+      '. J’accepte que ces informations soient transmises à l’équipe LDgenX pour répondre à ma demande.',
     note: '* Champs requis. Votre demande est transmise à l’équipe LDgenX par le service d’envoi du formulaire.',
     submit: 'Envoyer ma demande',
   },

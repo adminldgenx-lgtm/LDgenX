@@ -1,0 +1,2249 @@
+{
+  "note": "External references are preserved, not all fetched or tested. Internal page statuses were checked.",
+  "links": [
+    {
+      "url": "http://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/contact"
+      ],
+      "link_texts": [
+        "Schedule a Meeting",
+        "Book a meeting",
+        "15-Minute Free Consultation"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "http://doi.org/10.1101/2022.05.31.494209",
+      "source_pages": [
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.fr/services/selection-genomique"
+      ],
+      "link_texts": [
+        "Delpuech et al. (2022)"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "http://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "source_pages": [
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Leitwein et al. (2018)"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "ENG"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "FR"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://academic.oup.com/g3journal/article/7/4/1365/6031796",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://academic.oup.com/g3journal/article/7/4/1365/6031796"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://academic.oup.com/gbe/article/14/4/evac036/6547269",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://academic.oup.com/gbe/article/14/4/evac036/6547269"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1",
+      "source_pages": [
+        "https://www.ldgenx.fr/contact"
+      ],
+      "link_texts": [
+        "15 min gratuites"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://bluetechshow.fr/",
+      "source_pages": [
+        "https://www.ldgenx.fr/"
+      ],
+      "link_texts": [
+        "ici"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+      "source_pages": [
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Saint-Pé et al. 2019",
+        "Saint-Pé et al (2019)",
+        "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://cal.com/ldgenx-echange/decouverte",
+      "source_pages": [
+        "https://www.ldgenx.fr/"
+      ],
+      "link_texts": [
+        "Prenez un rendez-vous"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.1101/2022.05.31.494209",
+      "source_pages": [
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/services/selection-genomique"
+      ],
+      "link_texts": [
+        "Delpuech et al. 2022",
+        "https://doi.org/10.1101/2022.05.31.494209"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.1101/2022.05.31.4942092021Delpuech",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-emilie-delpuech"
+      ],
+      "link_texts": [],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-020-00576-0",
+      "source_pages": [
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/services/selection-genomique"
+      ],
+      "link_texts": [
+        "Aliakbari et al. 2021",
+        "Aliakbari et al. (2021)",
+        "https://doi.org/10.1186/s12711-020-00576-0"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-021-00642-1",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-emilie-delpuech"
+      ],
+      "link_texts": [
+        "https://doi.org/10.1186/s12711-021-00642-1"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.1186/s12711-021-00642-12020Aliakbari",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech"
+      ],
+      "link_texts": [],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://doi.org/10.3389/fgene.2021.665920",
+      "source_pages": [
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.fr/services/selection-genomique"
+      ],
+      "link_texts": [
+        "Griot et al. 2021"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://hal.science/hal-05490664",
+      "source_pages": [
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.fr/services/genomique-des-populations"
+      ],
+      "link_texts": [
+        "Lire la suite",
+        "Le vanneau huppé"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/eva.12416",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://onlinelibrary.wiley.com/doi/10.1111/eva.12416"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "source_pages": [
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.fr/services/conservation"
+      ],
+      "link_texts": [
+        "Leitwein et al. 2019"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/mec.15566",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://onlinelibrary.wiley.com/doi/full/10.1111/mec.15566"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "source_pages": [
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services/conservation"
+      ],
+      "link_texts": [
+        "Leitwein et al. 2016",
+        "https://pubmed.ncbi.nlm.nih.gov/27666575/"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "source_pages": [
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Leitwein et al. 2018",
+        "https://pubmed.ncbi.nlm.nih.gov/30054960/"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31579957/",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://pubmed.ncbi.nlm.nih.gov/31579957/"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+      "source_pages": [
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services/conservation"
+      ],
+      "link_texts": [
+        "2021",
+        "https://pubmed.ncbi.nlm.nih.gov/33916757/"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.biorxiv.org/content/10.1101/2021.01.28.428603v1",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://www.biorxiv.org/content/10.1101/2021.01.28.428603v1"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental",
+      "source_pages": [
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne"
+      ],
+      "link_texts": [
+        "Read more",
+        "Lire la suite"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x12b6bba6b2f78edf:0x2630c96ca3137cff?sa=X&ved=1t:8290&ictx=111",
+      "source_pages": [
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.fr/contact"
+      ],
+      "link_texts": [
+        "Station Ifremer, 51 rte de Maguelone 34250 Palavas-les-Flots FRANCE"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Welcome",
+        "Schedule a Meeting"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/Services",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "About us"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/Services",
+      "source_pages": [
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Innovation",
+        "Book a meeting"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Partners"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Team"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Applications"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/Services",
+      "source_pages": [
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Agriculture & Agroecology"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Aquaculture & Fisheries"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Biodiversity & Conservation"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Environment & Consultancies"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Contact",
+        "Ask a quote",
+        "Contact our team",
+        "15-Minute Free Consultation"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Voir mon panier"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.ldgenx.com/partenaires-2",
+      "source_pages": [
+        "https://www.ldgenx.com/"
+      ],
+      "link_texts": [],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "source_pages": [
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Bioinformatics",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/conservation",
+      "source_pages": [
+        "https://www.ldgenx.com/services/population-genomics"
+      ],
+      "link_texts": [
+        "Lire la suite"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Environmental DNA (eDNA)",
+        "Environmental DNA",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Equipment"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Genomic Selection",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection-page",
+      "source_pages": [
+        "https://www.ldgenx.com/services/genomic-selection"
+      ],
+      "link_texts": [
+        "The European Sea bass"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Microbial Community Analysis",
+        "Microbial Community analyses",
+        "Microbial Community",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Population Genomics",
+        "Population genomics",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Sequencing & dPCR",
+        "Seqeuncing & dPCR",
+        "Learn More"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/services/traceability",
+      "source_pages": [
+        "https://www.ldgenx.com/services/population-genomics"
+      ],
+      "link_texts": [
+        "Lire la suite"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/team/Services",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.com/team/dr-emilie-delpuech",
+      "source_pages": [
+        "https://www.ldgenx.com/about-us/team"
+      ],
+      "link_texts": [
+        "List of publications"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.com/team/dr-maeva-leitwein",
+      "source_pages": [
+        "https://www.ldgenx.com/about-us/team"
+      ],
+      "link_texts": [
+        "List of publications"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Accueil",
+        "A propos",
+        "Prenez un rendez-vous"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/services"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "A propos"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Equipe"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Innovation"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Partenaires"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Applications",
+        "Application"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Agriculture & agroécologie"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Aquaculture & pêche"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Biodiversité & Conservation"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Environnement & Bureaux d'Études"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/cgvs/cgvs"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "CGVs"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Contact",
+        "Demandez un devis",
+        "Contactez notre équipe",
+        "Prendre Rendez-vous",
+        "15 min gratuites",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Voir mon panier"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/equipe/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "source_pages": [
+        "https://www.ldgenx.fr/a-propos/equipe"
+      ],
+      "link_texts": [
+        "Liste des publications"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "source_pages": [
+        "https://www.ldgenx.fr/a-propos/equipe"
+      ],
+      "link_texts": [
+        "Liste des publications"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/partenaires-2",
+      "source_pages": [
+        "https://www.ldgenx.fr/"
+      ],
+      "link_texts": [],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Services",
+        "Nos services"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "source_pages": [
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Services"
+      ],
+      "http_status_checked": 404
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "ADN environnemental (ADNe)",
+        "ADN environemental (ADNe)",
+        "ADN environnemental",
+        "Decouvrir ce services"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Analyse des communautés microbiennes",
+        "Analyse des communauté microbienne",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Bioinformatique",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/conservation",
+      "source_pages": [
+        "https://www.ldgenx.fr/services/genomique-des-populations"
+      ],
+      "link_texts": [
+        "Diversité génétique"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Génomique des populations",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Matériel",
+        "Matériels"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Sélection",
+        "Sélection génomique",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection-genomique",
+      "source_pages": [
+        "https://www.ldgenx.fr/services/selection"
+      ],
+      "link_texts": [
+        "Le Bar Européen"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Séquençage & dPCR",
+        "Génomique des populations",
+        "Bioinformatique",
+        "Decouvrir ce service"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/tracabilite",
+      "source_pages": [
+        "https://www.ldgenx.fr/services/genomique-des-populations"
+      ],
+      "link_texts": [
+        "Carte génétique"
+      ],
+      "http_status_checked": 200
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "source_pages": [
+        "https://www.ldgenx.com/",
+        "https://www.ldgenx.com/about-us",
+        "https://www.ldgenx.com/about-us/innovation",
+        "https://www.ldgenx.com/about-us/partners",
+        "https://www.ldgenx.com/about-us/team",
+        "https://www.ldgenx.com/applications",
+        "https://www.ldgenx.com/applications/agriculture-agroecology",
+        "https://www.ldgenx.com/applications/aquaculture-fisheries",
+        "https://www.ldgenx.com/applications/biodiversity-conservation",
+        "https://www.ldgenx.com/applications/environment-consultancies",
+        "https://www.ldgenx.com/contact",
+        "https://www.ldgenx.com/services",
+        "https://www.ldgenx.com/services/bioinformatics",
+        "https://www.ldgenx.com/services/conservation",
+        "https://www.ldgenx.com/services/environmental-dna-edna",
+        "https://www.ldgenx.com/services/equipment",
+        "https://www.ldgenx.com/services/genomic-selection",
+        "https://www.ldgenx.com/services/genomic-selection-page",
+        "https://www.ldgenx.com/services/microbial-community-analysis",
+        "https://www.ldgenx.com/services/population-genomics",
+        "https://www.ldgenx.com/services/sequencing-dpcr",
+        "https://www.ldgenx.com/services/traceability",
+        "https://www.ldgenx.com/team/dr-emilie-delpuech",
+        "https://www.ldgenx.com/team/dr-maeva-leitwein"
+      ],
+      "link_texts": [],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8549618/",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8549618/"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169534719303040",
+      "source_pages": [
+        "https://www.ldgenx.com/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+      ],
+      "link_texts": [
+        "https://www.sciencedirect.com/science/article/pii/S0169534719303040"
+      ],
+      "http_status_checked": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "source_pages": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/a-propos/innovation",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tracabilite"
+      ],
+      "link_texts": [
+        "Contactez notre équipe"
+      ],
+      "http_status_checked": null
+    }
+  ]
+}

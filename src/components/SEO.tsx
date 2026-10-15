@@ -11,7 +11,7 @@ export function SEO({ meta }: { meta: PageMeta }) {
       )
       .forEach((el) => el.remove());
     document.head.append(template.content);
-    document.documentElement.lang = 'fr';
+    document.documentElement.lang = meta.locale;
   }, [meta]);
   return null;
 }

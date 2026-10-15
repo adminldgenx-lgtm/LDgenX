@@ -1,0 +1,318 @@
+{
+  "requested_url": "https://www.ldgenx.fr/a-propos/equipe",
+  "final_url": "https://www.ldgenx.fr/a-propos/equipe",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:57.858572+00:00",
+  "language": "fr",
+  "title": "LDgenX - Dr Maeva Leitwein et Dr Emilie Delpuech - Chercheur - Docteur",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "LDgenX est cofondé par Maeva Leitwein et Emilie Delpuech docteures en génomique de la conservation et bioinformatique, génétique, biodiversité docteur expertise"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/a-propos__equipe.html",
+  "raw_sha256": "f4e8023d2fbf799e6317f2cd9fc7c5f55c4199abc221c4b04d400925593b67d9",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "text": "Liste des publications",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "text": "Liste des publications",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Maeva Leitwein",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b44264b22b0-img-20210810-111318/320-62b44264b22b0-img-20210810-111318.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Emilie_delpuech",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62c45db0e8a08-dsc-0029-latex-cv/320-62c45db0e8a08-dsc-0029-latex-cv.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Maxime Lambert",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a510e7cb33da-maxime/320-6a510e7cb33da-maxime.jpg",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Qui sommes nous ?"
+    },
+    {
+      "level": 1,
+      "text": "Dr Maeva Leitwein"
+    },
+    {
+      "level": 1,
+      "text": "Dr Emilie Delpuech"
+    },
+    {
+      "level": 1,
+      "text": "Maxime Lambert"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/a-propos__equipe.md",
+  "content_characters": 4939,
+  "content_sha256": "1dbed46e6277c24b993b848befc6c7e6f54400106354c5a99e617cec1fb217a8",
+  "body_text": "Qui sommes nous ?\nDr Maeva Leitwein\n        \n        Issue du milieu académique et originaire de l'archipel de Molène en Bretagne, je suis particulièrement intéressée par l'utilisation des outils génomiques pour la conservation de la biodiversité. \nMes travaux de recherche s’intéressent principalement à la compréhension et l’évaluation des mécanismes évolutifs qui modulent la biodiversité intra et inter-populationnelle à différentes échelles de temps. \nAprès un Master en biologie Marine, je me suis spécialisée lors de mon doctorat dans l'utilisation de la génomique pour évaluer les conséquences de l'introduction d'individus domestiques dans les populations sauvages. Durant mon post-doctorat au Canada, j'ai utilisé les outils génomiques et épigénomiques afin d'étudier l'impact des piscicultures sur le patrimoine génomique et la valeur sélective des populations sauvages. Ces approchent m'ont permis de comprendre les forces évolutives (positives ou négatives) qui modulent le paysage génomique des populations naturelles. \nDe retour en France depuis 2021, j'étudie à présent les effets de la température, dans le cadre du réchauffement climatique, sur le déterminisme du sexe chez le bar européen.  Couplé à cela, j'étudie les effets de mélanges entre lignées (ancestralité) sur le phénotype des individus et les conséquences dans l’adaptation des espèces à leur environnement. \nAu sein de LDgenX, j'apporte mon expertise en génomique afin de répondre à des questions de conservation pour une meilleure gestion des populations naturelles et domestiques. \n    \n                Liste des publications\n            \n \n    \n        Dr Maeva Leitwein - CoFondatrice de LDgenX \n    \n        Dr Emilie Delpuech\n        \n        Passionnée par le vivant et par son étude, j’ai consacré une grande partie de mon parcours académique à apprendre les spécificités de la biologie végétale et animale.\nAu vu de l’avancée des méthodes d’analyses des données biologiques, je me suis spécialisée en bioinformatique. Aujourd’hui j’ai donc les connaissances pour analyser différents jeux de données dits Omiques.\nGrâce à ma double formation en sciences du vivant et en informatique, j’ai la capacité de m’intégrer dans divers projets de biologie me permettant ainsi de mettre en place la meilleure approche bioinformatique possible pour la question posée. Dans le cadre de mes analyses, j’utilise différents types de langages informatiques pour construire des pipelines d’analyses pour répondre à des questions biologiques.\nDurant ma thèse et mes deux post-doctorats, je me suis impliquée dans des sujets de génétiques animales afin d’améliorer la sélection génomique d’espèces d’élevage à partir de données génétiques et phénotypiques.\nJe mets donc au service de LDgenX toutes mes connaissances en développement informatique afin de réaliser les analyses les plus spécifiques au sujet d'études.\n \n    \n                Liste des publications\n            \n \n    \n        Dr Emilie Delpuech - CoFondatrice de LDgenX\n    \n        Maxime Lambert\n        \n        Passionné par les sciences du vivant et les technologies innovantes, j’ai orienté mon parcours académique et professionnel vers la biologie moléculaire et la génomique.\nMes expériences m’ont amené à développer un intérêt particulier pour les approches moléculaires appliquées à l’étude de la biodiversité, notamment lors de mon passage à l’Institut des Sciences de l’Évolution de Montpellier (ISEM, Université de Montpellier, CNRS, IRD, EPHE, CIRAD, INRAE).  \nJ’y ai acquis une solide expertise en biologie moléculaire, de l’extraction d’acides nucléiques sur matrices complexes à la préparation de banques de séquençage.\nSpécialisé dans les technologies de séquençage longue lecture, notamment Oxford Nanopore Technologies, je développe et optimise des protocoles adaptés à différentes problématiques, en génomique, métagénomique ou caractérisation d’organismes complexes.\nMon expérience inclut également le développement de méthodes et l’optimisation de protocoles expérimentaux.\nAu sein de LDgenX, j’apporte mon expertise en biologie moléculaire et en séquençage pour concevoir et mettre en œuvre des approches expérimentales robustes, adaptées aux besoins spécifiques de chaque projet\n    \n        Maxime Lambert - Ingénieur Laboratoire\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/a-propos__equipe.json"
+}

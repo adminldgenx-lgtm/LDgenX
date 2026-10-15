@@ -1,0 +1,334 @@
+{
+  "requested_url": "https://www.ldgenx.com/contact",
+  "final_url": "https://www.ldgenx.com/contact",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:32.275591+00:00",
+  "language": "en",
+  "title": "GenExpert - Contactez-nous - Demande d'informations - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Adresse mail, numéro téléphone, contact, contacter GenExpert, devis d'analyse, devis expertise, devis conseil génomique, demande d'informations GenExpert"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/contact.html",
+  "raw_sha256": "08cb666b60c25089cc7475d8ed066277d7dddb6d205bdd21e6adcbc1b3a50326",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "15-Minute Free Consultation",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1",
+      "text": "15-Minute Free Consultation",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x12b6bba6b2f78edf:0x2630c96ca3137cff?sa=X&ved=1t:8290&ictx=111",
+      "text": "Station Ifremer, 51 rte de Maguelone 34250 Palavas-les-Flots FRANCE",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5f85e360675-map/320-6a5f85e360675-map.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Let's Talk About Your Project"
+    },
+    {
+      "level": 1,
+      "text": "Contact us :"
+    },
+    {
+      "level": 1,
+      "text": "Schedule a meeting :"
+    },
+    {
+      "level": 2,
+      "text": "info@ldgenx.fr"
+    },
+    {
+      "level": 2,
+      "text": "Station Ifremer,\n51 rte de Maguelone\n34250 Palavas-les-Flots\nFRANCE"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.ldgenx.com/bo-formulaire/envoyer",
+      "method": "post",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "field-309960",
+          "placeholder": "Last Name",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "field-309961",
+          "placeholder": "First Name",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "field-309962",
+          "placeholder": "Company/Institute/Group",
+          "required": true
+        },
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "field-309963",
+          "placeholder": "E-mail",
+          "required": true
+        },
+        {
+          "tag": "textarea",
+          "type": "textarea",
+          "name": "field-309964",
+          "placeholder": "Message",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "content_path": "source/en/contact.md",
+  "content_characters": 1268,
+  "content_sha256": "2de9e96e0ba03e9bfd65cb2393df71ea2cea38e3d5b87cc31373c50c4d96e150",
+  "body_text": "Let's Talk About Your Project\nContact us :\n        \n                    Send\n                \n        Schedule a meeting :\n        Do you have a project, an idea or a challenge involving genetics, environmental DNA (eDNA), population genomics or genomic selection?\nLet's schedule a free, no-obligation 15-minute consultation to discuss it\n This introductory meeting is an opportunity to:\n Briefly present your project, needs, or ideas.Explore how LDgenX's innovative genomic solutions can support your objectives.Ask your questions directly to one of LDgenX's founders and genomics experts.A simple conversation can be the first step toward a successful collaboration.15-Minute Free Consultation\n            info@ldgenx.fr\n        Station Ifremer,\n51 rte de Maguelone\n34250 Palavas-les-Flots\nFRANCE\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/contact.json"
+}

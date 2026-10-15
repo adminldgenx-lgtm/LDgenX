@@ -1,0 +1,746 @@
+                                                                                                                                        INVESTIGATION
+
+
+
+
+A Dense Brown Trout (Salmo trutta) Linkage Map
+Reveals Recent Chromosomal Rearrangements in
+the Salmo Genus and the Impact of Selection on
+Linked Neutral Diversity
+Maeva Leitwein,*,1 Bruno Guinand,*,† Juliette Pouzadoux,* Erick Desmarais,* Patrick Berrebi,*
+and Pierre-Alexandre Gagnaire*
+*Institut des Sciences de l’Evolution, Unité Mixte de Recherche 5554 CNRS-IRD-EPHE and †Département Biologie-
+Ecologie, Université de Montpellier, 34095 Montpellier Cedex 5, France
+ORCID IDs: 0000-0001-5172-0970 (M.L.); 0000-0002-6934-1677 (B.G.); 0000-0002-9026-4987 (P.B.); 0000-0002-1908-3235 (P.-A.G.)
+
+
+
+ABSTRACT High-density linkage maps are valuable tools for conservation and eco-evolutionary issues. In                                  KEYWORDS
+salmonids, a complex rediploidization process consecutive to an ancient whole genome duplication event                                  linkage mapping
+makes linkage maps of prime importance for investigating the evolutionary history of chromosome                                         Salmo trutta
+rearrangements. Here, we developed a high-density consensus linkage map for the brown trout (Salmo                                      salmonids
+trutta), a socioeconomically important species heavily impacted by human activities. A total of 3977 ddRAD                              RAD markers
+markers were mapped and ordered in 40 linkage groups using sex- and lineage-averaged recombination                                      chromosomal
+distances obtained from two family crosses. Performing map comparison between S. trutta and its sister                                    rearrangements
+species, S. salar, revealed extensive chromosomal rearrangements. Strikingly, all of the fusion and ﬁssion                              recombination
+events that occurred after the S. salar/S. trutta speciation happened in the Atlantic salmon branch, whereas                              rate
+the brown trout remained closer to the ancestral chromosome structure. Using the strongly conserved
+synteny within chromosome arms, we aligned the brown trout linkage map to the Atlantic salmon genome
+sequence to estimate the local recombination rate in S. trutta at 3721 loci. A signiﬁcant positive correlation
+between recombination rate and within-population nucleotide diversity (p) was found, indicating that
+selection constrains variation at linked neutral sites in brown trout. This new high-density linkage map
+provides a useful genomic resource for future aquaculture, conservation, and eco-evolutionary studies in
+brown trout.
+
+
+
+
+A renewed interest for linkage mapping studies has recently occurred                Ekblom and Galindo 2011). High-density linkage maps have been
+thanks to the simpliﬁed procedures for generating large genotype                    particularly developed in teleost ﬁshes because of their high number
+datasets in nonmodel organisms (Slate et al. 2008; Stapley et al. 2010;             of species, economic importance for aquaculture (e.g., Sauvage et al.
+                                                                                    2012; Zhao et al. 2013; Wang et al. 2015; Liu et al. 2016; Kumar and
+Copyright © 2017 Leitwein et al.                                                    Kocour 2017), phylogenetic position within vertebrates (Amores et al.
+doi: https://doi.org/10.1534/g3.116.038497                                          2011; Rondeau et al. 2014; Wang et al. 2015; Kuang et al. 2016), and
+Manuscript received December 16, 2016; accepted for publication February 22,        broad interests for eco-evolutionary and conservation/management
+2017; published Early Online February 24, 2017.
+                                                                                    issues (Everett et al. 2012; Gagnaire et al. 2013a; Kai et al. 2014).
+This is an open-access article distributed under the terms of the Creative
+Commons Attribution 4.0 International License (http://creativecommons.org/              The salmonid family, which has 11 genera and .60 species (Crête-
+licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction   Lafrenière et al. 2012), is a group of ﬁsh in which numerous initiatives
+in any medium, provided the original work is properly cited.                        have been developed to construct high-density linkage maps (Brieuc
+Supplemental material is available online at www.g3journal.org/lookup/suppl/        et al. 2014; Gonen et al. 2014; Limborg et al. 2015b; Larson et al. 2016;
+doi:10.1534/g3.116.038497/-/DC1.
+1
+  Corresponding author: Université de Montpellier, ISEM - UMR 5554, CC 065,
+                                                                                    Tsai et al. 2016). Besides their applications for mapping traits of im-
+  Place Eugène Bataillon, 34095 Montpellier Cedex 5, France. E-mail: maeva.         portance for aquaculture (Houston et al. 2012; Sauvage et al. 2012; Tsai
+  leitwein.pro@gmail.com                                                            et al. 2015), salmonid linkage maps have catalyzed molecular ecology
+
+
+
+                                                                                                                         Volume 7   | April 2017    |   1365
+and genome evolution studies over recent years. Several studies have               Second, another important application of a high-density linkage map
+used linkage map information for addressing eco-evolutionary and re-           in brown trout relates to understanding the consequences of human-
+lated conservation biology issues at the species level or among hybrid-        mediated introductions of foreign and domestic genotypes in natural
+izing taxa (Lamaze et al. 2012; Bourret et al. 2013; Perrier et al. 2013;      populations. The brown trout has been domesticated for decades, and
+Gagnaire et al. 2013b; Limborg et al. 2014; McKinney et al. 2015). A           wild populations have been heavily impacted by the stocking of genet-
+second category of studies have focused on understanding the evolu-            ically domesticated hatchery strains sometimes originating from evo-
+tionary consequences of the whole genome duplication event (salmonid-          lutionary lineages distinct from the recipient populations (Elliott 1994;
+speciﬁc fourth vertebrate whole genome duplication; WGD-Ss4R)                  Laikre 1999; Berrebi et al. 2000; Bohling et al. 2016). These introduc-
+that occurred within the salmonid family 60 MYA (Crête-Lafrenière             tions have often resulted in the introgression of foreign alleles within
+et al. 2012), especially with regards to the partial rediploidization pro-     wild brown trout populations, a generally negatively perceived phe-
+cess, which is still underway and not totally understood yet (Berthelot        nomenon in conservation and management (Largiader and Scholl
+et al. 2014; Brieuc et al. 2014; Kodama et al. 2014; Sutherland et al. 2016;   1996; Poteaux et al. 1998, 1999; Hansen et al. 2000; Almodóvar et al.
+Allendorf et al. 2015; Lien et al. 2016; Nugent et al. 2017). A signiﬁ-        2006; Sanz et al. 2006; Hansen and Mensberg 2009). However, the real
+cantly improved understanding of this process has been achieved                evolutionary consequences of hybridization may take multiple facets
+through increased efforts to map and compare chromosomal re-                   (e.g., outbreeding depression, heterosis, adaptive introgression, loss of
+arrangements among species (inversions, translocations, ﬁssions, and           adaptive variation), the individual effects of which remains largely un-
+fusions), which have helped to reconstruct the evolutionary history of         known. In order to evaluate those potential ﬁtness outcomes in brown
+salmonid genome architecture (Kodama et al. 2014; Sutherland et al.            trout, it would be necessary to combine the power of large SNP data sets
+2016). Furthermore, linkage mapping approaches have also improved              (Leitwein et al. 2016) with a high-density linkage map and a detailed
+the characterization of the genomic regions that still exhibit tetrasomic      knowledge of chromosomal variation in recombination rate to perform
+inheritance patterns (Allendorf et al. 2015; Kodama et al. 2014; Lien          comprehensive genome scans for introgression in natural populations.
+et al. 2016; May and Delany 2015; Waples et al. 2016). The partial                 The speciﬁc objectives of this study were: (i) to build a high-density
+rediploidization of salmonid genomes is also known to challenge the            linkage map in brown trout based on restriction site–associated DNA
+development of genome-wide marker data sets. Indeed, duplicated loci           (RAD) markers using reciprocal crosses of individuals belonging to two
+that mostly reside in tetrasomic regions (Allendorf et al. 2015) are           distinct evolutionary lineages (Atlantic and Mediterranean; Bernatchez
+usually underrepresented or even excluded in salmonid genomic stud-            2001); (ii) to characterize chromosome morphologies and centromere
+ies (Hohenlohe et al. 2011; Hecht et al. 2012; Gagnaire et al. 2013b;          positions of metacentric chromosomes using the method recently de-
+Larson et al. 2014; Perrier et al. 2013; Leitwein et al. 2016)                 veloped in Limborg et al. (2015a); (iii) to perform map comparisons with
+    The Eurasian brown trout (Salmo trutta L. 1758), is one of the most        the S. salar genome and an outgroup salmonid species to infer the timing
+widespread freshwater species in the Northern Hemisphere. It presents          of chromosome rearrangements during the recent evolutionary history
+high levels of phenotypic diversity linked to its complex evolutionary         of the Salmo genus; and (iv) to estimate the genome-wide local variation
+history (Elliott 1994; Bernatchez and Osinov 1995; Bernatchez 2001).           in recombination rate and assess the consequence of this variation on the
+Natural brown trout populations have been intensely studied using              genomic landscape of nucleotide diversity in brown trout.
+molecular markers (e.g., Hansen et al. 2000; Sanz et al. 2006;
+Thaulow et al. 2014; Berrebi 2015; Leitwein et al. 2016), but previous         MATERIALS AND METHODS
+population genetics and phylogeography studies that usually relied on a
+limited number of markers did not integrate linkage map information            Experimental crosses
+(but see Hansen and Mensberg 2009; Hansen et al. 2010). The micro-             Two F1 hybrid families, each comprising two parents and 150 offspring,
+satellite linkage map available until now in brown trout (Gharbi et al.        were used for the linkage map analysis. Both were obtained by crossing
+2006) contains 300 markers (288 microsatellites and 13 allozymes),            one parent of Atlantic origin with one parent of Mediterranean origin
+distributed over 37 of the 40 linkage groups (LGs) expected in this            (Bernatchez 2001). The F0 progenitors were either from a domestic
+species (2n = 80, Martinez et al. 1991; Phillips and Ráb 2001). In order       Mediterranean strain lineage originally bred in the Babeau hatchery
+to follow the tendency toward an increasing number of markers in               [described in Bohling et al. (2016)] and a domestic Atlantic strain
+brown trout genetic studies (Leitwein et al. 2016), a higher density           lineage originating from the Cauterets hatchery and independently
+linkage map is needed to increase mapping resolution and provide               reared from the Mediterranean strain at the Babeau hatchery. The
+positional information for genome scans and association studies. The           Cauterets strain is one of the common, internationally distributed Atlan-
+development of a high-density linkage map in brown trout should ﬁnd            tic strains (comATL category; Bohling et al. 2016). Crosses were per-
+at least two direct applications.                                              formed in December 2015 at the Babeau hatchery as follows: FAMILY 1,
+    First, although the brown trout is the closest relative of the Atlantic    one Atlantic female · one Mediterranean male; and FAMILY 2, one
+salmon (S. salar L. 1758), the two species drastically differ in their         Atlantic male · one Mediterranean female. Progenies were killed in
+number of chromosomes (S. salar 2n = 54–58, Brenna-Hansen et al.               February 2016, after full resorption of the yolk sac (ﬁsh size 2 cm).
+2012; S. trutta 2n = 80, Phillips and Ráb 2001), indicative of a high
+frequency of chromosome rearrangements. For understanding the                  DNA extraction, library preparation, and sequencing
+chromosomal evolution in the Salmo genus, a comparison between                 Whole genomic DNA was extracted from caudal ﬁn clips for the four
+the genome architecture of the Atlantic salmon (Lien et al. 2016) and          parents of the two crosses and from tail clips of 150 offspring of each
+the brown trout, using other salmonid linkage maps as outgroups, is            family, using the commercial Thermo Scientiﬁc KingFisher Flex Cell and
+needed. The availability of important genomic resources in salmonids           Tissue DNA kit. Individual DNA concentration was quantiﬁed using
+coupled with recent methodological advances in linkage map compar-             both a NanoDrop ND-8000 spectrophotometer (Thermo Fisher Scien-
+isons (Sutherland et al. 2016) provide favorable conditions for new            tiﬁc) and Qubit 1.0 Fluorometer (Invitrogen, Thermo Fisher Scientiﬁc).
+insights into the recent history of chromosomal rearrangement in the           Double digest RAD sequencing library preparation was performed
+Salmo genus.                                                                   following Leitwein et al. (2016). Brieﬂy, DNA was digested with two
+
+
+
+1366 |      M. Leitwein et al.
+Figure 1 The brown trout (Salmo trutta) high-density linkage map. Horizontal black lines within each of the 40 LGs represent mapped RAD
+markers (n = 3977). The most probable chromosome type determined with the RFm method (Limborg et al. 2015a) is indicated above each LG.
+Green boxes indicate the approximate position of the centromere for metacentric LGs. Red dots represent the position of 89 additional markers
+that were transferred from the previous generation linkage map (see Table S2 for details). A, acrocentric; M, metacentric; U, undetermined.
+
+
+restriction enzymes (EcoRI-HF and MspI) and the digested genomic DNA            option (-c) in the genotypes module was used for automated correction
+was then ligated to adapters and barcodes. Ligated samples with unique          of false-negative heterozygote calls. The map type “cross CP” for het-
+barcodes were pooled in equimolar proportions and CleanPCR beads (GC            erogeneously heterozygous populations was selected to export haplo-
+Biotech, Alphen aan den Rijn, The Netherlands) were used to select frag-        typic genotypes in the JoinMap 4.0 format (Van Ooijen 2006). For
+ments sized between 200 and 700 bp. The size selected fragments were            importation into JoinMap, only the loci shared between FAMILY 1 and
+ampliﬁed by PCR and tagged with a unique index speciﬁcally designed for         FAMILY 2 were kept, leaving a total of 7680 mappable loci in both families.
+Illumina sequencing (Peterson et al. 2012). For progenies, PCR products
+were pooled in equimolar ratios into four pools. Each pool was sequenced        Linkage mapping
+in a single Illumina HiSequation 2500 (i.e., 75 F1 progenies per lane),         Both family data sets were ﬁltered into JoinMap 4.0 (Van Ooijen 2006) to
+producing 125-bp paired-end reads. The four parents were sequenced              remove (i) loci presenting with signiﬁcant segregation distortion, (ii) loci in
+together in a single lane in order to obtain a higher coverage depth.           perfect linkage (i.e., similarity of loci = 1), and (iii) individuals with high
+                                                                                rates of missing genotypes (.25%). After this ﬁrst ﬁltering step, 5635 and
+Genotyping pipeline                                                             5031 loci remained in FAMILY 1 and FAMILY 2, respectively. Only those that
+Bioinformatic analyses followed the same procedure as in Leitwein et al.        were shared by the two families were kept, resulting in a subset of 4270 ﬁl-
+(2016). Brieﬂy, raw reads that passed an Illumina purity ﬁlter and were of      tered informative loci. A random subset of 4000 loci common to both
+sufﬁcient FastQC quality (. 28) were demultiplexed, cleaned, and                families were ﬁnally selected, which corresponds to the maximum number
+trimmed with process_radtags.pl implemented in Stacks v1.35                     of loci handled by JoinMap 4.0. We then discarded four offspring in
+(Catchen et al. 2013). The Atlantic salmon genome (GenBank accession            FAMILY 1 and six offspring in FAMILY 2 due to high rates of missing genotypes
+number: GCA_000233375.4_ICSASG_v2; Lien et al. 2016) was used to                (.20%). Markers were then grouped independently within each family
+determine individual genotypes at RAD markers using a reference map-            using the “independence LOD” parameter in JoinMap, with a minimum
+ping approach. First, reads were aligned to the S. salar genome with the        LOD value of 10. Unassigned markers were second assigned using the
+BWA-mem program (Li and Durbin 2010). Alignment result ﬁles were                strongest cross-linkage option with a LOD threshold of 5. Marker ordering
+processed into pstacks to build loci and call haplotypes for each individ-      was ﬁnally estimated within each group using the regression mapping
+ual (using m = 3 and a = 0.05). Individuals with a minimum mean                 algorithm and three rounds of ordering. The Kosambi mapping function
+coverage depth under 7· were removed, resulting in a data set of 147 off-       was used to estimate genetic distances between markers in centimorgan.
+spring in FAMILY 1 and 149 offspring in FAMILY 2. Hereafter, a RAD locus        Finally, loci with undetermined linkage were removed and a consensus
+is deﬁned as a sequence of 120 bp, and thus can contain more than one           map was produced between families using the map integration function
+SNP deﬁning different haplotypes. A reference catalog of RAD loci was           after identifying homologous LGs between FAMILY 1 and FAMILY 2.
+built with cstacks from the four parents of the two crosses (FAMILY 1 and
+FAMILY 2). Each individual offspring and parent were then matched               Estimation of centromere location and
+against the catalog with sstacks. Then, for each family independently,          chromosome type
+the genotypes module was executed to identify mappable makers that              The method recently developed by Limborg et al. (2015a) was used to
+were genotyped in at least 130 offspring in each family, and with               identify chromosome types (acrocentric, metacentric) and to determine
+a minimum sequencing depth of ﬁve reads per allele. The correction              the approximate centromere position of metacentric chromosomes.
+
+
+
+                                                                             Volume 7 April 2017 |         A Dense Salmo trutta Linkage Map | 1367
+n Table 1 Summary of the main features of the brown trout (Salmo trutta) high-density linkage map based on the 3977 mapped markers
+distributed over the 40 LGs described in this study
+                                   Number of
+                                      SNP
+                                    Markers               Density
+  Brown            Distance        Mapped to             (markers/         Recombination            LG_Map              Atlantic               Brook             Northern
+  Trout LG           (cM)           Each LG                cM)              Rate (cM/Mb)             Gharbi             Salmon                 Charr              Pikea
+
+BT-01a               46.308              252                5.44                  1.43               BT-10             Ssa16qb                BC-05a                22.2
+BT-01b                                                                                               BT-06             Ssa29                  BC-05b                22.1
+BT-02a               45.621              130                2.85                  0.82               BT-05             Ssa7q                  BC-02b                23.1
+BT-02b                                                                                               BT-15             Ssa7p                  BC-02a                24.1
+BT-03                14.635               47                3.21                  0.39               BT-16             Ssa3q                  BC-08a                11.2
+                                                                                                     BT-24
+BT-04                20.902              249               11.91                  0.4                BT-32             Ssa20qa                BC-40                 13.2
+BT-05b               40.51               140                3.46                  0.56               BT-6              Ssa6q                  BC-31                 18.2
+BT-05a                                                                                               BT-35             Ssa6p                  BC-14                 11.1
+BT-06a               53.049              139                2.62                  0.48               BT-27             Ssa 12qa               BC-03b                 9.2
+BT-06b                                                                                                                 Ssa 12qb               BC-03a                17.1
+BT-07                28.088              102                3.63                  0.7                BT-9              Ssa 25                 BC-24                 16.2
+BT-08                19.814               96                4.85                  0.89               -                 Ssa 17qa               BC-39                 22.1
+BT-09                44.687               88                1.97                  1.18               BT-13             Ssa 1p                 BC-12                 15.2
+BT-10                32.513               85                2.61                  0.68               BT-27             Ssa 13qb               BC-08b                 7.1
+BT-11b               65.086               79                1.21                  1.65               BT-12             Ssa 5q                 BC-07a                20.1
+BT-11a                                                                                                                 Ssa 5p                 BC-07b                 4.2
+BT-12                33.021               60                1.82                  0.7                -                 Ssa 2p                 BC-29                 20.2
+BT-13                28.807               64                2.22                  0.36               -                 Ssa 26                 BC-06a                 2.1
+BT-14                47.143               61                1.29                  1.23               BT-36             Ssa 28                 BC-27                  5.2
+BT-15                29.805               59                1.98                  1.6                BT-04             Ssa 4p                 BC-04b                25.1
+                                                                                                                       Ssa 23                 BC-04a                 8.1
+BT-16                29.837               56                1.88                  0.59               -                 Ssa 1qb                BC-13                 14.1
+BT-17                40.655               24                0.59                  1.13               BT-28             Ssa 15qb               BC-30                 12.2
+BT-18                25.58               207                8.09                  0.5                BT-16             Ssa 3p                 BC-11                  3.2
+BT-19                34.485               69                2                     1.04               BT-22             Ssa 24                 BC-06b                13.1
+BT-20                23.814               60                2.52                  0.65               -                 Ssa 2q                 BC-42                  9.1
+BT-21                42.194              187                4.43                  1.43               BT-25             Ssa 16qa               BC-20                 19.2
+BT-22                30.433              145                4.76                  0.6                BT-30             Ssa 4q                 BC-09                  7.2
+BT-23b               38.057              141                3.7                   0.5                BT-02             Ssa 9qb                BC-33                  4.1
+BT-23a                                                                                                                 Ssa 9qc                BC-38                  1.2
+BT-24                37.805              139                3.68                  1.11               BT-31             Ssa 21                 BC-26                 16.1
+BT-25                23.843              131                5.49                  0.63               BT-07             Ssa 10qb               BC-15                 19.1
+BT-26                41.025              113                2.75                  0.45               BT-33             Ssa 22                 BC-21                 17.2
+BT-27                33.275              111                3.34                  0.21               BT-26             Ssa 13qa               BC-18                 12.1
+BT-28                35.425              109                3.08                  1.05               BT-23             Ssa 18qa               BC-36                  6.2
+                                                                                                                       Ssa 18qb               BC-32                 24.1
+BT-29                36.675              105                2.86                  0.52               BT-29             Ssa 27                 BC-23                 10.1
+BT-30                21.4                102                4.77                  0.37               BT-23             Ssa 1qa                BC-01b                 6.1
+BT-31                24                   99                4.13                  1.33               BT-02             Ssa 9qa                BC-35                 15.1
+BT-32                39.782               87                2.19                  0.81               -                 Ssa 14qa               BC-22                  3.1
+BT-33                20.438               73                3.57                  1.23               -                 Ssa 8q                 BC-41                 25.2
+BT-34                31.085               67                2.16                  1.03               BT-14             Ssa 20qb               BC-25                  1.1
+BT-35                44.948               68                1.51                  1.22               BT-12             Ssa 10qa               BC-17                  8.2
+                                                                                                     BT-35
+BT-36a               42.241               61                1.44                  0.44               BT-13             Ssa 11qa               BC-28                  2.2
+BT-36b                                                                                                                 Ssa 11qb               BC-10                 14.2
+BT-37                84.844               63                0.74                  4.1                -                 Ssa 14qb               BC-34                 10.2
+BT-38                19.365               49                2.53                  1.57               BT-15             Ssa 17qb               BC-37                 23.2
+BT-39                36.825               37                1                     1.08               BT-28             Ssa 15qa               BC-19                 18.1
+BT-40a               15.12                23                1.52                  0.58               -                 Ssa 19qb               BC-01a                 5.2
+BT-40b                                                                                                                 Ssa 19qa               BC-16                 21.2
+Whole             1403.14              3977                 3.15                  0.88
+  Genome
+The correspondence with LGs of the former generation linkage map established by Gharbi et al. (2006) is reported. The mean recombination rate is reported for each LG, as well
+as syntenic relationships with homologous chromosome arms from Atlantic salmon (S. salar), the brook charr (Salvelinus fontinalis) used as an outgroup for the Salmo genus, and
+the northern pike (Esox lucius) used as a nonduplicated outgroup for salmonids. The northern pike chromosomes are listed twice to accommodate the duplicate orthologs in the
+salmonid species (Sutherland et al. 2016). Boldface corresponds to the seven pairs involved in homeologous pairing (i.e., tetrasomic inheritance) in S. salar (Lien et al. 2016).
+a
+  Data retrieved from Table 2 of Sutherland et al. (2016).
+
+
+
+
+1368 |       M. Leitwein et al.
+                                                                                                                     Figure 2 Plots illustrating the
+                                                                                                                     recombination frequency esti-
+                                                                                                                     mates (RFm) for intervals be-
+                                                                                                                     tween markers along two different
+                                                                                                                     LGs. For each LG, RFm was cal-
+                                                                                                                     culated from both chromosomal
+                                                                                                                     extremities (right: red circles; left:
+                                                                                                                     blue circles), using each of the two
+                                                                                                                     terminal markers as a reference
+                                                                                                                     starting point. The RFm plot of (A)
+                                                                                                                     LG BT-22 illustrates a classical
+                                                                                                                     acrocentric pattern, the centro-
+                                                                                                                     mere position remains undeter-
+                                                                                                                     mined with regard to which LG
+                                                                                                                     extremity, while (B) LG BT-28
+                                                                                                                     displays a classical metacentric
+                                                                                                                     pattern with a centromere position
+                                                                                                                     70 cM. The RFm plots of all
+                                                                                                                     brown trout LGs obtained in
+                                                                                                                     the two families are illustrated in
+                                                                                                                     Figure S1.
+
+
+
+This method uses phased progeny genotypes to detect individual re-                An additional comparison was performed between the S. salar high-
+combination events in comparison with parental haplotype combina-             density linkage map published by Tsai et al. (2016) and the S. trutta
+tions. For each LG, the cumulated number of recombination events              consensus linkage map developed in this study. We ran the MAP-
+between the ﬁrst marker and increasingly distant markers was com-             COMP pipeline (Sutherland et al. 2016) to identify blocks of conserved
+puted from both extremities, using each terminal marker as a reference        synteny and orthologous chromosome arms between the Atlantic
+starting point. When covering a full chromosome arm, the recombina-           salmon and the brown trout maps, using the Atlantic salmon genome
+tion frequency (RFm) values are expected to reach a plateau of 0.5,          as a reference. Conserved synteny blocks were visualized with the
+thus allowing the determination of chromosome morphology and the              web-based VGSC (Vector Graph toolkit of genome Synteny and Col-
+approximate centromere location for metacentric chromosomes [see              linearity: http://bio.njfu.edu.cn/vgsc-web/). The brook charr (Salvelinus
+Limborg et al. (2015a) for details]. We used the subset of markers that       fontinalis) linkage map published in Sutherland et al. (2016) was used
+were found heterozygous only in the female parent to phase progeny            as an outgroup to identify chromosome rearrangements that occurred
+haplotypes within each family. We only focused on female informative          within the Salmo lineage.
+sites because the lower recombination rate in male salmonids makes                In order to estimate the genome-wide averaged net nucleotide
+them less adequate for inferring centromere locations (Limborg et al.         divergence between S. trutta and S. salar (da), we used the mean nu-
+2015a). Moreover, lower male recombination rates have been reported           cleotide diversity within S. trutta (pw, averaged between Atlantic and
+in brown trout (Gharbi et al. 2006). The phased genotypes data sets           Mediterranean lineages) (Leitwein et al. 2016), and the absolute nucleo-
+were used to estimate RFm for intervals between markers along each            tide divergence between S. trutta and S. salar (pb, also called dxy). The
+LG. Finally, we plotted the RFm calculated from each LG extremity to          net divergence was estimated as da = pb 2 pw, by supposing that the
+determine the chromosome type and the approximate location of the             mean nucleotide diversity in S. salar (which is not available) was close
+centromere for metacentric chromosomes.                                       to the mean nucleotide diversity estimated in S. trutta. To estimate pb,
+                                                                              we used the 3977 consensus sequences of the RAD loci integrated in our
+Map comparisons                                                               S. trutta linkage map, and aligned them with BWA_mem to the At-
+The microsatellite linkage map established by Gharbi et al. (2006) was        lantic salmon reference genome. Then, the total number of mismatches
+compared and anchored to our new high-density linkage map using the           divided by the total number of mapped nucleotides was used to provide
+MAPCOMP pipeline (available at https://github.com/enormandeau/                an estimate of pb.
+mapcomp/) (Sutherland et al. 2016). The microsatellite markers’
+primer sequences retrieved from Gharbi et al. (2006), as well as the ﬁve      Estimation of genome-wide recombination rates
+microsatellites used in Leitwein et al. (2016) and the lactate dehydro-       To estimate local variation in recombination rate across the ge-
+genase (LDH-C1) gene from McMeel et al. (2001) were aligned with              nome, we compared our newly constructed genetic map of S. trutta
+BWA_aln (Li and Durbin 2010) to the Atlantic salmon reference ge-             to the physical map of S. salar with MAREYMAP (Rezvoy et al. 2007).
+nome. Only single hit markers with a quality score (MAPQ) above               In order to reconstruct a collinear reference genome for each
+10 were retained. The 3977 RAD markers integrated in the high-density         brown trout LG, physical positions of brown trout RAD markers
+S. trutta linkage map (see Results) were also aligned to the S. salar         on the salmon genome were extracted from the BWA_mem align-
+reference genome with BWA_mem. Microsatellite and LDH markers                 ment for each block of conserved synteny previously identiﬁed
+were anchored onto the RAD linkage map by identifying the closest             with MAPCOMP. The Loess method was used to estimate local
+RAD locus located on the same contig or scaffold. Pairing with closely        recombination rates. It performs a local polynomial regression to
+linked RAD markers enabled us to position markers from the previous           ﬁt the relationship between the physical and the genetic distances.
+generation map onto the newly developed linkage map.                          The window size, deﬁned as the percentage of the total number of
+
+
+
+                                                                           Volume 7 April 2017 |       A Dense Salmo trutta Linkage Map | 1369
+Figure 3 Dual synteny plot showing conserved syntenic blocks and chromosome rearrangements between Salmo salar (Ssa) and Salmo trutta (BT)
+LGs. Chromosomes arms (p, qa and qb) are speciﬁed for S. salar LGs, and the seven pairs of chromosome arms that still exhibit residual tetrasomy
+in salmon appear in red (Lien et al. 2016).
+
+
+markers to take into account for ﬁtting the local polynomial curve,         Data availability
+was set to 0.9 to account for local uncertainties due to the high rate      Supplemental Material, Table S1 contains RAD markers IDs, consensus
+of chromosomal rearrangements between species. A recombina-                 sequences, mapping position on the brown trout linkage map, physical
+tion rate equal to the weighted mean recombination rate of the two          position on the Atlantic salmon genome, and estimation of local re-
+closest markers on the genetic map was assigned to the markers              combination rate. Table S2 contains correspondence between the
+that were not used for ﬁtting.                                              microsatellite and the new RAD linkage map. Figure S1 shows RFm
+                                                                            plots obtained for each female haploid data set. Figure S2 shows Map-
+                                                                            Comp Oxford plot comparing the brown trout to the Atlantic salmon
+Correlation between recombination rate and
+                                                                            linkage map, with markers paired through the Atlantic salmon genome.
+nucleotide diversity
+                                                                            Figure S3 shows distribution of female and male marker positions along
+In order to test for a correlation between local recombination rate and
+                                                                            each LG for FAMILY 1. File S1 is an archive containing the .loc and
+nucleotide diversity in brown trout, we used the estimate of nucleotide
+                                                                            .map ﬁles from both families. Demultiplexed sequence reads aligned
+diversity (p) in the Atlantic lineage (based on 20 individuals). These
+                                                                            against the Atlantic salmon genome (in Bam ﬁle format) are available
+estimates of nucleotide diversity were taken from Leitwein et al. (2016),
+                                                                            at NCBI Short Read Archive under accession number PRJNA371687.
+in which brown trout populations and hatchery strains of different
+origins showed highly correlated genome-wide variation patterns in
+                                                                            RESULTS
+nucleotide diversity. Markers with a recombination rate value .2
+cM/Mb or p , 0.008 were considered as outliers and were therefore           Construction of a high-density linkage map in S. trutta
+removed from the analysis. This resulted in a data set containing           On average, 35M of ﬁltered paired-end reads were obtained for each of
+3038 markers for which both recombination rate and nucleotide di-           the four parents (two families), and 5M paired-end reads for each of the
+versity information were available.                                         300 F1 (150 progenies per family) analyzed in this study. The retained
+
+
+
+1370 |     M. Leitwein et al.
+                                                                                   The identiﬁcation of orthologous chromosomes arms between
+                                                                               S. trutta (40 LGs) and S. salar (29 LGs) revealed numerous differences,
+                                                                               including fusions and ﬁssions between the two species (Figure 3 and
+                                                                               Table 1). We found 15 one-to-one ortholog pairs (i.e., one brown trout
+                                                                               LG corresponds to a single Atlantic salmon LG, as for example Ssa6 and
+                                                                               BT-5, or Ssa28 and BT-14; Figure 3 and Table 1), 12 cases where
+                                                                               Atlantic salmon chromosomes correspond to either two or three brown
+Figure 4 Summary of ﬁssion and fusion events within the Salmo ge-
+                                                                               trout LGs (e.g., Ssa1, Ssa2; Figure 3), and only two cases where brown
+nus, that were oriented using the brook charr (Salvelinus fontinalis) as       trout LGs correspond to two Atlantic salmon chromosomes (BT-1 and
+an outgroup species. Rearrangements are classiﬁed with regards to              BT-15; Figure 3). Between-species intrachromosomal inversions were
+their occurrence (a) before the S. salar/S. trutta speciation, (b) in the      also observed, as for example an inversion ﬂanked by noninverted
+S. salar branch after speciation, or (c) in the S. trutta branch after         regions between S. salar Ssa6 and S. trutta BT-5 (Figure S2). Apart
+speciation.                                                                    from these inter- and intrachromosomal rearrangements, a strongly
+                                                                               conserved synteny was observed between the brown trout and the
+                                                                               Atlantic salmon genomes. We estimated the average net nucleotide
+subset of 7680 informative markers common to both families had a mean          divergence between S. trutta and S. salar to da = 0.0187 (with pb =
+individual sequencing depth of 112· for the parents and 15· for the            0.0228, and pw = 0.0041).
+progenies, ensuring a good genotype calling quality in both families.              The identiﬁcation of orthologous genomic regions between the
+Among these, a subset of 4000 markers showing no segregation distor-           brook charr, the brown trout, and the Atlantic salmon (Table 1) allowed
+tion in both families was retained to generate a consensus map. The
+                                                                               inference of ancestral and derived chromosomes structures in the
+resulting integrated map thus provides sex- and lineage-averaged ge-
+                                                                               Salmo genus. We found eight chromosomal rearrangements that oc-
+netic distances, which is an important feature considering the reported
+                                                                               curred in the ancestral lineage of the Salmo genus before speciation
+differences in recombination rates between male and female in salmo-
+                                                                               between S. trutta and S. salar. This includes ﬁve fusion events and three
+nids (Allendorf et al. 2015; Tsai et al. 2015), and the existence of di-
+                                                                               ﬁssion events (Figure 4 and Table 1). While no species–speciﬁc re-
+vergent geographic lineages in brown trout (Bernatchez 2001).
+                                                                               arrangement was detected in the S. trutta branch, the Atlantic salmon
+    A total of 3977 markers were assigned to 40 S. trutta (BT) LGs on the
+                                                                               branch contained two ﬁssion events and 13 fusion events (Figure 4).
+integrated map (Figure 1), corresponding to the expected number of
+                                                                               Among these fusions, the one between BT-17 and BT-39 corresponds
+chromosomes in this species (Phillips and Ráb 2001). The total map
+                                                                               to Ssa15, which is known to contain the salmonid sex-determining gene
+length was 1403 cM, and individual LGs ranged from 14.6 cM (BT-03;
+                                                                               sdY in the Atlantic salmon (Li et al. 2011; Yano et al. 2013). Since the
+47 markers) to 84.9 cM (BT-37; 63 markers). The number of markers
+                                                                               microsatellite locus OmyRT5TUF was consistently shown to be linked
+per LG ranged from 23 for BT-40 (15.2 cM) to 252 for BT-01 (46.3 cM).
+                                                                               to sdY in the brown trout (Gharbi et al. 2006; Li et al. 2011), our results
+Detailed information for each LG including the density of markers per
+                                                                               indicate that LG BT-39 might contain the sex-determining gene in
+centimorgan is reported in Table 1. Additional details concerning RAD
+                                                                               brown trout (Table S2), which will need to be investigated further.
+markers IDs, consensus sequences, and mapping position on the
+salmon genome are reported in Table S1.
+                                                                               Estimations of genome-wide and local
+                                                                               recombination rates
+Chromosome morphology and centromere location
+                                                                               The brown trout genome-wide recombination rate averaged across the
+Individual LG RFm plots obtained using estimates of recombination
+                                                                               3721 markers anchored on the Atlantic salmon reference genome (RAD
+frequencies in progeny were generally similar between FAMILY 1 and
+                                                                               markers mapped to ungrouped scaffolds were discarded) was estimated
+FAMILY 2 (Figure S1). Two examples of RFm plots obtained in FAMILY 1 are
+reported in Figure 2 for BT-22 and BT-28. Following Limborg et al.             at 0.88 6 0.55 cM/Mb, and ranged from 0.21 cM/Mb (BT-27) to 4.10
+(2015a), the pattern observed for BT-22 typically reﬂects an acrocen-          (BT-37) across LGs (Table 1 and Table S1). Chromosomal variation in
+tric chromosome type (paired straight lines; Figure 2A), whereas               local recombination rate was observed for most chromosomes (e.g.,
+BT-28 illustrates a metacentric pattern (mirrored hockey stick shapes;         BT-9 and BT-23, Figure 5). A signiﬁcant positive correlation between
+Figure 2B) with the centromere located at 70 cM. The total number             local recombination rate and population nucleotide diversity was de-
+of probable acrocentric chromosomes (Figure 1; type A, n = 32)                 tected (R2 = 0.058; p-value , 0.001; Figure 6).
+largely exceeded the number of metacentric chromosomes (Figure
+1; type M, n = 3). The approximate position of the centromere was              DISCUSSION
+determined for each of the three metacentric LGs (Figure 1; green              This study describes the ﬁrst high-density linkage map in the brown
+boxes). The chromosome type remained undetermined for ﬁve LGs                  trout S. trutta, which extends the microsatellite linkage map already
+(Figure 1; type U) due to low resolution of the RFm plots (Figure S1).         available in this species (Gharbi et al. 2006). The map covers 1403 cM
+                                                                               and encompasses 3977 nondistorted markers distributed across 40 LGs,
+Linkage map comparisons                                                        the centromere location of which was determined for 35 LGs. Results
+A total of 87 microsatellite markers [82 out of 160 from Gharbi et al.         showed consistent chromosome number and morphologies compared
+(2006), ﬁve out of ﬁve from Leitwein et al. (2016)] and the LDH locus          to species karyotype (2n = 80, NF = 100 chromosome arms; Phillips
+(McMeel et al. 2001) were successfully mapped to the Atlantic salmon           and Ráb 2001). High-resolution mapping (average density of 3.15
+genome, and anchored to the new brown trout linkage map using their            markers per cM) was insured by the use of two mapping families, each
+pairing with RAD markers, following the method developed in                    containing 150 offspring, and the number of informative markers in
+Sutherland et al. (2016) (Figure 1; red dots). The correspondence be-          both families was close to the limit over which saturation is expected
+tween the microsatellite linkage map and the new RAD linkage map is            (i.e., 4200 markers). The homogeneous distribution of makers across
+provided in Table S2.                                                          the genome, and the estimation of averaged recombination distances
+
+
+
+                                                                            Volume 7 April 2017 |       A Dense Salmo trutta Linkage Map | 1371
+                                                                                                                    Figure 5 Estimates of local re-
+                                                                                                                    combination rate (r) in centimor-
+                                                                                                                    gan per megabase for markers
+                                                                                                                    located along two Salmo trutta
+                                                                                                                    linkage groups: (A) LG BT-9 and
+                                                                                                                    (B) LG BT-23. The average re-
+                                                                                                                    combination rate (mean r) for
+                                                                                                                    each LG is given at the top left
+                                                                                                                    side of each panel. Local re-
+                                                                                                                    combination rate estimates for
+                                                                                                                    other S. trutta LGs are reported
+                                                                                                                    in Table S1 and the average re-
+                                                                                                                    combination rate of each LG is
+                                                                                                                    provided in Table 1.
+
+
+
+
+between both evolutionary lineages and sexes provide a highly valuable       the possible effect of pseudolinkage was avoided by using nonhybrid
+resource for future genomic, aquaculture, conservation, and eco-             parents with a single lineage ancestry, thus possibly explaining the
+evolutionary studies in brown trout. Beyond these general interests,         observed differences with the previous generation map.
+this new linkage map also reveals strikingly different rates of chromo-          Besides pseudolinkage, another broader consequence of past whole
+somal rearrangements that happened between the brown trout and the           genome duplication in salmonids is the existence of duplicated loci that
+Atlantic salmon since their recent divergence.                               share the same alleles due to homeologous recombination in telomeric
+                                                                             regions (Wright et al. 1983; Allendorf and Danzmann 1997; Allendorf
+A new generation RAD linkage map in brown trout
+                                                                             et al. 2015). These residual tetrasomic regions challenge traditional
+Comparison between the newly developed linkage map and the previous          linkage map reconstruction methods since duplicated loci (isoloci)
+microsatellite map was made possible by the integration of 82 micro-         often show Mendelian segregation distortion, and are therefore fre-
+satellite markers from the former generation map (Gharbi et al. 2006).       quently excluded from linkage mapping analyses. Alternative ap-
+This enabled us to identify the correspondence between homologous            proaches can be used to detect homeologous regions in experimental
+LGs from the two maps, and to detect cases of LG merging (eight out of       crosses (Lien et al. 2011; Brieuc et al. 2014; Waples et al. 2016). In
+40) and LG splitting (nine out of 40) in the microsatellite map com-         brown trout, the location of duplicated regions have been preliminarily
+pared to the RAD linkage map. Consistent with the reported overrep-          established from genome-wide patterns of RAD markers density and
+resentation of acrocentric compared with metacentric chromosomes in          nucleotide diversity projected on the Atlantic salmon reference genome
+the brook charr (i.e., eight metacentric and 34 acrocentric, Sutherland      (Leitwein et al. 2016). Although our new RAD linkage map is based on
+et al. 2016), we found three metacentric and 32 acrocentric chromo-          nondistorted markers and therefore probably displays a reduced
+somes in the brown trout. The morphology of ﬁve chromosomes could            marker density in regions exhibiting tetrasomic inheritance, it does
+not be determined from the analysis of RFm plots alone. However,             not completely exclude such regions. This is illustrated by the mapping
+BT-11 was likely a metacentric chromosome based on its correspon-            of multiple RAD loci within the telomeric region of the seven pairs of
+dence with the Atlantic salmon LG Ssa5 (Figure 3), and BT-17, BT-27,         homeolog chromosome arms that retain residual tetrasomy in the At-
+and BT-37 were likely acrocentric chromosomes due to single corre-           lantic salmon genome (Lien et al. 2016) (Figure 3). Except for three of
+spondences with acrocentric chromosomes of the Atlantic salmon and           these 14 regions that received relatively few markers (Ssa3q, Ssa11qa,
+brook charr linkage maps (Table 1). This represents a total number of        and Ssa17qa on the salmon map; Figure 3), the remaining arms were
+chromosome arms ranging from 88 to 90, which is lower but quite close        well covered in our RAD linkage map, indicating that the ﬁltering of
+to the 96–104 interval previously estimated in S. trutta (Martinez et al.    non-Mendelian markers did not completely exclude the telomeric re-
+1991; Phillips and Ráb 2001). Our assessment of chromosome type did          gions affected by homeologous crossovers. This feature of our RAD
+not perfectly match the results from Gharbi et al. (2006), since the three   linkage map should insure a more even recombination rate estimation
+metacentric chromosomes identiﬁed here were found to be either ac-           between sexes (Lien et al. 2011), since the commonly observed lower
+rocentric or undetermined in their study. However, the metacentric           recombination rate in males compared to females in salmonids could
+chromosomes BT-2 and BT-5 identiﬁed here had more than a single              be partly due to a poor characterization of telomeric regions in mapping
+matching LG in the former microsatellite map, which suggests that            studies (Allendorf et al. 2015). In order to evaluate the extent to which
+these homologs represent the two telomeric regions of a larger meta-         male and female informative markers tend to map to distinct regions,
+centric LG that has been reconstructed in our study. On the contrary,        we compared their positions along each LG in FAMILY 1 that received the
+the three metacentric chromosomes identiﬁed in Gharbi et al. (2006)          highest number of mapped markers (Figure S3). We observed that on
+appeared to be acrocentric using the phase information available from        average, informative markers in the male parent were less evenly dis-
+our data set. This could be the consequence of pseudolinkage in the          tributed across LGs and tended to aggregate in regions containing lower
+microsatellite map built using males of hybrid origin, in which the          densities of female informative markers. Although this might also re-
+preferential pairing of conspeciﬁc homeologs followed by alternate           ﬂect a poor positioning of male markers due to low recombination rates
+disjunction may have generated an excess of nonparental gametes              in males (Sutherland et al. 2016), the sex-averaged recombination dis-
+(Morrison 1970; Wright et al. 1983; Allendorf et al. 2015). In our study,    tances in our consensus linkage map should provide relevant estimates
+
+
+
+1372 |     M. Leitwein et al.
+Figure 6 Genome-wide positive correlation between the mean nucleotide diversity in the Atlantic brown trout lineage (p) and the local re-
+combination rate (r, in centimorgan per megabase), based on 3038 SNP markers (R2 = 0.058; p-value , 0.001).
+
+
+of recombination rate along chromosomes for future eco-evolutionary             2016). However, the timing of these rearrangements remains largely
+studies. For instance, understanding genome-wide introgression pat-             unknown due to the lack of a closely related species in previous studies.
+terns in nature needs to integrate information from both male and               Because S. trutta is the most closely related species to S. salar among
+female recombination rate.                                                      salmonids, the new brown trout RAD linkage map allowed for inferring
+    Following the same idea, integrating maps between parents of                the phylogenetic positions of the chromosome arm rearrangements
+different lineage origins (Atlantic and Mediterranean) allowed us to            that occurred within the Salmo genus. The ancestral state of Salmo
+generate a consensus linkage map in which the potential differences in          chromosome structure was further resolved using the brook charr as
+recombination rates between these two allopatric lineages are smooth-           an outgroup within salmonids, as well as other salmonid species (e.g.,
+ened. Our results suggest that no fusion polymorphism occurs between            the lake whiteﬁsh Coregonus clupeaformis) when necessary (Sutherland
+the two brown trout lineages. This is consistent with the lack of species–      et al. 2016). This enabled us to identify ﬁve fusion events and three
+speciﬁc chromosomal rearrangement following speciation with the                 ﬁssion events (Table 1) that occurred in the Salmo ancestral lineage
+Atlantic salmon (Figure 4), and the stable chromosome number pre-               before the Atlantic salmon/brown trout speciation. This is relatively
+viously observed in brown trout (Hartley and Horne 1984; Martinez               small compared to the total number of chromosomal rearrangements
+et al. 1991; Phillips and Ráb 2001). Therefore, the lineage-averaged            that occurred within the whole Salmo branch. Thus, most of the ﬁssion
+recombination distances provided here are probably not affected by              and fusion events that were observed in the Atlantic salmon genome
+potential interchromosomal rearrangements within the S. trutta spe-             (Sutherland et al. 2016) most probably occurred after the divergence
+cies. The lineage-averaged consensus map will therefore be valuable to          between the two Salmo species. The net nucleotide divergence between
+future conservation genomic studies, considering the extensive human-           S. salar and S. trutta was here estimated to 1.87%, which indicates a
+mediated admixture between Atlantic and Mediterranean brown trout               relatively recent divergence time between these two sister species. Sur-
+populations in southern Europe (Berrebi et al. 2000; Sanz et al. 2006;          prisingly, all of the interchromosomal rearrangements that occurred
+Thaulow et al. 2014; Berrebi 2015).                                             after the salmon/trout speciation happened in S. salar. Indeed, we did
+                                                                                not observe any fusion/ﬁssion events within the S. trutta branch (Figure
+The recent evolution of chromosomal rearrangements                              4), whereas 15 rearrangements mostly involving fusions (13 fusions and
+in the Salmo genus                                                              two ﬁssions) speciﬁcally occurred in the Atlantic salmon branch. These
+Salmonids have been undergoing a rediploidization process since a               Robertsonian translocations explain the increased number of metacen-
+whole genome duplication event that occurred 60 MYA (Crête-Lafrenière          tric chromosomes in the Atlantic salmon compared to the brown trout,
+et al. 2012; Near et al. 2012; Macqueen and Johnston 2014; Lien                 which were produced by the recent fusion of acrocentric chromosomes
+et al. 2016). This process, also described as functional diploidization         (Ssa1 to Ssa4; Figure 3 and Table 1). However, some fusion events have
+by Ohno (1970), was accompanied by numerous chromosomal rearrange-              also likely resulted in the formation of acrocentric chromosomes in the
+ments within the salmonid family, making linkage maps of prime                  Atlantic salmon (e.g., Ssa15; Figure 3 and Table 1), which could partly
+importance for studying the complex history of chromosomal evolu-               explain the apparent loss of chromosomes arms in this species
+tion in salmonids (Sutherland et al. 2016). Several studies have pointed        (Allendorf and Thorgaard 1984). Finally, intrachromosomic rearrange-
+out a particularly high number of chromosomal rearrangements in the             ments also occurred along the S. salar branch, as illustrated by the
+lineage leading to the Atlantic salmon, involving mainly chromosome             inversion detected within Ssa6, the homologous LG to BT-5 (Figure
+fusions that reduced the number of chromosomes to 29 in this species            3 and Figure S2). Altogether, our results support the previous views that
+(Allendorf and Thorgaard 1984; Lien et al. 2016; Sutherland et al.              many chromosomal rearrangements have occurred within the Salmo
+
+
+
+                                                                             Volume 7 April 2017 |       A Dense Salmo trutta Linkage Map | 1373
+lineage (Allendorf and Thorgaard 1984; Sutherland et al. 2016), but also      chromosome structure in sister species with ,2% net nucleotide diver-
+demonstrate that most of them recently happened in the Atlantic               gence. Recombination rate variation was found to inﬂuence genome-
+salmon branch, while at the same time, S. trutta has retained a chro-         wide nucleotide diversity patterns in brown trout. These new genomic
+mosomal architecture close to the ancestral form of the Salmo genus.          resources will provide important tools for future genome scans, QTL
+The reasons for such a contrasted evolution of chromosome structure           mapping, and genome-wide association studies in brown trout. It also
+between these two species remain to be investigated.                          paves the way to enable a new generation of conservation genomics
+                                                                              approaches that will look at the ﬁtness consequences of introgression
+Recombination rate variation across the brown                                 of foreign alleles into wild populations at the haplotype level.
+trout genome
+Despite extensive chromosomal rearrangements in the S. salar lineage,         ACKNOWLEDGMENTS
+we could identify highly conserved synteny blocks within orthologous          We thank E. Ravel and people from the Fédération Départementale de
+chromosome arms to reconstitute local alignments between the brown            la Pêche de l’Hérault (France) and the Babeau hatchery for their help
+trout linkage map and the salmon physical map. One of our main                at several stages of this project. We also thank Y. Anselmetti for his
+objectives was to use these comparisons between maps to estimate local        kind advice on bioinformatics computing, M. Limborg for his helpful
+recombination rate variations along each LG in S. trutta (Figure 5). The      scripts and advice, and B. Sutherland for his suggestions with Map-
+average genome-wide recombination rate was estimated at 0.88 cM/Mb,           Comp. This project largely beneﬁted from the Montpellier Bioinfor-
+with strong heterogeneity being found across the genome. Highly               matics Biodiversity cluster computing platform. Presequencing steps
+recombining regions were observed at the extremities of some LGs              necessary for the production of SNP data were performed at the
+(e.g., BT-9; Figure 5), and genomic regions associated with very low          Genotyping and Sequencing facility of the LabEx CeMEB (Centre
+recombination rates were also observed (e.g., BT-23; Figure 5). In order      Méditerranéen pour l’Environnement et la Biodiversité, Montpellier),
+to provide an indirect assessment of this local recombination rate esti-      and RAD sequencing was performed at Montpellier GenomiX facility
+mation for future eco-evolutionary studies, we veriﬁed that the fre-          (Montpellier, France; http://www.mgx.cnrs.fr/). M.L. was partly sup-
+quently observed positive correlation between local recombination             ported by a grant from LabEx CeMEB.
+rate and nucleotide diversity (Corbett-Detig et al. 2015) also occurs in
+brown trout. In a comparative study across a wide range of species,           LITERATURE CITED
+Corbett-Detig et al. (2015) suggested that the strength of this correlation   Allendorf, F. W., and G. H. Thorgaard, 1984 Tetraploidy and the evolu-
+                                                                                  tion of salmonid ﬁshes, pp. 1–53 in Evolutionary Genetics of Fishes,
+is highly variable among species, being generally stronger in species with
+                                                                                  Monographs in Evolutionary Biology, Volume 1, edited by Turner, B. J..
+large vs. small census population size [but see Coop (2016)]. Although            Springer, Berlin.
+brown trout populations are usually considered to have relatively small       Allendorf, F. W., and R. G. Danzmann, 1997 Secondary Tetrasomic Seg-
+census sizes (Jorde and Ryman 1996; Palm et al. 2003; Jensen et al. 2005;         regation of MDH-B and Preferential Pairing of Homeologues in Rainbow
+Serbezov et al. 2012), a signiﬁcantly positive correlation was found              Trout. Genetics 145: 1083–9.
+between local recombination rate and nucleotide diversity using poly-         Allendorf, F. W., S. Bassham, W. A. Cresko, M. T. Limborg, L. W. Seeb et al.,
+morphism data from the Atlantic lineage. Thus, recombination rate                 2015 Effects of crossovers between homeologs on inheritance and popula-
+variation across the brown trout genome shapes the chromosomal land-              tion genomics in polyploid-derived salmonid ﬁshes. J. Hered. 106: 217–227.
+scape of neutral genetic diversity by modulating the efﬁciency of selec-      Almodóvar, A., G. G. Nicola, B. Elvira, and J. L. García-Marin, 2006 Introgression
+                                                                                  variability among Iberian brown trout evolutionary signiﬁcant units:
+tion (both positive and negative) at linked neutral sites.
+                                                                                  the inﬂuence of local management and environmental features. Freshw.
+    Variation in local recombination rate across genomic regions not
+                                                                                  Biol. 51: 1175–1187.
+only affects genome-wide variation patterns of polymorphism, but also         Amores, A., J. Catchen, A. Ferrara, Q. Fontenot, and J. H. Postlethwait,
+has a profound inﬂuence on a range of evolutionary mechanisms of                  2011 Genome evolution and meiotic maps by massively parallel DNA
+prime importance in brown trout. This recombination map should                    sequencing: spotted gar, an outgroup for the teleost genome duplication.
+therefore have beneﬁcial outcomes for our understanding of inbreeding             Genetics 188: 799–808.
+depression, local adaptation, and the historical demography of natural        Bernatchez, L., 2001 The evolutionary history of brown trout (Salmo trutta
+populations (Rezvoy et al. 2007; Dukic et al. 2016; Racimo et al. 2015).         L.) inferred from phylogeographic, nested clade, and mismatch analyses
+It will also be of precious help for understanding genome-wide intro-             of mitochondrial DNA variation. Evolution 55: 351–379.
+gression patterns in natural populations that have been restocked with        Bernatchez, L., and A. Osinov, 1995 Genetic diversity of trout (genus
+                                                                                  Salmo) from its most eastern native range based on mitochondrial DNA
+individuals from a different lineage. Finally, a detailed picture of re-
+                                                                                  and nuclear gene variation. Mol. Ecol. 4: 285–298.
+combination rate variation in brown trout will help for choosing SNPs         Berrebi, P., 2015 Three brown trout Salmo trutta lineages in Corsica de-
+for the design of genotyping arrays in future association mapping ex-             scribed through allozyme variation. J. Fish Biol. 86: 60–73.
+periments (e.g., Bourret et al. 2013; Houston et al. 2014).                   Berrebi, P., C. Poteaux, M. Fissier, and G. Cattaneo-Berrebi, 2000 Stocking
+                                                                                  impact and allozyme diversity in brown trout from Mediterranean
+Conclusions                                                                       southern France. J. Fish Biol. 56: 949–960.
+A high-density sex- and lineage-averaged consensus linkage map for S.         Berthelot, C., F. Brunet, D. Chalopin, A. Juanchich, M. Bernard et al.,
+trutta was developed and the morphology (acrocentric or metacentric)              2014 The rainbow trout genome provides novel insights into evolution
+of most chromosomes was identiﬁed. Interspecies comparisons with                  after whole-genome duplication in vertebrates. Nat. Commun. 5: 3657.
+                                                                              Bohling, J., P. Haffray, and P. Berrebi, 2016 Genetic diversity and popula-
+the Atlantic salmon allowed identifying genomic regions of highly
+                                                                                  tion structure of domestic brown trout (Salmo trutta) in France. Aqua-
+conserved synteny within chromosome arms and contribute toward                    culture 462: 1–9.
+a better understanding of recent genome evolution in the genus Salmo.         Bourret, V., M. P. Kent, C. R. Primmer, A. Vasemägi, S. Karlsson et al.,
+A recent and strong acceleration in the rate of chromosomal rearrange-            2013 SNP-array reveals genome-wide patterns of geographical and
+ments was detected in the S. salar branch. These results should stim-             potential adaptive divergence across the natural range of Atlantic salmon
+ulate further research toward understanding the contrasted evolution of           (Salmo salar). Mol. Ecol. 22: 532–551.
+
+
+
+1374 |     M. Leitwein et al.
+Brenna-Hansen, S., J. Li, M. P. Kent, E. G. Boulding, S. Dominik et al.,             Houston, R. D., J. W. Davey, S. C. Bishop, N. R. Lowe, J. C. Mota-Velasco
+    2012 Chromosomal Differences between European and North                              et al., 2012 Characterisation of QTL-linked and genome-wide restric-
+    American Atlantic Salmon Discovered by Linkage Mapping and                           tion site-associated DNA (RAD) markers in farmed Atlantic salmon.
+    Supported by Fluorescence in Situ Hybridization Analysis. BMC                        BMC Genomics 13: 244.
+    Genomics 13: 432.                                                                Houston, R. D., J. B. Taggart, T. Cézard, M. Bekaert, N. R. Lowe et al.,
+Brieuc, M. S., C. D. Waters, J. E. Seeb, and K. A. Naish, 2014 A dense                   2014 Development and validation of a high density SNP genotyping
+    linkage map for Chinook salmon (Oncorhynchus tshawytscha) reveals                    array for Atlantic salmon (Salmo salar). BMC Genomics 15: 90.
+    variable chromosomal divergence after an ancestral whole genome du-              Jensen, L. F., M. M. Hansen, J. Carlsson, V. Loeschcke, and K. L. D. Mensberg,
+    plication event. G3 4: 447–460.                                                      2005 Spatial and temporal genetic differentiation and effective population
+Catchen, J., P. A. Hohenlohe, S. Bassham, A. Amores, and W. A. Cresko,                   size of brown trout (Salmo trutta, L.) in small Danish rivers. Conserv.
+    2013 Stacks: an analysis tool set for population genomics. Mol. Ecol. 22:            Genet. 6: 615–621.
+    3124–3140.                                                                       Jorde, P. E., and N. Ryman, 1996 Demographic genetics of brown trout
+Coop, G., 2016 Does linked selection explain the narrow range of genetic                 (Salmo trutta) and estimation of effective population size from temporal
+    diversity across species? bioRxiv Available at: http://biorxiv.org/content/          change of allele frequencies. Genetics 143: 1369–1381.
+    early/2016/03/07/042598.                                                         Kai, W., K. Nomura, A. Fujiwara, Y. Nakamura, M. Yasuike et al., 2014 A
+Corbett-Detig, R. B., D. L. Hartl, and T. B. Sackton, 2015 Natural selection             ddRAD-based genetic map and its integration with the genome assembly of
+    constrains neutral diversity across a wide range of species. PLoS Biol. 13:          Japanese eel (Anguilla japonica) provides insights into genome evolution
+    e1002112.                                                                            after the teleost-speciﬁc genome duplication. BMC Genomics 15: 233.
+Crête-Lafrenière, A., L. K. Weir, and L. Bernatchez, 2012 Framing the                Kodama, M., M. S. O. Brieuc, R. H. Devlin, J. J. Hard, and K. A. Naish,
+    Salmonidae family phylogenetic portrait: a more complete picture from                2014 Comparative mapping between coho salmon (Oncorhynchus
+    increased taxon sampling. PLoS One 7: e46662.                                        kisutch) and three other salmonids suggests a role for chromosomal
+Dukic, M., D. Berner, M. Roesti, C. R. Haag, and D. Ebert, 2016 A high-                 rearrangements in the retention of duplicated regions following a
+    density genetic map reveals variation in recombination rate across the               whole genome duplication event. G3 4: 1717–1730.
+    genome of Daphnia magna. BMC Genet. 17: 137.                                     Kuang, Y.-Y., X.-H. Zheng, C.-Y. Li, X.-M. Li, D.-C. Cao et al., 2016 The
+Ekblom, R., and J. Galindo, 2011 Applications of next generation se-                     genetic map of goldﬁsh (Carassius auratus) provided insights to the di-
+    quencing in molecular ecology of non-model organisms. Heredity 107:                  vergent genome evolutions in the Cyprinidae family. Sci. Rep. 6: 34849.
+    1–15.                                                                            Kumar, G., and M. Kocour, 2017 Applications of next-generation se-
+Elliott, J. M., 1994 Quantitative Ecology and the Brown Trout. Oxford                    quencing in ﬁsheries research: a review. Fish. Res. 186: 11–22.
+    University Press, Oxford.                                                        Laikre, L., 1999 Conservation genetic management of brown trout (Salmo
+Everett, M. V., M. R. Miller, and J. E. Seeb, 2012 Meiotic maps of sockeye               trutta) in Europe.
+    salmon derived from massively parallel DNA sequencing. BMC Geno-                 Lamaze, F. C., C. Sauvage, A. Marie, D. Garant, and L. Bernatchez,
+    mics 13: 521.                                                                        2012 Dynamics of introgressive hybridization assessed by SNP popu-
+Gagnaire, P.-A., E. Normandeau, S. A. Pavey, and L. Bernatchez,                          lation genomics of coding genes in stocked brook charr (Salvelinus fon-
+    2013a Mapping phenotypic, expression and transmission ratio distor-                  tinalis). Mol. Ecol. 21: 2877–2895.
+    tion QTL using RAD markers in the Lake Whiteﬁsh (Coregonus clupea-               Largiader, C. R., and A. Scholl, 1996 Genetic introgression between native
+    formis). Mol. Ecol. 22: 3036–3048.                                                   and introduced brown trout Salmo trutta L. populations in the Rhone
+Gagnaire, P.-A., S. A. Pavey, E. Normandeau, and L. Bernatchez, 2013b The                River Basin. Mol. Ecol. 5: 417–426.
+    genetic architecture of reproductive isolation during speciation-with-           Larson, W. A., L. W. Seeb, M. V. Everett, R. K. Waples, W. D. Templin et al.,
+    gene-ﬂow in lake whiteﬁsh species pairs assessed by RAD sequencing.                  2014 Genotyping by sequencing resolves shallow population structure
+    Evolution 67: 2483–2497.                                                             to inform conservation of Chinook salmon (Oncorhynchus tshawytscha).
+Gharbi, K., A. Gautier, R. G. Danzmann, S. Gharbi, T. Sakamoto et al.,                   Evol. Appl. 7: 355–369.
+    2006 A linkage map for brown trout (Salmo trutta): chromosome ho-                Larson, W. A., G. J. McKinney, M. T. Limborg, M. V. Everett, L. W. Seeb
+    meologies and comparative genome organization with other salmonid                    et al., 2016 Identiﬁcation of multiple QTL hotspots in sockeye salmon
+    ﬁsh. Genetics 172: 2405–2419.                                                        (Oncorhynchus nerka) using genotyping-by-sequencing and a dense
+Gonen, S., N. R. Lowe, T. Cezard, K. Gharbi, S. C. Bishop et al.,                        linkage map. J. Hered. 107: 122–133.
+    2014 Linkage maps of the Atlantic salmon (Salmo salar) genome de-                Leitwein, M., P. A. Gagnaire, E. Desmarais, S. Guendouz, M. Rohmer et al.,
+    rived from RAD sequencing. BMC Genomics 15: 166.                                     2016 Genome-wide nucleotide diversity of hatchery-reared Atlantic and
+Hansen, M. M., and K. L. D. Mensberg, 2009 Admixture analysis of                         Mediterranean strains of brown trout Salmo trutta compared to wild
+    stocked brown trout populations using mapped microsatellite DNA                      Mediterranean populations. J. Fish Biol. 89: 2717–2734.
+    markers: indigenous trout persist in introgressed populations. Biol. Lett.       Li, H., and R. Durbin, 2010 Fast and accurate long-read alignment with
+    5: 656–659.                                                                          Burrows–Wheeler transform. Bioinformatics 26: 589–595.
+Hansen, M. M., D. E. Ruzzante, E. E. Nielsen, and K. D. Mensberg,                    Li, H., 2011 Statistical Framework for SNP Calling, Mutation Discovery,
+    2000 Microsatellite and mitochondrial DNA polymorphism reveals life-                 Association Mapping and Population Genetical Parameter Estimation
+    history dependent interbreeding between hatchery and wild brown trout                from Sequencing Data. Bioinformatics 27: 2987–93.
+    (Salmo trutta L.). Mol. Ecol. 9: 583–594.                                        Lien, S., L. Gidskehaug, T. Moen, B. J. Hayes, P. R. Berg et al., 2011 A Dense
+Hansen, M. M., K. Meier, and K. L. D. Mensberg, 2010 Identifying foot-                   SNP-Based Linkage Map for Atlantic Salmon (Salmo Salar) Reveals Ex-
+    prints of selection in stocked brown trout populations: a spatio-temporal            tended Chromosome Homeologies and Striking Differences in Sex-Speciﬁc
+    approach. Mol. Ecol. 19: 1787–1800.                                                  Recombination Patterns. BMC Genomics 12: 615.
+Hartley, S. E., and M. T. Horne, 1984 Chromosome relationships in the                Lien, S., B. F. Koop, S. R. Sandve, J. R. Miller, M. P. Kent et al., 2016 The
+    genus Salmo. Chromosoma 90: 229–237.                                                 Atlantic salmon genome provides insights into rediploidization. Nature
+Hecht, B. C., F. P. Thrower, M. C. Hale, M. R. Miller, and K. M. Nichols,                533: 200–205.
+    2012 Genetic architecture of migration-related traits in rainbow and             Limborg, M. T., R. K. Waples, J. E. Seeb, and L. W. Seeb, 2014 Temporally
+    steelhead trout, Oncorhynchus mykiss. G3 2: 1113–1127.                               isolated lineages of pink salmon reveal unique signatures of selection on
+Hohenlohe, P. A., S. J. Amish, J. M. Catchen, F. W. Allendorf, and G. Luikart,           distinct pools of standing genetic variation. J. Hered. 105: 835–845.
+    2011 Next-generation RAD sequencing identiﬁes thousands of SNPs for              Limborg, M. T., G. J. McKinney, L. W. Seeb, and J. E. Seeb, 2015a Recom-
+    assessing hybridization between rainbow and westslope cutthroat trout.               bination patterns reveal information about centromere location on linkage
+    Mol. Ecol. Resour. 11: 117–122.                                                      maps. Mol. Ecol. Resour. 16: 655–661.
+
+
+
+                                                                                  Volume 7 April 2017 |        A Dense Salmo trutta Linkage Map | 1375
+Limborg, M. T., R. K. Waples, F. W. Allendorf, and J. E. Seeb, 2015b Linkage        Rezvoy, C., D. Charif, L. Guéguen, and G. A. Marais, 2007 MareyMap: an
+     mapping reveals strong chiasma interference in sockeye salmon: implica-            R-based tool with graphical interface for estimating recombination rates.
+    tions for interpreting genomic data. G3 5: 2463–2473.                               Bioinformatics 23: 2188–2189.
+Liu, S., Y. Li, Z. Qin, X. Geng, L. Bao et al., 2016 High-density interspeciﬁc      Rondeau, E. B., D. R. Minkley, J. S. Leong, A. M. Messmer, J. R. Jantzen et al.,
+    genetic linkage mapping provides insights into genomic incompatibility              2014 The genome and linkage map of the northern pike (Esox lucius):
+    between channel catﬁsh and blue catﬁsh. Anim. Genet. 47: 81–90.                     conserved synteny revealed between the salmonid sister group and the
+Macqueen, D. J., and I. A. Johnston, 2014 A well-constrained estimate for               Neoteleostei. PLoS One 9: e102089.
+    the timing of the salmonid whole genome duplication reveals major               Sanz, N., M. Cortey, C. Pla, and J. L. García-Marín, 2006 Hatchery intro-
+    decoupling from species diversiﬁcation. Proc. R. Soc. Lond. B Biol. Sci.            gression blurs ancient hybridization between brown trout (Salmo trutta)
+    281: 20132881.                                                                      lineages as indicated by complementary allozymes and mtDNA markers.
+Martinez, P., A. Vinas, C. Bouza, J. Arias, R. Amaro et al., 1991 Cytogenetical         Biol. Conserv. 130: 278–289.
+     characterization of hatchery stocks and natural populations of sea and         Sauvage, C., M. Vagner, N. Derôme, C. Audet, and L. Bernatchez,
+    brown trout from northwestern Spain. Heredity 66: 9–17.                             2012 Coding gene single nucleotide polymorphism mapping and
+May, B., and M. E. Delany, 2015 Meiotic models to explain classical linkage,            quantitative trait loci detection for physiological reproductive traits in
+    pseudolinkage, and chromosomal pairing in tetraploid derivative salmo-              brook charr, Salvelinus fontinalis. G3 2: 379–392.
+    nid genomes: II. Wright is still right. J. Hered. 106: 762–766.                 Serbezov, D., P. E. Jorde, L. Bernatchez, E. M. Olsen, and L. A. Vøllestad,
+McKinney, G. L., W. Seeb, D. Larson, M. Gomez-Uchida, M. Limborg et al.,                2012 Life history and demographic determinants of effective/census size
+    2015 An integrated linkage map reveals candidate genes underlying                   ratios as exempliﬁed by brown trout (Salmo trutta). Evol. Appl. 5: 607–618.
+    adaptive variation in Chinook salmon (Oncorhynchus tshawytscha). Mol.           Slate, J., J. Gratten, D. Beraldi, J. Stapley, M. Hale et al., 2008 Gene mapping
+    Ecol. Resour. 16: 769–783.                                                          in the wild with SNPs: guidelines and future directions. Genetica 136:
+McMeel, O. M., E. M. Hoey, and A. Ferguson, 2001 Partial nucleotide                     97–107.
+    sequences, and routine typing by polymerase chain reaction–restriction          Stapley, J., J. Reger, P. G. D. Feulner, C. Smadja, J. Galindo et al.,
+    fragment length polymorphism, of the brown trout (Salmo trutta) lactate             2010 Adaptation genomics: the next generation. Trends Ecol. Evol. 25:
+    dehydrogenase, LDH-C190 and 100 alleles. Mol. Ecol. 10: 29–34.                    705–712.
+Morrison, W. J., 1970 Nonrandom segregation of two lactate dehydroge-               Sutherland, B. J. G., T. Gosselin, E. Normandeau, M. Lamothe, N. Isabel et al.,
+    nase subunit loci in trout. Trans. Am. Fish. Soc. 99: 193–206.                      2016 Salmonid chromosome evolution as revealed by a novel method
+Near, T. J., R. I. Eytan, A. Dornburg, K. L. Kuhn, J. A. Moore et al.,                  for comparing RADseq linkage maps. Genome Biol. Evol. 8: 3600–3617.
+    2012 Resolution of ray-ﬁnned ﬁsh phylogeny and timing of diversiﬁ-              Thaulow, J., R. Borgstrøm, and M. Heun, 2014 Genetic persistence of an
+    cation. Proc. Natl. Acad. Sci. USA 109: 13698–13703.                                initially introduced brown trout (Salmo trutta L.) population despite
+Nugent, C. M., A. A. Easton, J. D. Norman, M. M. Ferguson, and R. G.                    restocking of foreign conspeciﬁcs. Ecol. Freshwat. Fish 23: 485–497.
+    Danzmann, 2017 A SNP based linkage map of the Arctic charr (Salvelinus          Tsai, H. Y., A. Hamilton, D. R. Guy, A. E. Tinch, S. C. Bishop et al.,
+    alpinus) genome provides insights into the diploidization process after whole       2015 The genetic architecture of growth and ﬁllet traits in farmed At-
+    genome duplication. G3 7: 543–556.                                                  lantic salmon (Salmo salar). BMC Genet. 16: 51.
+Ohno, S., 1970 The enormous diversity in genome sizes of ﬁsh as a re-               Tsai, H. Y., D. Robledo, N. R. Lowe, M. Bekaert, J. B. Taggart et al.,
+    ﬂection of nature’s extensive experiments with gene duplication. Trans.             2016 Construction and annotation of a high density SNP linkage map
+    Am. Fish. Soc. 99: 120–130.                                                         of the Atlantic salmon (Salmo salar) genome. G3 6: 2173–2179.
+Palm, S., L. Laikre, P. E. Jorde, and N. Ryman, 2003 Effective population           Van Ooijen, J. W., 2006 JoinMap 4; Software for the Calculation of
+    size and temporal genetic change in stream resident brown trout (Salmo              Genetic Map in Experimental Populations. Kyazma B.V., Wageningen,
+    trutta, L.). Conserv. Genet. 4: 249–264.                                            Netherlands.
+Perrier, C., V. Bourret, M. P. Kent, and L. Bernatchez, 2013 Parallel and           Wang, L., Z. Y. Wan, B. Bai, S. Q. Huang, E. Chua et al., 2015 Construction
+    nonparallel genome-wide divergence among replicate population pairs of              of a high-density linkage map and ﬁne mapping of QTL for growth in
+    freshwater and anadromous Atlantic salmon. Mol. Ecol. 22: 5577–5593.                Asian seabass. Sci. Rep. 5: 16358.
+Peterson, B. K., J. N. Weber, E. H. Kay, H. S. Fisher, and H. E. Hoekstra,          Waples, R. K., L. W. Seeb, and J. E. Seeb, 2016 Linkage mapping with
+    2012 Double digest RADseq: an inexpensive method for de novo SNP                    paralogs exposes regions of residual tetrasomic inheritance in chum
+    discovery and genotyping in model and non-model species. PLoS One 7:                salmon (Oncorhynchus keta). Mol. Ecol. Resour. 16: 17–28.
+    e37135.                                                                         Wright, J. E., Jr, K. Johnson, A. Hollister, and B. May, 1983 Meiotic models
+Phillips, R., and P. Ráb, 2001 Chromosome evolution in the Salmonidae                   to explain classical linkage, pseudolinkage, and chromosome pairing in
+    (Pisces): an update. Biol. Rev. Camb. Philos. Soc. 76: 1–25.                        tetraploid derivative salmonid genomes. Isozymes 10: 239–260.
+Poteaux, C., D. Beaudou, and P. Berrebi, 1998 Temporal variations of ge-            Yano, A., B. Nicol, E. Jouanno, E. Quillet, A. Fostier et al., 2013 The sex-
+    netic introgression in stocked brown trout populations. J. Fish Biol. 53:           ually dimorphic on the Y-chromosome gene (sdY) is a conserved male-
+    701–713.                                                                            speciﬁc Y-chromosome sequence in many salmonids. Evol. Appl. 6:
+Poteaux, C., F. Bonhomme, and P. Berrebi, 1999 Microsatellite polymor-                  486–496.
+    phism and genetic impact of restocking in Mediterranean brown trout             Zhao, L., Y. Zhang, P. Ji, X. Zhang, Z. Zhao et al., 2013 A dense genetic
+    (Salmo trutta L.). Heredity 82: 645–653.                                            linkage map for common carp and its integration with a BAC-based
+Racimo, F., S. Sankararaman, R. Nielsen, and E. Huerta-Sánchez,                         physical map. PLoS One 8: e63928.
+    2015 Evidence for archaic adaptive introgression in humans. Nat. Rev.
+    Genet. 16: 359–371.                                                                                                    Communicating editor: B. J. Andrews
+
+
+
+
+1376 |      M. Leitwein et al.
+

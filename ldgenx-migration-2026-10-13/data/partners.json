@@ -1,0 +1,197 @@
+{
+  "partners": [
+    {
+      "source_group": "Les instituts de recherche publique",
+      "source_alt": "Marbec",
+      "display_name": "Marbec",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ced440ab3-16/default-6a58ced440ab3-16.png",
+      "local_image_path": "assets/images/4219692fade6__default-6a58ced440ab3-16.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Les instituts de recherche publique",
+      "source_alt": "ifremer",
+      "display_name": "ifremer",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea9c5855-12/default-6a58cea9c5855-12.png",
+      "local_image_path": "assets/images/924ac22c9ca9__default-6a58ec326cbff-12.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Les instituts de recherche publique",
+      "source_alt": "inrae",
+      "display_name": "inrae",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceb2adde4-13/default-6a58ceb2adde4-13.png",
+      "local_image_path": "assets/images/c0e24c86ad35__default-6a58ec4b0e6dd-13.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Les instituts de recherche publique",
+      "source_alt": "cbrs",
+      "display_name": "CNRS",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cebe7bb09-14/default-6a58cebe7bb09-14.png",
+      "local_image_path": "assets/images/0243a0d15b75__default-6a58ec611b7bf-14.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Les instituts de recherche publique",
+      "source_alt": "université montpellier",
+      "display_name": "université montpellier",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce93a36e4-10/default-6a58ce93a36e4-10.png",
+      "local_image_path": "assets/images/c9cb9d77b00d__default-6a58ebfdc2592-10.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "inra start and grow",
+      "display_name": "inra start and grow",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce0c9879c-1/default-6a58ce0c9879c-1.png",
+      "local_image_path": "assets/images/9d43b639bd77__default-6a58ea6467ff6-1.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "Crealia",
+      "display_name": "Crealia",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf5730837-2/default-6a58cf5730837-2.png",
+      "local_image_path": "assets/images/fd67c3e94e39__default-6a58ea6fa72c3-2.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "Montpellier buisness school",
+      "display_name": "Montpellier buisness school",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3071ab9-3/default-6a58ce3071ab9-3.png",
+      "local_image_path": "assets/images/96e5dc1d5d12__default-6a58eac581523-3.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "pôle mer",
+      "display_name": "pôle mer",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce75efb5e-8/default-6a58ce75efb5e-8.png",
+      "local_image_path": "assets/images/465b159e10ee__default-6a58ebbe2b81d-8.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "incubateur",
+      "display_name": "incubateur",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce3f3381a-4/default-6a58ce3f3381a-4.png",
+      "local_image_path": "assets/images/74fda20b3905__default-6a58eadcdc0c6-4.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "incubateur mbs",
+      "display_name": "incubateur mbs",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce8553e5b-9/default-6a58ce8553e5b-9.png",
+      "local_image_path": "assets/images/4ef08db93fd7__default-6a58ebdb74f82-9.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "celimer",
+      "display_name": "celimer",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce48cb100-5/default-6a58ce48cb100-5.png",
+      "local_image_path": "assets/images/1bf09a185bad__default-6a58eafd88671-5.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "BPI FRANCE label deep tech",
+      "display_name": "BPI FRANCE label deep tech",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce5d175ed-6/default-6a58ce5d175ed-6.png",
+      "local_image_path": "assets/images/c2f05cf03e5d__default-6a58eb143a85f-6.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Nous sommes soutenues et accompagnées",
+      "source_alt": "pepite deeptech",
+      "display_name": "pepite deeptech",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ce6b93374-7/default-6a58ce6b93374-7.png",
+      "local_image_path": "assets/images/52d978268d79__default-6a58eba1bbc36-7.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Fédération Nationale des Chasseurs",
+      "display_name": "Fédération Nationale des Chasseurs",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58ceef0f4e3-17/default-6a58ceef0f4e3-17.png",
+      "local_image_path": "assets/images/ffbb56ffe161__default-6a58ecbd094ed-17.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Plastic at sea",
+      "display_name": "Plastic at sea",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf2dd2c6a-22/default-6a58cf2dd2c6a-22.png",
+      "local_image_path": "assets/images/dc1fb8809f06__default-6a58ed48f2fac-22.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Qualyse",
+      "display_name": "Qualyse",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cefb9082b-18/default-6a58cefb9082b-18.png",
+      "local_image_path": "assets/images/053e4f5b747f__default-6a58ecd82f888-18.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "université de corse",
+      "display_name": "université de corse",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cea108230-11/default-6a58cea108230-11.png",
+      "local_image_path": "assets/images/971cdf9bb61a__default-6a58ec16270e1-11.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Pays de l'ours",
+      "display_name": "Pays de l'ours",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf0c8ff4c-19/default-6a58cf0c8ff4c-19.png",
+      "local_image_path": "assets/images/57583766b603__default-6a58ecf45908e-19.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Agence de l'eau",
+      "display_name": "Agence de l'eau",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf46d80f4-24/default-6a58cf46d80f4-24.png",
+      "local_image_path": "assets/images/fc51b4fafa3d__default-6a58ed7eb72c8-24.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "BARBA",
+      "display_name": "BARBA",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf17b7070-20/default-6a58cf17b7070-20.png",
+      "local_image_path": "assets/images/8e1ed3a1bee5__default-6a58ed10189a0-20.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "EPHE",
+      "display_name": "EPHE",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cec8d30cf-15/default-6a58cec8d30cf-15.png",
+      "local_image_path": "assets/images/86d98efc6dca__default-6a58ec830c9fb-15.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "biotope",
+      "display_name": "biotope",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf236cbc7-21/default-6a58cf236cbc7-21.png",
+      "local_image_path": "assets/images/e6076341c3cc__default-6a58ed2c49fc0-21.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    },
+    {
+      "source_group": "Ils nous font confiance",
+      "source_alt": "Line Up ocean",
+      "display_name": "Line Up ocean",
+      "image_url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6a58cf3bdc741-23/default-6a58cf3bdc741-23.png",
+      "local_image_path": "assets/images/4206b585309a__default-6a58ed612887b-23.png",
+      "source_url": "https://www.ldgenx.fr/a-propos/partenaires"
+    }
+  ],
+  "note": "Keep published categories and their descriptions; public-institute section describes founders’ training/research careers."
+}

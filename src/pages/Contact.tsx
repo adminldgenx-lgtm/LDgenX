@@ -1,15 +1,21 @@
-import { pageCopy, formCopy, contactPaths } from '../content/pages.fr';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { company, applications, projectPractice } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
 import { type PageMeta } from '../lib/pages';
 import { directContact, sendContact } from '../lib/contact';
-import { PageHero, Eyebrow, Reveal } from '../components/ui';
+import { PageHero, Eyebrow, Reveal, Button } from '../components/ui';
+import { AnimatedHeading } from '../components/motion';
+import { AmbientField } from '../components/AmbientField';
+import { LiveList } from '../components/Steps';
 import { Faq } from '../sections/Practice';
 
 type Status = { tone: 'info' | 'success' | 'error'; text: string } | null;
 
 export function ContactPage({ meta }: { meta: PageMeta }) {
+  const { pageCopy, formCopy, contactPaths, company, applications, projectPractice, booking, ui } =
+    useCatalog();
+  const r = useRoutes();
+  const t = ui.contactPage;
   const [status, setStatus] = useState<Status>(null);
   const [sending, setSending] = useState(false);
   const statusMessage = useRef<HTMLParagraphElement>(null);
@@ -17,14 +23,33 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
   useEffect(() => {
     if (!status || status.tone === 'info') return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    statusMessage.current?.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
+    statusMessage.current?.scrollIntoView({
+      block: 'nearest',
+      behavior: reduced ? 'auto' : 'smooth',
+    });
   }, [status]);
   const mode = directContact ? formCopy.direct : formCopy.mailto;
   function buildMessage(form: HTMLFormElement) {
     const values = new FormData(form);
     const value = (key: string, fallback: string) => String(values.get(key) || fallback);
-    const subject = `Projet ${value('sector', 'scientifique')} — ${value('organization', value('name', ''))}`;
-    const body = `Bonjour à l’équipe LDgenX,\n\n${value('message', '')}\n\nSecteur : ${value('sector', 'À préciser')}\nÉchantillons ou données : ${value('material', 'À préciser')}\nCalendrier : ${value('timeline', 'À préciser')}\nNom : ${value('name', '')}\nOrganisation : ${value('organization', 'Non renseignée')}\nE-mail : ${value('email', '')}`;
+    const f = t.mailFields;
+    const colon = ui.lang === 'fr' ? '\u00a0: ' : ': ';
+    const subject = t.mailSubject(
+      value('sector', t.scientific),
+      value('organization', value('name', '')),
+    );
+    const body = [
+      t.mailGreeting,
+      '',
+      value('message', ''),
+      '',
+      `${f.sector}${colon}${value('sector', t.toDefine)}`,
+      `${f.material}${colon}${value('material', t.toDefine)}`,
+      `${f.timeline}${colon}${value('timeline', t.toDefine)}`,
+      `${f.name}${colon}${value('name', '')}`,
+      `${f.organization}${colon}${value('organization', t.notGiven)}`,
+      `${f.email}${colon}${value('email', '')}`,
+    ].join('\n');
     return { subject, body };
   }
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -62,6 +87,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
     <>
       <PageHero meta={meta} {...pageCopy.contact} />
       <section className="contact-paths-section">
+        <AmbientField lane="bottom" className="contact-field" />
         <div className="container contact-paths">
           <Reveal className="contact-path contact-path-primary">
             <h2>{contactPaths.appointment.title}</h2>
@@ -73,7 +99,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
               rel="noreferrer"
             >
               {contactPaths.appointment.action}
-              <span className="sr-only"> (nouvel onglet)</span>
+              <span className="sr-only">{ui.common.newTab}</span>
             </a>
           </Reveal>
           <Reveal className="contact-path" delay={0.06}>
@@ -92,6 +118,23 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
           </Reveal>
         </div>
       </section>
+      <section className="section-space booking-section" aria-label={booking.title}>
+        <div className="container booking-layout">
+          <div>
+            <Eyebrow>{booking.action}</Eyebrow>
+            <AnimatedHeading text={booking.title} />
+            <Reveal delay={0.08}>
+              <p>{booking.text}</p>
+            </Reveal>
+          </div>
+          <Reveal className="booking-card" delay={0.12}>
+            <p className="booking-card-title">{t.bookingBenefits}</p>
+            <LiveList items={booking.benefits} />
+            <p className="booking-note">{booking.note}</p>
+            <Button href={company.appointment}>{contactPaths.appointment.action}</Button>
+          </Reveal>
+        </div>
+      </section>
       <section className="detail-section">
         <div className="container contact-layout">
           <Reveal className="contact-information">
@@ -100,11 +143,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
             <p>{formCopy.intro}</p>
             <div className="contact-checklist">
               <h3>{formCopy.checklistTitle}</h3>
-              <ul>
-                {projectPractice.prepare.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <LiveList items={projectPractice.prepare} className="live-list-light" />
             </div>
             <div className="contact-address">
               <p>
@@ -157,7 +196,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
                   <select name="sector" defaultValue="">
                     <option value="">{formCopy.sectorPlaceholder}</option>
                     {applications.map((s) => (
-                      <option key={s.slug}>{s.title}</option>
+                      <option key={s.id}>{s.title}</option>
                     ))}
                     <option>{formCopy.other}</option>
                   </select>
@@ -196,7 +235,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
                 <input type="checkbox" name="privacy" required />
                 <span>
                   {formCopy.privacyBefore}
-                  <Link to="/politique-confidentialite">{formCopy.privacyLink}</Link>
+                  <Link to={r.privacy}>{formCopy.privacyLink}</Link>
                   {mode.privacyAfter}
                 </span>
               </label>
@@ -234,7 +273,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
           </Reveal>
         </div>
       </section>
-      <Faq title={'Avant de nous écrire.'} />
+      <Faq title={ui.contactFaqTitle} />
     </>
   );
 }

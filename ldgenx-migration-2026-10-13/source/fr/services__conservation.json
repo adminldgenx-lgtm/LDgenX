@@ -1,0 +1,354 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/conservation",
+  "final_url": "https://www.ldgenx.fr/services/conservation",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:21.087121+00:00",
+  "language": "fr",
+  "title": "LDgenX - Description d'études de conservation - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Page description d'études de biodiversité Leitwein, conservation des espèces, idées d'études conservation et biodiversité, outils génomiques pour la biodiversité"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__conservation.html",
+  "raw_sha256": "376a7a0ec9f300cfcd54cc3802898dc74a5ae200b838f95b777a06dd9efc2815",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "text": "Leitwein et al. 2016",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+      "text": "Leitwein et al. 2016",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+      "text": "2021",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+      "text": "Leitwein et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Rivière Orb Statistique conservation Consanguinité",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b59e82220f4-tableau/433-62b59e82220f4-tableau.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "ancestralité domestique",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b97365b32db-introgression/960-62b97365b32db-introgression.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "allele deletaire",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b9a2ee6154e-deletaire/391-62b9a2ee6154e-deletaire.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Conservation"
+    },
+    {
+      "level": 3,
+      "text": "La diversité génétique des truites de l'Orb"
+    },
+    {
+      "level": 3,
+      "text": "Paysage génomique d'ancestralité domestique chez l'Omble de fontaine"
+    },
+    {
+      "level": 3,
+      "text": "Effets de l'introduction d'allèles domestiques"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__conservation.md",
+  "content_characters": 5472,
+  "content_sha256": "56d6c78c7181bb506598f9a7d9b86297c444ce6df321a41a37b3958d085ba00f",
+  "body_text": "Conservation\n        \n            La diversité génétique des truites de l'Orb\n        \n        L'utilisation de 196K marqueurs SNPs a permis d'estimer la diversité génétique et l'indice de consanguinité des populations de truites communes (Salmo trutta), sauvages (La Mare, Gravezon et l'Orb) et domestiques (Atlantique et Méditerranéenne) du bassin de l'Orb. \nNous avons pu mettre en évidence que la population sauvage de Gravezon avait une plus faible diversité génétique et un fort taux de consanguinité, comparée aux populations sauvages de la Mare et de L'orb (Tableau 1 ; Leitwein et al. 2016).\nDe plus, nous avons démontré que la souche domestique Méditerranéenne était très faiblement diversifiée et fortement consanguine contrairement à la souche domestique Atlantique, qui présente une plus forte diversité génétique. \nCes résultats démontrent que la souche domestique Méditerranéenne nécessite une gestion particulière afin d'augmenter la diversité génétique. \n \n    Tableau 1 modifié de Leitwein et al. 2016, Journal of Fish Biology.\nRésumer pour chaque rivière sauvage du bassin de l'Orb (La Mare, Gravezon et l'Orb) et pour les deux souches domestiques (Atlantique et Méditerranéenne), de (N) nombre d'individus, (x) nombre moyen de marqueurs SNPs, (He) hétérozygotie attendue, (Ho) hétérozygotie observée, (Fis) indice de consanguinité et (π) diversité nucléotidique. ***valeur significative p<0.0001\n    \n            Paysage génomique d'ancestralité domestique chez l'Omble de fontaine \n        \n        L'omble de fontaine (Salvelinus fontinalis) est une espèce à fort intéret socio-économique au Canada. Dans la province de Québec, une souche domestique a été créée il y a une centaine d'années afin de repeupler les rivières pour la pèche sportive. Chaque année plus de 650 tonnes d'ombles de fontaine sont ainsi déversées dans les rivières du Canada, favorisant ainsi les évènements d'hybridation entre individus domestiques et sauvages (Leitwein et al. 2019).\nA l'aide de 11 803 marqueurs SNPs, l'ancestralité des individus a put être inférée et la proportion d'allèles domestiques dans les rivières sauvages estimées. Grâce à l'information de liaison et la proportion d'ancestralité domestique, il a été possible d'identifier les classes hybrides des individus. Les individus ont été catégorisés soit comme (i) \"hybrides récents\" c'est-à-dire des descendants de premières générations de croisements entre individus sauvages et domestiques (<10 générations) ; ou (ii) \"hybrides ancients\" c'est-à-dire des descendants issus d'un mélange lointain (>10 générations). Une fois les individus assignés à leur classe hybride, le taux d'introgression d'allèles domestiques le long du génome a pu être estimé. Cette approche a révélé une forte variablilité, avec des régions génomiques à forte ou faible ancestralité domestique, qui sont susceptibles d’être sous sélection naturelle (Figure1 ; Leitwein et al. 2019).  \n \n    Figure 1 extraite de Leitwein et al. 2019. Molecular Ecology.\nTaux d'ancestralité domestique le long des 41 groupes de liaison (LG) de l'Omble de fontaine pour les individus de la catégorie hybride récent.\nEffets de l'introduction d'allèles domestiques\n        \n        Dans le cas de l'Omble de fontaine, nous avons pu observer des variations d'ancestralité domestique dans les populations sauvages. Pour les individus hybrides, des effets bénéfiques de l'introgression d'allèles domestiques dans les populations sauvages, ont principalement pu être observés. Les allèles domestiques apportent (i) de la diversité dans les régions du génome \"sauvage\" à faible diversité génétique et (ii) des allèles récessifs potentiellement délétères. \nCependant au-delà de ces potentiels effets bénéfiques, des effets de purges des allèles domestiques ont également pu être observés. Ces mécanismes reflètent des effets négatifs de l'introduction d'allèles domestiques dans certaines régions du génome (Leitwein et al. 2019 et 2021).\nPar exemple, sur le groupe de liaison 26 (Figure 2) nous pouvons observer un excès d'ancestralité domestique associé à des allèles récessifs potentiellement domestique. \n    Figure 2 modifié de Leitwein et al. 2019 Molecular Ecology.\nExcès ou déficit d'ancestralité domestique en fonction de la présence d'allèles non délétères ou potentiellement délétères pour le groupe de liaison 26 chez les individus hybrides anciens d'Omble de fontaine.\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__conservation.json"
+}

@@ -1,8 +1,10 @@
 import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { AnimatedHeading, useEntrance } from './motion';
+import { AnimatedHeading, useEntrance, usePointerVars, useReducedMotion } from './motion';
+import { AmbientField } from './AmbientField';
+import { DecodeOnce } from './Decode';
 import { breadcrumbs, type PageMeta } from '../lib/pages';
-import { company, copy } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
 import { imageUrl, imageWidths } from '../lib/images';
 
 export function Reveal({
@@ -95,7 +97,7 @@ export function PhotoStack({
 }
 
 export function Button({
-  to = '/contact',
+  to,
   href,
   children,
   variant = 'primary',
@@ -109,13 +111,15 @@ export function Button({
   className?: string;
 }) {
   const classes = `button button-${variant} ${className}`;
+  const { ui } = useCatalog();
+  const r = useRoutes();
   return href ? (
     <a className={classes} href={href} target="_blank" rel="noreferrer">
       {children}
-      <span className="sr-only"> (nouvel onglet)</span>
+      <span className="sr-only">{ui.common.newTab}</span>
     </a>
   ) : (
-    <Link className={classes} to={to}>
+    <Link className={classes} to={to ?? r.contact}>
       {children}
     </Link>
   );
@@ -123,6 +127,7 @@ export function Button({
 
 /** The two ways to start a project: a quote request and a booked call. */
 export function ProjectActions({ light = false }: { light?: boolean }) {
+  const { copy, company } = useCatalog();
   return (
     <div className="project-actions">
       <Button variant={light ? 'light' : 'primary'}>{copy.labels.quote}</Button>
@@ -130,6 +135,26 @@ export function ProjectActions({ light = false }: { light?: boolean }) {
         {copy.labels.appointment}
       </Button>
     </div>
+  );
+}
+
+/** A card that leans towards the pointer under a soft light, its picture settling in. */
+export function TiltLink({
+  to,
+  className = '',
+  children,
+}: {
+  to: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  usePointerVars(ref, 5);
+  return (
+    <Link ref={ref} to={to} className={`tilt ${className}`}>
+      {children}
+      <span className="tilt-light" aria-hidden="true" />
+    </Link>
   );
 }
 
@@ -179,8 +204,9 @@ export function SectionHeading({
 }
 
 export function Breadcrumbs({ meta }: { meta: PageMeta }) {
+  const { ui } = useCatalog();
   return (
-    <nav aria-label="Fil d’Ariane" className="breadcrumbs">
+    <nav aria-label={ui.common.breadcrumb} className="breadcrumbs">
       {breadcrumbs(meta).map((c, i, arr) => (
         <span key={c.path}>
           {i > 0 && (
@@ -214,15 +240,20 @@ export function PageHero({
   image?: string;
   dark?: boolean;
 }) {
+  const reduced = useReducedMotion();
   return (
     <section
       className={`page-hero ${image ? 'page-hero-split' : ''} ${dark ? 'page-hero-dark' : ''}`}
     >
+      {/* A page without a picture gets the slow helix of the site behind its title. */}
+      {!image && <AmbientField tone={dark ? 'dark' : 'light'} className="page-hero-field" />}
       <div className="container">
         <Breadcrumbs meta={meta} />
         <div className="page-hero-grid">
           <div className="page-hero-copy intro-copy">
-            <Eyebrow light={dark}>{eyebrow}</Eyebrow>
+            <Eyebrow light={dark}>
+              <DecodeOnce text={eyebrow} play={!reduced} delay={350} />
+            </Eyebrow>
             <AnimatedHeading as="h1" text={title} intro />
             <p className="lead">{intro}</p>
             {image && <ProjectActions light={dark} />}
@@ -230,6 +261,7 @@ export function PageHero({
           {image && (
             <div className="page-hero-image intro-image">
               <Photo name={image} alt={meta.label} eager />
+              <span className="page-hero-sheen" aria-hidden="true" />
             </div>
           )}
         </div>
@@ -239,8 +271,10 @@ export function PageHero({
 }
 
 export function FinalCTA() {
+  const { copy, company, ui } = useCatalog();
   return (
     <section className="final-cta">
+      <AmbientField lane="bottom" className="final-cta-field" />
       <div className="container">
         <div className="cta-inner">
           <div>
@@ -251,7 +285,7 @@ export function FinalCTA() {
             <p>{copy.cta.body}</p>
             <ProjectActions />
             <p className="cta-email">
-              Ou écrivez-nous : <a href={`mailto:${company.email}`}>{company.email}</a>
+              {ui.common.orWrite} <a href={`mailto:${company.email}`}>{company.email}</a>
             </p>
           </Reveal>
         </div>

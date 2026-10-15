@@ -1,0 +1,378 @@
+{
+  "requested_url": "https://www.ldgenx.com/services/equipment",
+  "final_url": "https://www.ldgenx.com/services/equipment",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:45.183708+00:00",
+  "language": "en",
+  "title": "",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": ""
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/services__equipment.html",
+  "raw_sha256": "d8352a03e47496d25bd371583f22275eff41e446f9e643a1502496dc278c532b",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e3638ef849-pump/default-6a5e3638ef849-pump.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "triple pump up",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/699825d7456f3-20251013-145507/320-699825d7456f3-20251013-145507.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "triple pump",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/699825bac635e-20251013-145600/320-699825bac635e-20251013-145600.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "capsules eDNA",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/699824a1455ca-waterra/320-699824a1455ca-waterra.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e37c1225c3-stickpump/default-6a5e37c1225c3-stickpump.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "stick pump",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/69982882ee170-stickpump/default-69982882ee170-stickpump.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58/320-69982d08c898a-capture-d-e-cran-2026-02-20-a-10-43-58.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a5e386276c76-equipent/default-6a5e386276c76-equipent.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "yellow submarine",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6998259991b35-20260219-155036/320-6998259991b35-20260219-155036.jpg",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "topille",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/699824ba85e1d-torpille/320-699824ba85e1d-torpille.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Equipment"
+    },
+    {
+      "level": 2,
+      "text": "Triple pump"
+    },
+    {
+      "level": 2,
+      "text": "StickPump"
+    },
+    {
+      "level": 2,
+      "text": "Yellow Submarine"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/services__equipment.md",
+  "content_characters": 2497,
+  "content_sha256": "353828e19efc2ac8b92cb3c4f2e5ee0f4031d6107689cbeef9cf6089626acc99",
+  "body_text": "Equipment\nTriple pump\n        Three separate parallel filters with Waterra capsules\n \n\nInlet hose size: 12 mm or 4 mm diameter\n \n\nMaximum height between the water surface and the pump: \n1.5 m with 12 mm diameter hoses and 5 m with 4 mm diameter hose (model 1)\n3 m with 12 mm diameter hoses and 15 m with 6 mm diameter hose (model 2)\n \nEffective pumping speed: 3 L/min (model 1) or 10 L/min (model 2)\n \n\nThree integrated flow meters\n \n\n8-hour battery life (model 1) or 10-hour battery life (model 2) with included Opti Battery lithium-ion battery\n \n\nPore size: 0.1 µm, 0.22 µm, 0.45 µm, 1.2 µm, and 5 µm\n            StickPump\n        \nFour filters operating in parallel\nPumping rate: 40 L/min\nIntegrated flow meter\nMakita 18V battery (not included)\n20 µm nylon filters, 47 mm diameter\n    \n            Yellow Submarine\n        \n        Three parallel filtration channels\nVacuum-assisted filtration; filtered volume depends on towing speed (approximately 50 L per filter in 10 minutes at 6 knots)\n20 µm nylon filters, 47 mm diameter\nDesigned to be towed behind a boat\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/services__equipment.json"
+}

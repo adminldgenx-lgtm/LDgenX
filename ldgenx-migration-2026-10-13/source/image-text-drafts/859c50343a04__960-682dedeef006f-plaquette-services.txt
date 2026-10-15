@@ -1,0 +1,39 @@
+Project Design
+
+Strategic sampling
+
+Bibliographic support, definition of objectives and indicators.
+
+DNA Sequencing
+
+Long-read NGS (Nanopore, PacBio®) and short-read platforms
+
+“
+
+$4
+
+Bs
+
+.
+
+(illumina, Aviti™), targeted sequencing and microsatellites
+
+ra
+
+(PCR, Sanger, KASP).
+
+5
+
+Advanced analyses
+
+Bioinformatics & biostatistics
+
+LDgenX
+
+Analyse et Expertise Génownique
+
+Expert Repporting
+
+Actionable results.
+
+Interpretation and decision-making support.

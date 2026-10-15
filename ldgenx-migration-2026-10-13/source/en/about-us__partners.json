@@ -1,0 +1,546 @@
+{
+  "requested_url": "https://www.ldgenx.com/about-us/partners",
+  "final_url": "https://www.ldgenx.com/about-us/partners",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:30:19.307736+00:00",
+  "language": "en",
+  "title": "GenExpert - Instituts partenaires, Collaborations - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Liste des partenaires, instituts, entreprises en collaboration, biologie moléculaire pour les données biologiques, inrae, marbec, ifremer, cnrs, universités"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/en/about-us__partners.html",
+  "raw_sha256": "63fbd0bd9baf728e1f13d3d73ee1d3f02b951acf013b226870aed70b44e21a8c",
+  "links": [
+    {
+      "url": "https://www.ldgenx.com/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "Welcome",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/environmental-dna-edna",
+      "text": "Environmental DNA (eDNA)",
+      "title": "Environmental DNA (eDNA)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/population-genomics",
+      "text": "Population Genomics",
+      "title": "Population Genomics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/microbial-community-analysis",
+      "text": "Microbial Community Analysis",
+      "title": "Microbial Community Analysis",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/genomic-selection",
+      "text": "Genomic Selection",
+      "title": "Genomic Selection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/bioinformatics",
+      "text": "Bioinformatics",
+      "title": "Bioinformatics",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/sequencing-dpcr",
+      "text": "Sequencing & dPCR",
+      "title": "Sequencing & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/services/equipment",
+      "text": "Equipment",
+      "title": "Equipment",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/biodiversity-conservation",
+      "text": "Biodiversity & Conservation",
+      "title": "Biodiversity & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/aquaculture-fisheries",
+      "text": "Aquaculture & Fisheries",
+      "title": "Aquaculture & Fisheries",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/agriculture-agroecology",
+      "text": "Agriculture & Agroecology",
+      "title": "Agriculture & Agroecology",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/applications/environment-consultancies",
+      "text": "Environment & Consultancies",
+      "title": "Environment & Consultancies",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "About us",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "Team",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "Partners",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact our team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/",
+      "text": "Welcome",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us",
+      "text": "About us",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/team",
+      "text": "Team",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/about-us/partners",
+      "text": "Partners",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/genexpert-france/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.com/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/682de64c5a18d-logo-ldgenx/320-682de64c5a18d-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pole mer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebbe2b81d-8/default-6a58ebbe2b81d-8.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "ifremer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec326cbff-12/default-6a58ec326cbff-12.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "INRAE",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec4b0e6dd-13/default-6a58ec4b0e6dd-13.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "cnrs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec611b7bf-14/default-6a58ec611b7bf-14.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "universite de montpellier",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebfdc2592-10/default-6a58ebfdc2592-10.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "start and grow",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ea6467ff6-1/default-6a58ea6467ff6-1.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "crealia",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ea6fa72c3-2/default-6a58ea6fa72c3-2.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "mbs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eac581523-3/default-6a58eac581523-3.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pole mer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec9d3f69d-8/default-6a58ec9d3f69d-8.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "initium",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eadcdc0c6-4/default-6a58eadcdc0c6-4.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "incubateur mbs",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ebdb74f82-9/default-6a58ebdb74f82-9.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "celimer",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eafd88671-5/default-6a58eafd88671-5.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "bpi",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eb143a85f-6/default-6a58eb143a85f-6.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "pepite deeptech",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58eba1bbc36-7/default-6a58eba1bbc36-7.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "FNC",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ecbd094ed-17/default-6a58ecbd094ed-17.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "plastic at sea",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed48f2fac-22/default-6a58ed48f2fac-22.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "qualyse",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ecd82f888-18/default-6a58ecd82f888-18.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "stella mare",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec16270e1-11/default-6a58ec16270e1-11.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "groupe barba",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed10189a0-20/default-6a58ed10189a0-20.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "agence de l'eau",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed7eb72c8-24/default-6a58ed7eb72c8-24.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "biotope",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed2c49fc0-21/default-6a58ed2c49fc0-21.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "ours",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a60c70955fb3-19/default-6a60c70955fb3-19.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "line up",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ed612887b-23/default-6a58ed612887b-23.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "EPHE",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.com/uploads/utilisateurs/5424/6a58ec830c9fb-15/default-6a58ec830c9fb-15.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Our partners"
+    },
+    {
+      "level": 2,
+      "text": "Public Research Institutes"
+    },
+    {
+      "level": 2,
+      "text": "Supported by"
+    },
+    {
+      "level": 2,
+      "text": "Trusted By"
+    },
+    {
+      "level": 2,
+      "text": "Let’s discuss your project"
+    },
+    {
+      "level": 3,
+      "text": "Links"
+    },
+    {
+      "level": 3,
+      "text": "Where to find us?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/en/about-us__partners.md",
+  "content_characters": 3392,
+  "content_sha256": "e612808debddd3cc52c9e2901dbe16e97dbc465d1091cf05d2cb97089b14a59e",
+  "body_text": "Our partners\nLDgenX collaborates with research institutes, universities, environmental consultancies and companies to develop innovative scientific solutions.These partnerships bring together complementary expertise to address complex challenges in biodiversity conservation, agriculture, and aquaculture.\n            Public Research Institutes\n        \n        Our expertise is rooted in years of experience within leading public research institutes, where we received our scientific training and carried out our first research projects.\n    \n            Supported by\n        \n            Trusted By\n\nLet’s discuss your project\n        \n        Do you wish to implement biodiversity monitoring, study a population, or develop a specific molecular tool ?\n    \n                Contact our team",
+  "metadata_path": "source/en/about-us__partners.json"
+}

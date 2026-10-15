@@ -1,0 +1,332 @@
+{
+  "requested_url": "https://www.ldgenx.fr/services/tracabilite",
+  "final_url": "https://www.ldgenx.fr/services/tracabilite",
+  "status": 200,
+  "content_type": "text/html",
+  "retrieved_at": "2026-10-13T14:31:33.339913+00:00",
+  "language": "fr",
+  "title": "LDgenX - Description d'études de traçabilité - Bureau d'études",
+  "meta": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Détails d'utilisation d'outils génomiques et bioinformatique pour la traçabilité d'espèces cibles identification d'échappées pisciculture souche sauvage domestiquée"
+  },
+  "canonical_url": null,
+  "raw_html_path": "source/fr/services__tracabilite.html",
+  "raw_sha256": "052b9cc29c9b5844d894e19577bd6af83b6dbfc55ed531ebff827e0355c14e11",
+  "links": [
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "Accueil",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services",
+      "text": "Services",
+      "title": "Services",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "text": "ADN environnemental (ADNe)",
+      "title": "ADN environnemental (ADNe)",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "text": "Génomique des populations",
+      "title": "Génomique des populations",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "text": "Analyse des communautés microbiennes",
+      "title": "Analyse des communautés microbiennes",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/selection",
+      "text": "Sélection",
+      "title": "Sélection",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/bioinformatique",
+      "text": "Bioinformatique",
+      "title": "Bioinformatique",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "text": "Séquençage & dPCR",
+      "title": "Séquençage & dPCR",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/materiel",
+      "text": "Matériel",
+      "title": "Matériel",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Applications",
+      "title": "Applications",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "text": "Biodiversité & Conservation",
+      "title": "Biodiversité & Conservation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "text": "Aquaculture & pêche",
+      "title": "Aquaculture & pêche",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "text": "Agriculture & agroécologie",
+      "title": "Agriculture & agroécologie",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "text": "Environnement & Bureaux d'Études",
+      "title": "Environnement & Bureaux d'Études",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "A propos",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/equipe",
+      "text": "Equipe",
+      "title": "Equipe",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/partenaires",
+      "text": "Partenaires",
+      "title": "Partenaires",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos/innovation",
+      "text": "Innovation",
+      "title": "Innovation",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "Contact",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.fr",
+      "text": "FR",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "http://www.ldgenx.com",
+      "text": "ENG",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "http://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. (2018)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. 2018",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+      "text": "Leitwein et al. 2018",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+      "text": "Saint-Pé et al. 2019",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+      "text": "Saint-Pé et al (2019)",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "mailto:info@ldgenx.fr?subject=Prise%20de%20contact&body=%5BVeuillez%20remplir%5D",
+      "text": "Contactez notre équipe",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/",
+      "text": "Accueil",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/services/Services",
+      "text": "Services",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/applications",
+      "text": "Application",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/a-propos",
+      "text": "A propos",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/contact",
+      "text": "Contact",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.linkedin.com/company/ldgenx/",
+      "text": "",
+      "title": "LinkedIn",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/cgvs/cgvs",
+      "text": "CGVs",
+      "title": "",
+      "download": null
+    },
+    {
+      "url": "https://www.ldgenx.fr/ecommerce/cart-list",
+      "text": "Voir mon panier",
+      "title": "",
+      "download": null
+    }
+  ],
+  "images": [
+    {
+      "alt": "LDgenX analyse expertise génomique génétique ADN",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/6970982132146-logo-ldgenx/320-6970982132146-logo-ldgenx.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "Ancestralité K Admixture populations",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b48c6a407bd-admixture/960-62b48c6a407bd-admixture.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "leitwein et al 2018",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b48e92c3b00-time/461-62b48e92c3b00-time.png",
+          "attribute": "src"
+        }
+      ]
+    },
+    {
+      "alt": "puce truite génome",
+      "title": "",
+      "width": null,
+      "height": null,
+      "sources": [
+        {
+          "url": "https://www.ldgenx.fr/uploads/utilisateurs/5424/62b49dce0df02-saintpe/460-62b49dce0df02-saintpe.png",
+          "attribute": "src"
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Traçabilité"
+    },
+    {
+      "level": 3,
+      "text": "Exemple d'analyses génomiques de traçabilité - Les truites de L'Orb"
+    },
+    {
+      "level": 3,
+      "text": "Développement d'outils génomiques - La puce truite haute densité"
+    },
+    {
+      "level": 2,
+      "text": "Discutons de votre projet"
+    },
+    {
+      "level": 3,
+      "text": "Liens rapides"
+    },
+    {
+      "level": 3,
+      "text": "Où nous trouver ?"
+    },
+    {
+      "level": 3,
+      "text": "Votre article a été ajouté avec succès."
+    }
+  ],
+  "forms": [],
+  "content_path": "source/fr/services__tracabilite.md",
+  "content_characters": 4007,
+  "content_sha256": "a7a48cc0f17e2e326cf09f9562d9b47b1f95445851d282376486bd2cbf787122",
+  "body_text": "Traçabilité\n        \n            Exemple d'analyses génomiques de traçabilité - Les truites de L'Orb\n        \n        Le bassin méditerranéen de l'Orb (Hérault), cours d’eau du sud de la France, d’une superficie de 1580 km2, est soumis depuis la fin des années 1960 à des repeuplements de truites domestiques (Salmo trutta) d’origine atlantique et méditerranéenne. L'objectif est ainsi d’augmenter les populations locales méditerranéennes pour la pêche récréative. \nDans l'étude de Leitwein et al. (2018),  l'utilisation de 86 175 marqueurs SNPs (polymorphismes simple nucléotide) issus de séquençage RAD, a permis d'identifier la proportion d'allèles domestiques (Atlantique et Méditerranéen) dans les populations sauvages du bassin de l'Orb. \nAinsi nous avons pu identifier des individus d'origine domestique Atlantique (i.e. échappés de pisciculture) dans la rivière de Gravezon, des individus d'origine domestique Méditerranéen dans la rivière de la Mare, ainsi que des individus hybrides ayant des allèles domestiques Atlantique et Méditerranéen dans les trois rivières sauvages (Figure 1). \n \n    Figure 1 modifiée de Leitwein et al. 2018, Molecular Ecology.\nChaque barre représente la proportion d'ancestralité domestique Atlantique en bleue, domestique Méditerranéenne en rouge et sauvage en vert pour les trois populations de Gravezon (Grav), de la Mare (Mare) et de l'Orb (Orb).  \n    \n        L'étude des haplotypes (segments) domestiques atlantique et méditerranéen nous a également permis d'estimer l’âge des introductions pour chacune des trois rivières.\nAinsi nous avons pu mettre en évidence que les individus domestiques Atlantique avaient été introduits il y a en moyenne 24.01 générations dans la rivière du Gravezon, 22.31 générations dans la rivière de la Mare et 30.9 générations dans la rivière de l'Orb (Figure 2).\nSimilairement, l’âge d'introduction de truites domestiques Méditerranéennes a été estimée à 11.51 générations  dans la rivière du Gravezon, 25.07 générations dans la Mare et 23.23 dans l'Orb (Figure 2). \n    Figure 2 extraite de Leitwein et al. 2018, Molecular Ecology.\nTemps en nombre de générations depuis l'introduction d'individus domestiques Atlantique (bleu) et domestiques Méditérénenen (rouge) dans les trois populations Gravezon, La Mare et l'Orb.\nDéveloppement d'outils génomiques - La puce truite haute densité \n \n        \n        A l'issu de cette étude, nous avons développé une puce haute densité de 12 204 marqueurs SNPs répartis de façon homogène le long des 40 groupes de liaison (LG pour Linkage Group en Anglais) de la truite (Salmo Trutta) (Figure 3 ; Saint-Pé et al. 2019). \nCette puce permet une gestion à moindre coût, régulière et comparable, entre les différentes études de génétique des populations.\nLa puce est à la fois efficace pour distinguer les truites d'origines Atlantique et Méditerranéenne ainsi que les niveaux d'hybridation.\n \n    Figure 3 extraite de Saint-Pé et al (2019), BMC genomics.\nPositions (en centiMorgan) des 12 204 marqueurs SNPs le long des 40 groupes de liaison de la truite commune (Salmo trutta).\nDiscutons de votre projet\n        Vous souhaitez mettre en place un suivi de biodiversité, étudier une population ou développer un outil moléculaire spécifique ?\n    Contactez notre équipe",
+  "metadata_path": "source/fr/services__tracabilite.json"
+}

@@ -1,0 +1,111 @@
+¥
+
+He
+
+Fis
+
+‘Samples
+
+Label N
+
+ref_map
+
+remap ref_map
+
+reL_map
+
+reL_map
+
+River Orb
+
+La Mare
+
+Mar
+
+10
+
+190758
+
+0.2768,
+
+02828,
+
+0.0217
+
+0.0054
+
+Gravezon
+
+Grav 10
+
+01696
+
+o388e*
+
+0.0033,
+
+192791
+
+02772
+
+Upper Orb
+
+orb
+
+10
+
+189116
+
+0.2767,
+
+02780
+
+0.0047
+
+0.0083,
+
+Hatchery strain
+
+Cauteret
+
+AUS 10
+
+188 165
+
+02769
+
+02287
+
+.1sagees
+
+0.0041
+
+(Atlantic)
+
+AUld 10
+
+191.028
+
+02772
+
+02288
+
+O.1746¢8°
+
+0.0042
+
+Med 10
+
+188 630
+
+02769,
+
+01616
+
+os164re*
+
+0.0028
+
+(Mediter-
+
+ranean)

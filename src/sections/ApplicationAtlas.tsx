@@ -8,7 +8,8 @@ import {
   Minimize2,
   ZoomIn,
 } from 'lucide-react';
-import { applications, services } from '../content/fr';
+import { useCatalog, useRoutes } from '../i18n';
+import { applicationIds } from '../content/site';
 import { Photo } from '../components/ui';
 import { useMediaQuery, useReducedMotion } from '../components/motion';
 
@@ -17,7 +18,7 @@ import { useMediaQuery, useReducedMotion } from '../components/motion';
    places, one per sector. Choosing a place flies the view to it and opens its card. The geography
    is illustrative; every word in the cards comes from the sector pages. */
 
-const IMAGE_RATIO = 4000 / 2251;
+const IMAGE_RATIO = 3840 / 2160;
 const ZOOM_MS = 1200;
 // Arrival: the map window opens while the view descends from a low, close angle to above.
 const INTRO_MS = 2000;
@@ -28,25 +29,31 @@ const PLACES: Record<
   string,
   { at: [number, number]; leader: [number, number]; side: 'left' | 'right' }
 > = {
-  'biodiversite-conservation': { at: [0.262, 0.502], leader: [26, -30], side: 'right' },
-  'aquaculture-peche': { at: [0.651, 0.392], leader: [26, -30], side: 'right' },
-  'agriculture-agroecologie': { at: [0.712, 0.73], leader: [26, -34], side: 'right' },
-  'environnement-bureaux-d-etudes': { at: [0.925, 0.598], leader: [26, -30], side: 'left' },
-  'recherche-publique-privee': { at: [0.752, 0.555], leader: [26, -30], side: 'left' },
-  // Above the turbines, in open sea.
-  'energies-marines-renouvelables': { at: [0.832, 0.276], leader: [34, -128], side: 'right' },
+  // From the forest to the open sea: wetland, farmland, research station, harbour, fish farm.
+  'biodiversite-conservation': { at: [0.305, 0.475], leader: [26, -24], side: 'right' },
+  'agriculture-agroecologie': { at: [0.48, 0.74], leader: [26, -34], side: 'right' },
+  'recherche-publique-privee': { at: [0.64, 0.51], leader: [26, -30], side: 'left' },
+  'environnement-bureaux-d-etudes': { at: [0.75, 0.61], leader: [26, -30], side: 'right' },
+  'aquaculture-peche': { at: [0.85, 0.44], leader: [26, -30], side: 'left' },
+  // At the foot of the nearest turbine; its name sits in the open sea to the right.
+  'energies-marines-renouvelables': { at: [0.78, 0.197], leader: [22, -30], side: 'right' },
 };
-const sectors = applications.map((a) => ({ ...a, place: PLACES[a.slug] }));
+// Geometry only: the places are the same in every language (titles come from the catalogue).
+const sectors = applicationIds.map((id) => ({ id, place: PLACES[id] }));
 
-// Offshore turbines (positions from ldgenx-atlas-2d/data/layers.json). Tower and rotor are two
-// cut-outs: the rotor turns about its hub, which is not the centre of its image.
+// Turbines: four in the open sea at the upper right, smaller as they stand further out, and two
+// on the hills inland. Tower
+// and rotor are two cut-outs: the rotor turns about its hub, which is not the centre of its image.
 const TOWER = { width: 1024, height: 1536, base: [499, 1493], hub: [398, 109] };
 const ROTOR = { width: 1254, height: 1254, hub: [628, 764], radius: 726 };
 const TURBINES = [
-  { base: [0.718, 0.236], height: 0.098, seconds: 11, phase: 0, squash: 0.78 },
-  { base: [0.794, 0.268], height: 0.092, seconds: 12.5, phase: 40, squash: 0.76 },
-  { base: [0.867, 0.296], height: 0.083, seconds: 12, phase: 80, squash: 0.73 },
-  { base: [0.941, 0.328], height: 0.078, seconds: 13.5, phase: 120, squash: 0.7 },
+  { base: [0.63, 0.11], height: 0.064, seconds: 11, phase: 0, squash: 0.78 },
+  { base: [0.68, 0.138], height: 0.071, seconds: 12.5, phase: 40, squash: 0.76 },
+  { base: [0.73, 0.167], height: 0.078, seconds: 12, phase: 80, squash: 0.73 },
+  { base: [0.78, 0.197], height: 0.086, seconds: 13.5, phase: 120, squash: 0.7 },
+  // Onshore: two turbines on the wooded hills, so renewable energy is not read as offshore only.
+  { base: [0.115, 0.45], height: 0.075, seconds: 12, phase: 200, squash: 0.74 },
+  { base: [0.185, 0.478], height: 0.08, seconds: 13, phase: 290, squash: 0.72 },
 ].map((t) => {
   // In image units: x as a fraction of the width, y of the height.
   const scale = t.height / (TOWER.base[1] - TOWER.hub[1]);
@@ -81,6 +88,10 @@ const easeOut = (t: number) => 1 - (1 - t) ** 3;
 type Intro = 'static' | 'pending' | 'playing';
 
 export function ApplicationAtlas() {
+  const { applications, services, ui } = useCatalog();
+  const r = useRoutes();
+  const t = ui.atlas;
+  const content = applications;
   const reduced = useReducedMotion();
   const compact = useMediaQuery('(max-width: 800px)');
   const stage = useRef<HTMLDivElement>(null);
@@ -420,8 +431,8 @@ export function ApplicationAtlas() {
     kick();
   };
 
-  const sector = sectors[active];
-  const expertises = services.filter((s) => sector.services.includes(s.slug));
+  const sector = content[active];
+  const expertises = services.filter((s) => sector.services.includes(s.id));
 
   return (
     <section
@@ -434,11 +445,11 @@ export function ApplicationAtlas() {
       aria-labelledby="atlas-title"
     >
       <div className="atlas-intro">
-        <p className="atlas-eyebrow">Vos terrains d’application</p>
+        <p className="atlas-eyebrow">{t.eyebrow}</p>
         <h2 id="atlas-title">
-          <span>Une même science.</span> <span>Tout un monde d’applications.</span>
+          <span>{t.title[0]}</span> <span>{t.title[1]}</span>
         </h2>
-        <p className="atlas-lead">Explorez votre environnement.</p>
+        <p className="atlas-lead">{t.lead}</p>
       </div>
 
       <div
@@ -463,15 +474,15 @@ export function ApplicationAtlas() {
             <picture>
               <source
                 media="(max-width: 800px)"
-                srcSet="/atlas/landscape-2400.webp"
+                srcSet="/atlas/mainland-2400.webp"
                 type="image/webp"
               />
               <img
                 className="atlas-landscape"
-                src="/atlas/landscape-4000.webp"
-                alt="Illustration d’un littoral méditerranéen : lagune, élevages en mer, station de recherche, vignes et éoliennes en mer."
-                width={4000}
-                height={2251}
+                src="/atlas/mainland-3840.webp"
+                alt={t.alt}
+                width={3840}
+                height={2160}
                 loading="lazy"
                 decoding="async"
               />
@@ -518,16 +529,16 @@ export function ApplicationAtlas() {
           </div>
           <div className="atlas-shade" aria-hidden="true" />
           <div ref={spot} className="atlas-spot" aria-hidden="true" />
-          <div className="atlas-places" role="group" aria-label="Les secteurs sur la carte">
+          <div className="atlas-places" role="group" aria-label={t.places}>
             {sectors.map((s, i) => (
               <button
-                key={s.slug}
+                key={s.id}
                 ref={(el) => {
                   markers.current[i] = el;
                 }}
                 type="button"
                 className="atlas-place"
-                aria-label={s.title}
+                aria-label={content[i].title}
                 style={
                   {
                     left: pct(s.place.at[0]),
@@ -548,32 +559,32 @@ export function ApplicationAtlas() {
               >
                 <span className="atlas-dot" aria-hidden="true" />
                 <span className="atlas-leader" aria-hidden="true" />
-                <span className="atlas-label">{s.title}</span>
+                <span className="atlas-label">{content[i].title}</span>
               </button>
             ))}
           </div>
         </div>
 
         <p className="atlas-hint" aria-hidden="true">
-          Glissez pour explorer
+          {t.drag}
         </p>
         {focused ? (
           <button type="button" className="atlas-corner" onClick={overview}>
-            <span>Vue d’ensemble</span>
+            <span>{t.overview}</span>
             <Minimize2 size={15} strokeWidth={1.8} aria-hidden="true" />
           </button>
         ) : (
-          <Link className="atlas-corner" to="/applications">
-            <span>Tous les secteurs</span>
+          <Link className="atlas-corner" to={r.applications}>
+            <span>{t.all}</span>
             <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
           </Link>
         )}
       </div>
 
-      <div ref={chips} className="atlas-chips" role="group" aria-label="Choisir un secteur">
-        {sectors.map((s, i) => (
+      <div ref={chips} className="atlas-chips" role="group" aria-label={t.choose}>
+        {content.map((s, i) => (
           <button
-            key={s.slug}
+            key={s.id}
             type="button"
             aria-pressed={active === i && focused}
             onClick={() => choose(i)}
@@ -583,10 +594,10 @@ export function ApplicationAtlas() {
         ))}
       </div>
       <article ref={card} id="atlas-card" className="atlas-card" aria-live="polite">
-        <div className="atlas-card-inner" key={`${sector.slug}-${focused}`}>
+        <div className="atlas-card-inner" key={`${sector.id}-${focused}`}>
           <header className="atlas-card-head">
             <Photo name={sector.image} alt="" sizes="(max-width: 800px) 100vw, 580px" />
-            <p className="atlas-card-kicker">Application</p>
+            <p className="atlas-card-kicker">{t.kicker}</p>
             <h3>{sector.title}</h3>
           </header>
           <div className="atlas-card-body">
@@ -594,45 +605,45 @@ export function ApplicationAtlas() {
             {focused && (
               <>
                 <p className="atlas-card-scope">{sector.scope}</p>
-                <ul className="atlas-card-needs" aria-label="Vos besoins">
+                <ul className="atlas-card-needs" aria-label={t.needs}>
                   {sector.needs.map((n) => (
                     <li key={n.title}>{n.title}</li>
                   ))}
                 </ul>
                 <p className="atlas-card-services">
-                  <span>Expertises mobilisées</span>
+                  <span>{t.expertises}</span>
                   {expertises.map((e, i) => (
-                    <span key={e.slug}>
+                    <span key={e.id}>
                       {i > 0 && ' · '}
-                      <Link to={`/services/${e.slug}`}>{e.title}</Link>
+                      <Link to={r.service(e.id)}>{e.title}</Link>
                     </span>
                   ))}
                 </p>
               </>
             )}
             <div className="atlas-card-actions">
-              <Link className="atlas-card-link" to={`/applications/${sector.slug}`}>
-                <span>Explorer cette application</span>
+              <Link className="atlas-card-link" to={r.application(sector.id)}>
+                <span>{t.explore}</span>
                 <ArrowRight size={16} strokeWidth={1.8} aria-hidden="true" />
               </Link>
               {focused ? (
                 <span className="atlas-card-steps">
                   <span className="atlas-card-pager" aria-hidden="true">
                     {sectors.map((s, i) => (
-                      <i key={s.slug} data-on={i === active || undefined} />
+                      <i key={s.id} data-on={i === active || undefined} />
                     ))}
                   </span>
-                  <button type="button" onClick={() => step(-1)} aria-label="Secteur précédent">
+                  <button type="button" onClick={() => step(-1)} aria-label={t.previous}>
                     <ChevronLeft size={18} />
                   </button>
-                  <button type="button" onClick={() => step(1)} aria-label="Secteur suivant">
+                  <button type="button" onClick={() => step(1)} aria-label={t.next}>
                     <ChevronRight size={18} />
                   </button>
                 </span>
               ) : (
                 <button type="button" className="atlas-card-zoom" onClick={() => choose(active)}>
                   <ZoomIn size={15} strokeWidth={1.8} aria-hidden="true" />
-                  <span>Zoomer</span>
+                  <span>{t.zoom}</span>
                 </button>
               )}
             </div>

@@ -1,0 +1,565 @@
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Prélèvements et analyses d’eau dans les estuaires et les ports maritimes
+                        du bassin Artois-Picardie
+  pour inventorier les espèces de poissons par ADN environnemental
+
+                                          DOUAI - mardi 30 juin 2026
+
+
+                                 ADNe : Une nouvelle lecture des eaux de transition
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Pourquoi surveiller les eaux de transition?
+  Des milieux fonctionnels sous pression
+
+
+
+
+ Fonctions écologiques                                         Pressions anthropiques
+
+ Nourricerie · Corridors migratoires · Zones de refuge         Activités portuaires · Aménagements hydrauliques ·
+ · Habitats de croissance                                      Changements climatiques · Pollutions
+
+
+ Dans le bassin Artois-Picardie, la façade maritime inclut des ports de commerce parmi les masses d'eau de
+ transition une particularité qui complexifie les suivis DCE classiques. La diversité piscicole des ports reste mal
+ connue, contrairement aux estuaires de la Somme, de la Canche et de l'Authie.
+
+
+     Cette étude explore dans quelle mesure l'ADNe peut compléter les suivis historiques par chalut à perche.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Principe de l’ADN environnemental
+  De quelques litres d'eau à un inventaire taxonomique
+
+
+
+
+ Marqueur Teleo                                          Marqueur Elas02
+
+ Référence internationale téléostéens · Gène 12S ·       Complète la couverture taxonomique ·
+ 23 taxons identifiés                                    Élasmobranches · 13 taxons identifiés
+
+
+
+                 Les organismes relâchent continuellement mucus, cellules et gamètes dans l'eau.
+  3 réplicats filtrés simultanément par station · capsules WATERRA 0,45 µm · tampon Longmire · séquençage
+                               IonTorrent S5 Prime · pipeline SAMBA V4.0 / MIDORI2.
+
+    Contrôles négatifs séquencés : aucune séquence détectée - absence de contamination croisée confirmée.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Une campagne dans des conditions exigeantes
+  Un test de robustesse involontaire
+
+
+
+  Fin novembre 2025                     2 à 90 L                               Calais
+  Campagne tardive                      Volumes très variables                 Zéro accès bateau
+
+  Forte turbidité sur plusieurs sites · Autorisations portuaires non obtenues dans les délais · Slack : une
+  seule station, à pied
+
+
+
+
+      L’ensemble des sites prévus a pu être investigué, garantissant une couverture complète des
+               principaux estuaires et complexes portuaires du bassin Artois-Picardie
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+ADN environnemental & Surveillance de l’ichtyofaune
+   Première évaluation opérationnelle - Estuaires et ports du bassin Artois-Picardie – Automne 2025
+
+
+ 15 sites échantillonnés :
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+ADN environnemental & Surveillance de l’ichtyofaune
+  Analyses en laboratoire
+
+ 45 échantillons                       Réplicats de PCR                     Séquençage
+                                                                            2 marqueurs génétiques :
+ Filtration Waterra 0.45 µM            5 réplicas                           Téléostéens / Elasmobranche ·
+ 3 filtres en simultané sur 15 sites   Optimisation des échantillons ADNe   Ion Torrent · 200pb
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+ADN environnemental & Surveillance de l’ichtyofaune
+  Analyses en laboratoire
+
+ 45 échantillons                       Réplicats de PCR                     Séquençage
+                                                                            2 marqueurs génétiques :
+ Filtration Waterra 0.45 µM            5 réplicas                           Téléostéens / Elasmobranche ·
+ 3 filtres en simultané sur 15 sites   Optimisation des échantillons ADNe   Ion Torrent · 200pb / 240pb
+
+
+  Analyses bioinformatique
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Séquençage Téléo / Elas
+               Téléo             Elas0
+                12S                 2
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Espèces détectées en ADNe – Marqueur Téléo
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Espèces détectées en ADNe – Marqueur Elas
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Richesses spécifiques - Vue d’ensemble
+  Résultats avec marqueur Téléo
+
+
+
+
+                                  Site d’étude
+           ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+           Richesses spécifiques - Vue d’ensemble
+             Résultats avec marqueur Téléo
+Latitude
+
+
+
+
+                              Longitude
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Diversité local et matrice de distance
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Diversité local et matrice de distance
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Diversité régionale
+
+
+
+
+           La région est 6 fois plus riche qu’un site moyen (βa)
+           En moyenne 1.74 espèces supplémentaires sur la région par rapport au site moyen (βm)
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Les guildes écologiques: décoder le fonctionnement biologique
+
+         Marines Adventices
+  MA     Espèces marines fréquentant occasionnellement l’estuaire ou les zones portuaires
+
+
+         Marines Juvéniles
+  MJ
+         Espèces marines utilisant l’estuaire comme zone de nourricerie essentielle.
+
+
+         Résidentes Estuariennes
+  ER
+         Espèces accomplissant l’intégralité de leur cycle de vie dans l’estuaire
+
+
+         Migrateurs Amphihalins
+ DIA
+         Espèces migratrices (Saumon, Anguille…) reliant les milieux marins et continentaux
+
+
+         Eau Douce (Freshwater)
+  FW     Espèces témoignant de l’influence continentale et des apports fluviaux
+
+
+                                                Passer de la liste d'espèces à la compréhension des fonctions écologiques
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Estuaire de la Somme
+  Site de référence DCE – Suivi historique
+
+
+
+
+  14                                           9,4 L                      69               6,4 L                      4.1
+  Espèces détectées (total)                    Vol. moyen aval           NTU               Vol. moyen amont           NTU
+ Assemblage – Gradient Aval → Amont
+
+   Zone Aval - 7 espèces
+
+
+
+
+  Zone Amont - 11 espèces
+
+
+                                Synthèse
+
+                                Gradient fonctionnel net : zone aval dominée MJ+ER (hareng, bar, merlan, gobie tacheté) ; zone
+                                amont enrichie en FW (brème, gardon, perche, sandre) et DIA (Salmo salar à confirmer).
+                                Signature typique d'un estuaire fonctionnel..
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Estuaire de l’Authie
+  Influence marine marqué, assemblage le plus riche détecté
+
+
+
+
+  14                                          9L                         96              22,7 L                      36
+  Espèces détectées (total)                   Vol. moyen aval           NTU              Vol. moyen amont           NTU
+ Assemblage – Gradient Aval → Amont
+
+   Zone Aval - 6 espèces
+
+
+
+
+  Zone Amont - 14 espèces
+
+
+                               Synthèse
+                               La richesse de 14 espèces dépasse les valeurs historiques au chalut. L'amont montre une large
+                               diversification des guildes
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Estuaire de la Canche
+  Configuration resserrée, assemblage intermédiaire
+
+
+
+
+  9                                           32 L                       38              35,3 L                     25
+  Espèces détectées (total)                   Vol. moyen aval           NTU              Vol. moyen amont          NTU
+ Assemblage – Gradient Aval → Amont
+
+   Zone Aval - 9 espèces
+
+
+
+
+  Zone Amont - 7 espèces
+
+
+                               Synthèse
+                               Estuaire plus contraint spatialement, les deux zones partagent un noyau commun (hareng,
+                               merlan, bar, gobie tacheté, lieu noir). L'assemblage reste dominé MJ dans les deux secteurs.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Estuaire de la Canche
+  Configuration resserrée, assemblage intermédiaire
+
+
+
+
+  9                                           32 L                       38              35.3 L                     25
+  Espèces détectées (total)                   Vol. moyen aval           NTU              Vol. moyen amont          NTU
+ Assemblage – Gradient Aval → Amont
+
+   Zone Aval - 9 espèces
+
+
+
+
+  Zone Amont - 7 espèces
+
+
+                               Synthèse
+                               Estuaire plus contraint spatialement, les deux zones partagent un noyau commun (hareng,
+                               merlan, bar, gobie tacheté, lieu noir). L'assemblage reste dominé MJ dans les deux secteurs.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Port de Boulogne sur mer
+  Forte influence marine, transition port/estuaire côté Liane
+
+
+
+
+  12                                              54 L                  3                  7,9 L                  6
+  Espèces détectées (total)                       Vol. moyen Secteur 2 NTU                 Vol. moyen Aval Liane NTU
+
+ Assemblage – Gradient Aval → Amont
+
+   Secteur 2 - 10 espèces
+
+
+
+
+   Aval Laine - 9 espèces
+
+
+                                 Synthèse
+                                 Estuaire plus contraint spatialement, les deux zones partagent un noyau commun (hareng,
+                                 merlan, bar, gobie tacheté, lieu noir). L'assemblage reste dominé MJ dans les deux secteurs.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Estuaire de la Slack
+  Faible salinité · Station unique · Influence continentale marquée
+
+
+
+
+  6                                              3,3 L                       49
+                                                 Vol. moyen Aval
+                                                                                              4 PSU
+  Espèces détectées (total)                                                 NTU
+ Assemblage – Gradient Aval → Amont
+
+   Zone Aval - 6 espèces
+
+
+
+
+                                 Synthèse
+                                 Richesse la plus faible de la campagne, corrélée à la faible salinité (4 PSU) et aux volumes très
+                                 faibles (3,3 L, colmatage rapide). La présence de Rutilus rutilus (Gardon) est cohérente avec les
+                                 conditions oligohalines. Salmo salar détecté mais à confirmer.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Port de Calais
+   Démonstratif, résultats robustes sans accès bateau
+
+
+
+
+   15                                           40,7 L                16,7                 12,3 L                      21
+   Espèces détectées (total)                    Vol. moyen Avant port NTU                  Vol. moyen Chasses         NTU
+  Assemblage – Gradient Aval → Amont
+
+    Avant port - 13 espèces
+
+
+
+
+Bassin des chasses - 9 espèces
+
+
+                                 Synthèse
+                                 Résultats cohérents avec les campagnes halieutiques 2021-2022 : hareng, merlan, bar, sprat
+                                 retrouvés dans les deux approches. L'ADNe révèle en plus les espèces dulçaquicoles du secteur
+                                 faiblement salé. La méthode conserve sa capacité descriptive même sous contrainte
+                                 opérationnelle.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Port de Dunkerque Ouest
+   Dominance marine — différenciation bassin ouvert / avant-port
+
+
+
+
+   11                                           58 L                   7                     74 L                  4,6
+   Espèces détectées (total)                    Vol. moyen Avant port NTU                    Vol. moyen Atlantique NTU
+
+  Assemblage – Gradient Aval → Amont
+
+    Avant port - 7 espèces
+
+
+
+
+Bassin Atlantique - 11 espèces
+
+
+                                 Synthèse
+                                 Hareng, sardine, merlan, dorade, bar communs aux deux secteurs. Le bassin Atlantique présente
+                                 en plus trois gobies estuariens (Atherina, Gobius niger, Pomatoschistus), signal de connectivité
+                                 avec les habitats saumâtres adjacents. Conger conger cohérent avec les habitats rocheux
+                                 portuaire
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Port de Dunkerque Est
+   Opposition marquée entre les deux bassins
+
+
+
+
+   16                                          13,7 L                     -               55 L                        -
+   Espèces détectées (total)                   Vol. moyen Mardyck        NTU              Vol. moyen Evolution       NTU
+  Assemblage – Gradient Aval → Amont
+
+ Bassin Mardyck- 12 espèces
+
+
+
+
+Bassin Evolution - 10 espèces
+
+
+                                Synthèse
+                                Le bassin d'évolution présente le profil attendu : MJ + ER + MA. Le bassin de Mardyck détecte
+                                brème, gardon, perche, sandre dans un environnement fortement salin (32 PSU), probablement
+                                des apports continentaux via les réseaux hydrauliques connectés au port, ou transferts d'ADN
+                                fluviaux.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Comparaison ADNe / Chalut – Estuaire de la Somme 2025
+  Complémentarité des approches sur site de référence
+
+                                                          Espèces communes détectées
+
+                                                          •   Hareng
+                                                          Clupea harengus
+
+                                                          •   Merlan
+                                                          Merlangius merlangus
+
+                                                          •  Gobie tacheté
+                                                          Pomatoschistus microps
+
+                                                          •   Bar
+                                                          Dicentrarchus labrax
+
+
+                Les 4 espèces communes structurantes. Le chalut excelle sur les espèces benthiques
+                capturables localement. L'ADNe intègre espèces mobiles, discrètes, et signatures des
+                habitats connectés (amont, zone pélagique).
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Guildes écologiques - ADNe / Chalut 2019 – 2025 Estuaire de la Somme
+  fonctionnelle conservée entre les deux approches
+
+
+   ADNe Automne 2025
+
+
+             MJ 29%                  ER 14%       MA 7%   DIA 7%                     FW 43%
+
+
+
+
+  Chalut à perche (2019–2025)
+
+
+                  MJ 36%                                  ER 34%                   MA 11%        DIA 15%    FW 3%
+
+
+
+
+   Synthèse
+   Hiérarchie des guildes conservée : MJ puis ER dominent dans les deux approches. L'ADNe révèle une
+   proportion FW plus élevée, reflet de sa capacité intégrative à détecter les signatures moléculaires provenant
+   des habitats amont et des apports continentaux transitant dans les estuaires
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Conclusions
+  Ce que cette première campagne démontre réellement
+
+
+
+       ✓ Faisabilité opérationnelle démontrée                ✓ Cohérence écologique des assemblages
+
+
+
+       ✓ Guildes écologiques restitués                       ✓ Gradients estuariens détectés
+
+
+
+       ✓ Ports – assemblages structurés                      ✓ Complémentarité avec le suivi DCE
+
+
+       Synthèse
+       Cette première campagne n'a pas seulement permis de détecter des espèces. À partir de quelques
+       dizaines de litres d'eau filtrés, dans des conditions « complexes », elle a retrouvé le fonctionnement
+       écologique des eaux de transition.
+ARTOIS PICARDIE · 30 JUIN 2026
+
+
+
+
+Vers un démonstrateur - Estuaire de la Somme 4 saisons
+  Caractériser la dynamique annuelle complète
+
+
+ X4                                             X3                                          X2
+ Passages saisonniers                           Filtres simultanés                          Secteurs amont/aval
+ Printemps · Été · Automne · Hiver-             Robustesse statistique · standardisation,   Gradient estuarien complet ·
+ couvrir l'ensemble du cycle biologique         réduction des faux négatifs                 comparaison directe chalut DCE
+
+
+ L'estuaire de la Somme dispose du suivi halieutique historique le plus complet du bassin. Une phase 2 multi-
+ saisonnière permettrait de calibrer l'ADNe sur un système de référence robuste et de quantifier la représentativité
+ temporelle de la méthode.
+
+ Évolutions techniques                                                  Suivi turbidité
+
+ Fragments plus longs · Nanopore long-read ·                            Sonde continue pendant filtration · modèle prédictif
+ Meilleure résolution taxonomique                                       volume/qualité
+
