@@ -200,7 +200,8 @@ export function createJourney(
     if (!box.width) return;
     width = box.width;
     height = box.height;
-    ratio = Math.min(window.devicePixelRatio || 1, 2);
+    // Phones draw at 1.5x: the chart is soft light on dark water, and weaker GPUs keep up.
+    ratio = Math.min(window.devicePixelRatio || 1, width < 700 ? 1.5 : 2);
     canvas.width = trail.width = Math.round(width * ratio);
     canvas.height = trail.height = Math.round(height * ratio);
     const count = width < 700 ? 650 : 1300;

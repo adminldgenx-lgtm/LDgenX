@@ -1,13 +1,23 @@
 // Adds French no-break spaces inside string literals and JSX text only:
 // narrow (U+202F) before ? ! ; and regular (U+00A0) before : and inside « ».
+// In the content catalogues, the groups of a number (40 746 SNP) are also joined by a narrow
+// no-break space, so a number never breaks across two lines.
 // Usage: node scripts/fr-typography.mjs [--check]
 import { readFile, writeFile } from 'node:fs/promises';
 import { globSync } from 'node:fs';
 import ts from 'typescript';
 
 const check = process.argv.includes('--check');
-const fix = (text) =>
-  text
+// Thousands only: a group of one to three digits (not starting with 0) followed by groups of
+// exactly three, so viewBox-like strings ("0 0 400 300") never match.
+const thousands =
+  /(?<![\d.,\u202f\u00a0])(?<!\d[ \u00a0])([1-9]\d{0,2})((?:[ \u00a0]\d{3})+)(?!\d)/g;
+const content = (file) => /^src\/content\/(?!assay-targets)/.test(file);
+const fix = (text, file) =>
+  (content(file)
+    ? text.replace(thousands, (_, head, rest) => head + rest.replace(/[ \u00a0]/g, '\u202f'))
+    : text
+  )
     .replace(/(\S) ([?!;])/g, '$1 $2')
     .replace(/(\S) :(?=\s|$|['"`])/g, '$1 :')
     .replace(/« /g, '« ')
@@ -32,7 +42,7 @@ for (const file of globSync('src/**/*.{ts,tsx}').filter(french)) {
     if (kinds.has(node.kind) && !ts.isImportDeclaration(node.parent)) {
       const start = node.getStart(tree);
       const text = source.slice(start, node.getEnd());
-      const next = fix(text);
+      const next = fix(text, file);
       if (next !== text) edits.push([start, node.getEnd(), next]);
     }
     ts.forEachChild(node, visit);

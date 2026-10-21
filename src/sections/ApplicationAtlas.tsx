@@ -86,6 +86,46 @@ type View = { x: number; y: number; z: number };
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
 const easeOut = (t: number) => 1 - (1 - t) ** 3;
 type Intro = 'static' | 'pending' | 'playing';
+type Box = { left: number; top: number; right: number; bottom: number };
+const overlaps = (a: Box, b: Box, gap = 8) =>
+  a.left < b.right + gap &&
+  a.right + gap > b.left &&
+  a.top < b.bottom + gap &&
+  a.bottom + gap > b.top;
+
+// Only the label and its leader move. The geographic anchor always stays at PLACES.at.
+function fitLabel(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  side: 'left' | 'right',
+  dx: number,
+  dy: number,
+  w: number,
+  h: number,
+  obstacles: Box[],
+  points: { x: number; y: number }[],
+) {
+  const preferred = { left: side === 'left' ? x - dx - width : x + dx, top: y + dy - height };
+  const boundX = (v: number) => Math.max(12, Math.min(w - width - 12, v));
+  const boundY = (v: number) => Math.max(12, Math.min(h - height - 12, v));
+  const candidates: { box: Box; score: number }[] = [];
+  for (const left of [preferred.left, x + dx, x - dx - width, x - width / 2, 12, w - width - 12]) {
+    for (const offset of [0, -1, 1, -2, 2, -3, 3, -4, 4]) {
+      const l = boundX(left),
+        top = boundY(preferred.top + offset * (height + 12));
+      const box = { left: l, top, right: l + width, bottom: top + height };
+      const collisions = obstacles.filter((other) => overlaps(box, other)).length;
+      const coveredPoints = points.filter((p) =>
+        overlaps(box, { left: p.x - 8, top: p.y - 8, right: p.x + 8, bottom: p.y + 8 }, 0),
+      ).length;
+      const distance = Math.hypot(l - preferred.left, top - preferred.top);
+      candidates.push({ box, score: (collisions + coveredPoints) * 10000 + distance });
+    }
+  }
+  return candidates.sort((a, b) => a.score - b.score)[0].box;
+}
 
 export function ApplicationAtlas() {
   const { applications, services, ui } = useCatalog();
@@ -122,8 +162,8 @@ export function ApplicationAtlas() {
     spot: 0,
     frame: 0,
     visible: false,
-    flips: [] as boolean[],
-    rises: [] as number[],
+    furniture: [] as Box[],
+    heading: null as Box | null,
     labels: [] as { w: number; h: number }[],
     duration: ZOOM_MS,
     introStart: 0,
@@ -157,7 +197,7 @@ export function ApplicationAtlas() {
       const box = state.card;
       const placeY =
         box && placeX > box.left - 40 && placeX < box.right + 40
-          ? Math.min(h * 0.5, box.top - 120)
+          ? Math.max(120, Math.min(h * 0.5, box.top - 120))
           : h * (compact ? 0.52 : 0.5);
       y = placeY - h / 2 - z * (at[1] - 0.5) * ih;
     } else if (compact) {
@@ -190,50 +230,56 @@ export function ApplicationAtlas() {
       scene.current.style.transform = reduced
         ? ''
         : `perspective(1600px) rotateX(${p.y * -1.4 + arrival * 24}deg) rotateY(${p.x * 1.8}deg)`;
-    sectors.forEach((s, i) => {
-      const el = markers.current[i];
+    const points = sectors.map((s) => ({
+      x: w / 2 + view.x + view.z * (s.place.at[0] - 0.5) * iw,
+      y: h / 2 + view.y + view.z * (s.place.at[1] - 0.5) * ih,
+    }));
+    const occupied: Box[] = [...state.furniture];
+    if (state.card) occupied.push(state.card);
+    if (!state.focused && state.heading) occupied.push(state.heading);
+    const order = state.focused
+      ? [state.active, ...sectors.map((_, i) => i).filter((i) => i !== state.active)]
+      : sectors.map((_, i) => i);
+    order.forEach((i) => {
+      const s = sectors[i],
+        el = markers.current[i];
       if (!el) return;
-      const x = w / 2 + view.x + view.z * (s.place.at[0] - 0.5) * iw;
-      const y = h / 2 + view.y + view.z * (s.place.at[1] - 0.5) * ih;
+      const { x, y } = points[i];
       el.style.left = '0';
       el.style.top = '0';
       el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      const size = state.labels[i] ?? { w: 180, h: 40 };
-      const label = size.w;
-      // A long leader shortens when the name would leave the top of the map.
-      const rise = Math.max(s.place.leader[1], Math.min(-24, -(y - size.h - 12)));
-      if (state.rises[i] !== rise) {
-        state.rises[i] = rise;
-        const [dx] = s.place.leader;
-        el.style.setProperty('--dy', `${rise}px`);
-        el.style.setProperty('--len', `${Math.hypot(dx, rise)}px`);
-        el.style.setProperty('--angle', `${Math.atan2(rise, dx)}rad`);
-      }
-      // A name goes where it fits, and never over the card.
-      const dx = s.place.leader[0];
-      const top = y + rise - size.h,
-        bottom = y + rise;
-      const clear = (left: number, right: number) =>
-        !state.card ||
-        right < state.card.left ||
-        left > state.card.right ||
-        bottom < state.card.top ||
-        top > state.card.bottom;
-      const room = {
-        left: x - dx - label >= 12 && clear(x - dx - label, x),
-        right: x + dx + label <= w - 12 && clear(x, x + dx + label),
-      };
-      const flip = s.place.side === 'left' ? room.left || !room.right : !room.right && room.left;
-      if (state.flips[i] !== flip) {
-        state.flips[i] = flip;
-        el.toggleAttribute('data-flip', flip);
-      }
+      const size = state.labels[i] ?? { w: 224, h: 64 };
+      const visible =
+        i === state.active ||
+        (!compact && !state.focused) ||
+        (!compact && el.matches(':hover, :focus-visible'));
+      const box = fitLabel(
+        x,
+        y,
+        size.w,
+        size.h,
+        s.place.side,
+        ...s.place.leader,
+        w,
+        h,
+        visible ? occupied : [],
+        points,
+      );
+      if (visible) occupied.push(box);
+      el.style.setProperty('--label-x', `${box.left - x}px`);
+      el.style.setProperty('--label-y', `${box.top - y}px`);
+      // The line meets the nearest edge of its plate, including a plate centred on a phone.
+      const endX = Math.max(box.left + 8, Math.min(box.right - 8, x)) - x;
+      const endY = Math.max(box.top + 8, Math.min(box.bottom - 8, y)) - y;
+      el.style.setProperty('--len', `${Math.hypot(endX, endY)}px`);
+      el.style.setProperty('--angle', `${Math.atan2(endY, endX)}rad`);
+      el.toggleAttribute('data-flip', box.right <= x);
       if (i === (state.hover >= 0 && !state.focused ? state.hover : state.active) && spot.current) {
         spot.current.style.setProperty('--sx', `${x}px`);
         spot.current.style.setProperty('--sy', `${y}px`);
       }
     });
-  }, [reduced]);
+  }, [compact, reduced]);
 
   const loop = useCallback(
     (now: number) => {
@@ -272,6 +318,22 @@ export function ApplicationAtlas() {
     // Where the card will stand once it has moved: it may still be gliding between sides.
     const el = card.current;
     const { w, h } = state.size;
+    const stageBox = stage.current?.getBoundingClientRect();
+    const relative = (node: Element | null): Box | null => {
+      if (!node || !stageBox) return null;
+      const b = node.getBoundingClientRect();
+      return {
+        left: b.left - stageBox.left,
+        top: b.top - stageBox.top,
+        right: b.right - stageBox.left,
+        bottom: b.bottom - stageBox.top,
+      };
+    };
+    const atlas = stage.current?.closest('.atlas');
+    state.heading = compact ? null : relative(atlas?.querySelector('.atlas-intro') ?? null);
+    state.furniture = [relative(atlas?.querySelector('.atlas-corner') ?? null)].filter(
+      (b): b is Box => b !== null,
+    );
     if (compact || !el) state.card = null;
     else {
       const cw = el.offsetWidth,
@@ -298,6 +360,19 @@ export function ApplicationAtlas() {
   useEffect(() => {
     travel();
   }, [active, focused, travel]);
+
+  // Font loading, a translated title, or a resized card can change the measured plates.
+  useEffect(() => {
+    const observer = new ResizeObserver(() => {
+      measure();
+      kick();
+    });
+    markers.current.forEach((el) => {
+      if (el?.lastElementChild) observer.observe(el.lastElementChild);
+    });
+    if (card.current) observer.observe(card.current);
+    return () => observer.disconnect();
+  }, [kick, measure]);
 
   // Phones: the row of sectors keeps the chosen one in view.
   useEffect(() => {
@@ -338,7 +413,10 @@ export function ApplicationAtlas() {
     onScreen.observe(element);
     // The atlas arrives once, when it is well into view: the window onto the map opens, the view
     // descends from a low, close angle, then the places, the heading and the card arrive.
-    if (!reduced && !arrived.current) setIntro('pending');
+    // Hydration can first set a pending entrance before the media query is available.
+    // Reduced motion must also clear that crop so every place remains reachable.
+    if (reduced) setIntro('static');
+    else if (!arrived.current) setIntro('pending');
     const arrival = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || arrived.current) return;

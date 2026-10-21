@@ -1,0 +1,26 @@
+[
+  {
+    "name": "hero",
+    "width": 1440,
+    "dimensionsMatch": true,
+    "changedPixelPercent": 1.3403361344537814
+  },
+  {
+    "name": "journey-stage",
+    "width": 1440,
+    "dimensionsMatch": true,
+    "changedPixelPercent": 4.889527279521674
+  },
+  {
+    "name": "hero",
+    "width": 390,
+    "dimensionsMatch": true,
+    "changedPixelPercent": 0.17068155111633374
+  },
+  {
+    "name": "journey-stage",
+    "width": 390,
+    "dimensionsMatch": true,
+    "changedPixelPercent": 2.0674241013224064
+  }
+]

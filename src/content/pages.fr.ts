@@ -16,10 +16,10 @@ export const pageCopy = {
     eyebrow: 'La génomique en pratique',
     title: 'Des questions concrètes.\nDes approches scientifiques.',
     intro:
-      'Des études et des champs d’application présentés dans les références publiques de LDgenX. Chaque sujet est relié à sa source.',
+      'Des ports d’Artois-Picardie aux parcs éoliens en mer : des questions de terrain, et la façon dont nous y répondons.',
   },
   innovations: {
-    eyebrow: 'DeepTech · recherche & développement',
+    eyebrow: 'Deep Tech · recherche & développement',
     title: 'Explorer les nouvelles\nfrontières du vivant.',
     intro:
       'À la croisée de l’ADN environnemental, du séquençage et de la bioinformatique, nous développons les outils de connaissance de la biodiversité de demain.',
@@ -28,7 +28,7 @@ export const pageCopy = {
     eyebrow: 'À propos de LDgenX',
     title: 'La génomique appliquée.\nLa connaissance du vivant.',
     intro:
-      'Entreprise DeepTech française, LDgenX accompagne les acteurs publics et privés dans leurs projets de biodiversité, de conservation, d’agriculture et d’aquaculture.',
+      'Entreprise Deep Tech française, LDgenX accompagne les acteurs publics et privés dans leurs projets de biodiversité, de conservation, d’agriculture et d’aquaculture.',
   },
   team: {
     eyebrow: 'L’équipe scientifique',

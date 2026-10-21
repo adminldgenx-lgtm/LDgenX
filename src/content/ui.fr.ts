@@ -46,6 +46,10 @@ export const ui = {
       partners: 'Partenaires',
       resources: 'Ressources & Expertise',
       equipment: 'Matériel d’échantillonnage',
+      tests: 'Tests ADN ciblés',
+      faq: 'Questions fréquentes',
+      glossary: 'Glossaire',
+      siteMap: 'Plan du site',
     },
     rights: 'LDgenX · Tous droits réservés',
     legal: 'Mentions légales',
@@ -72,8 +76,8 @@ export const ui = {
   },
   hero: {
     lines: [
-      ['Éclairer vos', 'décisions'],
-      ['avec ', 'l’ADN'],
+      ['De l’ADN', ''],
+      ['aux ', 'décisions'],
     ],
     innovationLabel: 'Innovation',
     innovationText: 'automatiser le suivi de la biodiversité',
@@ -83,7 +87,7 @@ export const ui = {
   dna: {
     eyebrow: 'Comprendre pour agir',
     parts: [
-      'Sur le terrain',
+      'En amont',
       'Sur le terrain',
       'Au laboratoire',
       'Au laboratoire',
@@ -183,7 +187,7 @@ export const ui = {
   },
   panels: {
     label: 'D’autres questions, d’autres approches',
-    allLabel: 'Les études présentées par LDgenX',
+    allLabel: 'Nos études de cas',
     otherLabel: 'Les autres études',
     question: 'La question',
     work: 'Les travaux',
@@ -228,14 +232,13 @@ export const ui = {
     prestationsEyebrow: 'Nos prestations',
     prestationsTitle: 'Ce que nous prenons\nen charge.',
     prestationsText:
-      'Les étapes que l’équipe peut réaliser pour vous, telles que présentées pour cette expertise.',
+      'Les étapes que l’équipe réalise pour vous, selon le périmètre de votre projet.',
     casesEyebrow: 'Cas d’études',
     casesTitle: 'Des questions\ndéjà explorées.',
     sectorsEyebrow: 'Vos secteurs d’application',
     sectorsTitle: 'La génomique sur votre terrain.',
     moreEyebrow: 'Expertises complémentaires',
     moreTitle: 'Aller plus loin, ensemble.',
-    official: 'Présentation d’origine de cette expertise',
     allSectorsEyebrow: 'Tous les secteurs',
     allSectorsTitle: 'Chaque terrain,\nune même exigence.',
     sectorsSr: 'Les secteurs d’application',
@@ -243,7 +246,6 @@ export const ui = {
     fieldTitle: 'Votre contexte\nguide la démarche.',
     fieldText:
       'Avant de choisir une technologie, nous prenons le temps de comprendre la question, le milieu et les informations dont vous avez besoin.',
-    reference: 'Référence LDgenX',
     approachesEyebrow: 'Les approches proposées',
     approachesTitle: 'Des outils choisis\nselon votre question.',
     deliverablesEyebrow: 'Livrables et accompagnement',
@@ -255,7 +257,7 @@ export const ui = {
     applicationUses: 'Applications',
     applicationExamples: 'Exemples de projets',
     relatedEyebrow: 'Les expertises à mobiliser',
-    relatedTitle: 'La génomique au service\nde votre problématique.',
+    relatedTitle: 'Les expertises\nà réunir pour votre projet.',
     relatedBody:
       'Du prélèvement à l’interprétation, nous relions les expertises au besoin identifié avec vous.',
     practiceIntro:
@@ -264,11 +266,10 @@ export const ui = {
   equipment: {
     eyebrow: 'Le matériel',
     title: 'Trois outils\npour filtrer sur le terrain.',
-    text: 'Le matériel d’échantillonnage de l’ADN environnemental proposé par LDgenX, avec ses caractéristiques et les prix publiés.',
+    text: 'Le matériel de filtration que nous proposons pour l’ADN environnemental, avec ses caractéristiques.',
     specs: 'Caractéristiques',
-    prices: 'Prix publiés',
-    priceNote:
-      'Prix hors taxes, tels que publiés sur ldgenx.fr. Un devis précise le matériel, sa disponibilité et les conditions de vente.',
+    prices: 'Prix',
+    priceNote: 'Un devis précise le matériel, sa disponibilité et les conditions de vente.',
     quote: 'Demander un devis pour ce matériel',
   },
   studyPage: {
@@ -278,7 +279,7 @@ export const ui = {
     lessons: 'Les enseignements',
     alongCoast: 'L’étude, le long de la côte',
     noResults:
-      'Cette présentation s’appuie sur le sujet cité par LDgenX. Les résultats détaillés ne sont pas publiés dans la source consultée.',
+      'Un projet comparable ? Présentez-nous votre site et votre question : nous construisons ensemble le protocole adapté.',
     reference: 'Consulter la référence publiée',
     expertiseEyebrow: 'L’expertise associée',
     exploreExpertise: 'Explorer cette expertise',
@@ -286,7 +287,7 @@ export const ui = {
     worksEyebrow: 'Travaux scientifiques',
     worksTitle: 'Les travaux\nde l’équipe.',
     worksText:
-      'Des recherches publiées par les membres de l’équipe, présentées sur ldgenx.fr avec leurs figures et leurs références.',
+      'Des recherches publiées par les membres de l’équipe, avec leurs figures et leurs références.',
     publications: 'Toutes les publications',
   },
   results: {
@@ -326,11 +327,12 @@ export const ui = {
     eyebrow: 'Recherche & publications',
     title: 'Les travaux scientifiques\nde l’équipe.',
     intro:
-      'Des articles coécrits par les membres de l’équipe avec leurs coauteurs et leurs institutions de recherche. Ils fondent les méthodes que nous mobilisons ; ce ne sont pas des prestations réalisées pour des clients.',
-    featuredEyebrow: 'Trois sujets pour entrer',
+      'Des articles coécrits par les membres de l’équipe avec leurs coauteurs et leurs instituts de recherche. Ils fondent les méthodes que nous mettons en œuvre dans nos projets.',
+    featuredEyebrow: 'Trois articles pour commencer',
     featuredTitle: 'Une question.\nUne approche. Un résultat.',
     featuredLabel: 'Choisir un sujet',
     readSummary: 'Lire la synthèse',
+    showOthers: (n: number) => `Afficher les ${n} autres publications`,
     chartSource: 'Source',
     catalogEyebrow: 'Le catalogue',
     catalogTitle: 'Toutes les publications.',
@@ -358,13 +360,6 @@ export const ui = {
       ressources: 'Ressources & méthodes',
     } as Record<string, string>,
     review: 'Article de revue',
-    text: {
-      published:
-        'Synthèse fondée sur le résumé de l’article publié ; texte intégral de l’article publié consulté.',
-      preprint:
-        'Synthèse fondée sur le résumé de l’article publié ; le texte intégral consulté est la prépublication, antérieure à l’article.',
-      abstract: 'Synthèse fondée sur le résumé de l’article publié ; texte intégral non consulté.',
-    } as Record<string, string>,
     question: 'La question',
     approach: 'L’approche',
     finding: 'Ce que l’article apporte',
@@ -382,22 +377,23 @@ export const ui = {
     noFigures:
       'Les figures de cet article ne sont pas reproduites ici ; elles sont consultables dans l’article publié.',
     services: 'Expertises liées',
-    servicesNote:
-      'Un lien vers une expertise indique un champ commun ; il ne signifie pas que l’article a mobilisé toutes ses techniques.',
     share: 'Copier le lien',
-    copied: 'Lien copié',
+    copied: 'Référence copiée',
     close: 'Fermer',
     dialog: 'Synthèse de la publication',
-    distinctEyebrow: 'À ne pas confondre',
-    distinctTitle: 'Publications, projets R&D\net études de cas.',
-    distinct: [
-      'Les publications sont des travaux de recherche coécrits par les membres de l’équipe, avec leurs coauteurs et leurs institutions.',
-      'Les projets R&D (DNA EcoTrace, eDNAClock) sont des axes de développement de LDgenX, distincts de ces articles.',
-      'Les études de cas, comme Artois-Picardie, sont des travaux appliqués présentés avec leurs propres sources.',
-    ],
+    distinctEyebrow: 'Aller plus loin',
+    distinctTitle: 'De la recherche\nau terrain.',
+    distinct:
+      'Ces publications fondent nos méthodes. Nos projets de R&D les prolongent, et nos études de cas les mettent en œuvre sur le terrain.',
     seeRd: 'Les projets R&D',
     seeStudies: 'Les études de cas',
     seeMember: 'Voir ses publications',
+    allPublications: 'Toutes les publications',
+    originalTitle: 'Titre original',
+    cite: 'Citer cet article',
+    copyCitation: 'Copier la référence',
+    teamAuthors: 'Auteurs de l’équipe',
+    otherPublications: 'D’autres publications\nsur ce thème.',
     homeEyebrow: 'Recherche & publications',
     homeTitle: 'Des travaux publiés,\ncoécrits par l’équipe.',
     homeText:
@@ -410,17 +406,14 @@ export const ui = {
   },
   works: {
     eyebrow: 'Travaux scientifiques',
-    note: 'Ces travaux présentent des recherches publiées par les membres de l’équipe ; ils sont repris de ldgenx.fr avec leurs figures et leurs références.',
     contents: 'Dans ces travaux',
     expertise: 'L’expertise associée',
     others: 'Les autres travaux',
-    source: 'Page d’origine sur ldgenx.fr',
   },
   person: {
     eyebrow: 'L’équipe scientifique',
     biography: 'Parcours',
     publications: 'Publications',
-    publicationsNote: 'Références vérifiées sur les articles publiés : titre, revue, année et DOI.',
     expertise: 'Son expertise',
     allTeam: 'Toute l’équipe',
     open: 'Lire la publication',
@@ -432,7 +425,7 @@ export const ui = {
   },
   terms: {
     contents: 'Sommaire',
-    note: 'Texte reproduit tel que publié sur ldgenx.fr. Seule la mise en forme a changé.',
+    note: '',
   },
   innovationPage: {
     sr: 'Les projets de recherche',
@@ -441,13 +434,11 @@ export const ui = {
     collaborationText:
       'Développer une méthode, explorer une nouvelle application ou construire un projet collaboratif : notre équipe est ouverte aux collaborations scientifiques, techniques et industrielles.',
     collaborationAction: 'Notre accompagnement R&D',
-    deeptechEyebrow: 'Une entreprise DeepTech',
+    deeptechEyebrow: 'Une entreprise Deep Tech',
     supportsTitle: 'Nos projets sont soutenus par',
-    projectNote:
-      'Ce projet relève de la recherche et du développement. Les objectifs présentés ne constituent pas une promesse de résultat ou une performance commerciale annoncée.',
+    projectNote: 'Projet de recherche et développement en cours.',
     projectSubtitle: 'Une voie à explorer.',
     principle: 'Le principe du projet',
-    official: 'Présentation d’origine des projets',
     exploreEyebrow: 'Explorer la recherche',
     exploreTitle: 'Des expertises qui se rencontrent.',
   },
@@ -462,7 +453,6 @@ export const ui = {
       'Aucune ressource pour cette recherche. Essayez un autre sujet ou sélectionnez « Tout explorer ».',
     contents: 'Sommaire de l’article',
     contentsTitle: 'DANS CETTE RESSOURCE',
-    source: 'Source : présentation scientifique LDgenX',
     expertise: 'Découvrir l’expertise associée',
   },
   about: {
@@ -479,17 +469,15 @@ export const ui = {
     ecoTitle: 'Des liens pour\nfaire avancer la science.',
     ecoLink: 'Découvrir notre écosystème',
     teamSr: 'Les membres de l’équipe',
-    teamSource: 'Parcours scientifiques de l’équipe',
     partnersSr: 'L’écosystème de LDgenX',
-    partnersSource: 'Les relations présentées par LDgenX',
     logos: 'Les logos des partenaires',
   },
   legal: {
     publisher: 'Éditeur',
     identity: [
-      'LDgenX SAS · SIREN 952 193 837',
+      'LDgenX SAS · SIREN 952 193 837',
       'RCS Montpellier · Code NAF 7112B',
-      'Capital social : 50 000 €',
+      'Capital social : 50 000 €',
     ],
     contentTitle: 'Contenus scientifiques et illustrations',
     content:
@@ -535,11 +523,30 @@ export const ui = {
     bookingBenefits: 'Ce rendez-vous express vous permet de :',
   },
   seo: {
+    organization: {
+      alternateName: 'LDgenX, génomique appliquée',
+      award: ['Label Deep Tech (Bpifrance)'],
+      knowsAbout: [
+        'ADN environnemental',
+        'Métabarcoding',
+        'PCR digitale (dPCR)',
+        'Génomique des populations',
+        'Génomique de la conservation',
+        'Sélection génomique',
+        'Communautés microbiennes',
+        'Métagénomique',
+        'Bioinformatique',
+        'Séquençage',
+        'Épigénétique',
+        'Aquaculture',
+        'Biodiversité',
+      ],
+    },
     home: {
       label: 'Accueil',
       title: 'Génomique appliquée & ADN environnemental | LDgenX',
       description:
-        'LDgenX accompagne vos projets de biodiversité, d’agriculture et d’aquaculture, de l’échantillonnage à l’interprétation des données génomiques.',
+        'ADN environnemental, tests d’espèces par dPCR, génomique des populations et bioinformatique : LDgenX vous accompagne de l’échantillon à la décision.',
     },
     services: {
       label: 'Expertises',
@@ -571,7 +578,7 @@ export const ui = {
     },
     innovations: {
       label: 'Innovation',
-      title: 'Innovation DeepTech : DNA EcoTrace & eDNAClock | LDgenX',
+      title: 'Innovation Deep Tech : DNA EcoTrace & eDNAClock | LDgenX',
       description:
         'Explorez DNA EcoTrace et eDNAClock, les projets de recherche et développement LDgenX à la croisée de l’ADNe, du séquençage et de la bioinformatique.',
     },
@@ -581,7 +588,7 @@ export const ui = {
     },
     about: {
       label: 'À propos',
-      title: 'Une équipe DeepTech au service du vivant | LDgenX',
+      title: 'Une équipe Deep Tech au service du vivant | LDgenX',
       description:
         'Découvrez LDgenX, entreprise française de génomique appliquée, son équipe scientifique, sa mission et son écosystème.',
     },
@@ -596,11 +603,32 @@ export const ui = {
       description: (name: string, role: string) =>
         `${name}, ${role.toLowerCase()} chez LDgenX : parcours scientifique et liste des publications.`,
     },
+    publication: {
+      title: (t: string) => `${t} | LDgenX`,
+    },
+    faq: {
+      label: 'Questions fréquentes',
+      title: 'Questions fréquentes sur l’ADN environnemental | LDgenX',
+      description:
+        'ADN environnemental, dPCR, génomique des populations, kits d’échantillonnage, crédit d’impôt recherche : les réponses de LDgenX aux questions fréquentes.',
+    },
+    glossary: {
+      label: 'Glossaire',
+      title: 'Glossaire de la génomique et de l’ADN environnemental | LDgenX',
+      description:
+        'ADNe, métabarcoding, dPCR, qPCR, SNP, GWAS, RADseq, séquence ERC : les termes de la génomique appliquée définis simplement par LDgenX.',
+    },
+    siteMap: {
+      label: 'Plan du site',
+      title: 'Plan du site | LDgenX',
+      description:
+        'Toutes les pages de LDgenX : expertises, applications, études de cas, publications, ressources et informations.',
+    },
     publications: {
       label: 'Recherche & publications',
       title: 'Recherche & publications de l’équipe | LDgenX',
       description:
-        'Les articles scientifiques coécrits par Maeva Leitwein et Emilie Delpuech : références vérifiées, synthèses, figures et limites, reliés aux expertises de LDgenX.',
+        'Les articles scientifiques coécrits par l’équipe LDgenX (Maeva Leitwein, Emilie Delpuech, Damien Crestel) : synthèses, figures et limites.',
     },
     work: {
       title: (t: string) => `${t} : travaux scientifiques | LDgenX`,
@@ -609,7 +637,7 @@ export const ui = {
       label: 'Partenaires',
       title: 'Partenaires et écosystème scientifique | LDgenX',
       description:
-        'Les instituts de recherche, les soutiens et les organisations qui font confiance à LDgenX, présentés selon leur relation avec l’entreprise.',
+        'Les instituts de recherche, les soutiens et les organisations qui font confiance à LDgenX.',
     },
     resources: {
       label: 'Ressources',

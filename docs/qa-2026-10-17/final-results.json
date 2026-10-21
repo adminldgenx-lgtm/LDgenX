@@ -1,0 +1,24 @@
+{
+  "errors": [],
+  "focus": [
+    {
+      "visible": true,
+      "outline": "solid",
+      "width": "3px",
+      "color": "rgb(42, 116, 22)"
+    },
+    {
+      "visible": true,
+      "outline": "solid",
+      "width": "3px",
+      "color": "rgb(42, 116, 22)"
+    },
+    {
+      "visible": true,
+      "outline": "solid",
+      "width": "3px",
+      "color": "rgb(42, 116, 22)"
+    }
+  ],
+  "preview": "http://127.0.0.1:5173/services/sequencage-dpcr#test-sur-mesure"
+}

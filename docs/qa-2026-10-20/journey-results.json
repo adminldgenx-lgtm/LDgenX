@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "lang": "fr",
+      "width": 1440,
+      "workflowSteps": 7,
+      "dnaStages": 7,
+      "retiredRequests": 0
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "workflowSteps": 7,
+      "dnaStages": 7,
+      "retiredRequests": 0
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "workflowSteps": 7,
+      "dnaStages": 7,
+      "retiredRequests": 0
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "workflowSteps": 7,
+      "dnaStages": 7,
+      "retiredRequests": 0
+    }
+  ],
+  "errors": []
+}

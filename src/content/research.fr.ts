@@ -7,8 +7,453 @@ import type { ResearchFeatured, ResearchPublication } from './types';
 export const research = {
   publications: [
     {
+      id: 'bar-cortisol-temperature-2026',
+      readingTitle:
+        'Le cortisol libéré dans l’eau est corrélé à la température d’acclimatation mais pas au métabolisme chez un poisson téléostéen',
+      seoTitle: 'Bar européen : cortisol, température et métabolisme',
+      title:
+        'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
+      authors: [
+        'Sniecinski E',
+        'Navarro TP',
+        'Bailey T',
+        'Crestel D',
+        'Allal F',
+        'Maire A',
+        'Bégout ML',
+        'Geffroy B',
+        'McKenzie DJ',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Comparative Biochemistry and Physiology Part A: Molecular & Integrative Physiology',
+      year: 2026,
+      issue: '317, 112004',
+      type: 'article',
+      doi: '10.1016/j.cbpa.2026.112004',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/42066891/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['recherche-developpement'],
+      summary:
+        'Chez le bar européen, cette étude examine comment la température d’acclimatation saisonnière influence le métabolisme et le cortisol accumulé dans l’eau. Les deux augmentent avec la température, mais ne sont pas clairement corrélés entre eux une fois la masse des poissons prise en compte.',
+      question:
+        'La température d’acclimatation modifie-t-elle le métabolisme et le cortisol libéré dans l’eau, et ces deux mesures sont-elles liées ?',
+      approach:
+        'Bars de la population atlantique élevés pendant trois ans sous trois régimes thermiques suivant les variations saisonnières (témoin atlantique, modérément chaud, chaud) ; mesure de la consommation d’oxygène en tunnel de nage et du cortisol accumulé dans l’eau, à différentes températures au fil de l’année.',
+      finding:
+        'Le métabolisme et le cortisol augmentent avec la température d’acclimatation, avec une sensibilité semblable entre régimes ; à température égale, le cortisol reste plus élevé dans le régime témoin que dans le régime chaud.',
+      limit:
+        'Une seule population a été étudiée ; les auteurs présentent ce travail comme la première exploration de ces relations chez un poisson.',
+      figures: [],
+    },
+    {
+      id: 'bar-sex-ratio-temperature-gwas-2026',
+      readingTitle:
+        'La génétique quantitative et la GWAS révèlent des réponses du sex-ratio propres à chaque population chez le bar européen sauvage (*Dicentrarchus labrax*) selon différents scénarios de température',
+      seoTitle: 'Bar européen : sex-ratio, température et GWAS',
+      title:
+        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Delpuech E',
+        'Sanchez-Baizan N',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'Ruelle F',
+        'McKenzie DJ',
+        'Allal F',
+        'Vandeputte M',
+      ],
+      members: ['damien-crestel', 'emilie-delpuech'],
+      journal: 'Heredity',
+      year: 2026,
+      issue: '135(6), 385–396',
+      type: 'article',
+      doi: '10.1038/s41437-026-00841-w',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/41957174/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture', 'selection'],
+      services: ['selection', 'genomique-des-populations', 'bioinformatique'],
+      summary:
+        'Le bar européen possède un déterminisme du sexe polygénique, fortement influencé par la température. En élevant des descendants de ses trois populations sous quatre régimes thermiques, l’étude montre des sex-ratios propres à chaque population et identifie, chez la population atlantique seulement, une région génomique associée au sexe.',
+      question:
+        'Le déterminisme du sexe et sa sensibilité à la température diffèrent-ils entre les populations de bar européen ?',
+      approach:
+        'Descendants des populations atlantique (AT), de Méditerranée occidentale (WM) et orientale (EM), élevés sous quatre régimes thermiques : trois reproduisant les températures de ces mers et un régime d’élevage maximisant les femelles ; analyses de génétique quantitative et étude d’association pangénomique (GWAS).',
+      finding:
+        'La population atlantique présente un sex-ratio relativement équilibré et davantage de femelles que les deux autres ; l’héritabilité de la tendance sexuelle, d’environ 0,62, est stable entre populations et régimes ; sept SNP du groupe de liaison 19 sont associés au sexe chez la population atlantique.',
+      limit:
+        'Résultats obtenus en conditions expérimentales ; la région QTL contient un gène impliqué dans le déterminisme du sexe chez les poissons, sans que son rôle soit démontré ici, et aucun QTL n’est détecté pour les deux populations méditerranéennes.',
+      figures: [],
+    },
+    {
+      id: 'bar-survie-larvaire-introgression-2026',
+      readingTitle:
+        'La survie larvaire du bar européen (*Dicentrarchus labrax*) dépend du régime thermique naturel de sa population d’origine et du niveau d’introgression entre génomes atlantique et méditerranéen',
+      seoTitle: 'Survie larvaire du bar : température et introgression',
+      title:
+        'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Delpuech E',
+        'Leitwein M',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'Ruelle F',
+        'McKenzie DJ',
+        'Vandeputte M',
+        'Allal F',
+      ],
+      members: ['damien-crestel', 'emilie-delpuech', 'maeva-leitwein'],
+      journal: 'Aquaculture',
+      year: 2026,
+      issue: '615, 743605',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2025.743605',
+      links: [],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['adaptation', 'ascendance', 'aquaculture'],
+      services: ['genomique-des-populations', 'selection', 'bioinformatique'],
+      summary:
+        'La survie des larves de bar européen a été suivie sous quatre régimes thermiques : les températures naturelles de ses trois populations et celles d’une écloserie. Les populations atlantique et de Méditerranée orientale survivent mieux dans les températures de leur milieu d’origine, et plus l’introgression entre génomes atlantique et méditerranéen est élevée, plus la survie baisse.',
+      question:
+        'La température et l’origine génétique influencent-elles la survie des larves de bar européen ?',
+      approach:
+        'Larves des populations atlantique (AT), de Méditerranée occidentale (WM) et orientale (EM) élevées sous quatre régimes thermiques : trois reproduisant les températures naturelles de chaque population et un régime typique d’écloserie.',
+      finding:
+        'La survie est maximale vers 13,6 °C pour la population atlantique, contre plus de 17 °C pour les populations méditerranéennes ; un niveau d’introgression élevé réduit la survie, ce qui explique en partie les faibles performances de la population de Méditerranée occidentale.',
+      limit:
+        'Les auteurs relient l’effet de l’introgression à une purge de l’ascendance introgressée ou à des barrières d’isolement reproductif ; ils recommandent d’en tenir compte pour constituer des lignées domestiquées ou sélectionnées.',
+      figures: [],
+    },
+    {
+      id: 'poissons-tolerance-rechauffement-taille-2025',
+      readingTitle:
+        'La tolérance à un réchauffement aigu diminue avec la masse corporelle au sein des espèces de poissons',
+      seoTitle: 'Tolérance au réchauffement et taille des poissons',
+      title:
+        'Evidence that tolerance of acute warming declines with increasing body mass within fish species',
+      authors: [
+        'Navarro TP',
+        'Thambithurai D',
+        'Duquenne-Delobel E',
+        'Crestel D',
+        'Allal F',
+        'Salou G',
+        'Dutto G',
+        'Blasco FR',
+        'Bourjea J',
+        'McKenzie DJ',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Journal of Experimental Biology',
+      year: 2025,
+      issue: '228(17), jeb250612',
+      type: 'article',
+      doi: '10.1242/jeb.250612',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40948321/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['recherche-developpement'],
+      summary:
+        'Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les plus grands individus apparaissent plus sensibles aux vagues de chaleur que les plus petits.',
+      question:
+        'Au sein d’une même espèce, les poissons les plus grands supportent-ils moins bien un réchauffement rapide ?',
+      approach:
+        'Mesure de la température de fatigue lors d’un exercice aérobie prolongé (protocole CTSmax) et de la consommation maximale d’oxygène, chez des bars et des tilapias d’élevage et des bars et daurades sauvages.',
+      finding:
+        'La tolérance au réchauffement baisse significativement avec la masse dans toutes les populations ; elle est corrélée positivement à la consommation maximale d’oxygène atteinte avant la fatigue.',
+      limit:
+        'Le protocole ne révèle pas de limitation cardiorespiratoire plus forte chez les grands individus qu’aux températures habituelles : les mécanismes de cette baisse restent à préciser.',
+      figures: [],
+    },
+    {
+      id: 'genomes-becasse-becassine-2025',
+      readingTitle:
+        'Séquences génomiques à l’échelle des chromosomes de deux espèces de Charadriiformes : *Scolopax rusticola* et *Lymnocryptes minimus*',
+      seoTitle: 'Génomes de la bécasse des bois et de la bécassine sourde',
+      title:
+        'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
+      authors: [
+        'Delpuech E',
+        'Leitwein M',
+        'Couloux A',
+        'Labadie K',
+        'Cruaud C',
+        'Aury JM',
+        'Bodin C',
+        'Lapébie P',
+      ],
+      members: ['emilie-delpuech', 'maeva-leitwein'],
+      journal: 'Biodiversity Genomes',
+      year: 2025,
+      issue: '2025',
+      type: 'article',
+      doi: '10.56179/001c.143981',
+      links: [],
+      text: 'abstract',
+      licence: '',
+      themes: ['ressources', 'conservation'],
+      services: ['bioinformatique', 'sequencage-dpcr'],
+      summary:
+        'Les auteurs présentent des assemblages de génome de haute qualité pour deux limicoles, la bécasse des bois et la bécassine sourde. Le séquençage Illumina et Nanopore d’échantillons de sang frais, puis l’intégration de données Hi-C, permettent de reconstituer les chromosomes ; les données sont publiques dans GenBank.',
+      question:
+        'Peut-on disposer de génomes de référence complets pour la bécasse des bois et la bécassine sourde ?',
+      approach:
+        'Séquençage Illumina et Nanopore de sang frais prélevé sur des oiseaux sauvages, assemblage de novo, puis intégration de données Hi-C pour reconstituer la structure des chromosomes.',
+      finding:
+        'Deux assemblages de haute qualité, à l’échelle des chromosomes ; les lectures brutes et les assemblages sont disponibles dans GenBank.',
+      limit:
+        'Article de ressource : il fournit des génomes de référence pour de futures études, sans analyse des populations à ce stade.',
+      figures: [],
+    },
+    {
+      id: 'bar-introgression-fitness-2025',
+      readingTitle:
+        'Une valeur sélective réduite associée à l’introgression dans la population métissée de Méditerranée occidentale du bar européen',
+      seoTitle: 'Introgression et valeur sélective du bar européen',
+      title:
+        'Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass',
+      authors: ['Leitwein M', 'Ernande B', 'Vandeputte M', 'Clota F', 'Allal F'],
+      members: ['maeva-leitwein'],
+      journal: 'Evolution',
+      year: 2025,
+      issue: '79(8), 1681–1689',
+      type: 'article',
+      doi: '10.1093/evolut/qpaf079',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40243218/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['ascendance', 'adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'La population de bar de Méditerranée occidentale est issue d’une hybridation entre les lignées atlantique et méditerranéenne. Chez 1 488 poissons métissés, une ascendance atlantique plus élevée s’accompagne d’un sex-ratio plus biaisé vers les mâles, plus sensible à la température, et d’un poids plus faible.',
+      question:
+        'L’ascendance atlantique des bars métissés de Méditerranée occidentale influence-t-elle des caractères liés à la valeur sélective ?',
+      approach:
+        'Génotypage de 1 488 bars métissés avec la puce Axiom Sea Bass 57k SNP DlabChip, puis relation entre le niveau de métissage de chaque poisson et des caractères mesurés sous trois régimes thermiques (19, 21 et 23 °C).',
+      finding:
+        'Plus d’ascendance atlantique s’accompagne d’un sex-ratio biaisé vers les mâles et plus sensible à la température, et d’un poids corporel plus faible, corrélé à la fécondité chez les poissons.',
+      limit:
+        'Les auteurs en déduisent que l’introgression atlantique est probablement désavantageuse en Méditerranée, en cohérence avec la purge déjà observée des segments d’ascendance atlantique.',
+      figures: [],
+    },
+    {
+      id: 'bar-croissance-larvaire-temperature-2025',
+      readingTitle:
+        'Les larves de bar européen grandissent-elles mieux dans leur régime de température naturel ?',
+      seoTitle: 'Croissance des larves de bar et régime de température',
+      title: 'Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'McKenzie D',
+        'Allal F',
+        'Vandeputte M',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Evolutionary Applications',
+      year: 2025,
+      issue: '18(2), e70083',
+      type: 'article',
+      doi: '10.1111/eva.70083',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40012956/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'Des larves des trois populations génétiquement différenciées du bar européen ont été élevées ensemble sous trois régimes thermiques représentatifs de l’Atlantique et des Méditerranées occidentale et orientale. La population atlantique grandit plus que les deux autres dans tous les régimes, pas seulement dans le sien.',
+      question:
+        'Les larves de bar grandissent-elles mieux dans le régime de température de leur population d’origine ?',
+      approach:
+        'Élevage en conditions communes sous trois régimes thermiques saisonniers ; suivi de la croissance de 20 jours après éclosion jusqu’à 1,5 g, l’origine de chaque individu étant retrouvée par assignation de parenté à l’aide de 96 SNP.',
+      finding:
+        'La survie est plus élevée dans les régimes plus chauds jusqu’à 23 mm ; la population atlantique est plus longue que les populations méditerranéennes dans tous les régimes et apparaît la plus robuste aux variations de température au stade larvaire.',
+      limit:
+        'Il reste à établir si cette croissance élevée reflète une adaptation locale à un régime thermique relativement froid.',
+      figures: [],
+    },
+    {
+      id: 'bar-selection-efficacite-alimentaire-2025',
+      readingTitle:
+        'Sélection génomique sur l’efficacité alimentaire individuelle chez le bar européen : réponse à la sélection sur l’efficacité, les caractères commerciaux et le sexe',
+      seoTitle: 'Sélection génomique de l’efficacité alimentaire du bar',
+      title:
+        'Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex',
+      authors: [
+        'Allal F',
+        'Besson M',
+        'Delpuech E',
+        'Barrier-Loiseau C',
+        'Vergnet A',
+        'Morell F',
+        'Blanc MO',
+        'Lallement S',
+        'Clota F',
+        'Ruelle F',
+        'Vandeputte M',
+      ],
+      members: ['emilie-delpuech'],
+      journal: 'Aquaculture',
+      year: 2025,
+      issue: '595, 741682',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2024.741682',
+      links: [],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['aquaculture', 'selection'],
+      services: ['selection', 'bioinformatique'],
+      summary:
+        'L’efficacité alimentaire est un enjeu clé de durabilité en pisciculture. Des reproducteurs de bar choisis par sélection génomique (GBLUP) sur leur croissance en aquarium individuel donnent des descendants plus efficaces : indice de consommation de groupe de 1,61 contre 1,83 pour le groupe le moins efficace, avec des poissons plus grands.',
+      question:
+        'La sélection génomique sur l’efficacité alimentaire individuelle améliore-t-elle les performances du bar européen ?',
+      approach:
+        'Parmi 399 bars mesurés en aquarium individuel et génotypés pour 1 110 SNP, sélection par GBLUP de reproducteurs efficaces, intermédiaires et inefficaces ; leurs descendants sont évalués en aquarium individuel, en groupe, puis à l’abattage.',
+      finding:
+        'Les descendants des reproducteurs efficaces ont une meilleure efficacité (indice de consommation de groupe de 1,61 contre 1,83) et sont plus grands (266 g contre 223 g), sans différence de rendement en filet ; la proportion de femelles est plus faible dans ce groupe.',
+      limit:
+        'Un indice viscérosomatique légèrement plus élevé chez les poissons efficaces ; les résultats portent sur une cohorte et un dispositif expérimental.',
+      figures: [],
+    },
+    {
+      id: 'bar-introgression-teneur-gras-2024',
+      readingTitle:
+        'Le devenir d’un phénotype polygénique dans les paysages génomiques d’introgression de la zone d’hybridation du bar européen',
+      seoTitle: 'Introgression et teneur en gras du bar européen',
+      title:
+        'The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone',
+      authors: [
+        'Leitwein M',
+        'Durif G',
+        'Delpuech E',
+        'Gagnaire PA',
+        'Ernande B',
+        'Vandeputte M',
+        'Vergnet A',
+        'Duranton M',
+        'Clota F',
+        'Allal F',
+      ],
+      members: ['maeva-leitwein', 'emilie-delpuech'],
+      journal: 'Molecular Biology and Evolution',
+      year: 2024,
+      issue: '41(9), msae194',
+      type: 'article',
+      doi: '10.1093/molbev/msae194',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/39271153/' }],
+      text: 'abstract',
+      licence: 'CC BY-NC 4.0',
+      themes: ['ascendance', 'adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique', 'selection'],
+      summary:
+        'Chez le bar européen, qui s’hybride naturellement, l’étude examine comment la sélection sur un caractère polygénique, la teneur en gras du muscle, façonne l’introgression entre les lignées atlantique et méditerranéenne. Les régions du génome associées à ce caractère portent moins d’ascendance atlantique dans les populations méditerranéennes.',
+      question:
+        'Comment la sélection sur un phénotype modèle-t-elle le paysage d’introgression entre les lignées atlantique et méditerranéenne du bar ?',
+      approach:
+        'Puce SNP haute densité pour estimer l’ascendance locale le long du génome et cartographier la teneur en gras du muscle, un caractère polygénique divergent entre lignées, en tenant compte des variations du taux de recombinaison.',
+      finding:
+        'Une purge de l’ascendance atlantique dans les populations méditerranéennes métissées ; les poissons atlantiques sont plus gras, mais les régions associées à ce caractère montrent une introgression atlantique réduite en Méditerranée.',
+      limit:
+        'Les auteurs interprètent ce motif comme une sélection contre des allèles mal adaptés ; l’étude porte sur un caractère et une zone d’hybridation.',
+      figures: [],
+    },
+    {
+      id: 'bar-determinisme-sexe-energie-2024',
+      readingTitle:
+        'Modulation thermique de l’allocation d’énergie pendant le déterminisme du sexe chez le bar européen (*Dicentrarchus labrax*)',
+      seoTitle: 'Bar : température, énergie et déterminisme du sexe',
+      title:
+        'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
+      authors: ['Tovar-Bohórquez O', 'McKenzie D', 'Crestel D', 'Vandeputte M', 'Geffroy B'],
+      members: ['damien-crestel'],
+      journal: 'Gene',
+      year: 2024,
+      issue: '927, 148721',
+      type: 'article',
+      doi: '10.1016/j.gene.2024.148721',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/38925525/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['aquaculture', 'adaptation'],
+      services: ['bioinformatique', 'sequencage-dpcr'],
+      summary:
+        'Chez le bar européen, dont le sexe dépend de plusieurs gènes et de la température de l’eau, l’étude suit l’expression de gènes liés à l’allocation d’énergie, à la croissance et au déterminisme du sexe sous différents régimes thermiques. Elle désigne spry1 comme un marqueur robuste de masculinisation.',
+      question:
+        'Comment la température de l’eau influence-t-elle l’allocation d’énergie et l’expression de gènes liés au sexe pendant le déterminisme du sexe ?',
+      approach:
+        'Deux expériences, l’une à températures constantes typiques de l’aquaculture, l’autre sous des régimes thermiques saisonniers naturels ; analyses RNA-seq et qPCR centrées sur huit gènes clés.',
+      finding:
+        'L’effet de la température sur la proportion de femelles s’inverse entre les deux types de régimes ; nucb1 et pomc1 sont plus exprimés chez les futures femelles, egfra et spry1 chez les futurs mâles, et spry1 est plus exprimé chez les mâles dans les deux expériences.',
+      limit:
+        'L’étude porte sur un nombre limité de gènes ciblés ; elle souligne une interaction complexe entre alimentation, énergie, croissance et déterminisme du sexe.',
+      figures: [],
+    },
+    {
+      id: 'bar-temperature-femelles-2024',
+      readingTitle:
+        'Une exposition post-larvaire à une température chaude augmente la proportion de femelles, contrairement au jeûne et à la photopériode : le cas du bar européen, *Dicentrarchus labrax*',
+      seoTitle: 'Bar européen : température et proportion de femelles',
+      title:
+        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
+      authors: [
+        'Clota F',
+        'Goikoetxea A',
+        'Vergnet A',
+        'Blanc MO',
+        'Lallement S',
+        'Ruelle F',
+        'Leitwein M',
+        'Allal F',
+        'Geffroy B',
+        'Vandeputte M',
+      ],
+      members: ['maeva-leitwein'],
+      journal: 'Aquaculture',
+      year: 2024,
+      issue: '586, 740758',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2024.740758',
+      links: [],
+      text: 'abstract',
+      licence: '',
+      themes: ['aquaculture', 'adaptation'],
+      services: ['recherche-developpement'],
+      summary:
+        'En élevage, le bar européen produit souvent une majorité de mâles, alors que les femelles grandissent plus vite et mûrissent plus tard. Deux expériences testent la photopériode, la température et le jeûne : seule une température post-larvaire plus chaude augmente la proportion de femelles, de 30,4 % à 19 °C à 48,7 % à 25 °C.',
+      question:
+        'La photopériode, la température et le jeûne modifient-ils le sex-ratio du bar européen en élevage ?',
+      approach:
+        'Deux expériences : deux photopériodes jusqu’à 90 jours après éclosion à 16 °C, puis quatre températures (19 à 25 °C) jusqu’à 160 à 192 jours ; et un jeûne appliqué à quatre moments de la fenêtre de détermination du sexe, à 21 °C.',
+      finding:
+        'Ni la photopériode ni le jeûne ne modifient le sex-ratio ; la proportion de femelles augmente avec la température post-larvaire : 30,4 % à 19 °C, 36,3 % à 21 °C, 44,1 % à 23 °C et 48,7 % à 25 °C.',
+      limit:
+        'Résultats obtenus après un traitement initial froid à 16 °C jusqu’à 90 jours ; ils proposent un levier d’élevage pour compenser le déficit de femelles, pas un contrôle complet du sexe.',
+      figures: [],
+    },
+    {
       id: 'bar-resistance-vnn-2023',
-      readingTitle: 'Résistance virale et génomique du bar européen',
+      readingTitle:
+        'Le séquençage du génome entier identifie la protéine induite par l’interféron IFI6/IFI27-like comme gène candidat majeur de la résistance à la nécrose nerveuse virale chez le bar européen',
+      seoTitle: 'Gène IFI6 et résistance du bar à la nodavirose',
       title:
         'Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass',
       authors: [
@@ -92,7 +537,9 @@ export const research = {
     },
     {
       id: 'capelan-methylation-reproduction-2023',
-      readingTitle: 'Milieu de reproduction et méthylation chez le capelan',
+      readingTitle:
+        'La méthylation de l’ADN à l’échelle du génome prédit des variations du cycle de vie induites par l’environnement chez un poisson marin',
+      seoTitle: 'Méthylation de l’ADN et cycle de vie du capelan',
       title:
         'Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish',
       authors: [
@@ -141,8 +588,42 @@ export const research = {
       preprint: 'https://doi.org/10.1101/2021.01.28.428603',
     },
     {
+      id: 'truite-pigmentation-gwas-2023',
+      readingTitle:
+        'Analyse de redondance, études d’association pangénomique et pigmentation de la truite commune (*Salmo trutta* L.)',
+      seoTitle: 'Génétique de la pigmentation de la truite commune',
+      title:
+        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
+      authors: ['Valette T', 'Leitwein M', 'Lascaux JM', 'Desmarais E', 'Berrebi P', 'Guinand B'],
+      members: ['maeva-leitwein'],
+      journal: 'Journal of Fish Biology',
+      year: 2023,
+      online: '2022-11-09',
+      issue: '102(1), 96–118',
+      type: 'article',
+      doi: '10.1111/jfb.15243',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/36218076/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['conservation', 'ascendance'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'À partir de 75 684 SNP, l’étude combine analyse de redondance et études d’association pangénomique pour explorer les bases moléculaires de la pigmentation de truites communes sauvages influencées par des poissons d’élevage. Elle identifie 337 loci indépendants associés aux motifs de coloration, répartis sur 35 des 40 groupes de liaison.',
+      question:
+        'Quelles bases génétiques expliquent la variation de pigmentation de la truite commune ?',
+      approach:
+        'Génotypage de 75 684 SNP, analyse de redondance (RDA) et études d’association pangénomique à un et plusieurs caractères, comme le nombre de points rouges et noirs sur les flancs.',
+      finding:
+        '337 loci de motifs de coloration, répartis sur 35 des 40 groupes de liaison, ce qui indique une architecture polygénique ; ils sont associés à 218 gènes candidats, dont des gènes connus de la pigmentation (PMEL, SLC45A2, SOX10).',
+      limit:
+        'Des loci associés et des gènes candidats, sans démonstration fonctionnelle ; l’analyse de redondance s’avère aussi utile pour suivre la pigmentation au fil des générations d’introgression d’élevage.',
+      figures: [],
+    },
+    {
       id: 'saumon-coho-elevage-expression-2022',
-      readingTitle: 'Élevage et signatures moléculaires du saumon coho',
+      readingTitle:
+        'Une forte expression génique différentielle parallèle, induite par l’élevage en écloserie, faiblement associée aux signaux de méthylation chez le saumon coho adulte (*O. kisutch*)',
+      seoTitle: 'Écloserie et expression génique du saumon coho',
       title:
         'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
       authors: [
@@ -184,7 +665,9 @@ export const research = {
     },
     {
       id: 'omble-ascendance-repeuplement-2021',
-      readingTitle: 'Effets du repeuplement sur l’ascendance des populations',
+      readingTitle:
+        'La surdominance associative et l’épistasie négative façonnent le paysage d’ascendance à l’échelle du génome dans des populations de poissons repeuplées',
+      seoTitle: 'Repeuplement et ascendance génomique des poissons',
       title:
         'Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations',
       authors: ['Leitwein M', 'Cayuela H', 'Bernatchez L'],
@@ -229,7 +712,9 @@ export const research = {
     },
     {
       id: 'porc-efficacite-alimentaire-gwas-2021',
-      readingTitle: 'Régions génomiques et efficacité alimentaire chez le porc',
+      readingTitle:
+        'Identification de régions génomiques influençant les caractères de production chez des porcs sélectionnés de manière divergente pour l’efficacité alimentaire',
+      seoTitle: 'Efficacité alimentaire du porc : régions génomiques',
       title:
         'Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency',
       authors: [
@@ -302,7 +787,9 @@ export const research = {
     },
     {
       id: 'saumon-coho-epigenome-germinal-2021',
-      readingTitle: 'Des marques épigénétiques persistantes jusqu’à la reproduction',
+      readingTitle:
+        'Les modifications épigénomiques induites par l’élevage en écloserie persistent dans les cellules germinales des saumons adultes après leur migration océanique',
+      seoTitle: 'Épigénome du saumon et élevage en écloserie',
       title:
         'Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration',
       authors: [
@@ -355,7 +842,8 @@ export const research = {
     },
     {
       id: 'haplotypes-genomique-conservation-2020',
-      readingTitle: 'Ce que les haplotypes apportent à la conservation',
+      readingTitle: 'Utiliser l’information des haplotypes en génomique de la conservation',
+      seoTitle: 'Haplotypes et génomique de la conservation',
       title: 'Using Haplotype Information for Conservation Genomics',
       authors: ['Leitwein M', 'Duranton M', 'Rougemont Q', 'Gagnaire PA', 'Bernatchez L'],
       members: ['maeva-leitwein'],
@@ -391,7 +879,9 @@ export const research = {
     },
     {
       id: 'omble-diversite-petites-populations-2020',
-      readingTitle: 'Diversité génétique et petites populations d’omble de fontaine',
+      readingTitle:
+        'Diversité génétique adaptative et mal adaptative dans les petites populations : l’exemple de l’omble de fontaine (*Salvelinus fontinalis*)',
+      seoTitle: 'Petites populations d’omble de fontaine',
       title:
         'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
       authors: [
@@ -436,7 +926,9 @@ export const research = {
     },
     {
       id: 'porc-prediction-genomique-2020',
-      readingTitle: 'Choisir une population de référence pour la prédiction génomique',
+      readingTitle:
+        'Effet d’un apprentissage sur des données de lignées génétiquement apparentées sur la précision des prédictions génomiques de l’efficacité alimentaire chez le porc',
+      seoTitle: 'Prédiction génomique chez le porc',
       title:
         'The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs',
       authors: ['Aliakbari A', 'Delpuech E', 'Labrune Y', 'Riquet J', 'Gilbert H'],
@@ -490,7 +982,9 @@ export const research = {
     },
     {
       id: 'omble-recombinaison-ascendance-2019',
-      readingTitle: 'Recombinaison et ascendance domestique chez l’omble de fontaine',
+      readingTitle:
+        'Le rôle de la recombinaison dans la répartition de l’ascendance locale le long du génome : l’exemple de populations repeuplées d’omble de fontaine',
+      seoTitle: 'Recombinaison et ascendance chez l’omble de fontaine',
       title:
         'The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations',
       authors: [
@@ -536,7 +1030,9 @@ export const research = {
     },
     {
       id: 'truite-ressource-snp-2019',
-      readingTitle: 'Des marqueurs SNP pour suivre les populations de truite',
+      readingTitle:
+        'Développement d’une vaste ressource de SNP et d’une puce SNP basse densité pour la génétique des populations de truite commune (*Salmo trutta*)',
+      seoTitle: 'Puce SNP pour la génétique de la truite commune',
       title:
         'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
       authors: [
@@ -582,7 +1078,7 @@ export const research = {
           image: 'pub-truite-snp-fig1',
           label: 'Fig. 1',
           caption:
-            'Positions on the brown trout linkage map of the 12204 RADs(a ; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs(b ; informative for at least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)',
+            'Positions on the brown trout linkage map of the 12204 RADs (a; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs (b; informative for at least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)',
           credit: 'Saint-Pé K et al. (2019), BMC Genomics',
           licence: 'CC BY 4.0',
           width: 707,
@@ -613,7 +1109,9 @@ export const research = {
     },
     {
       id: 'truite-trois-ascendances-2018',
-      readingTitle: 'Trois ascendances dans les génomes de truites repeuplées',
+      readingTitle:
+        'Conséquences génomiques d’un mélange récent entre trois lignées dans des populations sauvages repeuplées de truite commune, révélées par les segments d’ascendance locale',
+      seoTitle: 'Truite commune : un mélange entre trois lignées',
       title:
         'Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts',
       authors: ['Leitwein M', 'Gagnaire PA', 'Desmarais E', 'Berrebi P', 'Guinand B'],
@@ -652,7 +1150,9 @@ export const research = {
     },
     {
       id: 'truite-arc-en-ciel-san-francisco-2017',
-      readingTitle: 'Obstacles, migration et conservation de la truite arc-en-ciel',
+      readingTitle:
+        'Ascendance et évolution adaptative de truites arc-en-ciel anadromes, résidentes et adfluviales (*Oncorhynchus mykiss*) de la baie de San Francisco : la variation génomique adaptative au service de la conservation dans un paysage fortement modifié',
+      seoTitle: 'Génomique de la truite arc-en-ciel à San Francisco',
       title:
         'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
       authors: ['Leitwein M', 'Garza JC', 'Pearse DE'],
@@ -708,7 +1208,9 @@ export const research = {
     },
     {
       id: 'truite-carte-liaison-2017',
-      readingTitle: 'Une carte génétique pour la truite commune',
+      readingTitle:
+        'Une carte de liaison dense de la truite commune (*Salmo trutta*) révèle des réarrangements chromosomiques récents dans le genre *Salmo* et l’effet de la sélection sur la diversité neutre liée',
+      seoTitle: 'Carte de liaison dense de la truite commune',
       title:
         'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
       authors: [
@@ -770,7 +1272,9 @@ export const research = {
     },
     {
       id: 'truite-orb-diversite-2016',
-      readingTitle: 'Diversité des souches d’élevage et des truites sauvages de l’Orb',
+      readingTitle:
+        'Diversité nucléotidique à l’échelle du génome de souches d’élevage atlantique et méditerranéenne de truite commune *Salmo trutta*, comparée à des populations sauvages méditerranéennes',
+      seoTitle: 'Diversité génomique des truites de l’Orb',
       title:
         'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
       authors: [
@@ -823,7 +1327,7 @@ export const research = {
       species: 'Truite commune',
       steps: [
         {
-          value: '12 204',
+          value: '12 204',
           label:
             'SNP informatifs identifiés par séquençage RAD et positionnés sur la carte de liaison',
         },
@@ -832,7 +1336,7 @@ export const research = {
           label: 'SNP retenus pour une puce à faible coût (96 × 2), répartis sur la carte',
         },
         {
-          value: '1 862',
+          value: '1 862',
           label: 'truites génotypées dans cinq rivières, des lignées atlantique et méditerranéenne',
         },
         {
@@ -845,7 +1349,7 @@ export const research = {
         total: 12204,
         selected: 192,
       },
-      chartTitle: 'Du génome à la puce : 12 204 SNP, dont 192 retenus',
+      chartTitle: 'Du génome à la puce : 12 204 SNP, dont 192 retenus',
       chartNote:
         'Un point par SNP : leur nombre est celui de l’article, leur disposition est illustrative.',
     },
@@ -856,11 +1360,11 @@ export const research = {
       species: 'Bar européen',
       steps: [
         {
-          value: '838 451',
+          value: '838 451',
           label: 'SNP issus du séquençage du génome entier des parents',
         },
         {
-          value: '2 371 · 3 428',
+          value: '2 371 · 3 428',
           label:
             'bars de deux populations commerciales, avec leur survie à une infection expérimentale par la VNN',
         },
@@ -899,8 +1403,8 @@ export const research = {
       species: 'Porc',
       steps: [
         {
-          value: '570 447',
-          label: 'SNP pour 2 426 porcs, après imputation et prédiction des génotypes',
+          value: '570 447',
+          label: 'SNP pour 2 426 porcs, après imputation et prédiction des génotypes',
         },
         {
           value: '24',

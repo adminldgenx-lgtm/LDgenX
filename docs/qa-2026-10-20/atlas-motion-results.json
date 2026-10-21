@@ -1,0 +1,335 @@
+{
+  "results": [
+    {
+      "lang": "fr",
+      "width": 1440,
+      "states": [
+        {
+          "label": "Biodiversité & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "46.6875px",
+          "link": "/applications/biodiversite-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Pêche",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/applications/aquaculture-peche",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroécologie",
+          "fits": true,
+          "attached": true,
+          "leader": "54.0312px",
+          "link": "/applications/agriculture-agroecologie",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Études environnementales",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/applications/environnement-bureaux-d-etudes",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Recherche publique & privée",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/applications/recherche-publique-privee",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Énergies renouvelables",
+          "fits": true,
+          "attached": true,
+          "leader": "48.4062px",
+          "link": "/applications/energies-renouvelables",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": false
+    },
+    {
+      "lang": "fr",
+      "width": 1024,
+      "states": [
+        {
+          "label": "Biodiversité & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "246.344px",
+          "link": "/applications/biodiversite-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Pêche",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/applications/aquaculture-peche",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroécologie",
+          "fits": true,
+          "attached": true,
+          "leader": "54.0312px",
+          "link": "/applications/agriculture-agroecologie",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Études environnementales",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/applications/environnement-bureaux-d-etudes",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Recherche publique & privée",
+          "fits": true,
+          "attached": true,
+          "leader": "189.078px",
+          "link": "/applications/recherche-publique-privee",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Énergies renouvelables",
+          "fits": true,
+          "attached": true,
+          "leader": "48.4062px",
+          "link": "/applications/energies-renouvelables",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": false
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "states": [
+        {
+          "label": "Biodiversité & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "30.9219px",
+          "link": "/applications/biodiversite-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Pêche",
+          "fits": true,
+          "attached": true,
+          "leader": "38.0156px",
+          "link": "/applications/aquaculture-peche",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroécologie",
+          "fits": true,
+          "attached": true,
+          "leader": "42px",
+          "link": "/applications/agriculture-agroecologie",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Études environnementales",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/applications/environnement-bureaux-d-etudes",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Recherche publique & privée",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/applications/recherche-publique-privee",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Énergies renouvelables",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/applications/energies-renouvelables",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "states": [
+        {
+          "label": "Biodiversity & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "46.6875px",
+          "link": "/en/applications/biodiversity-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Fisheries",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/en/applications/aquaculture-fisheries",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroecology",
+          "fits": true,
+          "attached": true,
+          "leader": "54.0312px",
+          "link": "/en/applications/agriculture-agroecology",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Environmental studies",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/en/applications/environment-consultancies",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Public & private research",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/en/applications/public-private-research",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Renewable energy",
+          "fits": true,
+          "attached": true,
+          "leader": "48.4062px",
+          "link": "/en/applications/renewable-energy",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": false
+    },
+    {
+      "lang": "en",
+      "width": 1024,
+      "states": [
+        {
+          "label": "Biodiversity & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "246.344px",
+          "link": "/en/applications/biodiversity-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Fisheries",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/en/applications/aquaculture-fisheries",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroecology",
+          "fits": true,
+          "attached": true,
+          "leader": "54.0312px",
+          "link": "/en/applications/agriculture-agroecology",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Environmental studies",
+          "fits": true,
+          "attached": true,
+          "leader": "50.9844px",
+          "link": "/en/applications/environment-consultancies",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Public & private research",
+          "fits": true,
+          "attached": true,
+          "leader": "189.078px",
+          "link": "/en/applications/public-private-research",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Renewable energy",
+          "fits": true,
+          "attached": true,
+          "leader": "48.4062px",
+          "link": "/en/applications/renewable-energy",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": false
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "states": [
+        {
+          "label": "Biodiversity & Conservation",
+          "fits": true,
+          "attached": true,
+          "leader": "32px",
+          "link": "/en/applications/biodiversity-conservation",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Aquaculture & Fisheries",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/en/applications/aquaculture-fisheries",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Agriculture & Agroecology",
+          "fits": true,
+          "attached": true,
+          "leader": "42px",
+          "link": "/en/applications/agriculture-agroecology",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Environmental studies",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/en/applications/environment-consultancies",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Public & private research",
+          "fits": true,
+          "attached": true,
+          "leader": "38px",
+          "link": "/en/applications/public-private-research",
+          "spin": "atlas-spin"
+        },
+        {
+          "label": "Renewable energy",
+          "fits": true,
+          "attached": true,
+          "leader": "40.4844px",
+          "link": "/en/applications/renewable-energy",
+          "spin": "atlas-spin"
+        }
+      ],
+      "dragged": true
+    }
+  ],
+  "errors": []
+}

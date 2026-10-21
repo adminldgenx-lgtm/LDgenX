@@ -1,4 +1,5 @@
 import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import {
   render,
@@ -6,8 +7,12 @@ import {
   redirects,
   companyOrigin,
   catalogs,
+  company,
+  getPage,
+  renderHead,
   ready,
 } from '../.prerender/entry-server.js';
+import { crawlerFiles, imageSet, mainOf } from './crawler-files.mjs';
 
 await ready;
 
@@ -45,17 +50,31 @@ const withLang = (html, locale) =>
   html
     .replace('<html lang="fr">', `<html lang="${catalogs[locale].ui.htmlLang}">`)
     .replace('</head>', `${preloads[locale]}</head>`);
+// Each page's date of last change: kept from one build to the next while its content stays the
+// same (data/lastmod.json), so sitemaps and structured data date real changes only.
+const lastmodFile = path.resolve('data/lastmod.json');
+const known = JSON.parse(await readFile(lastmodFile, 'utf8').catch(() => '{}'));
+const today = new Date().toISOString().slice(0, 10);
+const dates = {};
+// Pictures shown on each page, for the image sitemap.
+const imagesOf = {};
 for (const page of pages) {
   const output = render(page.path);
+  const main = mainOf(output.html);
+  const hash = createHash('sha256').update(main).digest('hex').slice(0, 16);
+  dates[page.path] = known[page.path]?.hash === hash ? known[page.path] : { hash, date: today };
+  imagesOf[page.path] = imageSet(main);
+  const head = renderHead(getPage(page.path), dates[page.path].date);
   const directory = page.path === '/' ? root : path.join(root, page.path.slice(1));
   await mkdir(directory, { recursive: true });
   await writeFile(
     path.join(directory, 'index.html'),
     withLang(template, page.locale)
       .replace('<!--app-html-->', output.html)
-      .replace('<!--seo-head-->', output.head),
+      .replace('<!--seo-head-->', head),
   );
 }
+await writeFile(lastmodFile, `${JSON.stringify(dates, null, 2)}\n`);
 const notFound = render('/404');
 await writeFile(
   path.join(root, '404.html'),
@@ -77,25 +96,12 @@ for (const [from, to] of Object.entries(redirects)) {
     `<!doctype html><html lang="${t.htmlLang}"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${companyOrigin}${to}"><meta http-equiv="refresh" content="0;url=${to}"><title>${t.redirect.title}</title></head><body><p>${t.redirect.text} <a href="${to}">${t.redirect.link}</a>.</p></body></html>`,
   );
 }
-// Each address with its counterparts in the other language.
-const entry = (p) =>
-  `<url><loc>${companyOrigin}${p.path}</loc>${Object.entries(p.alternates)
-    .map(
-      ([lang, href]) =>
-        `<xhtml:link rel="alternate" hreflang="${lang}" href="${companyOrigin}${href}"/>`,
-    )
-    .join('')}</url>`;
-await writeFile(
-  path.join(root, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${pages
-    .filter((p) => !p.noindex)
-    .map(entry)
-    .join('\n')}\n</urlset>`,
-);
-await writeFile(
-  path.join(root, 'robots.txt'),
-  `User-agent: *\nAllow: /\nSitemap: ${companyOrigin}/sitemap.xml\n`,
-);
+// Sitemaps (each address with its language versions, its date of last change and the pictures it
+// shows), robots.txt and the language-model files: see crawler-files.mjs.
+const files = crawlerFiles({ pages, catalogs, company, dates, imagesOf, today });
+await mkdir(path.join(root, 'sitemaps'), { recursive: true });
+for (const [file, content] of Object.entries(files))
+  await writeFile(path.join(root, file), content);
 await writeFile(
   path.join(root, '_redirects'),
   Object.entries(redirects)
@@ -109,30 +115,11 @@ await writeFile(
     '\n',
 );
 await writeFile(path.join(root, 'redirects.json'), JSON.stringify(redirects, null, 2));
-const llms = (locale) => {
-  const t = catalogs[locale].ui.seo.llms;
-  const of = (kind) => pages.filter((p) => p.locale === locale && p.kind === kind);
-  const line = (p, description = false) =>
-    `- [${p.label}](${companyOrigin}${p.path})${description ? `: ${p.description}` : ''}`;
-  return `## ${t.expertises}\n${of('service')
-    .map((p) => line(p, true))
-    .join('\n')}\n\n## ${t.applications}\n${of('application')
-    .map((p) => line(p))
-    .join('\n')}\n\n## ${t.more}\n${[
-    ...of('studies'),
-    ...of('study'),
-    ...of('work'),
-    ...of('innovations'),
-    ...of('team'),
-    ...of('publications'),
-    ...of('resources'),
-  ]
-    .map((p) => line(p))
-    .join('\n')}\n\n${t.note}\n`;
-};
+// Host rules (Netlify and Cloudflare Pages read this file): long cache for fingerprinted assets,
+// plain text for the language-model files, which stay out of search results.
 await writeFile(
-  path.join(root, 'llms.txt'),
-  `# LDgenX\n\n> ${catalogs.fr.ui.seo.llms.summary}\n\nContact : info@ldgenx.fr\n\n${llms('fr')}\n# LDgenX (English)\n\n> ${catalogs.en.ui.seo.llms.summary}\n\n${llms('en')}`,
+  path.join(root, '_headers'),
+  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/images/*\n  Cache-Control: public, max-age=2592000\n/llms.txt\n  Content-Type: text/plain; charset=utf-8\n  X-Robots-Tag: noindex\n/llms-full.txt\n  Content-Type: text/plain; charset=utf-8\n  X-Robots-Tag: noindex\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n`,
 );
 console.log(
   `Prerendered ${pages.length} pages, ${Object.keys(redirects).length} redirects, and a 404 page.`,

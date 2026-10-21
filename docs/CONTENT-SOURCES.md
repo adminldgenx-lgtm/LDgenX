@@ -38,7 +38,7 @@ Vérification le 5 octobre 2026. Le dossier fourni contenait onze illustrations,
 - Les fiches « En bref » des études n’utilisent que des éléments déjà présents dans l’étude ou sa source (commanditaire, groupement, milieux, approche).
 - « Votre projet en pratique » et la FAQ reformulent des affirmations publiées : périmètre, restitution, calendrier et devis définis au cadrage ; matériel d’échantillonnage proposé ; accompagnement bioinformatique de données existantes ; implantation à la station Ifremer.
 - Les appels à l’action « Demander un devis » et « Prendre rendez-vous » reprennent ceux du site officiel.
-- Les biographies complètes et les listes de publications sont reprises de ldgenx.fr (FR) et ldgenx.com (EN) ; les résumés courts de l’équipe en sont tirés. Les portraits de studio sont générés à partir des photos publiées (voir « Portraits de l’équipe ») ; les photos d’origine sont dans `images/official/`.
+- Les biographies complètes et les listes de publications sont reprises de ldgenx.fr (FR) et ldgenx.com (EN) ; les résumés courts de l’équipe en sont tirés. Les portraits sont les photos réelles de l’équipe (voir « Portraits de l’équipe »).
 - Les descriptions d’une ligne des expertises (menu, explorateur) reprennent https://www.ldgenx.fr/services ; celles des secteurs résument les listes « Applications » des pages officielles de chaque secteur. « Recherche publique & privée » et « Énergies marines renouvelables » n’ont pas de page officielle : leurs lignes reprennent la rubrique R&D (/services) et le cas « Biodiversité des parcs éoliens offshore » (/services/adn-environnemental-adne).
 - La chaîne « De l’échantillon à la décision » suit les étapes de https://www.ldgenx.fr/a-propos. Les précisions techniques citent /services (graphique « Montage projet, Séquençage ADN, Analyses avancées, Rapport expert »), /services/adn-environnemental-adne (eau, sol, sédiments, biofilms), /services/materiel (pompe triple, stick pump, torpille) et la présentation de Maxime Lambert sur /a-propos/equipe.
 - Les ressources sont des synthèses introductives sourcées. Aucun article réglementaire n’a été ajouté sans documentation juridique spécifique.
@@ -120,9 +120,14 @@ Section « De l’échantillon à la décision » : modèle « DNA » de LucasPr
 
 ### Portraits de l’équipe
 
-`portrait-maeva`, `portrait-emilie`, `portrait-maxime` (sources 1122 × 1402 dans `images/team/`, WebP 480 et 900 px) : portraits de studio générés avec ChatGPT à partir des photos publiées sur /a-propos/equipe. **À faire valider par chaque personne avant publication** ; à défaut, les photos d’origine restent dans `images/official/`.
+Depuis le 21 octobre 2026, **les quatre portraits sont des photos réelles**, recadrées en 4:5 sans retouche :
 
-`portrait-damien` (Damien Crestel, bioinformaticien, ajouté le 15 octobre 2026) : photo réelle transmise par LDgenX avec sa présentation, recadrée en 4:5 (source `images/team/photo-damien.png`, WebP 480 et 659 px). Ce n’est pas un portrait de studio : pour un rendu homogène, soit générer un portrait de studio à partir de cette photo comme pour les trois autres (à faire valider par Damien), soit passer toute l’équipe sur des photos réelles. Sa biographie reprend son texte mot pour mot ; il n’a pas de page de publications.
+- `portrait-maeva` (source `images/official/equipe-maeva.jpg`, WebP 480 et 590 px) ;
+- `portrait-emilie` (`images/official/equipe-emilie.jpg`, WebP 480 et 534 px) ;
+- `portrait-maxime` (`images/official/equipe-maxime.jpg`, WebP 473 px) ;
+- `portrait-damien` (`images/team/photo-damien.png`, WebP 480 et 659 px).
+
+Les trois premières sont les photos publiées sur ldgenx.fr/a-propos/equipe ; celle de Damien a été transmise par LDgenX. Les portraits de studio générés avec ChatGPT (`images/team/portrait-*.png`) ne sont plus affichés, conformément à la règle d’authenticité de la cliente. Une séance photo de l’équipe permettrait des portraits homogènes et en haute définition.
 
 Le wordmark est utilisé en en-tête, le logo complet en pied de page, le symbole reste disponible dans `public/brand`. Les favicons fournis sont conservés. Seules les marges de canvas ont été recadrées ; le dessin n’est pas modifié.
 
@@ -135,7 +140,7 @@ Palette issue des variantes du logo : navy `#03254B`, vert accent `#73B50F`, ver
 3. **Contact** : choisir un service d’envoi de formulaire et définir `VITE_CONTACT_ENDPOINT` au build (voir README) ; à défaut, le formulaire prépare un e-mail. Confirmer la durée et le format de l’échange proposé sur l’agenda.
 4. **Matériel** : références, disponibilités et conditions de vente n’étaient pas accessibles depuis la source. Le service conduit à un échange, sans catalogue fictif.
 5. **Études** : fournir les résultats et livrables détaillés pouvant être publiés pour les sujets seulement cités. Les études restent sourcées et limitées aux faits publics.
-6. **Portraits et photographies** : faire valider par Maeva, Emilie et Maxime leurs portraits de studio générés à partir de leurs photos. Les photos reprises de ldgenx.fr sont en résolution web (470 à 1000 px) : fournir les originaux haute définition et confirmer l’autorisation pour la photo créditée « @biotope ».
+6. **Portraits et photographies** : les portraits sont désormais les photos réelles de l’équipe ; une séance photo homogène reste souhaitable. Les photos reprises de ldgenx.fr sont en résolution web (470 à 1000 px) : fournir les originaux haute définition et confirmer l’autorisation pour la photo créditée « @biotope ».
 7. **Anglais** : traductions validées et mapping des URLs sur le domaine anglais avant `hreflang` réciproque.
 8. **Images** : les dix-neuf illustrations sont générées. Un reportage réel (laboratoire de la station Ifremer, campagnes de terrain) reste la priorité visuelle et peut les remplacer emplacement par emplacement.
 9. **Logos partenaires** : fournir des fichiers vectoriels (SVG) ou haute résolution sans cadre et l’accord d’affichage, pour remplacer les noms composés.
@@ -144,3 +149,33 @@ Palette issue des variantes du logo : navy `#03254B`, vert accent `#73B50F`, ver
 ## Réponse à l’audit
 
 Titres corrigés et courts, H1 unique, canoniques, métadonnées sociales, schémas Organization/WebSite/WebPage/Service/Person/Article/BreadcrumbList, regroupement de la sélection génomique avec redirection, bibliothèque de ressources et enrichissement des pages par besoin/approche/accompagnement/relations. Les délais, prix et exemples anonymisés demandés dans l’audit ne sont pas inventés pour atteindre une longueur arbitraire.
+
+## Photos et espèces Canva — 17 octobre 2026
+
+La présentation cliente `DAHX4VfvLE0`, export PowerPoint « Image site web », fournit les photographies et les 22 noms d’espèces. Les images intégrées ont été extraites sans réencodage ; leurs résolutions, SHA-256, pages et crédits sont dans `data/client-photos.json`. Les fichiers préservés sont dans `images/client-2026-10-17/`. La nouvelle photo de sélection génomique est créditée **@UNIMA** en HTML ; ce crédit n’est pas appliqué à l’ancienne photo de crevettes.
+
+La source dPCR se trouve dans `data/assay-targets.json` ; 21 associations sont publiées et l’entrée *Neomys anomalus* — Musaraigne de Miller est retenue en interne en attendant confirmation de la cible réelle du test. La référence DOI 10.1002/ece3.4487 sert uniquement à la nomenclature, sans ajout au catalogue de recherche. Le vison reste un visuel général sans identification d’espèce. Détail et limites : [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
+
+
+## Authenticité des équipements — 20 octobre 2026
+
+Les affectations historiques du tableau « Illustrations générées » ne décrivent plus les usages de `laboratoire`, `sequencage`, `microbiologie`, `dna-ecotrace`, `conception`, `agriculture`, `recherche`, `innovation` et `aquaculture`. Ces neuf visuels ne sont plus référencés activement. Le [bilan des corrections](audit-images-outils-2026-10-19/CORRECTIONS-2026-10-20.md) donne chaque remplacement, le chemin exact des photos, les preuves et les informations manquantes. Les cinq schémas neutres nouveaux sont dans `images/diagrams/` ; aucune nouvelle photographie générée n’a été créée. Le catalogue publié est conservé, sans correspondance non prouvée entre photo et variante de pompe.
+
+## Retours cliente et base SEO/GEO (21 octobre 2026)
+
+**Affirmations de la cliente (courriel du 21 octobre 2026)** : titre « De l’ADN aux décisions » ; « +15 ans d’expérience scientifique » ; retrait de PacBio de l’étape séquençage ; agrément au titre du crédit d’impôt recherche (CIR, 30 % des prestations de R&D) ; kits d’échantillonnage par milieu (eau de mer, eau douce, sol, air) ; retrait des prix du matériel ; étude des vanneaux huppés ; six publications de Damien Crestel. Le taux et le cadre du CIR (30 % jusqu’à 100 M€, article 244 quater B du CGI) sont ceux de la réglementation.
+
+**Faits publics vérifiés** : création de LDgenX le 1er mai 2023, SIREN 952 193 837, code NAF 72.11Z, siège au 6 place du 8 Mai 1945, 34690 Fabrègues, présidente Maeva Leitwein, directrice générale Emilie Delpuech (registre public, recherche-entreprises.api.gouv.fr) ; coordonnées de la station Ifremer de Palavas (OpenStreetMap, 43,520 ; 3,910). **La page Mentions légales indique encore le code NAF 7112B : à corriger lors de sa rédaction finale.**
+
+**Étude des vanneaux huppés** : rapport HAL hal-05490664 (Leitwein, Delpuech, Bodin, Lapébie, 3 février 2026, CC BY-NC-SA 4.0), projet VanConnect (Écocontribution n° 1274, action 1) pour la Fédération nationale des chasseurs. Les chiffres de la page (échantillons par région, étapes de filtrage, résultats) sont ceux du rapport ; ses figures, sous licence non commerciale, ne sont pas reproduites : les graphiques de la page sont dessinés à partir des nombres publiés.
+
+**Publications ajoutées (12)** : métadonnées Crossref (titres, auteurs, revues, volumes, DOI, ORCID), résumés publiés (Crossref, OpenAlex, Europe PMC) et identifiants PubMed. Six fournies par la cliente (Damien Crestel, 2024-2026) ; six trouvées par `scripts/check-publications.mjs` (OpenAlex par ORCID) et absentes du site : Evolution 2025, Biodiversity Genomes 2025, Aquaculture 2025 (sélection génomique, efficacité alimentaire), Molecular Biology and Evolution 2024, Aquaculture 2024 (température et sex-ratio), Journal of Fish Biology 2023. Les titres français sont désormais des traductions fidèles des titres publiés. **À faire relire par l’équipe.**
+
+**Nouvelles images** (détail et licences dans `data/licensed-photos.json`) :
+
+- `eolien-en-mer` : parc éolien de Block Island (États-Unis), U.S. Department of Energy, domaine public ; ce n’est pas un projet LDgenX.
+- `biofilm-microbien` : micrographie d’un biofilm bactérien, Krzysztof A. Zacharski, CC BY 4.0, recadrée ; ce n’est pas un échantillon LDgenX.
+- `terrain-kayak` : photo de la présentation Canva de la cliente (page 8) ; ni la personne ni le protocole ne sont identifiés.
+- `bioinformatique-alignement` : illustration dessinée par `scripts/prepare-licensed-photos.mjs` (lectures alignées sur un génome, sans données réelles).
+- L’étape « Séquençage & dPCR » du parcours ADN montre `cas-requin`, photo du cas « Détection d’espèces méditerranéennes emblématiques par dPCR » publiée sur ldgenx.fr.
+- Cartes de partage 1200 × 630 (`public/images/social-*.jpg`) générées par `scripts/make-social-images.mjs` pour chaque image partagée.

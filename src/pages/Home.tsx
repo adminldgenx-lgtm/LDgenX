@@ -65,8 +65,13 @@ export function Home() {
                 {/* Three short lines, set large: the headline answers the film. */}
                 <h1 id="hero-title" className="dna-hero-title">
                   <span className="dna-hero-line">
-                    <span className="dna-hero-segment">{first[0]}</span>{' '}
-                    <span className="dna-hero-segment">{first[1]}</span>
+                    <span className="dna-hero-segment">{first[0]}</span>
+                    {first[1] && (
+                      <>
+                        {' '}
+                        <span className="dna-hero-segment">{first[1]}</span>
+                      </>
+                    )}
                   </span>{' '}
                   <span className="dna-hero-line">
                     <span className="dna-hero-segment">
@@ -102,10 +107,10 @@ export function Home() {
         </section>
       </div>
       <KeyFacts />
+      <ApplicationAtlas />
       <DnaProcess />
       <ExpertiseTrace />
       <CustomAssayTeaser />
-      <ApplicationAtlas />
       <section className="section-space studies-section">
         <div className="container">
           <SectionHeading

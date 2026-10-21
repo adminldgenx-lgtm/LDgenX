@@ -1,0 +1,572 @@
+{
+  "date": "2026-10-19",
+  "perimetre": "État initial de la copie locale le 19 octobre ; corrections FR/EN appliquées le 20 octobre. Les champs historiques décrivent les usages avant correction.",
+  "definition": "Matériel de prélèvement, instruments, consommables et installations de laboratoire/recherche montrés comme scènes photographiques.",
+  "methode": [
+    "Lecture des catalogues et composants actuels",
+    "Rendu serveur temporaire des 81 routes, issu du code courant",
+    "Vérification des visuels et des notes/prompts de génération",
+    "Contrôle des références de partage social et des médias du hero"
+  ],
+  "limiteInventaire": "Les pagesCorps sont les occurrences du rendu initial. Les scènes interactives utilisent aussi les données partagées : le parcours ADN peut montrer sequencage ultérieurement sur l’accueil ; les aperçus de menus sont communs aux pages et décrits séparément. Aucune déduction à partir du seul aspect esthétique.",
+  "aRemplacer": [
+    {
+      "numero": 1,
+      "asset": "laboratoire",
+      "titre": "Laboratoire : pipetage",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/laboratoire.png",
+      "variantesWeb": [
+        "public/images/laboratoire-1100.webp",
+        "public/images/laboratoire-1536.webp",
+        "public/images/laboratoire-640.webp",
+        "public/images/laboratoire-860.webp"
+      ],
+      "sujet": "Pipette, portoirs, pointes et poste de préparation PCR fictifs.",
+      "emplacements": "À propos, aperçu par défaut du menu Expertises, images de partage Accueil et À propos.",
+      "remplacement": "Photo réelle du poste de laboratoire et du pipetage. La photo equipe-maxime existe déjà, mais reste limitée à 473 × 821 px.",
+      "pagesCorps": [
+        "/a-propos",
+        "/en/about-us"
+      ],
+      "pagesPartage": [
+        "/",
+        "/a-propos",
+        "/en",
+        "/en/about-us"
+      ],
+      "referencesCode": [
+        "src/pages/Company.tsx:54",
+        "src/layouts/Header.tsx:20",
+        "src/lib/pages.ts:59",
+        "src/lib/pages.ts:139"
+      ],
+      "sha256": "a7769b688e5695a4797976aae56f2cf40b998ebecfd1f1ceb504b71798cddaf2",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "laboratoire",
+        "nouveauVisuel": "equipe-maxime",
+        "photographie": "images/official/equipe-maxime.jpg",
+        "sourceGraphique": null,
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos__equipe.md",
+        "contexteEtLimites": "Manipulation de pipetage de Maxime Lambert ; ni PCR ni localisation du laboratoire attestées.",
+        "informationsManquantes": "Original haute définition du poste souhaitable ; 473 × 821 disponibles.",
+        "pagesCorpsAvant": [
+          "/a-propos",
+          "/en/about-us"
+        ],
+        "pagesPartageCorrigees": [
+          "/",
+          "/a-propos",
+          "/en",
+          "/en/about-us"
+        ],
+        "occurrencesInteractives": "À propos, aperçu par défaut du menu Expertises, images de partage Accueil et À propos.",
+        "statut": "corrigé",
+        "sha256Photo": "b440a057e50849f260e08c846e35cf3aef2721aa91252e46267ce19f4aa99b35"
+      }
+    },
+    {
+      "numero": 2,
+      "asset": "sequencage",
+      "titre": "Séquençage : appareil et consommables",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/sequencage.png",
+      "variantesWeb": [
+        "public/images/sequencage-1100.webp",
+        "public/images/sequencage-1536.webp",
+        "public/images/sequencage-640.webp",
+        "public/images/sequencage-860.webp"
+      ],
+      "sujet": "Séquenceur générique inventé, chambre de chargement et consommables.",
+      "emplacements": "Étape Séquençage & dPCR du parcours ADN de l’accueil et de la démarche Expertises ; image de partage de la page Expertises. Le hero de la prestation Séquençage & dPCR est déjà une photo réelle.",
+      "remplacement": "Photo autorisée de la plateforme réellement utilisée. Si le travail est réalisé chez un partenaire, identifier correctement ce contexte.",
+      "pagesCorps": [
+        "/en/services",
+        "/services"
+      ],
+      "pagesPartage": [
+        "/en/services",
+        "/services"
+      ],
+      "referencesCode": [
+        "src/content/fr.ts:110",
+        "src/content/en.ts:111",
+        "src/lib/pages.ts:66"
+      ],
+      "sha256": "882e2cb37f4a7528621e489b04744e8be89e585e0cb035e8186c67f7664edfcb",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "sequencage",
+        "nouveauVisuel": "schema-sequencage",
+        "photographie": null,
+        "sourceGraphique": "images/diagrams/schema-sequencage.svg",
+        "reference": "ldgenx-migration-2026-10-13/source/fr/services__sequencage-dpcr.md",
+        "contexteEtLimites": "Lectures ADN schématiques, sans appareil.",
+        "informationsManquantes": "Photo du séquenceur réellement mobilisé, modèle et contexte interne/partenaire.",
+        "pagesCorpsAvant": [
+          "/en/services",
+          "/services"
+        ],
+        "pagesPartageCorrigees": [
+          "/en/services",
+          "/services"
+        ],
+        "occurrencesInteractives": "Étape Séquençage & dPCR du parcours ADN de l’accueil et de la démarche Expertises ; image de partage de la page Expertises. Le hero de la prestation Séquençage & dPCR est déjà une photo réelle.",
+        "statut": "corrigé"
+      }
+    },
+    {
+      "numero": 3,
+      "asset": "microbiologie",
+      "titre": "Microbiologie : pipette et vortex",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/microbiologie.png",
+      "variantesWeb": [
+        "public/images/microbiologie-1100.webp",
+        "public/images/microbiologie-1536.webp",
+        "public/images/microbiologie-640.webp",
+        "public/images/microbiologie-860.webp"
+      ],
+      "sujet": "Pipette, petits tubes d’extraction et agitateur de paillasse génériques.",
+      "emplacements": "Hero Communautés microbiennes, aperçu de cette expertise, cartes d’expertise associées et partage social.",
+      "remplacement": "Photo réelle de l’extraction / manipulation microbienne. equipe-maxime peut servir de remplacement général temporaire ; un cadrage spécifique reste préférable.",
+      "pagesCorps": [
+        "/applications/agriculture-agroecologie",
+        "/applications/environnement-bureaux-d-etudes",
+        "/en/applications/agriculture-agroecology",
+        "/en/applications/environment-consultancies",
+        "/en/services/microbial-community-analysis",
+        "/services/analyse-des-communautes-microbiennes"
+      ],
+      "pagesPartage": [
+        "/en/services/microbial-community-analysis",
+        "/services/analyse-des-communautes-microbiennes"
+      ],
+      "referencesCode": [
+        "src/content/fr.ts:310",
+        "src/content/en.ts:283"
+      ],
+      "sha256": "4dacd94f0e9715fbc0be204b2ce584011b3b9feb29511822e89160ae15d341c3",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "microbiologie",
+        "nouveauVisuel": "equipe-maxime",
+        "photographie": "images/official/equipe-maxime.jpg",
+        "sourceGraphique": null,
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos__equipe.md",
+        "contexteEtLimites": "Manipulation moléculaire générale uniquement ; aucun vortex, micro-organisme ou protocole spécifique affirmé.",
+        "informationsManquantes": "Photo de préparation microbienne / extraction et vortex réellement utilisés, si un visuel spécifique est souhaité.",
+        "pagesCorpsAvant": [
+          "/applications/agriculture-agroecologie",
+          "/applications/environnement-bureaux-d-etudes",
+          "/en/applications/agriculture-agroecology",
+          "/en/applications/environment-consultancies",
+          "/en/services/microbial-community-analysis",
+          "/services/analyse-des-communautes-microbiennes"
+        ],
+        "pagesPartageCorrigees": [
+          "/en/services/microbial-community-analysis",
+          "/services/analyse-des-communautes-microbiennes"
+        ],
+        "occurrencesInteractives": "Hero Communautés microbiennes, aperçu de cette expertise, cartes d’expertise associées et partage social.",
+        "statut": "corrigé",
+        "sha256Photo": "b440a057e50849f260e08c846e35cf3aef2721aa91252e46267ce19f4aa99b35"
+      }
+    },
+    {
+      "numero": 4,
+      "asset": "dna-ecotrace",
+      "titre": "DNA EcoTrace : séquenceur portable",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/dna-ecotrace.png",
+      "variantesWeb": [
+        "public/images/dna-ecotrace-1100.webp",
+        "public/images/dna-ecotrace-1536.webp",
+        "public/images/dna-ecotrace-640.webp",
+        "public/images/dna-ecotrace-860.webp"
+      ],
+      "sujet": "Appareil portable, flow cell, pipette et capsules illustratives, non documentaire.",
+      "emplacements": "Hero Recherche & Développement, projet DNA EcoTrace, cas et cartes associés, aperçu du menu et images de partage. Le dessin animé pédagogique du projet est un autre élément.",
+      "remplacement": "Photo réelle du séquenceur portable et de sa manipulation ; aucune photo adaptée identifiée dans les sources locales inspectées.",
+      "pagesCorps": [
+        "/applications/recherche-publique-privee",
+        "/en/applications/public-private-research",
+        "/en/innovation/dna-ecotrace",
+        "/en/innovation/ednaclock",
+        "/en/services/research-development",
+        "/innovation/dna-ecotrace",
+        "/innovation/edna-clock",
+        "/services/recherche-developpement"
+      ],
+      "pagesPartage": [
+        "/en/innovation/dna-ecotrace",
+        "/en/services/research-development",
+        "/innovation/dna-ecotrace",
+        "/services/recherche-developpement"
+      ],
+      "referencesCode": [
+        "src/content/fr.ts:518",
+        "src/content/fr.ts:558",
+        "src/content/fr.ts:1053",
+        "src/content/en.ts:499",
+        "src/content/en.ts:1008"
+      ],
+      "sha256": "bbd0a923bf99bec614c6361d12494ecdcebb533b5c8868119f27c6a2567de141",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "dna-ecotrace",
+        "nouveauVisuel": "schema-ecotrace",
+        "photographie": null,
+        "sourceGraphique": "images/diagrams/schema-ecotrace.svg",
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos__innovation.md",
+        "contexteEtLimites": "Réseau abstrait ADN/information ; aucune apparence de plateforme inventée.",
+        "informationsManquantes": "Photographie du dispositif exact et identification de sa configuration ; modèle non établi.",
+        "pagesCorpsAvant": [
+          "/applications/recherche-publique-privee",
+          "/en/applications/public-private-research",
+          "/en/innovation/dna-ecotrace",
+          "/en/innovation/ednaclock",
+          "/en/services/research-development",
+          "/innovation/dna-ecotrace",
+          "/innovation/edna-clock",
+          "/services/recherche-developpement"
+        ],
+        "pagesPartageCorrigees": [
+          "/en/innovation/dna-ecotrace",
+          "/en/services/research-development",
+          "/innovation/dna-ecotrace",
+          "/services/recherche-developpement"
+        ],
+        "occurrencesInteractives": "Hero Recherche & Développement, projet DNA EcoTrace, cas et cartes associés, aperçu du menu et images de partage. Le dessin animé pédagogique du projet est un autre élément.",
+        "statut": "corrigé"
+      }
+    },
+    {
+      "numero": 5,
+      "asset": "conception",
+      "titre": "Préparation : filtres, tubes et tuyaux",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/conception.png",
+      "variantesWeb": [
+        "public/images/conception-1100.webp",
+        "public/images/conception-1536.webp",
+        "public/images/conception-640.webp",
+        "public/images/conception-860.webp"
+      ],
+      "sujet": "Consommables de prélèvement et kit de campagne générés sur une table.",
+      "emplacements": "Conception scientifique dans l’accueil et la démarche ; aperçu par défaut du menu Applications.",
+      "remplacement": "Photo réelle du kit de campagne. Les photos existantes materiel-pompe, materiel-pompe-interieur et materiel-capsules fournissent déjà des éléments authentiques ; demander idéalement une composition réelle complète.",
+      "pagesCorps": [
+        "/",
+        "/en",
+        "/en/services",
+        "/services"
+      ],
+      "pagesPartage": [],
+      "referencesCode": [
+        "src/content/fr.ts:89",
+        "src/content/en.ts:91",
+        "src/layouts/Header.tsx:29"
+      ],
+      "sha256": "526ed46a43d9c12cc2c0ed593ab6a1934821f705a9c661b350dd792ade228dec",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "conception",
+        "nouveauVisuel": "schema-protocole",
+        "photographie": null,
+        "sourceGraphique": "images/diagrams/schema-protocole.svg",
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos.md",
+        "contexteEtLimites": "Cadrage scientifique abstrait ; ne prétend pas présenter un kit complet fourni. La photo terrain-prelevement reste à l’étape terrain.",
+        "informationsManquantes": "Photo d’un kit complet réellement préparé / livré, avec liste et variantes des accessoires.",
+        "pagesCorpsAvant": [
+          "/",
+          "/en",
+          "/en/services",
+          "/services"
+        ],
+        "pagesPartageCorrigees": [],
+        "occurrencesInteractives": "Conception scientifique dans l’accueil et la démarche ; aperçu par défaut du menu Applications.",
+        "statut": "corrigé"
+      }
+    },
+    {
+      "numero": 6,
+      "asset": "agriculture",
+      "titre": "Agriculture : outil de prélèvement de sol",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/agriculture.png",
+      "variantesWeb": [
+        "public/images/agriculture-1100.webp",
+        "public/images/agriculture-1536.webp",
+        "public/images/agriculture-640.webp",
+        "public/images/agriculture-860.webp"
+      ],
+      "sujet": "Gouge / carottier de sol, échantillon et manipulation générés.",
+      "emplacements": "Page Agriculture & Agroécologie, cartes d’application et associées, menu et partage social.",
+      "remplacement": "Photo réelle de prélèvement de sol avec l’outil effectivement utilisé, ou photo agricole réelle sans outil si aucun reportage de prélèvement n’est disponible.",
+      "pagesCorps": [
+        "/applications",
+        "/applications/agriculture-agroecologie",
+        "/en/applications",
+        "/en/applications/agriculture-agroecology",
+        "/en/services/bioinformatics",
+        "/en/services/genomic-selection",
+        "/en/services/microbial-community-analysis",
+        "/services/analyse-des-communautes-microbiennes",
+        "/services/bioinformatique",
+        "/services/selection"
+      ],
+      "pagesPartage": [
+        "/applications/agriculture-agroecologie",
+        "/en/applications/agriculture-agroecology"
+      ],
+      "referencesCode": [
+        "src/content/fr.ts:733",
+        "src/content/en.ts:690"
+      ],
+      "sha256": "439dc8a34afd38c59d30002a7f7b423b9dee9895da6cd224eb6213ed3865f950",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "agriculture",
+        "nouveauVisuel": "schema-agroecologie",
+        "photographie": null,
+        "sourceGraphique": "images/diagrams/schema-agroecologie.svg",
+        "reference": "ldgenx-migration-2026-10-13/source/fr/applications__agriculture-agroecologie.md",
+        "contexteEtLimites": "Liens abstraits entre diversité et agroécosystèmes ; aucun carottier.",
+        "informationsManquantes": "Photo d’un prélèvement de sol réel et outil/protocole documenté.",
+        "pagesCorpsAvant": [
+          "/applications",
+          "/applications/agriculture-agroecologie",
+          "/en/applications",
+          "/en/applications/agriculture-agroecology",
+          "/en/services/bioinformatics",
+          "/en/services/genomic-selection",
+          "/en/services/microbial-community-analysis",
+          "/services/analyse-des-communautes-microbiennes",
+          "/services/bioinformatique",
+          "/services/selection"
+        ],
+        "pagesPartageCorrigees": [
+          "/applications/agriculture-agroecologie",
+          "/en/applications/agriculture-agroecology"
+        ],
+        "occurrencesInteractives": "Page Agriculture & Agroécologie, cartes d’application et associées, menu et partage social.",
+        "statut": "corrigé"
+      }
+    },
+    {
+      "numero": 7,
+      "asset": "recherche",
+      "titre": "Recherche : bassins et installations",
+      "priorite": "P1",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/recherche.png",
+      "variantesWeb": [
+        "public/images/recherche-1100.webp",
+        "public/images/recherche-1536.webp",
+        "public/images/recherche-640.webp",
+        "public/images/recherche-860.webp"
+      ],
+      "sujet": "Bassins expérimentaux, plomberie et équipements de recherche fictifs.",
+      "emplacements": "Page Recherche publique & privée, cartes d’application, liens associés, menu et partage social.",
+      "remplacement": "Photo réelle d’une installation autorisée ou scène réelle de recherche, sans la présenter comme un local LDgenX si ce n’est pas établi.",
+      "pagesCorps": [
+        "/applications",
+        "/applications/recherche-publique-privee",
+        "/en/applications",
+        "/en/applications/public-private-research",
+        "/en/services/bioinformatics",
+        "/en/services/genomic-selection",
+        "/en/services/population-genomics",
+        "/en/services/research-development",
+        "/en/services/sequencing-dpcr",
+        "/services/bioinformatique",
+        "/services/genomique-des-populations",
+        "/services/recherche-developpement",
+        "/services/selection",
+        "/services/sequencage-dpcr"
+      ],
+      "pagesPartage": [
+        "/applications/recherche-publique-privee",
+        "/en/applications/public-private-research"
+      ],
+      "referencesCode": [
+        "src/content/fr.ts:865",
+        "src/content/en.ts:822"
+      ],
+      "sha256": "c334864fee52eec26d39581a83615c10f8450402f89805320284bd4b4df0c137",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "recherche",
+        "nouveauVisuel": "schema-recherche",
+        "photographie": null,
+        "sourceGraphique": "images/diagrams/schema-recherche.svg",
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos__innovation.md",
+        "contexteEtLimites": "Réseau de collaboration et données ; aucun bassin ou laboratoire attribué à LDgenX ou Ifremer.",
+        "informationsManquantes": "Photo d’une installation réelle, lieu, propriétaire et autorisation d’utilisation.",
+        "pagesCorpsAvant": [
+          "/applications",
+          "/applications/recherche-publique-privee",
+          "/en/applications",
+          "/en/applications/public-private-research",
+          "/en/services/bioinformatics",
+          "/en/services/genomic-selection",
+          "/en/services/population-genomics",
+          "/en/services/research-development",
+          "/en/services/sequencing-dpcr",
+          "/services/bioinformatique",
+          "/services/genomique-des-populations",
+          "/services/recherche-developpement",
+          "/services/selection",
+          "/services/sequencage-dpcr"
+        ],
+        "pagesPartageCorrigees": [
+          "/applications/recherche-publique-privee",
+          "/en/applications/public-private-research"
+        ],
+        "occurrencesInteractives": "Page Recherche publique & privée, cartes d’application, liens associés, menu et partage social.",
+        "statut": "corrigé"
+      }
+    },
+    {
+      "numero": 8,
+      "asset": "innovation",
+      "titre": "Innovation : ancienne pompe fictive",
+      "priorite": "P1 — partage",
+      "origine": "IA confirmée par le dossier de génération",
+      "source": "images/generated/innovation.png",
+      "variantesWeb": [
+        "public/images/innovation-1100.webp",
+        "public/images/innovation-1536.webp",
+        "public/images/innovation-640.webp",
+        "public/images/innovation-860.webp"
+      ],
+      "sujet": "Prototype de pompe péristaltique inventé.",
+      "emplacements": "Image Open Graph / Twitter de /innovation et /en/innovation uniquement. Absente du contenu photographique courant des pages.",
+      "remplacement": "Remplacer aussi la référence de partage par une photo réelle ; materiel-pompe ou equipe-maxime sont déjà disponibles. Ne pas se limiter aux composants visibles.",
+      "pagesCorps": [],
+      "pagesPartage": [
+        "/en/innovation",
+        "/innovation"
+      ],
+      "referencesCode": [
+        "src/lib/pages.ts:120-126"
+      ],
+      "sha256": "0d772843d4cd158bc56a15a9cfcaf722c19e1c04c76f9392952f2b3691f45499",
+      "identiqueAuManifesteIA": true,
+      "correction20261020": {
+        "ancienVisuel": "innovation",
+        "nouveauVisuel": "equipe-maxime",
+        "photographie": "images/official/equipe-maxime.jpg",
+        "sourceGraphique": null,
+        "reference": "ldgenx-migration-2026-10-13/source/fr/a-propos__equipe.md",
+        "contexteEtLimites": "Photo générale du travail moléculaire ; cohérente avec le hero réel déjà utilisé dans Innovation.",
+        "informationsManquantes": "Aucun manque bloquant pour le partage général ; aucun modèle de prototype revendiqué.",
+        "pagesCorpsAvant": [],
+        "pagesPartageCorrigees": [
+          "/en/innovation",
+          "/innovation"
+        ],
+        "occurrencesInteractives": "Image Open Graph / Twitter de /innovation et /en/innovation uniquement. Absente du contenu photographique courant des pages.",
+        "statut": "corrigé",
+        "sha256Photo": "b440a057e50849f260e08c846e35cf3aef2721aa91252e46267ce19f4aa99b35"
+      }
+    }
+  ],
+  "aArbitrer": [
+    {
+      "asset": "aquaculture",
+      "statut": "IA confirmée",
+      "raison": "Cages et embarcation aquacoles, infrastructure de production plutôt que matériel de prélèvement LDgenX. À inclure si la règle cliente couvre toutes les installations techniques.",
+      "pagesCorps": [
+        "/applications",
+        "/applications/aquaculture-peche",
+        "/en/applications",
+        "/en/applications/aquaculture-fisheries",
+        "/en/resources",
+        "/en/resources/genomics-aquaculture",
+        "/en/services/genomic-selection",
+        "/en/services/microbial-community-analysis",
+        "/en/services/population-genomics",
+        "/en/services/sequencing-dpcr",
+        "/ressources",
+        "/ressources/genomique-filiere-aquacole",
+        "/services/analyse-des-communautes-microbiennes",
+        "/services/genomique-des-populations",
+        "/services/selection",
+        "/services/sequencage-dpcr"
+      ],
+      "pagesPartage": [
+        "/applications/aquaculture-peche",
+        "/en/applications/aquaculture-fisheries",
+        "/en/resources/genomics-aquaculture",
+        "/ressources/genomique-filiere-aquacole"
+      ],
+      "correction20261020": {
+        "ancienVisuel": "aquaculture",
+        "nouveauVisuel": "selection-unima",
+        "photographie": "images/client-2026-10-17/selection-unima.jpeg",
+        "sourceGraphique": null,
+        "reference": "data/client-photos.json ; docs/CANVA-2026-10-17.md ; Canva page 7",
+        "contexteEtLimites": "Crevette dans les mains devant un bassin, crédit @UNIMA ; aucune infrastructure présentée comme celle de LDgenX.",
+        "informationsManquantes": "Aucun manque pour ce visuel biologique ; toute future photo d’installation doit être documentée.",
+        "pagesCorpsAvant": [
+          "/applications",
+          "/applications/aquaculture-peche",
+          "/en/applications",
+          "/en/applications/aquaculture-fisheries",
+          "/en/resources",
+          "/en/resources/genomics-aquaculture",
+          "/en/services/genomic-selection",
+          "/en/services/microbial-community-analysis",
+          "/en/services/population-genomics",
+          "/en/services/sequencing-dpcr",
+          "/ressources",
+          "/ressources/genomique-filiere-aquacole",
+          "/services/analyse-des-communautes-microbiennes",
+          "/services/genomique-des-populations",
+          "/services/selection",
+          "/services/sequencage-dpcr"
+        ],
+        "pagesPartageCorrigees": [
+          "/applications/aquaculture-peche",
+          "/en/applications/aquaculture-fisheries",
+          "/en/resources/genomics-aquaculture",
+          "/ressources/genomique-filiere-aquacole"
+        ],
+        "occurrencesInteractives": "Menus, cartes et atlas Applications.",
+        "statut": "corrigé",
+        "sha256Photo": "0ab7b41d24d147416b1d428f7fe7e9e32506ffe76fb6efa2053f059c53965d32"
+      },
+      "statutActuel": "Corrigé le 20 octobre : photo cliente selection-unima avec crédit @UNIMA."
+    },
+    {
+      "asset": "hero-sample",
+      "statut": "Visuel de principe synthétique ; origine IA non établie par un manifeste local",
+      "raison": "Tube et gant avec ADN animé. L’encodeur Google dans la source ne suffit pas à prouver une génération IA. Faire confirmer la provenance et le périmètre de la règle.",
+      "fichiers": [
+        "public/videos/hero-sample-desktop-poster.webp",
+        "public/videos/hero-sample-mobile-poster.webp",
+        "public/videos/hero-sample-desktop.webm",
+        "public/videos/hero-sample-desktop.mp4",
+        "public/videos/hero-sample-mobile.mp4"
+      ],
+      "statutActuel": "Conservé ; origine IA non établie, aucun modèle commercial trompeur identifié."
+    }
+  ],
+  "preuvesOrigine": [
+    "LDgenX_images_new/README_LDgenX.md",
+    "LDgenX_images_new/LDgenX_reference_notes.md",
+    "LDgenX_images_new/LDgenX_generation_prompts.md",
+    "LDgenX_images_new/manifest.json"
+  ],
+  "miseAJour": "2026-10-20",
+  "etatActuel": "Corrections locales appliquées ; les données du 19 octobre restent l’inventaire avant correction. Voir corrections-2026-10-20.json."
+}

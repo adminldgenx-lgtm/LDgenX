@@ -16,6 +16,7 @@ import {
   Button,
 } from '../components/ui';
 import { AnimatedHeading, useSeen } from '../components/motion';
+import { RichText } from '../components/Figure';
 import { AmbientField } from '../components/AmbientField';
 import { LiveList, StepRows } from '../components/Steps';
 import { ExpertiseLandscape } from '../sections/ExpertiseLandscape';
@@ -23,7 +24,9 @@ import { ApplicationAtlas } from '../sections/ApplicationAtlas';
 import { ApplicationGrid, StudyFacts } from '../sections/Collections';
 import { Workflow } from '../sections/Workflow';
 import { PublicationLinks, researchLink } from './Research';
-import { CustomAssay } from '../sections/CustomAssay';
+import { CustomAssay, CustomAssayTeaser, SpeciesWall } from '../sections/CustomAssay';
+import { CirBlock } from '../sections/Cir';
+import { SamplingKits } from '../sections/SamplingKits';
 import { ErcModule } from '../sections/Erc';
 import { Faq, ProjectPractice } from '../sections/Practice';
 
@@ -77,16 +80,16 @@ function RelatedPublications({ id }: { id: string }) {
           }}
         />
         <PublicationLinks items={items.slice(0, 3)} />
-        <p className="related-publications-note">{t.servicesNote}</p>
       </div>
     </section>
   );
 }
 
-function RelatedStudy({ id }: { id: string }) {
+/** A case study: the one given, or the first one that relies on the expertise. */
+function RelatedStudy({ id, studyId }: { id?: string; studyId?: string }) {
   const { studies, ui } = useCatalog();
   const r = useRoutes();
-  const study = studies.find((s) => s.service === id);
+  const study = studies.find((s) => (studyId ? s.id === studyId : s.service === id));
   if (!study) return null;
   return (
     <section className="section-space studies-section">
@@ -139,6 +142,7 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
   const r = useRoutes();
   const t = ui.expertisePage;
   const s = services.find((s) => s.id === meta.id)!;
+  const h = s.headings ?? {};
   const dark = ['bioinformatique', 'sequencage-dpcr', 'recherche-developpement'].includes(s.id);
   const related = services
     .filter(
@@ -161,33 +165,39 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
         <div className="container detail-intro">
           <div>
             <Eyebrow>{t.needEyebrow}</Eyebrow>
-            <AnimatedHeading text={s.id === 'materiel' ? t.needField : t.needQuestion} />
+            <AnimatedHeading
+              text={h.need ?? (s.id === 'materiel' ? t.needField : t.needQuestion)}
+            />
           </div>
           <Reveal>
             <p>{s.need}</p>
           </Reveal>
         </div>
       </section>
+      {s.id === 'materiel' && <SamplingKits />}
       {s.id === 'materiel' && <EquipmentShowcase items={equipment} />}
+      {s.id === 'tests-adn-cibles' && <SpeciesWall />}
       <section className="approach-section">
         <div className="container approach-layout">
           <div className="approach-heading">
             <Eyebrow>{t.methodsEyebrow}</Eyebrow>
-            <AnimatedHeading text={t.methodsTitle} />
+            <AnimatedHeading text={h.methods ?? t.methodsTitle} />
             <Reveal delay={0.1}>
-              <p>{t.methodsText}</p>
+              <p>{h.methodsText ?? t.methodsText}</p>
             </Reveal>
           </div>
           <StepRows items={s.approaches} />
         </div>
       </section>
-      {s.id === 'sequencage-dpcr' && <CustomAssay />}
+      {s.id === 'tests-adn-cibles' && <CustomAssay variant="page" />}
+      {s.id === 'sequencage-dpcr' && <CustomAssayTeaser />}
+      {s.cir && <CirBlock />}
       {s.prestations.length > 0 && (
         <section className="section-space prestation-section">
           <div className="container prestation-layout">
             <div>
               <Eyebrow>{t.prestationsEyebrow}</Eyebrow>
-              <AnimatedHeading text={t.prestationsTitle} />
+              <AnimatedHeading text={h.prestations ?? t.prestationsTitle} />
               <Reveal delay={0.1}>
                 <p>{t.prestationsText}</p>
               </Reveal>
@@ -201,7 +211,7 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
         <div className="container use-layout">
           <div>
             <Eyebrow light>{t.usesEyebrow}</Eyebrow>
-            <AnimatedHeading text={t.usesTitle} />
+            <AnimatedHeading text={h.uses ?? t.usesTitle} />
           </div>
           <LiveList className="use-list" items={s.uses} />
         </div>
@@ -210,13 +220,13 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
         <section className="section-space cases-section">
           <div className="container">
             <Eyebrow>{t.casesEyebrow}</Eyebrow>
-            <AnimatedHeading text={t.casesTitle} />
+            <AnimatedHeading text={h.cases ?? t.casesTitle} />
             <CaseCards cases={s.cases} />
           </div>
         </section>
       )}
       <ProjectPractice intro={s.delivery} />
-      <RelatedStudy id={s.id} />
+      {!s.cases.some((c) => c.link?.kind === 'study') && <RelatedStudy id={s.id} />}
       <RelatedPublications id={s.id} />
       <section className="section-space">
         <div className="container">
@@ -246,10 +256,6 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           <Eyebrow>{t.moreEyebrow}</Eyebrow>
           <AnimatedHeading text={t.moreTitle} />
           <RelatedServices ids={related.map((x) => x.id)} />
-          <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-            {t.official}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
         </div>
       </section>
       <FinalCTA />
@@ -270,7 +276,9 @@ function CaseCards({ cases }: { cases: CaseRef[] }) {
             <span className="case-card-picture">
               {c.image && <Photo name={c.image} alt="" sizes="(max-width: 700px) 90vw, 30vw" />}
             </span>
-            <span className="case-card-title">{c.title}</span>
+            <span className="case-card-title">
+              <RichText text={c.title} />
+            </span>
             {c.link?.kind === 'external' && (
               <ArrowUpRight className="case-card-out" size={16} aria-hidden="true" />
             )}
@@ -302,11 +310,6 @@ function CaseCards({ cases }: { cases: CaseRef[] }) {
 function EquipmentShowcase({ items }: { items: EquipmentItem[] }) {
   const { ui, copy } = useCatalog();
   const t = ui.equipment;
-  const price = new Intl.NumberFormat(ui.htmlLang, {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-  });
   return (
     <section className="section-space equipment-section" aria-label={t.eyebrow}>
       <div className="container">
@@ -321,7 +324,7 @@ function EquipmentShowcase({ items }: { items: EquipmentItem[] }) {
         </div>
         <div className="equipment-list">
           {items.map((item) => (
-            <EquipmentCard key={item.id} item={item} format={(n) => price.format(n)} />
+            <EquipmentCard key={item.id} item={item} />
           ))}
         </div>
         <Reveal className="equipment-foot">
@@ -333,7 +336,7 @@ function EquipmentShowcase({ items }: { items: EquipmentItem[] }) {
   );
 }
 
-function EquipmentCard({ item, format }: { item: EquipmentItem; format: (n: number) => string }) {
+function EquipmentCard({ item }: { item: EquipmentItem }) {
   const { ui } = useCatalog();
   const t = ui.equipment;
   const ref = useRef<HTMLElement>(null);
@@ -361,17 +364,6 @@ function EquipmentCard({ item, format }: { item: EquipmentItem; format: (n: numb
               <li key={spec}>{spec}</li>
             ))}
           </ul>
-          <h4>{t.prices}</h4>
-          <dl className="equipment-prices">
-            {item.prices.map((p) => (
-              <div key={p.label}>
-                <dt>{p.label}</dt>
-                <dd>
-                  {format(p.amount)} {ui.common.excludingTax}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </article>
     </Reveal>
@@ -412,21 +404,16 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
       <section className="detail-section">
         <div className="container approach-layout">
           <div className="approach-heading">
-            <Eyebrow>{t.fieldEyebrow}</Eyebrow>
-            <AnimatedHeading text={t.fieldTitle} />
+            <Eyebrow>{s.headings?.fieldEyebrow ?? t.fieldEyebrow}</Eyebrow>
+            <AnimatedHeading text={s.headings?.field ?? t.fieldTitle} />
             <Reveal delay={0.1}>
               <p>{t.fieldText}</p>
             </Reveal>
           </div>
-          <div>
-            <StepRows items={s.needs} />
-            <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-              {t.reference}
-              <span className="sr-only">{ui.common.newTab}</span>
-            </a>
-          </div>
+          <StepRows items={s.needs} />
         </div>
       </section>
+      {s.cir && <CirBlock />}
       {s.approaches && (
         <section className="section-space sector-approaches">
           <div className="container">
@@ -482,7 +469,11 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
       )}
       <section className="section-space">
         <div className="container">
-          <SectionHeading eyebrow={t.relatedEyebrow} title={t.relatedTitle} body={t.relatedBody} />
+          <SectionHeading
+            eyebrow={t.relatedEyebrow}
+            title={s.headings?.related ?? t.relatedTitle}
+            body={t.relatedBody}
+          />
           <RelatedServices ids={s.services} />
         </div>
       </section>
@@ -506,7 +497,7 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
         </section>
       )}
       <ProjectPractice intro={t.practiceIntro} />
-      <RelatedStudy id={s.services[0]} />
+      {s.study && <RelatedStudy studyId={s.study} />}
       <FinalCTA />
     </>
   );

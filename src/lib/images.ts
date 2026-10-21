@@ -2,16 +2,21 @@
 // images/generated) exist from 640 to 1536 px. Photographs published by LDgenX on ldgenx.fr
 // exist only at web resolution and the team portraits at 4:5 (see docs/CONTENT-SOURCES.md):
 // they are served at their own size, never enlarged.
+import { clientPhotos } from '../content/client-photos';
+import { equipmentMedia } from '../content/equipment-media';
+import { licensedPhotos } from '../content/licensed-photos';
+import { socialImages } from './social-images';
+
 const defaultWidths = [640, 860, 1100, 1536];
 const otherWidths: Record<string, number[]> = {
   'equipe-maxime': [473],
   'terrain-prelevement': [480, 829],
   'carte-artois-picardie': [480, 970],
   'materiel-pompe': [480, 1000],
-  'portrait-maeva': [480, 900],
-  'portrait-emilie': [480, 900],
-  'portrait-maxime': [480, 900],
-  // Real photo sent by LDgenX (October 2026), cropped to 4:5; not a studio portrait.
+  // The team's real photos (ldgenx.fr/a-propos/equipe, and Damien's own), cropped to 4:5.
+  'portrait-maeva': [480, 590],
+  'portrait-emilie': [480, 534],
+  'portrait-maxime': [473],
   'portrait-damien': [480, 659],
   // Imported from the public LDgenX sites and the Artois-Picardie documents (October 2026).
   'ap-adne-chalut': [900, 1600],
@@ -81,10 +86,22 @@ const otherWidths: Record<string, number[]> = {
 };
 
 export function imageWidths(name: string) {
-  return otherWidths[name] ?? defaultWidths;
+  return (
+    clientPhotos[name]?.widths ??
+    equipmentMedia[name]?.widths ??
+    licensedPhotos[name]?.widths ??
+    otherWidths[name] ??
+    defaultWidths
+  );
 }
 
 /** Path of an image at a given width, or at its largest one. */
 export function imageUrl(name: string, width = Math.max(...imageWidths(name))) {
   return `/images/${name}-${width}.webp`;
+}
+
+/** The picture a page shares: its 1200 × 630 social card when there is one (JPEG, read by every
+ *  network), otherwise the picture itself. */
+export function socialImageUrl(name: string) {
+  return socialImages.has(name) ? `/images/social-${name}.jpg` : imageUrl(name);
 }

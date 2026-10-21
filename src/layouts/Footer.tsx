@@ -37,6 +37,7 @@ export function Footer() {
               {s.title}
             </Link>
           ))}
+          <Link to={r.service('tests-adn-cibles')}>{t.links.tests}</Link>
           <Link to={r.service('materiel')}>{t.links.equipment}</Link>
         </div>
         <div>
@@ -48,6 +49,8 @@ export function Footer() {
           <Link to={r.publications}>{t.links.publications}</Link>
           <Link to={r.partners}>{t.links.partners}</Link>
           <Link to={r.resources}>{t.links.resources}</Link>
+          <Link to={r.faq}>{t.links.faq}</Link>
+          <Link to={r.glossary}>{t.links.glossary}</Link>
         </div>
         <div className="footer-contact">
           <p className="footer-label">{t.talk}</p>
@@ -73,6 +76,7 @@ export function Footer() {
         <div>
           <Link to={r.legal}>{t.legal}</Link>
           <Link to={r.privacy}>{t.privacy}</Link>
+          <Link to={r.siteMap}>{t.links.siteMap}</Link>
           <Link to={r.terms} hrefLang="fr">
             {t.terms}
           </Link>

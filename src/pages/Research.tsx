@@ -6,21 +6,24 @@ import {
   type CSSProperties,
   type KeyboardEvent,
 } from 'react';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Link2, Search, X } from 'lucide-react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, Copy, Search, X } from 'lucide-react';
 import type { ResearchFeatured, ResearchPublication } from '../content/types';
 import { useCatalog, useRoutes } from '../i18n';
 import { type PageMeta } from '../lib/pages';
-import { Eyebrow, FinalCTA, PageHero, Reveal, TextLink } from '../components/ui';
+import { Breadcrumbs, Eyebrow, FinalCTA, PageHero, Reveal, TextLink } from '../components/ui';
+import { AmbientField } from '../components/AmbientField';
 import { AnimatedHeading, useNearViewport, useReducedMotion, useSeen } from '../components/motion';
 import { DecodeOnce } from '../components/Decode';
-import { Figure } from '../components/Figure';
+import { Figure, RichText } from '../components/Figure';
+
+/** A title marked for display (*Latin names*), as plain text. */
+export const plainTitle = (text: string) => text.replace(/\*/g, '');
 
 /* "Recherche & publications": the articles co-written by the team. Three topics are put
    forward with charts drawn only from values stated in their published abstracts; the
    catalogue lists every reference with search and filters kept in the address, so a filtered
-   list or an open publication can be shared, and closing a publication returns to the list as
-   it was. */
+   list can be shared. Each article has a page of its own, with its summary and reference. */
 
 const PARAMS = ['q', 'theme', 'author', 'year', 'expertise'] as const;
 
@@ -40,14 +43,16 @@ function useResearchQuery() {
 }
 
 export function ResearchPage({ meta }: { meta: PageMeta }) {
-  const { research, people, ui } = useCatalog();
+  const { research, ui } = useCatalog();
   const t = ui.research;
   const r = useRoutes();
   const navigate = useNavigate();
-  const location = useLocation();
   const { params, setSearchParams } = useResearchQuery();
-  const openId = params.get('publication');
-  const open = research.publications.find((p) => p.id === openId) ?? null;
+  const legacy = params.get('publication');
+  useEffect(() => {
+    if (legacy && research.publications.some((p) => p.id === legacy))
+      navigate(r.publication(legacy), { replace: true });
+  }, [legacy, research.publications, navigate, r]);
 
   const update = (changes: Record<string, string | null>) => {
     const next = new URLSearchParams(params);
@@ -57,21 +62,12 @@ export function ResearchPage({ meta }: { meta: PageMeta }) {
     }
     setSearchParams(next, { replace: true, preventScrollReset: true });
   };
-  const openPublication = (id: string) => {
-    const next = new URLSearchParams(params);
-    next.set('publication', id);
-    setSearchParams(next, { preventScrollReset: true, state: { fromList: true } });
-  };
-  const closePublication = () => {
-    if ((location.state as { fromList?: boolean } | null)?.fromList) navigate(-1);
-    else update({ publication: null });
-  };
 
   return (
     <>
       <PageHero meta={meta} eyebrow={t.eyebrow} title={t.title} intro={t.intro} />
-      <FeaturedResearch items={research.featured} onOpen={openPublication} />
-      <Catalogue params={params} update={update} onOpen={openPublication} openId={openId} />
+      <FeaturedResearch items={research.featured} />
+      <Catalogue params={params} update={update} />
       <section className="section-space research-distinct">
         <div className="container detail-intro">
           <div>
@@ -79,11 +75,7 @@ export function ResearchPage({ meta }: { meta: PageMeta }) {
             <AnimatedHeading text={t.distinctTitle} />
           </div>
           <Reveal>
-            <ul className="research-distinct-list">
-              {t.distinct.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
+            <p>{t.distinct}</p>
             <div className="person-links">
               <TextLink to={r.innovations}>{t.seeRd}</TextLink>
               <TextLink to={r.studies}>{t.seeStudies}</TextLink>
@@ -92,7 +84,6 @@ export function ResearchPage({ meta }: { meta: PageMeta }) {
         </div>
       </section>
       <FinalCTA />
-      <PublicationPanel publication={open} people={people} onClose={closePublication} />
     </>
   );
 }
@@ -101,13 +92,7 @@ export function ResearchPage({ meta }: { meta: PageMeta }) {
 /* Featured topics                                                                           */
 /* ----------------------------------------------------------------------------------------- */
 
-function FeaturedResearch({
-  items,
-  onOpen,
-}: {
-  items: ResearchFeatured[];
-  onOpen: (id: string) => void;
-}) {
+function FeaturedResearch({ items }: { items: ResearchFeatured[] }) {
   const { research, services, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.research;
@@ -176,13 +161,9 @@ function FeaturedResearch({
                 ))}
               </ol>
               <div className="research-topic-actions">
-                <button
-                  type="button"
-                  className="button button-primary"
-                  onClick={() => onOpen(publication.id)}
-                >
+                <Link className="button button-primary" to={r.publication(publication.id)}>
                   {t.readSummary}
-                </button>
+                </Link>
                 {service && <TextLink to={r.service(service.id)}>{service.title}</TextLink>}
               </div>
             </div>
@@ -419,13 +400,9 @@ const fold = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toL
 function Catalogue({
   params,
   update,
-  onOpen,
-  openId,
 }: {
   params: URLSearchParams;
   update: (changes: Record<string, string | null>) => void;
-  onOpen: (id: string) => void;
-  openId: string | null;
 }) {
   const { research, people, services, ui } = useCatalog();
   const t = ui.research;
@@ -583,8 +560,6 @@ function Catalogue({
                 publication={p}
                 index={i}
                 dim={Boolean(preview) && !p.themes.includes(preview!)}
-                current={p.id === openId}
-                onOpen={onOpen}
               />
             ))}
           </ol>
@@ -639,22 +614,18 @@ function PublicationCard({
   publication: p,
   index,
   dim,
-  current,
-  onOpen,
 }: {
   publication: ResearchPublication;
   index: number;
   dim: boolean;
-  current: boolean;
-  onOpen: (id: string) => void;
 }) {
   const { ui } = useCatalog();
+  const r = useRoutes();
   const t = ui.research;
   return (
     <li
       className="research-card"
       data-dim={dim || undefined}
-      data-current={current || undefined}
       style={{ '--i': Math.min(index, 10) } as CSSProperties}
     >
       <div className="research-card-meta">
@@ -664,13 +635,15 @@ function PublicationCard({
       </div>
       <div className="research-card-body">
         <h3>
-          <button type="button" className="research-card-open" onClick={() => onOpen(p.id)}>
-            {p.readingTitle}
-          </button>
+          <Link className="research-card-open" to={r.publication(p.id)}>
+            <RichText text={p.readingTitle} />
+          </Link>
         </h3>
-        <p className="research-card-title" lang="en">
-          {p.title}
-        </p>
+        {plainTitle(p.readingTitle) !== p.title && (
+          <p className="research-card-title" lang="en">
+            {p.title}
+          </p>
+        )}
         <p className="research-card-authors">
           <AuthorLine publication={p} />
         </p>
@@ -681,10 +654,10 @@ function PublicationCard({
         </ul>
       </div>
       <div className="research-card-actions">
-        <button type="button" className="research-card-read" onClick={() => onOpen(p.id)}>
+        <Link className="research-card-read" to={r.publication(p.id)} tabIndex={-1}>
           {t.readSummary}
           <ArrowRight size={16} aria-hidden="true" />
-        </button>
+        </Link>
         <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noreferrer">
           DOI
           <ArrowUpRight size={14} aria-hidden="true" />
@@ -700,202 +673,215 @@ function PublicationCard({
 }
 
 /* ----------------------------------------------------------------------------------------- */
-/* Publication panel                                                                         */
+/* Publication page                                                                          */
 /* ----------------------------------------------------------------------------------------- */
 
-function PublicationPanel({
-  publication,
-  people,
-  onClose,
-}: {
-  publication: ResearchPublication | null;
-  people: { id: string; name: string }[];
-  onClose: () => void;
-}) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const opener = useRef<Element | null>(null);
-  const [shown, setShown] = useState<ResearchPublication | null>(publication);
-  if (publication && publication !== shown) setShown(publication);
-
-  useEffect(() => {
-    const element = dialog.current;
-    if (!element) return;
-    if (publication && !element.open) {
-      opener.current = document.activeElement;
-      element.showModal();
-      element.scrollTop = 0;
-    } else if (!publication && element.open) {
-      element.close();
-      if (opener.current instanceof HTMLElement) opener.current.focus({ preventScroll: true });
-    }
-  }, [publication]);
-
-  return (
-    <dialog
-      ref={dialog}
-      className="research-panel"
-      aria-labelledby="research-panel-title"
-      onCancel={(e) => {
-        e.preventDefault();
-        onClose();
-      }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      {shown && <PanelContent publication={shown} people={people} onClose={onClose} />}
-    </dialog>
-  );
+/** The reference of an article, as it is cited. */
+export function citation(p: ResearchPublication) {
+  const authors =
+    p.authors.length > 6 ? `${p.authors.slice(0, 6).join(', ')}, et al.` : p.authors.join(', ');
+  return `${authors} (${p.year}). ${p.title}. ${p.journal}, ${p.issue}. https://doi.org/${p.doi}`;
 }
 
-function PanelContent({
-  publication: p,
-  onClose,
-}: {
-  publication: ResearchPublication;
-  people: { id: string; name: string }[];
-  onClose: () => void;
-}) {
-  const { services, ui } = useCatalog();
+/** One article of the team: its summary, the points to remember, its figures and reference. */
+export function PublicationPage({ meta }: { meta: PageMeta }) {
+  const { research, people, services, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.research;
+  const p = research.publications.find((x) => x.id === meta.id)!;
   const [copied, setCopied] = useState(false);
+  const related = services.filter((s) => p.services.includes(s.id));
+  const members = people.filter((person) => p.members.includes(person.id));
+  // Other articles sharing a theme, newest first.
+  const others = research.publications
+    .filter((x) => x.id !== p.id && x.themes.some((theme) => p.themes.includes(theme)))
+    .slice(0, 3);
   const online =
     p.online &&
     new Intl.DateTimeFormat(ui.htmlLang, { day: 'numeric', month: 'long', year: 'numeric' }).format(
       new Date(p.online),
     );
-  const related = services.filter((s) => p.services.includes(s.id));
   return (
-    <div className="research-panel-inner" key={p.id}>
-      <div className="research-panel-bar">
-        <span>{t.dialog}</span>
-        <div>
-          <button
-            type="button"
-            className="research-panel-share"
-            onClick={() => {
-              navigator.clipboard
-                ?.writeText(window.location.href)
-                .then(() => {
-                  setCopied(true);
-                  window.setTimeout(() => setCopied(false), 2200);
-                })
-                .catch(() => {});
-            }}
-          >
-            <Link2 size={15} aria-hidden="true" />
-            <span aria-live="polite">{copied ? t.copied : t.share}</span>
-          </button>
-          <button type="button" className="research-panel-close" onClick={onClose}>
-            <X size={18} aria-hidden="true" />
-            <span className="sr-only">{t.close}</span>
-          </button>
-        </div>
-      </div>
-      <p className="research-panel-kicker">
-        {p.journal} · {p.year}
-        {online && ` · ${t.online} ${online}`}
-        {p.type === 'review' && ` · ${t.review}`}
-      </p>
-      <h2 id="research-panel-title">{p.readingTitle}</h2>
-      <p className="research-panel-title" lang="en">
-        {p.title}
-      </p>
-      <p className="research-panel-authors">
-        <AuthorLine publication={p} full />
-      </p>
-      {p.authorNote && <p className="research-panel-note">{p.authorNote}</p>}
-      <div className="research-panel-links">
-        <a
-          className="button button-primary"
-          href={`https://doi.org/${p.doi}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {t.readArticle}
-          <ArrowUpRight size={16} aria-hidden="true" />
-          <span className="sr-only">{ui.common.newTab}</span>
-        </a>
-        {p.preprint && (
-          <a className="text-link" href={p.preprint} target="_blank" rel="noreferrer">
-            {t.preprint}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
-        )}
-        {p.links.map((l) => (
-          <a key={l.url} className="text-link" href={l.url} target="_blank" rel="noreferrer">
-            {l.label}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
-        ))}
-      </div>
-      <p className="research-panel-basis">{t.text[p.text]}</p>
-      <p className="research-panel-summary">{p.summary}</p>
-      <dl className="research-panel-points">
-        {(
-          [
-            [t.question, p.question],
-            [t.approach, p.approach],
-            [t.finding, p.finding],
-            [t.limit, p.limit],
-          ] as const
-        ).map(([label, text], i) => (
-          <div
-            key={label}
-            style={{ '--i': i } as CSSProperties}
-            data-kind={i === 3 ? 'limit' : undefined}
-          >
-            <dt>{label}</dt>
-            <dd>{text}</dd>
+    <>
+      <section className="publication-hero">
+        <AmbientField className="page-hero-field" />
+        <div className="container publication-hero-inner">
+          <Breadcrumbs meta={meta} />
+          <p className="publication-kicker">
+            {p.journal} · {p.year}
+            {online && ` · ${t.online} ${online}`}
+            {p.type === 'review' && ` · ${t.review}`}
+          </p>
+          <h1 className="publication-title">
+            <RichText text={p.readingTitle} />
+          </h1>
+          {plainTitle(p.readingTitle) !== p.title && (
+            <p className="publication-original">
+              <span>{t.originalTitle}</span>
+              <span lang="en">{p.title}</span>
+            </p>
+          )}
+          <p className="publication-authors">
+            <AuthorLine publication={p} full />
+          </p>
+          {p.authorNote && <p className="research-panel-note">{p.authorNote}</p>}
+          <div className="publication-links-row">
+            <a
+              className="button button-primary"
+              href={`https://doi.org/${p.doi}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.readArticle}
+              <ArrowUpRight size={16} aria-hidden="true" />
+              <span className="sr-only">{ui.common.newTab}</span>
+            </a>
+            {p.preprint && (
+              <a className="text-link" href={p.preprint} target="_blank" rel="noreferrer">
+                {t.preprint}
+                <span className="sr-only">{ui.common.newTab}</span>
+              </a>
+            )}
+            {p.links.map((l) => (
+              <a key={l.url} className="text-link" href={l.url} target="_blank" rel="noreferrer">
+                {l.label}
+                <span className="sr-only">{ui.common.newTab}</span>
+              </a>
+            ))}
           </div>
-        ))}
-      </dl>
-      <section className="research-panel-figures" aria-label={t.figures}>
-        <h3>{t.figures}</h3>
-        {p.figures.length ? (
-          p.figures.map((f) => (
-            <Figure
-              key={f.image}
-              image={f.image}
-              alt={`${f.label}, ${p.readingTitle}`}
-              sizes="(max-width: 800px) 92vw, 640px"
-              legend={`${f.label}. ${f.caption}`}
-              caption={
-                <>
-                  {t.caption}. {f.credit}. {t.licence}{' '}
-                  <a
-                    href="https://creativecommons.org/licenses/by/4.0/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {f.licence}
-                    <span className="sr-only">{ui.common.newTab}</span>
-                  </a>
-                  .
-                </>
-              }
-            />
-          ))
-        ) : (
-          <p className="research-panel-nofig">{t.noFigures}</p>
-        )}
+        </div>
       </section>
-      <section className="research-panel-services" aria-label={t.services}>
-        <h3>{t.services}</h3>
-        <ul>
-          {related.map((s) => (
-            <li key={s.id}>
-              <Link to={r.service(s.id)} onClick={onClose}>
-                {s.title}
-                <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <p>{t.servicesNote}</p>
+      <section className="section-space publication-body">
+        <div className="container publication-layout">
+          <div className="publication-main">
+            <Reveal>
+              <p className="publication-summary">{p.summary}</p>
+            </Reveal>
+            <dl className="research-panel-points publication-points">
+              {(
+                [
+                  [t.question, p.question],
+                  [t.approach, p.approach],
+                  [t.finding, p.finding],
+                  [t.limit, p.limit],
+                ] as const
+              ).map(([label, text], i) => (
+                <Reveal key={label} delay={i * 0.06}>
+                  <div data-kind={i === 3 ? 'limit' : undefined}>
+                    <dt>{label}</dt>
+                    <dd>{text}</dd>
+                  </div>
+                </Reveal>
+              ))}
+            </dl>
+            <section className="research-panel-figures" aria-label={t.figures}>
+              <h2>{t.figures}</h2>
+              {p.figures.length ? (
+                p.figures.map((f) => (
+                  <Figure
+                    key={f.image}
+                    image={f.image}
+                    alt={`${f.label}, ${plainTitle(p.readingTitle)}`}
+                    sizes="(max-width: 800px) 92vw, 720px"
+                    legend={`${f.label}. ${f.caption}`}
+                    caption={
+                      <>
+                        {t.caption}. {f.credit}. {t.licence}{' '}
+                        <a
+                          href="https://creativecommons.org/licenses/by/4.0/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {f.licence}
+                          <span className="sr-only">{ui.common.newTab}</span>
+                        </a>
+                        .
+                      </>
+                    }
+                  />
+                ))
+              ) : (
+                <p className="research-panel-nofig">{t.noFigures}</p>
+              )}
+            </section>
+          </div>
+          <aside className="publication-aside">
+            <div className="publication-cite">
+              <h2>{t.cite}</h2>
+              <p>{citation(p)}</p>
+              <button
+                type="button"
+                className="publication-copy"
+                onClick={() => {
+                  navigator.clipboard
+                    ?.writeText(citation(p))
+                    .then(() => {
+                      setCopied(true);
+                      window.setTimeout(() => setCopied(false), 2200);
+                    })
+                    .catch(() => {});
+                }}
+              >
+                <Copy size={15} aria-hidden="true" />
+                <span aria-live="polite">{copied ? t.copied : t.copyCitation}</span>
+              </button>
+            </div>
+            {members.length > 0 && (
+              <div className="publication-members">
+                <h2>{t.teamAuthors}</h2>
+                <ul>
+                  {members.map((person) => (
+                    <li key={person.id}>
+                      {person.slug ? (
+                        <Link to={r.person(person.id)}>{person.name}</Link>
+                      ) : (
+                        person.name
+                      )}
+                      <span>{person.role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {related.length > 0 && (
+              <div className="research-panel-services">
+                <h2>{t.services}</h2>
+                <ul>
+                  {related.map((s) => (
+                    <li key={s.id}>
+                      <Link to={r.service(s.id)}>
+                        {s.title}
+                        <ArrowRight size={15} aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <ul className="research-card-themes publication-themes" aria-label={t.theme}>
+              {p.themes.map((id) => (
+                <li key={id}>
+                  <Link to={researchLink(r.publications, { theme: id })}>{t.themes[id]}</Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
       </section>
-    </div>
+      {others.length > 0 && (
+        <section className="section-space related-publications">
+          <div className="container">
+            <Eyebrow>{t.relatedEyebrow}</Eyebrow>
+            <AnimatedHeading text={t.otherPublications} />
+            <PublicationLinks items={others} />
+            <div className="person-links">
+              <TextLink to={r.publications}>{t.allPublications}</TextLink>
+            </div>
+          </div>
+        </section>
+      )}
+      <FinalCTA />
+    </>
   );
 }
 
@@ -904,29 +890,58 @@ function PanelContent({
 /* ----------------------------------------------------------------------------------------- */
 
 /** A short list of publications, each opening on the research page. */
+const SHOWN_ON_PHONES = 6;
+
+/** Publications as cards. On phones a long list shows its first six, the others one tap away;
+ *  every link stays in the page. */
 export function PublicationLinks({ items }: { items: ResearchPublication[] }) {
   const { ui } = useCatalog();
   const r = useRoutes();
+  const list = useRef<HTMLUListElement>(null);
+  const [open, setOpen] = useState(false);
+  const others = items.length - SHOWN_ON_PHONES;
+  const collapsed = others > 0 && !open;
   return (
-    <ul className="publication-links">
-      {items.map((p, i) => (
-        <li key={p.id} style={{ '--i': i } as CSSProperties}>
-          <Link to={researchLink(r.publications, { publication: p.id })}>
-            <span className="publication-links-meta">
-              {p.year} · {p.journal}
-            </span>
-            <span className="publication-links-title">{p.readingTitle}</span>
-            <span className="publication-links-ref" lang="en">
-              {p.title}
-            </span>
-            <span className="publication-links-more">
-              {ui.research.readSummary}
-              <ArrowRight size={15} aria-hidden="true" />
-            </span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul ref={list} className="publication-links" data-collapsed={collapsed || undefined}>
+        {items.map((p, i) => (
+          <li key={p.id} style={{ '--i': i } as CSSProperties}>
+            <Link to={r.publication(p.id)}>
+              <span className="publication-links-meta">
+                {p.year} · {p.journal}
+              </span>
+              <span className="publication-links-title">
+                <RichText text={p.readingTitle} />
+              </span>
+              {plainTitle(p.readingTitle) !== p.title && (
+                <span className="publication-links-ref" lang="en">
+                  {p.title}
+                </span>
+              )}
+              <span className="publication-links-more">
+                {ui.research.readSummary}
+                <ArrowRight size={15} aria-hidden="true" />
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {collapsed && (
+        <button
+          type="button"
+          className="publication-links-toggle"
+          onClick={() => {
+            setOpen(true);
+            // Focus moves to the first publication revealed.
+            requestAnimationFrame(() =>
+              list.current?.querySelectorAll('a')[SHOWN_ON_PHONES]?.focus(),
+            );
+          }}
+        >
+          {ui.research.showOthers(others)}
+        </button>
+      )}
+    </>
   );
 }
 
@@ -951,11 +966,11 @@ export function ResearchTeaser() {
             const p = research.publications.find((x) => x.id === f.publication)!;
             return (
               <li key={f.publication} style={{ '--i': i } as CSSProperties}>
-                <Link to={researchLink(r.publications, { publication: p.id })}>
+                <Link to={r.publication(p.id)}>
                   <span className="research-teaser-label">
                     {f.label} · {f.species}
                   </span>
-                  <span className="research-teaser-title">{p.readingTitle}</span>
+                  <span className="research-teaser-title">{p.seoTitle}</span>
                   <span className="research-teaser-meta">
                     {p.journal}, {p.year}
                   </span>

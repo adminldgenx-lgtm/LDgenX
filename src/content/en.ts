@@ -1,7 +1,7 @@
 // English catalogue: same shape as fr.ts. Wording follows ldgenx.com where the page exists
 // (services, applications, about, innovation, equipment, contact); the rest is translated
 // from ldgenx.fr. Ids stay French so every page pairs with its French counterpart.
-import type { Expertise, Sector } from './fr';
+import type { Expertise, Sector, Study } from './fr';
 import { people } from './extra.en';
 
 export { company } from './site';
@@ -20,13 +20,13 @@ export const copy = {
   home: {
     eyebrow: 'Environmental DNA · Genomics · Bioinformatics',
     intro:
-      'From DNA analyses to the interpretation of results, we support your environmental projects.',
+      'Biodiversity, aquaculture, agriculture: we design the study, analyse your samples and help you interpret the results.',
     primary: 'Ask for a quote',
     secondary: 'Explore our services',
     // Each fact is published by LDgenX: ldgenx.com (home, about) and ldgenx.fr (partners, contact).
     facts: [
-      { value: '10+ years', label: 'of experience for our scientific team' },
-      { value: 'Deep Tech', label: 'company labelled by Bpifrance' },
+      { value: '15+ years', label: 'of scientific experience' },
+      { value: 'Deep Tech', label: 'label awarded by Bpifrance' },
       { value: 'End to end', label: 'from sampling to decision support' },
       { value: 'Station Ifremer', label: 'a team based in Palavas-les-Flots' },
     ],
@@ -53,7 +53,7 @@ export const copy = {
       'Research backgrounds, complementary expertise and a shared drive: putting genomics at the service of life.',
     trustTitle: 'They work\nwith us.',
     trustIntro:
-      'Public agencies, consultancies, companies, universities and research institutes: the organisations LDgenX presents.',
+      'Public agencies, consultancies, companies, universities and research institutes: they trust us or support our growth.',
   },
   cta: {
     eyebrow: 'Let’s discuss your project',
@@ -88,7 +88,7 @@ export const workflow = [
     title: 'Scientific project design',
     text: 'Your question is the starting point. Together we set the objectives and the approaches to bring in.',
     detail: 'Literature review, definition of objectives and indicators.',
-    image: 'conception',
+    image: 'schema-protocole',
   },
   {
     title: 'Sampling strategy',
@@ -107,15 +107,15 @@ export const workflow = [
     title: 'Sequencing & dPCR',
     text: 'Amplicons, genomes or targeted detection: technologies are chosen according to the scientific objectives.',
     detail:
-      'Long reads (Nanopore, PacBio) and short reads (Illumina, AVITI), targeted sequencing and microsatellites (qPCR, Sanger, KASP), digital PCR.',
-    image: 'sequencage',
+      'Long reads (Nanopore) and short reads (Illumina, AVITI), targeted sequencing and microsatellites (qPCR, Sanger, KASP), digital PCR.',
+    image: 'cas-requin',
   },
   {
     title: 'Bioinformatics',
     text: 'Data are processed and analysed with bioinformatics approaches suited to your biological question.',
     detail:
       'Bioinformatics and biostatistics: metabarcoding, metagenomics, RAD-seq, RNA-seq, WGS, epigenetics, GWAS.',
-    image: 'bioinformatique',
+    image: 'bioinformatique-client',
   },
   {
     title: 'Interpretation',
@@ -127,7 +127,7 @@ export const workflow = [
     title: 'Decision support',
     text: 'Scientific knowledge becomes actionable information for your management, conservation or innovation projects.',
     detail: 'Actionable results for decision-making.',
-    image: 'decision',
+    image: 'decision-amphitheatre',
   },
 ];
 
@@ -207,6 +207,13 @@ export const services: Expertise[] = [
         link: { kind: 'study', id: 'biodiversite-eolien-offshore' },
       },
     ],
+    headings: {
+      need: 'One question, one environment,\nspecies to know.',
+      methods: 'Four ways to read\ntraces of DNA.',
+      prestations: 'From protocol\nto decision-support report.',
+      uses: 'Where eDNA\nprovides answers.',
+      cases: 'Environments\nalready explored.',
+    },
     source: 'https://www.ldgenx.com/services/environmental-dna-edna',
   },
   {
@@ -215,7 +222,7 @@ export const services: Expertise[] = [
     title: 'Population genomics',
     short: 'Understanding diversity, connectivity and adaptation.',
     scope: 'Assessment of genetic diversity, population connectivity and local adaptation.',
-    image: 'cas-vanneau',
+    image: 'populations-huitriers',
     headline: 'Understanding genetic diversity to better manage and conserve populations.',
     intro:
       'Population genomics enables the characterisation of genetic diversity, population connectivity and adaptive potential to support effective conservation and management strategies. LDgenX develops tailored genomic approaches for biodiversity conservation, population management and scientific research.',
@@ -268,9 +275,16 @@ export const services: Expertise[] = [
       {
         title: 'The northern lapwing',
         image: 'cas-vanneau',
-        link: { kind: 'external', href: 'https://hal.science/hal-05490664' },
+        link: { kind: 'study', id: 'genomique-vanneau-huppe' },
       },
     ],
+    headings: {
+      need: 'Diversity, structure,\nconnectivity.',
+      methods: 'From SNP panels\nto whole genomes.',
+      prestations: 'From sample\nto genetic markers.',
+      uses: 'Genetic data\nto manage populations.',
+      cases: 'Populations\nalready studied.',
+    },
     source: 'https://www.ldgenx.com/services/population-genomics',
   },
   {
@@ -280,7 +294,7 @@ export const services: Expertise[] = [
     short: 'Exploring the diversity we cannot see.',
     scope:
       'Characterisation of bacterial, fungal and microbial communities using high-throughput sequencing technologies.',
-    image: 'microbiologie',
+    image: 'biofilm-microbien',
     headline: 'Characterise the microbial diversity of your samples.',
     intro:
       'LDgenX supports projects investigating bacterial, fungal and other microbial communities, using high-throughput sequencing technologies to characterise their diversity, composition and functional potential.',
@@ -319,6 +333,13 @@ export const services: Expertise[] = [
         link: { kind: 'study', id: 'communautes-microplastiques' },
       },
     ],
+    headings: {
+      need: 'Who makes up\nthe community?',
+      methods: 'Bacteria, fungi,\nfunctions.',
+      prestations: 'From extraction\nto interpretation.',
+      uses: 'From water to soil,\nfrom farms to research.',
+      cases: 'A subject\nalready explored.',
+    },
     source: 'https://www.ldgenx.com/services/microbial-community-analysis',
   },
   {
@@ -327,7 +348,7 @@ export const services: Expertise[] = [
     title: 'Genomic selection',
     short: 'Bringing genetic information into your programmes.',
     scope: 'Development of genetic tools to support breeding and selection programmes.',
-    image: 'cas-crevettes',
+    image: 'selection-unima',
     headline: 'Accelerate breeding programmes with genomic tools.',
     intro:
       'LDgenX develops genomic tools that integrate genetic information into breeding programmes, supporting more accurate and efficient selection decisions, notably in aquaculture and agriculture.',
@@ -371,6 +392,13 @@ export const services: Expertise[] = [
       },
       { title: 'Development of a SNP panel', image: 'cas-crevettes' },
     ],
+    headings: {
+      need: 'A trait, a programme,\nthe data.',
+      methods: 'From markers\nto selection models.',
+      prestations: 'Tools\nfor your programmes.',
+      uses: 'The traits\nthat matter to your sector.',
+      cases: 'Work\nalready carried out.',
+    },
     source: 'https://www.ldgenx.com/services/genomic-selection',
   },
   {
@@ -379,7 +407,7 @@ export const services: Expertise[] = [
     title: 'Bioinformatics',
     short: 'Bringing out the meaning of your genomic data.',
     scope: 'Analysis, processing and interpretation of genomic data.',
-    image: 'bioinformatique',
+    image: 'bioinformatique-alignement',
     headline: 'Transform your sequencing data into actionable insights.',
     intro:
       'LDgenX provides tailored bioinformatics solutions for research, biodiversity and innovation projects. Processing, analysis and interpretation are built around your biological question.',
@@ -420,6 +448,12 @@ export const services: Expertise[] = [
       'Scientific support',
     ],
     cases: [],
+    headings: {
+      need: 'From raw data\nto a biological answer.',
+      methods: 'Each type of data,\nits own analysis.',
+      prestations: 'From data quality\nto reporting.',
+      uses: 'The data\nwe analyse.',
+    },
     source: 'https://www.ldgenx.com/services/bioinformatics',
   },
   {
@@ -482,11 +516,81 @@ export const services: Expertise[] = [
         image: 'cas-oursin',
       },
     ],
+    headings: {
+      need: 'Read genomes\nor detect one species?',
+      methods: 'From amplicons\nto whole genomes.',
+      prestations: 'From extraction\nto digital PCR.',
+      uses: 'What we sequence\nand detect.',
+      cases: 'Targets\nalready studied.',
+    },
     source: 'https://www.ldgenx.com/services/sequencing-dpcr',
     seo: {
       title: 'Sequencing and species detection by dPCR | LDgenX',
       description:
-        'Amplicon and long-read sequencing, species detection by dPCR, quantification of environmental DNA, specific primers and probes: custom targeted DNA assays.',
+        'Amplicon, long-read and whole-genome sequencing, species detection by dPCR: technologies chosen for your scientific question.',
+    },
+  },
+  {
+    id: 'tests-adn-cibles',
+    slug: 'targeted-dna-tests-dpcr',
+    title: 'Targeted DNA tests',
+    short: 'Detect and quantify the DNA of one species.',
+    scope:
+      'Primers and probes for 21 species and custom assays: detection and quantification by digital PCR.',
+    image: 'cas-oursin',
+    headline: 'Your target species, a custom DNA test.',
+    intro:
+      'European mink, Atlantic bluefin tuna, sharks, loggerhead turtle: LDgenX holds primers and probes for 21 species and designs assays for new targets. Digital PCR (dPCR) detects and quantifies the DNA of the species you are looking for in water, soil or sediment.',
+    need: 'A protected species to confirm, an invasive species to detect early, a pathogen to monitor? When the question is about one species, a targeted test answers it more directly than a survey.',
+    approaches: [
+      {
+        title: 'Detect a species',
+        text: 'Find out whether the DNA of one species is present in a water, soil or sediment sample.',
+      },
+      {
+        title: 'Quantify its DNA',
+        text: 'Estimate the amount of target DNA, as a number of copies, to compare samples or sites.',
+      },
+      {
+        title: 'Rare or invasive species',
+        text: 'Look for a protected, threatened or invasive species when the question is about one target.',
+      },
+      {
+        title: 'Pathogens',
+        text: 'Monitor a pathogen by dPCR, for instance in aquaculture.',
+      },
+    ],
+    uses: ['Protected species', 'Invasive species', 'Fisheries species', 'Pathogens'],
+    sectors: ['environnement-bureaux-d-etudes', 'biodiversite-conservation', 'aquaculture-peche'],
+    delivery:
+      'Each test is defined with you: the species, the related species it must not confuse, the matrices and the sampling plan. Assay performance is evaluated for each project.',
+    prestations: [
+      'Primer and probe design',
+      'Specificity assessment',
+      'DNA extraction',
+      'Digital PCR (dPCR)',
+      'Interpretation of results',
+      'Decision-support report',
+    ],
+    cases: [
+      { title: 'Detection of iconic Mediterranean species using dPCR', image: 'cas-requin' },
+      {
+        title: 'Detection of the purple sea urchin (*Paracentrotus lividus*)',
+        image: 'cas-oursin',
+      },
+    ],
+    source: 'https://www.ldgenx.com/services/sequencing-dpcr',
+    seo: {
+      title: 'Targeted DNA tests by dPCR: detect a species | LDgenX',
+      description:
+        'Primers and probes for 21 species (European mink, bluefin tuna, sharks, loggerhead turtle…) and custom assays: DNA detection and quantification by digital PCR.',
+    },
+    headings: {
+      need: 'One question,\none species.',
+      methods: 'Detect, quantify,\nmonitor.',
+      prestations: 'From design\nto report.',
+      uses: 'The most frequent\ntargets.',
+      cases: 'Targets\nalready studied.',
     },
   },
   {
@@ -496,7 +600,7 @@ export const services: Expertise[] = [
     short: 'Building the scientific approaches of tomorrow.',
     scope:
       'Grant proposal support, scientific consulting, project support and guidance for your research.',
-    image: 'dna-ecotrace',
+    image: 'terrain-kayak',
     headline: 'Your question can open a new path.',
     intro:
       'Partner with LDgenX to accelerate your research and innovation projects. The team welcomes scientific, technical and industrial collaborations and develops new approaches combining environmental DNA, sequencing and bioinformatics.',
@@ -532,6 +636,7 @@ export const services: Expertise[] = [
     ],
     delivery:
       'Every R&D project starts with joint scoping. The development objectives, the steps and the terms of collaboration are defined with the project partners.',
+    cir: true,
     prestations: [
       'Grant proposal support',
       'Project support and guidance',
@@ -540,11 +645,18 @@ export const services: Expertise[] = [
     cases: [
       {
         title: 'DNA EcoTrace',
-        image: 'dna-ecotrace',
+        image: 'schema-ecotrace',
         link: { kind: 'innovation', id: 'dna-ecotrace' },
       },
       { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
     ],
+    headings: {
+      need: 'An open question?\nLet’s build the method.',
+      methods: 'Design, develop,\ncollaborate.',
+      prestations: 'Support\nat every stage.',
+      uses: 'Fields\nto explore together.',
+      cases: 'Our research\nprojects.',
+    },
     source: 'https://www.ldgenx.com/about-us/innovation',
   },
   {
@@ -552,11 +664,12 @@ export const services: Expertise[] = [
     slug: 'equipment',
     title: 'Sampling equipment',
     short: 'Preparing the ground for your analyses.',
-    scope: 'Triple pump, StickPump and towed Yellow Submarine to filter water in the field.',
+    scope:
+      'Sampling kits for each environment (seawater, freshwater, soil, air) and water filtration equipment.',
     image: 'materiel-pompe',
     headline: 'An analysis starts with a sample.',
     intro:
-      'Triple pump, StickPump and Yellow Submarine: LDgenX offers the water filtration equipment used for environmental DNA, with its capsules and filters.',
+      'Sampling kits for seawater, freshwater, soil and air, and water filtration equipment (triple pump, StickPump, Yellow Submarine): LDgenX equips your environmental DNA campaigns.',
     need: 'Before a campaign, share the environment studied, the objectives and the field constraints. This information helps discuss the equipment and the sampling strategy.',
     approaches: [
       { title: 'Your environment', text: 'Specify the matrices and the sampling conditions.' },
@@ -569,9 +682,15 @@ export const services: Expertise[] = [
     uses: ['Environmental DNA projects', 'Field sampling', 'Environmental monitoring'],
     sectors: ['environnement-bureaux-d-etudes', 'biodiversite-conservation'],
     delivery:
-      'Prices are published excluding VAT on ldgenx.fr. A quote specifies the equipment suited to your environment, its availability and the terms of sale.',
-    prestations: ['Triple pump', 'StickPump', 'Yellow Submarine', 'Capsules and filters'],
+      'The right equipment depends on the environment, the volumes to filter and the planned analyses: the team helps you prepare the campaign before going into the field.',
+    prestations: [],
     cases: [],
+    headings: {
+      methods: 'Preparing\nyour campaign.',
+      methodsText:
+        'Equipment is chosen according to the environment, the question and how sampling is organised.',
+      uses: 'For which\nprojects?',
+    },
     source: 'https://www.ldgenx.com/services/equipment',
   },
 ];
@@ -622,6 +741,11 @@ export const applications: Sector[] = [
       'Detection of hybridisation between populations and species',
       'Monitoring of threatened species',
     ],
+    study: 'genomique-vanneau-huppe',
+    headings: {
+      field: 'Monitor, understand,\nsupport management.',
+      related: 'From eDNA\nto population genomics.',
+    },
     source: 'https://www.ldgenx.com/applications/biodiversity-conservation',
     seo: {
       title: 'Conservation genomics and species monitoring | LDgenX',
@@ -638,7 +762,7 @@ export const applications: Sector[] = [
     slug: 'aquaculture-fisheries',
     title: 'Aquaculture & Fisheries',
     scope: 'Genomic selection, stock management, product traceability, health surveillance.',
-    image: 'aquaculture',
+    image: 'selection-unima',
     headline: 'Optimising the management and performance of aquatic resources.',
     intro:
       'Genomic technologies provide new opportunities to improve the management of exploited populations, optimise breeding programmes and enhance the sustainability of aquaculture production. LDgenX supports producers, research organisations and fisheries managers.',
@@ -680,6 +804,11 @@ export const applications: Sector[] = [
       'Discovery of genetic markers associated with traits of interest',
       'Pathogen monitoring using dPCR',
     ],
+    headings: {
+      fieldEyebrow: 'Your industry questions',
+      field: 'From hatchery\nto stock monitoring.',
+      related: 'Selection, populations,\ntargeted detection.',
+    },
     source: 'https://www.ldgenx.com/applications/aquaculture-fisheries',
   },
   {
@@ -687,7 +816,7 @@ export const applications: Sector[] = [
     slug: 'agriculture-agroecology',
     title: 'Agriculture & Agroecology',
     scope: 'Soil microbiomes, molecular markers, marker-assisted breeding.',
-    image: 'agriculture',
+    image: 'schema-agroecologie',
     headline: 'Genomic solutions to support the ecological transition.',
     intro:
       'Genomic approaches provide powerful tools to better understand agricultural ecosystems, develop innovative breeding strategies and assess the environmental impact of human activities. LDgenX supports public and private stakeholders in these projects.',
@@ -726,6 +855,10 @@ export const applications: Sector[] = [
       'Development of targeted dPCR assays',
       'Development of genetic markers for breeding',
     ],
+    headings: {
+      field: 'From soils\nto breeding programmes.',
+      related: 'Microbiomes, markers\nand targeted detection.',
+    },
     source: 'https://www.ldgenx.com/applications/agriculture-agroecology',
   },
   {
@@ -776,6 +909,11 @@ export const applications: Sector[] = [
       'Environmental monitoring',
       'Development of targeted dPCR assays for species monitoring',
     ],
+    study: 'ichtyofaune-artois-picardie',
+    headings: {
+      field: 'Three questions\nat the heart of your projects.',
+      related: 'eDNA, dPCR, microbiology\nand field equipment.',
+    },
     source: 'https://www.ldgenx.com/applications/environment-consultancies',
     seo: {
       title: 'eDNA for baseline surveys and impact assessments | LDgenX',
@@ -819,7 +957,7 @@ export const applications: Sector[] = [
     slug: 'public-private-research',
     title: 'Public & private research',
     scope: 'Scientific design, grant proposal support, project guidance.',
-    image: 'recherche',
+    image: 'schema-recherche',
     headline: 'One scientific question. Expertise to bring together.',
     intro:
       'Does your project involve molecular biology, sequencing or genomic data analysis? LDgenX supports the design and implementation of suitable approaches.',
@@ -838,8 +976,14 @@ export const applications: Sector[] = [
       },
     ],
     services: ['recherche-developpement', 'bioinformatique', 'sequencage-dpcr'],
+    cir: true,
     uses: [],
     examples: [],
+    headings: {
+      fieldEyebrow: 'Your research questions',
+      field: 'From design\nto data analysis.',
+      related: 'Molecular biology,\nsequencing, bioinformatics.',
+    },
     source: 'https://www.ldgenx.com/about-us/innovation',
   },
   {
@@ -848,7 +992,7 @@ export const applications: Sector[] = [
     title: 'Renewable energy',
     scope:
       'Onshore wind, offshore wind and solar: documenting the biodiversity around your projects.',
-    image: 'energies-renouvelables',
+    image: 'eolien-en-mer',
     headline: 'Knowing the biodiversity around your energy projects.',
     intro:
       'Onshore wind, offshore wind, solar: these projects come with a baseline survey and environmental monitoring. LDgenX DNA analyses contribute to biodiversity surveys and their monitoring, on land and at sea, in support of environmental studies.',
@@ -869,6 +1013,11 @@ export const applications: Sector[] = [
     services: ['adn-environnemental-adne', 'sequencage-dpcr', 'bioinformatique', 'materiel'],
     uses: ['Onshore wind', 'Offshore wind', 'Solar'],
     examples: ['Biodiversity monitoring of offshore wind farms'],
+    study: 'biodiversite-eolien-offshore',
+    headings: {
+      field: 'From baseline\nto operational monitoring.',
+      related: 'eDNA, targeted detection\nand field equipment.',
+    },
     source: 'https://www.ldgenx.com/applications/environment-consultancies',
     seo: {
       title: 'Environmental DNA and renewable energy | LDgenX',
@@ -882,7 +1031,7 @@ export const applications: Sector[] = [
   },
 ];
 
-export const studies = [
+export const studies: Study[] = [
   {
     id: 'ichtyofaune-artois-picardie',
     slug: 'artois-picardie-fish-survey',
@@ -910,23 +1059,108 @@ export const studies = [
       'https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental',
   },
   {
+    id: 'genomique-vanneau-huppe',
+    slug: 'northern-lapwing-genomics',
+    title: 'Where do the lapwings wintering in France come from?',
+    category: 'Population genomics',
+    image: 'cas-vanneau',
+    imageAlt: 'Northern lapwing',
+    subtitle:
+      'A genomic study of 438 northern lapwings for the French national hunters’ federation, as part of the VanConnect project.',
+    facts: [
+      {
+        label: 'Client',
+        value: 'Fédération nationale des chasseurs (French national hunters’ federation)',
+      },
+      { label: 'Project', value: 'VanConnect, Écocontribution no. 1274, action 1' },
+      { label: 'Species', value: 'Northern lapwing, Vanellus vanellus' },
+      { label: 'Approach', value: 'Genotyping by sequencing (3D-GBS), 40,746 SNPs' },
+      { label: 'Period', value: '2024-2025' },
+    ],
+    context:
+      'A huntable migratory species listed in Annex II of the EU Birds Directive, the northern lapwing is declining, mainly because of low productivity. Birds wintering in France are thought to come from the United Kingdom, Scandinavia or Eastern Europe, but their origin and population structure were poorly known.',
+    question:
+      'Where do the lapwings wintering in France come from, and are their populations genetically structured?',
+    approach:
+      'Analysis of 479 muscle samples collected from 2018 to 2023 in nine French regions, genotyped by 3D-GBS. After quality control, 438 birds and 40,746 SNPs were analysed: genetic diversity, ADMIXTURE, principal component analysis, identity by state and by descent.',
+    result:
+      'All analyses converge: no marked genetic structure and high genetic diversity. The lapwings sampled in France come from a single, well-mixed and weakly structured population.',
+    service: 'genomique-des-populations',
+    source: 'https://hal.science/hal-05490664',
+    details: {
+      regionsTitle: 'The birds analysed, by region',
+      regionsNote:
+        'Number of samples per region (table 1 of the report). Three birds have no region recorded. The distribution reflects winter bird density and sampling effort.',
+      regions: [
+        { name: 'Normandy', value: 149 },
+        { name: 'Hauts-de-France', value: 109 },
+        { name: 'Pays de la Loire', value: 91 },
+        { name: 'Nouvelle-Aquitaine', value: 56 },
+        { name: 'Brittany', value: 30 },
+        { name: 'Centre-Val de Loire', value: 21 },
+        { name: 'Grand Est', value: 10 },
+        { name: 'Corsica', value: 5 },
+        { name: 'Occitanie', value: 5 },
+      ],
+      funnelTitle: 'From samples to data',
+      funnel: [
+        { value: '479', label: 'muscle samples, collected from 2018 to 2023' },
+        { value: '471', label: 'birds sequenced with enough reads' },
+        { value: '930,912', label: 'SNPs detected on the lapwing reference genome' },
+        { value: '438', label: 'birds kept after filtering missing data' },
+        { value: '40,746', label: 'independent SNPs for the structure analyses' },
+      ],
+      findingsTitle: 'What the analyses show',
+      findings: [
+        'ADMIXTURE: the most likely number of genetic groups is K = 1.',
+        'Inbreeding coefficient (Fis) close to 0 in every region: an overall well-mixed population.',
+        'Principal component analysis: no grouping by region, sex, age, year or month of sampling; three groups stand out very subtly on the first axis.',
+        'Identity by state: most pairs of birds between 0.75 and 0.85, as expected in a weakly structured natural population.',
+        'Identity by descent: only five pairs of birds appear related.',
+      ],
+      perspectiveTitle: 'Going further',
+      perspective:
+        'Adding birds sampled at their breeding sites, in the United Kingdom, Scandinavia and Eastern Europe, would identify the origin of the lapwings wintering in France.',
+      rolesTitle: 'Who did what',
+      roles: [
+        'Report: Maeva Leitwein and Emilie Delpuech (LDgenX), Carole Bodin and Pascal Lapébie (French national hunters’ federation).',
+        'Samples: carcasses collected by the Ardennes departmental hunters’ federation, thanks to hunters who volunteered.',
+        'DNA extraction, library preparation and sequencing: IBIS platform, Université Laval (Quebec), on an AVITI sequencer.',
+      ],
+      documentsTitle: 'Source documents',
+      documents: [
+        {
+          label:
+            'Genomic analysis report on northern lapwing populations wintering in France (in French)',
+          meta: 'HAL, 3 February 2026 · PDF, 24 pages',
+          url: 'https://hal.science/hal-05490664',
+        },
+        {
+          label: 'Raw data: individual BAM files and VCF',
+          meta: 'European Nucleotide Archive, PRJEB88728',
+          url: 'https://www.ebi.ac.uk/ena/browser/view/PRJEB88728',
+        },
+      ],
+    },
+  },
+  {
     id: 'biodiversite-eolien-offshore',
     slug: 'offshore-wind-biodiversity',
     title: 'Exploring the biodiversity of offshore wind farms.',
     category: 'Marine biodiversity',
     image: 'cas-eolien-offshore',
-    subtitle: 'An environmental DNA case study presented by LDgenX.',
+    subtitle: 'Environmental DNA for monitoring marine environments around wind farms.',
     facts: [
       { label: 'Context', value: 'Offshore wind farms' },
       { label: 'Environment', value: 'Marine biodiversity' },
       { label: 'Approach', value: 'Environmental DNA' },
     ],
     context:
-      'Biodiversity monitoring of offshore wind farms is listed among the case studies of the official environmental DNA page.',
+      'Offshore wind projects come with a baseline survey and monitoring of the marine environment, from construction to operation.',
     question:
       'How can marine biodiversity be documented in the context of renewable energy projects?',
     approach:
-      'LDgenX presents environmental DNA as an approach to understand and monitor environments. The scope of a study is defined by the question and the site.',
+      'Environmental DNA surveys biodiversity from water samples, without capturing any species. The protocol, the groups targeted and the sampling frequency are set according to the site and the question.',
     result: '',
     service: 'adn-environnemental-adne',
     source: 'https://www.ldgenx.com/services/environmental-dna-edna',
@@ -937,16 +1171,17 @@ export const studies = [
     title: 'The microbial communities of microplastics.',
     category: 'Microbiology',
     image: 'cas-microplastiques',
-    subtitle: 'A subject at the interface of microbiology and the environment.',
+    subtitle: 'Characterising the microorganisms that colonise microplastics.',
     facts: [
       { label: 'Substrates', value: 'Microplastics' },
       { label: 'Field', value: 'Environmental microbiology' },
       { label: 'Subject', value: 'Microbial community profiling' },
     ],
-    context: 'LDgenX lists microbial community profiling on microplastics among its case studies.',
+    context:
+      'In water, microplastics are colonised by communities of microorganisms. Characterising them helps to understand these particles and their place in the environment.',
     question: 'Which microbial communities can be characterised on these substrates?',
     approach:
-      'The expertise presented by LDgenX includes 16S and ITS sequencing, microbial metabarcoding and metagenomics. The choice of analysis follows the objective of the project.',
+      '16S sequencing for bacteria, ITS for fungi, microbial metabarcoding or metagenomics: the analysis is chosen according to the level of characterisation sought.',
     result: '',
     service: 'analyse-des-communautes-microbiennes',
     source: 'https://www.ldgenx.com/services/microbial-community-analysis',
@@ -1005,7 +1240,7 @@ export const innovations = [
     id: 'dna-ecotrace',
     slug: 'dna-ecotrace',
     title: 'DNA EcoTrace',
-    image: 'dna-ecotrace',
+    image: 'schema-ecotrace',
     label: 'Environmental DNA · biodiversity',
     headline: 'Making biodiversity knowledge more accessible.',
     intro:
@@ -1039,7 +1274,7 @@ export const team = people;
 export const partners = [
   {
     title: 'Organisations that trust us',
-    description: 'Organisations listed in LDgenX’s public references.',
+    description: 'Agencies, consultancies, companies and research organisations.',
     names: [
       'Artois-Picardie Water Agency',
       'Biotope',
@@ -1088,11 +1323,11 @@ export const resources = [
     sections: [
       {
         title: 'Information present in the environment',
-        text: 'Environmental DNA is DNA studied from samples taken in an environment. LDgenX presents approaches on water, soil, sediment and biofilms to identify species and support monitoring questions.',
+        text: 'Environmental DNA is DNA studied from samples taken in an environment. We study it in water, soil, sediment and biofilms to identify species and answer monitoring questions.',
       },
       {
         title: 'The question sets the approach',
-        text: 'Surveying a community and looking for a target do not necessarily lead to the same analysis. Metabarcoding, metagenomics, dPCR and long reads are among the approaches LDgenX presents.',
+        text: 'Surveying a community and looking for one species do not lead to the same analysis. Metabarcoding, metagenomics, dPCR or long reads: each approach answers a type of question.',
       },
       {
         title: 'Thinking about the whole chain',
@@ -1107,7 +1342,7 @@ export const resources = [
     slug: 'bioinformatics-biological-question',
     title: 'Bioinformatics: starting from the biological question.',
     category: 'Methods',
-    image: 'bioinformatique',
+    image: 'bioinformatique-client',
     intro: 'Why the biological context guides the processing and interpretation of genomic data.',
     sections: [
       {
@@ -1131,16 +1366,16 @@ export const resources = [
     slug: 'genomics-aquaculture',
     title: 'Genomics in aquaculture.',
     category: 'Aquaculture',
-    image: 'aquaculture',
+    image: 'selection-unima',
     intro: 'Diversity, selection and monitoring: complementary questions around aquatic resources.',
     sections: [
       {
         title: 'Knowing the populations',
-        text: 'Genetic diversity, broodstock management and inbreeding are subjects LDgenX presents for aquaculture. They link genetic data to the management of breeding stocks.',
+        text: 'Genetic diversity, broodstock management, inbreeding: these questions link genetic data to the management of breeding stocks.',
       },
       {
         title: 'Building selection tools',
-        text: 'Developing SNP panels and searching for markers associated with traits of interest are among the approaches presented. Genetic data are studied in light of the programmes’ objectives.',
+        text: 'SNP panels and the search for markers associated with traits of interest: genetic data are studied in light of the breeding programme’s objectives.',
       },
       {
         title: 'Considering the aquatic environment',

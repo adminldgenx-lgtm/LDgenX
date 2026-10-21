@@ -16,10 +16,10 @@ export const pageCopy = {
     eyebrow: 'Genomics in practice',
     title: 'Concrete questions.\nScientific approaches.',
     intro:
-      'Studies and fields of application presented in LDgenX’s public references. Each subject links to its source.',
+      'From the ports of Artois-Picardie to offshore wind farms: field questions, and how we answer them.',
   },
   innovations: {
-    eyebrow: 'DeepTech · research & development',
+    eyebrow: 'Deep Tech · research & development',
     title: 'Developing the genomic\ntools of tomorrow.',
     intro:
       'We develop innovative solutions combining environmental DNA, next-generation sequencing, artificial intelligence and bioinformatics to make biodiversity monitoring more accessible and more effective.',
@@ -28,7 +28,7 @@ export const pageCopy = {
     eyebrow: 'About LDgenX',
     title: 'Genomics for biodiversity,\nagriculture & aquaculture.',
     intro:
-      'LDgenX is a French DeepTech company specialising in the application of genomics to biodiversity conservation, sustainable agriculture and aquaculture.',
+      'LDgenX is a French Deep Tech company specialising in the application of genomics to biodiversity conservation, sustainable agriculture and aquaculture.',
   },
   team: {
     eyebrow: 'The scientific team',

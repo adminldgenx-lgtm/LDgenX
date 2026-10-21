@@ -55,6 +55,8 @@ type State = { chapter: number; local: number; site: number; layer: Layer; sub: 
 
 export function StudyJourney() {
   const { featuredStudy, studies, artoisPicardie, ui } = useCatalog();
+  // French puts a non-breaking space before the colon; English does not.
+  const colon = ui.lang === 'fr' ? '\u00a0:' : ':';
   const r = useRoutes();
   const t = ui.journey;
   const CHAPTERS = t.chapters;
@@ -106,7 +108,8 @@ export function StudyJourney() {
   useEffect(() => {
     const element = canvas.current,
       trackEl = track.current,
-      stageEl = stage.current;
+      stageEl = stage.current,
+      sheetEl = card.current;
     if (!geo || !element || !trackEl || !stageEl) return;
     let journey: Journey | null = null;
     let frame = 0,
@@ -115,7 +118,45 @@ export function StudyJourney() {
     const blinked: number[] = [];
     let reported = '';
 
-    const area = (): { box: Box; focus: { x: number; y: number } } => {
+    // Phones: the card is a sheet at the foot of the chart, as tall as the chapter it shows
+    // (easing between chapters); the chart keeps the room of the longest chapter, so the camera
+    // never moves when the card changes.
+    let sheet = 0,
+      sheetAt = 0;
+    const sheetSize = () => {
+      const el = sheetEl;
+      const list = el?.querySelector<HTMLElement>('.journey-chapters');
+      if (!el || !list) return null;
+      const style = getComputedStyle(el);
+      // offsetTop counts from inside the top border.
+      const foot =
+        parseFloat(style.paddingBottom) +
+        parseFloat(style.borderBottomWidth) +
+        parseFloat(style.borderTopWidth);
+      const bodies = [...list.children] as HTMLElement[];
+      const active = bodies.find((b) => b.hasAttribute('data-active')) ?? bodies[0];
+      const most = stageEl.clientHeight * 0.62;
+      return {
+        now: Math.min(most, list.offsetTop + (active?.offsetHeight ?? 0) + foot),
+        room: Math.min(
+          most,
+          list.offsetTop + Math.max(...bodies.map((b) => b.offsetHeight)) + foot,
+        ),
+      };
+    };
+    const fitSheet = (now: number, target: number) => {
+      const el = sheetEl;
+      if (!el) return;
+      const dt = sheetAt ? Math.min(64, now - sheetAt) : 1000;
+      sheetAt = now;
+      sheet = sheet ? sheet + (target - sheet) * Math.min(1, dt / 90) : target;
+      const next = `${sheet.toFixed(1)}px`;
+      if (el.style.height !== next) el.style.height = next;
+    };
+
+    const area = (
+      size: ReturnType<typeof sheetSize>,
+    ): { box: Box; focus: { x: number; y: number } } => {
       const w = stageEl.clientWidth,
         h = stageEl.clientHeight;
       const cardBox = card.current?.getBoundingClientRect();
@@ -124,7 +165,7 @@ export function StudyJourney() {
       if (reduced) {
         box = { x0: 24, y0: 24, x1: element.clientWidth - 24, y1: element.clientHeight - 24 };
       } else if (compact) {
-        const top = cardBox ? cardBox.top - stageBox.top : h * 0.55;
+        const top = size ? h - 12 - size.room : h * 0.55;
         box = { x0: 16, y0: 16, x1: w - 16, y1: Math.max(160, top - 12) };
       } else {
         const right = cardBox ? cardBox.right - stageBox.left : w * 0.38;
@@ -181,7 +222,9 @@ export function StudyJourney() {
     const render = (now: number) => {
       if (!journey) return;
       const p = progress();
-      const { box, focus } = area();
+      const size = compact && !reduced ? sheetSize() : null;
+      const { box, focus } = area(size);
+      if (size) fitSheet(now, size.now);
       const view = cameraFor(p, box);
       const { chapter, local } = view;
       const manualHere = live.current.manualChapter === chapter ? live.current.manual : null;
@@ -310,6 +353,7 @@ export function StudyJourney() {
       cancelAnimationFrame(frame);
       observer.disconnect();
       resize.disconnect();
+      sheetEl?.style.removeProperty('height');
     };
   }, [geo, reduced, compact]);
 
@@ -550,7 +594,7 @@ export function StudyJourney() {
       <div className="sr-only">
         <h3>{study.title}</h3>
         <p>
-          {`${study.subtitle} ${t.client}\u00a0: ${featuredStudy.client}. ${t.team}\u00a0: ${featuredStudy.team}.`}
+          {`${study.subtitle} ${t.client}${colon} ${featuredStudy.client}. ${t.team}${colon} ${featuredStudy.team}.`}
         </p>
         <h4>{t.question}</h4>
         <p>{study.question}</p>
@@ -565,13 +609,13 @@ export function StudyJourney() {
         <h4>{t.srApproach}</h4>
         <ul>
           {featuredStudy.steps.map((s) => (
-            <li key={s.title}>{`${s.title}\u00a0: ${s.text}`}</li>
+            <li key={s.title}>{`${s.title}${colon} ${s.text}`}</li>
           ))}
         </ul>
         <h4>{featuredStudy.constraintsLabel}</h4>
         <ul>
           {featuredStudy.constraints.map((c) => (
-            <li key={c.id}>{`${c.label}\u00a0: ${c.text}`}</li>
+            <li key={c.id}>{`${c.label}${colon} ${c.text}`}</li>
           ))}
         </ul>
         <h4>{t.outcome}</h4>

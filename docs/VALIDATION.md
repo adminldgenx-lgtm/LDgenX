@@ -50,3 +50,22 @@ La publication du domaine officiel, la configuration de l’hébergeur et la val
 - `preview-diagram.png` : chaîne scientifique de l’accueil, du terrain à la connaissance.
 - `preview-mobile-workflow.png` : démarche détaillée et sélecteur mobile.
 - `preview-mobile-diagram.png` : chaîne scientifique sur mobile.
+
+## Reprise Canva — 17 octobre 2026
+
+- Installation propre `npm ci --offline` depuis le lockfile dans `/tmp/ldgenx-clean-install`, puis build complet dans cette copie isolée avec les sources finales : réussis. Node 25.8.0, npm 11.11.0, Vite 7.3.6 ; aucune dépendance ajoutée et lockfile inchangé.
+- `npm run lint`, `typecheck`, `check:typography`, `check:assays`, `build`, `check:html` : réussis. Le contrôle HTML couvre 81 pages, 5 820 liens locaux et 757 occurrences d’images ; H1, titres ordonnés, métadonnées, JSON-LD et typographie contrôlés.
+- `node scripts/check-http.mjs http://127.0.0.1:4174` : 81 pages directes, 60 redirections HTTP 301 et une véritable réponse 404, réussis.
+- `scripts/check-assays-browser.mjs` exécuté sur la production locale en FR et EN à 1440, 768, 390 et 320 px : noms comparés aux sources, 21 entrées, quatre filtres et leurs effectifs, recherche scientifique et française/anglaise sans accents, état vide, exclusion de l’entrée incertaine, sélection au clavier et par sélecteur mobile, liens contact, flèches/Début/Fin, animation réduite, dimensions du module : réussis. Aucun message d’erreur JavaScript.
+- Crédit `@UNIMA` vérifié sur la nouvelle photo de sélection, dans le hero et dans l’expertise de l’accueil. Les photographies ont été contrôlées à 1440, 768 et 390 px. Les neuf sources extraites ont conservé leurs SHA-256 ; les variantes sont limitées à leur résolution exportée.
+- Clavier : focus visible de 3 px, couleur `rgb(42, 116, 22)`, observé sur les filtres aux trois dimensions principales. La fiche est lisible sans animation.
+- Régression en mouvement normal : vidéo du hero chargée, navigation jusqu’à la dernière étape ADN, sélection/clavier des expertises, photos associées et crédit, sélection des énergies renouvelables dans l’atlas (périmètre terrestre présent), navigation Artois-Picardie, pause et clavier dPCR : réussis. Catalogue de recherche toujours à 15 publications ; ouverture et fermeture par Échap vérifiées.
+- Référence originale reproduite dans une copie isolée depuis Git pour comparaison aux captures prises au début. Hero, atlas et étude capturés sur desktop/mobile ; aucun changement de leurs données ou de leur composition normale. La correction locale du mode réduit de l’atlas supprime son recadrage d’entrée persistant après hydratation.
+- Limite préexistante reproduite : à 320 px, l’en-tête peut porter la largeur du document à 349 px, avec les polices chargées. Les sections modifiées restent à 320 px ; pas de débordement à 390, 768 et 1440 px. Aucune correction globale de l’en-tête n’a été incluse.
+- Aucun nouvel audit Lighthouse et aucun déploiement. Captures et rapports : [qa-2026-10-17/README.md](qa-2026-10-17/README.md). Sources et confirmation taxonomique restante : [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
+
+## Authenticité des équipements et carte Applications — 20 octobre 2026
+
+Huit visuels d’équipement générés et l’infrastructure aquacole ne sont plus affectés aux pages, menus, cartes ou images de partage FR/EN. Photos documentées réutilisées ; cinq schémas neutres lorsque le dispositif exact n’est pas photographié. Catalogue conservé, variante de pompe non déduite. Carte : intitulés +35 % environ, graisse 500, contraste local et placement lié aux repères.
+
+Build, lint, typographie, catalogue dPCR, contrôles HTML/HTTP et contrôle des neuf anciens médias passent. Chrome : 156 états de carte, zoom et déplacement tactile, parcours ADN/démarche, menus, dPCR, crédits et hero vérifiés. [Captures avant/après, résultats, commandes et limites](qa-2026-10-20/README.md) ; [bilan des remplacements, preuves et clichés manquants](audit-images-outils-2026-10-19/CORRECTIONS-2026-10-20.md). Aucun déploiement.

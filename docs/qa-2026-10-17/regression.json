@@ -1,0 +1,107 @@
+{
+  "overflow": [
+    {
+      "label": "reference",
+      "width": 1440,
+      "pageWidth": 1440,
+      "sectionWidth": [
+        1440,
+        1440
+      ]
+    },
+    {
+      "label": "reference",
+      "width": 390,
+      "pageWidth": 390,
+      "sectionWidth": [
+        390,
+        390
+      ]
+    },
+    {
+      "label": "reference",
+      "width": 320,
+      "pageWidth": 349,
+      "sectionWidth": [
+        320,
+        320
+      ]
+    },
+    {
+      "label": "final",
+      "width": 1440,
+      "pageWidth": 1440,
+      "sectionWidth": [
+        1440,
+        1440
+      ]
+    },
+    {
+      "label": "final",
+      "width": 390,
+      "pageWidth": 390,
+      "sectionWidth": [
+        390,
+        390
+      ]
+    },
+    {
+      "label": "final",
+      "width": 320,
+      "pageWidth": 349,
+      "sectionWidth": [
+        320,
+        320
+      ]
+    }
+  ],
+  "screenshots": [
+    "before-assay-1440.webp",
+    "final-bioinformatics-390.webp",
+    "final-journey-stage-390.webp",
+    "final-decision-390.webp",
+    "final-decision-1440.webp",
+    "before-assay-390.webp",
+    "before-bioinformatics-1440.webp",
+    "final-selection-1440.webp",
+    "reference-hero-1440.webp",
+    "final-selection-390.webp",
+    "final-population-1440.webp",
+    "before-trace-390.webp",
+    "final-trace-bioinformatics-1440.webp",
+    "final-workflow-1440.webp",
+    "reference-atlas-stage-390.webp",
+    "before-trace-1440.webp",
+    "final-assay-390.webp",
+    "final-trace-selection-1440.webp",
+    "before-workflow-1440.webp",
+    "before-selection-390.webp",
+    "before-selection-1440.webp",
+    "reference-hero-390.webp",
+    "final-assay-1440.webp",
+    "final-population-390.webp",
+    "final-catalog-390.webp",
+    "final-atlas-stage-390.webp",
+    "reference-journey-stage-1440.webp",
+    "final-journey-stage-1440.webp",
+    "final-hero-390.webp",
+    "final-bioinformatics-1440.webp",
+    "final-workflow-390.webp",
+    "before-population-1440.webp",
+    "reference-journey-stage-390.webp",
+    "before-population-390.webp",
+    "before-workflow-390.webp",
+    "final-atlas-stage-1440.webp",
+    "final-catalog-1440.webp",
+    "reference-atlas-stage-1440.webp",
+    "final-hero-1440.webp"
+  ],
+  "errors": [],
+  "referenceCommit": "87e6c140b8c619182a09485802b2d642ca0f6b18",
+  "referenceFonts": {
+    "status": "loaded",
+    "Inter": true,
+    "Manrope": true,
+    "failedRequests": []
+  }
+}

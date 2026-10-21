@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+
+/** Selecting a species from elsewhere on the page (the species wall) opens it in the module. */
+const SELECT_EVENT = 'ldgenx:assay-select';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Pause, Play } from 'lucide-react';
+import { ArrowRight, Pause, Play, Search } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Button, Eyebrow, Photo, Reveal } from '../components/ui';
 import { AnimatedHeading, useNearViewport, useReducedMotion } from '../components/motion';
+import type { AssayCategory } from '../content/types';
 
 /* "Votre espèce cible, un test ADN sur mesure": the four steps of developing a targeted assay,
    told by a small scene. The species' own region lights up, two primers frame it and a probe
@@ -12,9 +16,18 @@ import { AnimatedHeading, useNearViewport, useReducedMotion } from '../component
 
 const STEP_MS = 3600;
 // Partitions lit in the last step: a fixed, illustrative pattern (no count is implied).
+const normalize = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, ' ')
+    .toLowerCase();
+
 const LIT = new Set([3, 8, 14, 17, 22, 29, 33, 38, 41, 47, 52, 58, 61, 66]);
 
-export function CustomAssay() {
+/** The module. On the targeted DNA tests page (`variant="page"`), the page's own title replaces
+ *  the module's heading. */
+export function CustomAssay({ variant = 'section' }: { variant?: 'section' | 'page' }) {
   const { customAssay: t } = useCatalog();
   const r = useRoutes();
   const section = useRef<HTMLElement>(null);
@@ -24,8 +37,20 @@ export function CustomAssay() {
   const [held, setHeld] = useState(false);
   const [paused, setPaused] = useState(false);
   const [target, setTarget] = useState(t.targets[0]?.id ?? '');
+  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState<AssayCategory | 'all'>('all');
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const playing = live && !held && !paused && !reduced;
+  useEffect(() => {
+    const select = (event: Event) => {
+      const id = (event as CustomEvent<string>).detail;
+      setQuery('');
+      setCategory('all');
+      setTarget(id);
+    };
+    window.addEventListener(SELECT_EVENT, select);
+    return () => window.removeEventListener(SELECT_EVENT, select);
+  }, []);
 
   useEffect(() => {
     if (!playing) return;
@@ -44,13 +69,29 @@ export function CustomAssay() {
         : event.key === 'ArrowUp' || event.key === 'ArrowLeft'
           ? -1
           : 0;
-    if (!delta) return;
+    if (!delta && event.key !== 'Home' && event.key !== 'End') return;
     event.preventDefault();
-    const next = (step + delta + t.steps.length) % t.steps.length;
+    const next =
+      event.key === 'Home'
+        ? 0
+        : event.key === 'End'
+          ? t.steps.length - 1
+          : (step + delta + t.steps.length) % t.steps.length;
     choose(next);
     tabs.current[next]?.focus();
   };
-  const current = t.targets.find((x) => x.id === target);
+  const filtered = t.targets.filter(
+    (x) =>
+      (category === 'all' || x.category === category) &&
+      normalize([x.name, x.latin, ...x.searchNames].join(' ')).includes(normalize(query.trim())),
+  );
+  // Keep the selected target when it matches; otherwise show the first matching entry.
+  const current = filtered.find((x) => x.id === target) ?? filtered[0];
+  const reset = () => {
+    setQuery('');
+    setCategory('all');
+  };
+  const groups = Object.entries(t.catalog.groups) as [AssayCategory, string][];
 
   return (
     <section
@@ -60,17 +101,143 @@ export function CustomAssay() {
       aria-labelledby="assay-title"
     >
       <div className="container">
-        <div className="assay-head">
-          <div>
-            <Eyebrow>{t.eyebrow}</Eyebrow>
-            <AnimatedHeading text={t.title} />
-            <h2 id="assay-title" className="sr-only">
-              {t.title.replace('\n', ' ')}
-            </h2>
+        {variant === 'section' && (
+          <div className="assay-head">
+            <div>
+              <Eyebrow>{t.eyebrow}</Eyebrow>
+              <AnimatedHeading text={t.title} />
+              <h2 id="assay-title" className="sr-only">
+                {t.title.replace('\n', ' ')}
+              </h2>
+            </div>
+            <Reveal delay={0.1}>
+              <p>{t.intro}</p>
+              <figure className="assay-context-photo">
+                <Photo
+                  name={t.contextImage.name}
+                  alt={t.contextImage.alt}
+                  sizes="(max-width: 700px) 80vw, 300px"
+                />
+                <figcaption>{t.contextImage.caption}</figcaption>
+              </figure>
+            </Reveal>
           </div>
-          <Reveal delay={0.1}>
-            <p>{t.intro}</p>
-          </Reveal>
+        )}
+        {variant === 'page' && (
+          <h2 id="assay-title" className="sr-only">
+            {t.title.replace('\n', ' ')}
+          </h2>
+        )}
+
+        <div className="assay-catalog" aria-labelledby="assay-catalog-title">
+          <div className="assay-catalog-browser">
+            <h3 id="assay-catalog-title">{t.targetsLabel}</h3>
+            <label className="assay-search">
+              <span className="sr-only">{t.catalog.search}</span>
+              <Search size={18} aria-hidden="true" />
+              <input
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={t.catalog.searchPlaceholder}
+                autoComplete="off"
+                aria-controls="assay-results"
+              />
+            </label>
+            <div className="assay-filters" role="group" aria-label={t.catalog.filterLabel}>
+              {([['all', t.catalog.all], ...groups] as const).map(([id, label]) => (
+                <button
+                  key={id}
+                  type="button"
+                  aria-pressed={category === id}
+                  onClick={() => setCategory(id)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div className="assay-results-meta">
+              <p role="status">
+                {filtered.length} / {t.targets.length} {t.catalog.resultLabel}
+              </p>
+              <button type="button" onClick={reset} disabled={!query && category === 'all'}>
+                {t.catalog.reset}
+              </button>
+            </div>
+            <div id="assay-results">
+              {filtered.length > 0 ? (
+                <>
+                  <label className="assay-mobile-select">
+                    <span>{t.catalog.select}</span>
+                    <select
+                      value={current?.id ?? ''}
+                      onChange={(event) => setTarget(event.target.value)}
+                      aria-controls="assay-target-detail"
+                    >
+                      {filtered.map((x) => (
+                        <option key={x.id} value={x.id}>
+                          {x.name} · {x.latin}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <ul className="assay-target-list" aria-label={t.catalog.select}>
+                    {filtered.map((x) => (
+                      <li key={x.id}>
+                        <button
+                          type="button"
+                          className="assay-target"
+                          aria-pressed={current?.id === x.id}
+                          aria-controls="assay-target-detail"
+                          onClick={() => setTarget(x.id)}
+                        >
+                          <span>
+                            <span className="assay-target-name">{x.name}</span>
+                            <em className="assay-target-latin" lang="la">
+                              {x.latin}
+                            </em>
+                          </span>
+                          <ArrowRight size={16} aria-hidden="true" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p className="assay-empty">{t.catalog.empty}</p>
+              )}
+            </div>
+          </div>
+          <div
+            id="assay-target-detail"
+            className="assay-target-detail"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {current ? (
+              <div key={current.id} className="assay-detail-body">
+                <p className="assay-detail-category">{t.catalog.groups[current.category]}</p>
+                <h4>{current.name}</h4>
+                <em className="assay-detail-latin" lang="la">
+                  {current.latin}
+                </em>
+                <p className="assay-inventory">{t.catalog.inventory}</p>
+                <p>{t.catalog.detail}</p>
+                <p className="assay-detail-scope">{t.catalog.scope}</p>
+                <Button to={r.contact} variant="outline">
+                  {t.catalog.contact}
+                </Button>
+              </div>
+            ) : (
+              <div className="assay-detail-body">
+                <h4>{t.otherTitle}</h4>
+                <p>{t.otherText}</p>
+                <Button to={r.contact} variant="outline">
+                  {t.otherAction}
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="assay-layout">
@@ -79,37 +246,6 @@ export function CustomAssay() {
             onPointerEnter={(e) => e.pointerType === 'mouse' && setHeld(true)}
             onPointerLeave={() => setHeld(false)}
           >
-            {t.targets.length > 0 && (
-              <div className="assay-targets" role="group" aria-label={t.targetsLabel}>
-                <p className="assay-targets-label">{t.targetsLabel}</p>
-                <div className="assay-target-list">
-                  {t.targets.map((x) => (
-                    <button
-                      key={x.id}
-                      type="button"
-                      className="assay-target"
-                      aria-pressed={target === x.id}
-                      onClick={() => setTarget(x.id)}
-                    >
-                      {x.image && (
-                        <span className="assay-target-picture">
-                          <Photo name={x.image} alt="" sizes="48px" />
-                        </span>
-                      )}
-                      <span>
-                        <span className="assay-target-name">{x.name}</span>
-                        {x.latin && (
-                          <em className="assay-target-latin" lang="la">
-                            {x.latin}
-                          </em>
-                        )}
-                        {x.status && <span className="assay-target-status">{x.status}</span>}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
             <figure className="assay-stage" data-step={step} data-reduced={reduced || undefined}>
               <div className="assay-stage-head">
                 <span className="assay-stage-label">
@@ -290,22 +426,98 @@ function AssayScene({
   );
 }
 
-/** The homepage's way to the module. */
-export function CustomAssayTeaser() {
-  const { customAssay: t, services } = useCatalog();
+/** All the species at a glance, by group: each opens its card in the module below. */
+export function SpeciesWall() {
+  const { customAssay: t } = useCatalog();
   const r = useRoutes();
-  const service = services.find((s) => s.id === 'sequencage-dpcr');
-  if (!service) return null;
+  const groups = Object.entries(t.catalog.groups) as [AssayCategory, string][];
+  const pick = (id: string) => window.dispatchEvent(new CustomEvent(SELECT_EVENT, { detail: id }));
+  return (
+    <section className="section-space species-wall" aria-labelledby="species-wall-title">
+      <div className="container">
+        <div className="species-wall-head">
+          <div>
+            <Eyebrow>{t.wall.eyebrow}</Eyebrow>
+            <AnimatedHeading text={t.wall.title} />
+            <h2 id="species-wall-title" className="sr-only">
+              {t.wall.title.replace('\n', ' ')}
+            </h2>
+          </div>
+          <Reveal delay={0.1}>
+            <p>{t.wall.intro}</p>
+          </Reveal>
+        </div>
+        <div className="species-wall-groups">
+          {groups.map(([category, label]) => {
+            const items = t.targets.filter((x) => x.category === category);
+            if (!items.length) return null;
+            return (
+              <div key={category} className="species-group" data-category={category}>
+                <h3>
+                  {label} <span>{items.length}</span>
+                </h3>
+                <ul>
+                  {items.map((x, i) => (
+                    <li key={x.id} style={{ '--i': i } as CSSProperties}>
+                      <a href={`#${t.anchor}`} onClick={() => pick(x.id)}>
+                        <span className="species-name">{x.name}</span>
+                        <em lang="la">{x.latin}</em>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+          <Reveal className="species-group species-other">
+            <h3>{t.wall.otherTitle}</h3>
+            <p>{t.wall.otherText}</p>
+            <Button to={r.contact} variant="outline">
+              {t.otherAction}
+            </Button>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** The homepage's way to the targeted DNA tests: a species photograph, the number of species
+ *  held in house and their names passing by. */
+export function CustomAssayTeaser() {
+  const { customAssay: t } = useCatalog();
+  const r = useRoutes();
+  const names = t.targets.map((x) => x.name);
   return (
     <section className="assay-teaser">
       <div className="container">
-        <Link className="assay-teaser-link" to={`${r.service(service.id)}#${t.anchor}`}>
-          <span className="assay-teaser-eyebrow">{t.home.eyebrow}</span>
-          <span className="assay-teaser-title">{t.home.title}</span>
-          <span className="assay-teaser-text">{t.home.text}</span>
-          <span className="assay-teaser-more">
-            {t.home.link}
-            <ArrowRight size={17} aria-hidden="true" />
+        <Link className="assay-teaser-link" to={r.service('tests-adn-cibles')}>
+          <span className="assay-teaser-picture">
+            <Photo
+              name={t.contextImage.name}
+              alt={t.contextImage.alt}
+              sizes="(max-width: 800px) 90vw, 420px"
+            />
+          </span>
+          <span className="assay-teaser-body">
+            <span className="assay-teaser-eyebrow">{t.home.eyebrow}</span>
+            <span className="assay-teaser-title">{t.home.title}</span>
+            <span className="assay-teaser-text">{t.home.text}</span>
+            <span className="assay-teaser-count">
+              <strong>{t.targets.length}</strong>
+              {t.home.count}
+            </span>
+            <span className="assay-teaser-species" aria-hidden="true">
+              <span className="assay-teaser-track">
+                {[...names, ...names].map((name, i) => (
+                  <span key={`${name}-${i}`}>{name}</span>
+                ))}
+              </span>
+            </span>
+            <span className="assay-teaser-more">
+              {t.home.link}
+              <ArrowRight size={17} aria-hidden="true" />
+            </span>
           </span>
         </Link>
       </div>

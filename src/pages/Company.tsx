@@ -51,7 +51,7 @@ export function AboutPage({ meta }: { meta: PageMeta }) {
             </Reveal>
           </div>
           <Reveal className="about-image">
-            <Photo name="laboratoire" alt={t.imageAlt} />
+            <Photo name="equipe-maxime" alt={t.imageAlt} />
           </Reveal>
         </div>
       </section>
@@ -128,15 +128,6 @@ export function TeamPage({ meta }: { meta: PageMeta }) {
               </Link>
             </Reveal>
           </div>
-          <a
-            className="source-link"
-            href="https://www.ldgenx.fr/a-propos/equipe"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {ui.about.teamSource}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
         </div>
       </section>
       <FinalCTA />
@@ -166,15 +157,6 @@ export function PartnersPage({ meta }: { meta: PageMeta }) {
             <p>{partnerIntro.text}</p>
           </Reveal>
           <PartnerList />
-          <a
-            className="source-link"
-            href="https://www.ldgenx.fr/a-propos/partenaires"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {ui.about.partnersSource}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
         </div>
       </section>
       <FinalCTA />
@@ -213,10 +195,6 @@ export function PersonPage({ meta }: { meta: PageMeta }) {
                 <p>{paragraph}</p>
               </Reveal>
             ))}
-            <a className="source-link" href={p.source} target="_blank" rel="noreferrer">
-              {ui.works.source}
-              <span className="sr-only">{ui.common.newTab}</span>
-            </a>
           </div>
         </div>
       </section>
@@ -225,7 +203,6 @@ export function PersonPage({ meta }: { meta: PageMeta }) {
           <div className="container">
             <Eyebrow>{t.publications}</Eyebrow>
             <AnimatedHeading text={ui.research.count(publications.length)} />
-            <p className="publications-note">{t.publicationsNote}</p>
             <PublicationLinks items={publications} />
             <div className="person-links">
               <TextLink to={researchLink(r.publications, { author: p.id })}>
@@ -249,7 +226,12 @@ export function TermsPage({ meta }: { meta: PageMeta }) {
   const reading = useActiveRow(body, parts);
   return (
     <>
-      <PageHero meta={meta} eyebrow={ui.footer.terms} title={cgv.title} intro={ui.terms.note} />
+      <PageHero
+        meta={meta}
+        eyebrow={ui.footer.terms}
+        title={cgv.title}
+        intro={ui.terms.note || undefined}
+      />
       <section className="detail-section">
         <div className="container article-layout terms-layout">
           <nav className="article-aside" aria-label={ui.terms.contents}>
@@ -280,10 +262,6 @@ export function TermsPage({ meta }: { meta: PageMeta }) {
                 ))}
               </section>
             ))}
-            <a className="source-link" href={cgv.source} target="_blank" rel="noreferrer">
-              {ui.common.source} · ldgenx.fr
-              <span className="sr-only">{ui.common.newTab}</span>
-            </a>
           </div>
         </div>
       </section>

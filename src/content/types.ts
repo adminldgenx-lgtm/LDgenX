@@ -4,7 +4,10 @@
 
 /** A link inside the site, resolved to the right address in each language. */
 export type InternalLink =
-  | { kind: 'service' | 'application' | 'study' | 'work' | 'innovation' | 'person'; id: string }
+  | {
+      kind: 'service' | 'application' | 'study' | 'work' | 'innovation' | 'person' | 'publication';
+      id: string;
+    }
   | { kind: 'external'; href: string };
 
 /** A case or subject shown on an expertise page, as published on ldgenx.fr. */
@@ -54,6 +57,8 @@ export interface Person {
   bio: string;
   biography: string[];
   source: string;
+  /** ORCID identifier, as it appears in the person's published articles. */
+  orcid?: string;
 }
 
 export interface EquipmentItem {
@@ -61,7 +66,6 @@ export interface EquipmentItem {
   name: string;
   summary: string;
   specs: string[];
-  prices: { label: string; amount: number }[];
   images: { name: string; alt: string }[];
 }
 
@@ -109,8 +113,11 @@ export interface ResearchFigure {
 export interface ResearchPublication {
   /** Address in the catalogue (?publication=), the same in every language. */
   id: string;
-  /** A reading title in the page's language; never a substitute for the bibliographic title. */
+  /** The title in the page's language: a faithful translation of the published title in French,
+   *  the published title itself in English. Latin names are marked *in italics*. */
   readingTitle: string;
+  /** A short title for search results and links (about 60 characters at most). */
+  seoTitle: string;
   /** The exact title of the published article. */
   title: string;
   authors: string[];
@@ -163,14 +170,16 @@ export interface ResearchFeatured {
   chartNote: string;
 }
 
-/** An organism for which LDgenX presents a targeted DNA assay. Only documented facts: a status
- *  appears only when LDgenX has published one. */
+export type AssayCategory = 'mammals' | 'fish' | 'reptiles' | 'invertebrates';
+
+/** An exact species for which the client reports primers and probes held internally.
+ *  Presence in this catalogue does not establish assay performance or matrix validation. */
 export interface AssayTarget {
   id: string;
   name: string;
-  latin?: string;
-  /** A group of species rather than one species. */
-  group?: boolean;
+  latin: string;
+  category: AssayCategory;
+  searchNames: string[];
   image?: string;
   status?: string;
   /** Where LDgenX presents it. */
@@ -197,10 +206,28 @@ export interface CustomAssay {
   illustration: string;
   targetsLabel: string;
   targets: AssayTarget[];
+  contextImage: { name: string; alt: string; caption: string };
+  catalog: {
+    search: string;
+    searchPlaceholder: string;
+    filterLabel: string;
+    all: string;
+    groups: Record<AssayCategory, string>;
+    reset: string;
+    resultLabel: string;
+    empty: string;
+    select: string;
+    inventory: string;
+    detail: string;
+    scope: string;
+    contact: string;
+  };
   otherTitle: string;
   otherText: string;
   otherAction: string;
   play: string;
   pause: string;
-  home: { eyebrow: string; title: string; text: string; link: string };
+  home: { eyebrow: string; title: string; text: string; link: string; count: string };
+  /** The species at a glance, on the targeted DNA tests page. */
+  wall: { eyebrow: string; title: string; intro: string; otherTitle: string; otherText: string };
 }

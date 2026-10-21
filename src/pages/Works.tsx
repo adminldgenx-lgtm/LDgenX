@@ -42,7 +42,6 @@ export function WorkPage({ meta }: { meta: PageMeta }) {
             <p className="case-sheet-title">{ui.common.inBrief}</p>
             <StudyFacts facts={w.facts} />
           </Reveal>
-          <p className="work-note">{t.note}</p>
           <div className="article-layout">
             <nav className="article-aside" aria-label={t.contents}>
               <p>{t.contents}</p>
@@ -86,10 +85,6 @@ export function WorkPage({ meta }: { meta: PageMeta }) {
                   )}
                 </section>
               ))}
-              <a className="source-link" href={w.source} target="_blank" rel="noreferrer">
-                {t.source}
-                <span className="sr-only">{ui.common.newTab}</span>
-              </a>
               {service && (
                 <div className="article-service">
                   <TextLink to={r.service(service.id)}>

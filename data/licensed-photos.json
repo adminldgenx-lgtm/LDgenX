@@ -1,0 +1,65 @@
+{
+  "note": "Images added on 21 October 2026 at the client's request (new pictures for microbial communities, bioinformatics, R&D, renewable energy). Sources, authors and licences are those of the files' description pages. Prepared by scripts/prepare-licensed-photos.mjs; registry in src/content/licensed-photos.ts.",
+  "photos": [
+    {
+      "name": "eolien-en-mer",
+      "kind": "photo",
+      "sourceFile": "images/licensed/eolien-en-mer.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Block_Island_Wind_Farm_2.jpg",
+      "author": "U.S. Department of Energy",
+      "licence": "Public domain (work of the U.S. federal government)",
+      "taken": "2016-10-01",
+      "subject": "Block Island Wind Farm, Rhode Island, United States. Not a project of LDgenX.",
+      "widths": [640, 860, 1100, 1536],
+      "width": 1536,
+      "height": 1025,
+      "credit": "U.S. Department of Energy",
+      "altFr": "Éoliennes en mer du parc de Block Island (États-Unis), par mer formée",
+      "altEn": "Offshore wind turbines of the Block Island wind farm (United States) in heavy seas"
+    },
+    {
+      "name": "biofilm-microbien",
+      "kind": "photo",
+      "sourceFile": "images/licensed/biofilm-microbien.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Mixed-culture_biofilm.jpg",
+      "author": "Krzysztof A. Zacharski",
+      "licence": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "taken": "2017-02-16",
+      "subject": "Scanning electron micrograph of a mixed-culture bacterial biofilm (laboratory reactor). Cropped to remove the instrument data strip. Not an LDgenX sample.",
+      "crop": [0, 0, 2560, 1766],
+      "widths": [640, 860, 1100, 1536],
+      "width": 1536,
+      "height": 1060,
+      "credit": "K. A. Zacharski, CC BY 4.0, recadrée",
+      "creditEn": "K. A. Zacharski, CC BY 4.0, cropped",
+      "altFr": "Biofilm bactérien observé au microscope électronique à balayage",
+      "altEn": "Bacterial biofilm seen under a scanning electron microscope"
+    },
+    {
+      "name": "terrain-kayak",
+      "kind": "photo",
+      "sourceFile": "images/client-2026-10-17/terrain-kayak.jpeg",
+      "source": "Client presentation “Image site web” (Canva), page 8; see data/client-photos.json",
+      "author": "LDgenX",
+      "licence": "Supplied by the client",
+      "subject": "A person in a kayak on the water. Neither the person nor the protocol is identified in the source.",
+      "widths": [480, 778],
+      "width": 778,
+      "height": 1037,
+      "altFr": "Sortie de terrain en kayak sur l’eau",
+      "altEn": "A field outing by kayak on the water"
+    },
+    {
+      "name": "bioinformatique-alignement",
+      "kind": "illustration",
+      "source": "Drawn by scripts/prepare-licensed-photos.mjs (fixed seed). Illustrative: no real data.",
+      "author": "LDgenX website",
+      "licence": "Own work",
+      "widths": [640, 860, 1100, 1536],
+      "width": 1536,
+      "height": 1152,
+      "altFr": "Illustration : lectures de séquençage alignées sur un génome de référence, avec un variant",
+      "altEn": "Illustration: sequencing reads aligned to a reference genome, with one variant"
+    }
+  ]
+}

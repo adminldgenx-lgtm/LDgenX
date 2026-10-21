@@ -17,6 +17,7 @@ import { AmbientField } from '../components/AmbientField';
 import { LiveList, StepRows } from '../components/Steps';
 import { ResourceGrid, StudyFacts } from '../sections/Collections';
 import { StudyPanels } from '../sections/StudyPanels';
+import { StudyDetails } from '../sections/StudyDetails';
 import { StudyJourney } from '../sections/StudyJourney';
 import { Lab } from '../sections/Innovation';
 import { StudyResults } from '../sections/StudyResults';
@@ -82,7 +83,7 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
         <section className="detail-section">
           <div className="container">
             <Reveal className="article-wide-image">
-              <Photo name={s.image} alt={('imageAlt' in s && s.imageAlt) || ''} eager />
+              <Photo name={s.image} alt={s.imageAlt ?? ''} eager />
             </Reveal>
             <Reveal className="case-sheet">
               <p className="case-sheet-title">{ui.common.inBrief}</p>
@@ -90,15 +91,18 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
             </Reveal>
             <div className="case-content">
               <StepRows items={rows} as="h2" className="case-steps" />
-              {!s.result && <p className="form-note">{t.noResults}</p>}
-              <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
-                {t.reference}
-                <span className="sr-only">{ui.common.newTab}</span>
-              </a>
+              {!s.result && !s.details && <p className="form-note">{t.noResults}</p>}
+              {!/ldgenx\.(fr|com)/.test(s.source) && (
+                <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
+                  {t.reference}
+                  <span className="sr-only">{ui.common.newTab}</span>
+                </a>
+              )}
             </div>
           </div>
         </section>
       )}
+      {s.details && <StudyDetails details={s.details} />}
       <section className="section-space">
         <div className="container detail-intro">
           <div>
@@ -201,15 +205,6 @@ export function InnovationPage({ meta }: { meta: PageMeta }) {
       <section className="innovation-section lab-band" aria-label={t.principle}>
         <div className="container">
           <Lab only={innovations.indexOf(p)} />
-          <a
-            className="source-link"
-            href="https://www.ldgenx.fr/a-propos/innovation"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t.official}
-            <span className="sr-only">{ui.common.newTab}</span>
-          </a>
         </div>
       </section>
       <section className="section-space">
@@ -350,10 +345,6 @@ export function ArticlePage({ meta }: { meta: PageMeta }) {
                   </section>
                 </Reveal>
               ))}
-              <a className="source-link" href={r.source} target="_blank" rel="noreferrer">
-                {t.source}
-                <span className="sr-only">{ui.common.newTab}</span>
-              </a>
               <div className="article-service">
                 <TextLink to={routes.service(r.service)}>{t.expertise}</TextLink>
               </div>

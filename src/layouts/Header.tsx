@@ -17,7 +17,7 @@ function useMenus() {
   return {
     services: {
       label: copy.navigation.services,
-      image: 'laboratoire',
+      image: 'equipe-maxime',
       title: ui.header.servicesTitle,
       text: copy.home.servicesIntro,
       all: copy.labels.allServices,
@@ -26,7 +26,7 @@ function useMenus() {
     },
     applications: {
       label: copy.navigation.applications,
-      image: 'conception',
+      image: 'schema-protocole',
       title: ui.header.applicationsTitle,
       text: copy.home.applicationsIntro,
       all: copy.labels.allApplications,
@@ -118,7 +118,12 @@ export function Header() {
   }, []);
   useEffect(() => {
     const sheet = dialog.current;
-    if (sheetState === 'open' && sheet && !sheet.open) sheet.showModal();
+    if (sheetState === 'open' && sheet && !sheet.open) {
+      sheet.showModal();
+      // The sheet itself takes focus, not its first link: no focus ring after a tap, and Tab
+      // still leads to the links in order.
+      sheet.focus();
+    }
     // Closing returns focus to the menu button, where the dialog was opened.
     if (sheetState === 'closed' && sheet?.open) sheet.close();
   }, [sheetState]);
@@ -230,6 +235,7 @@ export function Header() {
       </header>
       <dialog
         ref={dialog}
+        tabIndex={-1}
         className="mobile-dialog"
         data-state={sheetState}
         aria-labelledby="mobile-menu-title"

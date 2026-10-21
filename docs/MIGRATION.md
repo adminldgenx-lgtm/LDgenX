@@ -138,3 +138,34 @@ Source : dossier `LDgenX_Recherche_Publications_2026-10-15` (références vérif
 - **Visuels** : Sélection génomique → crevettes (photo de ldgenx.fr/services/selection) ; Génomique des populations → vanneau huppé (photo de la page génomique des populations) ; Séquençage & dPCR → laboratoire LDgenX (photo réelle) ; R&D → illustration DNA EcoTrace. Conception scientifique, Bioinformatique, Interprétation et Aide à la décision gardent leurs illustrations validées : aucun visuel client adapté n’a été trouvé dans les dossiers fournis.
 
 À fournir : la liste des espèces et des tests (documents Canva cités par la cliente : dauphins, tortues, thons, oursins, vison d’Amérique, putois d’Europe…), avec pour chacune le nom exact, un visuel et le statut documenté du test ; des photos réelles pour la conception scientifique, la bioinformatique, l’interprétation, l’aide à la décision et une plateforme de séquençage ; un visuel photovoltaïque ou éolien terrestre réel si la cliente en dispose.
+
+## Intégration Canva (17 octobre 2026)
+
+Cette reprise **remplace les attentes du 15 octobre** concernant les photos populations, bioinformatique, aide à la décision, sélection génomique et la liste dPCR. Le compte rendu détaillé est dans [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
+
+- Photos réelles extraites du PPTX Canva et conservées avec leurs empreintes dans `images/client-2026-10-17/` et `data/client-photos.json`. Huîtriers pies pour l’expertise populations ; écran et mains pour la bioinformatique ; amphithéâtre pour l’aide à la décision ; crevette dans les mains pour la sélection, avec crédit HTML `@UNIMA`. Le vanneau des cas d’études reste en place.
+- Module dPCR existant enrichi en FR/EN : 22 entrées de source, 21 publiables, recherche, filtres, sélection native mobile, fiche typographique et contact. Le vison reste une illustration générale séparée des fiches, sans identification d’espèce.
+- Seule confirmation nécessaire : cible réelle du test historiquement nommé **Neomys anomalus — Musaraigne de Miller** ; ne pas le remplacer automatiquement par *Neomys milleri*. Entrée conservée en interne, exclue de la publication jusqu’à clarification.
+- Kayak, crapaud, salamandre et bateau conservés comme sources, non ajoutés pour remplir la page ; la photo du bateau mesure seulement 382 × 510 px.
+- Hero, ADN, atlas, Artois-Picardie, publications et routes conservés. Correction du recadrage d’entrée de l’atlas en mouvement réduit, sans modification de son animation normale.
+- Contrôles et limites consignés dans `docs/VALIDATION.md` et captures dans `docs/qa-2026-10-17/`. Aucun déploiement.
+
+## Retours cliente et base SEO/GEO (21 octobre 2026)
+
+- **Retours cliente appliqués** :
+  - **Accueil** : titre « De l’ADN aux décisions », « +15 ans d’expérience scientifique », PacBio retiré, nouvelle photo pour l’étape séquençage, accès aux tests ADN ciblés mis en avant (photo, nombre d’espèces, liste défilante).
+  - **Images renouvelées** : communautés microbiennes, bioinformatique, R&D et énergies renouvelables (éoliennes).
+  - **Pages** :
+    - une page « Tests ADN ciblés » avec les 21 espèces visibles d’un coup ;
+    - Matériel sans prix et avec les kits par milieu ;
+    - bloc CIR sur Recherche publique & privée et R&D ;
+    - étude des vanneaux huppés ;
+    - 12 publications ajoutées, titres français fidèles ;
+    - profil du Dr Damien Crestel.
+  - **Corrections** : redondance « cas d’études / éclairage concret » supprimée ; aucun lien vers l’ancien site.
+- **En réflexion côté cliente** : remonter la carte des applications au-dessus de l’hélice ADN. Non fait, faisable en quelques minutes si elle confirme.
+- **SEO/GEO** : voir [SEO-GEO.md](SEO-GEO.md). Nouvelles commandes :
+  - `npm run check:seo` ;
+  - `node scripts/indexnow.mjs [--changed]` ;
+  - `node scripts/check-publications.mjs` ;
+  - `scripts/make-social-images.mjs` et `scripts/prepare-licensed-photos.mjs` (avec `LDGENX_PLAYWRIGHT_MODULE`).

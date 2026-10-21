@@ -4,8 +4,451 @@ import type { ResearchFeatured, ResearchPublication } from './types';
 export const research = {
   publications: [
     {
+      id: 'bar-cortisol-temperature-2026',
+      readingTitle:
+        'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
+      seoTitle: 'Sea bass: cortisol, temperature and metabolic rate',
+      title:
+        'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
+      authors: [
+        'Sniecinski E',
+        'Navarro TP',
+        'Bailey T',
+        'Crestel D',
+        'Allal F',
+        'Maire A',
+        'Bégout ML',
+        'Geffroy B',
+        'McKenzie DJ',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Comparative Biochemistry and Physiology Part A: Molecular & Integrative Physiology',
+      year: 2026,
+      issue: '317, 112004',
+      type: 'article',
+      doi: '10.1016/j.cbpa.2026.112004',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/42066891/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['recherche-developpement'],
+      summary:
+        'In European sea bass, this study examines how seasonal acclimatization temperature affects metabolic rate and the cortisol accumulated in the water. Both rise with temperature, but they show no clear correlation once fish mass is accounted for.',
+      question:
+        'Does acclimatization temperature change metabolic rate and water-borne cortisol, and are the two measures related?',
+      approach:
+        'Sea bass from the Atlantic population reared for three years under three thermal regimes following seasonal variation (Atlantic control, moderately warm, warm); oxygen uptake measured by swim-tunnel respirometry and water-borne cortisol sampled at different temperatures through the year.',
+      finding:
+        'Metabolic rate and cortisol both increase with acclimatization temperature, with similar thermal sensitivity across regimes; at a given temperature, cortisol stays higher in the control regime than in the warm one.',
+      limit:
+        'A single population was studied; the authors present this work as the first investigation of these relationships in a fish species.',
+      figures: [],
+    },
+    {
+      id: 'bar-sex-ratio-temperature-gwas-2026',
+      readingTitle:
+        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
+      seoTitle: 'Sea bass sex ratio, temperature and GWAS',
+      title:
+        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Delpuech E',
+        'Sanchez-Baizan N',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'Ruelle F',
+        'McKenzie DJ',
+        'Allal F',
+        'Vandeputte M',
+      ],
+      members: ['damien-crestel', 'emilie-delpuech'],
+      journal: 'Heredity',
+      year: 2026,
+      issue: '135(6), 385–396',
+      type: 'article',
+      doi: '10.1038/s41437-026-00841-w',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/41957174/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture', 'selection'],
+      services: ['selection', 'genomique-des-populations', 'bioinformatique'],
+      summary:
+        'European sea bass has polygenic sex determination, strongly influenced by temperature. By rearing offspring of its three populations under four thermal regimes, the study shows population-specific sex ratios and, in the Atlantic population only, a genomic region associated with sex.',
+      question:
+        'Do sex determination and its sensitivity to temperature differ between European sea bass populations?',
+      approach:
+        'Offspring of the Atlantic (AT), Western Mediterranean (WM) and Eastern Mediterranean (EM) populations reared under four thermal regimes: three mimicking these seas and a husbandry regime maximising females; quantitative genetics and a genome-wide association study (GWAS).',
+      finding:
+        'The Atlantic population has a relatively balanced sex ratio and more females than the other two; heritability of sex tendency, around 0.62, is consistent across populations and regimes; seven SNPs on linkage group 19 are associated with sex in the Atlantic population.',
+      limit:
+        'Results come from experimental conditions; the QTL region contains a gene involved in fish sex determination, without its role being demonstrated here, and no QTL is found in the two Mediterranean populations.',
+      figures: [],
+    },
+    {
+      id: 'bar-survie-larvaire-introgression-2026',
+      readingTitle:
+        'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
+      seoTitle: 'Sea bass larval survival and introgression',
+      title:
+        'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Delpuech E',
+        'Leitwein M',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'Ruelle F',
+        'McKenzie DJ',
+        'Vandeputte M',
+        'Allal F',
+      ],
+      members: ['damien-crestel', 'emilie-delpuech', 'maeva-leitwein'],
+      journal: 'Aquaculture',
+      year: 2026,
+      issue: '615, 743605',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2025.743605',
+      links: [],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['adaptation', 'ascendance', 'aquaculture'],
+      services: ['genomique-des-populations', 'selection', 'bioinformatique'],
+      summary:
+        'Larval survival in European sea bass was followed under four thermal regimes: the natural temperatures of its three populations and a hatchery regime. The Atlantic and Eastern Mediterranean populations survive better at the temperatures of their home waters, and the higher the introgression between Atlantic and Mediterranean genomes, the lower the survival.',
+      question:
+        'Do temperature and genetic origin affect the survival of European sea bass larvae?',
+      approach:
+        "Larvae of the Atlantic (AT), Western Mediterranean (WM) and Eastern Mediterranean (EM) populations reared under four thermal regimes: three reflecting each population's natural temperatures and a typical hatchery regime.",
+      finding:
+        'Survival peaks around 13.6 °C for the Atlantic population, compared with above 17 °C for the Mediterranean populations; higher introgression lowers survival, which partly explains the poor performance of the Western Mediterranean population.',
+      limit:
+        'The authors link the introgression effect to purging of introgressed ancestry or to reproductive isolation barriers, and recommend considering it when establishing domesticated or selected lineages.',
+      figures: [],
+    },
+    {
+      id: 'poissons-tolerance-rechauffement-taille-2025',
+      readingTitle:
+        'Evidence that tolerance of acute warming declines with increasing body mass within fish species',
+      seoTitle: 'Fish heat tolerance declines with body mass',
+      title:
+        'Evidence that tolerance of acute warming declines with increasing body mass within fish species',
+      authors: [
+        'Navarro TP',
+        'Thambithurai D',
+        'Duquenne-Delobel E',
+        'Crestel D',
+        'Allal F',
+        'Salou G',
+        'Dutto G',
+        'Blasco FR',
+        'Bourjea J',
+        'McKenzie DJ',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Journal of Experimental Biology',
+      year: 2025,
+      issue: '228(17), jeb250612',
+      type: 'article',
+      doi: '10.1242/jeb.250612',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40948321/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['recherche-developpement'],
+      summary:
+        'In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Larger individuals appear more sensitive to heatwaves than smaller ones.',
+      question: 'Within a species, do larger fish cope less well with rapid warming?',
+      approach:
+        'Temperature of fatigue during sustained aerobic exercise (CTSmax protocol) and maximum oxygen uptake measured in farmed sea bass and tilapia and in wild sea bass and seabream.',
+      finding:
+        'Warming tolerance declines significantly with mass in all populations, and is positively correlated with the maximum oxygen uptake reached before fatigue.',
+      limit:
+        'The protocol does not reveal a greater size-related cardiorespiratory limitation than at usual temperatures: the mechanisms behind the decline remain to be clarified.',
+      figures: [],
+    },
+    {
+      id: 'genomes-becasse-becassine-2025',
+      readingTitle:
+        'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
+      seoTitle: 'Genomes of the Eurasian woodcock and jack snipe',
+      title:
+        'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
+      authors: [
+        'Delpuech E',
+        'Leitwein M',
+        'Couloux A',
+        'Labadie K',
+        'Cruaud C',
+        'Aury JM',
+        'Bodin C',
+        'Lapébie P',
+      ],
+      members: ['emilie-delpuech', 'maeva-leitwein'],
+      journal: 'Biodiversity Genomes',
+      year: 2025,
+      issue: '2025',
+      type: 'article',
+      doi: '10.56179/001c.143981',
+      links: [],
+      text: 'abstract',
+      licence: '',
+      themes: ['ressources', 'conservation'],
+      services: ['bioinformatique', 'sequencage-dpcr'],
+      summary:
+        'The authors present high-quality genome assemblies of two waders, the Eurasian woodcock and the jack snipe. Illumina and Nanopore sequencing of fresh blood samples, followed by Hi-C data, reconstruct the chromosomes; the data are public in GenBank.',
+      question:
+        'Can complete reference genomes be produced for the Eurasian woodcock and the jack snipe?',
+      approach:
+        'Illumina and Nanopore sequencing of fresh blood from wild birds, de novo assembly, then integration of Hi-C data to reconstruct chromosome structure.',
+      finding:
+        'Two high-quality, chromosome-scale assemblies; raw reads and assemblies are available in GenBank.',
+      limit:
+        'A resource article: it provides reference genomes for future studies, without population analyses at this stage.',
+      figures: [],
+    },
+    {
+      id: 'bar-introgression-fitness-2025',
+      readingTitle:
+        'Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass',
+      seoTitle: 'Introgression and fitness in European sea bass',
+      title:
+        'Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass',
+      authors: ['Leitwein M', 'Ernande B', 'Vandeputte M', 'Clota F', 'Allal F'],
+      members: ['maeva-leitwein'],
+      journal: 'Evolution',
+      year: 2025,
+      issue: '79(8), 1681–1689',
+      type: 'article',
+      doi: '10.1093/evolut/qpaf079',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40243218/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['ascendance', 'adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'The Western Mediterranean sea bass population results from hybridisation between the Atlantic and Mediterranean lineages. In 1,488 admixed fish, more Atlantic ancestry goes with a more male-biased sex ratio, more sensitive to temperature, and a lower body weight.',
+      question:
+        'Does the Atlantic ancestry of admixed Western Mediterranean sea bass affect fitness-related traits?',
+      approach:
+        "1,488 admixed sea bass genotyped with the Axiom Sea Bass 57k SNP DlabChip array, then each fish's admixture level related to traits measured under three thermal regimes (19, 21 and 23 °C).",
+      finding:
+        'More Atlantic ancestry goes with a male-biased sex ratio, more sensitive to temperature, and a lower body weight, which is correlated with fecundity in fish.',
+      limit:
+        'The authors conclude that Atlantic introgression is likely disadvantageous in the Mediterranean, consistent with the purging of Atlantic ancestry tracts observed earlier.',
+      figures: [],
+    },
+    {
+      id: 'bar-croissance-larvaire-temperature-2025',
+      readingTitle: 'Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?',
+      seoTitle: 'Sea bass larval growth and temperature regime',
+      title: 'Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?',
+      authors: [
+        'Crestel D',
+        'Vergnet A',
+        'Clota F',
+        'Blanc MO',
+        'Navarro T',
+        'Lallement S',
+        'Moulard F',
+        'McKenzie D',
+        'Allal F',
+        'Vandeputte M',
+      ],
+      members: ['damien-crestel'],
+      journal: 'Evolutionary Applications',
+      year: 2025,
+      issue: '18(2), e70083',
+      type: 'article',
+      doi: '10.1111/eva.70083',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/40012956/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'Larvae of the three genetically differentiated European sea bass populations were reared together under three thermal regimes representative of the Atlantic and the Western and Eastern Mediterranean. The Atlantic population grows more than the other two in every regime, not only its own.',
+      question:
+        'Do sea bass larvae grow better in the temperature regime of their population of origin?',
+      approach:
+        "Common-garden rearing under three seasonal thermal regimes; growth followed from 20 days post-hatch to 1.5 g, with each individual's origin found by parentage assignment using 96 SNPs.",
+      finding:
+        'Survival is higher in warmer regimes until 23 mm; the Atlantic population is longer than the Mediterranean ones in every regime and appears the most robust to temperature variation at the larval stage.',
+      limit:
+        'Whether this high growth reflects local adaptation to a relatively cold thermal regime remains to be established.',
+      figures: [],
+    },
+    {
+      id: 'bar-selection-efficacite-alimentaire-2025',
+      readingTitle:
+        'Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex',
+      seoTitle: 'Genomic selection for feed efficiency in sea bass',
+      title:
+        'Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex',
+      authors: [
+        'Allal F',
+        'Besson M',
+        'Delpuech E',
+        'Barrier-Loiseau C',
+        'Vergnet A',
+        'Morell F',
+        'Blanc MO',
+        'Lallement S',
+        'Clota F',
+        'Ruelle F',
+        'Vandeputte M',
+      ],
+      members: ['emilie-delpuech'],
+      journal: 'Aquaculture',
+      year: 2025,
+      issue: '595, 741682',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2024.741682',
+      links: [],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['aquaculture', 'selection'],
+      services: ['selection', 'bioinformatique'],
+      summary:
+        'Feed efficiency is key to sustainable fish farming. Sea bass breeders chosen by genomic selection (GBLUP) on their growth in individual tanks produce more efficient offspring: a group feed conversion ratio of 1.61 versus 1.83 for the least efficient group, with larger fish.',
+      question:
+        'Does genomic selection on individual feed efficiency improve European sea bass performance?',
+      approach:
+        'Among 399 sea bass measured in individual tanks and genotyped for 1,110 SNPs, efficient, intermediate and inefficient breeders were selected by GBLUP; their offspring were assessed in individual tanks, in groups and at slaughter.',
+      finding:
+        'Offspring of efficient breeders are more efficient (group feed conversion ratio 1.61 versus 1.83) and larger (266 g versus 223 g), with no difference in fillet yield; the proportion of females is lower in this group.',
+      limit:
+        'A slightly higher viscerosomatic index in efficient fish; results come from one cohort and an experimental set-up.',
+      figures: [],
+    },
+    {
+      id: 'bar-introgression-teneur-gras-2024',
+      readingTitle:
+        'The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone',
+      seoTitle: 'Introgression and muscle fat in European sea bass',
+      title:
+        'The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone',
+      authors: [
+        'Leitwein M',
+        'Durif G',
+        'Delpuech E',
+        'Gagnaire PA',
+        'Ernande B',
+        'Vandeputte M',
+        'Vergnet A',
+        'Duranton M',
+        'Clota F',
+        'Allal F',
+      ],
+      members: ['maeva-leitwein', 'emilie-delpuech'],
+      journal: 'Molecular Biology and Evolution',
+      year: 2024,
+      issue: '41(9), msae194',
+      type: 'article',
+      doi: '10.1093/molbev/msae194',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/39271153/' }],
+      text: 'abstract',
+      licence: 'CC BY-NC 4.0',
+      themes: ['ascendance', 'adaptation', 'aquaculture'],
+      services: ['genomique-des-populations', 'bioinformatique', 'selection'],
+      summary:
+        'In European sea bass, which hybridises naturally, the study examines how selection on a polygenic trait, muscle fat content, shapes introgression between the Atlantic and Mediterranean lineages. Genomic regions associated with this trait carry less Atlantic ancestry in Mediterranean populations.',
+      question:
+        'How does selection on a phenotype shape the introgression landscape between the Atlantic and Mediterranean sea bass lineages?',
+      approach:
+        'A high-density SNP array to estimate local ancestry along the genome and map muscle fat content, a polygenic trait that differs between lineages, accounting for variation in recombination rate.',
+      finding:
+        'Atlantic ancestry is purged in admixed Mediterranean populations; Atlantic fish are fatter, but regions associated with this trait show reduced Atlantic introgression in the Mediterranean.',
+      limit:
+        'The authors interpret this pattern as selection against maladapted alleles; the study covers one trait and one hybrid zone.',
+      figures: [],
+    },
+    {
+      id: 'bar-determinisme-sexe-energie-2024',
+      readingTitle:
+        'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
+      seoTitle: 'Temperature, energy allocation and sex in sea bass',
+      title:
+        'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
+      authors: ['Tovar-Bohórquez O', 'McKenzie D', 'Crestel D', 'Vandeputte M', 'Geffroy B'],
+      members: ['damien-crestel'],
+      journal: 'Gene',
+      year: 2024,
+      issue: '927, 148721',
+      type: 'article',
+      doi: '10.1016/j.gene.2024.148721',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/38925525/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: ['aquaculture', 'adaptation'],
+      services: ['bioinformatique', 'sequencage-dpcr'],
+      summary:
+        'In European sea bass, whose sex depends on several genes and on water temperature, the study follows the expression of genes linked to energy allocation, growth and sex determination under different thermal regimes. It identifies spry1 as a robust marker of masculinisation.',
+      question:
+        'How does water temperature affect energy allocation and the expression of sex-related genes during sex determination?',
+      approach:
+        'Two experiments, one at constant temperatures typical of aquaculture and one under natural seasonal regimes; RNA-seq and qPCR analyses focused on eight key genes.',
+      finding:
+        'The effect of temperature on the proportion of females reverses between the two kinds of regime; nucb1 and pomc1 are higher in future females, egfra and spry1 in future males, and spry1 is higher in males in both experiments.',
+      limit:
+        'The study covers a limited number of targeted genes; it highlights a complex interplay between feeding, energy, growth and sex determination.',
+      figures: [],
+    },
+    {
+      id: 'bar-temperature-femelles-2024',
+      readingTitle:
+        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
+      seoTitle: 'Sea bass: warm temperature raises the female ratio',
+      title:
+        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
+      authors: [
+        'Clota F',
+        'Goikoetxea A',
+        'Vergnet A',
+        'Blanc MO',
+        'Lallement S',
+        'Ruelle F',
+        'Leitwein M',
+        'Allal F',
+        'Geffroy B',
+        'Vandeputte M',
+      ],
+      members: ['maeva-leitwein'],
+      journal: 'Aquaculture',
+      year: 2024,
+      issue: '586, 740758',
+      type: 'article',
+      doi: '10.1016/j.aquaculture.2024.740758',
+      links: [],
+      text: 'abstract',
+      licence: '',
+      themes: ['aquaculture', 'adaptation'],
+      services: ['recherche-developpement'],
+      summary:
+        'Farmed European sea bass often produce a majority of males, while females grow faster and mature later. Two experiments test photoperiod, temperature and fasting: only a warmer post-larval temperature increases the proportion of females, from 30.4% at 19 °C to 48.7% at 25 °C.',
+      question:
+        'Do photoperiod, temperature and fasting change the sex ratio of farmed European sea bass?',
+      approach:
+        'Two experiments: two photoperiods until 90 days post-hatch at 16 °C, then four temperatures (19 to 25 °C) until 160 to 192 days; and fasting applied at four times during the sex-determination window, at 21 °C.',
+      finding:
+        'Neither photoperiod nor fasting changes the sex ratio; the proportion of females rises with post-larval temperature: 30.4% at 19 °C, 36.3% at 21 °C, 44.1% at 23 °C and 48.7% at 25 °C.',
+      limit:
+        'Results follow an initial cold treatment at 16 °C until 90 days; they offer a rearing lever to make up for the shortage of females, not full control of sex.',
+      figures: [],
+    },
+    {
       id: 'bar-resistance-vnn-2023',
-      readingTitle: 'Viral resistance and genomics of European sea bass',
+      readingTitle:
+        'Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass',
+      seoTitle: 'IFI6 gene and VNN resistance in sea bass',
       title:
         'Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass',
       authors: [
@@ -88,7 +531,9 @@ export const research = {
     },
     {
       id: 'capelan-methylation-reproduction-2023',
-      readingTitle: 'Spawning habitat and methylation in capelin',
+      readingTitle:
+        'Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish',
+      seoTitle: 'DNA methylation and life history in capelin',
       title:
         'Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish',
       authors: [
@@ -137,8 +582,41 @@ export const research = {
       preprint: 'https://doi.org/10.1101/2021.01.28.428603',
     },
     {
+      id: 'truite-pigmentation-gwas-2023',
+      readingTitle:
+        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
+      seoTitle: 'The genetics of brown trout pigmentation',
+      title:
+        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
+      authors: ['Valette T', 'Leitwein M', 'Lascaux JM', 'Desmarais E', 'Berrebi P', 'Guinand B'],
+      members: ['maeva-leitwein'],
+      journal: 'Journal of Fish Biology',
+      year: 2023,
+      online: '2022-11-09',
+      issue: '102(1), 96–118',
+      type: 'article',
+      doi: '10.1111/jfb.15243',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/36218076/' }],
+      text: 'abstract',
+      licence: '',
+      themes: ['conservation', 'ascendance'],
+      services: ['genomique-des-populations', 'bioinformatique'],
+      summary:
+        'Using 75,684 SNPs, the study combines redundancy analysis and genome-wide association studies to explore the molecular basis of pigmentation in wild brown trout affected by hatchery fish. It identifies 337 independent colour-patterning loci spread over 35 of the 40 linkage groups.',
+      question: 'What genetic basis explains pigmentation variation in brown trout?',
+      approach:
+        'Genotyping of 75,684 SNPs, redundancy analysis (RDA) and single- and multi-trait genome-wide association studies, on traits such as the number of red and black spots on the flanks.',
+      finding:
+        '337 colour-patterning loci over 35 of the 40 linkage groups, pointing to a polygenic architecture; they are associated with 218 candidate genes, including known pigmentation genes (PMEL, SLC45A2, SOX10).',
+      limit:
+        'Associated loci and candidate genes, without functional demonstration; redundancy analysis also proves useful to follow pigmentation across generations of hatchery introgression.',
+      figures: [],
+    },
+    {
       id: 'saumon-coho-elevage-expression-2022',
-      readingTitle: 'Hatchery rearing and molecular signatures in coho salmon',
+      readingTitle:
+        'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
+      seoTitle: 'Hatchery rearing and gene expression in coho salmon',
       title:
         'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
       authors: [
@@ -180,7 +658,9 @@ export const research = {
     },
     {
       id: 'omble-ascendance-repeuplement-2021',
-      readingTitle: 'How stocking shapes the ancestry of populations',
+      readingTitle:
+        'Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations',
+      seoTitle: 'Stocking and genome-wide ancestry in fish populations',
       title:
         'Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations',
       authors: ['Leitwein M', 'Cayuela H', 'Bernatchez L'],
@@ -225,7 +705,9 @@ export const research = {
     },
     {
       id: 'porc-efficacite-alimentaire-gwas-2021',
-      readingTitle: 'Genomic regions and feed efficiency in pigs',
+      readingTitle:
+        'Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency',
+      seoTitle: 'Genomic regions and feed efficiency in pigs',
       title:
         'Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency',
       authors: [
@@ -298,7 +780,9 @@ export const research = {
     },
     {
       id: 'saumon-coho-epigenome-germinal-2021',
-      readingTitle: 'Epigenetic marks that persist until spawning',
+      readingTitle:
+        'Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration',
+      seoTitle: 'Salmon epigenome: lasting effects of hatchery rearing',
       title:
         'Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration',
       authors: [
@@ -350,7 +834,8 @@ export const research = {
     },
     {
       id: 'haplotypes-genomique-conservation-2020',
-      readingTitle: 'What haplotypes bring to conservation',
+      readingTitle: 'Using Haplotype Information for Conservation Genomics',
+      seoTitle: 'Haplotype information for conservation genomics',
       title: 'Using Haplotype Information for Conservation Genomics',
       authors: ['Leitwein M', 'Duranton M', 'Rougemont Q', 'Gagnaire PA', 'Bernatchez L'],
       members: ['maeva-leitwein'],
@@ -385,7 +870,9 @@ export const research = {
     },
     {
       id: 'omble-diversite-petites-populations-2020',
-      readingTitle: 'Genetic diversity in small brook charr populations',
+      readingTitle:
+        'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
+      seoTitle: 'Genetic diversity in small brook charr populations',
       title:
         'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
       authors: [
@@ -430,7 +917,9 @@ export const research = {
     },
     {
       id: 'porc-prediction-genomique-2020',
-      readingTitle: 'Choosing a reference population for genomic prediction',
+      readingTitle:
+        'The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs',
+      seoTitle: 'Genomic prediction of feed efficiency in pigs',
       title:
         'The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs',
       authors: ['Aliakbari A', 'Delpuech E', 'Labrune Y', 'Riquet J', 'Gilbert H'],
@@ -484,7 +973,9 @@ export const research = {
     },
     {
       id: 'omble-recombinaison-ascendance-2019',
-      readingTitle: 'Recombination and domestic ancestry in brook charr',
+      readingTitle:
+        'The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations',
+      seoTitle: 'Recombination and local ancestry in brook charr',
       title:
         'The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations',
       authors: [
@@ -529,7 +1020,9 @@ export const research = {
     },
     {
       id: 'truite-ressource-snp-2019',
-      readingTitle: 'SNP markers to monitor trout populations',
+      readingTitle:
+        'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
+      seoTitle: 'A SNP resource and array for brown trout genetics',
       title:
         'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
       authors: [
@@ -575,7 +1068,7 @@ export const research = {
           image: 'pub-truite-snp-fig1',
           label: 'Fig. 1',
           caption:
-            'Positions on the brown trout linkage map of the 12204 RADs(a ; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs(b ; informative for at least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)',
+            'Positions on the brown trout linkage map of the 12204 RADs (a; containing one or two SNPs with MAF ≥ 5% based on all individuals (AT + ME) and positions between the first or last 30 bp of the RAD with no undetermined nucleotides), and of the 245 SNPs (b; informative for at least the AT and ME lineages, positions between the first or last 50 bp of RADs (primer design zones), and spaced by at least 3.5 cM)',
           credit: 'Saint-Pé K et al. (2019), BMC Genomics',
           licence: 'CC BY 4.0',
           width: 707,
@@ -606,7 +1099,9 @@ export const research = {
     },
     {
       id: 'truite-trois-ascendances-2018',
-      readingTitle: 'Three ancestries in the genomes of stocked trout',
+      readingTitle:
+        'Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts',
+      seoTitle: 'Brown trout: genomics of a three-way admixture',
       title:
         'Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts',
       authors: ['Leitwein M', 'Gagnaire PA', 'Desmarais E', 'Berrebi P', 'Guinand B'],
@@ -645,7 +1140,9 @@ export const research = {
     },
     {
       id: 'truite-arc-en-ciel-san-francisco-2017',
-      readingTitle: 'Barriers, migration and conservation of rainbow trout',
+      readingTitle:
+        'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
+      seoTitle: 'Rainbow trout genomics in San Francisco Bay',
       title:
         'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
       authors: ['Leitwein M', 'Garza JC', 'Pearse DE'],
@@ -701,7 +1198,9 @@ export const research = {
     },
     {
       id: 'truite-carte-liaison-2017',
-      readingTitle: 'A genetic map for brown trout',
+      readingTitle:
+        'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
+      seoTitle: 'A dense linkage map for brown trout',
       title:
         'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
       authors: [
@@ -763,7 +1262,9 @@ export const research = {
     },
     {
       id: 'truite-orb-diversite-2016',
-      readingTitle: 'Diversity of hatchery strains and wild trout of the Orb',
+      readingTitle:
+        'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
+      seoTitle: 'Genomic diversity of Orb brown trout',
       title:
         'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
       authors: [

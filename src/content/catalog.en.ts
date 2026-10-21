@@ -19,6 +19,8 @@ import {
 import { cgv } from './cgv.fr';
 import { ui } from './ui.en';
 import { research } from './research.en';
+import { knowledge, cir, samplingKits } from './knowledge.en';
+import { routeSources } from './site';
 
 export const en: Catalog = {
   ...core,
@@ -38,5 +40,10 @@ export const en: Catalog = {
   erc,
   cgv,
   research,
+  /** Addresses of the publication pages (see content/site.ts). */
+  publications: routeSources.en.publications,
+  knowledge,
+  cir,
+  samplingKits,
   ui,
 };

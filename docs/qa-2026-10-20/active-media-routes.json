@@ -1,0 +1,745 @@
+[
+  {
+    "path": "/",
+    "media": [
+      "schema-protocole"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/services",
+    "media": [
+      "schema-protocole",
+      "equipe-maxime",
+      "schema-sequencage"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-sequencage-1536.webp",
+      "https://www.ldgenx.fr/images/schema-sequencage-1536.webp"
+    ]
+  },
+  {
+    "path": "/services/adn-environnemental-adne",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp",
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp"
+    ]
+  },
+  {
+    "path": "/services/genomique-des-populations",
+    "media": [
+      "selection-unima",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/populations-huitriers-1000.webp",
+      "https://www.ldgenx.fr/images/populations-huitriers-1000.webp"
+    ]
+  },
+  {
+    "path": "/services/analyse-des-communautes-microbiennes",
+    "media": [
+      "equipe-maxime",
+      "schema-agroecologie",
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/services/selection",
+    "media": [
+      "selection-unima",
+      "schema-agroecologie",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/services/bioinformatique",
+    "media": [
+      "schema-recherche",
+      "schema-agroecologie",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp"
+    ]
+  },
+  {
+    "path": "/services/sequencage-dpcr",
+    "media": [
+      "equipe-maxime",
+      "schema-recherche",
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/services/recherche-developpement",
+    "media": [
+      "schema-ecotrace",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp",
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp"
+    ]
+  },
+  {
+    "path": "/services/materiel",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/materiel-pompe-1000.webp",
+      "https://www.ldgenx.fr/images/materiel-pompe-1000.webp"
+    ]
+  },
+  {
+    "path": "/services/conservation",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-truites-425.webp",
+      "https://www.ldgenx.fr/images/cas-truites-425.webp"
+    ]
+  },
+  {
+    "path": "/services/tracabilite",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/fig-puce-truite-1000.webp",
+      "https://www.ldgenx.fr/images/fig-puce-truite-1000.webp"
+    ]
+  },
+  {
+    "path": "/services/selection-genomique",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-bar-1000.webp",
+      "https://www.ldgenx.fr/images/cas-bar-1000.webp"
+    ]
+  },
+  {
+    "path": "/applications",
+    "media": [
+      "selection-unima",
+      "schema-agroecologie",
+      "schema-recherche"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/riviere-1000.webp",
+      "https://www.ldgenx.fr/images/riviere-1000.webp"
+    ]
+  },
+  {
+    "path": "/applications/biodiversite-conservation",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/riviere-1000.webp",
+      "https://www.ldgenx.fr/images/riviere-1000.webp"
+    ]
+  },
+  {
+    "path": "/applications/aquaculture-peche",
+    "media": [
+      "selection-unima",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/applications/agriculture-agroecologie",
+    "media": [
+      "schema-agroecologie",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-agroecologie-1536.webp",
+      "https://www.ldgenx.fr/images/schema-agroecologie-1536.webp"
+    ]
+  },
+  {
+    "path": "/applications/environnement-bureaux-d-etudes",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-palavas-657.webp",
+      "https://www.ldgenx.fr/images/terrain-palavas-657.webp"
+    ]
+  },
+  {
+    "path": "/applications/recherche-publique-privee",
+    "media": [
+      "schema-recherche",
+      "schema-ecotrace",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-recherche-1536.webp",
+      "https://www.ldgenx.fr/images/schema-recherche-1536.webp"
+    ]
+  },
+  {
+    "path": "/applications/energies-renouvelables",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/energies-renouvelables-1536.webp",
+      "https://www.ldgenx.fr/images/energies-renouvelables-1536.webp"
+    ]
+  },
+  {
+    "path": "/etudes-de-cas",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp",
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp"
+    ]
+  },
+  {
+    "path": "/etudes-de-cas/ichtyofaune-artois-picardie",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp",
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp"
+    ]
+  },
+  {
+    "path": "/etudes-de-cas/biodiversite-eolien-offshore",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-eolien-offshore-799.webp",
+      "https://www.ldgenx.fr/images/cas-eolien-offshore-799.webp"
+    ]
+  },
+  {
+    "path": "/etudes-de-cas/communautes-microplastiques",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-microplastiques-1000.webp",
+      "https://www.ldgenx.fr/images/cas-microplastiques-1000.webp"
+    ]
+  },
+  {
+    "path": "/innovation",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/innovation/dna-ecotrace",
+    "media": [
+      "schema-ecotrace"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp",
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp"
+    ]
+  },
+  {
+    "path": "/innovation/edna-clock",
+    "media": [
+      "schema-ecotrace"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/ednaclock-1536.webp",
+      "https://www.ldgenx.fr/images/ednaclock-1536.webp"
+    ]
+  },
+  {
+    "path": "/a-propos",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/a-propos/equipe",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/equipe/dr-maeva-leitwein",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/portrait-maeva-900.webp",
+      "https://www.ldgenx.fr/images/portrait-maeva-900.webp"
+    ]
+  },
+  {
+    "path": "/equipe/dr-emilie-delpuech",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/portrait-emilie-900.webp",
+      "https://www.ldgenx.fr/images/portrait-emilie-900.webp"
+    ]
+  },
+  {
+    "path": "/recherche",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/a-propos/partenaires",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/ressources",
+    "media": [
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-1536.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-1536.webp"
+    ]
+  },
+  {
+    "path": "/ressources/comprendre-adn-environnemental",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp",
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp"
+    ]
+  },
+  {
+    "path": "/ressources/bioinformatique-question-biologique",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp"
+    ]
+  },
+  {
+    "path": "/ressources/genomique-filiere-aquacole",
+    "media": [
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/contact",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/mentions-legales",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/politique-confidentialite",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/cgvs/cgvs",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en",
+    "media": [
+      "schema-protocole"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/en/services",
+    "media": [
+      "schema-protocole",
+      "equipe-maxime",
+      "schema-sequencage"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-sequencage-1536.webp",
+      "https://www.ldgenx.fr/images/schema-sequencage-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/services/environmental-dna-edna",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp",
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp"
+    ]
+  },
+  {
+    "path": "/en/services/population-genomics",
+    "media": [
+      "selection-unima",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/populations-huitriers-1000.webp",
+      "https://www.ldgenx.fr/images/populations-huitriers-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/services/microbial-community-analysis",
+    "media": [
+      "equipe-maxime",
+      "schema-agroecologie",
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/en/services/genomic-selection",
+    "media": [
+      "selection-unima",
+      "schema-agroecologie",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/en/services/bioinformatics",
+    "media": [
+      "schema-recherche",
+      "schema-agroecologie",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp"
+    ]
+  },
+  {
+    "path": "/en/services/sequencing-dpcr",
+    "media": [
+      "equipe-maxime",
+      "schema-recherche",
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/en/services/research-development",
+    "media": [
+      "schema-ecotrace",
+      "schema-recherche",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp",
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/services/equipment",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/materiel-pompe-1000.webp",
+      "https://www.ldgenx.fr/images/materiel-pompe-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/services/conservation",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-truites-425.webp",
+      "https://www.ldgenx.fr/images/cas-truites-425.webp"
+    ]
+  },
+  {
+    "path": "/en/services/traceability",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/fig-puce-truite-1000.webp",
+      "https://www.ldgenx.fr/images/fig-puce-truite-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/services/genomic-selection-page",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-bar-1000.webp",
+      "https://www.ldgenx.fr/images/cas-bar-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/applications",
+    "media": [
+      "selection-unima",
+      "schema-agroecologie",
+      "schema-recherche"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/riviere-1000.webp",
+      "https://www.ldgenx.fr/images/riviere-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/applications/biodiversity-conservation",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/riviere-1000.webp",
+      "https://www.ldgenx.fr/images/riviere-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/applications/aquaculture-fisheries",
+    "media": [
+      "selection-unima",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/en/applications/agriculture-agroecology",
+    "media": [
+      "schema-agroecologie",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-agroecologie-1536.webp",
+      "https://www.ldgenx.fr/images/schema-agroecologie-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/applications/environment-consultancies",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-palavas-657.webp",
+      "https://www.ldgenx.fr/images/terrain-palavas-657.webp"
+    ]
+  },
+  {
+    "path": "/en/applications/public-private-research",
+    "media": [
+      "schema-recherche",
+      "schema-ecotrace",
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-recherche-1536.webp",
+      "https://www.ldgenx.fr/images/schema-recherche-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/applications/renewable-energy",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/energies-renouvelables-1536.webp",
+      "https://www.ldgenx.fr/images/energies-renouvelables-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/case-studies",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp",
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp"
+    ]
+  },
+  {
+    "path": "/en/case-studies/artois-picardie-fish-survey",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp",
+      "https://www.ldgenx.fr/images/carte-artois-picardie-970.webp"
+    ]
+  },
+  {
+    "path": "/en/case-studies/offshore-wind-biodiversity",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-eolien-offshore-799.webp",
+      "https://www.ldgenx.fr/images/cas-eolien-offshore-799.webp"
+    ]
+  },
+  {
+    "path": "/en/case-studies/microplastic-microbial-communities",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/cas-microplastiques-1000.webp",
+      "https://www.ldgenx.fr/images/cas-microplastiques-1000.webp"
+    ]
+  },
+  {
+    "path": "/en/innovation",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/en/innovation/dna-ecotrace",
+    "media": [
+      "schema-ecotrace"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp",
+      "https://www.ldgenx.fr/images/schema-ecotrace-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/innovation/ednaclock",
+    "media": [
+      "schema-ecotrace"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/ednaclock-1536.webp",
+      "https://www.ldgenx.fr/images/ednaclock-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/about-us",
+    "media": [
+      "equipe-maxime"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg",
+      "https://www.ldgenx.fr/images/social-equipe-maxime.jpg"
+    ]
+  },
+  {
+    "path": "/en/about-us/team",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en/team/dr-maeva-leitwein",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/portrait-maeva-900.webp",
+      "https://www.ldgenx.fr/images/portrait-maeva-900.webp"
+    ]
+  },
+  {
+    "path": "/en/team/dr-emilie-delpuech",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/portrait-emilie-900.webp",
+      "https://www.ldgenx.fr/images/portrait-emilie-900.webp"
+    ]
+  },
+  {
+    "path": "/en/research",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en/about-us/partners",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en/resources",
+    "media": [
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-1536.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-1536.webp"
+    ]
+  },
+  {
+    "path": "/en/resources/understanding-environmental-dna",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp",
+      "https://www.ldgenx.fr/images/terrain-prelevement-829.webp"
+    ]
+  },
+  {
+    "path": "/en/resources/bioinformatics-biological-question",
+    "media": [],
+    "social": [
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp",
+      "https://www.ldgenx.fr/images/bioinformatique-client-922.webp"
+    ]
+  },
+  {
+    "path": "/en/resources/genomics-aquaculture",
+    "media": [
+      "selection-unima"
+    ],
+    "social": [
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg",
+      "https://www.ldgenx.fr/images/social-selection-unima.jpg"
+    ]
+  },
+  {
+    "path": "/en/contact",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en/legal-notice",
+    "media": [],
+    "social": []
+  },
+  {
+    "path": "/en/privacy-policy",
+    "media": [],
+    "social": []
+  }
+]

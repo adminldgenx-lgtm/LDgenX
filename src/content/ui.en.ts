@@ -46,6 +46,10 @@ export const ui = {
       partners: 'Partners',
       resources: 'Resources & expertise',
       equipment: 'Sampling equipment',
+      tests: 'Targeted DNA tests',
+      faq: 'FAQ',
+      glossary: 'Glossary',
+      siteMap: 'Site map',
     },
     rights: 'LDgenX · All rights reserved',
     legal: 'Legal notice',
@@ -72,8 +76,8 @@ export const ui = {
   },
   hero: {
     lines: [
-      ['Informing your', 'decisions'],
-      ['with ', 'DNA'],
+      ['From DNA', ''],
+      ['to ', 'decisions'],
     ],
     innovationLabel: 'Innovation',
     innovationText: 'automating biodiversity monitoring',
@@ -83,7 +87,7 @@ export const ui = {
   dna: {
     eyebrow: 'Understand to act',
     parts: [
-      'In the field',
+      'Upstream',
       'In the field',
       'In the laboratory',
       'In the laboratory',
@@ -192,7 +196,7 @@ export const ui = {
   },
   panels: {
     label: 'Other questions, other approaches',
-    allLabel: 'The studies presented by LDgenX',
+    allLabel: 'Our case studies',
     otherLabel: 'The other studies',
     question: 'The question',
     work: 'The work',
@@ -236,14 +240,14 @@ export const ui = {
     usesTitle: 'Analyses connected\nto your challenges.',
     prestationsEyebrow: 'Our services',
     prestationsTitle: 'What we take\ncare of.',
-    prestationsText: 'The steps the team can carry out for you, as presented for this service.',
+    prestationsText:
+      'The steps the team carries out for you, depending on the scope of your project.',
     casesEyebrow: 'Case studies',
     casesTitle: 'Questions\nalready explored.',
     sectorsEyebrow: 'Your fields of application',
     sectorsTitle: 'Genomics in your field.',
     moreEyebrow: 'Complementary services',
     moreTitle: 'Going further, together.',
-    official: 'Original presentation of this service',
     allSectorsEyebrow: 'All sectors',
     allSectorsTitle: 'Every field,\nthe same standards.',
     sectorsSr: 'The fields of application',
@@ -251,7 +255,6 @@ export const ui = {
     fieldTitle: 'Your context\nguides the approach.',
     fieldText:
       'Before choosing a technology, we take the time to understand the question, the environment and the information you need.',
-    reference: 'LDgenX reference',
     approachesEyebrow: 'The approaches offered',
     approachesTitle: 'Tools chosen\nfor your question.',
     deliverablesEyebrow: 'Deliverables and support',
@@ -263,7 +266,7 @@ export const ui = {
     applicationUses: 'Applications',
     applicationExamples: 'Case studies',
     relatedEyebrow: 'The services to bring in',
-    relatedTitle: 'Genomics at the service\nof your question.',
+    relatedTitle: 'The expertise\nyour project needs.',
     relatedBody:
       'From sampling to interpretation, we connect the services to the need identified with you.',
     practiceIntro:
@@ -272,11 +275,10 @@ export const ui = {
   equipment: {
     eyebrow: 'The equipment',
     title: 'Three tools\nto filter in the field.',
-    text: 'The environmental DNA sampling equipment offered by LDgenX, with its characteristics and published prices.',
+    text: 'The filtration equipment we offer for environmental DNA, with its characteristics.',
     specs: 'Characteristics',
-    prices: 'Published prices',
-    priceNote:
-      'Prices excluding VAT, as published on ldgenx.fr. A quote specifies the equipment, its availability and the terms of sale.',
+    prices: 'Prices',
+    priceNote: 'A quote specifies the equipment, its availability and the terms of sale.',
     quote: 'Ask for a quote for this equipment',
   },
   studyPage: {
@@ -286,15 +288,14 @@ export const ui = {
     lessons: 'What we learn',
     alongCoast: 'The study, along the coast',
     noResults:
-      'This presentation is based on the subject cited by LDgenX. Detailed results are not published in the source consulted.',
+      'A similar project? Tell us about your site and your question: we will design the right protocol together.',
     reference: 'View the published reference',
     expertiseEyebrow: 'The related service',
     exploreExpertise: 'Explore this service',
     studiesSr: 'The studies',
     worksEyebrow: 'Scientific work',
     worksTitle: 'The team’s\nscientific work.',
-    worksText:
-      'Research published by the team members, presented on ldgenx.com with its figures and references.',
+    worksText: 'Research published by the team members, with its figures and references.',
     publications: 'All publications',
   },
   results: {
@@ -334,11 +335,12 @@ export const ui = {
     eyebrow: 'Research & publications',
     title: 'The team’s\nscientific work.',
     intro:
-      'Articles co-written by members of the team with their co-authors and research institutions. They ground the methods we use; they are not services delivered to clients.',
-    featuredEyebrow: 'Three topics to start with',
+      'Articles co-written by members of the team with their co-authors and research institutes. They ground the methods we apply in our projects.',
+    featuredEyebrow: 'Three articles to start with',
     featuredTitle: 'One question.\nOne approach. One result.',
     featuredLabel: 'Choose a topic',
     readSummary: 'Read the summary',
+    showOthers: (n: number) => `Show the other ${n} publications`,
     chartSource: 'Source',
     catalogEyebrow: 'The catalogue',
     catalogTitle: 'All publications.',
@@ -366,13 +368,6 @@ export const ui = {
       ressources: 'Resources & methods',
     } as Record<string, string>,
     review: 'Review article',
-    text: {
-      published:
-        'Summary based on the published abstract; full text of the published article consulted.',
-      preprint:
-        'Summary based on the published abstract; the full text consulted is the preprint, earlier than the article.',
-      abstract: 'Summary based on the published abstract; full text not consulted.',
-    } as Record<string, string>,
     question: 'The question',
     approach: 'The approach',
     finding: 'What the article brings',
@@ -390,22 +385,23 @@ export const ui = {
     noFigures:
       'The figures of this article are not reproduced here; they can be viewed in the published article.',
     services: 'Related services',
-    servicesNote:
-      'A link to a service marks a shared field; it does not mean the article used all of its techniques.',
     share: 'Copy the link',
-    copied: 'Link copied',
+    copied: 'Reference copied',
     close: 'Close',
     dialog: 'Publication summary',
-    distinctEyebrow: 'Not to be confused',
-    distinctTitle: 'Publications, R&D projects\nand case studies.',
-    distinct: [
-      'Publications are research articles co-written by members of the team, with their co-authors and institutions.',
-      'R&D projects (DNA EcoTrace, eDNAClock) are LDgenX development lines, distinct from these articles.',
-      'Case studies, such as Artois-Picardie, are applied work presented with their own sources.',
-    ],
+    distinctEyebrow: 'Going further',
+    distinctTitle: 'From research\nto the field.',
+    distinct:
+      'These publications ground our methods. Our R&D projects extend them, and our case studies put them to work in the field.',
     seeRd: 'R&D projects',
     seeStudies: 'Case studies',
     seeMember: 'See their publications',
+    allPublications: 'All publications',
+    originalTitle: 'Original title',
+    cite: 'Cite this article',
+    copyCitation: 'Copy the reference',
+    teamAuthors: 'Authors from the team',
+    otherPublications: 'More publications\non this topic.',
     homeEyebrow: 'Research & publications',
     homeTitle: 'Published work,\nco-written by the team.',
     homeText:
@@ -418,18 +414,14 @@ export const ui = {
   },
   works: {
     eyebrow: 'Scientific work',
-    note: 'This work presents research published by the team members; it is taken from ldgenx.com with its figures and references.',
     contents: 'In this work',
     expertise: 'The related service',
     others: 'Other work',
-    source: 'Original page on ldgenx.com',
   },
   person: {
     eyebrow: 'The scientific team',
     biography: 'Background',
     publications: 'Publications',
-    publicationsNote:
-      'References verified against the published articles: title, journal, year and DOI.',
     expertise: 'Area of expertise',
     allTeam: 'The whole team',
     open: 'Read the publication',
@@ -441,7 +433,7 @@ export const ui = {
   },
   terms: {
     contents: 'Contents',
-    note: 'Text reproduced as published on ldgenx.fr, in French. Only the layout has changed.',
+    note: 'Our terms of sale are published in French.',
   },
   innovationPage: {
     sr: 'The research projects',
@@ -450,13 +442,11 @@ export const ui = {
     collaborationText:
       'Are you looking to develop a new method, build a collaborative research project or explore new applications of genomics? Our team welcomes scientific, technical and industrial collaborations.',
     collaborationAction: 'Our R&D support',
-    deeptechEyebrow: 'A DeepTech company',
+    deeptechEyebrow: 'A Deep Tech company',
     supportsTitle: 'Our projects are supported by',
-    projectNote:
-      'This is a research and development project. The objectives presented are not a promise of results or an announced commercial performance.',
+    projectNote: 'Ongoing research and development project.',
     projectSubtitle: 'A path to explore.',
     principle: 'The principle of the project',
-    official: 'Original presentation of the projects',
     exploreEyebrow: 'Explore the research',
     exploreTitle: 'Areas of expertise that meet.',
   },
@@ -470,7 +460,6 @@ export const ui = {
     empty: 'No resource for this search. Try another topic or select “Explore all”.',
     contents: 'Article contents',
     contentsTitle: 'IN THIS RESOURCE',
-    source: 'Source: LDgenX scientific presentation',
     expertise: 'Discover the related service',
   },
   about: {
@@ -487,15 +476,13 @@ export const ui = {
     ecoTitle: 'Connections that\nmove science forward.',
     ecoLink: 'Discover our ecosystem',
     teamSr: 'The team members',
-    teamSource: 'The team’s scientific backgrounds',
     partnersSr: 'The LDgenX ecosystem',
-    partnersSource: 'The relationships presented by LDgenX',
     logos: 'Partner logos',
   },
   legal: {
     publisher: 'Publisher',
     identity: [
-      'LDgenX SAS · SIREN 952 193 837',
+      'LDgenX SAS · SIREN 952 193 837',
       'RCS Montpellier · NAF code 7112B',
       'Share capital: €50,000',
     ],
@@ -543,11 +530,30 @@ export const ui = {
     bookingBenefits: 'This introductory meeting is an opportunity to:',
   },
   seo: {
+    organization: {
+      alternateName: 'LDgenX, applied genomics',
+      award: ['Deep Tech label (Bpifrance)'],
+      knowsAbout: [
+        'Environmental DNA',
+        'Metabarcoding',
+        'Digital PCR (dPCR)',
+        'Population genomics',
+        'Conservation genomics',
+        'Genomic selection',
+        'Microbial communities',
+        'Metagenomics',
+        'Bioinformatics',
+        'Sequencing',
+        'Epigenetics',
+        'Aquaculture',
+        'Biodiversity',
+      ],
+    },
     home: {
       label: 'Home',
       title: 'Applied genomics & environmental DNA | LDgenX',
       description:
-        'LDgenX supports your biodiversity, agriculture and aquaculture projects, from sampling to the interpretation of genomic data.',
+        'Environmental DNA, species detection by dPCR, population genomics and bioinformatics: LDgenX takes your project from sample to decision.',
     },
     services: {
       label: 'Services',
@@ -579,7 +585,7 @@ export const ui = {
     },
     innovations: {
       label: 'Innovation',
-      title: 'DeepTech innovation: DNA EcoTrace & eDNAClock | LDgenX',
+      title: 'Deep Tech innovation: DNA EcoTrace & eDNAClock | LDgenX',
       description:
         'Explore DNA EcoTrace and eDNAClock, LDgenX’s research and development projects where eDNA, sequencing and bioinformatics meet.',
     },
@@ -589,7 +595,7 @@ export const ui = {
     },
     about: {
       label: 'About us',
-      title: 'A DeepTech team for life sciences | LDgenX',
+      title: 'A Deep Tech team for life sciences | LDgenX',
       description:
         'Discover LDgenX, a French applied genomics company, its scientific team, its mission and its ecosystem.',
     },
@@ -604,11 +610,32 @@ export const ui = {
       description: (name: string, role: string) =>
         `${name}, ${role.toLowerCase()} at LDgenX: scientific background and list of publications.`,
     },
+    publication: {
+      title: (t: string) => `${t} | LDgenX`,
+    },
+    faq: {
+      label: 'FAQ',
+      title: 'FAQ: environmental DNA and genomics | LDgenX',
+      description:
+        'Environmental DNA, dPCR, population genomics, sampling kits, French research tax credit: LDgenX answers the most frequent questions.',
+    },
+    glossary: {
+      label: 'Glossary',
+      title: 'Glossary of genomics and environmental DNA | LDgenX',
+      description:
+        'eDNA, metabarcoding, dPCR, qPCR, SNP, GWAS, RADseq, mitigation hierarchy: applied genomics terms explained simply by LDgenX.',
+    },
+    siteMap: {
+      label: 'Site map',
+      title: 'Site map | LDgenX',
+      description:
+        'Every page of LDgenX: services, applications, case studies, publications, resources and information.',
+    },
     publications: {
       label: 'Research & publications',
       title: 'The team’s research & publications | LDgenX',
       description:
-        'The scientific articles co-written by Maeva Leitwein and Emilie Delpuech: verified references, summaries, figures and limits, linked to LDgenX services.',
+        'Scientific articles co-written by the LDgenX team (Maeva Leitwein, Emilie Delpuech, Damien Crestel): summaries, figures and limits.',
     },
     work: {
       title: (t: string) => `${t}: scientific work | LDgenX`,
@@ -616,8 +643,7 @@ export const ui = {
     partners: {
       label: 'Partners',
       title: 'Partners and scientific ecosystem | LDgenX',
-      description:
-        'The research institutes, supporters and organisations that trust LDgenX, presented by their relationship with the company.',
+      description: 'The research institutes, supporters and organisations that trust LDgenX.',
     },
     resources: {
       label: 'Resources',

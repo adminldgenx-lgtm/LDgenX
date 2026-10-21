@@ -18,6 +18,8 @@ import {
 import { cgv } from './cgv.fr';
 import { ui } from './ui.fr';
 import { research } from './research.fr';
+import { knowledge, cir, samplingKits } from './knowledge.fr';
+import { routeSources } from './site';
 
 export const fr = {
   ...core,
@@ -37,5 +39,10 @@ export const fr = {
   erc,
   cgv,
   research,
+  /** Addresses of the publication pages (see content/site.ts). */
+  publications: routeSources.fr.publications,
+  knowledge,
+  cir,
+  samplingKits,
   ui,
 };

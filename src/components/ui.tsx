@@ -6,6 +6,9 @@ import { DecodeOnce } from './Decode';
 import { breadcrumbs, type PageMeta } from '../lib/pages';
 import { useCatalog, useRoutes } from '../i18n';
 import { imageUrl, imageWidths } from '../lib/images';
+import { clientPhotos } from '../content/client-photos';
+import { equipmentMedia } from '../content/equipment-media';
+import { licensedPhotos } from '../content/licensed-photos';
 
 export function Reveal({
   children,
@@ -46,24 +49,38 @@ export function Photo({
   const ref = useRef<HTMLImageElement>(null);
   const phase = useEntrance(ref);
   const widths = imageWidths(name);
-  return (
+  const { ui } = useCatalog();
+  const metadata = clientPhotos[name] ?? equipmentMedia[name] ?? licensedPhotos[name];
+  const credit: string | undefined =
+    (ui.htmlLang !== 'fr' && licensedPhotos[name]?.creditEn) ||
+    (metadata as { credit?: string } | undefined)?.credit;
+  const picture = (
     <img
       ref={ref}
       data-photo-reveal={phase}
       className={`photo ${className}`}
       data-image={name}
+      data-media-kind={equipmentMedia[name]?.kind}
       src={imageUrl(name, widths[Math.min(1, widths.length - 1)])}
       srcSet={widths.map((w) => `${imageUrl(name, w)} ${w}w`).join(', ')}
       sizes={sizes}
-      alt={alt}
+      alt={alt && metadata ? (ui.htmlLang === 'fr' ? metadata.altFr : metadata.altEn) : alt}
       loading={eager ? 'eager' : 'lazy'}
       fetchPriority={eager ? 'high' : 'auto'}
-      width="1536"
-      height="1024"
+      width={metadata?.width ?? 1536}
+      height={metadata?.height ?? 1024}
       decoding="async"
       // An image that cannot load leaves its frame's background, never a broken-image icon.
       onError={(event) => event.currentTarget.setAttribute('data-failed', '')}
     />
+  );
+  return credit ? (
+    <span className="credited-photo">
+      {picture}
+      <span className="photo-credit">{credit}</span>
+    </span>
+  ) : (
+    picture
   );
 }
 
@@ -84,7 +101,7 @@ export function PhotoStack({
     <div className={`photo-stack ${className}`}>
       {items.map((item, i) => (
         <div
-          key={item.image}
+          key={`${item.image}-${i}`}
           className="photo-stack-layer"
           data-active={i === active || undefined}
           aria-hidden={i === active ? undefined : true}
@@ -236,7 +253,7 @@ export function PageHero({
   meta: PageMeta;
   eyebrow: string;
   title: string;
-  intro: string;
+  intro?: string;
   image?: string;
   dark?: boolean;
 }) {
@@ -255,12 +272,21 @@ export function PageHero({
               <DecodeOnce text={eyebrow} play={!reduced} delay={350} />
             </Eyebrow>
             <AnimatedHeading as="h1" text={title} intro />
-            <p className="lead">{intro}</p>
+            {intro && <p className="lead">{intro}</p>}
             {image && <ProjectActions light={dark} />}
           </div>
           {image && (
             <div className="page-hero-image intro-image">
-              <Photo name={image} alt={meta.label} eager />
+              <Photo
+                name={image}
+                alt={meta.label}
+                eager
+                sizes={
+                  ['bioinformatique-client', 'terrain-kayak'].includes(image)
+                    ? '(max-width: 700px) 90vw, 380px'
+                    : undefined
+                }
+              />
               <span className="page-hero-sheen" aria-hidden="true" />
             </div>
           )}

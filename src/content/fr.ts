@@ -17,14 +17,14 @@ export const copy = {
   home: {
     eyebrow: 'ADN environnemental · Génomique · Bioinformatique',
     intro:
-      'Des analyses ADN à l’interprétation des résultats, nous accompagnons vos projets environnementaux.',
+      'Biodiversité, aquaculture, agriculture : nous concevons l’étude, analysons vos échantillons et vous aidons à interpréter les résultats.',
     primary: 'Demander un devis',
     secondary: 'Découvrir nos expertises',
     // Each fact is published by LDgenX: ldgenx.fr (accueil, partenaires, contact).
     facts: [
-      { value: '+10 ans', label: 'd’expérience pour notre équipe scientifique' },
-      { value: 'Deep Tech', label: 'entreprise labellisée par Bpifrance' },
-      { value: 'De A à Z', label: 'du prélèvement à l’aide à la décision' },
+      { value: '+15 ans', label: 'd’expérience scientifique' },
+      { value: 'Deep Tech', label: 'label attribué par Bpifrance' },
+      { value: 'Toute la chaîne', label: 'du prélèvement à l’aide à la décision' },
       { value: 'Station Ifremer', label: 'une équipe implantée à Palavas-les-Flots' },
     ],
     introductionTitle: 'De l’échantillon\nà la décision.',
@@ -50,7 +50,7 @@ export const copy = {
       'Des parcours en recherche, des expertises complémentaires et une même envie : mettre la génomique au service du vivant.',
     trustTitle: 'Ils travaillent\navec nous.',
     trustIntro:
-      'Agences publiques, bureaux d’études, entreprises, universités et instituts de recherche : les organisations présentées par LDgenX.',
+      'Agences publiques, bureaux d’études, entreprises, universités et instituts de recherche : ils nous font confiance ou accompagnent notre développement.',
   },
   cta: {
     eyebrow: 'Parlons de votre projet',
@@ -86,7 +86,7 @@ export const workflow = [
     title: 'Conception scientifique',
     text: 'Votre question définit le point de départ. Ensemble, nous précisons les objectifs et les approches à mobiliser.',
     detail: 'Appui bibliographique, définition des objectifs et des indicateurs.',
-    image: 'conception',
+    image: 'schema-protocole',
   },
   {
     title: 'Stratégie d’échantillonnage',
@@ -106,15 +106,15 @@ export const workflow = [
     title: 'Séquençage & dPCR',
     text: 'Amplicons, génomes ou détection ciblée : les technologies sont choisies en fonction des objectifs scientifiques.',
     detail:
-      'Longs fragments (Nanopore, PacBio) et courts fragments (Illumina, AVITI), séquençage ciblé et microsatellites (qPCR, Sanger, KASP), PCR digitale.',
-    image: 'sequencage',
+      'Longs fragments (Nanopore) et courts fragments (Illumina, AVITI), séquençage ciblé et microsatellites (qPCR, Sanger, KASP), PCR digitale.',
+    image: 'cas-requin',
   },
   {
     title: 'Bioinformatique',
     text: 'Les données sont traitées et analysées au moyen d’approches bioinformatiques adaptées à votre question biologique.',
     detail:
       'Bioinformatique et biostatistique : métabarcoding, métagénomique, RADseq, RNAseq, WGS, épigénétique, GWAS.',
-    image: 'bioinformatique',
+    image: 'bioinformatique-client',
   },
   {
     title: 'Interprétation',
@@ -126,7 +126,7 @@ export const workflow = [
     title: 'Aide à la décision',
     text: 'La connaissance scientifique devient une information exploitable pour vos projets de gestion, de conservation ou d’innovation.',
     detail: 'Des résultats actionnables pour la prise de décision.',
-    image: 'decision',
+    image: 'decision-amphitheatre',
   },
 ];
 
@@ -153,6 +153,17 @@ export interface Expertise {
   source: string;
   /** Title and description for search engines, when the page has its own. */
   seo?: { title: string; description: string };
+  /** Shows the research tax credit (CIR) block. */
+  cir?: boolean;
+  /** Section headings of this page, where they differ from the shared ones. */
+  headings?: {
+    need?: string;
+    methods?: string;
+    methodsText?: string;
+    prestations?: string;
+    uses?: string;
+    cases?: string;
+  };
 }
 
 export const services: Expertise[] = [
@@ -202,14 +213,14 @@ export const services: Expertise[] = [
       'De l’échantillonnage à la bioinformatique, les analyses sont reliées à votre objectif. La restitution et le niveau d’accompagnement sont définis avec l’équipe scientifique au cadrage du projet.',
     prestations: [
       'Conception du projet',
-      'Design d’amorces (si non disponibles)',
+      'Conception d’amorces (si nécessaire)',
       'Extraction d’ADN',
       'Séquençage',
       'Analyses bioinformatiques',
       'Analyses statistiques',
-      'Analyses de diversités',
+      'Analyses de diversité',
       'Rapport d’aide à la décision',
-      'Digital PCR',
+      'PCR digitale (dPCR)',
       'Cartographie et visualisation',
     ],
     cases: [
@@ -229,6 +240,13 @@ export const services: Expertise[] = [
         link: { kind: 'study', id: 'biodiversite-eolien-offshore' },
       },
     ],
+    headings: {
+      need: 'Une question, un milieu,\ndes espèces à connaître.',
+      methods: 'Quatre façons de lire\nles traces d’ADN.',
+      prestations: 'Du protocole\nau rapport d’aide à la décision.',
+      uses: 'Là où l’ADNe\napporte une réponse.',
+      cases: 'Des milieux\ndéjà explorés.',
+    },
     source: 'https://www.ldgenx.fr/services/adn-environnemental-adne',
   },
   {
@@ -237,7 +255,7 @@ export const services: Expertise[] = [
     title: 'Génomique des populations',
     short: 'Comprendre la diversité, la connectivité et l’adaptation.',
     scope: 'Caractériser la diversité génétique, la connectivité et l’adaptation des populations.',
-    image: 'cas-vanneau',
+    image: 'populations-huitriers',
     headline: 'Comprendre les populations. Éclairer leur avenir.',
     intro:
       'La génomique des populations apporte un éclairage sur la diversité génétique, la structure, la connectivité et l’adaptation. LDgenX développe des approches adaptées aux enjeux de conservation et de gestion des populations.',
@@ -272,7 +290,7 @@ export const services: Expertise[] = [
       'L’interprétation associe les données génétiques au contexte des populations étudiées. Les questions biologiques, les échantillons disponibles et les informations de terrain servent de fil conducteur.',
     prestations: [
       'Extraction d’ADN',
-      'Préparation des librairies',
+      'Préparation des banques de séquençage',
       'Séquençage',
       'Analyses bioinformatiques',
       'Découverte de marqueurs génétiques (SNP, indel)',
@@ -295,9 +313,16 @@ export const services: Expertise[] = [
       {
         title: 'Le vanneau huppé',
         image: 'cas-vanneau',
-        link: { kind: 'external', href: 'https://hal.science/hal-05490664' },
+        link: { kind: 'study', id: 'genomique-vanneau-huppe' },
       },
     ],
+    headings: {
+      need: 'Diversité, structure,\nconnectivité.',
+      methods: 'Du panel SNP\nau génome entier.',
+      prestations: 'De l’échantillon\naux marqueurs génétiques.',
+      uses: 'Des données génétiques\npour gérer les populations.',
+      cases: 'Des populations\ndéjà étudiées.',
+    },
     source: 'https://www.ldgenx.fr/services/genomique-des-populations',
   },
   {
@@ -307,7 +332,7 @@ export const services: Expertise[] = [
     short: 'Explorer la diversité que l’on ne voit pas.',
     scope:
       'Étudier les communautés bactériennes, fongiques et microbiennes grâce au séquençage haut débit.',
-    image: 'microbiologie',
+    image: 'biofilm-microbien',
     headline: 'Un monde invisible. Une diversité à comprendre.',
     intro:
       'LDgenX accompagne l’étude des communautés bactériennes, fongiques et microbiennes. Le séquençage et la bioinformatique permettent de caractériser ces communautés dans vos échantillons.',
@@ -330,7 +355,7 @@ export const services: Expertise[] = [
       'L’équipe accompagne la préparation du projet, les analyses moléculaires et l’interprétation bioinformatique. La question biologique reste au centre de la lecture des données.',
     prestations: [
       'Extraction d’ADN',
-      'Préparation des librairies',
+      'Préparation des banques de séquençage',
       'Séquençage',
       'Analyses bioinformatiques',
       'Analyses statistiques',
@@ -343,6 +368,13 @@ export const services: Expertise[] = [
         link: { kind: 'study', id: 'communautes-microplastiques' },
       },
     ],
+    headings: {
+      need: 'Qui compose\nla communauté ?',
+      methods: 'Bactéries, champignons,\nfonctions.',
+      prestations: 'De l’extraction\nà l’interprétation.',
+      uses: 'Des eaux aux sols,\ndes élevages à la recherche.',
+      cases: 'Un sujet\ndéjà exploré.',
+    },
     source: 'https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes',
   },
   {
@@ -351,7 +383,7 @@ export const services: Expertise[] = [
     title: 'Sélection génomique',
     short: 'Intégrer l’information génétique dans vos programmes.',
     scope: 'Développer des outils d’aide à la sélection pour les filières agricoles et aquacoles.',
-    image: 'cas-crevettes',
+    image: 'selection-unima',
     headline: 'L’information génétique au service de la sélection.',
     intro:
       'LDgenX développe des outils pour intégrer les données génétiques dans les programmes de sélection. L’accompagnement concerne notamment les filières aquacoles et agricoles.',
@@ -395,6 +427,13 @@ export const services: Expertise[] = [
       },
       { title: 'Développement d’un panel de SNP', image: 'cas-crevettes' },
     ],
+    headings: {
+      need: 'Un caractère, un programme,\ndes données.',
+      methods: 'Des marqueurs\naux modèles de sélection.',
+      prestations: 'Des outils\npour vos programmes.',
+      uses: 'Les caractères\nqui comptent pour vos filières.',
+      cases: 'Des travaux\ndéjà menés.',
+    },
     source: 'https://www.ldgenx.fr/services/selection',
   },
   {
@@ -403,7 +442,7 @@ export const services: Expertise[] = [
     title: 'Bioinformatique',
     short: 'Faire émerger le sens de vos données génomiques.',
     scope: 'Transformer vos données de séquençage en résultats exploitables.',
-    image: 'bioinformatique',
+    image: 'bioinformatique-alignement',
     headline: 'Des données complexes. Une question qui guide l’analyse.',
     intro:
       'LDgenX propose un accompagnement bioinformatique pour les projets de recherche, de biodiversité et d’innovation. Le traitement, l’analyse et l’interprétation sont construits autour de votre problématique biologique.',
@@ -431,13 +470,19 @@ export const services: Expertise[] = [
       'Contrôle qualité',
       'Développement de pipelines',
       'Analyses statistiques',
-      'Analyses de diversités',
+      'Analyses de diversité',
       'Cartographie et visualisation',
       'Reproductibilité des analyses',
       'Bancarisation des données',
       'Accompagnement scientifique',
     ],
     cases: [],
+    headings: {
+      need: 'Des données brutes\nà la réponse biologique.',
+      methods: 'À chaque type de données,\nson analyse.',
+      prestations: 'De la qualité des données\nà leur restitution.',
+      uses: 'Les données\nque nous analysons.',
+    },
     source: 'https://www.ldgenx.fr/services/bioinformatique',
   },
   {
@@ -490,22 +535,89 @@ export const services: Expertise[] = [
       'L’accompagnement peut relier la biologie moléculaire, le séquençage et la bioinformatique. L’approche et la restitution sont définies à partir de vos objectifs.',
     prestations: [
       'Extraction d’ADN',
-      'Préparation des librairies',
+      'Préparation des banques de séquençage',
       'Séquençage',
-      'Design d’amorces (si non disponibles)',
-      'Digital PCR',
+      'Conception d’amorces (si nécessaire)',
+      'PCR digitale (dPCR)',
       'Accompagnement scientifique',
     ],
     cases: [
       { title: 'Épigénétique du sar', image: 'cas-sar' },
       { title: 'Détection d’espèces méditerranéennes emblématiques par dPCR', image: 'cas-requin' },
-      { title: 'Détection des oursins *Paracentrotus lividus*', image: 'cas-oursin' },
+      { title: 'Détection de l’oursin violet (*Paracentrotus lividus*)', image: 'cas-oursin' },
     ],
+    headings: {
+      need: 'Lire des génomes\nou détecter une espèce ?',
+      methods: 'Des amplicons\naux génomes entiers.',
+      prestations: 'De l’extraction\nà la PCR digitale.',
+      uses: 'Ce que nous séquençons\net détectons.',
+      cases: 'Des cibles\ndéjà étudiées.',
+    },
     source: 'https://www.ldgenx.fr/services/sequencage-dpcr',
     seo: {
       title: 'Séquençage et détection d’espèces par dPCR | LDgenX',
       description:
-        'Séquençage d’amplicons et longues lectures, détection d’espèces par dPCR, quantification d’ADN environnemental, amorces et sondes spécifiques : des tests ADN ciblés sur mesure.',
+        'Séquençage d’amplicons, longues lectures et génomes entiers, détection d’espèces par dPCR : des technologies choisies pour votre question scientifique.',
+    },
+  },
+  {
+    id: 'tests-adn-cibles',
+    slug: 'tests-adn-cibles',
+    title: 'Tests ADN ciblés',
+    short: 'Détecter et quantifier l’ADN d’une espèce précise.',
+    scope:
+      'Amorces et sondes pour 21 espèces et tests sur mesure : détection et quantification par PCR digitale.',
+    image: 'cas-oursin',
+    headline: 'Votre espèce cible, un test ADN sur mesure.',
+    intro:
+      'Vison d’Europe, thon rouge, requins, tortue caouanne : LDgenX dispose d’amorces et de sondes pour 21 espèces et conçoit des tests pour de nouvelles cibles. La PCR digitale (dPCR) détecte et quantifie l’ADN de l’espèce recherchée dans l’eau, les sols ou les sédiments.',
+    need: 'Une espèce protégée à confirmer, une espèce invasive à détecter tôt, un pathogène à surveiller ? Quand la question porte sur une espèce précise, un test ciblé y répond plus directement qu’un inventaire.',
+    approaches: [
+      {
+        title: 'Détecter une espèce',
+        text: 'Savoir si l’ADN d’une espèce précise est présent dans un échantillon d’eau, de sol ou de sédiment.',
+      },
+      {
+        title: 'Quantifier son ADN',
+        text: 'Estimer la quantité d’ADN cible, en nombre de copies, pour comparer des échantillons ou des sites.',
+      },
+      {
+        title: 'Espèces rares ou invasives',
+        text: 'Rechercher une espèce protégée, menacée ou invasive, lorsque la question porte sur une cible précise.',
+      },
+      {
+        title: 'Pathogènes',
+        text: 'Surveiller un pathogène par dPCR, par exemple dans les filières aquacoles.',
+      },
+    ],
+    uses: ['Espèces protégées', 'Espèces invasives', 'Espèces d’intérêt halieutique', 'Pathogènes'],
+    sectors: ['environnement-bureaux-d-etudes', 'biodiversite-conservation', 'aquaculture-peche'],
+    delivery:
+      'Chaque test se définit avec vous : l’espèce, les espèces proches à ne pas confondre, les matrices et le plan d’échantillonnage. Les performances du test sont évaluées selon le projet.',
+    prestations: [
+      'Conception d’amorces et de sondes',
+      'Évaluation de la spécificité',
+      'Extraction d’ADN',
+      'PCR digitale (dPCR)',
+      'Interprétation des résultats',
+      'Rapport d’aide à la décision',
+    ],
+    cases: [
+      { title: 'Détection d’espèces méditerranéennes emblématiques par dPCR', image: 'cas-requin' },
+      { title: 'Détection de l’oursin violet (*Paracentrotus lividus*)', image: 'cas-oursin' },
+    ],
+    source: 'https://www.ldgenx.fr/services/sequencage-dpcr',
+    seo: {
+      title: 'Tests ADN ciblés par dPCR : détecter une espèce | LDgenX',
+      description:
+        'Amorces et sondes pour 21 espèces (vison d’Europe, thon rouge, requins, tortue caouanne…) et tests sur mesure : détection et quantification de l’ADN par PCR digitale.',
+    },
+    headings: {
+      need: 'Une question,\nune espèce.',
+      methods: 'Détecter, quantifier,\nsurveiller.',
+      prestations: 'De la conception\nau rapport.',
+      uses: 'Les cibles\nles plus fréquentes.',
+      cases: 'Des cibles\ndéjà étudiées.',
     },
   },
   {
@@ -515,7 +627,7 @@ export const services: Expertise[] = [
     short: 'Construire les approches scientifiques de demain.',
     scope:
       'Réponses aux appels à projets, accompagnement et conseil pour vos projets de recherche.',
-    image: 'dna-ecotrace',
+    image: 'terrain-kayak',
     headline: 'Votre problématique peut ouvrir une nouvelle voie.',
     intro:
       'LDgenX est ouverte aux collaborations scientifiques, techniques et industrielles. L’équipe développe de nouvelles approches qui associent ADN environnemental, séquençage et bioinformatique.',
@@ -551,15 +663,23 @@ export const services: Expertise[] = [
     ],
     delivery:
       'Chaque projet de R&D commence par un cadrage commun. Les objectifs de développement, les étapes et les modalités de collaboration se définissent avec les partenaires du projet.',
+    cir: true,
     prestations: ['Réponses aux appels à projets', 'Accompagnement', 'Conseils'],
     cases: [
       {
         title: 'DNA EcoTrace',
-        image: 'dna-ecotrace',
+        image: 'schema-ecotrace',
         link: { kind: 'innovation', id: 'dna-ecotrace' },
       },
       { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
     ],
+    headings: {
+      need: 'Une question ouverte ?\nConstruisons la méthode.',
+      methods: 'Concevoir, développer,\ncollaborer.',
+      prestations: 'Un appui\nà chaque étape du projet.',
+      uses: 'Des domaines\nà explorer ensemble.',
+      cases: 'Nos projets\nde recherche.',
+    },
     source: 'https://www.ldgenx.fr/a-propos/innovation',
   },
   {
@@ -567,11 +687,12 @@ export const services: Expertise[] = [
     slug: 'materiel',
     title: 'Matériel d’échantillonnage',
     short: 'Préparer le terrain pour vos analyses.',
-    scope: 'Pompe triple, stick pump et torpille tractée pour filtrer l’eau sur le terrain.',
+    scope:
+      'Kits d’échantillonnage par milieu (eau de mer, eau douce, sol, air) et matériel de filtration de l’eau.',
     image: 'materiel-pompe',
     headline: 'Une analyse commence par un échantillon.',
     intro:
-      'Pompe triple, stick pump et torpille : LDgenX propose le matériel de filtration de l’eau utilisé pour l’ADN environnemental, avec ses capsules et ses filtres.',
+      'Kits d’échantillonnage pour l’eau de mer, l’eau douce, le sol et l’air, matériel de filtration de l’eau (pompe triple, stick pump, torpille) : LDgenX vous équipe pour vos campagnes d’ADN environnemental.',
     need: 'Avant une campagne, partagez le milieu étudié, les objectifs et les contraintes du terrain. Ces informations permettent de discuter du matériel et de la stratégie d’échantillonnage.',
     approaches: [
       { title: 'Votre milieu', text: 'Préciser les matrices et les conditions de prélèvement.' },
@@ -584,9 +705,15 @@ export const services: Expertise[] = [
     uses: ['Projets d’ADN environnemental', 'Prélèvements de terrain', 'Suivi environnemental'],
     sectors: ['environnement-bureaux-d-etudes', 'biodiversite-conservation'],
     delivery:
-      'Les prix publiés sont indiqués hors taxes. Un devis précise le matériel adapté à votre milieu, sa disponibilité et les conditions de vente.',
-    prestations: ['Pompe triple', 'Stick pump', 'Torpille', 'Capsules et filtres'],
+      'Le choix du matériel dépend du milieu, des volumes à filtrer et des analyses prévues : l’équipe vous aide à préparer la campagne avant le terrain.',
+    prestations: [],
     cases: [],
+    headings: {
+      methods: 'Préparer\nvotre campagne.',
+      methodsText:
+        'Le matériel se choisit selon le milieu, la question posée et l’organisation des prélèvements.',
+      uses: 'Pour quels\nprojets ?',
+    },
     source: 'https://www.ldgenx.fr/services/materiel',
   },
 ];
@@ -616,6 +743,12 @@ export interface Sector {
   erc?: boolean;
   /** A contextual link to the neighbouring application. */
   related?: { id: string; text: string };
+  /** The case study shown on the page, when one belongs to the field. */
+  study?: string;
+  /** Shows the research tax credit (CIR) block. */
+  cir?: boolean;
+  /** Section headings of this page, where they differ from the shared ones. */
+  headings?: { fieldEyebrow?: string; field?: string; related?: string };
 }
 export const applications: Sector[] = [
   {
@@ -664,6 +797,11 @@ export const applications: Sector[] = [
       'Détection d’hybridation entre espèces',
       'Suivi d’espèces menacées',
     ],
+    study: 'genomique-vanneau-huppe',
+    headings: {
+      field: 'Suivre, comprendre,\naccompagner la gestion.',
+      related: 'De l’ADNe\nà la génomique des populations.',
+    },
     source: 'https://www.ldgenx.fr/applications/biodiversite-conservation',
     seo: {
       title: 'Génomique de la conservation et suivi d’espèces | LDgenX',
@@ -681,7 +819,7 @@ export const applications: Sector[] = [
     title: 'Aquaculture & Pêche',
     scope:
       'Sélection génomique, gestion des stocks, traçabilité des produits, surveillance sanitaire.',
-    image: 'aquaculture',
+    image: 'selection-unima',
     headline: 'Éclairer la gestion des ressources aquatiques.',
     intro:
       'Gestion des géniteurs, sélection, suivi des stocks et surveillance sanitaire : vos enjeux appellent une compréhension des populations et de leur environnement.',
@@ -723,6 +861,11 @@ export const applications: Sector[] = [
       'Recherche de marqueurs associés à des caractères d’intérêt',
       'Surveillance de pathogènes par dPCR',
     ],
+    headings: {
+      fieldEyebrow: 'Vos questions de filière',
+      field: 'De l’écloserie\nau suivi des stocks.',
+      related: 'Sélection, populations,\ndétection ciblée.',
+    },
     source: 'https://www.ldgenx.fr/applications/aquaculture-peche',
   },
   {
@@ -730,7 +873,7 @@ export const applications: Sector[] = [
     slug: 'agriculture-agroecologie',
     title: 'Agriculture & Agroécologie',
     scope: 'Microbiomes des sols, marqueurs moléculaires, sélection assistée par marqueurs.',
-    image: 'agriculture',
+    image: 'schema-agroecologie',
     headline: 'Comprendre vos sols. Accompagner vos filières.',
     intro:
       'La transition agroécologique pose des questions sur la biodiversité agricole, les microbiomes des sols et les outils de sélection. LDgenX accompagne les acteurs publics et privés dans ces projets.',
@@ -769,6 +912,10 @@ export const applications: Sector[] = [
       'Développement d’outils de détection ciblée par dPCR',
       'Développement de marqueurs génétiques pour la sélection',
     ],
+    headings: {
+      field: 'Des sols\naux programmes de sélection.',
+      related: 'Microbiomes, marqueurs\net détection ciblée.',
+    },
     source: 'https://www.ldgenx.fr/applications/agriculture-agroecologie',
   },
   {
@@ -819,6 +966,11 @@ export const applications: Sector[] = [
       'Surveillance environnementale',
       'Développement de tests dPCR ciblés pour le suivi d’espèces d’intérêt',
     ],
+    study: 'ichtyofaune-artois-picardie',
+    headings: {
+      field: 'Trois questions\nau cœur de vos projets.',
+      related: 'ADNe, dPCR, microbiologie\net matériel de terrain.',
+    },
     source: 'https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes',
     seo: {
       title: 'ADNe pour l’état initial et les études d’impact | LDgenX',
@@ -862,7 +1014,7 @@ export const applications: Sector[] = [
     slug: 'recherche-publique-privee',
     title: 'Recherche publique & privée',
     scope: 'Conception scientifique, réponses aux appels à projets, accompagnement.',
-    image: 'recherche',
+    image: 'schema-recherche',
     headline: 'Une question scientifique. Des expertises à réunir.',
     intro:
       'Votre projet mobilise la biologie moléculaire, le séquençage ou l’analyse de données génomiques ? LDgenX accompagne la conception et la mise en œuvre d’approches adaptées.',
@@ -881,8 +1033,14 @@ export const applications: Sector[] = [
       },
     ],
     services: ['recherche-developpement', 'bioinformatique', 'sequencage-dpcr'],
+    cir: true,
     uses: [],
     examples: [],
+    headings: {
+      fieldEyebrow: 'Vos questions de recherche',
+      field: 'De la conception\nà l’analyse des données.',
+      related: 'Biologie moléculaire,\nséquençage, bioinformatique.',
+    },
     source: 'https://www.ldgenx.fr/a-propos/innovation',
   },
   {
@@ -891,7 +1049,7 @@ export const applications: Sector[] = [
     title: 'Énergies renouvelables',
     scope:
       'Éolien terrestre, éolien en mer et photovoltaïque : documenter la biodiversité autour de vos projets.',
-    image: 'energies-renouvelables',
+    image: 'eolien-en-mer',
     headline: 'Connaître la biodiversité qui entoure vos projets d’énergie.',
     intro:
       'Éolien terrestre, éolien en mer, photovoltaïque : ces projets s’accompagnent d’un état initial et d’un suivi des milieux. Les analyses ADN de LDgenX contribuent aux inventaires de biodiversité et à leur suivi, sur terre comme en mer, en appui des études environnementales.',
@@ -912,6 +1070,11 @@ export const applications: Sector[] = [
     services: ['adn-environnemental-adne', 'sequencage-dpcr', 'bioinformatique', 'materiel'],
     uses: ['Éolien terrestre', 'Éolien en mer', 'Photovoltaïque'],
     examples: ['Biodiversité des parcs éoliens offshore'],
+    study: 'biodiversite-eolien-offshore',
+    headings: {
+      field: 'De l’état initial\nau suivi d’exploitation.',
+      related: 'ADNe, détection ciblée\net matériel de terrain.',
+    },
     source: 'https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes',
     seo: {
       title: 'ADN environnemental et énergies renouvelables | LDgenX',
@@ -925,7 +1088,42 @@ export const applications: Sector[] = [
   },
 ];
 
-export const studies = [
+/** Figures and documents of a case study page, when published. */
+export interface StudyDetails {
+  regionsTitle: string;
+  regionsNote: string;
+  regions: { name: string; value: number }[];
+  funnelTitle: string;
+  funnel: { value: string; label: string }[];
+  findingsTitle: string;
+  findings: string[];
+  perspectiveTitle: string;
+  perspective: string;
+  rolesTitle: string;
+  roles: string[];
+  documentsTitle: string;
+  documents: { label: string; meta: string; url: string }[];
+}
+
+export interface Study {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  imageAlt?: string;
+  subtitle: string;
+  facts: { label: string; value: string }[];
+  context: string;
+  question: string;
+  approach: string;
+  result: string;
+  service: string;
+  source: string;
+  details?: StudyDetails;
+}
+
+export const studies: Study[] = [
   {
     id: 'ichtyofaune-artois-picardie',
     slug: 'ichtyofaune-artois-picardie',
@@ -954,23 +1152,106 @@ export const studies = [
       'https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental',
   },
   {
+    id: 'genomique-vanneau-huppe',
+    slug: 'genomique-vanneau-huppe',
+    title: 'D’où viennent les vanneaux huppés qui hivernent en France ?',
+    category: 'Génomique des populations',
+    image: 'cas-vanneau',
+    imageAlt: 'Vanneau huppé',
+    subtitle:
+      'Une étude génomique de 438 vanneaux huppés pour la Fédération nationale des chasseurs, dans le cadre du projet VanConnect.',
+    facts: [
+      { label: 'Commanditaire', value: 'Fédération nationale des chasseurs' },
+      { label: 'Projet', value: 'VanConnect, Écocontribution n° 1274, action 1' },
+      { label: 'Espèce', value: 'Vanneau huppé, Vanellus vanellus' },
+      { label: 'Approche', value: 'Génotypage par séquençage (3D-GBS), 40 746 SNP' },
+      { label: 'Période', value: '2024-2025' },
+    ],
+    context:
+      'Espèce migratrice chassable inscrite à l’annexe II de la directive Oiseaux, le vanneau huppé est en déclin, notamment du fait d’une faible productivité. Les oiseaux qui hivernent en France viendraient du Royaume-Uni, de Scandinavie ou d’Europe de l’Est, mais leur provenance et la structure de leurs populations restaient mal connues.',
+    question:
+      'D’où viennent les vanneaux huppés qui hivernent en France, et leurs populations sont-elles génétiquement structurées ?',
+    approach:
+      'Analyse de 479 échantillons de muscle prélevés de 2018 à 2023 dans neuf régions françaises, génotypés par 3D-GBS. Après contrôle qualité, 438 oiseaux et 40 746 SNP ont été analysés : diversité génétique, ADMIXTURE, analyse en composantes principales, identité par état et par descendance.',
+    result:
+      'Toutes les analyses convergent : pas de structuration génétique marquée et une diversité génétique forte. Les vanneaux échantillonnés en France proviennent d’une même population, bien mélangée et peu structurée.',
+    service: 'genomique-des-populations',
+    source: 'https://hal.science/hal-05490664',
+    details: {
+      regionsTitle: 'Les oiseaux analysés, par région',
+      regionsNote:
+        'Nombre d’échantillons par région (tableau 1 du rapport). Trois oiseaux n’ont pas de région renseignée. La répartition reflète la densité des oiseaux en hiver et l’effort d’échantillonnage.',
+      regions: [
+        { name: 'Normandie', value: 149 },
+        { name: 'Hauts-de-France', value: 109 },
+        { name: 'Pays de la Loire', value: 91 },
+        { name: 'Nouvelle-Aquitaine', value: 56 },
+        { name: 'Bretagne', value: 30 },
+        { name: 'Centre-Val de Loire', value: 21 },
+        { name: 'Grand Est', value: 10 },
+        { name: 'Corse', value: 5 },
+        { name: 'Occitanie', value: 5 },
+      ],
+      funnelTitle: 'Des échantillons aux données',
+      funnel: [
+        { value: '479', label: 'échantillons de muscle, prélevés de 2018 à 2023' },
+        { value: '471', label: 'oiseaux séquencés avec assez de lectures' },
+        { value: '930 912', label: 'SNP détectés sur le génome de référence du vanneau' },
+        { value: '438', label: 'oiseaux retenus après filtrage des données manquantes' },
+        { value: '40 746', label: 'SNP indépendants pour les analyses de structure' },
+      ],
+      findingsTitle: 'Ce que montrent les analyses',
+      findings: [
+        'ADMIXTURE : le nombre de groupes génétiques le plus probable est K = 1.',
+        'Indice de consanguinité (Fis) proche de 0 dans toutes les régions : une population globalement bien mélangée.',
+        'Analyse en composantes principales : aucun regroupement selon la région, le sexe, l’âge, l’année ou le mois de prélèvement ; trois groupes se distinguent très subtilement sur le premier axe.',
+        'Identité par état : la plupart des paires d’oiseaux entre 0,75 et 0,85, ce qui est attendu dans une population naturelle faiblement structurée.',
+        'Identité par descendance : seules cinq paires d’oiseaux semblent apparentées.',
+      ],
+      perspectiveTitle: 'Pour aller plus loin',
+      perspective:
+        'Ajouter des oiseaux prélevés sur leurs sites de nidification, au Royaume-Uni, en Scandinavie et en Europe de l’Est, permettrait d’identifier l’origine des vanneaux qui hivernent en France.',
+      rolesTitle: 'Qui a fait quoi',
+      roles: [
+        'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX), Carole Bodin et Pascal Lapébie (Fédération nationale des chasseurs).',
+        'Échantillons : carcasses collectées par la Fédération départementale des chasseurs des Ardennes, grâce à la participation volontaire de chasseurs.',
+        'Extraction de l’ADN, préparation des banques et séquençage : plateforme IBIS, Université Laval (Québec), sur séquenceur AVITI.',
+      ],
+      documentsTitle: 'Les documents sources',
+      documents: [
+        {
+          label:
+            'Rapport d’analyses génomiques des populations de vanneaux huppés hivernant en France',
+          meta: 'HAL, 3 février 2026 · PDF, 24 pages',
+          url: 'https://hal.science/hal-05490664',
+        },
+        {
+          label: 'Données brutes : fichiers BAM individuels et VCF',
+          meta: 'European Nucleotide Archive, PRJEB88728',
+          url: 'https://www.ebi.ac.uk/ena/browser/view/PRJEB88728',
+        },
+      ],
+    },
+  },
+  {
     id: 'biodiversite-eolien-offshore',
     slug: 'biodiversite-eolien-offshore',
     title: 'Explorer la biodiversité des parcs éoliens offshore.',
     category: 'Biodiversité marine',
     image: 'cas-eolien-offshore',
-    subtitle: 'Un cas d’étude de l’ADN environnemental présenté par LDgenX.',
+    subtitle:
+      'L’ADN environnemental au service du suivi des milieux marins autour des parcs éoliens.',
     facts: [
       { label: 'Contexte', value: 'Parcs éoliens offshore' },
       { label: 'Milieu', value: 'Biodiversité marine' },
       { label: 'Approche', value: 'ADN environnemental' },
     ],
     context:
-      'La biodiversité des parcs éoliens offshore est citée parmi les cas d’étude de la page officielle consacrée à l’ADNe.',
+      'Les projets d’éolien en mer s’accompagnent d’un état initial et d’un suivi des milieux marins, de la construction à l’exploitation.',
     question:
       'Comment documenter la biodiversité marine dans le contexte des projets d’énergies renouvelables ?',
     approach:
-      'LDgenX présente l’ADN environnemental comme une approche de connaissance et de suivi des milieux. Le périmètre d’une étude se définit selon la question et le site.',
+      'L’ADN environnemental permet d’inventorier la biodiversité à partir de prélèvements d’eau, sans capturer les espèces. Le protocole, les groupes ciblés et la fréquence des prélèvements se définissent selon le site et la question posée.',
     result: '',
     service: 'adn-environnemental-adne',
     source: 'https://www.ldgenx.fr/services/adn-environnemental-adne',
@@ -981,17 +1262,17 @@ export const studies = [
     title: 'Les communautés microbiennes des microplastiques.',
     category: 'Microbiologie',
     image: 'cas-microplastiques',
-    subtitle: 'Un sujet d’étude à l’interface de la microbiologie et de l’environnement.',
+    subtitle: 'Caractériser les micro-organismes qui colonisent les microplastiques.',
     facts: [
       { label: 'Supports', value: 'Microplastiques' },
       { label: 'Domaine', value: 'Microbiologie environnementale' },
       { label: 'Objet', value: 'Inventaire des communautés microbiennes' },
     ],
     context:
-      'LDgenX présente un inventaire des communautés microbiennes sur les microplastiques parmi ses cas d’étude.',
+      'Dans l’eau, les microplastiques sont colonisés par des communautés de micro-organismes. Les caractériser aide à mieux comprendre ces supports et leur place dans les milieux.',
     question: 'Quelles communautés microbiennes caractériser sur ces supports ?',
     approach:
-      'Les expertises présentées par LDgenX comprennent le séquençage 16S, ITS, le métabarcoding microbien et la métagénomique. Le choix de l’analyse se rattache à l’objectif du projet.',
+      'Séquençage 16S pour les bactéries, ITS pour les champignons, métabarcoding microbien ou métagénomique : l’analyse se choisit selon le niveau de caractérisation recherché.',
     result: '',
     service: 'analyse-des-communautes-microbiennes',
     source: 'https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes',
@@ -1050,7 +1331,7 @@ export const innovations = [
     id: 'dna-ecotrace',
     slug: 'dna-ecotrace',
     title: 'DNA EcoTrace',
-    image: 'dna-ecotrace',
+    image: 'schema-ecotrace',
     label: 'ADN environnemental · biodiversité',
     headline: 'Rendre la connaissance de la biodiversité plus accessible.',
     intro:
@@ -1084,7 +1365,7 @@ export const team = people;
 export const partners = [
   {
     title: 'Organisations qui nous font confiance',
-    description: 'Des organisations présentées dans les références publiques de LDgenX.',
+    description: 'Agences, bureaux d’études, entreprises et organismes de recherche.',
     names: [
       'Agence de l’eau Artois-Picardie',
       'Biotope',
@@ -1134,11 +1415,11 @@ export const resources = [
     sections: [
       {
         title: 'Une information présente dans le milieu',
-        text: 'L’ADN environnemental désigne l’ADN étudié à partir d’échantillons prélevés dans un milieu. LDgenX présente des approches sur l’eau, le sol, les sédiments et les biofilms pour identifier les espèces et accompagner les questions de suivi.',
+        text: 'L’ADN environnemental désigne l’ADN étudié à partir d’échantillons prélevés dans un milieu. Nous l’étudions dans l’eau, les sols, les sédiments et les biofilms pour identifier les espèces et répondre aux questions de suivi.',
       },
       {
         title: 'La question détermine l’approche',
-        text: 'Inventorier une communauté et rechercher une cible ne conduisent pas nécessairement au même choix d’analyse. Le métabarcoding, la métagénomique, la dPCR et les longues lectures font partie des approches présentées par LDgenX.',
+        text: 'Inventorier une communauté et rechercher une espèce précise ne conduisent pas au même choix d’analyse. Métabarcoding, métagénomique, dPCR ou longues lectures : chaque approche répond à un type de question.',
       },
       {
         title: 'Penser toute la chaîne',
@@ -1153,7 +1434,7 @@ export const resources = [
     slug: 'bioinformatique-question-biologique',
     title: 'Bioinformatique : partir de la question biologique.',
     category: 'Méthodologies',
-    image: 'bioinformatique',
+    image: 'bioinformatique-client',
     intro:
       'Pourquoi le contexte biologique guide le traitement et l’interprétation des données génomiques.',
     sections: [
@@ -1178,17 +1459,17 @@ export const resources = [
     slug: 'genomique-filiere-aquacole',
     title: 'La génomique dans les filières aquacoles.',
     category: 'Aquaculture',
-    image: 'aquaculture',
+    image: 'selection-unima',
     intro:
       'Diversité, sélection et suivi : des questions complémentaires autour des ressources aquatiques.',
     sections: [
       {
         title: 'Connaître les populations',
-        text: 'La diversité génétique, la gestion des géniteurs et la consanguinité sont des sujets présentés par LDgenX pour les filières aquacoles. Ils relient les données génétiques aux enjeux de gestion des cheptels.',
+        text: 'Diversité génétique, gestion des géniteurs, consanguinité : ces questions relient les données génétiques à la gestion des cheptels.',
       },
       {
         title: 'Construire les outils de sélection',
-        text: 'Le développement de panels SNP et la recherche de marqueurs associés à des caractères d’intérêt font partie des approches présentées. Les données génétiques sont étudiées en lien avec les objectifs des programmes.',
+        text: 'Panels SNP, recherche de marqueurs associés à des caractères d’intérêt : les données génétiques sont étudiées au regard des objectifs du programme de sélection.',
       },
       {
         title: 'Considérer l’environnement aquatique',

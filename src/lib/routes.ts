@@ -19,6 +19,9 @@ export const bases = {
     partners: '/a-propos/partenaires',
     resources: '/ressources',
     publications: '/recherche',
+    faq: '/faq',
+    glossary: '/glossaire',
+    siteMap: '/plan-du-site',
     contact: '/contact',
     legal: '/mentions-legales',
     privacy: '/politique-confidentialite',
@@ -37,6 +40,9 @@ export const bases = {
     partners: '/en/about-us/partners',
     resources: '/en/resources',
     publications: '/en/research',
+    faq: '/en/faq',
+    glossary: '/en/glossary',
+    siteMap: '/en/site-map',
     contact: '/en/contact',
     legal: '/en/legal-notice',
     privacy: '/en/privacy-policy',
@@ -57,6 +63,7 @@ export interface RouteSource {
   innovations: Entity[];
   resources: Entity[];
   people: Entity[];
+  publications: Entity[];
 }
 
 /** The locale an address belongs to. */
@@ -76,6 +83,7 @@ export function routesFor(locale: Locale, source: RouteSource) {
     innovation: (id: string) => `${base.innovations}/${slug(source.innovations, id)}`,
     resource: (id: string) => `${base.resources}/${slug(source.resources, id)}`,
     person: (id: string) => `${base.person}/${slug(source.people, id)}`,
+    publication: (id: string) => `${base.publications}/${slug(source.publications, id)}`,
     /** An internal link resolved in this language, or an external address as it is. */
     link: (link: InternalLink): string =>
       link.kind === 'external' ? link.href : routes[link.kind](link.id),

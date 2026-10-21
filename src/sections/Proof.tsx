@@ -215,14 +215,16 @@ export function Ecosystem() {
         {partners.map((group, g) => (
           <div key={group.title} className="eco-row" data-group={g}>
             <p>{group.title}</p>
-            <div className="eco-track" style={{ '--count': group.names.length } as CSSProperties}>
-              {[0, 1].map((copyIndex) => (
-                <span key={copyIndex}>
-                  {group.names.map((name) => (
-                    <span key={name}>{name}</span>
-                  ))}
-                </span>
-              ))}
+            <div className="eco-lane">
+              <div className="eco-track" style={{ '--count': group.names.length } as CSSProperties}>
+                {[0, 1].map((copyIndex) => (
+                  <span key={copyIndex}>
+                    {group.names.map((name) => (
+                      <span key={name}>{name}</span>
+                    ))}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}

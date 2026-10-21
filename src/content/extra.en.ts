@@ -1,3 +1,4 @@
+import { assayTargetsEn } from './assay-targets';
 // English version of extra.fr.ts. Works, biographies, publications, equipment, about and
 // contact texts follow ldgenx.com (collected 13 October 2026), with the same spelling fixes as
 // the French; the Artois-Picardie results are translated from the Water Agency's French
@@ -63,7 +64,7 @@ export const works: Work[] = [
       {
         title: 'Effects of introducing domestic alleles',
         paragraphs: [
-          'In brook trout, we observed variations of domestic ancestry in wild populations. For hybrid individuals, mainly beneficial effects of the introgression of domestic alleles into wild populations were observed. Domestic alleles bring (i) diversity to regions of the “wild” genome with low genetic diversity and (ii) potentially deleterious recessive alleles.',
+          'In brook trout, we observed variations of domestic ancestry in wild populations. For hybrid individuals, mainly beneficial effects of the introgression of domestic alleles into wild populations were observed. Domestic alleles bring (i) diversity to regions of the “wild” genome with low genetic diversity and (ii) the masking of potentially deleterious recessive alleles.',
           'Beyond these potential beneficial effects, however, purging of domestic alleles was also observed. These mechanisms reflect negative effects of introducing domestic alleles into some regions of the genome ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256) and [2021](https://pubmed.ncbi.nlm.nih.gov/33916757/)).',
           'For example, on linkage group 26 (Figure 2), an excess of domestic ancestry associated with potentially deleterious recessive alleles can be observed.',
         ],
@@ -155,7 +156,10 @@ export const works: Work[] = [
     facts: [
       { label: 'Species', value: 'European sea bass, pig' },
       { label: 'Approaches', value: 'Whole-genome sequencing, GWAS, genomic prediction' },
-      { label: 'Publications', value: 'Delpuech et al. 2022, Aliakbari et al., Griot et al. 2021' },
+      {
+        label: 'Publications',
+        value: 'Delpuech et al. 2023, Aliakbari et al. 2020, Griot et al. 2021',
+      },
     ],
     service: 'selection',
     source: 'https://www.ldgenx.com/services/genomic-selection-page',
@@ -165,7 +169,7 @@ export const works: Work[] = [
         paragraphs: [
           'Whole-genome sequencing of nearly 400 sea bass allowed fine mapping of the viral nervous necrosis (VNN) resistance phenotype in European sea bass (*Dicentrarchus labrax*).',
           'Combining high-throughput sequencing data with medium-density genotyping data (~57K SNP markers) and phenotypic data revealed a strong association between a quantitative trait locus (QTL) on linkage group 12 (LG12) and sea bass survival when facing VNN infection (Figure 1, [Delpuech et al. 2022](https://doi.org/10.1101/2022.05.31.494209)).',
-          'From the sea bass genome annotation, openly available in public databases, we identified two genes of interest, ZDHHC14 and IFI6. Showing the role of an interferon-induced protein in the mechanisms of survival to VNN is a considerable advance in the field.',
+          'From the sea bass genome annotation, openly available in public databases, we identified two genes of interest, ZDHHC14 and IFI6. IFI6, which encodes an interferon-induced protein, stands out as a strong candidate gene for VNN resistance.',
           'Hatcheries can now use this knowledge to improve the genomic selection of their lines and develop more resistant sea bass.',
         ],
         figure: {
@@ -181,13 +185,14 @@ export const works: Work[] = [
         title: 'Studying genetic values to select traits of interest',
         paragraphs: [
           'Genomic selection has been used to improve many traits of interest with fairly high heritability. This type of approach has been applied successfully to many farmed species, and recently to aquaculture species for pathogen resistance. It has delivered an average genetic gain of 12.5% per generation for resistance to various diseases. Genomic selection is therefore a promising approach to fight diseases affecting wild as well as domestic populations ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
-          'In a reference article on genomic prediction, [Aliakbari et al.](https://doi.org/10.1186/s12711-020-00576-0) showed similar genomic prediction using either (i) a training set of animals from genetically related lines or (ii) a training set from the target population. Where related data can be combined with data from the target population, accuracy can only increase for traits (Figure 3).',
+          'In a reference article on genomic prediction, [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0) showed similar genomic prediction using either (i) a training set of animals from genetically related lines or (ii) a training set from the target population. Combining related data with data from the target population can improve accuracy for some traits (Figure 3).',
           'These quantitative genetics results improve the design of reference populations, especially for starting genomic selection in populations with few historical samples.',
         ],
         figure: {
           image: 'fig-gebv',
           alt: 'Correlations between estimated genomic values under the training scenarios',
-          caption: 'Figure 3 from [Aliakbari et al.](https://doi.org/10.1186/s12711-020-00576-0)',
+          caption:
+            'Figure 3 from [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0), Genetics Selection Evolution.',
           legend:
             'Correlations between GEBVp and GEBVw, with their error bars, for the HRFI (a) and LRFI (b) lines. * = significant difference from scenario 1 (control) by Williams’ t-test at the 0.05 level. RFI = residual feed intake, ADG = average daily gain, FCR = feed conversion ratio, DFI = daily feed intake, BFT = backfat thickness.',
         },
@@ -215,6 +220,7 @@ export const people: Person[] = [
       'Within LDgenX, I bring my expertise in genomics to answer conservation questions for better management of natural and domestic populations.',
     ],
     source: 'https://www.ldgenx.com/team/dr-maeva-leitwein',
+    orcid: '0000-0001-5172-0970',
   },
   {
     id: 'emilie-delpuech',
@@ -234,6 +240,7 @@ export const people: Person[] = [
       'I bring all my knowledge of software development to LDgenX, to carry out the analyses most specific to each subject of study.',
     ],
     source: 'https://www.ldgenx.com/team/dr-emilie-delpuech',
+    orcid: '0000-0003-0848-4903',
   },
   {
     id: 'maxime-lambert',
@@ -256,8 +263,8 @@ export const people: Person[] = [
   },
   {
     id: 'damien-crestel',
-    slug: '',
-    name: 'Damien Crestel',
+    slug: 'dr-damien-crestel',
+    name: 'Dr Damien Crestel',
     role: 'Bioinformatician · Population and quantitative genetics',
     title: 'Bioinformatician',
     initials: 'DC',
@@ -270,6 +277,7 @@ export const people: Person[] = [
       'At LDgenX, my knowledge of evolutionary biology and of bioinformatic and statistical analysis helps answer a wide range of study questions, from the use of eDNA to the evolution of natural populations.',
     ],
     source: 'Profile provided by LDgenX (October 2026)',
+    orcid: '0009-0006-6022-9853',
   },
 ];
 
@@ -288,11 +296,6 @@ export const equipment: EquipmentItem[] = [
       '8-hour battery life (model 1) or 10-hour battery life (model 2), Opti Battery lithium-ion battery included',
       'Pore size: 0.1 µm, 0.22 µm, 0.45 µm, 1.2 µm and 5 µm',
     ],
-    prices: [
-      { label: 'Triple pump, model 1', amount: 1900 },
-      { label: 'Triple pump, model 2', amount: 2100 },
-      { label: 'Capsules and preservation buffer', amount: 40 },
-    ],
     images: [
       { name: 'materiel-pompe', alt: 'Closed eDNA triple pump with its three flow meters' },
       { name: 'materiel-pompe-interieur', alt: 'eDNA triple pump, control panel' },
@@ -309,10 +312,6 @@ export const equipment: EquipmentItem[] = [
       'Makita 18 V battery (not included)',
       '20 µm or 5 µm nylon filters, 47 mm diameter',
     ],
-    prices: [
-      { label: 'StickPump', amount: 1270 },
-      { label: 'Filters', amount: 18 },
-    ],
     images: [{ name: 'materiel-stickpump', alt: 'StickPump for eDNA filtration' }],
   },
   {
@@ -323,10 +322,6 @@ export const equipment: EquipmentItem[] = [
       'Vacuum-assisted filtration; filtered volume depends on towing speed (approximately 50 L per filter in 10 minutes at 6 knots)',
       '20 µm or 5 µm nylon filters, 47 mm diameter',
       'Designed to be towed behind a boat',
-    ],
-    prices: [
-      { label: 'Yellow Submarine', amount: 1400 },
-      { label: 'Filters', amount: 18 },
     ],
     images: [
       { name: 'materiel-torpille', alt: 'Yellow Submarine towed eDNA sampler' },
@@ -394,9 +389,9 @@ export const companyStory = {
   deeptech:
     'Innovation is at the core of LDgenX’s development. We conduct research and development to design the next generation of genomic tools for biodiversity monitoring and the sustainable management of natural resources.',
   status:
-    'LDgenX is a French DeepTech company labelled Jeune Entreprise Innovante (JEI), specialising in applied genomics.',
+    'LDgenX is a French Deep Tech company labelled Jeune Entreprise Innovante (JEI), specialising in applied genomics.',
   supports: [
-    'DeepTech Label',
+    'Deep Tech Label',
     'French Tech Emergence Grant',
     'Créalia',
     'Bpifrance',
@@ -416,14 +411,14 @@ export const news = {
 };
 
 export const booking = {
-  title: 'Schedule a meeting',
+  title: 'Book a call',
   text: 'Do you have a project, an idea or a challenge involving genetics, environmental DNA (eDNA), population genomics or genomic selection? Let’s schedule a free, no-obligation 15-minute consultation to discuss it.',
   benefits: [
     'Briefly present your project, needs or ideas',
     'Explore how LDgenX’s innovative genomic solutions can support your objectives',
     'Ask your questions directly to one of LDgenX’s founders and genomics experts',
   ],
-  note: 'A simple conversation can be the first step toward a successful collaboration.',
+  note: 'This first conversation lets us see together how we can help.',
   action: '15-minute free consultation',
   alternate: 'https://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1',
 };
@@ -823,7 +818,7 @@ export const customAssay: CustomAssay = {
   eyebrow: 'Specific primers and probes',
   title: 'Your target species,\na custom DNA assay',
   intro:
-    'When no suitable assay is available, LDgenX can design primers and a probe specific to your target species, then develop the approach that detects and quantifies its DNA in your samples.',
+    'LDgenX holds primers and probes for several species and can design specific tools for new targets, according to your project’s needs.',
   steps: [
     {
       title: 'Define the target',
@@ -854,23 +849,35 @@ export const customAssay: CustomAssay = {
   quantNote:
     'dPCR estimates a quantity of target DNA, as a number of copies; it does not directly count the individuals present.',
   illustration: 'Illustration of the principle',
-  targetsLabel: 'Examples presented by LDgenX',
-  targets: [
-    {
-      id: 'oursin-violet',
-      name: 'Purple sea urchin',
-      latin: 'Paracentrotus lividus',
-      image: 'cas-oursin',
-      source: 'https://www.ldgenx.fr/services/sequencage-dpcr',
+  contextImage: {
+    name: 'detection-vison',
+    alt: 'A mink photographed outdoors',
+    caption: 'Biodiversity at the heart of targeted DNA analysis.',
+  },
+  targetsLabel: 'Our target species',
+  targets: assayTargetsEn,
+  catalog: {
+    search: 'Search for a species',
+    searchPlaceholder: 'Common or scientific name',
+    filterLabel: 'Filter species',
+    all: 'All',
+    groups: {
+      mammals: 'Mammals',
+      fish: 'Fish',
+      reptiles: 'Reptiles',
+      invertebrates: 'Invertebrates',
     },
-    {
-      id: 'especes-mediterraneennes',
-      name: 'Iconic Mediterranean species',
-      group: true,
-      image: 'cas-requin',
-      source: 'https://www.ldgenx.com/services/sequencing-dpcr',
-    },
-  ],
+    reset: 'Reset',
+    resultLabel: 'species shown',
+    empty: 'No species match your search. Try another name or reset the filters.',
+    select: 'Choose a species',
+    inventory: 'Primers and probes held in-house',
+    detail:
+      'LDgenX holds primers and probes for this species. Tell us about your project so we can define a suitable approach together.',
+    scope:
+      'Sample matrices, conditions of use and assay performance are evaluated for each project.',
+    contact: 'Discuss this target',
+  },
   otherTitle: 'Is your species not on the list?',
   otherText:
     'Tell us about the species, your question and your samples: we will look with you at developing a suitable assay.',
@@ -880,8 +887,17 @@ export const customAssay: CustomAssay = {
   home: {
     eyebrow: 'Targeted DNA assays',
     title: 'Your target species, a custom DNA assay',
-    text: 'Specific primers and probe, then detection and quantification of the species’ DNA by dPCR.',
-    link: 'Discover the approach',
+    text: 'Primers and probes already held in-house, and custom tools for new targets.',
+    link: 'Explore target species',
+    count: 'species for which we hold primers and probes',
+  },
+  wall: {
+    eyebrow: 'Primers and probes in house',
+    title: '21 species,\nready to be searched for.',
+    intro:
+      'Mammals, fish, a reptile and invertebrates: LDgenX holds primers and probes for each of these species. Choose one to see its details.',
+    otherTitle: 'Your species is not listed?',
+    otherText: 'We design assays for new targets.',
   },
 };
 

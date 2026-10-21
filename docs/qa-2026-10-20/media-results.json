@@ -1,0 +1,527 @@
+{
+  "logs": [
+    {
+      "name": "lab",
+      "path": "/a-propos",
+      "width": 1440,
+      "images": [
+        {
+          "image": "equipe-maxime",
+          "alt": "Maxime Lambert effectuant une manipulation de pipetage",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "microbes",
+      "path": "/services/analyse-des-communautes-microbiennes",
+      "width": 1440,
+      "images": [
+        {
+          "image": "equipe-maxime",
+          "alt": "Maxime Lambert effectuant une manipulation de pipetage",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "ecotrace",
+      "path": "/innovation/dna-ecotrace",
+      "width": 1440,
+      "images": [
+        {
+          "image": "schema-ecotrace",
+          "alt": "Schéma de principe DNA EcoTrace : de l’ADN environnemental aux informations sur la biodiversité",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-ecotrace-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "rd",
+      "path": "/services/recherche-developpement",
+      "width": 1440,
+      "images": [
+        {
+          "image": "schema-ecotrace",
+          "alt": "Schéma de principe DNA EcoTrace : de l’ADN environnemental aux informations sur la biodiversité",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-ecotrace-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "agriculture",
+      "path": "/applications/agriculture-agroecologie",
+      "width": 1440,
+      "images": [
+        {
+          "image": "schema-agroecologie",
+          "alt": "Illustration de principe des liens entre diversité biologique et agroécosystèmes, sans outil représenté",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-agroecologie-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "research",
+      "path": "/applications/recherche-publique-privee",
+      "width": 1440,
+      "images": [
+        {
+          "image": "schema-recherche",
+          "alt": "Schéma de principe d’un réseau de recherche et de données, sans installation photographiée",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-recherche-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "aquaculture",
+      "path": "/applications/aquaculture-peche",
+      "width": 1440,
+      "images": [
+        {
+          "image": "selection-unima",
+          "alt": "Crevette tenue dans deux mains devant un bassin",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/selection-unima-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "equipment",
+      "path": "/services/materiel",
+      "width": 1440,
+      "images": [
+        {
+          "image": "materiel-pompe",
+          "alt": "Pompe triple ADNe fermée, avec ses trois débitmètres",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-pompe-1000.webp"
+        },
+        {
+          "image": "materiel-pompe-interieur",
+          "alt": "Pompe triple ADNe, panneau de commande",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-pompe-interieur-640.webp"
+        },
+        {
+          "image": "materiel-capsules",
+          "alt": "Capsules de filtration Waterra de différentes tailles de pores",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-capsules-640.webp"
+        },
+        {
+          "image": "materiel-stickpump",
+          "alt": "Stick pump de filtration ADNe",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-stickpump-405.webp"
+        },
+        {
+          "image": "materiel-torpille",
+          "alt": "Torpille d’échantillonnage ADNe",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-torpille-1000.webp"
+        },
+        {
+          "image": "materiel-torpille-terrain",
+          "alt": "Torpille tractée derrière un bateau lors d’un prélèvement",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-torpille-terrain-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "workflow",
+      "path": "/services",
+      "width": 1440,
+      "images": [
+        {
+          "image": "schema-protocole",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-protocole-860.webp"
+        },
+        {
+          "image": "terrain-prelevement",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/terrain-prelevement-829.webp"
+        },
+        {
+          "image": "equipe-maxime",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        },
+        {
+          "image": "schema-sequencage",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-sequencage-860.webp"
+        },
+        {
+          "image": "bioinformatique-client",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/bioinformatique-client-860.webp"
+        },
+        {
+          "image": "interpretation",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/interpretation-640.webp"
+        },
+        {
+          "image": "decision-amphitheatre",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/decision-amphitheatre-860.webp"
+        },
+        {
+          "image": "schema-protocole",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-protocole-860.webp"
+        },
+        {
+          "image": "terrain-prelevement",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/terrain-prelevement-829.webp"
+        },
+        {
+          "image": "equipe-maxime",
+          "alt": "",
+          "loaded": false,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        },
+        {
+          "image": "schema-sequencage",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-sequencage-860.webp"
+        },
+        {
+          "image": "bioinformatique-client",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/bioinformatique-client-860.webp"
+        },
+        {
+          "image": "interpretation",
+          "alt": "",
+          "loaded": false,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/interpretation-640.webp"
+        },
+        {
+          "image": "decision-amphitheatre",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/decision-amphitheatre-860.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "lab",
+      "path": "/a-propos",
+      "width": 390,
+      "images": [
+        {
+          "image": "equipe-maxime",
+          "alt": "Maxime Lambert effectuant une manipulation de pipetage",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "microbes",
+      "path": "/services/analyse-des-communautes-microbiennes",
+      "width": 390,
+      "images": [
+        {
+          "image": "equipe-maxime",
+          "alt": "Maxime Lambert effectuant une manipulation de pipetage",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "ecotrace",
+      "path": "/innovation/dna-ecotrace",
+      "width": 390,
+      "images": [
+        {
+          "image": "schema-ecotrace",
+          "alt": "Schéma de principe DNA EcoTrace : de l’ADN environnemental aux informations sur la biodiversité",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-ecotrace-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "rd",
+      "path": "/services/recherche-developpement",
+      "width": 390,
+      "images": [
+        {
+          "image": "schema-ecotrace",
+          "alt": "Schéma de principe DNA EcoTrace : de l’ADN environnemental aux informations sur la biodiversité",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-ecotrace-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "agriculture",
+      "path": "/applications/agriculture-agroecologie",
+      "width": 390,
+      "images": [
+        {
+          "image": "schema-agroecologie",
+          "alt": "Illustration de principe des liens entre diversité biologique et agroécosystèmes, sans outil représenté",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-agroecologie-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "research",
+      "path": "/applications/recherche-publique-privee",
+      "width": 390,
+      "images": [
+        {
+          "image": "schema-recherche",
+          "alt": "Schéma de principe d’un réseau de recherche et de données, sans installation photographiée",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-recherche-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "aquaculture",
+      "path": "/applications/aquaculture-peche",
+      "width": 390,
+      "images": [
+        {
+          "image": "selection-unima",
+          "alt": "Crevette tenue dans deux mains devant un bassin",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/selection-unima-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "equipment",
+      "path": "/services/materiel",
+      "width": 390,
+      "images": [
+        {
+          "image": "materiel-pompe",
+          "alt": "Pompe triple ADNe fermée, avec ses trois débitmètres",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-pompe-480.webp"
+        },
+        {
+          "image": "materiel-pompe-interieur",
+          "alt": "Pompe triple ADNe, panneau de commande",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-pompe-interieur-640.webp"
+        },
+        {
+          "image": "materiel-capsules",
+          "alt": "Capsules de filtration Waterra de différentes tailles de pores",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-capsules-640.webp"
+        },
+        {
+          "image": "materiel-stickpump",
+          "alt": "Stick pump de filtration ADNe",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-stickpump-405.webp"
+        },
+        {
+          "image": "materiel-torpille",
+          "alt": "Torpille d’échantillonnage ADNe",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-torpille-1000.webp"
+        },
+        {
+          "image": "materiel-torpille-terrain",
+          "alt": "Torpille tractée derrière un bateau lors d’un prélèvement",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/materiel-torpille-terrain-480.webp"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "name": "workflow",
+      "path": "/services",
+      "width": 390,
+      "images": [
+        {
+          "image": "schema-protocole",
+          "alt": "",
+          "loaded": false,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-protocole-480.webp"
+        },
+        {
+          "image": "terrain-prelevement",
+          "alt": "",
+          "loaded": false,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/terrain-prelevement-480.webp"
+        },
+        {
+          "image": "equipe-maxime",
+          "alt": "",
+          "loaded": false,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        },
+        {
+          "image": "schema-sequencage",
+          "alt": "",
+          "loaded": false,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-sequencage-480.webp"
+        },
+        {
+          "image": "bioinformatique-client",
+          "alt": "",
+          "loaded": false,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/bioinformatique-client-480.webp"
+        },
+        {
+          "image": "interpretation",
+          "alt": "",
+          "loaded": false,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/interpretation-640.webp"
+        },
+        {
+          "image": "decision-amphitheatre",
+          "alt": "",
+          "loaded": false,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/decision-amphitheatre-480.webp"
+        },
+        {
+          "image": "schema-protocole",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-protocole-480.webp"
+        },
+        {
+          "image": "terrain-prelevement",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/terrain-prelevement-480.webp"
+        },
+        {
+          "image": "equipe-maxime",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/equipe-maxime-473.webp"
+        },
+        {
+          "image": "schema-sequencage",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/schema-sequencage-480.webp"
+        },
+        {
+          "image": "bioinformatique-client",
+          "alt": "",
+          "loaded": true,
+          "fit": "contain",
+          "src": "http://127.0.0.1:5173/images/bioinformatique-client-480.webp"
+        },
+        {
+          "image": "interpretation",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/interpretation-640.webp"
+        },
+        {
+          "image": "decision-amphitheatre",
+          "alt": "",
+          "loaded": true,
+          "fit": "cover",
+          "src": "http://127.0.0.1:5173/images/decision-amphitheatre-480.webp"
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

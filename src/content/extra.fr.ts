@@ -1,3 +1,4 @@
+import { assayTargetsFr } from './assay-targets';
 // Content migrated from the public LDgenX sites (collected 13 October 2026, see
 // ldgenx-migration-2026-10-13/) and from the Artois-Picardie documents published by the Agence
 // de l’eau. Texts follow the sources; only spelling slips are corrected (listed in
@@ -27,7 +28,7 @@ export const works: Work[] = [
     image: 'cas-truites',
     facts: [
       { label: 'Espèces', value: 'Truite commune, omble de fontaine' },
-      { label: 'Marqueurs', value: '196K et 11 803 marqueurs SNP' },
+      { label: 'Marqueurs', value: '196K et 11 803 marqueurs SNP' },
       { label: 'Publications', value: 'Leitwein et al. 2016, 2019 et 2021' },
     ],
     service: 'genomique-des-populations',
@@ -54,7 +55,7 @@ export const works: Work[] = [
         title: 'Paysage génomique d’ancestralité domestique chez l’omble de fontaine',
         paragraphs: [
           'L’omble de fontaine (*Salvelinus fontinalis*) est une espèce à fort intérêt socio-économique au Canada. Dans la province de Québec, une souche domestique a été créée il y a une centaine d’années afin de repeupler les rivières pour la pêche sportive. Chaque année plus de 650 tonnes d’ombles de fontaine sont ainsi déversées dans les rivières du Canada, favorisant ainsi les évènements d’hybridation entre individus domestiques et sauvages ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
-          'À l’aide de 11 803 marqueurs SNP, l’ancestralité des individus a pu être inférée et la proportion d’allèles domestiques dans les rivières sauvages estimée. Grâce à l’information de liaison et la proportion d’ancestralité domestique, il a été possible d’identifier les classes hybrides des individus. Les individus ont été catégorisés soit comme (i) « hybrides récents », c’est-à-dire des descendants de premières générations de croisements entre individus sauvages et domestiques (< 10 générations) ; ou (ii) « hybrides anciens », c’est-à-dire des descendants issus d’un mélange lointain (> 10 générations). Une fois les individus assignés à leur classe hybride, le taux d’introgression d’allèles domestiques le long du génome a pu être estimé. Cette approche a révélé une forte variabilité, avec des régions génomiques à forte ou faible ancestralité domestique, qui sont susceptibles d’être sous sélection naturelle (Figure 1 ; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
+          'À l’aide de 11 803 marqueurs SNP, l’ancestralité des individus a pu être inférée et la proportion d’allèles domestiques dans les rivières sauvages estimée. Grâce à l’information de liaison et la proportion d’ancestralité domestique, il a été possible d’identifier les classes hybrides des individus. Les individus ont été catégorisés soit comme (i) « hybrides récents », c’est-à-dire des descendants de premières générations de croisements entre individus sauvages et domestiques (< 10 générations) ; ou (ii) « hybrides anciens », c’est-à-dire des descendants issus d’un mélange lointain (> 10 générations). Une fois les individus assignés à leur classe hybride, le taux d’introgression d’allèles domestiques le long du génome a pu être estimé. Cette approche a révélé une forte variabilité, avec des régions génomiques à forte ou faible ancestralité domestique, qui sont susceptibles d’être sous sélection naturelle (Figure 1 ; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
         ],
         figure: {
           image: 'fig-omble-ancestralite',
@@ -68,7 +69,7 @@ export const works: Work[] = [
       {
         title: 'Effets de l’introduction d’allèles domestiques',
         paragraphs: [
-          'Dans le cas de l’omble de fontaine, nous avons pu observer des variations d’ancestralité domestique dans les populations sauvages. Pour les individus hybrides, des effets bénéfiques de l’introgression d’allèles domestiques dans les populations sauvages ont principalement pu être observés. Les allèles domestiques apportent (i) de la diversité dans les régions du génome « sauvage » à faible diversité génétique et (ii) des allèles récessifs potentiellement délétères.',
+          'Dans le cas de l’omble de fontaine, nous avons pu observer des variations d’ancestralité domestique dans les populations sauvages. Pour les individus hybrides, des effets bénéfiques de l’introgression d’allèles domestiques dans les populations sauvages ont principalement pu être observés. Les allèles domestiques apportent (i) de la diversité dans les régions du génome « sauvage » à faible diversité génétique et (ii) le masquage d’allèles récessifs potentiellement délétères.',
           'Cependant, au-delà de ces potentiels effets bénéfiques, des effets de purge des allèles domestiques ont également pu être observés. Ces mécanismes reflètent des effets négatifs de l’introduction d’allèles domestiques dans certaines régions du génome ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256) et [2021](https://pubmed.ncbi.nlm.nih.gov/33916757/)).',
           'Par exemple, sur le groupe de liaison 26 (Figure 2), nous pouvons observer un excès d’ancestralité domestique associé à des allèles récessifs potentiellement délétères.',
         ],
@@ -93,7 +94,7 @@ export const works: Work[] = [
     image: 'fig-puce-truite',
     facts: [
       { label: 'Espèce', value: 'Truite commune (Salmo trutta)' },
-      { label: 'Marqueurs', value: '86 175 SNP (séquençage RAD), puce de 12 204 SNP' },
+      { label: 'Marqueurs', value: '86 175 SNP (séquençage RAD), puce de 12 204 SNP' },
       { label: 'Publications', value: 'Leitwein et al. 2018, Saint-Pé et al. 2019' },
     ],
     service: 'genomique-des-populations',
@@ -102,8 +103,8 @@ export const works: Work[] = [
       {
         title: 'Exemple d’analyses génomiques de traçabilité : les truites de l’Orb',
         paragraphs: [
-          'Le bassin méditerranéen de l’Orb (Hérault), cours d’eau du sud de la France, d’une superficie de 1 580 km², est soumis depuis la fin des années 1960 à des repeuplements de truites domestiques (*Salmo trutta*) d’origine atlantique et méditerranéenne. L’objectif est ainsi d’augmenter les populations locales méditerranéennes pour la pêche récréative.',
-          'Dans l’étude de [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), l’utilisation de 86 175 marqueurs SNP (polymorphismes d’un seul nucléotide) issus de séquençage RAD a permis d’identifier la proportion d’allèles domestiques (Atlantique et Méditerranéen) dans les populations sauvages du bassin de l’Orb.',
+          'Le bassin méditerranéen de l’Orb (Hérault), cours d’eau du sud de la France, d’une superficie de 1 580 km², est soumis depuis la fin des années 1960 à des repeuplements de truites domestiques (*Salmo trutta*) d’origine atlantique et méditerranéenne. L’objectif est ainsi d’augmenter les populations locales méditerranéennes pour la pêche récréative.',
+          'Dans l’étude de [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), l’utilisation de 86 175 marqueurs SNP (polymorphismes d’un seul nucléotide) issus de séquençage RAD a permis d’identifier la proportion d’allèles domestiques (Atlantique et Méditerranéen) dans les populations sauvages du bassin de l’Orb.',
           'Ainsi nous avons pu identifier des individus d’origine domestique Atlantique (c’est-à-dire échappés de pisciculture) dans la rivière de Gravezon, des individus d’origine domestique Méditerranéenne dans la rivière de la Mare, ainsi que des individus hybrides ayant des allèles domestiques Atlantique et Méditerranéen dans les trois rivières sauvages (Figure 1).',
         ],
         figure: {
@@ -134,17 +135,17 @@ export const works: Work[] = [
       {
         title: 'Développement d’outils génomiques : la puce truite haute densité',
         paragraphs: [
-          'À l’issue de cette étude, nous avons développé une puce haute densité de 12 204 marqueurs SNP répartis de façon homogène le long des 40 groupes de liaison (LG pour *Linkage Group* en anglais) de la truite (*Salmo trutta*) (Figure 3 ; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).',
+          'À l’issue de cette étude, nous avons développé une puce haute densité de 12 204 marqueurs SNP répartis de façon homogène le long des 40 groupes de liaison (LG pour *Linkage Group* en anglais) de la truite (*Salmo trutta*) (Figure 3 ; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).',
           'Cette puce permet une gestion à moindre coût, régulière et comparable, entre les différentes études de génétique des populations.',
           'La puce est à la fois efficace pour distinguer les truites d’origines Atlantique et Méditerranéenne ainsi que les niveaux d’hybridation.',
         ],
         figure: {
           image: 'fig-puce-truite',
-          alt: 'Positions des 12 204 marqueurs SNP le long des 40 groupes de liaison de la truite commune',
+          alt: 'Positions des 12 204 marqueurs SNP le long des 40 groupes de liaison de la truite commune',
           caption:
             'Figure 3 extraite de [Saint-Pé et al. (2019)](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9), BMC Genomics.',
           legend:
-            'Positions (en centiMorgan) des 12 204 marqueurs SNP le long des 40 groupes de liaison de la truite commune (*Salmo trutta*).',
+            'Positions (en centiMorgan) des 12 204 marqueurs SNP le long des 40 groupes de liaison de la truite commune (*Salmo trutta*).',
         },
       },
     ],
@@ -160,7 +161,10 @@ export const works: Work[] = [
     facts: [
       { label: 'Espèces', value: 'Bar européen, porc' },
       { label: 'Approches', value: 'Séquençage de génome entier, GWAS, prédiction génomique' },
-      { label: 'Publications', value: 'Delpuech et al. 2022, Aliakbari et al., Griot et al. 2021' },
+      {
+        label: 'Publications',
+        value: 'Delpuech et al. 2023, Aliakbari et al. 2020, Griot et al. 2021',
+      },
     ],
     service: 'selection',
     source: 'https://www.ldgenx.fr/services/selection-genomique',
@@ -170,7 +174,7 @@ export const works: Work[] = [
         paragraphs: [
           'Le séquençage de génome entier de près de 400 bars a permis la cartographie fine du phénotype de résistance à la nodavirose chez le bar européen (*Dicentrarchus labrax*).',
           'La combinaison de données de séquençage haut débit avec des données de génotypage de moyenne densité (~57K marqueurs SNP) et des données phénotypiques a mis en évidence une association forte entre un locus de caractère quantitatif (QTL) du groupe de liaison 12 (LG12) et la survie des bars face à une infection à la nodavirose (Figure 1, [Delpuech et al. 2022](https://doi.org/10.1101/2022.05.31.494209)).',
-          'À partir de l’annotation du génome du bar, disponible en libre accès sur les bases de données publiques, nous avons pu identifier deux gènes d’intérêt, dont ZDHHC14 et IFI6. La mise en évidence d’une protéine induite par un interféron dans les mécanismes de survie à la nodavirose est une avancée considérable dans le domaine.',
+          'À partir de l’annotation du génome du bar, disponible en libre accès sur les bases de données publiques, nous avons pu identifier deux gènes d’intérêt, ZDHHC14 et IFI6. IFI6, qui code une protéine induite par l’interféron, apparaît comme un gène candidat majeur de la résistance à la nodavirose.',
           'Les écloseries peuvent dès lors utiliser ces connaissances pour l’amélioration de la sélection génomique de leurs lignées dans le but de développer des bars plus résistants.',
         ],
         figure: {
@@ -186,14 +190,14 @@ export const works: Work[] = [
         title: 'Études des valeurs génétiques pour la sélection de caractères d’intérêt',
         paragraphs: [
           'La sélection génomique a été utilisée pour améliorer de très nombreux caractères d’intérêt possédant une héritabilité assez élevée. Par exemple, ce type d’approche a été appliqué avec succès à de nombreuses espèces d’élevage, et récemment sur des espèces aquacoles pour la résistance à des pathogènes. Elle a permis un gain génétique de 12,5 % en moyenne par génération pour la résistance à différentes maladies. La sélection génomique est donc une approche prometteuse pour lutter contre des maladies affectant les populations sauvages comme les populations domestiques ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
-          'D’autre part, dans un article de référence pour la prédiction génomique, [Aliakbari et al.](https://doi.org/10.1186/s12711-020-00576-0) ont mis en évidence une prédiction génomique similaire en utilisant soit (i) un jeu de données dit d’entraînement comprenant des animaux de lignées génétiquement apparentées, soit (ii) un ensemble d’entraînement provenant de la population ciblée. De plus, dans les cas où il est possible de combiner des données apparentées et des données de la population cible, la précision ne pourra qu’augmenter pour des caractères (Figure 3).',
+          'D’autre part, dans un article de référence pour la prédiction génomique, [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0) ont mis en évidence une prédiction génomique similaire en utilisant soit (i) un jeu de données dit d’entraînement comprenant des animaux de lignées génétiquement apparentées, soit (ii) un ensemble d’entraînement provenant de la population ciblée. Combiner des données apparentées et des données de la population cible peut améliorer la précision pour certains caractères (Figure 3).',
           'Ces résultats de génétique quantitative donnent une meilleure connaissance pour la conception des populations de référence, en particulier pour initier la sélection génomique dans des populations où le nombre d’échantillons historiques est faible.',
         ],
         figure: {
           image: 'fig-gebv',
           alt: 'Corrélations entre valeurs génomiques estimées selon les scénarios d’entraînement',
           caption:
-            'Figure 3 extraite de [Aliakbari et al.](https://doi.org/10.1186/s12711-020-00576-0)',
+            'Figure 3 extraite de [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0), Genetics Selection Evolution.',
           legend:
             'Corrélations entre GEBVp et GEBVw, et leurs barres d’erreur pour les lignées HRFI (a) et LRFI (b). * = différence significative avec le scénario 1 (contrôle) selon le test t de Williams au seuil de 0,05. RFI = consommation alimentaire résiduelle, ADG = gain moyen quotidien, FCR = indice de consommation, DFI = consommation alimentaire quotidienne, BFT = épaisseur du gras dorsal.',
         },
@@ -225,6 +229,7 @@ export const people: Person[] = [
       'Au sein de LDgenX, j’apporte mon expertise en génomique afin de répondre à des questions de conservation pour une meilleure gestion des populations naturelles et domestiques.',
     ],
     source: 'https://www.ldgenx.fr/equipe/dr-maeva-leitwein',
+    orcid: '0000-0001-5172-0970',
   },
   {
     id: 'emilie-delpuech',
@@ -244,6 +249,7 @@ export const people: Person[] = [
       'Je mets donc au service de LDgenX toutes mes connaissances en développement informatique afin de réaliser les analyses les plus spécifiques au sujet d’étude.',
     ],
     source: 'https://www.ldgenx.fr/equipe/dr-emilie-delpuech',
+    orcid: '0000-0003-0848-4903',
   },
   {
     id: 'maxime-lambert',
@@ -266,8 +272,8 @@ export const people: Person[] = [
   },
   {
     id: 'damien-crestel',
-    slug: '',
-    name: 'Damien Crestel',
+    slug: 'dr-damien-crestel',
+    name: 'Dr Damien Crestel',
     role: 'Bioinformaticien · Génétique des populations et quantitative',
     title: 'Bioinformaticien',
     initials: 'DC',
@@ -280,12 +286,13 @@ export const people: Person[] = [
       'Au sein de LDgenX, mes connaissances en biologie évolutive et en analyse bio-informatique et statistique permettent de répondre aux différents sujets d’étude, de l’utilisation de l’ADNe à l’évolution des populations naturelles.',
     ],
     source: 'Présentation transmise par LDgenX (octobre 2026)',
+    orcid: '0009-0006-6022-9853',
   },
 ];
 
 // ---------------------------------------------------------------------------------------------
-// Sampling equipment, as published on ldgenx.fr/services/materiel. Prices are transcribed from
-// the published price cards (euros, excluding VAT); their current validity is LDgenX’s to confirm.
+// Sampling equipment, as published on ldgenx.fr/services/materiel. Prices are no longer
+// published (client's request, October 2026): a quote states them.
 // ---------------------------------------------------------------------------------------------
 export const equipment: EquipmentItem[] = [
   {
@@ -299,11 +306,6 @@ export const equipment: EquipmentItem[] = [
       'Trois débitmètres intégrés',
       'Autonomie de 8 h (modèle 1) ou 10 h (modèle 2), batterie lithium-ion Opti Battery incluse',
       'Taille de pores : 0,1 µm, 0,22 µm, 0,45 µm, 1,2 µm et 5 µm',
-    ],
-    prices: [
-      { label: 'Pompe triple modèle 1', amount: 1900 },
-      { label: 'Pompe triple modèle 2', amount: 2100 },
-      { label: 'Capsules et tampon de préservation', amount: 40 },
     ],
     images: [
       { name: 'materiel-pompe', alt: 'Pompe triple ADNe fermée, avec ses trois débitmètres' },
@@ -324,10 +326,6 @@ export const equipment: EquipmentItem[] = [
       'Batterie Makita 18 V non incluse',
       'Filtre en nylon de 20 µm ou 5 µm et 47 mm de diamètre',
     ],
-    prices: [
-      { label: 'Stick pump', amount: 1270 },
-      { label: 'Filtres', amount: 18 },
-    ],
     images: [{ name: 'materiel-stickpump', alt: 'Stick pump de filtration ADNe' }],
   },
   {
@@ -338,10 +336,6 @@ export const equipment: EquipmentItem[] = [
       'Volume filtré par dépression, dépendant de la vitesse (environ 50 L par filtre en 10 min à 6 nœuds)',
       'Filtre en nylon de 20 µm ou 5 µm et 47 mm de diamètre',
       'Tractée derrière un bateau',
-    ],
-    prices: [
-      { label: 'Torpille', amount: 1400 },
-      { label: 'Filtres', amount: 18 },
     ],
     images: [
       { name: 'materiel-torpille', alt: 'Torpille d’échantillonnage ADNe' },
@@ -378,7 +372,7 @@ export const partnerIntro = {
     },
     {
       title: 'Les instituts de recherche publique',
-      text: 'Nous tirons notre expertise de parcours au sein de grands instituts de recherche, où nous avons été formées et avons mené nos premiers projets.',
+      text: 'Nous tirons notre expertise de parcours au sein de grands instituts de recherche, où l’équipe s’est formée et a mené ses premiers projets.',
       members: [
         { name: 'MARBEC', logo: 'marbec' },
         { name: 'Ifremer', logo: 'ifremer' },
@@ -388,7 +382,7 @@ export const partnerIntro = {
       ] as PartnerMember[],
     },
     {
-      title: 'Nous sommes soutenues et accompagnées',
+      title: 'Ils nous soutiennent et nous accompagnent',
       text: '',
       members: [
         { name: 'INRAE Start and Grow', logo: 'inrae-start-and-grow' },
@@ -445,14 +439,14 @@ export const news = {
 // cal.com (homepage) and Axonaut (contact). LDgenX must say which one to keep.
 // ---------------------------------------------------------------------------------------------
 export const booking = {
-  title: 'Prenez un rendez-vous',
+  title: 'Réserver un échange',
   text: 'Vous avez un projet, une intuition ou une problématique liée à la génétique, à l’ADN environnemental, à la génomique des populations ou à la sélection génomique ? Prenons 15 minutes pour en discuter, gratuitement et sans engagement.',
   benefits: [
     'présenter brièvement vos besoins ou vos réflexions',
     'découvrir ce que LDgenX peut vous apporter comme approche innovante',
-    'poser vos questions à une experte fondatrice du projet',
+    'poser vos questions à l’une des fondatrices de LDgenX',
   ],
-  note: 'Un simple échange peut être le point de départ d’une belle collaboration.',
+  note: 'Ce premier échange permet de voir ensemble comment nous pouvons vous aider.',
   action: '15 minutes gratuites',
   alternate: 'https://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1',
 };
@@ -862,7 +856,7 @@ export const customAssay: CustomAssay = {
   eyebrow: 'Amorces et sondes spécifiques',
   title: 'Votre espèce cible,\nun test ADN sur mesure',
   intro:
-    'Lorsqu’un test adapté n’est pas disponible, LDgenX peut concevoir des amorces et une sonde spécifiques de votre espèce cible, puis développer l’approche qui permet de détecter et de quantifier son ADN dans vos échantillons.',
+    'LDgenX dispose d’amorces et de sondes pour plusieurs espèces et peut concevoir des outils spécifiques pour de nouvelles cibles, selon les besoins de votre projet.',
   steps: [
     {
       title: 'Définir la cible',
@@ -893,23 +887,36 @@ export const customAssay: CustomAssay = {
   quantNote:
     'La dPCR estime une quantité d’ADN cible, en nombre de copies ; elle ne compte pas directement les individus présents.',
   illustration: 'Illustration du principe',
-  targetsLabel: 'Des exemples présentés par LDgenX',
-  targets: [
-    {
-      id: 'oursin-violet',
-      name: 'Oursin violet',
-      latin: 'Paracentrotus lividus',
-      image: 'cas-oursin',
-      source: 'https://www.ldgenx.fr/services/sequencage-dpcr',
+  contextImage: {
+    name: 'detection-vison',
+    alt: 'Vison photographié en extérieur',
+    caption: 'La biodiversité, au cœur des analyses ADN ciblées.',
+  },
+  targetsLabel: 'Nos espèces cibles',
+  targets: assayTargetsFr,
+  catalog: {
+    search: 'Rechercher une espèce',
+    searchPlaceholder: 'Nom français ou scientifique',
+    filterLabel: 'Filtrer les espèces',
+    all: 'Toutes',
+    groups: {
+      mammals: 'Mammifères',
+      fish: 'Poissons',
+      reptiles: 'Reptiles',
+      invertebrates: 'Invertébrés',
     },
-    {
-      id: 'especes-mediterraneennes',
-      name: 'Espèces méditerranéennes emblématiques',
-      group: true,
-      image: 'cas-requin',
-      source: 'https://www.ldgenx.fr/services/sequencage-dpcr',
-    },
-  ],
+    reset: 'Réinitialiser',
+    resultLabel: 'espèces affichées',
+    empty:
+      'Aucune espèce ne correspond à votre recherche. Essayez un autre nom ou réinitialisez les filtres.',
+    select: 'Choisir une espèce',
+    inventory: 'Amorces et sondes en interne',
+    detail:
+      'LDgenX dispose d’amorces et de sondes pour cette espèce. Décrivez-nous votre projet pour définir ensemble l’approche adaptée.',
+    scope:
+      'Les matrices, les conditions d’utilisation et les performances du test sont évaluées selon le projet.',
+    contact: 'Parler de cette cible',
+  },
   otherTitle: 'Votre espèce n’est pas dans la liste ?',
   otherText:
     'Présentez-nous l’espèce, votre question et vos échantillons : nous étudions avec vous le développement d’un test adapté.',
@@ -919,8 +926,17 @@ export const customAssay: CustomAssay = {
   home: {
     eyebrow: 'Tests ADN ciblés',
     title: 'Votre espèce cible, un test ADN sur mesure',
-    text: 'Amorces et sonde spécifiques, puis détection et quantification de l’ADN de l’espèce par dPCR.',
-    link: 'Découvrir la démarche',
+    text: 'Des amorces et sondes déjà en interne, et des outils à façon pour de nouvelles cibles.',
+    link: 'Explorer les espèces cibles',
+    count: 'espèces pour lesquelles nous disposons d’amorces et de sondes',
+  },
+  wall: {
+    eyebrow: 'Amorces et sondes en interne',
+    title: '21 espèces,\nprêtes à être recherchées.',
+    intro:
+      'Mammifères, poissons, reptile et invertébrés : LDgenX dispose d’amorces et de sondes pour chacune de ces espèces. Choisissez-en une pour voir le détail.',
+    otherTitle: 'Votre espèce n’y figure pas ?',
+    otherText: 'Nous concevons des tests pour de nouvelles cibles.',
   },
 };
 

@@ -10,7 +10,7 @@ import { Photo, Reveal } from '../components/ui';
 
 const CYCLE_MS = 6000;
 // Scientific works that can stand among the studies, with the illustration their panel uses.
-const WORK_PICTURES: Record<string, string> = { 'selection-genomique': 'bar-europeen' };
+const WORK_PICTURES: Record<string, string> = { 'selection-genomique': 'cas-bar' };
 
 type Panel = {
   key: string;

@@ -12,7 +12,9 @@
     "check:html": "node scripts/check-html.mjs",
     "check:http": "node scripts/check-http.mjs",
     "typography": "node scripts/fr-typography.mjs",
-    "check:typography": "node scripts/fr-typography.mjs --check"
+    "check:typography": "node scripts/fr-typography.mjs --check",
+    "check:assays": "node scripts/build-assay-targets.mjs --check",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",

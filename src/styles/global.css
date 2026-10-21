@@ -750,7 +750,8 @@ h3 {
 }
 .footer-bottom > div {
   display: flex;
-  gap: 23px;
+  flex-wrap: wrap;
+  gap: 10px 23px;
 }
 .breadcrumbs {
   display: flex;
@@ -842,6 +843,10 @@ h3 {
   color: var(--muted);
   margin-top: 22px;
 }
+/* Two statements in a row (the About page): room between them. */
+.detail-intro + .detail-intro {
+  margin-top: clamp(56px, 8vw, 110px);
+}
 .approach-section {
   padding-block: 90px;
 }
@@ -858,7 +863,8 @@ h3 {
 .approach-heading h2 {
   max-width: 420px;
 }
-.approach-heading > p:last-child {
+.approach-heading > p:last-child,
+.approach-heading > [data-reveal]:last-child > p {
   color: var(--muted);
   max-width: 340px;
   font-size: 13px;
@@ -1600,7 +1606,8 @@ h3 {
   .approach-heading {
     position: static;
   }
-  .approach-heading > p:last-child {
+  .approach-heading > p:last-child,
+  .approach-heading > [data-reveal]:last-child > p {
     max-width: 540px;
   }
   .use-section {
@@ -2451,9 +2458,13 @@ h3 {
     margin-top: 20px;
   }
 }
-/* Long scientific terms stay readable on the narrowest screens. */
+/* Long scientific terms stay readable on the narrowest screens, and a heading line that has to
+   wrap never leaves one word alone ("Une question, un / milieu,"): pretty where supported,
+   balanced otherwise. */
 .line-reveal {
   overflow-wrap: break-word;
+  text-wrap: balance;
+  text-wrap: pretty;
 }
 @media (max-width: 500px) {
   .page-hero h1,
@@ -2628,7 +2639,7 @@ h3 {
   .workflow-mobile-picker {
     display: block;
     position: sticky;
-    top: 78px;
+    top: var(--header-h);
     z-index: 10;
     padding-block: 14px 12px;
     margin-bottom: 10px;
@@ -2802,6 +2813,7 @@ h3 {
 .section-heading-aside > p,
 .workflow-sticky > div:first-child > p:last-child,
 .approach-heading > p:last-child,
+.approach-heading > [data-reveal]:last-child > p,
 .related-link > p,
 .team-bio,
 .innovation-projects a > p {
@@ -4758,6 +4770,32 @@ h3 {
 .dna-hero-actions {
   margin-top: 36px;
 }
+@media (max-width: 767px) {
+  /* Phones: the intro crosses the foot of the tube, so the night rises higher from the bottom
+     and the text carries its own soft shadow. The film itself is unchanged. */
+  .dna-hero-shade {
+    background:
+      linear-gradient(
+        0deg,
+        rgb(var(--hero-night) / 0.9) 0,
+        rgb(var(--hero-night) / 0.78) 25%,
+        rgb(var(--hero-night) / 0.42) 36%,
+        rgb(var(--hero-night) / 0) 47%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(var(--hero-night) / 0.82) 0%,
+        rgb(var(--hero-night) / 0.62) 32%,
+        rgb(var(--hero-night) / 0.2) 52%,
+        rgb(var(--hero-night) / 0) 64%
+      );
+  }
+  .dna-hero-intro {
+    text-shadow:
+      0 1px 2px rgb(var(--hero-night) / 0.7),
+      0 2px 18px rgb(var(--hero-night) / 0.9);
+  }
+}
 
 .dna-hero-cross {
   position: absolute;
@@ -6230,16 +6268,19 @@ h3 {
 }
 .atlas-label {
   position: absolute;
-  left: var(--dx);
-  bottom: calc(var(--dy) * -1);
+  left: var(--label-x, var(--dx));
+  top: var(--label-y, calc(var(--dy) - 64px));
   width: max-content;
-  max-width: 172px;
-  padding: 0 2px 6px;
+  max-width: 224px;
+  padding: 7px 10px;
   border: 1px solid transparent;
   border-bottom-color: rgb(255 255 255 / 0.6);
-  border-radius: 0;
-  font-size: 14.5px;
-  line-height: 1.3;
+  border-radius: 4px;
+  background: rgb(4 24 37 / 0.72);
+  font-size: 19.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-wrap: balance;
   text-align: left;
   color: #f3f7f5;
   text-shadow:
@@ -6251,12 +6292,7 @@ h3 {
     color 0.25s,
     padding 0.25s var(--atlas-ease);
 }
-.atlas-place[data-flip] .atlas-leader {
-  transform: scaleX(-1) rotate(var(--angle));
-}
 .atlas-place[data-flip] .atlas-label {
-  left: auto;
-  right: var(--dx);
   text-align: right;
 }
 .atlas-place:is(:hover, :focus-visible) .atlas-dot {
@@ -6272,7 +6308,7 @@ h3 {
 }
 /* The chosen place: its name in a green plate, its dot alight and breathing. */
 .atlas-place[data-active] .atlas-label {
-  padding: 7px 11px;
+  padding: 7px 10px;
   border-color: rgb(150 222 74 / 0.8);
   border-radius: 4px;
   background: rgb(26 54 14 / 0.86);
@@ -6415,8 +6451,8 @@ h3 {
   /* The zoom control keeps its name for assistive technology, shown as an icon. */
 
   .atlas-label {
-    font-size: 13.5px;
-    max-width: 150px;
+    font-size: 18.25px;
+    max-width: 202px;
   }
 }
 /* Phones: heading above, the map to explore by dragging or choosing, then the card. */
@@ -6466,7 +6502,7 @@ h3 {
     inset: -16px;
   }
   .atlas-label {
-    font-size: 13px;
+    font-size: 17.5px;
   }
   .atlas-corner {
     right: 14px;
@@ -7615,6 +7651,7 @@ h3 {
   }
   .eco-rows {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 26px;
   }
   .eco-row > p {
@@ -7644,7 +7681,8 @@ h3 {
     color: var(--navy);
     white-space: nowrap;
   }
-  .eco-row {
+  /* The names fade at both edges; the group's title above them stays whole. */
+  .eco-lane {
     overflow: hidden;
     mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
   }
@@ -8697,6 +8735,7 @@ h3 {
   display: inline-grid;
   gap: 2px;
   margin-top: 16px;
+  margin-right: 32px;
   padding-top: 10px;
   border-top: 1px solid var(--line);
   font-size: 15px;
@@ -8734,6 +8773,9 @@ h3 {
     padding: 0 20px 8px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    /* Each card stops at the page margin, not flush with the screen edge. */
+    scroll-padding-inline: 20px;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
   }
   .team-stage-row::-webkit-scrollbar {
@@ -8797,6 +8839,16 @@ h3 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+}
+/* Every ambient field is a backdrop: out of the flow, the size of its section. Without this, a
+   field sized from its section (at 2x pixel density) doubles the section's height each frame. */
+.ambient-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .page-hero-field {
   position: absolute;

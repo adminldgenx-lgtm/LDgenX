@@ -1,0 +1,215 @@
+{
+  "source": {
+    "id": "canva-2026-10-17-page-10",
+    "document": "Image site web",
+    "page": 10,
+    "reference": "Screenshot 2026-10-17 at 20.28.45.png",
+    "received": "2026-10-17",
+    "description": "Liste fournie par la cliente : amorces et sondes déjà en interne. Ne documente ni les matrices ni les performances des tests.",
+    "url": "https://www.canva.com/design/DAHX4VfvLE0/23X0NE3NV7uxYXwujyE2aQ/edit"
+  },
+  "targets": [
+    {
+      "id": "mustela-lutreola",
+      "latin": "Mustela lutreola",
+      "nameFr": "Vison d’Europe",
+      "nameEn": "European mink",
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "neogale-vison",
+      "latin": "Neogale vison",
+      "nameFr": "Vison d’Amérique",
+      "nameEn": "American mink",
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "mustela-putorius",
+      "latin": "Mustela putorius",
+      "nameFr": "Putois d’Europe",
+      "nameEn": "European polecat",
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "paracentrotus-lividus",
+      "latin": "Paracentrotus lividus",
+      "nameFr": "Oursin",
+      "nameEn": "Sea urchin",
+      "category": "invertebrates",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "thunnus-thynnus",
+      "latin": "Thunnus thynnus",
+      "nameFr": "Thon rouge",
+      "nameEn": "Atlantic bluefin tuna",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "xiphias-gladius",
+      "latin": "Xiphias gladius",
+      "nameFr": "Espadon",
+      "nameEn": "Swordfish",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "tetrapturus-belone",
+      "latin": "Tetrapturus belone",
+      "nameFr": "Petit marlin de Méditerranée",
+      "nameEn": "Mediterranean spearfish",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "prionace-glauca",
+      "latin": "Prionace glauca",
+      "nameFr": "Requin peau bleue",
+      "nameEn": "Blue shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "isurus-oxyrinchus",
+      "latin": "Isurus oxyrinchus",
+      "nameFr": "Requin mako",
+      "nameEn": "Shortfin mako shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "lamna-nasus",
+      "latin": "Lamna nasus",
+      "nameFr": "Requin taupe commun",
+      "nameEn": "Porbeagle",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "alopias-vulpinus",
+      "latin": "Alopias vulpinus",
+      "nameFr": "Requin renard commun",
+      "nameEn": "Common thresher shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "caretta-caretta",
+      "latin": "Caretta caretta",
+      "nameFr": "Tortue caouanne",
+      "nameEn": "Loggerhead turtle",
+      "category": "reptiles",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "pteroplatytrygon-violacea",
+      "latin": "Pteroplatytrygon violacea",
+      "nameFr": "Raie pastenague violette",
+      "nameEn": "Pelagic stingray",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "thunnus-alalunga",
+      "latin": "Thunnus alalunga",
+      "nameFr": "Thon germon",
+      "nameEn": "Albacore",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "mola-mola",
+      "latin": "Mola mola",
+      "nameFr": "Poisson lune",
+      "nameEn": "Ocean sunfish",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "cetorhinus-maximus",
+      "latin": "Cetorhinus maximus",
+      "nameFr": "Requin pèlerin",
+      "nameEn": "Basking shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "carcharodon-carcharias",
+      "latin": "Carcharodon carcharias",
+      "nameFr": "Grand requin blanc",
+      "nameEn": "Great white shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "alopias-superciliosus",
+      "latin": "Alopias superciliosus",
+      "nameFr": "Requin renard à gros yeux",
+      "nameEn": "Bigeye thresher shark",
+      "category": "fish",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "holothuria-tubulosa",
+      "latin": "Holothuria tubulosa",
+      "nameFr": "Holothurie",
+      "nameEn": "Sea cucumber",
+      "category": "invertebrates",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "neomys-fodiens",
+      "latin": "Neomys fodiens",
+      "nameFr": "Musaraigne d’Europe",
+      "nameEn": "Eurasian water shrew",
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    },
+    {
+      "id": "neomys-anomalus",
+      "latin": "Neomys anomalus",
+      "nameFr": "Musaraigne de Miller",
+      "nameEn": null,
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "hold",
+      "confirmation": {
+        "question": "Confirmer si les amorces et sondes ciblent Neomys anomalus ou Neomys milleri. Le libellé historique ne permet pas de déterminer la cible. Ne pas remplacer automatiquement le nom scientifique.",
+        "reference": "https://doi.org/10.1002/ece3.4487"
+      }
+    },
+    {
+      "id": "arvicola-sapidus",
+      "latin": "Arvicola sapidus",
+      "nameFr": "Campagnol amphibie",
+      "nameEn": "Southern water vole",
+      "category": "mammals",
+      "source": "canva-2026-10-17-page-10",
+      "publication": "publish"
+    }
+  ]
+}

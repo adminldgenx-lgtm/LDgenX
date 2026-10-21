@@ -13,6 +13,21 @@ export const company = {
   appointment: 'https://cal.com/ldgenx-echange/decouverte',
   english: 'https://www.ldgenx.com/',
   linkedin: 'https://www.linkedin.com/company/ldgenx/',
+  // Public registry (recherche-entreprises.api.gouv.fr, October 2026) and OpenStreetMap.
+  legalName: 'LDgenX SAS',
+  siren: '952193837',
+  foundingDate: '2023-05-01',
+  founders: ['maeva-leitwein', 'emilie-delpuech'],
+  site: 'Station Ifremer de Palavas-les-Flots',
+  street: '51 route de Maguelone',
+  postalCode: '34250',
+  locality: 'Palavas-les-Flots',
+  geo: [43.52, 3.9103] as [number, number],
+  // Codes from Google Search Console and Bing Webmaster Tools, once the site is verified.
+  verification: { google: '', bing: '' },
+  // IndexNow key (Bing, Yandex, Seznam, Naver): the file /<key>.txt holds it; see
+  // scripts/indexnow.mjs.
+  indexNowKey: '86cc2638fcd11cbeedcfed21379e0459',
 };
 
 type Pairs = [id: string, slug: string][];
@@ -25,6 +40,7 @@ const services = [
   'selection',
   'bioinformatique',
   'sequencage-dpcr',
+  'tests-adn-cibles',
   'recherche-developpement',
   'materiel',
 ];
@@ -39,6 +55,7 @@ export const applicationIds = [
 ];
 const studies = [
   'ichtyofaune-artois-picardie',
+  'genomique-vanneau-huppe',
   'biodiversite-eolien-offshore',
   'communautes-microplastiques',
 ];
@@ -54,7 +71,37 @@ const people: Pairs = [
   ['maeva-leitwein', 'dr-maeva-leitwein'],
   ['emilie-delpuech', 'dr-emilie-delpuech'],
   ['maxime-lambert', ''],
-  ['damien-crestel', ''],
+  ['damien-crestel', 'dr-damien-crestel'],
+];
+// Articles of the research page, newest first: the French address is the id.
+const publications: Pairs = [
+  ['bar-cortisol-temperature-2026', 'sea-bass-cortisol-temperature-2026'],
+  ['bar-sex-ratio-temperature-gwas-2026', 'sea-bass-sex-ratio-gwas-2026'],
+  ['bar-survie-larvaire-introgression-2026', 'sea-bass-larval-survival-introgression-2026'],
+  ['poissons-tolerance-rechauffement-taille-2025', 'fish-warming-tolerance-body-mass-2025'],
+  ['genomes-becasse-becassine-2025', 'woodcock-jack-snipe-genomes-2025'],
+  ['bar-introgression-fitness-2025', 'sea-bass-introgression-fitness-2025'],
+  ['bar-croissance-larvaire-temperature-2025', 'sea-bass-larval-growth-temperature-2025'],
+  ['bar-selection-efficacite-alimentaire-2025', 'sea-bass-feed-efficiency-selection-2025'],
+  ['bar-introgression-teneur-gras-2024', 'sea-bass-introgression-muscle-fat-2024'],
+  ['bar-determinisme-sexe-energie-2024', 'sea-bass-sex-determination-energy-2024'],
+  ['bar-temperature-femelles-2024', 'sea-bass-temperature-female-ratio-2024'],
+  ['bar-resistance-vnn-2023', 'sea-bass-vnn-resistance-2023'],
+  ['capelan-methylation-reproduction-2023', 'capelin-dna-methylation-2023'],
+  ['truite-pigmentation-gwas-2023', 'brown-trout-pigmentation-gwas-2023'],
+  ['saumon-coho-elevage-expression-2022', 'coho-salmon-hatchery-expression-2022'],
+  ['omble-ascendance-repeuplement-2021', 'stocking-ancestry-landscape-2021'],
+  ['porc-efficacite-alimentaire-gwas-2021', 'pig-feed-efficiency-gwas-2021'],
+  ['saumon-coho-epigenome-germinal-2021', 'salmon-germline-epigenome-2021'],
+  ['haplotypes-genomique-conservation-2020', 'haplotypes-conservation-genomics-2020'],
+  ['omble-diversite-petites-populations-2020', 'brook-charr-small-populations-2020'],
+  ['porc-prediction-genomique-2020', 'pig-genomic-prediction-2020'],
+  ['omble-recombinaison-ascendance-2019', 'brook-charr-recombination-ancestry-2019'],
+  ['truite-ressource-snp-2019', 'brown-trout-snp-array-2019'],
+  ['truite-trois-ascendances-2018', 'brown-trout-three-way-admixture-2018'],
+  ['truite-arc-en-ciel-san-francisco-2017', 'rainbow-trout-san-francisco-2017'],
+  ['truite-carte-liaison-2017', 'brown-trout-linkage-map-2017'],
+  ['truite-orb-diversite-2016', 'brown-trout-orb-diversity-2016'],
 ];
 
 const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
@@ -69,6 +116,7 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
     innovations: same(innovations),
     resources: same(resources),
     people,
+    publications: publications.map(([id]): [string, string] => [id, id]),
   },
   en: {
     services: [
@@ -78,6 +126,7 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
       ['selection', 'genomic-selection'],
       ['bioinformatique', 'bioinformatics'],
       ['sequencage-dpcr', 'sequencing-dpcr'],
+      ['tests-adn-cibles', 'targeted-dna-tests-dpcr'],
       ['recherche-developpement', 'research-development'],
       ['materiel', 'equipment'],
     ],
@@ -91,6 +140,7 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
     ],
     studies: [
       ['ichtyofaune-artois-picardie', 'artois-picardie-fish-survey'],
+      ['genomique-vanneau-huppe', 'northern-lapwing-genomics'],
       ['biodiversite-eolien-offshore', 'offshore-wind-biodiversity'],
       ['communautes-microplastiques', 'microplastic-microbial-communities'],
     ],
@@ -109,6 +159,7 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
       ['genomique-filiere-aquacole', 'genomics-aquaculture'],
     ],
     people,
+    publications,
   },
 };
 

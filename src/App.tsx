@@ -26,7 +26,8 @@ import {
   TermsPage,
 } from './pages/Company';
 import { WorkPage } from './pages/Works';
-import { ResearchPage } from './pages/Research';
+import { PublicationPage, ResearchPage } from './pages/Research';
+import { FaqPage, GlossaryPage, SiteMapPage } from './pages/Knowledge';
 import { LocaleProvider, useCatalog, useRoutes } from './i18n';
 import { ContactPage } from './pages/Contact';
 
@@ -56,6 +57,10 @@ const templates: Record<PageKind, ComponentType<{ meta: PageMeta }>> = {
   work: WorkPage,
   person: PersonPage,
   publications: ResearchPage,
+  publication: PublicationPage,
+  faq: FaqPage,
+  glossary: GlossaryPage,
+  sitemap: SiteMapPage,
   terms: TermsPage,
   innovations: InnovationsPage,
   innovation: InnovationPage,
