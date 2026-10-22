@@ -38,10 +38,11 @@ walk(path.join(root, 'dist'));
 const names = new Set(['equipe-maxime']);
 for (const file of pages) {
   const html = readFileSync(file, 'utf8');
+  // A page shares either a photograph (no card yet) or the card already made for it.
   const og = html.match(
-    /<meta property="og:image" content="[^"]*\/images\/([a-z0-9-]+?)-\d+\.webp"/,
+    /<meta property="og:image" content="[^"]*\/images\/(?:social-([a-z0-9-]+)\.jpg|([a-z0-9-]+?)-\d+\.webp)"/,
   );
-  if (og) names.add(og[1]);
+  if (og) names.add(og[1] ?? og[2]);
 }
 const largest = (name) =>
   readdirSync(path.join(root, 'public/images'))

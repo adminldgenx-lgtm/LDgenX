@@ -130,6 +130,66 @@
       "altEn": "A mink photographed outdoors",
       "width": 615,
       "height": 293
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "dpcr-chargement",
+      "sourceFile": "images/client-2026-10-22/dpcr-chargement.png",
+      "sha256": "0c68a893aa67d93b144b63ccf0b28b035fcb0fbc2660be5f98ce4b72a093d5b5",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Chargement d’une plaque de PCR digitale dans le QIAcuity One (QIAGEN) du laboratoire",
+      "altEn": "Loading a digital PCR plate into the laboratory’s QIAcuity One (QIAGEN)",
+      "width": 828,
+      "height": 619,
+      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [946, 737, 828, 619]); the slide holds these photos at about 800 px, originals requested."
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "dpcr-instrument",
+      "sourceFile": "images/client-2026-10-22/dpcr-instrument.png",
+      "sha256": "2d38f393ea612e658be7b202d08b5ea430101ba5b8d6172ee5f36e64da2ff09b",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Le système de PCR digitale QIAcuity One et son poste de pilotage au laboratoire",
+      "altEn": "The QIAcuity One digital PCR system and its control laptop in the laboratory",
+      "width": 821,
+      "height": 615,
+      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [30, 737, 821, 615]); the slide holds these photos at about 800 px, originals requested."
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "dpcr-operateur",
+      "sourceFile": "images/client-2026-10-22/dpcr-operateur.png",
+      "sha256": "7219fe51570ad4d9e44347a16df70f7c3e1c796ffd878781d2b428556cd8094f",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Un membre de l’équipe en blouse place une plaque dans le système de PCR digitale",
+      "altEn": "A team member in a lab coat placing a plate in the digital PCR system",
+      "width": 592,
+      "height": 789,
+      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [1835, 31, 592, 789]); the slide holds these photos at about 800 px, originals requested."
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "dpcr-logiciel",
+      "sourceFile": "images/client-2026-10-22/dpcr-logiciel.png",
+      "sha256": "b23e535d46be09148dfa15b3f3101420cf827bd71f19f15eaab3a6a6354c6c73",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Ordinateur affichant le logiciel de PCR digitale, à côté d’une plaque de nanopuits",
+      "altEn": "A laptop showing the digital PCR software beside a nanoplate",
+      "width": 793,
+      "height": 593,
+      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [30, 93, 793, 593]); the slide holds these photos at about 800 px, originals requested."
     }
   ]
 }

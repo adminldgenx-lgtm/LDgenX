@@ -108,7 +108,7 @@ export const workflow = [
     text: 'Amplicons, genomes or targeted detection: technologies are chosen according to the scientific objectives.',
     detail:
       'Long reads (Nanopore) and short reads (Illumina, AVITI), targeted sequencing and microsatellites (qPCR, Sanger, KASP), digital PCR.',
-    image: 'cas-requin',
+    image: 'dpcr-chargement',
   },
   {
     title: 'Bioinformatics',
@@ -463,7 +463,7 @@ export const services: Expertise[] = [
     short: 'Reading DNA. Detecting the targets that matter to you.',
     scope:
       'Amplicon sequencing, short- and long-read sequencing, and development and analysis of digital PCR (dPCR) assays.',
-    image: 'equipe-maxime',
+    image: 'dpcr-instrument',
     headline: 'The technology suited to your scientific question.',
     intro:
       'Amplicon sequencing, long reads, whole genomes or species detection by dPCR: LDgenX supports your projects, from the design of specific primers and probes to the interpretation of results, including the quantification of a target species’ environmental DNA.',
@@ -537,7 +537,7 @@ export const services: Expertise[] = [
     short: 'Detect and quantify the DNA of one species.',
     scope:
       'Primers and probes for 21 species and custom assays: detection and quantification by digital PCR.',
-    image: 'cas-oursin',
+    image: 'dpcr-operateur',
     headline: 'Your target species, a custom DNA test.',
     intro:
       'European mink, Atlantic bluefin tuna, sharks, loggerhead turtle: LDgenX holds primers and probes for 21 species and designs assays for new targets. Digital PCR (dPCR) detects and quantifies the DNA of the species you are looking for in water, soil or sediment.',

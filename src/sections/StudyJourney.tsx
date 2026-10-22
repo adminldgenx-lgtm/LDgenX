@@ -5,6 +5,7 @@ import { useCatalog, useRoutes } from '../i18n';
 import { useMediaQuery, useNearViewport, useReducedMotion } from '../components/motion';
 import type { StudySite } from '../lib/study-geo';
 import type { Box, Camera, JourneyFrame, Layer } from '../lib/study-journey';
+import { SceneSkip } from '../components/SceneSkip';
 
 /* The Artois-Picardie study as a journey along the coast. The chart stays on screen while the
    page scrolls; scrolling moves the camera, from France down to the Côte d'Opale, along the eight
@@ -543,24 +544,27 @@ export function StudyJourney() {
           </div>
 
           <div ref={card} className="journey-card">
-            <ol className="journey-progress">
-              {CHAPTERS.map((name, i) => (
-                <li
-                  key={name}
-                  data-state={i < chapter ? 'done' : i === chapter ? 'now' : undefined}
-                >
-                  <button
-                    type="button"
-                    aria-label={name}
-                    title={name}
-                    aria-current={i === chapter ? 'step' : undefined}
-                    onClick={() => goTo(i)}
+            <div className="journey-progress-row">
+              <ol className="journey-progress">
+                {CHAPTERS.map((name, i) => (
+                  <li
+                    key={name}
+                    data-state={i < chapter ? 'done' : i === chapter ? 'now' : undefined}
                   >
-                    <span />
-                  </button>
-                </li>
-              ))}
-            </ol>
+                    <button
+                      type="button"
+                      aria-label={name}
+                      title={name}
+                      aria-current={i === chapter ? 'step' : undefined}
+                      onClick={() => goTo(i)}
+                    >
+                      <span />
+                    </button>
+                  </li>
+                ))}
+              </ol>
+              <SceneSkip label={ui.common.skipScene} hint={t.skip} />
+            </div>
             <div className="journey-chapters">
               {chapters.map((content, i) => (
                 <div

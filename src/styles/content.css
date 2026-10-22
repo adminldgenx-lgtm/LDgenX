@@ -4357,3 +4357,117 @@ main {
   padding-right: 28px;
   background-position: right 4px center;
 }
+
+/* Leaving a held scene (the DNA helix, the study chart) in one tap: a small pill beside the
+   chapter segments, or under the rail of dots on large screens. */
+.scene-skip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgb(255 255 255 / 0.22);
+  border-radius: 999px;
+  background: rgb(4 16 29 / 0.55);
+  font-size: 12.5px;
+  color: rgb(238 243 246 / 0.88);
+  white-space: nowrap;
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .scene-skip:hover {
+    border-color: #8fd13a;
+    color: white;
+  }
+}
+.scene-skip:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.dna-rail .scene-skip {
+  display: flex;
+  width: fit-content;
+  min-height: 32px;
+  margin: 14px 4px 0 auto;
+  padding: 0 12px;
+  gap: 6px;
+  border: 1px solid rgb(255 255 255 / 0.22);
+  background: rgb(4 16 29 / 0.55);
+  color: rgb(238 243 246 / 0.88);
+}
+.dna-progress-row {
+  display: none;
+}
+.journey-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+.journey-progress-row .journey-progress {
+  flex: 1;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  /* Phones: each segment is a way to its stage, tall enough for a finger. */
+  .dna-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 2px 8px;
+  }
+  .dna-progress-row .dna-progress {
+    flex: 1;
+    margin: 0;
+  }
+  .dna-progress li,
+  .dna-progress li[data-state] {
+    height: auto;
+    background: none;
+  }
+  .dna-progress button,
+  .journey-progress button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .dna-progress button span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: rgb(255 255 255 / 0.2);
+    transition:
+      background-color 0.3s,
+      height 0.3s;
+  }
+  .dna-progress li[data-state] button span {
+    background: var(--green);
+  }
+  .dna-progress button[aria-current='step'] span {
+    height: 4px;
+  }
+  .journey-progress-row {
+    margin-bottom: 4px;
+  }
+}
+
+/* The dPCR operator photograph is portrait: shown whole in the hero, like the kayak. */
+.page-hero-image .photo[data-image='dpcr-operateur'] {
+  animation: none;
+  scale: 1;
+  translate: none;
+}
+.page-hero-image:has(.photo[data-image='dpcr-operateur']) {
+  height: auto;
+  aspect-ratio: 592 / 789;
+  width: min(100%, 380px);
+  justify-self: center;
+}

@@ -179,3 +179,16 @@ Les affectations historiques du tableau « Illustrations générées » ne décr
 - `bioinformatique-alignement` : illustration dessinée par `scripts/prepare-licensed-photos.mjs` (lectures alignées sur un génome, sans données réelles).
 - L’étape « Séquençage & dPCR » du parcours ADN montre `cas-requin`, photo du cas « Détection d’espèces méditerranéennes emblématiques par dPCR » publiée sur ldgenx.fr.
 - Cartes de partage 1200 × 630 (`public/images/social-*.jpg`) générées par `scripts/make-social-images.mjs` pour chaque image partagée.
+
+### Photos de PCR digitale (22 octobre 2026)
+
+Planche « Photo pour la PCR digitale » transmise par LDgenX le 22 octobre 2026 (`images/client-2026-10-22/planche-pcr-digitale.png`). Les quatre photos en sont découpées sans retouche ni agrandissement (`images/client-2026-10-22/dpcr-*.png`, coordonnées dans `data/client-photos.json`), environ 800 px chacune : les originaux en pleine résolution restent à demander.
+
+| Photo             | Emplacement                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| `dpcr-chargement` | Étape « Séquençage & dPCR » de la section ADN (remplace `cas-requin`) |
+| `dpcr-instrument` | Expertise Séquençage & dPCR, carte de l’accueil (remplace `equipe-maxime`) |
+| `dpcr-operateur`  | Expertise Tests ADN ciblés (remplace `cas-oursin`)                   |
+| `dpcr-logiciel`   | Préparée, non affichée                                               |
+
+Le texte des pages ne nomme pas l’appareil : le modèle (QIAcuity One, QIAGEN) n’apparaît que dans les textes alternatifs, puisqu’il est lisible sur les photos.

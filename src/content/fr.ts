@@ -107,7 +107,7 @@ export const workflow = [
     text: 'Amplicons, génomes ou détection ciblée : les technologies sont choisies en fonction des objectifs scientifiques.',
     detail:
       'Longs fragments (Nanopore) et courts fragments (Illumina, AVITI), séquençage ciblé et microsatellites (qPCR, Sanger, KASP), PCR digitale.',
-    image: 'cas-requin',
+    image: 'dpcr-chargement',
   },
   {
     title: 'Bioinformatique',
@@ -492,7 +492,7 @@ export const services: Expertise[] = [
     short: 'Lire l’ADN. Détecter les cibles qui vous intéressent.',
     scope:
       'Amplicons, courts et longs fragments, génomes entiers ou partiels, détection d’espèces cibles ou de variants.',
-    image: 'equipe-maxime',
+    image: 'dpcr-instrument',
     headline: 'La technologie adaptée à votre question scientifique.',
     intro:
       'Séquençage d’amplicons, longues lectures, génomes entiers ou détection d’espèces par dPCR : LDgenX accompagne vos projets, de la conception d’amorces et de sondes spécifiques à l’interprétation des résultats, y compris la quantification d’ADN environnemental d’une espèce cible.',
@@ -567,7 +567,7 @@ export const services: Expertise[] = [
     short: 'Détecter et quantifier l’ADN d’une espèce précise.',
     scope:
       'Amorces et sondes pour 21 espèces et tests sur mesure : détection et quantification par PCR digitale.',
-    image: 'cas-oursin',
+    image: 'dpcr-operateur',
     headline: 'Votre espèce cible, un test ADN sur mesure.',
     intro:
       'Vison d’Europe, thon rouge, requins, tortue caouanne : LDgenX dispose d’amorces et de sondes pour 21 espèces et conçoit des tests pour de nouvelles cibles. La PCR digitale (dPCR) détecte et quantifie l’ADN de l’espèce recherchée dans l’eau, les sols ou les sédiments.',

@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import { AnimatedHeading, useMediaQuery, useReducedMotion } from '../components/motion';
 import { Eyebrow, Photo, Reveal } from '../components/ui';
+import { SceneSkip } from '../components/SceneSkip';
 import { createDnaScene, loadParticles } from '../lib/dna-scene';
 
 /* "De l'échantillon à la décision": the seven stages told along a DNA helix lying across the
@@ -147,12 +148,27 @@ export function DnaProcess() {
     });
   };
 
+  const skip = <SceneSkip label={ui.common.skipScene} hint={ui.dna.skip} />;
+
+  // Phones: the stages as a row of segments, each one a way to its stage, and the way past.
   const progress = (
-    <ol className="dna-progress" aria-hidden="true">
-      {workflow.map((s, i) => (
-        <li key={s.title} data-state={i < active ? 'done' : i === active ? 'now' : undefined} />
-      ))}
-    </ol>
+    <nav className="dna-progress-row" aria-label={ui.dna.rail}>
+      <ol className="dna-progress">
+        {workflow.map((s, i) => (
+          <li key={s.title} data-state={i < active ? 'done' : i === active ? 'now' : undefined}>
+            <button
+              type="button"
+              aria-label={s.title}
+              aria-current={active === i ? 'step' : undefined}
+              onClick={() => goTo(i)}
+            >
+              <span />
+            </button>
+          </li>
+        ))}
+      </ol>
+      {skip}
+    </nav>
   );
 
   // The way out of the sequence, offered with the last stage.
@@ -229,6 +245,7 @@ export function DnaProcess() {
                   </li>
                 ))}
               </ol>
+              {skip}
             </nav>
           )}
           {!reduced && !compact && cta}

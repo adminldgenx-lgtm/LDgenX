@@ -282,7 +282,7 @@ export function PageHero({
                 alt={meta.label}
                 eager
                 sizes={
-                  ['bioinformatique-client', 'terrain-kayak'].includes(image)
+                  ['bioinformatique-client', 'terrain-kayak', 'dpcr-operateur'].includes(image)
                     ? '(max-width: 700px) 90vw, 380px'
                     : undefined
                 }

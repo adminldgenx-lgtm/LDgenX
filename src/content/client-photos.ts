@@ -39,4 +39,32 @@ export const clientPhotos: Record<
     altFr: 'Vison photographié en extérieur',
     altEn: 'A mink photographed outdoors',
   },
+  'dpcr-chargement': {
+    widths: [480, 828],
+    width: 828,
+    height: 619,
+    altFr: 'Chargement d’une plaque de PCR digitale dans le QIAcuity One (QIAGEN) du laboratoire',
+    altEn: 'Loading a digital PCR plate into the laboratory’s QIAcuity One (QIAGEN)',
+  },
+  'dpcr-instrument': {
+    widths: [480, 821],
+    width: 821,
+    height: 615,
+    altFr: 'Le système de PCR digitale QIAcuity One et son poste de pilotage au laboratoire',
+    altEn: 'The QIAcuity One digital PCR system and its control laptop in the laboratory',
+  },
+  'dpcr-operateur': {
+    widths: [480, 592],
+    width: 592,
+    height: 789,
+    altFr: 'Un membre de l’équipe en blouse place une plaque dans le système de PCR digitale',
+    altEn: 'A team member in a lab coat placing a plate in the digital PCR system',
+  },
+  'dpcr-logiciel': {
+    widths: [480, 793],
+    width: 793,
+    height: 593,
+    altFr: 'Ordinateur affichant le logiciel de PCR digitale, à côté d’une plaque de nanopuits',
+    altEn: 'A laptop showing the digital PCR software beside a nanoplate',
+  },
 };
