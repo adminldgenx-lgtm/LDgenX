@@ -13,7 +13,7 @@ import { useCatalog, useRoutes } from '../i18n';
 import { type PageMeta } from '../lib/pages';
 import { Breadcrumbs, Eyebrow, FinalCTA, PageHero, Reveal, TextLink } from '../components/ui';
 import { AmbientField } from '../components/AmbientField';
-import { AnimatedHeading, useNearViewport, useReducedMotion, useSeen } from '../components/motion';
+import { AnimatedHeading, useNearViewport, useSeen } from '../components/motion';
 import { DecodeOnce } from '../components/Decode';
 import { Figure, RichText } from '../components/Figure';
 
@@ -171,7 +171,6 @@ function FeaturedResearch({ items }: { items: ResearchFeatured[] }) {
               <figcaption className="research-chart-title">{item.chartTitle}</figcaption>
               <ResearchChart item={item} />
               <p className="research-chart-note">
-                {item.chartNote}{' '}
                 <span className="research-chart-source">
                   {`${t.chartSource}${ui.lang === 'fr' ? '\u00a0: ' : ': '}${publication.authors[0]} et al. (${publication.year}), ${publication.journal}.`}
                 </span>
@@ -196,7 +195,6 @@ function PanelChart({ total, selected }: { total: number; selected: number }) {
   const { ui } = useCatalog();
   const canvas = useRef<HTMLCanvasElement>(null);
   const live = useNearViewport(canvas, '0px');
-  const reduced = useReducedMotion();
   const format = new Intl.NumberFormat(ui.htmlLang);
   useEffect(() => {
     const element = canvas.current;
@@ -242,10 +240,6 @@ function PanelChart({ total, selected }: { total: number; selected: number }) {
         context.fill();
       }
     };
-    if (reduced) {
-      draw(1);
-      return;
-    }
     if (!live) {
       draw(0);
       return;
@@ -259,7 +253,7 @@ function PanelChart({ total, selected }: { total: number; selected: number }) {
     };
     frame = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(frame);
-  }, [total, selected, live, reduced]);
+  }, [total, selected, live]);
   return (
     <div className="panel-chart">
       <canvas ref={canvas} className="panel-chart-canvas" aria-hidden="true" />
@@ -358,7 +352,6 @@ function RegionsChart({
   const { ui } = useCatalog();
   const ref = useRef<HTMLDivElement>(null);
   const seen = useSeen(ref);
-  const reduced = useReducedMotion();
   const max = 50;
   const fr = ui.lang === 'fr';
   return (
@@ -370,7 +363,7 @@ function RegionsChart({
             <dd>
               <span className="regions-bar" aria-hidden="true" />
               <span className="regions-value">
-                <DecodeOnce text={String(b.value)} play={seen && !reduced} delay={300 + i * 160} />{' '}
+                <DecodeOnce text={String(b.value)} play={seen} delay={300 + i * 160} />{' '}
                 {fr ? 'régions' : 'regions'}
               </span>
             </dd>
@@ -634,24 +627,21 @@ function PublicationCard({
         {p.type === 'review' && <span className="research-card-badge">{t.review}</span>}
       </div>
       <div className="research-card-body">
-        <h3>
+        <h3 lang="en">
           <Link className="research-card-open" to={r.publication(p.id)}>
             <RichText text={p.readingTitle} />
           </Link>
         </h3>
-        {plainTitle(p.readingTitle) !== p.title && (
-          <p className="research-card-title" lang="en">
-            {p.title}
-          </p>
-        )}
         <p className="research-card-authors">
           <AuthorLine publication={p} />
         </p>
-        <ul className="research-card-themes" aria-label={t.theme}>
-          {p.themes.map((id) => (
-            <li key={id}>{t.themes[id]}</li>
-          ))}
-        </ul>
+        {p.themes.length > 0 && (
+          <ul className="research-card-themes" aria-label={t.theme}>
+            {p.themes.map((id) => (
+              <li key={id}>{t.themes[id]}</li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className="research-card-actions">
         <Link className="research-card-read" to={r.publication(p.id)} tabIndex={-1}>
@@ -712,15 +702,9 @@ export function PublicationPage({ meta }: { meta: PageMeta }) {
             {online && ` · ${t.online} ${online}`}
             {p.type === 'review' && ` · ${t.review}`}
           </p>
-          <h1 className="publication-title">
+          <h1 className="publication-title" lang="en">
             <RichText text={p.readingTitle} />
           </h1>
-          {plainTitle(p.readingTitle) !== p.title && (
-            <p className="publication-original">
-              <span>{t.originalTitle}</span>
-              <span lang="en">{p.title}</span>
-            </p>
-          )}
           <p className="publication-authors">
             <AuthorLine publication={p} full />
           </p>
@@ -786,16 +770,7 @@ export function PublicationPage({ meta }: { meta: PageMeta }) {
                     legend={`${f.label}. ${f.caption}`}
                     caption={
                       <>
-                        {t.caption}. {f.credit}. {t.licence}{' '}
-                        <a
-                          href="https://creativecommons.org/licenses/by/4.0/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {f.licence}
-                          <span className="sr-only">{ui.common.newTab}</span>
-                        </a>
-                        .
+                        {t.caption}. {f.credit}.
                       </>
                     }
                   />
@@ -858,13 +833,15 @@ export function PublicationPage({ meta }: { meta: PageMeta }) {
                 </ul>
               </div>
             )}
-            <ul className="research-card-themes publication-themes" aria-label={t.theme}>
-              {p.themes.map((id) => (
-                <li key={id}>
-                  <Link to={researchLink(r.publications, { theme: id })}>{t.themes[id]}</Link>
-                </li>
-              ))}
-            </ul>
+            {p.themes.length > 0 && (
+              <ul className="research-card-themes publication-themes" aria-label={t.theme}>
+                {p.themes.map((id) => (
+                  <li key={id}>
+                    <Link to={researchLink(r.publications, { theme: id })}>{t.themes[id]}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </aside>
         </div>
       </section>
@@ -910,14 +887,9 @@ export function PublicationLinks({ items }: { items: ResearchPublication[] }) {
               <span className="publication-links-meta">
                 {p.year} · {p.journal}
               </span>
-              <span className="publication-links-title">
+              <span className="publication-links-title" lang="en">
                 <RichText text={p.readingTitle} />
               </span>
-              {plainTitle(p.readingTitle) !== p.title && (
-                <span className="publication-links-ref" lang="en">
-                  {p.title}
-                </span>
-              )}
               <span className="publication-links-more">
                 {ui.research.readSummary}
                 <ArrowRight size={15} aria-hidden="true" />

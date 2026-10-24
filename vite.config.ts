@@ -2,11 +2,18 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { pagePaths, redirects } from './src/lib/pages';
 
-export default defineConfig(() => ({
+// The client area and the administration are a second application (portal.html), served for
+// every address under /espace and /admin. The development server always serves it; a build
+// includes it only with LDGENX_PORTAL=1, once its backend is connected (docs/PORTAL.md).
+const portalPath = /^\/(espace|admin)(\/|$)/;
+const withPortal = process.env.LDGENX_PORTAL === '1';
+
+export default defineConfig(({ isSsrBuild }) => ({
   // Vite's development router remains client-rendered. The production preview
   // serves each route's generated document through the middleware below; the
   // development server makes the crawler files (sitemaps, robots.txt, llms.txt)
@@ -15,6 +22,24 @@ export default defineConfig(() => ({
   plugins: [
     react(),
     tailwindcss(),
+    {
+      name: 'ldgenx-portal',
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          const url = new URL(req.url || '/', 'http://localhost');
+          if (portalPath.test(url.pathname)) req.url = `/portal.html${url.search}`;
+          next();
+        });
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          const url = new URL(req.url || '/', 'http://localhost');
+          if (portalPath.test(url.pathname) && existsSync(resolve('dist/portal.html')))
+            req.url = `/portal.html${url.search}`;
+          next();
+        });
+      },
+    },
     {
       name: 'ldgenx-crawler-files',
       configureServer(server) {
@@ -68,7 +93,7 @@ export default defineConfig(() => ({
             return;
           }
           if (pagePaths.includes(path)) {
-            req.url = `${path === '/' ? '' : path}/index.html${url.search}`;
+            req.url = `${path === '/' ? '/index' : path}.html${url.search}`;
             next();
             return;
           }
@@ -89,5 +114,13 @@ export default defineConfig(() => ({
   ],
   build: {
     sourcemap: false,
+    rollupOptions: isSsrBuild
+      ? undefined
+      : {
+          input: {
+            main: resolve('index.html'),
+            ...(withPortal && { portal: resolve('portal.html') }),
+          },
+        },
   },
 }));

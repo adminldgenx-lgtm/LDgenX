@@ -17,7 +17,6 @@ export const ui = {
     readMore: 'Read more',
     excludingTax: 'excl. VAT',
     figure: 'Figure',
-    illustration: 'Illustration of the project’s principle',
   },
   header: {
     servicesTitle: 'One question.\nComplementary expertise.',
@@ -57,6 +56,8 @@ export const ui = {
     privacy: 'Privacy',
     terms: 'Terms of sale (FR)',
     otherLanguage: 'Français',
+    motionFull: 'Animations: full',
+    motionReduced: 'Animations: reduced',
     sectors: 'Fields of application',
   },
   notFound: {
@@ -84,6 +85,7 @@ export const ui = {
     innovationText: 'automating biodiversity monitoring',
     studiesEyebrow: 'Genomics in practice',
     teamEyebrow: 'The scientific team',
+    pauseFilm: 'Pause the video',
   },
   dna: {
     eyebrow: 'Understand to act',
@@ -98,8 +100,6 @@ export const ui = {
     ],
     rail: 'The steps of the approach',
     skip: 'Skip the process',
-    credit: '3D model after',
-    creditLicence: ', CC BY 4.0, adapted',
     practice: 'In practice',
   },
   landscape: {
@@ -161,10 +161,7 @@ export const ui = {
     cta: 'See the study',
     sectionLabel: 'Case study: fish in the ports and estuaries of Artois-Picardie',
     skip: 'Skip the study',
-    creditLong: 'Sites placed from the station coordinates published in the final report.',
-    creditShort: 'Illustration, no measurement from the study. ',
-    osm: 'OpenStreetMap contributors',
-    naturalEarth: ', Natural Earth.',
+    mapData: 'Map data',
     srSites: 'The eight sampled sites',
     srApproach: 'The approach',
     sectors: (n: number) => (n > 1 ? `${n} sectors` : '1 station'),
@@ -289,6 +286,7 @@ export const ui = {
     approach: 'The approach',
     lessons: 'What we learn',
     alongCoast: 'The study, along the coast',
+    ongoing: 'Study in progress: its results are not published yet.',
     noResults:
       'A similar project? Tell us about your site and your question: we will design the right protocol together.',
     reference: 'View the published reference',
@@ -382,7 +380,6 @@ export const ui = {
     preprint: 'Preprint',
     figures: 'Figures from the article',
     caption: 'Original caption',
-    licence: 'Reproduced unchanged · licence',
     enlarge: 'Enlarge the figure',
     noFigures:
       'The figures of this article are not reproduced here; they can be viewed in the published article.',
@@ -399,7 +396,6 @@ export const ui = {
     seeStudies: 'Case studies',
     seeMember: 'See their publications',
     allPublications: 'All publications',
-    originalTitle: 'Original title',
     cite: 'Cite this article',
     copyCitation: 'Copy the reference',
     teamAuthors: 'Authors from the team',
@@ -485,24 +481,30 @@ export const ui = {
     publisher: 'Publisher',
     identity: [
       'LDgenX SAS · SIREN 952 193 837',
-      'RCS Montpellier · NAF code 7112B',
+      'RCS Montpellier · NAF code 72.11Z',
       'Share capital: €50,000',
+      'Registered office: 6 place du 8 mai 1945, 34690 Fabrègues, France',
     ],
-    contentTitle: 'Scientific content and illustrations',
-    content:
-      'The scientific presentations are based on LDgenX’s public information and on the documents cited. Studies, scientific work and resources link to the sources used. The illustrations generated for this site are not a photographic report of the projects presented.',
-    publicationTitle: 'Publication information',
-    publication:
-      'Before publication, this working version must be completed with the identity of the publication manager and the details of the host actually chosen. This information is not assumed from a development environment.',
+    lab: 'Laboratory',
+    directorTitle: 'Publication director',
+    director: 'Maeva Leitwein, President of LDgenX SAS',
+    hostTitle: 'Hosting',
+    host: [
+      'Cloudflare, Inc.',
+      '101 Townsend St, San Francisco, CA 94107, United States',
+      'Phone: +1 650 319 8930',
+    ],
+    aiTitle: 'Artificial intelligence',
+    ai: 'Some illustrations, the homepage video and the portraits of Maeva Leitwein, Emilie Delpuech and Maxime Lambert were made with the help of artificial intelligence, the portraits from their photographs.',
     contact: 'Contact LDgenX',
   },
   privacy: {
     navigationTitle: 'Browsing',
     navigation:
-      'This version includes no audience analytics, no advertising and no tracking cookies. Fonts and illustrations are served from the site. No user account is required.',
+      'This site uses no audience analytics, no advertising and no tracking cookies, and requires no account. Fonts and images are served from the site. It is hosted by Cloudflare, which processes the technical data needed to deliver the pages and keep them secure, such as the IP address.',
     formTitle: 'Contact form',
     form: 'The information entered in the form is passed on to the LDgenX team through the form delivery service chosen by the company, for the sole purpose of answering your request. It is not stored in browser storage.',
-    mailtoTitle: 'Preparing an email',
+    mailtoTitle: 'Contact form',
     mailto:
       'The form prepares a message in your mail application. The data entered are not stored in browser storage and are not sent to a form server by this site. Sending remains your decision, from your mail application.',
     message:
@@ -510,10 +512,10 @@ export const ui = {
     linksTitle: 'External links',
     links:
       'The booking link and partner websites open separate services. Their operation and their processing of data are governed by their own policies.',
-    dataTitle: 'Contact and data requests',
-    dataBefore: 'For any question about your exchanges with LDgenX, contact ',
-    dataAfter:
-      '. How messages received by the company are kept and processed must be confirmed by LDgenX before the final policy is published.',
+    dataTitle: 'Your data and your rights',
+    dataBefore:
+      'LDgenX SAS is the controller of the messages you send it. They are used only to answer your request and for any relationship that follows, and are kept for at most three years after the last exchange. To access, correct or erase your data, write to ',
+    dataAfter: '. You may also lodge a complaint with the French data protection authority (CNIL).',
   },
   contactPage: {
     mailGreeting: 'Hello LDgenX team,',

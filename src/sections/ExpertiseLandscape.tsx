@@ -13,12 +13,7 @@ import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import type { Expertise } from '../content/fr';
 import { Photo, TextLink } from '../components/ui';
-import {
-  AnimatedHeading,
-  useMediaQuery,
-  usePresence,
-  useReducedMotion,
-} from '../components/motion';
+import { AnimatedHeading, useMediaQuery, useMotionLevel, usePresence } from '../components/motion';
 
 /* An illustrative landscape: one summit per discipline, drawn as particles on a canvas with a
    hand-made perspective camera. It encodes no data, axis or measurement; it is a way in.
@@ -298,7 +293,8 @@ export function ExpertiseLandscape({
   const mobile = useMediaQuery('(max-width: 800px)');
   // Up to tablet width the card docks under the landscape, with the list of expertises.
   const docked = useMediaQuery('(max-width: 1250px)');
-  const reduced = useReducedMotion();
+  // Reduced motion keeps the intro and the sway, but the camera no longer follows the pointer.
+  const calm = useMotionLevel() === 'reduced';
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const points = useRef<(HTMLButtonElement | null)[]>([]);
@@ -332,10 +328,6 @@ export function ExpertiseLandscape({
 
   // The intro plays once, the first time the landscape is well into view.
   useEffect(() => {
-    if (reduced) {
-      setPhase('ready');
-      return;
-    }
     setPhase('globe');
     const element = stage.current;
     if (!element) return;
@@ -357,7 +349,7 @@ export function ExpertiseLandscape({
       watcher.disconnect();
       window.clearTimeout(timer);
     };
-  }, [reduced]);
+  }, []);
 
   // The canvas: built once per layout, animated only while on screen.
   useEffect(() => {
@@ -385,22 +377,22 @@ export function ExpertiseLandscape({
     const draw = (now: number) => {
       const delta = last ? Math.min(64, now - last) : 16;
       last = now;
-      clock += reduced ? 0 : delta;
+      clock += delta;
       const chosen = selection.current;
       const hoveredPeak = hovered.current;
       const k = Math.min(1, delta / 220);
-      glow += ((chosen === null ? 0 : 1) - glow) * (reduced ? 1 : k);
+      glow += ((chosen === null ? 0 : 1) - glow) * k;
       hoverGlow += ((hoveredPeak === null || hoveredPeak === chosen ? 0 : 1) - hoverGlow) * k;
       // The camera follows the pointer, sways a little at rest, and holds while a card is open,
       // so the card stays beside its summit.
-      if (!reduced && chosen === null) {
-        const { inside, x, y } = pointer.current;
+      if (chosen === null) {
+        const { inside, x, y } = calm ? { inside: false, x: 0, y: 0 } : pointer.current;
         const targetYaw = inside ? (x / width - 0.5) * 0.16 : 0.05 * Math.sin(clock * 0.00011);
         const targetTilt = inside ? (y / heightPx - 0.5) * 0.06 : 0;
         yaw += (targetYaw - yaw) * Math.min(1, delta / 600);
         tilt += (targetTilt - tilt) * Math.min(1, delta / 600);
       }
-      lens += ((pointer.current.inside && !reduced ? 1 : 0) - lens) * k;
+      lens += ((pointer.current.inside && !calm ? 1 : 0) - lens) * k;
 
       // Intro: 0 on the globe, 1 in the landscape.
       const intro =
@@ -516,12 +508,12 @@ export function ExpertiseLandscape({
 
     const loop = (now: number) => {
       draw(now);
-      frame = visible && !reduced ? requestAnimationFrame(loop) : 0;
+      frame = visible ? requestAnimationFrame(loop) : 0;
     };
     const start = () => {
       if (!frame) frame = requestAnimationFrame(loop);
     };
-    redraw.current = () => (reduced || !visible ? draw(performance.now()) : start());
+    redraw.current = () => (visible ? start() : draw(performance.now()));
 
     const resize = () => {
       width = container.clientWidth;
@@ -535,7 +527,7 @@ export function ExpertiseLandscape({
     const watcher = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       last = 0;
-      if (visible && !reduced) start();
+      if (visible) start();
     });
     watcher.observe(container);
     resize();
@@ -544,7 +536,7 @@ export function ExpertiseLandscape({
       watcher.disconnect();
       cancelAnimationFrame(frame);
     };
-  }, [mobile, reduced, camera]);
+  }, [mobile, calm, camera]);
 
   useEffect(() => redraw.current(), [active, hover, phase]);
 
@@ -636,7 +628,7 @@ export function ExpertiseLandscape({
   }, [active, close]);
 
   // The card stays mounted while it closes; it keeps showing the last expertise meanwhile.
-  const cardState = usePresence(active !== null, reduced ? 0 : 200);
+  const cardState = usePresence(active !== null, 200);
   const [shown, setShown] = useState<number | null>(null);
   if (active !== null && active !== shown) setShown(active);
   const current = shown === null ? null : items[shown];

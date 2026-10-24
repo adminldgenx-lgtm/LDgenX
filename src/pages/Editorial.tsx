@@ -91,8 +91,13 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
             </Reveal>
             <div className="case-content">
               <StepRows items={rows} as="h2" className="case-steps" />
-              {!s.result && !s.details && <p className="form-note">{t.noResults}</p>}
-              {!/ldgenx\.(fr|com)/.test(s.source) && (
+              {!s.result && !s.details && (
+                <p className="form-note">
+                  {s.status === 'ongoing' && `${t.ongoing} `}
+                  {t.noResults}
+                </p>
+              )}
+              {s.source && !/ldgenx\.(fr|com)/.test(s.source) && (
                 <a className="source-link" href={s.source} target="_blank" rel="noreferrer">
                   {t.reference}
                   <span className="sr-only">{ui.common.newTab}</span>

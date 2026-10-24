@@ -1,0 +1,10 @@
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { PortalApp } from './PortalApp';
+import './portal.css';
+
+createRoot(document.getElementById('root')!).render(
+  <BrowserRouter>
+    <PortalApp />
+  </BrowserRouter>,
+);

@@ -113,8 +113,8 @@ export interface ResearchFigure {
 export interface ResearchPublication {
   /** Address in the catalogue (?publication=), the same in every language. */
   id: string;
-  /** The title in the page's language: a faithful translation of the published title in French,
-   *  the published title itself in English. Latin names are marked *in italics*. */
+  /** The published title as shown, in both languages (never translated). Latin names are
+   *  marked *in italics*. */
   readingTitle: string;
   /** A short title for search results and links (about 60 characters at most). */
   seoTitle: string;
@@ -167,7 +167,6 @@ export interface ResearchFeatured {
   steps: { value: string; label: string }[];
   chart: ResearchChart;
   chartTitle: string;
-  chartNote: string;
 }
 
 export type AssayCategory = 'mammals' | 'fish' | 'reptiles' | 'invertebrates';
@@ -203,7 +202,6 @@ export interface CustomAssay {
     yourSpecies: string;
   };
   quantNote: string;
-  illustration: string;
   targetsLabel: string;
   targets: AssayTarget[];
   contextImage: { name: string; alt: string; caption: string };

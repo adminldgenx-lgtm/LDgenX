@@ -4,6 +4,7 @@
 // the site's dependencies).
 //
 // Usage: LDGENX_PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node scripts/prepare-licensed-photos.mjs
+// Names after the command prepare only those pictures (the others are left as they are).
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -97,7 +98,8 @@ function alignmentSvg(width = 1600, height = 1200) {
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
-for (const photo of manifest.photos) {
+const only = process.argv.slice(2);
+for (const photo of manifest.photos.filter((p) => !only.length || only.includes(p.name))) {
   const source =
     photo.kind === 'illustration'
       ? `data:image/svg+xml;base64,${Buffer.from(alignmentSvg()).toString('base64')}`

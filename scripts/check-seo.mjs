@@ -6,6 +6,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { pageFile } from './page-file.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -16,8 +17,7 @@ const fail = (page, message) => errors.push(`${page}: ${message}`);
 const warn = (page, message) => warnings.push(`${page}: ${message}`);
 
 const read = (file) => readFileSync(path.join(dist, file), 'utf8');
-const fileOf = (pagePath) =>
-  pagePath === '/' ? 'index.html' : path.join(pagePath.slice(1), 'index.html');
+const fileOf = pageFile;
 const decode = (text) =>
   text
     .replace(/&amp;/g, '&')

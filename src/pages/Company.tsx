@@ -288,16 +288,27 @@ export function LegalPage({ meta }: { meta: PageMeta }) {
             ))}
           </p>
           <p>
+            <strong>{t.lab}</strong>
+            <br />
             {company.address}
             <br />
             {company.city}
             <br />
             <a href={`mailto:${company.email}`}>{company.email}</a>
           </p>
-          <h2>{t.contentTitle}</h2>
-          <p>{t.content}</p>
-          <h2>{t.publicationTitle}</h2>
-          <p>{t.publication}</p>
+          <h2>{t.directorTitle}</h2>
+          <p>{t.director}</p>
+          <h2>{t.hostTitle}</h2>
+          <p>
+            {t.host.map((line) => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </p>
+          <h2>{t.aiTitle}</h2>
+          <p>{t.ai}</p>
           <TextLink to={r.contact}>{t.contact}</TextLink>
         </div>
       </section>

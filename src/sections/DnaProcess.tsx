@@ -2,7 +2,8 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
-import { AnimatedHeading, useMediaQuery, useReducedMotion } from '../components/motion';
+import { AnimatedHeading, useMediaQuery } from '../components/motion';
+import { scrollBehavior } from '../lib/motion-preference';
 import { Eyebrow, Photo, Reveal } from '../components/ui';
 import { SceneSkip } from '../components/SceneSkip';
 import { createDnaScene, loadParticles } from '../lib/dna-scene';
@@ -14,7 +15,6 @@ import { createDnaScene, loadParticles } from '../lib/dna-scene';
 
 // The seven steps of the workflow, the same in every catalogue.
 const STAGES = 7;
-const MODEL_CREDIT = 'https://sketchfab.com/3d-models/dna-547d42f6c0184232a945051b6952a39e';
 
 type Corner = 'start' | 'end';
 const cornerOf = (index: number): Corner => (index % 2 === 0 ? 'start' : 'end');
@@ -22,7 +22,6 @@ const cornerOf = (index: number): Corner => (index % 2 === 0 ? 'start' : 'end');
 export function DnaProcess() {
   const { copy, workflow, ui } = useCatalog();
   const r = useRoutes();
-  const reduced = useReducedMotion();
   const compact = useMediaQuery('(max-width: 800px)');
   const track = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -50,7 +49,6 @@ export function DnaProcess() {
 
     // Continuous position through the stages, from the scroll position alone.
     const stageNow = () => {
-      if (reduced) return 0;
       const box = container.getBoundingClientRect();
       const sticky = container.firstElementChild as HTMLElement;
       const run = box.height - sticky.offsetHeight;
@@ -72,15 +70,15 @@ export function DnaProcess() {
       if (!revealStart && visible) revealStart = now;
       scene.draw({
         stage,
-        time: reduced ? 0 : (now - started) / 1000,
-        reveal: reduced ? 1 : revealStart ? Math.min(1, (now - revealStart) / 1800) : 0,
-        pulse: reduced ? 0 : Math.max(0, 1 - (now - pulseStart) / 900),
+        time: (now - started) / 1000,
+        reveal: revealStart ? Math.min(1, (now - revealStart) / 1800) : 0,
+        pulse: Math.max(0, 1 - (now - pulseStart) / 900),
         compact,
       });
     };
     const loop = (now: number) => {
       draw(now);
-      frame = visible && !reduced ? requestAnimationFrame(loop) : 0;
+      frame = visible ? requestAnimationFrame(loop) : 0;
     };
     const start = () => {
       if (!frame) frame = requestAnimationFrame(loop);
@@ -99,7 +97,7 @@ export function DnaProcess() {
               scene = createDnaScene(element, particles);
               if (!scene) return;
               setLoaded(true);
-              if (reduced || visible) draw(performance.now());
+              if (visible) draw(performance.now());
               if (visible) start();
             })
             .catch(() => {});
@@ -113,11 +111,11 @@ export function DnaProcess() {
     near.observe(container);
     const onScreen = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
-      if (visible && !reduced) start();
+      if (visible) start();
     });
     onScreen.observe(container);
     const onScroll = () => {
-      if (!reduced && visible) follow(stageNow(), performance.now());
+      if (visible) follow(stageNow(), performance.now());
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     const onResize = () => scene && draw(performance.now());
@@ -133,7 +131,7 @@ export function DnaProcess() {
       cancelAnimationFrame(frame);
       scene?.dispose();
     };
-  }, [reduced, compact]);
+  }, [compact]);
 
   // Jump to a stage: the middle of its stretch of scroll.
   const goTo = (index: number) => {
@@ -144,7 +142,7 @@ export function DnaProcess() {
     const top = container.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
       top: top + ((index + 0.5) / STAGES) * run,
-      behavior: reduced ? 'auto' : 'smooth',
+      behavior: scrollBehavior(),
     });
   };
 
@@ -182,7 +180,7 @@ export function DnaProcess() {
   );
 
   return (
-    <section className="dna-process" data-static={reduced || undefined}>
+    <section className="dna-process">
       <div className="container section-heading process-heading dna-process-intro">
         <div>
           <Eyebrow>{ui.dna.eyebrow}</Eyebrow>
@@ -197,17 +195,7 @@ export function DnaProcess() {
       <div ref={track} className="dna-track">
         <div className="dna-sticky" data-loaded={loaded || undefined}>
           <canvas ref={canvas} className="dna-canvas" aria-hidden="true" />
-          {reduced ? (
-            <div className="container dna-static">
-              <ol className="dna-static-steps">
-                {workflow.map((s, i) => (
-                  <li key={s.title}>
-                    <StageCard index={i} />
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ) : compact ? (
+          {compact ? (
             <div className="dna-corner" data-corner="end" data-visible>
               {progress}
               <div aria-hidden="true">
@@ -228,46 +216,34 @@ export function DnaProcess() {
               </div>
             ))
           )}
-          {!reduced && (
-            <nav className="dna-rail" aria-label={ui.dna.rail}>
-              <ol>
-                {workflow.map((s, i) => (
-                  <li key={s.title}>
-                    <button
-                      type="button"
-                      aria-current={active === i ? 'step' : undefined}
-                      data-done={i < active || undefined}
-                      onClick={() => goTo(i)}
-                    >
-                      <span className="dna-rail-name">{s.title}</span>
-                      <span className="dna-rail-dot" aria-hidden="true" />
-                    </button>
-                  </li>
-                ))}
-              </ol>
-              {skip}
-            </nav>
-          )}
-          {!reduced && !compact && cta}
-          <p className="dna-credit">
-            {ui.dna.credit}{' '}
-            <a href={MODEL_CREDIT} target="_blank" rel="noreferrer">
-              « DNA », LucasPresoto
-              <span className="sr-only">{ui.common.newTab}</span>
-            </a>
-            {ui.dna.creditLicence}
-          </p>
+          <nav className="dna-rail" aria-label={ui.dna.rail}>
+            <ol>
+              {workflow.map((s, i) => (
+                <li key={s.title}>
+                  <button
+                    type="button"
+                    aria-current={active === i ? 'step' : undefined}
+                    data-done={i < active || undefined}
+                    onClick={() => goTo(i)}
+                  >
+                    <span className="dna-rail-name">{s.title}</span>
+                    <span className="dna-rail-dot" aria-hidden="true" />
+                  </button>
+                </li>
+              ))}
+            </ol>
+            {skip}
+          </nav>
+          {!compact && cta}
         </div>
       </div>
-      {!reduced && (
-        <ol className="sr-only">
-          {workflow.map((s) => (
-            <li key={s.title}>
-              {s.title}. {s.text} {s.detail}
-            </li>
-          ))}
-        </ol>
-      )}
+      <ol className="sr-only">
+        {workflow.map((s) => (
+          <li key={s.title}>
+            {s.title}. {s.text} {s.detail}
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

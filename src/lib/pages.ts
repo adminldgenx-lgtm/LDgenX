@@ -122,7 +122,7 @@ function buildPages(locale: Locale, c: Catalog): PageMeta[] {
         r.study(s.id),
         'study',
         s.title,
-        seo.article.title(s.title.replace(/\.$/, '')),
+        seo.article.title(s.seoTitle ?? s.title.replace(/\.$/, '')),
         s.subtitle,
         s.image,
         s.id,
@@ -511,7 +511,9 @@ function article(locale: Locale, id: string) {
       );
       return member ? node(personId(member.id)) : { '@type': 'Person', name };
     }),
-    keywords: p.themes.map((t) => c.ui.research.themes[t]).join(', '),
+    ...(p.themes.length > 0 && {
+      keywords: p.themes.map((t) => c.ui.research.themes[t]).join(', '),
+    }),
     about: c.services
       .filter((s) => p.services.includes(s.id))
       .map((s) => node(`${company.origin}${r.service(s.id)}#service`)),
@@ -645,9 +647,10 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
       mainEntityOfPage: node(`${url}#webpage`),
       about: node(`${company.origin}${r.service(study.service)}#service`),
       ...(client && { funder: { '@type': 'Organization', name: client } }),
-      ...(!/ldgenx\.(fr|com)/.test(study.source) && {
-        isBasedOn: { '@type': 'CreativeWork', url: study.source },
-      }),
+      ...(study.source &&
+        !/ldgenx\.(fr|com)/.test(study.source) && {
+          isBasedOn: { '@type': 'CreativeWork', url: study.source },
+        }),
     });
   }
   const work = meta.kind === 'work' && c.works.find((w) => w.id === meta.id);

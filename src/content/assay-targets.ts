@@ -224,6 +224,17 @@ export const assayTargetsFr: AssayTarget[] = [
     "source": "canva-2026-10-17-page-10"
   },
   {
+    "id": "neomys-anomalus",
+    "name": "Musaraigne de Miller",
+    "latin": "Neomys anomalus",
+    "category": "mammals",
+    "searchNames": [
+      "Musaraigne de Miller",
+      "Southern water shrew"
+    ],
+    "source": "canva-2026-10-17-page-10"
+  },
+  {
     "id": "arvicola-sapidus",
     "name": "Campagnol amphibie",
     "latin": "Arvicola sapidus",
@@ -454,6 +465,17 @@ export const assayTargetsEn: AssayTarget[] = [
     "searchNames": [
       "Musaraigne d’Europe",
       "Eurasian water shrew"
+    ],
+    "source": "canva-2026-10-17-page-10"
+  },
+  {
+    "id": "neomys-anomalus",
+    "name": "Southern water shrew",
+    "latin": "Neomys anomalus",
+    "category": "mammals",
+    "searchNames": [
+      "Musaraigne de Miller",
+      "Southern water shrew"
     ],
     "source": "canva-2026-10-17-page-10"
   },

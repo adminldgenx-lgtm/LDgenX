@@ -32,13 +32,6 @@ export const clientPhotos: Record<
     altEn: 'A shrimp held in two hands in front of a pond',
     credit: '@UNIMA',
   },
-  'detection-vison': {
-    widths: [480, 615],
-    width: 615,
-    height: 293,
-    altFr: 'Vison photographié en extérieur',
-    altEn: 'A mink photographed outdoors',
-  },
   'dpcr-chargement': {
     widths: [480, 828],
     width: 828,
@@ -57,8 +50,9 @@ export const clientPhotos: Record<
     widths: [480, 592],
     width: 592,
     height: 789,
-    altFr: 'Un membre de l’équipe en blouse place une plaque dans le système de PCR digitale',
-    altEn: 'A team member in a lab coat placing a plate in the digital PCR system',
+    altFr:
+      'Maxime Lambert, ingénieur laboratoire, place une plaque dans le système de PCR digitale',
+    altEn: 'Maxime Lambert, laboratory engineer, placing a plate in the digital PCR system',
   },
   'dpcr-logiciel': {
     widths: [480, 793],

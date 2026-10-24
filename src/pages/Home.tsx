@@ -5,15 +5,11 @@ import { useCatalog, useRoutes } from '../i18n';
 import { Button, Eyebrow, SectionHeading, FinalCTA } from '../components/ui';
 import { HeroVideo } from '../components/HeroVideo';
 import { DnaProcess } from '../sections/DnaProcess';
-import { KeyFacts, TrustWall } from '../sections/Proof';
+import { KeyFacts } from '../sections/Proof';
 import { ExpertiseTrace } from '../sections/ExpertiseTrace';
 import { CustomAssayTeaser } from '../sections/CustomAssay';
-import { TeamStage } from '../sections/TeamStage';
-import { ResearchTeaser } from './Research';
 import { StudyJourney } from '../sections/StudyJourney';
-import { StudyPanels } from '../sections/StudyPanels';
 import { ApplicationAtlas } from '../sections/ApplicationAtlas';
-import { InnovationShowcase } from '../sections/Innovation';
 
 /** Whether a dated item is still current: through the whole of its last day. */
 const stillOn = (until: string) => Date.now() <= new Date(`${until}T23:59:59`).getTime();
@@ -120,26 +116,9 @@ export function Home() {
           />
         </div>
       </section>
+      {/* The page ends on the studies, at the client's request (23 October 2026): the other
+          studies, R&D, partners, team and publications have their own pages. */}
       <StudyJourney />
-      <section className="section-space studies-more">
-        <div className="container">
-          <StudyPanels works />
-        </div>
-      </section>
-      <InnovationShowcase />
-      <TrustWall />
-      <section className="section-space team-section">
-        <div className="container">
-          <SectionHeading
-            eyebrow={ui.hero.teamEyebrow}
-            title={copy.home.teamTitle}
-            body={copy.home.teamIntro}
-            link={{ to: r.team, label: copy.labels.team }}
-          />
-          <TeamStage />
-        </div>
-      </section>
-      <ResearchTeaser />
       <FinalCTA />
     </>
   );

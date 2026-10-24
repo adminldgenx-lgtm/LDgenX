@@ -8,6 +8,7 @@ import { AnimatedHeading } from '../components/motion';
 import { AmbientField } from '../components/AmbientField';
 import { LiveList } from '../components/Steps';
 import { Faq } from '../sections/Practice';
+import { scrollBehavior } from '../lib/motion-preference';
 
 type Status = { tone: 'info' | 'success' | 'error'; text: string } | null;
 
@@ -22,11 +23,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
   // A confirmation or an error below the fold is brought into view.
   useEffect(() => {
     if (!status || status.tone === 'info') return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    statusMessage.current?.scrollIntoView({
-      block: 'nearest',
-      behavior: reduced ? 'auto' : 'smooth',
-    });
+    statusMessage.current?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() });
   }, [status]);
   const mode = directContact ? formCopy.direct : formCopy.mailto;
   function buildMessage(form: HTMLFormElement) {

@@ -196,13 +196,14 @@ export const services: Expertise[] = [
       {
         title: 'Detection and monitoring of fish communities in turbid waters',
         image: 'terrain-prelevement',
+        link: { kind: 'study', id: 'adne-estuaire-milieu-turbide' },
       },
       {
         title: 'Baseline marine biodiversity assessment at a pilot site',
         image: 'terrain-palavas',
       },
       {
-        title: 'Biodiversity monitoring of offshore wind farms',
+        title: 'Biodiversity monitoring of offshore wind farms (study in progress)',
         image: 'cas-eolien-offshore',
         link: { kind: 'study', id: 'biodiversite-eolien-offshore' },
       },
@@ -277,6 +278,11 @@ export const services: Expertise[] = [
         image: 'cas-vanneau',
         link: { kind: 'study', id: 'genomique-vanneau-huppe' },
       },
+      {
+        title: 'The Pyrenean brown bear',
+        image: 'ours-brun',
+        link: { kind: 'study', id: 'demogenetique-ours-pyrenees' },
+      },
     ],
     headings: {
       need: 'Diversity, structure,\nconnectivity.',
@@ -328,7 +334,7 @@ export const services: Expertise[] = [
     ],
     cases: [
       {
-        title: 'Microbial community profiling on microplastics',
+        title: 'Sequencing microbial communities on microplastics',
         image: 'cas-microplastiques',
         link: { kind: 'study', id: 'communautes-microplastiques' },
       },
@@ -536,11 +542,11 @@ export const services: Expertise[] = [
     title: 'Targeted DNA tests',
     short: 'Detect and quantify the DNA of one species.',
     scope:
-      'Primers and probes for 21 species and custom assays: detection and quantification by digital PCR.',
+      'Primers and probes for 22 species and custom assays: detection and quantification by digital PCR.',
     image: 'dpcr-operateur',
     headline: 'Your target species, a custom DNA test.',
     intro:
-      'European mink, Atlantic bluefin tuna, sharks, loggerhead turtle: LDgenX holds primers and probes for 21 species and designs assays for new targets. Digital PCR (dPCR) detects and quantifies the DNA of the species you are looking for in water, soil or sediment.',
+      'European mink, Atlantic bluefin tuna, sharks, loggerhead turtle: LDgenX holds primers and probes for 22 species and designs assays for new targets. Digital PCR (dPCR) detects and quantifies the DNA of the species you are looking for in water, soil or sediment.',
     need: 'A protected species to confirm, an invasive species to detect early, a pathogen to monitor? When the question is about one species, a targeted test answers it more directly than a survey.',
     approaches: [
       {
@@ -583,7 +589,7 @@ export const services: Expertise[] = [
     seo: {
       title: 'Targeted DNA tests by dPCR: detect a species | LDgenX',
       description:
-        'Primers and probes for 21 species (European mink, bluefin tuna, sharks, loggerhead turtle…) and custom assays: DNA detection and quantification by digital PCR.',
+        'Primers and probes for 22 species (European mink, bluefin tuna, sharks, loggerhead turtle…) and custom assays: DNA detection and quantification by digital PCR.',
     },
     headings: {
       need: 'One question,\none species.',
@@ -1144,13 +1150,180 @@ export const studies: Study[] = [
     },
   },
   {
+    id: 'demogenetique-ours-pyrenees',
+    slug: 'pyrenean-brown-bear-demogenetics',
+    title: 'What genetic future for the Pyrenean brown bear?',
+    category: 'Population genomics',
+    image: 'ours-brun',
+    imageAlt: 'A brown bear crossing a forest clearing',
+    subtitle:
+      'A demo-genetic study of the brown bear population for the Pays de l’Ours – ADET association.',
+    facts: [
+      { label: 'Client', value: 'Pays de l’Ours – ADET association' },
+      { label: 'Scientific partner', value: 'UMR BIOGECO (INRAE, University of Bordeaux)' },
+      { label: 'Species', value: 'Brown bear, Ursus arctos' },
+      { label: 'Data', value: 'Population monitoring, 1975 to 2024' },
+      { label: 'Approach', value: 'Demo-genetic modelling, projections to 2050' },
+      { label: 'Year', value: '2025' },
+    ],
+    context:
+      'Close to extinction in the Pyrenees in the mid-1990s, the brown bear population was reinforced from 1996 with bears released from Slovenia. It was estimated at 104 individuals in 2024. Descended from a small number of founders, it remains genetically fragile: its inbreeding has been rising since the early 2000s, even as its numbers grow.',
+    question:
+      'What is the genetic status of the population, and which additions of bears would limit inbreeding by 2050?',
+    approach:
+      'A synthesis of the population monitoring data: a pedigree built from thirteen microsatellite markers, on hair and scats, from 1975 to 2024. After estimating the demographic parameters, the population is simulated from 2024 to 2050: from 0 to 200 bears introduced between 2030 and 2040, with 0 to 100% males, giving 2,475 simulated genealogies.',
+    result:
+      'Without new bears, inbreeding keeps rising until 2050. A moderate but structured reinforcement is the most effective measure: 30 bears introduced over ten years, about 70% of them females, slow the rise in inbreeding and increase the effective size of the population. Keeping the two population cores connected and coordinating management between France, Spain and Andorra complete these measures.',
+    service: 'genomique-des-populations',
+    source: '',
+    details: {
+      regionsTitle: 'Time between two litters',
+      regionsNote:
+        'Share of the females’ reproductions by the number of years since their last litter, from the monitoring data up to 2024 (figure 3 of the report); 1.86 years on average. “0 years”: litters with several fathers, counted as two reproductions.',
+      regionsUnit: '%',
+      regions: [
+        { name: '0 years', value: 7.5 },
+        { name: '1 year', value: 11.3 },
+        { name: '2 years', value: 64.2 },
+        { name: '3 years', value: 11.3 },
+        { name: '4 years', value: 5.7 },
+      ],
+      figuresTitle: 'The report’s figures',
+      figures: [
+        {
+          image: 'fig-ours-consanguinite',
+          caption:
+            'Figure 6 of the report: simulated mean inbreeding, without introductions (a) and with 30 bears introduced over ten years (b); median of 50 simulations.',
+        },
+        {
+          image: 'fig-ours-effectifs',
+          caption:
+            'Figure 4 of the report: population numbers, observed from 2000 to 2024, then simulated to 2050.',
+          size: 'medium',
+        },
+      ],
+      funnelTitle: 'From monitoring data to projections',
+      funnel: [
+        { value: '1975-2024', label: 'years of population monitoring analysed' },
+        {
+          value: '13',
+          label: 'microsatellite markers to identify each bear and build the pedigree',
+        },
+        { value: '104', label: 'bears estimated in 2024, within an interval of 97 to 123' },
+        { value: '2,475', label: 'genealogies simulated to 2050' },
+        { value: '0 to 200', label: 'bears introduced across the scenarios, with 0 to 100% males' },
+      ],
+      findingsTitle: 'What the simulations show',
+      findings: [
+        'Without intervention, genetic erosion continues slowly but steadily: mean inbreeding keeps rising until 2050.',
+        'In the model, numbers reach the set carrying capacity around 2035, with more than 400 bears.',
+        'The more bears are introduced, the more the effective size and genetic diversity increase: allelic richness rises from 5.6 to more than 7 alleles per locus.',
+        'For the same number of bears, mostly female introductions can double the genetic effective size. Inbreeding ranges from 0.40, with few and mostly male introductions, to 0.14 with many and mostly female ones.',
+        'The recommended scenario, 30 bears over ten years with about 70% females, slows the rise in inbreeding compared with no introductions.',
+      ],
+      perspectiveTitle: 'Going further',
+      perspective:
+        'The projections should be updated with new monitoring data. LDgenX offers to share and co-develop its simulation models with the French Biodiversity Agency (OFB), to refine the management strategies for the population.',
+      rolesTitle: 'Who did what',
+      roles: [
+        'Report: Maeva Leitwein and Emilie Delpuech (LDgenX). Scientific coordination: Maeva Leitwein; modelling tools and statistics: Emilie Delpuech.',
+        'Simulations: a Master’s internship (M2) from the École pratique des hautes études (EPHE), recruited for the project.',
+        'Scientific partner: UMR BIOGECO (INRAE, University of Bordeaux).',
+        'Monitoring data: the Brown Bear Network, led by the French Biodiversity Agency (OFB) with the Spanish and Andorran services.',
+      ],
+    },
+  },
+  {
+    id: 'adne-estuaire-milieu-turbide',
+    slug: 'estuary-edna-turbid-water',
+    title: 'Reading fish DNA in turbid water.',
+    category: 'Environmental DNA',
+    image: 'estuaire-gironde',
+    imageAlt: 'The mouth of the Gironde estuary seen from space, its waters laden with sediment',
+    subtitle:
+      'A pilot project in the Gironde comparing water filtration methods in turbid estuaries.',
+    facts: [
+      { label: 'Project', value: 'ADNe Estuaire, pilot project' },
+      { label: 'Sites', value: 'Bègles, Cadillac and Le Verdon (Gironde, France)' },
+      { label: 'Turbidity', value: 'From 14 to more than 800 NTU' },
+      { label: 'Samples', value: '43, analysed in duplicate' },
+      { label: 'Approach', value: 'eDNA metabarcoding, fish 12S marker' },
+      { label: 'Period', value: 'October 2025' },
+    ],
+    context:
+      'In estuaries, water loaded with particles makes environmental DNA harder: filters clog quickly and particles can interfere with the analyses. This pilot project aimed to optimise eDNA protocols in turbid water.',
+    question:
+      'Which devices and filter sizes suit which turbidity, and which fish can be detected?',
+    approach:
+      'In October 2025, water from three sites with contrasting turbidity was filtered with two systems: a triple pump with Waterra capsules (0.45, 1.2 and 5 µm pores) and a high-flow Stick Pump (20 µm filter), from 2 to 30 litres depending on clogging. The 43 samples were analysed by metabarcoding on the fish 12S marker (Teleo, Illumina short reads), in duplicate; 12 of them were also sequenced as long fragments (Oxford Nanopore).',
+    result:
+      'Turbidity weighs heavily on detection: at Bègles (740 to 800 NTU), only a few hardy species show up, such as European sea bass and thinlip grey mullet, whereas Le Verdon (14 NTU) has the highest richness. In all, 26 taxa are identified. The 5 µm filters concentrate the strongest signals, finer filters a more diffuse but more diverse signal. The project recommends repeating the sampling over time and cross-checking bioinformatic tools.',
+    service: 'adn-environnemental-adne',
+    source: '',
+    details: {
+      regionsTitle: 'Species detected per site',
+      regionsNote:
+        'Species richness per site, all visits combined, from short reads (table 5 of the report), from the most turbid site to the clearest: Bègles, Cadillac, Le Verdon.',
+      regions: [
+        { name: 'Bègles', value: 6 },
+        { name: 'Cadillac', value: 11 },
+        { name: 'Le Verdon', value: 17 },
+      ],
+      figuresTitle: 'The report’s figures',
+      figures: [
+        {
+          image: 'fig-estuaire-taxons',
+          caption:
+            'Figure 2 of the report: species detected from short reads, by site, turbidity and filter size; circle size follows the relative abundance of sequences.',
+        },
+        {
+          bars: [
+            { name: 'Short reads only', value: 14 },
+            { name: 'Both read types', value: 12 },
+            { name: 'Long reads only', value: 2 },
+          ],
+          caption:
+            'After supplementary figure 3 of the report: number of species detected by short reads only, by long reads only or by both.',
+        },
+      ],
+      funnelTitle: 'From the field to species',
+      funnel: [
+        { value: '3', label: 'sites, from 14 to more than 800 NTU' },
+        { value: '43', label: 'samples filtered, extracted and analysed in duplicate' },
+        { value: '36,730,010', label: 'raw short-read sequences' },
+        { value: '12', label: 'samples also sequenced as long fragments (full 12S)' },
+        { value: '26', label: 'taxa identified across the sites' },
+      ],
+      findingsTitle: 'What the analyses show',
+      findings: [
+        'Bègles, the most turbid site (740 to 800 NTU): only three species, including sea bass and thinlip grey mullet, with weak signals.',
+        'Le Verdon, in clear water (14 NTU): the highest richness, with coastal marine, intertidal and freshwater species.',
+        'When turbidity drops between two visits to the same site, the sea bass signal becomes much stronger: turbidity alone could explain a large part of the variation in detection.',
+        'The 5 µm filters concentrate the strongest signals; the 0.45 and 1.2 µm filters capture a more diffuse but more diverse signal.',
+        'Short and long reads overlap: 12 shared species, 86% of the long-fragment taxa, which add two more, the goldsinny wrasse and the ruffe.',
+        'Reanalysed with a second bioinformatic tool, the short reads yield 26 taxa, against 2 species in the first analysis: cross-checking analysis tools is one of the recommendations.',
+      ],
+      perspectiveTitle: 'Going further',
+      perspective:
+        'Repeating the sampling over time at each site and combining markers of different lengths: these are the two avenues chosen to consolidate the protocol, before any public release of the occurrences.',
+      rolesTitle: 'Who did what',
+      roles: [
+        'Report: Maeva Leitwein and Emilie Delpuech (LDgenX).',
+        'DNA extraction, long-fragment sequencing (MinION) and bioinformatic analyses: LDgenX.',
+        'Amplification and short-read sequencing: PGTB platform (Bordeaux), on an Illumina MiSeq i100.',
+      ],
+    },
+  },
+  {
     id: 'biodiversite-eolien-offshore',
     slug: 'offshore-wind-biodiversity',
     title: 'Exploring the biodiversity of offshore wind farms.',
     category: 'Marine biodiversity',
     image: 'cas-eolien-offshore',
     subtitle: 'Environmental DNA for monitoring marine environments around wind farms.',
+    status: 'ongoing',
     facts: [
+      { label: 'Status', value: 'Study in progress' },
       { label: 'Context', value: 'Offshore wind farms' },
       { label: 'Environment', value: 'Marine biodiversity' },
       { label: 'Approach', value: 'Environmental DNA' },
@@ -1171,19 +1344,18 @@ export const studies: Study[] = [
     title: 'The microbial communities of microplastics.',
     category: 'Microbiology',
     image: 'cas-microplastiques',
-    subtitle: 'Characterising the microorganisms that colonise microplastics.',
+    subtitle: 'Sequencing the microbial communities that colonise microplastics.',
     facts: [
+      { label: 'LDgenX’s role', value: 'Sequencing' },
       { label: 'Substrates', value: 'Microplastics' },
       { label: 'Field', value: 'Environmental microbiology' },
-      { label: 'Subject', value: 'Microbial community profiling' },
     ],
     context:
       'In water, microplastics are colonised by communities of microorganisms. Characterising them helps to understand these particles and their place in the environment.',
     question: 'Which microbial communities can be characterised on these substrates?',
-    approach:
-      '16S sequencing for bacteria, ITS for fungi, microbial metabarcoding or metagenomics: the analysis is chosen according to the level of characterisation sought.',
+    approach: 'Our part in this project was limited to sequencing its samples.',
     result: '',
-    service: 'analyse-des-communautes-microbiennes',
+    service: 'sequencage-dpcr',
     source: 'https://www.ldgenx.com/services/microbial-community-analysis',
   },
 ];
@@ -1230,8 +1402,6 @@ export const featuredStudy = {
       text: 'The tide changes the water level and how waters mix through the day.',
     },
   ],
-  mapNote:
-    'Illustrative animation: the particles and their movements do not represent any measurement from the study.',
   sourceLabel: 'The Water Agency’s publication',
 };
 

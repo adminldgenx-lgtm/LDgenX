@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Info } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
-import { useMediaQuery, useNearViewport, useReducedMotion } from '../components/motion';
+import { useMediaQuery, useNearViewport, useSeen } from '../components/motion';
+import { scrollBehavior } from '../lib/motion-preference';
 import type { StudySite } from '../lib/study-geo';
 import type { Box, Camera, JourneyFrame, Layer } from '../lib/study-journey';
 import { SceneSkip } from '../components/SceneSkip';
@@ -68,7 +69,6 @@ export function StudyJourney() {
     setting: SETTINGS[s.id],
     sectors: artoisPicardie.sites.find((x) => x.id === s.id)?.sectors.length ?? 1,
   }));
-  const reduced = useReducedMotion();
   const compact = useMediaQuery('(max-width: 800px)');
   const track = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
@@ -80,6 +80,9 @@ export function StudyJourney() {
   const tipEl = useRef<HTMLSpanElement>(null);
   const scaleEl = useRef<HTMLSpanElement>(null);
   const near = useNearViewport(track, '600px 0px');
+  // The map data's attribution shows when the map is first seen, then folds into its button.
+  const mapSeen = useSeen(stage, '0px 0px -30% 0px');
+  const [creditOpen, setCreditOpen] = useState(false);
   const [geo, setGeo] = useState<Geo | null>(null);
   const [ready, setReady] = useState(false);
   const [state, setState] = useState<State>({
@@ -163,9 +166,7 @@ export function StudyJourney() {
       const cardBox = card.current?.getBoundingClientRect();
       const stageBox = stageEl.getBoundingClientRect();
       let box: Box;
-      if (reduced) {
-        box = { x0: 24, y0: 24, x1: element.clientWidth - 24, y1: element.clientHeight - 24 };
-      } else if (compact) {
+      if (compact) {
         const top = size ? h - 12 - size.room : h * 0.55;
         box = { x0: 16, y0: 16, x1: w - 16, y1: Math.max(160, top - 12) };
       } else {
@@ -176,7 +177,6 @@ export function StudyJourney() {
     };
 
     const progress = () => {
-      if (reduced) return 1.5;
       const box = trackEl.getBoundingClientRect();
       const run = trackEl.offsetHeight - stageEl.offsetHeight;
       return run > 0 ? clamp(-box.top / run) * (N - 0.0001) : 0;
@@ -223,7 +223,7 @@ export function StudyJourney() {
     const render = (now: number) => {
       if (!journey) return;
       const p = progress();
-      const size = compact && !reduced ? sheetSize() : null;
+      const size = compact ? sheetSize() : null;
       const { box, focus } = area(size);
       if (size) fitSheet(now, size.now);
       const view = cameraFor(p, box);
@@ -305,7 +305,7 @@ export function StudyJourney() {
 
     const loop = (now: number) => {
       render(now);
-      frame = visible && !reduced ? requestAnimationFrame(loop) : 0;
+      frame = visible ? requestAnimationFrame(loop) : 0;
     };
     const start = () => {
       if (!frame && journey) {
@@ -356,16 +356,16 @@ export function StudyJourney() {
       resize.disconnect();
       sheetEl?.style.removeProperty('height');
     };
-  }, [geo, reduced, compact]);
+  }, [geo, compact]);
 
   // Jump to a moment of the journey: a chapter, and for the sampling, a site.
   const goTo = (chapter: number, local = 0.45) => {
     const trackEl = track.current,
       stageEl = stage.current;
-    if (!trackEl || !stageEl || reduced) return;
+    if (!trackEl || !stageEl) return;
     const run = trackEl.offsetHeight - stageEl.offsetHeight;
     const top = trackEl.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: top + ((chapter + local) / N) * run, behavior: 'smooth' });
+    window.scrollTo({ top: top + ((chapter + local) / N) * run, behavior: scrollBehavior() });
   };
   const goToSite = (index: number) => goTo(2, 0.3 + (index / (SITE_COUNT - 1)) * 0.62);
   const pointing = (index: number) => ({
@@ -485,7 +485,6 @@ export function StudyJourney() {
     <section
       className="journey"
       aria-label={t.sectionLabel}
-      data-static={reduced || undefined}
       data-ready={ready || undefined}
     >
       <a className="journey-skip" href="#apres-etude">
@@ -570,9 +569,9 @@ export function StudyJourney() {
                 <div
                   key={i}
                   className="journey-chapter-body"
-                  data-active={reduced || i === chapter || undefined}
-                  inert={!reduced && i !== chapter}
-                  aria-hidden={(!reduced && i !== chapter) || undefined}
+                  data-active={i === chapter || undefined}
+                  inert={i !== chapter}
+                  aria-hidden={i !== chapter || undefined}
                 >
                   {content}
                 </div>
@@ -580,17 +579,28 @@ export function StudyJourney() {
             </div>
           </div>
 
-          <p className="journey-credit">
-            <span className="journey-credit-long">
-              {t.creditLong} {featuredStudy.mapNote}{' '}
+          <div
+            className="journey-credit"
+            data-seen={mapSeen || undefined}
+            data-open={creditOpen || undefined}
+          >
+            <button
+              type="button"
+              className="journey-credit-button"
+              aria-expanded={creditOpen}
+              onClick={() => setCreditOpen(!creditOpen)}
+            >
+              <Info size={14} strokeWidth={1.8} aria-hidden="true" />
+              <span className="sr-only">{t.mapData}</span>
+            </button>
+            <span className="journey-credit-text">
+              ©{' '}
+              <a href={OSM} target="_blank" rel="noreferrer">
+                OpenStreetMap
+                <span className="sr-only">{ui.common.newTab}</span>
+              </a>
             </span>
-            <span className="journey-credit-short">{t.creditShort}</span>©{' '}
-            <a href={OSM} target="_blank" rel="noreferrer">
-              {t.osm}
-              <span className="sr-only">{ui.common.newTab}</span>
-            </a>
-            {t.naturalEarth}
-          </p>
+          </div>
         </div>
       </div>
 

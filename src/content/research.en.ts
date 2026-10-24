@@ -4,6 +4,52 @@ import type { ResearchFeatured, ResearchPublication } from './types';
 export const research = {
   publications: [
     {
+      id: 'levure-replication-adn-polymerase-alpha-2026',
+      readingTitle: 'Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα',
+      seoTitle: 'Yeast: late DNA replication and polymerase α',
+      title: 'Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα',
+      authors: [
+        'Barba Tena JD',
+        'Montecchi R',
+        'Lambert M',
+        'Defrance T',
+        'Gueydon E',
+        'Petit J',
+        'Drac M',
+        'Legoff N',
+        'Galli M',
+        'Goiffon I',
+        'Gostan T',
+        'El Koulali K',
+        'Urbach S',
+        'Toczyski DP',
+        'Talarek N',
+        'Schwob E',
+      ],
+      members: ['maxime-lambert'],
+      journal: 'The EMBO Journal',
+      year: 2026,
+      issue: 'online ahead of print',
+      type: 'article',
+      doi: '10.1038/s44318-026-00919-5',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/42859192/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: [],
+      services: ['recherche-developpement'],
+      summary:
+        'In yeast, this study examines what happens when a cell enters mitosis before it has finished copying its DNA. The mitotic kinase M-CDK phosphorylates DNA polymerase α: the cell then switches from canonical replication to a recombination-based DNA synthesis that is more error-prone.',
+      question:
+        'How does a cell finish copying its genome when it enters mitosis with incompletely replicated DNA, and why do late-replicating regions evolve faster?',
+      approach:
+        'Yeast with reduced licensing of replication origins and a lengthened S phase: the cells progress slowly through S phase without activating a checkpoint, and enter mitosis with under-replicated DNA.',
+      finding:
+        'At mitotic entry, M-CDK phosphorylates DNA polymerase α, displaces it from replication forks and makes them collapse. The DNA damage response opens a window for mitotic DNA synthesis (MiDAS), which completes replication through error-prone recombination mechanisms resembling break-induced replication (BIR) and FoSTeS.',
+      limit:
+        'The work was done in yeast; the authors present the mechanism as a potential explanation for the faster evolution of late-replicating genomic regions.',
+      figures: [],
+    },
+    {
       id: 'bar-cortisol-temperature-2026',
       readingTitle:
         'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
@@ -47,7 +93,7 @@ export const research = {
     {
       id: 'bar-sex-ratio-temperature-gwas-2026',
       readingTitle:
-        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
+        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (*Dicentrarchus labrax*) under various temperature scenarios',
       seoTitle: 'Sea bass sex ratio, temperature and GWAS',
       title:
         'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
@@ -92,7 +138,7 @@ export const research = {
     {
       id: 'bar-survie-larvaire-introgression-2026',
       readingTitle:
-        'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
+        'Larval survival in European seabass (*Dicentrarchus labrax*) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
       seoTitle: 'Sea bass larval survival and introgression',
       title:
         'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
@@ -178,7 +224,7 @@ export const research = {
     {
       id: 'genomes-becasse-becassine-2025',
       readingTitle:
-        'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
+        'Chromosome-scale genome sequences of two Charadriiformes species: *Scolopax rusticola* and *Lymnocryptes minimus*',
       seoTitle: 'Genomes of the Eurasian woodcock and jack snipe',
       title:
         'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
@@ -374,7 +420,7 @@ export const research = {
     {
       id: 'bar-determinisme-sexe-energie-2024',
       readingTitle:
-        'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
+        'Thermal modulation of energy allocation during sex determination in the European sea bass (*Dicentrarchus labrax*)',
       seoTitle: 'Temperature, energy allocation and sex in sea bass',
       title:
         'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
@@ -405,7 +451,7 @@ export const research = {
     {
       id: 'bar-temperature-femelles-2024',
       readingTitle:
-        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
+        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, *Dicentrarchus labrax*',
       seoTitle: 'Sea bass: warm temperature raises the female ratio',
       title:
         'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
@@ -584,7 +630,7 @@ export const research = {
     {
       id: 'truite-pigmentation-gwas-2023',
       readingTitle:
-        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
+        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (*Salmo trutta* L.)',
       seoTitle: 'The genetics of brown trout pigmentation',
       title:
         'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
@@ -615,7 +661,7 @@ export const research = {
     {
       id: 'saumon-coho-elevage-expression-2022',
       readingTitle:
-        'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
+        'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (*O. kisutch*)',
       seoTitle: 'Hatchery rearing and gene expression in coho salmon',
       title:
         'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
@@ -871,7 +917,7 @@ export const research = {
     {
       id: 'omble-diversite-petites-populations-2020',
       readingTitle:
-        'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
+        'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (*Salvelinus fontinalis*) case study',
       seoTitle: 'Genetic diversity in small brook charr populations',
       title:
         'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
@@ -1021,7 +1067,7 @@ export const research = {
     {
       id: 'truite-ressource-snp-2019',
       readingTitle:
-        'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
+        'Development of a large SNPs resource and a low-density SNP array for brown trout (*Salmo trutta*) population genetics',
       seoTitle: 'A SNP resource and array for brown trout genetics',
       title:
         'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
@@ -1141,7 +1187,7 @@ export const research = {
     {
       id: 'truite-arc-en-ciel-san-francisco-2017',
       readingTitle:
-        'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
+        'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (*Oncorhynchus mykiss*) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
       seoTitle: 'Rainbow trout genomics in San Francisco Bay',
       title:
         'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
@@ -1199,7 +1245,7 @@ export const research = {
     {
       id: 'truite-carte-liaison-2017',
       readingTitle:
-        'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
+        'A Dense Brown Trout (*Salmo trutta*) Linkage Map Reveals Recent Chromosomal Rearrangements in the *Salmo* Genus and the Impact of Selection on Linked Neutral Diversity',
       seoTitle: 'A dense linkage map for brown trout',
       title:
         'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
@@ -1263,7 +1309,7 @@ export const research = {
     {
       id: 'truite-orb-diversite-2016',
       readingTitle:
-        'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
+        'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout *Salmo trutta* compared to wild Mediterranean populations',
       seoTitle: 'Genomic diversity of Orb brown trout',
       title:
         'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
@@ -1339,7 +1385,6 @@ export const research = {
         selected: 192,
       },
       chartTitle: 'From genome to array: 12,204 SNPs, 192 kept',
-      chartNote: 'One dot per SNP: their number is the article’s, their layout is illustrative.',
     },
     {
       publication: 'bar-resistance-vnn-2023',
@@ -1381,8 +1426,6 @@ export const research = {
         ],
       },
       chartTitle: 'Survival to the VNN challenge by genotype',
-      chartNote:
-        'Values from the abstract of the published article: susceptible and resistant genotypes for the QTL region.',
     },
     {
       publication: 'porc-efficacite-alimentaire-gwas-2021',
@@ -1427,8 +1470,6 @@ export const research = {
         common: 1,
       },
       chartTitle: 'Chromosomal regions detected by analysis design',
-      chartNote:
-        'Values from the abstract of the published article. Of the 45 regions of the global analysis, 13 are shared by at least two analyses and 1 by all three.',
     },
   ] as ResearchFeatured[],
 };

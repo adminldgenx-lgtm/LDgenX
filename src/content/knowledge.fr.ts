@@ -79,7 +79,7 @@ export const knowledge = {
           {
             question: 'Disposez-vous de tests pour une espèce précise ?',
             answer:
-              'LDgenX dispose d’amorces et de sondes pour 21 espèces (mammifères, poissons, reptile et invertébrés) et conçoit des tests sur mesure pour de nouvelles cibles. Les matrices, les conditions d’utilisation et les performances sont évaluées selon le projet.',
+              'LDgenX dispose d’amorces et de sondes pour 22 espèces (mammifères, poissons, reptile et invertébrés) et conçoit des tests sur mesure pour de nouvelles cibles. Les matrices, les conditions d’utilisation et les performances sont évaluées selon le projet.',
             link: {
               to: { kind: 'service', id: 'tests-adn-cibles' },
               label: 'Voir les espèces cibles',

@@ -45,29 +45,23 @@ Les textes utilisent une espace fine insécable (U+202F) avant `; ! ?` et une es
 - `public` : images WebP optimisées, logos d’origine et favicons.
 - `scripts` : prérendu, vérification du résultat et typographie française.
 
-## Publication
+## Publication (Cloudflare Pages)
 
-Publier le contenu de `dist` sur un hébergement statique. Servir les chemins de page depuis leur `index.html`, configurer un statut HTTP **404** pour les chemins inconnus, et appliquer les redirections **301** décrites dans `dist/redirects.json`. `dist/_redirects` est fourni pour les hébergeurs compatibles ; les pages de redirection HTML servent de repli, elles ne remplacent pas la configuration HTTP.
+Projet Cloudflare Pages relié au dépôt :
 
-Exemple Nginx, à adapter à la racine du site :
+- **Build** : commande `npm run build`, dossier de sortie `dist`, Node 22 (fichier `.node-version`).
+- **Variables, facultatives** : `VITE_CONTACT_ENDPOINT` (service d’envoi du formulaire ; sans lui, le formulaire prépare un e-mail dans la messagerie du visiteur) ; `LDGENX_PORTAL=1`, seulement quand l’espace client est relié à son backend (voir docs/PORTAL.md). Sans cette variable, le site publié ne contient ni l’espace client ni l’administration.
+- **Domaine** : `www.ldgenx.fr`, l’adresse canonique ; ajouter aussi `ldgenx.fr` et le rediriger vers `www` (règle de redirection Cloudflare).
 
-```nginx
-# Extrait : la liste complète est générée dans dist/_redirects et dist/redirects.json.
-location = /equipe { return 301 /a-propos/equipe; }
-location = /partenaires { return 301 /a-propos/partenaires; }
-location = /a-propos/innovation { return 301 /innovation; }
-location = /cgvs { return 301 /cgvs/cgvs; }
-location = /blog { return 301 /ressources; }
-location = /actualites { return 301 /ressources; }
-location = /Services { return 301 /services; }
-location / { try_files $uri $uri/index.html =404; }
-```
+Chaque page est un fichier `adresse.html`, servi par Cloudflare à son adresse sans barre finale (`/contact`), comme les adresses canoniques. `dist/_redirects` applique les redirections 301 des anciennes adresses (avant les fichiers) ; `dist/_headers` ajoute les en-têtes de sécurité (politique de sécurité du contenu stricte, HSTS, interdiction de l’intégration en iframe, permissions désactivées) et le cache des fichiers. `404.html` répond aux adresses inconnues avec un vrai statut 404.
+
+Ne pas activer dans Cloudflare les options qui injectent des scripts d’autres domaines (Web Analytics, Zaraz, Rocket Loader) : la politique de sécurité les bloquerait. Les options de sécurité du réseau (SSL complet, « Always Use HTTPS », protection contre les robots) sont compatibles.
 
 Les adresses de ldgenx.fr sont conservées telles quelles (`/services/selection` pour l’expertise, `/services/selection-genomique`, `/services/conservation` et `/services/tracabilite` pour les travaux scientifiques, `/equipe/dr-…` pour les biographies, `/cgvs/cgvs`). Les pages anglaises vivent sous `/en` avec les noms de pages de ldgenx.com ; si le domaine ldgenx.com pointe vers ce site, ses anciennes adresses (sans `/en`) redirigent vers elles (voir docs/MIGRATION.md).
 
 Les URLs canoniques utilisent `https://www.ldgenx.fr`. Pour un environnement de préproduction, protéger l’indexation au niveau de l’hébergeur. Ne pas remplacer la version officielle sans validation de l’entreprise.
 
-Les fichiers `robots.txt`, `sitemap.xml`, `llms.txt` et le mapping de redirections sont générés à chaque build. Les pages légales sont en `noindex` jusqu’à validation des informations manquantes.
+Les fichiers `robots.txt`, `sitemap.xml`, `llms.txt` et le mapping de redirections sont générés à chaque build. Les mentions légales et la page de confidentialité sont en `noindex`, sans intérêt dans les résultats de recherche.
 
 Avec la prévisualisation de production déjà lancée, `npm run check:http` vérifie les réponses de toutes les pages, les 301 et le 404. `docs/VALIDATION.md` récapitule les vérifications effectuées.
 
@@ -96,6 +90,8 @@ Pages intérieures : un même kit (`src/components/AmbientField.tsx`, `Decode.ts
 Aucun texte n’est rendu sous 12 px ; les textes de lecture font 15 à 17 px.
 
 Le traitement éditorial privilégie les photographies, les titres et des libellés lisibles. Les numérotations décoratives, pastilles, cercles de flèches, faux avatars à initiales, annotations marketing sur les photos et mots géants de fond ont été supprimés. Les seuls pictogrammes d’interface restants servent aux contrôles : menu, fermeture, dépliage et recherche. Les noms des partenaires sont composés typographiquement sur l’accueil ; la page partenaires montre les logos publiés, recadrés.
+
+Deux niveaux de mouvement (`src/lib/motion-preference.ts`, appliqués avant l’affichage par `public/motion.js`) : complet par défaut, réduit quand le système le demande ou quand le visiteur le choisit en pied de page. Le niveau réduit garde la vidéo, les scènes, la carte et les compteurs, avec des entrées en fondu, sans glissement, zoom, inclinaison ni défilement animé ; les règles CSS s’écrivent `:root[data-motion='reduced'] …`.
 
 Les animations sont concentrées dans `src/components/motion.tsx` et `src/styles/global.css`. Un observateur unique déclenche les entrées ; le suivi de l’étape active ne lit les positions que lorsque le parcours est à proximité de l’écran, au maximum une fois par frame.
 

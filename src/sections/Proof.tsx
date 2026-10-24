@@ -7,7 +7,6 @@ import {
   useEntrance,
   useNearViewport,
   usePointerVars,
-  useReducedMotion,
   useSeen,
 } from '../components/motion';
 
@@ -19,13 +18,12 @@ export function KeyFacts() {
   const { copy, ui } = useCatalog();
   const ref = useRef<HTMLElement>(null);
   const phase = useEntrance(ref);
-  const reduced = useReducedMotion();
   const seen = useSeen(ref, '0px 0px -6% 0px');
   return (
     <section ref={ref} className="facts-band" data-phase={phase} aria-label={ui.facts.label}>
       <div className="container facts-grid">
         {copy.home.facts.map((fact, i) => (
-          <FactCell key={fact.value} fact={fact} index={i} play={seen && !reduced} />
+          <FactCell key={fact.value} fact={fact} index={i} play={seen} />
         ))}
       </div>
     </section>
@@ -93,7 +91,6 @@ export function Ecosystem() {
   const { partners, ui } = useCatalog();
   const stage = useRef<HTMLDivElement>(null);
   const names = useRef<(HTMLSpanElement | null)[]>([]);
-  const reduced = useReducedMotion();
   const near = useNearViewport(stage, '0px');
   const seen = useSeen(stage, '0px 0px -20% 0px');
   const [focus, setFocus] = useState<number | null>(null);
@@ -114,7 +111,7 @@ export function Ecosystem() {
 
   useEffect(() => {
     const element = stage.current;
-    if (!element || (!near && !reduced)) return;
+    if (!element || !near) return;
     let frame = 0,
       last = 0,
       clock = 0,
@@ -127,16 +124,13 @@ export function Ecosystem() {
       last = now;
       speed += ((hover.current ? 0.12 : 1) - speed) * Math.min(1, dt * 3);
       clock += dt * speed;
-      const intro = reduced || !seen ? (reduced ? 1 : 0) : Math.min(1, (now - start) / 1600);
+      const intro = seen ? Math.min(1, (now - start) / 1600) : 0;
       orbit.forEach((item, i) => {
         const el = names.current[i];
         if (!el) return;
         const ring = RINGS[item.ring];
-        const grow = reduced
-          ? 1
-          : easeOut(Math.min(1, Math.max(0, intro * 1.4 - item.ring * 0.15)));
-        const theta =
-          item.angle + (reduced ? 0 : (clock / ring.period) * Math.PI * 2 * ring.direction);
+        const grow = easeOut(Math.min(1, Math.max(0, intro * 1.4 - item.ring * 0.15)));
+        const theta = item.angle + (clock / ring.period) * Math.PI * 2 * ring.direction;
         const rx = width * ring.radius * grow;
         const x = width / 2 + Math.cos(theta) * rx;
         const y = height / 2 + Math.sin(theta) * rx * TILT;
@@ -146,17 +140,12 @@ export function Ecosystem() {
         el.style.setProperty('--o', (grow * (0.28 + 0.72 * depth)).toFixed(3));
         el.style.zIndex = String(Math.round(depth * 100));
       });
-      if (!reduced) frame = requestAnimationFrame(place);
+      frame = requestAnimationFrame(place);
     };
     frame = requestAnimationFrame(place);
-    const resize = new ResizeObserver(() => reduced && place(performance.now()));
-    resize.observe(element);
-    return () => {
-      cancelAnimationFrame(frame);
-      resize.disconnect();
-    };
+    return () => cancelAnimationFrame(frame);
     // `orbit` is derived from static content and never changes.
-  }, [near, reduced, seen]);
+  }, [near, seen]);
 
   return (
     <div className="eco" data-focus={focus ?? undefined} data-seen={seen || undefined}>

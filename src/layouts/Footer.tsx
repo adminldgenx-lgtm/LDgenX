@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useMotionLevel } from '../components/motion';
+import { setMotionLevel } from '../lib/motion-preference';
 import { useCatalog, useRoutes, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
@@ -7,6 +9,7 @@ export function Footer() {
   const { company, copy, services, applications, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.footer;
+  const reduced = useMotionLevel() === 'reduced';
   const meta = getPage(useLocation().pathname);
   const other: Locale = meta.locale === 'fr' ? 'en' : 'fr';
   return (
@@ -87,6 +90,14 @@ export function Footer() {
           <Link to={meta.alternates[other] ?? bases[other].home} hrefLang={other} lang={other}>
             {t.otherLanguage}
           </Link>
+          {/* Full or reduced animations, whatever the system asks; remembered on this browser. */}
+          <button
+            type="button"
+            className="footer-motion"
+            onClick={() => setMotionLevel(reduced ? 'full' : 'reduced')}
+          >
+            {reduced ? t.motionReduced : t.motionFull}
+          </button>
         </div>
       </div>
       <nav className="sr-only" aria-label={t.sectors}>

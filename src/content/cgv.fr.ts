@@ -1,10 +1,11 @@
-// Conditions générales de vente, reproduites telles que publiées sur
-// https://www.ldgenx.fr/cgvs/cgvs (collecte du 13 octobre 2026). Seule la mise en forme change :
-// le texte n’est ni corrigé ni réécrit. Toute actualisation relève de LDgenX.
+// Conditions générales de vente, reproduites telles que transmises par LDgenX le 23 octobre 2026
+// (« Conditions générales de ventes.pdf », 5 pages), qui remplacent la version publiée sur
+// https://www.ldgenx.fr/cgvs/cgvs (collectée le 13 octobre 2026 ; 5.3 et 9.2 ont changé). Seule la
+// mise en forme change : le texte n’est ni corrigé ni réécrit. Toute actualisation relève de LDgenX.
 export const cgv = {
   title: 'Conditions générales de ventes et de prestations de services',
-  source: 'https://www.ldgenx.fr/cgvs/cgvs',
-  collected: '2026-10-13',
+  source: 'Conditions générales de ventes.pdf, transmis par LDgenX le 23 octobre 2026',
+  collected: '2026-10-23',
   articles: [
     {
       title: 'Article 1 - Objet et champ d’application',
@@ -41,7 +42,8 @@ export const cgv = {
         '4.2 Le Client garantit la conformité des échantillons avec les lois et règlementations en vigueur. La Société n’est en aucun cas responsable de la qualité et du choix des échantillons remis et/ou de l’étendue des analyses à effectuer si ceux-ci s’avéraient insuffisants et/ou inappropriés.',
         '4.3 Sauf stipulation contraire figurant dans le Devis du bureau d’études, les échantillons remis au bureau d’études sont considérés comme sans valeur commerciale. Les échantillons voyagent aux risques et périls du Client. Le bureau d’études décline toute responsabilité concernant le délai de transport, l’état des échantillons suite au transport ou leur perte durant le transport.',
         '4.4 Les échantillons seront traités par LDgenX ou un laboratoire d’analyses moléculaire sous-traitant afin d’obtenir les données moléculaires nécessaire à l’étude. Le bureau d’étude informe le client en cas de sous-traitance.',
-        "4.5 Fourniture complète des échantillons. Le Client s'engage à fournir la totalité des échantillons spécifiés dans le Devis pour permettre la réalisation complète de la prestation.En absence de réception de l’intégralité des échantillons, LDgenX se réserve les droits suivants : (i) réaliser l’analyse sur la partie reçue, (ii)facturer la prestation intégralement, conformément au Devis accepté, (iii) décliner toute responsabilité en cas d’impossibilité d’analyser les échantillons manquants ou d’en tirer des conclusions sur l’ensemble.",
+        "4.5 Fourniture complète des échantillons. Le Client s'engage à fournir la totalité des échantillons spécifiés dans le Devis pour permettre la réalisation complète de la prestation.",
+        'En absence de réception de l’intégralité des échantillons, LDgenX se réserve les droits suivants : (i) réaliser l’analyse sur la partie reçue, (ii) facturer la prestation intégralement, conformément au Devis accepté, (iii) décliner toute responsabilité en cas d’impossibilité d’analyser les échantillons manquants ou d’en tirer des conclusions sur l’ensemble.',
         'Un supplément pourra être facturé pour tout échantillon complémentaire reçu après le démarrage de la prestation, calculé selon les tarifs en vigueur.',
         '4.6 Données génomique. Dans le cas où le client fournis directement les données génétique ou génomique, le client est seul responsable de la qualité des données fournie, le bureau d’étude ne saura être tenu responsable. Si la qualité des données fournis ne permet pas les analyses génomiques prévues dans le devis, le bureau d’étude s’engage à prévenir rapidement le client. Les analyses non effectuées ne seront pas facturées.',
         '4.7 Les données génomiques fournis par le client sont strictement confidentielles et le bureau d’études s’engage à ne pas les diffuser ou les rendre publique sauf accord préalable du client. Les données seront conservées par le bureau d’étude tout au long de la prestation et au maximum un an après facturation de la prestation. Au-delà de ce délais les données seront supprimé.',
@@ -53,7 +55,7 @@ export const cgv = {
         '5.1 Le bureau d’étude s’engage à communiquer l’avancement des analyses avec le client, ce dernier s’engage à répondre à toutes questions ou demande d’informations complémentaires nécessaire au bon déroulement des analyses.',
         '5.2 Délais d’exécution. Les prestations de services ne peuvent commencer avant la réception de l’entièreté des données moléculaire et des informations concernant ces échantillons. Le bureau d’étude ne saurait être tenue responsable d’éventuel délais lié à la mauvaise qualité des données, information ou échantillons.',
         'Un délai approximatif est donné lors du devis, le bureau d’étude s’engage à faire les analyses au plus proche des délais émis sur le devis.',
-        '5.3 Résultats. Les résultats d’analyses sont adressés sur support papier et/ou électronique selon les modalités définies avec le Client. Une fois le rapport d’analyses reçu le client dispose d’un délai de trois semaines, à compter de la réception, pour émettre des amendements aux rapports d’essai.',
+        '5.3 Résultats. Les résultats d’analyses sont adressés sur support électronique. Une fois le rapport d’analyses reçu le client dispose d’un délai de trois semaines, à compter de la réception, pour émettre des amendements aux rapports d’essai.',
         '5.4 Le bureau d’études ne sera en aucun cas être tenu pour responsable si les résultats sont contraires aux attentes du client. Le bureau d’étude est transparent quant aux analyses et logiciel utilisés pour l’obtention des résultats. Le bureau d’étude ne saurait être tenu responsable en cas d’amendement par la communauté scientifique des logiciels utilisés.',
         '5.5 Publication des résultats. Dans le cadre de projet scientifique et de publication d’article dans un journal, le client s’engage à citer le bureau d’étude pour toutes analyses et prestation effectuées par ce dernier. En cas d’analyses majeur du projet scientifique, le client s’engage à transmettre au bureau d’étude l’article avant publication des résultats afin que celui-ci puisse s’assurer de la cohérence et conformité des résultats présentés. Le bureau d’étude s’engage à relire, au besoin amender et apporter des corrections avant publication. Le client s’engage à inclure dans les co-auteurs de l’article scientifique, les chercheurs du bureau d’étude ayant activement participé à la réalisation des résultats, à la relecture et/ou correction de l’article.',
         '5.6 Diffusion des résultats. Le client s’engage à faire apparaitre le logo et mentionner le bureau d’études lors de la diffusion publique des résultats.',
@@ -90,8 +92,8 @@ export const cgv = {
     {
       title: 'Article 9 - Propriété intellectuelle',
       clauses: [
-        '9.1 Les résultats finaux deviennent la propriété du client après règlement complet. Le bureau d’études reste propriétaire de tous les droits de propriété intellectuelle et industrielle portant, notamment mais pas limitativement, sur les études, modèles, méthodes, rapports, prototypes, bases de données, logiciels, code, brevets et le savoir- faire réalisés par le bureau d’étude, même à la demande du client, en vue de la fourniture des services au client.',
-        '9.2 Le code bio-informatique pourra être rendu visible au client mais reste la propriété intellectuelle du bureau d’étude et ne peut en aucun cas être diffusé ou réutilisé par le client. Le développement de marqueurs moléculaires effectués par le bureau d’étude reste propriété du bureau d’étude et pourront être réutilisé à son gré.',
+        '9.1 Les résultats finaux deviennent la propriété du client après règlement complet. Le bureau d’études reste propriétaire de tous les droits de propriété intellectuelle et industrielle portant, notamment mais pas limitativement, sur les études, modèles, méthodes, rapports, prototypes, bases de données, logiciels, code, brevets et le savoir-faire réalisés par le bureau d’étude, même à la demande du client, en vue de la fourniture des services au client.',
+        '9.2 Le code bio-informatique reste la propriété intellectuelle du bureau d’étude et ne peut en aucun cas être diffusé ou réutilisé par le client. Le développement de marqueurs moléculaires effectués par le bureau d’étude reste propriété du bureau d’étude et pourront être réutilisé à son gré.',
         '9.3 Sauf accord contraire des parties, le client autorise le bureau d’études à faire état et usage à des fins de communication de ses marques, logos et autre titre de propriété intellectuelle et industrielle ainsi que des éléments permettant d’identifier nommément le client, dans le cas d’une entité morale.',
       ],
     },

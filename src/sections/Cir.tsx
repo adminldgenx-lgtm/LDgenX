@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Button, Eyebrow, Reveal } from '../components/ui';
-import { useReducedMotion, useSeen } from '../components/motion';
+import { useSeen } from '../components/motion';
 import { DecodeOnce } from '../components/Decode';
 import { AmbientField } from '../components/AmbientField';
 
@@ -11,14 +11,13 @@ export function CirBlock() {
   const r = useRoutes();
   const ref = useRef<HTMLDivElement>(null);
   const seen = useSeen(ref);
-  const reduced = useReducedMotion();
   return (
     <section className="cir-section" aria-labelledby="cir-title">
       <AmbientField tone="dark" className="cir-field" />
       <div ref={ref} className="container cir-layout" data-seen={seen || undefined}>
         <div className="cir-figure">
           <span className="cir-value">
-            <DecodeOnce text={t.value} play={seen && !reduced} />
+            <DecodeOnce text={t.value} play={seen} />
           </span>
           <span className="cir-value-label">{t.valueLabel}</span>
         </div>

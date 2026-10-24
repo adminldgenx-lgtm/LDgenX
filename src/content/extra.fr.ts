@@ -886,10 +886,9 @@ export const customAssay: CustomAssay = {
   },
   quantNote:
     'La dPCR estime une quantité d’ADN cible, en nombre de copies ; elle ne compte pas directement les individus présents.',
-  illustration: 'Illustration du principe',
   contextImage: {
-    name: 'detection-vison',
-    alt: 'Vison photographié en extérieur',
+    name: 'vison-europe',
+    alt: 'Vison d’Europe au pelage mouillé, au sol',
     caption: 'La biodiversité, au cœur des analyses ADN ciblées.',
   },
   targetsLabel: 'Nos espèces cibles',
@@ -932,7 +931,7 @@ export const customAssay: CustomAssay = {
   },
   wall: {
     eyebrow: 'Amorces et sondes en interne',
-    title: '21 espèces,\nprêtes à être recherchées.',
+    title: '22 espèces,\nprêtes à être recherchées.',
     intro:
       'Mammifères, poissons, reptile et invertébrés : LDgenX dispose d’amorces et de sondes pour chacune de ces espèces. Choisissez-en une pour voir le détail.',
     otherTitle: 'Votre espèce n’y figure pas ?',

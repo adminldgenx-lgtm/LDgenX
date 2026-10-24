@@ -31,7 +31,7 @@ Vérification le 5 octobre 2026. Le dossier fourni contenait onze illustrations,
 - Aucune promesse chiffrée, certification, sensibilité, tarif ou délai technique ajouté.
 - DNA EcoTrace et eDNAClock sont décrits comme projets de R&D et objectifs de recherche.
 - Le projet Artois-Picardie est attribué au groupement Qualyse, LDgenX et Prelevmar, conformément à la source de l’Agence.
-- Les sujets offshore et microplastiques sont présentés comme champs d’étude cités, sans résultats inventés. Le bar européen (nodavirose, Delpuech et al. 2022) et le panel de SNP sont deux sujets distincts : le bar renvoie aux travaux scientifiques (/services/selection-genomique), le panel reste un intitulé de cas sans page.
+- Microplastiques : l’intervention de LDgenX s’est limitée au séquençage (cliente, 23 octobre 2026) ; la page le dit, sans autre résultat. Éolien offshore : étude en cours, présentée brièvement avec ce statut. Le bar européen (nodavirose, Delpuech et al. 2022) et le panel de SNP sont deux sujets distincts : le bar renvoie aux travaux scientifiques (/services/selection-genomique), le panel reste un intitulé de cas sans page.
 - Les partenaires suivent les trois groupes de la page officielle (instituts de recherche publique, soutiens et accompagnement, « Ils nous font confiance »). La page partenaires affiche les 24 logos publiés, recadrés sans leur cadre (`public/partners/`, aucun logo redessiné) ; l’accueil et l’orbite d’écosystème gardent les noms composés en texte.
 - Les faits clés de l’accueil (« +10 ans », « Deep Tech », « De A à Z », « Station Ifremer ») reprennent mot pour mot ou résument des affirmations publiées sur ldgenx.fr. Aucun chiffre de projets, d’échantillons ou d’espèces n’est affiché.
 - Étude Artois-Picardie : les résultats sont désormais publiés par l’Agence (article du 6 août 2026, rapport final v2 du 28 mai 2026, présentation de restitution du 30 juin 2026). La page de l’étude en reprend les objectifs, les constats, le protocole, les guildes, la comparaison avec le chalut, l’effet de la turbidité et les pistes, avec les figures officielles légendées. La richesse affichée est celle de chaque secteur dans le rapport ; **aucun total par site n’est cité**, car il varie entre les documents selon le marqueur et les filtres (13/11 sur la diapositive 11, 14 sur les diapositives de site, 15 dans le rapport). Les positions des sites sur la carte sont la moyenne des coordonnées de leurs stations (annexe 2 du rapport ; le tableau 1 répète par erreur les coordonnées de la Canche pour Dunkerque Ouest).
@@ -105,7 +105,7 @@ Section « Vos terrains d’application » (accueil et page Applications) : pays
 
 ### Carte de l’étude Artois-Picardie
 
-Section « La génomique en pratique » (accueil et page de l’étude) : une carte marine parcourue au défilement, générée par `scripts/build-study-geo.py` dans `src/lib/study-geo.ts` et chargée à l’approche de la section. Trait de côte de la Seine-Maritime à la Belgique et côte du Kent : ways `natural=coastline` d’OpenStreetMap (`data/geo/osm-coastline-opale.json`). Rivières : `waterway=river` par nom (`data/geo/osm-rivers-opale.json`). Frontières et limites départementales : `boundary=administrative` niveaux 2 et 6, terre seule (`data/geo/osm-borders-opale.json`). Tous © contributeurs OpenStreetMap, licence **ODbL** ; crédit et lien affichés sur la carte. Vue de la France et des pays voisins : Natural Earth 1:50m (domaine public, `data/geo/natural-earth-europe.json`). Les huit sites sont ceux de la légende de la carte d’échantillonnage publiée (`carte-artois-picardie`), placés à leur ville, port ou embouchure : la carte le signale (« Emplacements indicatifs »). Les villes sont placées à leurs coordonnées usuelles. Le type de milieu (port, baie, estuaire) découle du nom du site ; les départements sont géographiques. La carte ne figure aucun résultat : l’eau animée (particules portées vers la mer du Nord le long des côtes, panaches turbides aux embouchures, marée) est une illustration, signalée sur la carte. Les phrases sur courants, turbidité et marées décrivent les phénomènes en termes généraux, sans mesure. Le texte (question, trois étapes, apports) reformule la publication de l’Agence de l’eau (`featuredStudy` dans `src/content/fr.ts`).
+Section « La génomique en pratique » (accueil et page de l’étude) : une carte marine parcourue au défilement, générée par `scripts/build-study-geo.py` dans `src/lib/study-geo.ts` et chargée à l’approche de la section. Trait de côte de la Seine-Maritime à la Belgique et côte du Kent : ways `natural=coastline` d’OpenStreetMap (`data/geo/osm-coastline-opale.json`). Rivières : `waterway=river` par nom (`data/geo/osm-rivers-opale.json`). Frontières et limites départementales : `boundary=administrative` niveaux 2 et 6, terre seule (`data/geo/osm-borders-opale.json`). Tous © contributeurs OpenStreetMap, licence **ODbL** ; l’attribution « © OpenStreetMap » apparaît quand la carte entre à l’écran, puis se replie au bout de cinq secondes dans un bouton ⓘ au coin de la carte (règles d’attribution de l’OSMF) ; c’est la seule mention de source restante sur le site. Vue de la France et des pays voisins : Natural Earth 1:50m (domaine public, `data/geo/natural-earth-europe.json`). Les huit sites sont ceux de la légende de la carte d’échantillonnage publiée (`carte-artois-picardie`), placés à leur ville, port ou embouchure : ces emplacements sont indicatifs (la mention affichée sur la carte a été retirée le 24 octobre 2026, à la demande du client). Les villes sont placées à leurs coordonnées usuelles. Le type de milieu (port, baie, estuaire) découle du nom du site ; les départements sont géographiques. La carte ne figure aucun résultat : l’eau animée (particules portées vers la mer du Nord le long des côtes, panaches turbides aux embouchures, marée) est une illustration. Les phrases sur courants, turbidité et marées décrivent les phénomènes en termes généraux, sans mesure. Le texte (question, trois étapes, apports) reformule la publication de l’Agence de l’eau (`featuredStudy` dans `src/content/fr.ts`).
 
 ### Autres illustrations animées
 
@@ -116,18 +116,11 @@ Section « La génomique en pratique » (accueil et page de l’étude) : une ca
 
 ### Modèle 3D de l’ADN
 
-Section « De l’échantillon à la décision » : modèle « DNA » de LucasPresoto (https://sketchfab.com/3d-models/dna-547d42f6c0184232a945051b6952a39e), licence **CC BY 4.0**, recoloré pour LDgenX (fichier source : `models/dna-ldgenx-particles.glb`). Le site n’en garde que les 17 000 centres de particules (`public/models/dna-particles.bin`, généré par `scripts/extract-dna-particles.py`). Le crédit est affiché dans la section, comme l’exige la licence. Les positions le long de l’hélice sont des repères d’illustration : elles ne correspondent à aucune région de la molécule.
+Section « De l’échantillon à la décision » : depuis le 24 octobre 2026, la double hélice de 17 000 particules est générée par `scripts/build-dna-particles.mjs` (`public/models/dna-particles.bin`) : deux brins, vingt paires de bases, trois bandes vertes, d’après les proportions de l’ancien modèle « DNA » de LucasPresoto (CC BY 4.0), retiré avec son crédit. C’est une création propre au site, sans licence tierce. Les positions le long de l’hélice sont des repères d’illustration : elles ne correspondent à aucune région de la molécule.
 
 ### Portraits de l’équipe
 
-Depuis le 21 octobre 2026, **les quatre portraits sont des photos réelles**, recadrées en 4:5 sans retouche :
-
-- `portrait-maeva` (source `images/official/equipe-maeva.jpg`, WebP 480 et 590 px) ;
-- `portrait-emilie` (`images/official/equipe-emilie.jpg`, WebP 480 et 534 px) ;
-- `portrait-maxime` (`images/official/equipe-maxime.jpg`, WebP 473 px) ;
-- `portrait-damien` (`images/team/photo-damien.png`, WebP 480 et 659 px).
-
-Les trois premières sont les photos publiées sur ldgenx.fr/a-propos/equipe ; celle de Damien a été transmise par LDgenX. Les portraits de studio générés avec ChatGPT (`images/team/portrait-*.png`) ne sont plus affichés, conformément à la règle d’authenticité de la cliente. Une séance photo de l’équipe permettrait des portraits homogènes et en haute définition.
+Depuis le 23 octobre 2026, à la demande de l’agence, Maeva, Emilie et Maxime sont de nouveau présentés par leurs **portraits de studio générés avec ChatGPT à partir de leurs photos réelles** (`images/team/portrait-*.png`, WebP 480 et 900 px, ceux du premier commit) ; Damien garde sa photo réelle (`images/team/photo-damien.png`, WebP 480 et 659 px). Les photos réelles reprises de ldgenx.fr (utilisées du 21 au 23 octobre) restent dans `images/official/`. Chaque personne doit valider son portrait ; Maeva prévoit un nouveau portrait (veste de tailleur), qui remplacera le sien. Une séance photo de l’équipe permettrait des portraits homogènes et réels.
 
 Le wordmark est utilisé en en-tête, le logo complet en pied de page, le symbole reste disponible dans `public/brand`. Les favicons fournis sont conservés. Seules les marges de canvas ont été recadrées ; le dessin n’est pas modifié.
 
@@ -135,12 +128,12 @@ Palette issue des variantes du logo : navy `#03254B`, vert accent `#73B50F`, ver
 
 ## À confirmer par LDgenX avant publication
 
-1. **Mentions légales** : responsable de publication et hébergeur effectif. Les informations disponibles de la société sont intégrées ; ces deux identités restent explicitement à compléter.
-2. **Confidentialité** : modalités de conservation et de traitement des e-mails reçus. Le texte décrit exactement le fonctionnement technique du site ; la politique définitive de l’entreprise nécessite sa validation.
+1. **Mentions légales** : directrice de la publication Maeva Leitwein, présidente de la SAS (registre des entreprises) ; hébergeur Cloudflare (le site sera publié sur Cloudflare Pages) ; code NAF 72.11Z et siège social à Fabrègues. À relire par LDgenX.
+2. **Confidentialité** : la politique indique une conservation des messages de trois ans au plus après le dernier échange (durée usuelle pour un prospect, recommandée par la CNIL) : à confirmer par LDgenX. Le reste décrit exactement le fonctionnement du site (aucune mesure d’audience, aucun cookie de suivi).
 3. **Contact** : choisir un service d’envoi de formulaire et définir `VITE_CONTACT_ENDPOINT` au build (voir README) ; à défaut, le formulaire prépare un e-mail. Confirmer la durée et le format de l’échange proposé sur l’agenda.
 4. **Matériel** : références, disponibilités et conditions de vente n’étaient pas accessibles depuis la source. Le service conduit à un échange, sans catalogue fictif.
-5. **Études** : fournir les résultats et livrables détaillés pouvant être publiés pour les sujets seulement cités. Les études restent sourcées et limitées aux faits publics.
-6. **Portraits et photographies** : les portraits sont désormais les photos réelles de l’équipe ; une séance photo homogène reste souhaitable. Les photos reprises de ldgenx.fr sont en résolution web (470 à 1000 px) : fournir les originaux haute définition et confirmer l’autorisation pour la photo créditée « @biotope ».
+5. **Études** : deux études ajoutées le 23 octobre 2026 à partir des rapports transmis (ours des Pyrénées, ADNe en estuaire turbide) ; microplastiques limité au séquençage ; éolien offshore en cours. Faire relire les deux nouvelles pages par LDgenX (chiffres, mention du commanditaire, sujet sensible pour l’ours).
+6. **Portraits et photographies** : les portraits de studio (générés) de Maeva, Emilie et Maxime doivent être validés par chacun ; Maeva enverra un nouveau portrait. Les photos reprises de ldgenx.fr sont en résolution web (470 à 1000 px) : fournir les originaux haute définition et confirmer l’autorisation pour la photo créditée « @biotope ».
 7. **Anglais** : traductions validées et mapping des URLs sur le domaine anglais avant `hreflang` réciproque.
 8. **Images** : les dix-neuf illustrations sont générées. Un reportage réel (laboratoire de la station Ifremer, campagnes de terrain) reste la priorité visuelle et peut les remplacer emplacement par emplacement.
 9. **Logos partenaires** : fournir des fichiers vectoriels (SVG) ou haute résolution sans cadre et l’accord d’affichage, pour remplacer les noms composés.
@@ -154,8 +147,7 @@ Titres corrigés et courts, H1 unique, canoniques, métadonnées sociales, sché
 
 La présentation cliente `DAHX4VfvLE0`, export PowerPoint « Image site web », fournit les photographies et les 22 noms d’espèces. Les images intégrées ont été extraites sans réencodage ; leurs résolutions, SHA-256, pages et crédits sont dans `data/client-photos.json`. Les fichiers préservés sont dans `images/client-2026-10-17/`. La nouvelle photo de sélection génomique est créditée **@UNIMA** en HTML ; ce crédit n’est pas appliqué à l’ancienne photo de crevettes.
 
-La source dPCR se trouve dans `data/assay-targets.json` ; 21 associations sont publiées et l’entrée *Neomys anomalus* — Musaraigne de Miller est retenue en interne en attendant confirmation de la cible réelle du test. La référence DOI 10.1002/ece3.4487 sert uniquement à la nomenclature, sans ajout au catalogue de recherche. Le vison reste un visuel général sans identification d’espèce. Détail et limites : [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
-
+La source dPCR se trouve dans `data/assay-targets.json` ; les 22 associations sont publiées depuis le 23 octobre 2026 : la cliente a confirmé que _Neomys anomalus_ (Musaraigne de Miller, en anglais Southern water shrew) fait bien partie des espèces ciblées. La référence DOI 10.1002/ece3.4487 sert uniquement à la nomenclature, sans ajout au catalogue de recherche. Le vison de l’accueil est désormais un vison d’Europe photographié sous licence (voir plus bas). Détail et limites : [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
 
 ## Authenticité des équipements — 20 octobre 2026
 
@@ -174,7 +166,7 @@ Les affectations historiques du tableau « Illustrations générées » ne décr
 **Nouvelles images** (détail et licences dans `data/licensed-photos.json`) :
 
 - `eolien-en-mer` : parc éolien de Block Island (États-Unis), U.S. Department of Energy, domaine public ; ce n’est pas un projet LDgenX.
-- `biofilm-microbien` : micrographie d’un biofilm bactérien, Krzysztof A. Zacharski, CC BY 4.0, recadrée ; ce n’est pas un échantillon LDgenX.
+- `biofilm-microbien` : micrographie d’un biofilm bactérien (_Staphylococcus aureus_ sur un cathéter), Janice Carr, CDC, domaine public, recadrée sans l’échelle ; ce n’est pas un échantillon LDgenX. Jusqu’au 24 octobre 2026 : K. A. Zacharski, CC BY 4.0.
 - `terrain-kayak` : photo de la présentation Canva de la cliente (page 8) ; ni la personne ni le protocole ne sont identifiés.
 - `bioinformatique-alignement` : illustration dessinée par `scripts/prepare-licensed-photos.mjs` (lectures alignées sur un génome, sans données réelles).
 - L’étape « Séquençage & dPCR » du parcours ADN montre `cas-requin`, photo du cas « Détection d’espèces méditerranéennes emblématiques par dPCR » publiée sur ldgenx.fr.
@@ -184,11 +176,56 @@ Les affectations historiques du tableau « Illustrations générées » ne décr
 
 Planche « Photo pour la PCR digitale » transmise par LDgenX le 22 octobre 2026 (`images/client-2026-10-22/planche-pcr-digitale.png`). Les quatre photos en sont découpées sans retouche ni agrandissement (`images/client-2026-10-22/dpcr-*.png`, coordonnées dans `data/client-photos.json`), environ 800 px chacune : les originaux en pleine résolution restent à demander.
 
-| Photo             | Emplacement                                                          |
-| ----------------- | -------------------------------------------------------------------- |
-| `dpcr-chargement` | Étape « Séquençage & dPCR » de la section ADN (remplace `cas-requin`) |
+| Photo             | Emplacement                                                                |
+| ----------------- | -------------------------------------------------------------------------- |
+| `dpcr-chargement` | Étape « Séquençage & dPCR » de la section ADN (remplace `cas-requin`)      |
 | `dpcr-instrument` | Expertise Séquençage & dPCR, carte de l’accueil (remplace `equipe-maxime`) |
-| `dpcr-operateur`  | Expertise Tests ADN ciblés (remplace `cas-oursin`)                   |
-| `dpcr-logiciel`   | Préparée, non affichée                                               |
+| `dpcr-operateur`  | Expertise Tests ADN ciblés (remplace `cas-oursin`)                         |
+| `dpcr-logiciel`   | Préparée, non affichée                                                     |
 
 Le texte des pages ne nomme pas l’appareil : le modèle (QIAcuity One, QIAGEN) n’apparaît que dans les textes alternatifs, puisqu’il est lisible sur les photos.
+
+## Retours de la cliente — 23 octobre 2026
+
+E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
+
+- **Mentions légales** : hébergeur OVH SAS, 2 rue Kellermann, 59100 Roubaix (identité relevée sur la page « Mentions légales » d’ovhcloud.com, sans numéro de téléphone publié) ; code NAF 72.11Z ; siège social 6 place du 8 mai 1945, 34690 Fabrègues (rapport « Démo-génétique ours », 2025). Le directeur de la publication reste à indiquer (`ui.legal.director`) : c’est le représentant légal de la SAS.
+- **CGV** : texte du PDF « Conditions générales de ventes » (5 pages), qui remplace celui de ldgenx.fr. Deux clauses changent : 5.3 (résultats « sur support électronique ») et 9.2 (le code bio-informatique n’est plus « rendu visible au client »). Seule la mise en forme est reprise (paragraphe de 4.5, espaces manquantes).
+- **Équipe** : Damien Crestel est docteur (« Dr ») ; Maxime Lambert ne l’est pas. La personne de la photo `dpcr-operateur` est Maxime Lambert (textes alternatifs).
+- **Publications** : les 27 articles gardent leur titre original, sans traduction française ; les noms latins sont en italique. Les libellés courts (`seoTitle`) ne servent qu’aux titres de page, au fil d’Ariane et au plan du site. Les publications de Maxime, listées en bas de l’e-mail, restent à ajouter.
+- **Études** :
+  - _Quel avenir génétique pour l’ours des Pyrénées ?_ (`demogenetique-ours-pyrenees`) : « Rapport d’analyses — Démo-génétique ours » (LDgenX, finalisé le 16 septembre 2025) pour l’association Pays de l’Ours – ADET, avec l’UMR BIOGECO. Les chiffres de la page sont ceux du rapport ; les personnes extérieures à LDgenX ne sont pas nommées (stage de l’EPHE, chercheur de BIOGECO). Le rapport n’est pas public : pas de lien source.
+  - _Lire l’ADN des poissons dans les eaux turbides_ (`adne-estuaire-milieu-turbide`) : rapport « ADNe Estuaire 2025 » (LDgenX, version du 6 mars 2026, erratum du 30 juin 2026). Prélèvements d’octobre 2025 (dates des figures ; le texte du rapport indique 2026, une coquille). Le commanditaire n’est pas nommé. Photo `terrain-prelevement`, déjà associée à ce cas sur ldgenx.fr.
+  - Éolien offshore : statut « Étude en cours » (fiche et pages). Microplastiques : rôle de LDgenX = séquençage, expertise associée Séquençage & dPCR.
+- **Photos** (licences dans `data/licensed-photos.json`) :
+  - `vison-europe` remplace `detection-vison` (615 × 293 px, floue, retirée) : vison d’Europe, Alina Urusova, CC BY 4.0 (Wikimedia Commons, `Mustela_lutreola_RU.jpg`), crédit affiché.
+  - `ours-pyrenees` : ourse et deux oursons au parc naturel de l’Alt Pirineu, photo de piège photographique de la Generalitat de Catalunya (licence Attribution-gencat vérifiée sur Commons), crédit affiché.
+- **Accueil** : la page s’arrête après « Des questions concrètes. Des approches scientifiques. » et la carte de l’étude Artois-Picardie ; l’appel à l’action final est conservé. Les autres études, la R&D, les partenaires, l’équipe et les publications restent dans leurs rubriques.
+
+## Mise en ligne — 24 octobre 2026
+
+- **Hébergement** : Cloudflare Pages (voir README). Les pages sont publiées en fichiers plats (`/page` sans barre finale), avec en-têtes de sécurité (CSP stricte, HSTS, `frame-ancestors 'none'`…) dans `dist/_headers`. L’espace client n’est pas publié tant que son backend n’existe pas (`LDGENX_PORTAL=1` pour l’inclure).
+- **Crédits** : aucun, à la demande du client (voir la deuxième passe ci-dessous). Les mentions légales gardent seulement la phrase sur les contenus réalisés avec l’aide de l’IA (illustrations, vidéo d’accueil, portraits de Maeva, Emilie et Maxime), obligation de transparence du règlement européen sur l’IA.
+- **Photos** (licences dans `data/licensed-photos.json`) :
+  - `ours-pyrenees` remplacée : ours brun couché, Alberto-g-rovi, CC BY 3.0 (Wikimedia Commons, « Lacuniacha (14) »), 2048 px ; la photo de piège photographique de la Generalitat était trop petite.
+  - `estuaire-gironde` (nouvelle) : vue aérienne de l’estuaire de la Gironde, Chell Hill, CC BY-SA 3.0, 2048 px ; elle illustre l’étude en estuaire turbide (rapport : Bègles, Cadillac, Le Verdon).
+  - `vison-europe` : ajout d’une largeur de 2048 px pour les écrans haute densité.
+- **Figures des rapports** (`data/report-figures.json`, `scripts/prepare-report-figures.mjs`) : figures 6 et 4 du rapport « Démo-génétique ours », figure 2 du rapport « ADNe Estuaire 2025 », découpées sans modification à l’emplacement de chaque image du PDF. La figure 4 est une image de faible résolution dans le rapport : elle est affichée à 760 px de large au plus ; son axe porte une coquille (« indivdus »). La figure supplémentaire 3 de l’estuaire (14 / 2 / 12 espèces selon le type de lecture), floue dans le PDF, est redessinée en barres avec ses propres valeurs.
+- **Graphiques en barres** : ours, délai entre deux portées (figure 3 du rapport : 7,5 / 11,3 / 64,2 / 11,3 / 5,7 %) ; estuaire, espèces par site en lecture courte (table 5 : Bègles 6, Cadillac 11, Le Verdon 17).
+- **Animations** : voir la deuxième passe ci-dessous (deux niveaux, complet et réduit).
+
+## Deuxième passe — 24 octobre 2026
+
+- **Aucun crédit sur le site.** Les images qui en exigeaient un ont été remplacées par des images du domaine public ou sous CC0 (détail dans `data/licensed-photos.json`) :
+  - `vison-europe` : vison d’Europe sauvage, José Antonio León Mangado (iNaturalist, observation 289781561), CC0 ; la proie posée derrière l’animal a été recouverte du sol voisin, puis l’image recadrée ;
+  - `ours-brun` (anciennement `ours-pyrenees`) : ours brun traversant une clairière dans les Carpates, Costin Costan, CC0 ; il illustre l’étude sans être l’un de ses ours ;
+  - `estuaire-gironde` : embouchure de la Gironde vue de la Station spatiale internationale (NASA, expédition 75), domaine public ; les eaux chargées de sédiments illustrent la turbidité ;
+  - `biofilm-microbien` : micrographie CDC, domaine public ;
+  - modèle 3D de l’ADN : remplacé par une hélice générée (voir plus haut).
+  - Restent sans crédit, parce qu’aucun n’est requis : éoliennes (U.S. DOE, domaine public), figures des rapports (LDgenX), photos LDgenX. Les figures des publications gardent leur légende « Figure n extraite de Auteur et al. (année) » avec le lien vers l’article, qui indique sa licence CC BY : c’est une citation scientifique, pas un crédit.
+  - La carte de l’étude Artois-Picardie garde l’attribution OpenStreetMap, repliée dans un bouton ⓘ après cinq secondes : sans elle, il faudrait des données libres de droits trop grossières (Natural Earth) qui effacent les estuaires où se trouvent les sites.
+  - Crevette (UNIMA) : le crédit « @UNIMA » a été retiré de la page et de la carte de partage ; à confirmer par LDgenX qu’UNIMA ne l’exige pas.
+- **Animations** : deux niveaux. Complet par défaut ; réduit quand le système le demande ou quand le visiteur le choisit en pied de page (« Animations : complètes / réduites », retenu par le navigateur). En mode réduit, le site reste vivant : vidéo, scènes, carte et compteurs jouent, les entrées se font en fondu, sans glissement, zoom, inclinaison ni défilement animé. Il n’existe plus de mode où tout est figé.
+- **Publications** : ajout de l’article de Maxime Lambert dans The EMBO Journal (octobre 2026, DOI 10.1038/s44318-026-00919-5), dont l’affiliation porte « IDgenX, Montpellier » (coquille pour LDgenX). Résumé fait à partir du résumé publié. Des articles plus anciens d’un Maxime Lambert du CBGP (Xylella fastidiosa, 2021 à 2025) n’ont pas été ajoutés : l’identité n’est pas certaine ; la liste envoyée par la cliente tranchera.
+- **Référencement** : trois titres de page raccourcis (vanneaux huppés, génomes bécasse et bécassine, efficacité alimentaire du bar) ; plus aucun avertissement de `check:seo`.
+

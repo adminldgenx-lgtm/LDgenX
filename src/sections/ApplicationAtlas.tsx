@@ -11,7 +11,8 @@ import {
 import { useCatalog, useRoutes } from '../i18n';
 import { applicationIds } from '../content/site';
 import { Photo } from '../components/ui';
-import { useMediaQuery, useReducedMotion } from '../components/motion';
+import { useMediaQuery, useMotionLevel } from '../components/motion';
+import { scrollBehavior } from '../lib/motion-preference';
 
 /* "Vos terrains d'application" as an illustrated coastal atlas. One generated landscape (see
    ldgenx-atlas-2d/), a water layer that catches the light, turbines whose rotors turn, and six
@@ -132,7 +133,8 @@ export function ApplicationAtlas() {
   const r = useRoutes();
   const t = ui.atlas;
   const content = applications;
-  const reduced = useReducedMotion();
+  // Reduced motion keeps the journey across the map, without the tilt and the parallax.
+  const calm = useMotionLevel() === 'reduced';
   const compact = useMediaQuery('(max-width: 800px)');
   const stage = useRef<HTMLDivElement>(null);
   const scene = useRef<HTMLDivElement>(null);
@@ -227,7 +229,7 @@ export function ApplicationAtlas() {
       ? 1 - easeOut(Math.min(1, (performance.now() - state.introStart) / INTRO_MS))
       : 0;
     if (scene.current)
-      scene.current.style.transform = reduced
+      scene.current.style.transform = calm
         ? ''
         : `perspective(1600px) rotateX(${p.y * -1.4 + arrival * 24}deg) rotateY(${p.x * 1.8}deg)`;
     const points = sectors.map((s) => ({
@@ -279,12 +281,12 @@ export function ApplicationAtlas() {
         spot.current.style.setProperty('--sy', `${y}px`);
       }
     });
-  }, [compact, reduced]);
+  }, [compact, calm]);
 
   const loop = useCallback(
     (now: number) => {
       const state = live.current;
-      const t = reduced ? 1 : Math.min(1, (now - state.start) / state.duration);
+      const t = Math.min(1, (now - state.start) / state.duration);
       const k = ease(t);
       state.view = {
         x: state.from.x + (state.to.x - state.from.x) * k,
@@ -300,7 +302,7 @@ export function ApplicationAtlas() {
         t < 1 || arriving || Math.abs(p.tx - p.x) > 0.001 || Math.abs(p.ty - p.y) > 0.001;
       state.frame = settling && state.visible ? requestAnimationFrame(loop) : 0;
     },
-    [paint, reduced],
+    [paint],
   );
   const kick = useCallback(() => {
     const state = live.current;
@@ -379,8 +381,8 @@ export function ApplicationAtlas() {
     const row = chips.current;
     const chip = row?.children[active] as HTMLElement | undefined;
     if (!row || !chip || row.scrollWidth <= row.clientWidth) return;
-    row.scrollTo({ left: chip.offsetLeft - 20, behavior: reduced ? 'auto' : 'smooth' });
-  }, [active, reduced]);
+    row.scrollTo({ left: chip.offsetLeft - 20, behavior: scrollBehavior() });
+  }, [active]);
 
   // Size the landscape to cover the stage, with a little margin for the parallax.
   useEffect(() => {
@@ -413,16 +415,12 @@ export function ApplicationAtlas() {
     onScreen.observe(element);
     // The atlas arrives once, when it is well into view: the window onto the map opens, the view
     // descends from a low, close angle, then the places, the heading and the card arrive.
-    // Hydration can first set a pending entrance before the media query is available.
-    // Reduced motion must also clear that crop so every place remains reachable.
-    if (reduced) setIntro('static');
-    else if (!arrived.current) setIntro('pending');
+    if (!arrived.current) setIntro('pending');
     const arrival = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || arrived.current) return;
         arrived.current = true;
         setReady(true);
-        if (reduced) return;
         setIntro('playing');
         const state = live.current;
         state.introStart = performance.now();
@@ -442,7 +440,7 @@ export function ApplicationAtlas() {
       cancelAnimationFrame(live.current.frame);
       live.current.frame = 0;
     };
-  }, [kick, reduced, targetView, travel]);
+  }, [kick, targetView, travel]);
 
   const choose = (index: number) => {
     live.current.drag = 0;
@@ -468,7 +466,7 @@ export function ApplicationAtlas() {
   const dragStart = useRef<{ x: number; drag: number; moved: boolean } | null>(null);
   const onPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     const state = live.current;
-    if (event.pointerType === 'mouse' && !reduced) {
+    if (event.pointerType === 'mouse' && !calm) {
       const box = event.currentTarget.getBoundingClientRect();
       state.pointer.tx = ((event.clientX - box.left) / box.width - 0.5) * 2;
       state.pointer.ty = ((event.clientY - box.top) / box.height - 0.5) * 2;
@@ -519,7 +517,7 @@ export function ApplicationAtlas() {
       data-ready={ready || undefined}
       data-intro={intro === 'static' ? undefined : intro}
       data-card-side={cardSide}
-      data-paused={paused || reduced || undefined}
+      data-paused={paused || undefined}
       aria-labelledby="atlas-title"
     >
       <div className="atlas-intro">

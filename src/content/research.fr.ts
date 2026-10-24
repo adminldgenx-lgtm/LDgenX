@@ -1,15 +1,64 @@
 // Articles co-written by members of the team, from the verified folder
-// LDgenX_Recherche_Publications_2026-10-15 (publications.json, figure-index.csv). Titles, authors,
+// LDgenX_Recherche_Publications_2026-10-15 (publications.json, figure-index.csv), and Maxime
+// Lambert's EMBO Journal article of October 2026 (affiliated with LDgenX; OpenAlex and PubMed). Titles, authors,
 // journals, years and DOIs are those of the published articles; summaries are based on their
 // published abstracts. Figures are reproduced only for CC BY articles, unchanged, with credit.
+// The articles keep their original titles: no French translation (client's request, 23 October
+// 2026); the short French labels (seoTitle) serve only the page titles and the site index.
 import type { ResearchFeatured, ResearchPublication } from './types';
 
 export const research = {
   publications: [
     {
+      id: 'levure-replication-adn-polymerase-alpha-2026',
+      readingTitle: 'Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα',
+      seoTitle: 'Levure : fin de réplication de l’ADN et polymérase α',
+      title: 'Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα',
+      authors: [
+        'Barba Tena JD',
+        'Montecchi R',
+        'Lambert M',
+        'Defrance T',
+        'Gueydon E',
+        'Petit J',
+        'Drac M',
+        'Legoff N',
+        'Galli M',
+        'Goiffon I',
+        'Gostan T',
+        'El Koulali K',
+        'Urbach S',
+        'Toczyski DP',
+        'Talarek N',
+        'Schwob E',
+      ],
+      members: ['maxime-lambert'],
+      journal: 'The EMBO Journal',
+      year: 2026,
+      issue: 'en ligne avant impression',
+      type: 'article',
+      doi: '10.1038/s44318-026-00919-5',
+      links: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/42859192/' }],
+      text: 'abstract',
+      licence: 'CC BY 4.0',
+      themes: [],
+      services: ['recherche-developpement'],
+      summary:
+        'Chez la levure, cette étude examine ce qui se passe quand une cellule entre en mitose avant d’avoir fini de copier son ADN. La kinase mitotique M-CDK phosphoryle l’ADN polymérase α : la cellule bascule alors d’une réplication classique vers une synthèse d’ADN fondée sur la recombinaison, plus sujette aux erreurs.',
+      question:
+        'Comment une cellule achève-t-elle la copie de son génome quand elle entre en mitose avec un ADN incomplètement répliqué, et pourquoi les régions répliquées tardivement évoluent-elles plus vite ?',
+      approach:
+        'Levures dont l’activation des origines de réplication est réduite et la phase S allongée : elles avancent lentement dans la phase S sans activer de point de contrôle et entrent en mitose avec un ADN sous-répliqué.',
+      finding:
+        'À l’entrée en mitose, la M-CDK phosphoryle l’ADN polymérase α, la détache des fourches de réplication et provoque leur effondrement. La réponse aux dommages ouvre une fenêtre de synthèse d’ADN mitotique (MiDAS), qui achève la réplication par des mécanismes de recombinaison sujets aux erreurs, proches de la réplication induite par cassure (BIR) et du FoSTeS.',
+      limit:
+        'Travail mené chez la levure ; les auteurs y voient une explication possible de l’évolution plus rapide des régions du génome répliquées tardivement.',
+      figures: [],
+    },
+    {
       id: 'bar-cortisol-temperature-2026',
       readingTitle:
-        'Le cortisol libéré dans l’eau est corrélé à la température d’acclimatation mais pas au métabolisme chez un poisson téléostéen',
+        'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
       seoTitle: 'Bar européen : cortisol, température et métabolisme',
       title:
         'Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish',
@@ -50,7 +99,7 @@ export const research = {
     {
       id: 'bar-sex-ratio-temperature-gwas-2026',
       readingTitle:
-        'La génétique quantitative et la GWAS révèlent des réponses du sex-ratio propres à chaque population chez le bar européen sauvage (*Dicentrarchus labrax*) selon différents scénarios de température',
+        'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (*Dicentrarchus labrax*) under various temperature scenarios',
       seoTitle: 'Bar européen : sex-ratio, température et GWAS',
       title:
         'Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios',
@@ -95,7 +144,7 @@ export const research = {
     {
       id: 'bar-survie-larvaire-introgression-2026',
       readingTitle:
-        'La survie larvaire du bar européen (*Dicentrarchus labrax*) dépend du régime thermique naturel de sa population d’origine et du niveau d’introgression entre génomes atlantique et méditerranéen',
+        'Larval survival in European seabass (*Dicentrarchus labrax*) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
       seoTitle: 'Survie larvaire du bar : température et introgression',
       title:
         'Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes',
@@ -140,7 +189,7 @@ export const research = {
     {
       id: 'poissons-tolerance-rechauffement-taille-2025',
       readingTitle:
-        'La tolérance à un réchauffement aigu diminue avec la masse corporelle au sein des espèces de poissons',
+        'Evidence that tolerance of acute warming declines with increasing body mass within fish species',
       seoTitle: 'Tolérance au réchauffement et taille des poissons',
       title:
         'Evidence that tolerance of acute warming declines with increasing body mass within fish species',
@@ -182,8 +231,8 @@ export const research = {
     {
       id: 'genomes-becasse-becassine-2025',
       readingTitle:
-        'Séquences génomiques à l’échelle des chromosomes de deux espèces de Charadriiformes : *Scolopax rusticola* et *Lymnocryptes minimus*',
-      seoTitle: 'Génomes de la bécasse des bois et de la bécassine sourde',
+        'Chromosome-scale genome sequences of two Charadriiformes species: *Scolopax rusticola* and *Lymnocryptes minimus*',
+      seoTitle: 'Génomes de la bécasse et de la bécassine sourde',
       title:
         'Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus',
       authors: [
@@ -222,7 +271,7 @@ export const research = {
     {
       id: 'bar-introgression-fitness-2025',
       readingTitle:
-        'Une valeur sélective réduite associée à l’introgression dans la population métissée de Méditerranée occidentale du bar européen',
+        'Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass',
       seoTitle: 'Introgression et valeur sélective du bar européen',
       title:
         'Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass',
@@ -253,7 +302,7 @@ export const research = {
     {
       id: 'bar-croissance-larvaire-temperature-2025',
       readingTitle:
-        'Les larves de bar européen grandissent-elles mieux dans leur régime de température naturel ?',
+        'Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?',
       seoTitle: 'Croissance des larves de bar et régime de température',
       title: 'Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?',
       authors: [
@@ -294,8 +343,8 @@ export const research = {
     {
       id: 'bar-selection-efficacite-alimentaire-2025',
       readingTitle:
-        'Sélection génomique sur l’efficacité alimentaire individuelle chez le bar européen : réponse à la sélection sur l’efficacité, les caractères commerciaux et le sexe',
-      seoTitle: 'Sélection génomique de l’efficacité alimentaire du bar',
+        'Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex',
+      seoTitle: 'Bar : sélection génomique de l’efficacité alimentaire',
       title:
         'Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex',
       authors: [
@@ -337,7 +386,7 @@ export const research = {
     {
       id: 'bar-introgression-teneur-gras-2024',
       readingTitle:
-        'Le devenir d’un phénotype polygénique dans les paysages génomiques d’introgression de la zone d’hybridation du bar européen',
+        'The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone',
       seoTitle: 'Introgression et teneur en gras du bar européen',
       title:
         'The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone',
@@ -379,7 +428,7 @@ export const research = {
     {
       id: 'bar-determinisme-sexe-energie-2024',
       readingTitle:
-        'Modulation thermique de l’allocation d’énergie pendant le déterminisme du sexe chez le bar européen (*Dicentrarchus labrax*)',
+        'Thermal modulation of energy allocation during sex determination in the European sea bass (*Dicentrarchus labrax*)',
       seoTitle: 'Bar : température, énergie et déterminisme du sexe',
       title:
         'Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)',
@@ -410,7 +459,7 @@ export const research = {
     {
       id: 'bar-temperature-femelles-2024',
       readingTitle:
-        'Une exposition post-larvaire à une température chaude augmente la proportion de femelles, contrairement au jeûne et à la photopériode : le cas du bar européen, *Dicentrarchus labrax*',
+        'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, *Dicentrarchus labrax*',
       seoTitle: 'Bar européen : température et proportion de femelles',
       title:
         'Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax',
@@ -452,7 +501,7 @@ export const research = {
     {
       id: 'bar-resistance-vnn-2023',
       readingTitle:
-        'Le séquençage du génome entier identifie la protéine induite par l’interféron IFI6/IFI27-like comme gène candidat majeur de la résistance à la nécrose nerveuse virale chez le bar européen',
+        'Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass',
       seoTitle: 'Gène IFI6 et résistance du bar à la nodavirose',
       title:
         'Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass',
@@ -538,7 +587,7 @@ export const research = {
     {
       id: 'capelan-methylation-reproduction-2023',
       readingTitle:
-        'La méthylation de l’ADN à l’échelle du génome prédit des variations du cycle de vie induites par l’environnement chez un poisson marin',
+        'Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish',
       seoTitle: 'Méthylation de l’ADN et cycle de vie du capelan',
       title:
         'Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish',
@@ -590,7 +639,7 @@ export const research = {
     {
       id: 'truite-pigmentation-gwas-2023',
       readingTitle:
-        'Analyse de redondance, études d’association pangénomique et pigmentation de la truite commune (*Salmo trutta* L.)',
+        'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (*Salmo trutta* L.)',
       seoTitle: 'Génétique de la pigmentation de la truite commune',
       title:
         'Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)',
@@ -622,7 +671,7 @@ export const research = {
     {
       id: 'saumon-coho-elevage-expression-2022',
       readingTitle:
-        'Une forte expression génique différentielle parallèle, induite par l’élevage en écloserie, faiblement associée aux signaux de méthylation chez le saumon coho adulte (*O. kisutch*)',
+        'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (*O. kisutch*)',
       seoTitle: 'Écloserie et expression génique du saumon coho',
       title:
         'Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)',
@@ -666,7 +715,7 @@ export const research = {
     {
       id: 'omble-ascendance-repeuplement-2021',
       readingTitle:
-        'La surdominance associative et l’épistasie négative façonnent le paysage d’ascendance à l’échelle du génome dans des populations de poissons repeuplées',
+        'Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations',
       seoTitle: 'Repeuplement et ascendance génomique des poissons',
       title:
         'Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations',
@@ -713,7 +762,7 @@ export const research = {
     {
       id: 'porc-efficacite-alimentaire-gwas-2021',
       readingTitle:
-        'Identification de régions génomiques influençant les caractères de production chez des porcs sélectionnés de manière divergente pour l’efficacité alimentaire',
+        'Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency',
       seoTitle: 'Efficacité alimentaire du porc : régions génomiques',
       title:
         'Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency',
@@ -788,7 +837,7 @@ export const research = {
     {
       id: 'saumon-coho-epigenome-germinal-2021',
       readingTitle:
-        'Les modifications épigénomiques induites par l’élevage en écloserie persistent dans les cellules germinales des saumons adultes après leur migration océanique',
+        'Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration',
       seoTitle: 'Épigénome du saumon et élevage en écloserie',
       title:
         'Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration',
@@ -842,7 +891,7 @@ export const research = {
     },
     {
       id: 'haplotypes-genomique-conservation-2020',
-      readingTitle: 'Utiliser l’information des haplotypes en génomique de la conservation',
+      readingTitle: 'Using Haplotype Information for Conservation Genomics',
       seoTitle: 'Haplotypes et génomique de la conservation',
       title: 'Using Haplotype Information for Conservation Genomics',
       authors: ['Leitwein M', 'Duranton M', 'Rougemont Q', 'Gagnaire PA', 'Bernatchez L'],
@@ -880,7 +929,7 @@ export const research = {
     {
       id: 'omble-diversite-petites-populations-2020',
       readingTitle:
-        'Diversité génétique adaptative et mal adaptative dans les petites populations : l’exemple de l’omble de fontaine (*Salvelinus fontinalis*)',
+        'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (*Salvelinus fontinalis*) case study',
       seoTitle: 'Petites populations d’omble de fontaine',
       title:
         'Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study',
@@ -927,7 +976,7 @@ export const research = {
     {
       id: 'porc-prediction-genomique-2020',
       readingTitle:
-        'Effet d’un apprentissage sur des données de lignées génétiquement apparentées sur la précision des prédictions génomiques de l’efficacité alimentaire chez le porc',
+        'The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs',
       seoTitle: 'Prédiction génomique chez le porc',
       title:
         'The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs',
@@ -983,7 +1032,7 @@ export const research = {
     {
       id: 'omble-recombinaison-ascendance-2019',
       readingTitle:
-        'Le rôle de la recombinaison dans la répartition de l’ascendance locale le long du génome : l’exemple de populations repeuplées d’omble de fontaine',
+        'The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations',
       seoTitle: 'Recombinaison et ascendance chez l’omble de fontaine',
       title:
         'The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations',
@@ -1031,7 +1080,7 @@ export const research = {
     {
       id: 'truite-ressource-snp-2019',
       readingTitle:
-        'Développement d’une vaste ressource de SNP et d’une puce SNP basse densité pour la génétique des populations de truite commune (*Salmo trutta*)',
+        'Development of a large SNPs resource and a low-density SNP array for brown trout (*Salmo trutta*) population genetics',
       seoTitle: 'Puce SNP pour la génétique de la truite commune',
       title:
         'Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics',
@@ -1110,7 +1159,7 @@ export const research = {
     {
       id: 'truite-trois-ascendances-2018',
       readingTitle:
-        'Conséquences génomiques d’un mélange récent entre trois lignées dans des populations sauvages repeuplées de truite commune, révélées par les segments d’ascendance locale',
+        'Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts',
       seoTitle: 'Truite commune : un mélange entre trois lignées',
       title:
         'Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts',
@@ -1151,7 +1200,7 @@ export const research = {
     {
       id: 'truite-arc-en-ciel-san-francisco-2017',
       readingTitle:
-        'Ascendance et évolution adaptative de truites arc-en-ciel anadromes, résidentes et adfluviales (*Oncorhynchus mykiss*) de la baie de San Francisco : la variation génomique adaptative au service de la conservation dans un paysage fortement modifié',
+        'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (*Oncorhynchus mykiss*) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
       seoTitle: 'Génomique de la truite arc-en-ciel à San Francisco',
       title:
         'Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape',
@@ -1209,7 +1258,7 @@ export const research = {
     {
       id: 'truite-carte-liaison-2017',
       readingTitle:
-        'Une carte de liaison dense de la truite commune (*Salmo trutta*) révèle des réarrangements chromosomiques récents dans le genre *Salmo* et l’effet de la sélection sur la diversité neutre liée',
+        'A Dense Brown Trout (*Salmo trutta*) Linkage Map Reveals Recent Chromosomal Rearrangements in the *Salmo* Genus and the Impact of Selection on Linked Neutral Diversity',
       seoTitle: 'Carte de liaison dense de la truite commune',
       title:
         'A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity',
@@ -1273,7 +1322,7 @@ export const research = {
     {
       id: 'truite-orb-diversite-2016',
       readingTitle:
-        'Diversité nucléotidique à l’échelle du génome de souches d’élevage atlantique et méditerranéenne de truite commune *Salmo trutta*, comparée à des populations sauvages méditerranéennes',
+        'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout *Salmo trutta* compared to wild Mediterranean populations',
       seoTitle: 'Diversité génomique des truites de l’Orb',
       title:
         'Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations',
@@ -1350,8 +1399,6 @@ export const research = {
         selected: 192,
       },
       chartTitle: 'Du génome à la puce : 12 204 SNP, dont 192 retenus',
-      chartNote:
-        'Un point par SNP : leur nombre est celui de l’article, leur disposition est illustrative.',
     },
     {
       publication: 'bar-resistance-vnn-2023',
@@ -1393,8 +1440,6 @@ export const research = {
         ],
       },
       chartTitle: 'Taux de survie au challenge VNN selon le génotype',
-      chartNote:
-        'Valeurs du résumé de l’article publié : génotype sensible et génotype résistant pour la région QTL.',
     },
     {
       publication: 'porc-efficacite-alimentaire-gwas-2021',
@@ -1439,8 +1484,6 @@ export const research = {
         common: 1,
       },
       chartTitle: 'Régions chromosomiques détectées selon le plan d’analyse',
-      chartNote:
-        'Valeurs du résumé de l’article publié. Parmi les 45 régions de l’analyse globale, 13 sont partagées par au moins deux analyses et 1 par les trois.',
     },
   ] as ResearchFeatured[],
 };

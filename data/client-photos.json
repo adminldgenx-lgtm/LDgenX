@@ -125,11 +125,12 @@
       "sourceFile": "images/client-2026-10-17/detection-vison.jpeg",
       "sha256": "2e76b92972c9d6f2ef792a131850b32e02ec96e74c5b5a2530d45d5b3b83e93d",
       "credit": null,
-      "usage": "module-general",
+      "usage": "retained-not-displayed",
       "altFr": "Vison photographié en extérieur",
       "altEn": "A mink photographed outdoors",
       "width": 615,
-      "height": 293
+      "height": 293,
+      "note": "Replaced on 23 October 2026 by the licensed photo vison-europe (data/licensed-photos.json): the client found this 615 × 293 px picture blurred and asked for a photo whose rights allow use on the site."
     },
     {
       "page": null,
@@ -170,11 +171,11 @@
       "sha256": "7219fe51570ad4d9e44347a16df70f7c3e1c796ffd878781d2b428556cd8094f",
       "credit": null,
       "usage": "assigned",
-      "altFr": "Un membre de l’équipe en blouse place une plaque dans le système de PCR digitale",
-      "altEn": "A team member in a lab coat placing a plate in the digital PCR system",
+      "altFr": "Maxime Lambert, ingénieur laboratoire, place une plaque dans le système de PCR digitale",
+      "altEn": "Maxime Lambert, laboratory engineer, placing a plate in the digital PCR system",
       "width": 592,
       "height": 789,
-      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [1835, 31, 592, 789]); the slide holds these photos at about 800 px, originals requested."
+      "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [1835, 31, 592, 789]); the slide holds these photos at about 800 px, originals requested. The person is Maxime Lambert (confirmed by the client on 23 October 2026)."
     },
     {
       "page": null,

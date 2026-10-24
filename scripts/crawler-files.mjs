@@ -73,7 +73,15 @@ const xml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;');
  * `dates` maps a page to its date of last change ({ date }), `imagesOf` to the pictures it shows;
  * a page missing from either gets `today` and no pictures.
  */
-export function crawlerFiles({ pages, catalogs, company, dates = {}, imagesOf = {}, today }) {
+export function crawlerFiles({
+  pages,
+  catalogs,
+  company,
+  dates = {},
+  imagesOf = {},
+  today,
+  portal = false,
+}) {
   const origin = company.origin;
   const dateOf = (p) => dates[p.path]?.date ?? today;
   const unlisted = pages.filter(
@@ -111,9 +119,14 @@ export function crawlerFiles({ pages, catalogs, company, dates = {}, imagesOf = 
   }
   files['sitemap.xml'] =
     `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${index.join('\n')}\n</sitemapindex>\n`;
+  // The client area and the administration, when built, are private: kept out by every group,
+  // since a crawler follows only the group that names it.
+  const rules = portal
+    ? 'Allow: /\nDisallow: /espace/\nDisallow: /admin/\nDisallow: /portal.html'
+    : 'Allow: /';
   files['robots.txt'] =
-    `# LDgenX: every page is open to search engines and AI assistants.\nUser-agent: *\nAllow: /\n\n${crawlers
-      .map((bot) => `User-agent: ${bot}\nAllow: /`)
+    `# LDgenX: every public page is open to search engines and AI assistants.\nUser-agent: *\n${rules}\n\n${crawlers
+      .map((bot) => `User-agent: ${bot}\n${rules}`)
       .join('\n\n')}\n\nSitemap: ${origin}/sitemap.xml\n`;
   const { llmsTxt, llmsFull } = buildLlms({ catalogs, pages, company });
   files['llms.txt'] = llmsTxt;

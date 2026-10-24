@@ -62,8 +62,7 @@ export const pageCopy = {
   privacy: {
     eyebrow: 'Vos données',
     title: 'Confidentialité.',
-    intro:
-      'Le fonctionnement de cette version du site et de son formulaire de préparation d’e-mail.',
+    intro: 'Comment ce site traite vos données, et comment exercer vos droits.',
   },
 };
 

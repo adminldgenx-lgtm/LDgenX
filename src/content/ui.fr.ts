@@ -17,7 +17,6 @@ export const ui = {
     readMore: 'Lire la suite',
     excludingTax: 'HT',
     figure: 'Figure',
-    illustration: 'Illustration du principe du projet',
   },
   header: {
     servicesTitle: 'Une question.\nDes expertises complémentaires.',
@@ -57,6 +56,8 @@ export const ui = {
     privacy: 'Confidentialité',
     terms: 'CGV',
     otherLanguage: 'English',
+    motionFull: 'Animations : complètes',
+    motionReduced: 'Animations : réduites',
     sectors: 'Secteurs d’application',
   },
   notFound: {
@@ -84,6 +85,7 @@ export const ui = {
     innovationText: 'automatiser le suivi de la biodiversité',
     studiesEyebrow: 'La génomique en pratique',
     teamEyebrow: 'L’équipe scientifique',
+    pauseFilm: 'Mettre la vidéo en pause',
   },
   dna: {
     eyebrow: 'Comprendre pour agir',
@@ -98,8 +100,6 @@ export const ui = {
     ],
     rail: 'Les étapes de la démarche',
     skip: 'Passer la démarche',
-    credit: 'Modèle 3D d’après',
-    creditLicence: ', CC BY 4.0, adapté',
     practice: 'En pratique',
   },
   landscape: {
@@ -161,10 +161,7 @@ export const ui = {
     cta: 'Voir l’étude',
     sectionLabel: 'Étude de cas : l’ichtyofaune des ports et estuaires d’Artois-Picardie',
     skip: 'Passer l’étude',
-    creditLong: 'Sites placés d’après les coordonnées des stations publiées dans le rapport final.',
-    creditShort: 'Illustration, sans mesure de l’étude. ',
-    osm: 'contributeurs OpenStreetMap',
-    naturalEarth: ', Natural Earth.',
+    mapData: 'Données cartographiques',
     srSites: 'Les huit sites échantillonnés',
     srApproach: 'L’approche',
     sectors: (n: number) => (n > 1 ? `${n} secteurs` : '1 station'),
@@ -280,6 +277,7 @@ export const ui = {
     approach: 'L’approche',
     lessons: 'Les enseignements',
     alongCoast: 'L’étude, le long de la côte',
+    ongoing: 'Étude en cours : ses résultats ne sont pas encore publiés.',
     noResults:
       'Un projet comparable ? Présentez-nous votre site et votre question : nous construisons ensemble le protocole adapté.',
     reference: 'Consulter la référence publiée',
@@ -374,7 +372,6 @@ export const ui = {
     preprint: 'Prépublication',
     figures: 'Figures de l’article',
     caption: 'Légende originale (en anglais)',
-    licence: 'Reproduite sans modification · licence',
     enlarge: 'Agrandir la figure',
     noFigures:
       'Les figures de cet article ne sont pas reproduites ici ; elles sont consultables dans l’article publié.',
@@ -391,7 +388,6 @@ export const ui = {
     seeStudies: 'Les études de cas',
     seeMember: 'Voir ses publications',
     allPublications: 'Toutes les publications',
-    originalTitle: 'Titre original',
     cite: 'Citer cet article',
     copyCitation: 'Copier la référence',
     teamAuthors: 'Auteurs de l’équipe',
@@ -478,24 +474,30 @@ export const ui = {
     publisher: 'Éditeur',
     identity: [
       'LDgenX SAS · SIREN 952 193 837',
-      'RCS Montpellier · Code NAF 7112B',
+      'RCS Montpellier · Code NAF 72.11Z',
       'Capital social : 50 000 €',
+      'Siège social : 6 place du 8 mai 1945, 34690 Fabrègues',
     ],
-    contentTitle: 'Contenus scientifiques et illustrations',
-    content:
-      'Les présentations scientifiques s’appuient sur les informations publiques de LDgenX et sur les documents cités. Les études, travaux et ressources renvoient aux sources utilisées. Les illustrations générées pour ce site ne constituent pas un reportage photographique des projets présentés.',
-    publicationTitle: 'Informations de publication',
-    publication:
-      'Cette version de travail doit être complétée, avant sa publication, par l’identité du responsable de publication et les coordonnées de l’hébergeur effectivement retenu. Ces informations ne sont pas présumées à partir d’un environnement de développement.',
+    lab: 'Laboratoire',
+    directorTitle: 'Directrice de la publication',
+    director: 'Maeva Leitwein, présidente de LDgenX SAS',
+    hostTitle: 'Hébergement',
+    host: [
+      'Cloudflare, Inc.',
+      '101 Townsend St, San Francisco, CA 94107, États-Unis',
+      'Téléphone : +1 650 319 8930',
+    ],
+    aiTitle: 'Intelligence artificielle',
+    ai: 'Certaines illustrations, la vidéo d’accueil et les portraits de Maeva Leitwein, Emilie Delpuech et Maxime Lambert ont été réalisés avec l’aide de l’intelligence artificielle, les portraits à partir de leurs photographies.',
     contact: 'Contacter LDgenX',
   },
   privacy: {
     navigationTitle: 'Navigation',
     navigation:
-      'Cette version ne comporte ni outil d’analyse d’audience, ni publicité, ni cookie de suivi. Les polices et les illustrations sont servies depuis le site. Aucun compte utilisateur n’est nécessaire.',
+      'Ce site n’utilise ni outil de mesure d’audience, ni publicité, ni cookie de suivi, et ne demande aucun compte. Les polices et les images sont servies depuis le site. Il est hébergé par Cloudflare, qui traite les données techniques nécessaires à l’affichage des pages et à leur sécurité, comme l’adresse IP.',
     formTitle: 'Formulaire de contact',
     form: 'Les informations saisies dans le formulaire sont transmises à l’équipe LDgenX par l’intermédiaire du service d’envoi de formulaires retenu par l’entreprise, dans le seul but de répondre à votre demande. Elles ne sont pas enregistrées dans un stockage du navigateur.',
-    mailtoTitle: 'Préparation d’un e-mail',
+    mailtoTitle: 'Formulaire de contact',
     mailto:
       'Le formulaire prépare un message dans votre application de messagerie. Les données saisies ne sont pas enregistrées dans un stockage du navigateur et ne sont pas transmises à un serveur de formulaire par ce site. L’envoi reste à votre initiative dans votre messagerie.',
     message:
@@ -503,10 +505,11 @@ export const ui = {
     linksTitle: 'Liens externes',
     links:
       'Le lien de rendez-vous et les sites des partenaires ouvrent des services distincts. Leur fonctionnement et leur traitement des données sont régis par leurs propres politiques.',
-    dataTitle: 'Contact et demandes relatives aux données',
-    dataBefore: 'Pour toute question sur vos échanges avec LDgenX, contactez ',
+    dataTitle: 'Vos données et vos droits',
+    dataBefore:
+      'LDgenX SAS est responsable du traitement des messages que vous lui adressez. Ils servent uniquement à répondre à votre demande et à la relation qui peut en découler, et sont conservés au plus trois ans après le dernier échange. Pour accéder à vos données, les rectifier ou les faire effacer, écrivez à ',
     dataAfter:
-      '. Les modalités de conservation et de traitement des messages reçus par l’entreprise doivent être confirmées par LDgenX avant la publication de la politique définitive.',
+      '. Vous pouvez aussi adresser une réclamation à la Commission nationale de l’informatique et des libertés (CNIL).',
   },
   contactPage: {
     mailGreeting: 'Bonjour à l’équipe LDgenX,',

@@ -62,7 +62,7 @@ export const pageCopy = {
   privacy: {
     eyebrow: 'Your data',
     title: 'Privacy.',
-    intro: 'How this version of the site and its email preparation form work.',
+    intro: 'How this site handles your data, and how to exercise your rights.',
   },
 };
 

@@ -1,5 +1,5 @@
 {
-  "note": "Images added on 21 October 2026 at the client's request (new pictures for microbial communities, bioinformatics, R&D, renewable energy). Sources, authors and licences are those of the files' description pages. Prepared by scripts/prepare-licensed-photos.mjs; registry in src/content/licensed-photos.ts.",
+  "note": "Pictures that are not LDgenX's own, with their source and licence. Since 24 October 2026 every one of them is in the public domain or under CC0, so the site shows no credit: European mink (iNaturalist, CC0), brown bear (CC0), Gironde estuary (NASA), biofilm (CDC), offshore wind (U.S. DOE). The read-alignment illustration is drawn by the script. Prepared by scripts/prepare-licensed-photos.mjs; registry in src/content/licensed-photos.ts.",
   "photos": [
     {
       "name": "eolien-en-mer",
@@ -10,10 +10,14 @@
       "licence": "Public domain (work of the U.S. federal government)",
       "taken": "2016-10-01",
       "subject": "Block Island Wind Farm, Rhode Island, United States. Not a project of LDgenX.",
-      "widths": [640, 860, 1100, 1536],
+      "widths": [
+        640,
+        860,
+        1100,
+        1536
+      ],
       "width": 1536,
       "height": 1025,
-      "credit": "U.S. Department of Energy",
       "altFr": "Éoliennes en mer du parc de Block Island (États-Unis), par mer formée",
       "altEn": "Offshore wind turbines of the Block Island wind farm (United States) in heavy seas"
     },
@@ -21,17 +25,24 @@
       "name": "biofilm-microbien",
       "kind": "photo",
       "sourceFile": "images/licensed/biofilm-microbien.jpg",
-      "source": "https://commons.wikimedia.org/wiki/File:Mixed-culture_biofilm.jpg",
-      "author": "Krzysztof A. Zacharski",
-      "licence": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
-      "taken": "2017-02-16",
-      "subject": "Scanning electron micrograph of a mixed-culture bacterial biofilm (laboratory reactor). Cropped to remove the instrument data strip. Not an LDgenX sample.",
-      "crop": [0, 0, 2560, 1766],
-      "widths": [640, 860, 1100, 1536],
+      "source": "https://commons.wikimedia.org/wiki/File:Staphylococcus_on_catheter.png",
+      "author": "Janice Carr, CDC (Public Health Image Library)",
+      "licence": "Public domain (work of the U.S. federal government)",
+      "subject": "Scanning electron micrograph of a Staphylococcus aureus biofilm on the inner surface of a catheter; cropped to leave out the scale bar. Not an LDgenX sample.",
+      "crop": [
+        205,
+        0,
+        2424,
+        1660
+      ],
+      "widths": [
+        640,
+        860,
+        1100,
+        1536
+      ],
       "width": 1536,
-      "height": 1060,
-      "credit": "K. A. Zacharski, CC BY 4.0, recadrée",
-      "creditEn": "K. A. Zacharski, CC BY 4.0, cropped",
+      "height": 1052,
       "altFr": "Biofilm bactérien observé au microscope électronique à balayage",
       "altEn": "Bacterial biofilm seen under a scanning electron microscope"
     },
@@ -43,7 +54,10 @@
       "author": "LDgenX",
       "licence": "Supplied by the client",
       "subject": "A person in a kayak on the water. Neither the person nor the protocol is identified in the source.",
-      "widths": [480, 778],
+      "widths": [
+        480,
+        778
+      ],
       "width": 778,
       "height": 1037,
       "altFr": "Sortie de terrain en kayak sur l’eau",
@@ -55,11 +69,94 @@
       "source": "Drawn by scripts/prepare-licensed-photos.mjs (fixed seed). Illustrative: no real data.",
       "author": "LDgenX website",
       "licence": "Own work",
-      "widths": [640, 860, 1100, 1536],
+      "widths": [
+        640,
+        860,
+        1100,
+        1536
+      ],
       "width": 1536,
       "height": 1152,
       "altFr": "Illustration : lectures de séquençage alignées sur un génome de référence, avec un variant",
       "altEn": "Illustration: sequencing reads aligned to a reference genome, with one variant"
+    },
+    {
+      "name": "vison-europe",
+      "kind": "photo",
+      "sourceFile": "images/licensed/vison-europe.jpg",
+      "source": "https://www.inaturalist.org/observations/289781561",
+      "author": "José Antonio León Mangado (iNaturalist)",
+      "licence": "CC0 1.0 (no rights reserved)",
+      "taken": "2019-10-10",
+      "subject": "European mink (Mustela lutreola), wild. Retouched for the site: the prey lying behind the animal was covered with the surrounding ground; cropped.",
+      "crop": [
+        560,
+        300,
+        1488,
+        992
+      ],
+      "widths": [
+        640,
+        860,
+        1100,
+        1488
+      ],
+      "width": 1488,
+      "height": 992,
+      "altFr": "Vison d’Europe au pelage mouillé, au sol",
+      "altEn": "European mink with wet fur, on the ground"
+    },
+    {
+      "name": "ours-brun",
+      "kind": "photo",
+      "sourceFile": "images/licensed/ours-brun.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Carpathian_Brown_Bear_(232367505).jpeg",
+      "author": "Costin Costan (500px)",
+      "licence": "CC0 1.0 (no rights reserved)",
+      "subject": "Brown bear (Ursus arctos) crossing a forest clearing in the Carpathians. Illustrates the Pyrenean bear study; not one of its bears.",
+      "crop": [
+        0,
+        100,
+        2048,
+        1365
+      ],
+      "widths": [
+        640,
+        860,
+        1100,
+        1536,
+        2048
+      ],
+      "width": 2048,
+      "height": 1365,
+      "altFr": "Ours brun traversant une clairière en forêt, dans les Carpates",
+      "altEn": "Brown bear crossing a forest clearing in the Carpathians"
+    },
+    {
+      "name": "estuaire-gironde",
+      "kind": "photo",
+      "sourceFile": "images/licensed/estuaire-gironde.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:ISS075-E-905_-_View_of_France.jpg",
+      "author": "NASA, Johnson Space Center (ISS Expedition 75 crew)",
+      "licence": "Public domain (NASA)",
+      "subject": "The mouth of the Gironde estuary photographed from the International Space Station; cropped.",
+      "crop": [
+        900,
+        260,
+        2940,
+        1960
+      ],
+      "widths": [
+        640,
+        860,
+        1100,
+        1536,
+        2048
+      ],
+      "width": 2048,
+      "height": 1365,
+      "altFr": "L’embouchure de l’estuaire de la Gironde vue de la Station spatiale internationale, aux eaux chargées de sédiments",
+      "altEn": "The mouth of the Gironde estuary seen from the International Space Station, its waters laden with sediment"
     }
   ]
 }

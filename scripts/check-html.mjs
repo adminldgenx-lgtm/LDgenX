@@ -2,6 +2,7 @@ import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { pages, redirects, companyOrigin, ready } from '../.prerender/entry-server.js';
+import { pageFile } from './page-file.mjs';
 
 await ready;
 
@@ -10,7 +11,7 @@ const titles = new Set(),
 let links = 0,
   images = 0;
 for (const page of pages) {
-  const file = path.join('dist', page.path.slice(1), 'index.html');
+  const file = path.join('dist', pageFile(page.path));
   const html = await readFile(file, 'utf8');
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${page.path}: one H1 required`);
   assert(!/<h1[^>]*>\s*<\/h1>/.test(html), `${page.path}: empty H1`);

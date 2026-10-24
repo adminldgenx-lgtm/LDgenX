@@ -1,6 +1,6 @@
 import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { AnimatedHeading, useEntrance, usePointerVars, useReducedMotion } from './motion';
+import { AnimatedHeading, useEntrance, usePointerVars } from './motion';
 import { AmbientField } from './AmbientField';
 import { DecodeOnce } from './Decode';
 import { breadcrumbs, type PageMeta } from '../lib/pages';
@@ -50,10 +50,8 @@ export function Photo({
   const phase = useEntrance(ref);
   const widths = imageWidths(name);
   const { ui } = useCatalog();
+  // Credits are listed in the legal notice, not printed on the pictures.
   const metadata = clientPhotos[name] ?? equipmentMedia[name] ?? licensedPhotos[name];
-  const credit: string | undefined =
-    (ui.htmlLang !== 'fr' && licensedPhotos[name]?.creditEn) ||
-    (metadata as { credit?: string } | undefined)?.credit;
   const picture = (
     <img
       ref={ref}
@@ -74,14 +72,7 @@ export function Photo({
       onError={(event) => event.currentTarget.setAttribute('data-failed', '')}
     />
   );
-  return credit ? (
-    <span className="credited-photo">
-      {picture}
-      <span className="photo-credit">{credit}</span>
-    </span>
-  ) : (
-    picture
-  );
+  return picture;
 }
 
 /** Every image is in place from the start, so changing the active one is a pure crossfade:
@@ -257,7 +248,6 @@ export function PageHero({
   image?: string;
   dark?: boolean;
 }) {
-  const reduced = useReducedMotion();
   return (
     <section
       className={`page-hero ${image ? 'page-hero-split' : ''} ${dark ? 'page-hero-dark' : ''}`}
@@ -269,7 +259,7 @@ export function PageHero({
         <div className="page-hero-grid">
           <div className="page-hero-copy intro-copy">
             <Eyebrow light={dark}>
-              <DecodeOnce text={eyebrow} play={!reduced} delay={350} />
+              <DecodeOnce text={eyebrow} play delay={350} />
             </Eyebrow>
             <AnimatedHeading as="h1" text={title} intro />
             {intro && <p className="lead">{intro}</p>}

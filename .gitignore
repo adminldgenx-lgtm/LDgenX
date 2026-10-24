@@ -4,3 +4,5 @@ dist/
 .DS_Store
 *.local
 test-results/
+# Confidential client documents (reports, contracts): kept out of the repository.
+/ldgenx 23oct file\ /

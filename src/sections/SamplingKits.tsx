@@ -1,7 +1,7 @@
 import { useRef, type CSSProperties } from 'react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Button, Eyebrow, Reveal } from '../components/ui';
-import { AnimatedHeading, useNearViewport, useReducedMotion } from '../components/motion';
+import { AnimatedHeading, useNearViewport } from '../components/motion';
 
 /* The sampling kits, one per environment. Each card carries a small moving texture of its
    environment (swell, current, grains, drifting particles): an evocation, not a picture of the
@@ -69,7 +69,6 @@ export function SamplingKits() {
   const r = useRoutes();
   const ref = useRef<HTMLDivElement>(null);
   const live = useNearViewport(ref, '0px');
-  const reduced = useReducedMotion();
   return (
     <section className="section-space kits-section" aria-labelledby="kits-title">
       <div className="container">
@@ -88,7 +87,7 @@ export function SamplingKits() {
             </Button>
           </Reveal>
         </div>
-        <div ref={ref} className="kits-grid" data-live={(live && !reduced) || undefined}>
+        <div ref={ref} className="kits-grid" data-live={live || undefined}>
           {t.kits.map((kit, i) => (
             <Reveal key={kit.id} delay={i * 0.07} className="kit-card">
               <Texture kind={kit.id} />

@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { useCatalog, useRoutes } from '../i18n';
-import { useMediaQuery, useNearViewport, useReducedMotion } from '../components/motion';
+import { useMediaQuery, useNearViewport } from '../components/motion';
 import { Photo, Reveal } from '../components/ui';
 
 /* The other studies, as tall photo panels side by side. One panel is open at a time: it widens,
    its picture drifts, and its question and facts come in. Pointing at a panel opens it; when
-   nobody does, they open in turn. On phones every panel is open, one under the other. */
+   nobody does, they open in turn. Beyond three, the panels go on a second row, so that a closed
+   panel keeps room for its title. On phones every panel is open, one under the other. */
 
 const CYCLE_MS = 6000;
+const PER_ROW = 3;
 // Scientific works that can stand among the studies, with the illustration their panel uses.
 const WORK_PICTURES: Record<string, string> = { 'selection-genomique': 'cas-bar' };
 
@@ -71,11 +73,14 @@ export function StudyPanels({
   ];
   const ref = useRef<HTMLDivElement>(null);
   const live = useNearViewport(ref, '0px');
-  const reduced = useReducedMotion();
   const stacked = useMediaQuery('(max-width: 800px)');
   const [open, setOpen] = useState(0);
   const [held, setHeld] = useState(false);
-  const cycling = live && !held && !reduced && !stacked;
+  const cycling = live && !held && !stacked;
+  const perRow = Math.ceil(items.length / Math.ceil(items.length / PER_ROW));
+  const rows = Array.from({ length: Math.ceil(items.length / perRow) }, (_, row) =>
+    items.slice(row * perRow, (row + 1) * perRow),
+  );
 
   useEffect(() => {
     if (!cycling) return;
@@ -90,60 +95,62 @@ export function StudyPanels({
           {label ?? ui.panels.label}
         </p>
       </div>
-      <div
-        ref={ref}
-        className="study-panels"
-        data-cycling={cycling || undefined}
-        onPointerLeave={() => setHeld(false)}
-      >
-        {items.map((study, i) => (
-          <Reveal key={study.key} className="study-panel-slot" delay={i * 0.1}>
-            <Link
-              className="study-panel"
-              to={study.to}
-              data-open={stacked || open === i || undefined}
-              style={{ '--cycle': `${CYCLE_MS}ms` } as CSSProperties}
-              onPointerEnter={(e) => {
-                if (e.pointerType !== 'mouse') return;
-                setOpen(i);
-                setHeld(true);
-              }}
-              onFocus={() => {
-                setOpen(i);
-                setHeld(true);
-              }}
-              onBlur={() => setHeld(false)}
-            >
-              <span className="study-panel-picture">
-                <Photo name={study.image} alt="" sizes="(max-width: 800px) 92vw, 50vw" />
-              </span>
-              <span className="study-panel-shade" aria-hidden="true" />
-              {open === i && cycling && (
-                <span key={open} className="study-panel-timer" aria-hidden="true" />
-              )}
-              <span className="study-panel-body">
-                <span className="study-panel-category">{study.category}</span>
-                <h3>{study.title}</h3>
-                <span className="study-panel-more">
-                  <span className="study-panel-more-inner">
-                    <span className="study-panel-question">
-                      <span>{study.label}</span>
-                      {study.question}
+      <div ref={ref} className="study-panels-rows" onPointerLeave={() => setHeld(false)}>
+        {rows.map((row, r) => (
+          <div key={r} className="study-panels">
+            {row.map((study, j) => {
+              const i = r * perRow + j;
+              return (
+                <Reveal key={study.key} className="study-panel-slot" delay={i * 0.1}>
+                  <Link
+                    className="study-panel"
+                    to={study.to}
+                    data-open={stacked || open === i || undefined}
+                    style={{ '--cycle': `${CYCLE_MS}ms` } as CSSProperties}
+                    onPointerEnter={(e) => {
+                      if (e.pointerType !== 'mouse') return;
+                      setOpen(i);
+                      setHeld(true);
+                    }}
+                    onFocus={() => {
+                      setOpen(i);
+                      setHeld(true);
+                    }}
+                    onBlur={() => setHeld(false)}
+                  >
+                    <span className="study-panel-picture">
+                      <Photo name={study.image} alt="" sizes="(max-width: 800px) 92vw, 50vw" />
                     </span>
-                    <span className="study-panel-facts">
-                      {study.facts.map((f) => (
-                        <span key={f.label}>
-                          <span>{f.label}</span>
-                          {f.value}
+                    <span className="study-panel-shade" aria-hidden="true" />
+                    {open === i && cycling && (
+                      <span key={open} className="study-panel-timer" aria-hidden="true" />
+                    )}
+                    <span className="study-panel-body">
+                      <span className="study-panel-category">{study.category}</span>
+                      <h3>{study.title}</h3>
+                      <span className="study-panel-more">
+                        <span className="study-panel-more-inner">
+                          <span className="study-panel-question">
+                            <span>{study.label}</span>
+                            {study.question}
+                          </span>
+                          <span className="study-panel-facts">
+                            {study.facts.map((f) => (
+                              <span key={f.label}>
+                                <span>{f.label}</span>
+                                {f.value}
+                              </span>
+                            ))}
+                          </span>
+                          <span className="study-panel-link">{study.cta}</span>
                         </span>
-                      ))}
+                      </span>
                     </span>
-                    <span className="study-panel-link">{study.cta}</span>
-                  </span>
-                </span>
-              </span>
-            </Link>
-          </Reveal>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
         ))}
       </div>
     </section>

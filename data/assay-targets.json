@@ -193,12 +193,14 @@
       "id": "neomys-anomalus",
       "latin": "Neomys anomalus",
       "nameFr": "Musaraigne de Miller",
-      "nameEn": null,
+      "nameEn": "Southern water shrew",
       "category": "mammals",
       "source": "canva-2026-10-17-page-10",
-      "publication": "hold",
-      "confirmation": {
-        "question": "Confirmer si les amorces et sondes ciblent Neomys anomalus ou Neomys milleri. Le libellé historique ne permet pas de déterminer la cible. Ne pas remplacer automatiquement le nom scientifique.",
+      "publication": "publish",
+      "confirmed": {
+        "date": "2026-10-23",
+        "by": "Maeva Leitwein, e-mail of 23 October 2026",
+        "answer": "Neomys anomalus fait bien partie des espèces ciblées.",
         "reference": "https://doi.org/10.1002/ece3.4487"
       }
     },

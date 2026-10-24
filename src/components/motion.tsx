@@ -8,6 +8,7 @@ import {
   type CSSProperties,
   type RefObject,
 } from 'react';
+import { motionLevel, subscribeMotion, type MotionLevel } from '../lib/motion-preference';
 
 // One motion language for the whole site, without an animation library: CSS keyframes and
 // transitions do the drawing, these hooks only decide when. Scrolling always stays native.
@@ -28,9 +29,11 @@ export function useMediaQuery(query: string) {
   );
 }
 
-export function useReducedMotion() {
-  return useMediaQuery('(prefers-reduced-motion: reduce)');
+/** How much the site moves (see lib/motion-preference.ts). */
+export function useMotionLevel(): MotionLevel {
+  return useSyncExternalStore(subscribeMotion, motionLevel, () => 'full');
 }
+
 
 // A single observer serves every element that enters on scroll.
 const entranceCallbacks = new WeakMap<Element, () => void>();
@@ -61,17 +64,16 @@ export type EntrancePhase = 'static' | 'pending' | 'visible';
 /** Server-rendered content stays visible. Only content still below the screen when the page
  *  becomes interactive waits for its entrance: nothing already in view ever disappears. */
 export function useEntrance(ref: RefObject<Element | null>): EntrancePhase {
-  const reduced = useReducedMotion();
   const [phase, setPhase] = useState<EntrancePhase>('static');
   useEffect(() => {
     const element = ref.current;
-    if (!element || reduced) return;
+    if (!element) return;
     const bounds = element.getBoundingClientRect();
     if (bounds.top < window.innerHeight) return;
     setPhase('pending');
     return observeEntrance(element, () => setPhase('visible'));
-  }, [ref, reduced]);
-  return reduced ? 'static' : phase;
+  }, [ref]);
+  return phase;
 }
 
 /** Whether an element is on or near the screen, for work that only matters there. */
@@ -218,7 +220,7 @@ export function usePointerVars(ref: RefObject<HTMLElement | null>, tilt = 0) {
     const element = ref.current;
     if (!element) return;
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (motionLevel() !== 'full') return;
     let frame = 0,
       x = 0.5,
       y = 0.5;

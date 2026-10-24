@@ -482,7 +482,7 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
           <div className="container">
             <TiltLink className="sector-related-link" to={r.application(related.id)}>
               <span className="sector-related-picture">
-                <Photo name={related.image} alt="" sizes="160px" />
+                <Photo name={related.image} alt="" sizes="(max-width: 800px) 92vw, 160px" />
               </span>
               <span className="sector-related-body">
                 <span className="sector-related-question">{s.related!.text}</span>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Pause, Play, Search } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Button, Eyebrow, Photo, Reveal } from '../components/ui';
-import { AnimatedHeading, useNearViewport, useReducedMotion } from '../components/motion';
+import { AnimatedHeading, useNearViewport } from '../components/motion';
 import type { AssayCategory } from '../content/types';
 
 /* "Votre espèce cible, un test ADN sur mesure": the four steps of developing a targeted assay,
@@ -32,7 +32,6 @@ export function CustomAssay({ variant = 'section' }: { variant?: 'section' | 'pa
   const r = useRoutes();
   const section = useRef<HTMLElement>(null);
   const live = useNearViewport(section, '0px');
-  const reduced = useReducedMotion();
   const [step, setStep] = useState(0);
   const [held, setHeld] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -40,7 +39,7 @@ export function CustomAssay({ variant = 'section' }: { variant?: 'section' | 'pa
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<AssayCategory | 'all'>('all');
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
-  const playing = live && !held && !paused && !reduced;
+  const playing = live && !held && !paused;
   useEffect(() => {
     const select = (event: Event) => {
       const id = (event as CustomEvent<string>).detail;
@@ -246,7 +245,7 @@ export function CustomAssay({ variant = 'section' }: { variant?: 'section' | 'pa
             onPointerEnter={(e) => e.pointerType === 'mouse' && setHeld(true)}
             onPointerLeave={() => setHeld(false)}
           >
-            <figure className="assay-stage" data-step={step} data-reduced={reduced || undefined}>
+            <figure className="assay-stage" data-step={step}>
               <div className="assay-stage-head">
                 <span className="assay-stage-label">
                   {current ? (
@@ -263,26 +262,23 @@ export function CustomAssay({ variant = 'section' }: { variant?: 'section' | 'pa
                     t.stage.yourSpecies
                   )}
                 </span>
-                {!reduced && (
-                  <button
-                    type="button"
-                    className="assay-play"
-                    onClick={() => {
-                      setPaused(!paused);
-                      setHeld(false);
-                    }}
-                  >
-                    {paused ? (
-                      <Play size={14} aria-hidden="true" />
-                    ) : (
-                      <Pause size={14} aria-hidden="true" />
-                    )}
-                    <span className="sr-only">{paused ? t.play : t.pause}</span>
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className="assay-play"
+                  onClick={() => {
+                    setPaused(!paused);
+                    setHeld(false);
+                  }}
+                >
+                  {paused ? (
+                    <Play size={14} aria-hidden="true" />
+                  ) : (
+                    <Pause size={14} aria-hidden="true" />
+                  )}
+                  <span className="sr-only">{paused ? t.play : t.pause}</span>
+                </button>
               </div>
               <AssayScene labels={t.stage} />
-              <figcaption className="assay-caption">{t.illustration}</figcaption>
             </figure>
           </div>
 
@@ -496,7 +492,7 @@ export function CustomAssayTeaser() {
             <Photo
               name={t.contextImage.name}
               alt={t.contextImage.alt}
-              sizes="(max-width: 800px) 90vw, 420px"
+              sizes="(max-width: 800px) 92vw, 48vw"
             />
           </span>
           <span className="assay-teaser-body">

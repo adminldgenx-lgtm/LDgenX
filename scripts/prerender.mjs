@@ -1,4 +1,5 @@
 import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import {
@@ -13,10 +14,14 @@ import {
   ready,
 } from '../.prerender/entry-server.js';
 import { crawlerFiles, imageSet, mainOf } from './crawler-files.mjs';
+import { pageFile } from './page-file.mjs';
 
 await ready;
 
 const root = path.resolve('dist');
+// The client area and the administration are built only on request (LDGENX_PORTAL=1), once their
+// backend is connected: without it the production site ships no demo application.
+const portal = existsSync(path.join(root, 'portal.html'));
 const built = await readFile(path.join(root, 'index.html'), 'utf8');
 if (!built.includes('<!--app-html-->') || !built.includes('<!--seo-head-->'))
   throw new Error('Prerender placeholders are missing.');
@@ -65,10 +70,10 @@ for (const page of pages) {
   dates[page.path] = known[page.path]?.hash === hash ? known[page.path] : { hash, date: today };
   imagesOf[page.path] = imageSet(main);
   const head = renderHead(getPage(page.path), dates[page.path].date);
-  const directory = page.path === '/' ? root : path.join(root, page.path.slice(1));
-  await mkdir(directory, { recursive: true });
+  const file = path.join(root, pageFile(page.path));
+  await mkdir(path.dirname(file), { recursive: true });
   await writeFile(
-    path.join(directory, 'index.html'),
+    file,
     withLang(template, page.locale)
       .replace('<!--app-html-->', output.html)
       .replace('<!--seo-head-->', head),
@@ -89,16 +94,16 @@ for (const [from, to] of Object.entries(redirects)) {
   if (written.has(from.toLowerCase())) continue;
   written.add(from.toLowerCase());
   const t = catalogs[localeOf(to)].ui;
-  const directory = path.join(root, from.slice(1));
-  await mkdir(directory, { recursive: true });
+  const file = path.join(root, pageFile(from));
+  await mkdir(path.dirname(file), { recursive: true });
   await writeFile(
-    path.join(directory, 'index.html'),
+    file,
     `<!doctype html><html lang="${t.htmlLang}"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${companyOrigin}${to}"><meta http-equiv="refresh" content="0;url=${to}"><title>${t.redirect.title}</title></head><body><p>${t.redirect.text} <a href="${to}">${t.redirect.link}</a>.</p></body></html>`,
   );
 }
 // Sitemaps (each address with its language versions, its date of last change and the pictures it
 // shows), robots.txt and the language-model files: see crawler-files.mjs.
-const files = crawlerFiles({ pages, catalogs, company, dates, imagesOf, today });
+const files = crawlerFiles({ pages, catalogs, company, dates, imagesOf, today, portal });
 await mkdir(path.join(root, 'sitemaps'), { recursive: true });
 for (const [file, content] of Object.entries(files))
   await writeFile(path.join(root, file), content);
@@ -108,18 +113,67 @@ await writeFile(
     .map(([from, to]) => `${from} ${to} 301\n${from}/ ${to} 301`)
     .join('\n') +
     '\n' +
+    // A page asked with a trailing slash goes to its address (Cloudflare serves page.html at /page).
     pages
       .filter((p) => p.path !== '/')
-      .map((p) => `${p.path} ${p.path}/index.html 200`)
+      .map((p) => `${p.path}/ ${p.path} 301`)
       .join('\n') +
-    '\n',
+    '\n' +
+    // The client area and the administration: one application for every address below them.
+    (portal
+      ? '/espace /portal.html 200\n/espace/* /portal.html 200\n/admin /portal.html 200\n/admin/* /portal.html 200\n'
+      : ''),
 );
 await writeFile(path.join(root, 'redirects.json'), JSON.stringify(redirects, null, 2));
-// Host rules (Netlify and Cloudflare Pages read this file): long cache for fingerprinted assets,
-// plain text for the language-model files, which stay out of search results.
+// Host rules (Cloudflare Pages reads this file). Every response carries the security headers:
+// the site loads nothing from other origins, runs no inline script (the JSON-LD blocks are data)
+// and cannot be framed. Then a long cache for fingerprinted assets, plain text for the
+// language-model files, which stay out of search results, as does the client area when built.
+// A header set by two matching rules would be joined, so each rule sets different headers.
+const contact = (process.env.VITE_CONTACT_ENDPOINT ?? '').trim();
+const contactOrigin = /^https:\/\//.test(contact) ? ` ${new URL(contact).origin}` : '';
+const policy = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "media-src 'self'",
+  `connect-src 'self'${contactOrigin}`,
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  'upgrade-insecure-requests',
+].join('; ');
+const security = [
+  `Content-Security-Policy: ${policy}`,
+  'Strict-Transport-Security: max-age=31536000',
+  'X-Content-Type-Options: nosniff',
+  'X-Frame-Options: DENY',
+  'Referrer-Policy: strict-origin-when-cross-origin',
+  'Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()',
+  'Cross-Origin-Opener-Policy: same-origin',
+];
+const rules = [
+  ['/*', security],
+  ['/assets/*', ['Cache-Control: public, max-age=31536000, immutable']],
+  ['/images/*', ['Cache-Control: public, max-age=2592000']],
+  ['/llms.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
+  ['/llms-full.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
+  ...(portal
+    ? [
+        ['/portal.html', ['X-Robots-Tag: noindex, nofollow', 'Cache-Control: no-cache']],
+        ['/espace/*', ['X-Robots-Tag: noindex, nofollow']],
+        ['/admin/*', ['X-Robots-Tag: noindex, nofollow']],
+      ]
+    : []),
+];
 await writeFile(
   path.join(root, '_headers'),
-  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/images/*\n  Cache-Control: public, max-age=2592000\n/llms.txt\n  Content-Type: text/plain; charset=utf-8\n  X-Robots-Tag: noindex\n/llms-full.txt\n  Content-Type: text/plain; charset=utf-8\n  X-Robots-Tag: noindex\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n`,
+  rules
+    .map(([match, headers]) => `${match}\n${headers.map((h) => `  ${h}`).join('\n')}`)
+    .join('\n') + '\n',
 );
 console.log(
   `Prerendered ${pages.length} pages, ${Object.keys(redirects).length} redirects, and a 404 page.`,

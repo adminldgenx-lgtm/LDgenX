@@ -61,7 +61,7 @@ export const knowledge = {
           {
             question: 'Do you have assays for a specific species?',
             answer:
-              'LDgenX holds primers and probes for 21 species (mammals, fish, a reptile and invertebrates) and designs custom assays for new targets. Matrices, conditions of use and performance are evaluated for each project.',
+              'LDgenX holds primers and probes for 22 species (mammals, fish, a reptile and invertebrates) and designs custom assays for new targets. Matrices, conditions of use and performance are evaluated for each project.',
             link: {
               to: { kind: 'service', id: 'tests-adn-cibles' },
               label: 'See the target species',

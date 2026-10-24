@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Photo, TextLink } from '../components/ui';
-import { AnimatedHeading, useNearViewport, useReducedMotion, useSeen } from '../components/motion';
+import { AnimatedHeading, useNearViewport, useSeen } from '../components/motion';
 
 /* The expertises on the homepage, after the DNA helix: a sequencing trace, the curve a DNA
    reader draws, with one peak per expertise. The chosen expertise's peak rises in its colour and
@@ -55,13 +55,12 @@ export function ExpertiseTrace() {
   const r = useRoutes();
   const items = IDS.map((id) => services.find((s) => s.id === id)!);
   const others = services.filter((s) => !IDS.includes(s.id));
-  const reduced = useReducedMotion();
   const section = useRef<HTMLElement>(null);
   const live = useNearViewport(section, '0px');
   const seen = useSeen(section);
   const [active, setActive] = useState(0);
   const [held, setHeld] = useState(false);
-  const cycling = live && !held && !reduced;
+  const cycling = live && !held;
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Drawn directly into the SVG: the heights ease towards their targets every frame.
@@ -81,12 +80,11 @@ export function ExpertiseTrace() {
         dot?.style.setProperty('--y', String(dotY(heights.current[i]) / H));
       });
     };
-    if (reduced || !live) {
+    if (!live) {
       heights.current = REST.map((h, i) => (i === target.current ? PEAK : h));
       paint(0);
-      if (reduced) return;
+      return;
     }
-    if (!live) return;
     let frame = 0;
     const start = performance.now();
     const loop = (now: number) => {
@@ -99,19 +97,7 @@ export function ExpertiseTrace() {
     };
     frame = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(frame);
-  }, [live, reduced]);
-
-  useEffect(() => {
-    if (reduced) {
-      heights.current = REST.map((h, i) => (i === active ? PEAK : h));
-      const path = tracePath(heights.current, 0);
-      line.current?.setAttribute('d', path);
-      fill.current?.setAttribute('d', `${path}L${W} ${BASE}L0 ${BASE}Z`);
-      dots.current.forEach((dot, i) => {
-        dot?.style.setProperty('--y', String(dotY(heights.current[i]) / H));
-      });
-    }
-  }, [active, reduced]);
+  }, [live]);
 
   useEffect(() => {
     if (!cycling) return;

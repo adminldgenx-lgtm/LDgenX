@@ -1,0 +1,8 @@
+{
+  "note": "Figures of the client reports sent on 23 October 2026 (ldgenx 23oct file/, kept out of the repository), rendered with pdf.js and cut at the place of each embedded image, unchanged. Prepared by scripts/prepare-report-figures.mjs.",
+  "figures": [
+    { "name": "fig-ours-effectifs", "sourceFile": "images/reports/fig-ours-effectifs.png", "report": "Rapport d’analyses, Démo-génétique ours (16 September 2025), figure 4", "widths": [900, 1510] },
+    { "name": "fig-ours-consanguinite", "sourceFile": "images/reports/fig-ours-consanguinite.png", "report": "Rapport d’analyses, Démo-génétique ours (16 September 2025), figure 6", "widths": [900, 1400, 2007] },
+    { "name": "fig-estuaire-taxons", "sourceFile": "images/reports/fig-estuaire-taxons.png", "report": "Rapport ADNe Estuaire 2025 (erratum of 30 June 2026), figure 2", "widths": [900, 1400, 2007] }
+  ]
+}

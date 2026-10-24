@@ -1,7 +1,7 @@
 import { useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { FileText } from 'lucide-react';
 import { useCatalog } from '../i18n';
-import { AnimatedHeading, useReducedMotion, useSeen } from '../components/motion';
+import { AnimatedHeading, useSeen } from '../components/motion';
 import { Eyebrow, Reveal } from '../components/ui';
 import { LiveList, StepRows } from '../components/Steps';
 import { DecodeOnce } from '../components/Decode';
@@ -119,14 +119,13 @@ function KeyFigures() {
   const { artoisPicardie: ap } = useCatalog();
   const ref = useRef<HTMLDListElement>(null);
   const seen = useSeen(ref);
-  const reduced = useReducedMotion();
   return (
     <dl ref={ref} className="results-figures">
       {ap.keyFigures.map((f, i) => (
         <div key={f.label} style={{ '--i': i } as CSSProperties}>
           <dt>{f.label}</dt>
           <dd>
-            <DecodeOnce text={f.value} play={seen && !reduced} delay={120 + i * 150} />
+            <DecodeOnce text={f.value} play={seen} delay={120 + i * 150} />
           </dd>
         </div>
       ))}

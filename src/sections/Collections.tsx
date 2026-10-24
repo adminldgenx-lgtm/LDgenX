@@ -3,7 +3,7 @@ import { useCatalog, useRoutes } from '../i18n';
 import type { Catalog } from '../content/catalog';
 import { Photo, Reveal, TiltLink } from '../components/ui';
 import { useRef, type CSSProperties } from 'react';
-import { useReducedMotion, useSeen } from '../components/motion';
+import { useSeen } from '../components/motion';
 import { DecodeOnce } from '../components/Decode';
 
 export function ApplicationGrid() {
@@ -38,14 +38,13 @@ export function ApplicationGrid() {
 export function StudyFacts({ facts }: { facts: { label: string; value: string }[] }) {
   const ref = useRef<HTMLDListElement>(null);
   const seen = useSeen(ref);
-  const reduced = useReducedMotion();
   return (
     <dl ref={ref} className="study-facts">
       {facts.map((f, i) => (
         <div key={f.label}>
           <dt>{f.label}</dt>
           <dd>
-            <DecodeOnce text={f.value} play={seen && !reduced} delay={150 + i * 160} />
+            <DecodeOnce text={f.value} play={seen} delay={150 + i * 160} />
           </dd>
         </div>
       ))}

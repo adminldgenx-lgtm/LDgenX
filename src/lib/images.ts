@@ -12,11 +12,16 @@ const otherWidths: Record<string, number[]> = {
   'equipe-maxime': [473],
   'terrain-prelevement': [480, 829],
   'carte-artois-picardie': [480, 970],
+  // Figures of the case-study reports (data/report-figures.json).
+  'fig-ours-effectifs': [900, 1510],
+  'fig-ours-consanguinite': [900, 1400, 2007],
+  'fig-estuaire-taxons': [900, 1400, 2007],
   'materiel-pompe': [480, 1000],
-  // The team's real photos (ldgenx.fr/a-propos/equipe, and Damien's own), cropped to 4:5.
-  'portrait-maeva': [480, 590],
-  'portrait-emilie': [480, 534],
-  'portrait-maxime': [473],
+  // The team portraits, 4:5: studio portraits of Maeva, Emilie and Maxime (images/team), and
+  // Damien's own photo.
+  'portrait-maeva': [480, 900],
+  'portrait-emilie': [480, 900],
+  'portrait-maxime': [480, 900],
   'portrait-damien': [480, 659],
   // Imported from the public LDgenX sites and the Artois-Picardie documents (October 2026).
   'ap-adne-chalut': [900, 1600],

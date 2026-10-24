@@ -229,13 +229,17 @@ export const services: Expertise[] = [
         image: 'carte-artois-picardie',
         link: { kind: 'study', id: 'ichtyofaune-artois-picardie' },
       },
-      { title: 'Recherche de l’ichtyofaune en milieu turbide', image: 'terrain-prelevement' },
+      {
+        title: 'Recherche de l’ichtyofaune en milieu turbide',
+        image: 'terrain-prelevement',
+        link: { kind: 'study', id: 'adne-estuaire-milieu-turbide' },
+      },
       {
         title: 'État des lieux de la biodiversité marine sur le site pilote',
         image: 'terrain-palavas',
       },
       {
-        title: 'Biodiversité des parcs éoliens offshore',
+        title: 'Biodiversité des parcs éoliens offshore (étude en cours)',
         image: 'cas-eolien-offshore',
         link: { kind: 'study', id: 'biodiversite-eolien-offshore' },
       },
@@ -315,6 +319,11 @@ export const services: Expertise[] = [
         image: 'cas-vanneau',
         link: { kind: 'study', id: 'genomique-vanneau-huppe' },
       },
+      {
+        title: 'L’ours brun des Pyrénées',
+        image: 'ours-brun',
+        link: { kind: 'study', id: 'demogenetique-ours-pyrenees' },
+      },
     ],
     headings: {
       need: 'Diversité, structure,\nconnectivité.',
@@ -363,7 +372,7 @@ export const services: Expertise[] = [
     ],
     cases: [
       {
-        title: 'Inventaire des communautés microbiennes sur les microplastiques',
+        title: 'Séquençage de communautés microbiennes sur microplastiques',
         image: 'cas-microplastiques',
         link: { kind: 'study', id: 'communautes-microplastiques' },
       },
@@ -566,11 +575,11 @@ export const services: Expertise[] = [
     title: 'Tests ADN ciblés',
     short: 'Détecter et quantifier l’ADN d’une espèce précise.',
     scope:
-      'Amorces et sondes pour 21 espèces et tests sur mesure : détection et quantification par PCR digitale.',
+      'Amorces et sondes pour 22 espèces et tests sur mesure : détection et quantification par PCR digitale.',
     image: 'dpcr-operateur',
     headline: 'Votre espèce cible, un test ADN sur mesure.',
     intro:
-      'Vison d’Europe, thon rouge, requins, tortue caouanne : LDgenX dispose d’amorces et de sondes pour 21 espèces et conçoit des tests pour de nouvelles cibles. La PCR digitale (dPCR) détecte et quantifie l’ADN de l’espèce recherchée dans l’eau, les sols ou les sédiments.',
+      'Vison d’Europe, thon rouge, requins, tortue caouanne : LDgenX dispose d’amorces et de sondes pour 22 espèces et conçoit des tests pour de nouvelles cibles. La PCR digitale (dPCR) détecte et quantifie l’ADN de l’espèce recherchée dans l’eau, les sols ou les sédiments.',
     need: 'Une espèce protégée à confirmer, une espèce invasive à détecter tôt, un pathogène à surveiller ? Quand la question porte sur une espèce précise, un test ciblé y répond plus directement qu’un inventaire.',
     approaches: [
       {
@@ -610,7 +619,7 @@ export const services: Expertise[] = [
     seo: {
       title: 'Tests ADN ciblés par dPCR : détecter une espèce | LDgenX',
       description:
-        'Amorces et sondes pour 21 espèces (vison d’Europe, thon rouge, requins, tortue caouanne…) et tests sur mesure : détection et quantification de l’ADN par PCR digitale.',
+        'Amorces et sondes pour 22 espèces (vison d’Europe, thon rouge, requins, tortue caouanne…) et tests sur mesure : détection et quantification de l’ADN par PCR digitale.',
     },
     headings: {
       need: 'Une question,\nune espèce.',
@@ -1090,9 +1099,18 @@ export const applications: Sector[] = [
 
 /** Figures and documents of a case study page, when published. */
 export interface StudyDetails {
-  regionsTitle: string;
-  regionsNote: string;
-  regions: { name: string; value: number }[];
+  regionsTitle?: string;
+  regionsNote?: string;
+  regions?: { name: string; value: number }[];
+  /** Shown after each bar value (e.g. '%'). */
+  regionsUnit?: string;
+  /** Figures of the report, shown whole and opened at full size. */
+  figuresTitle?: string;
+  /** A picture cut from the report, or a figure redrawn from its numbers as bars. */
+  figures?: (
+    | { image: string; caption: string; size?: 'medium' }
+    | { bars: { name: string; value: number }[]; caption: string }
+  )[];
   funnelTitle: string;
   funnel: { value: string; label: string }[];
   findingsTitle: string;
@@ -1101,14 +1119,16 @@ export interface StudyDetails {
   perspective: string;
   rolesTitle: string;
   roles: string[];
-  documentsTitle: string;
-  documents: { label: string; meta: string; url: string }[];
+  documentsTitle?: string;
+  documents?: { label: string; meta: string; url: string }[];
 }
 
 export interface Study {
   id: string;
   slug: string;
   title: string;
+  /** A shorter title for the page title, when the title is too long for search results. */
+  seoTitle?: string;
   category: string;
   image: string;
   imageAlt?: string;
@@ -1119,7 +1139,10 @@ export interface Study {
   approach: string;
   result: string;
   service: string;
+  /** The published source, when there is one (empty for a client report). */
   source: string;
+  /** A study still running: its page says so, with no results yet. */
+  status?: 'ongoing';
   details?: StudyDetails;
 }
 
@@ -1155,6 +1178,7 @@ export const studies: Study[] = [
     id: 'genomique-vanneau-huppe',
     slug: 'genomique-vanneau-huppe',
     title: 'D’où viennent les vanneaux huppés qui hivernent en France ?',
+    seoTitle: 'Génomique des vanneaux huppés hivernant en France',
     category: 'Génomique des populations',
     image: 'cas-vanneau',
     imageAlt: 'Vanneau huppé',
@@ -1234,6 +1258,171 @@ export const studies: Study[] = [
     },
   },
   {
+    id: 'demogenetique-ours-pyrenees',
+    slug: 'demogenetique-ours-pyrenees',
+    title: 'Quel avenir génétique pour l’ours des Pyrénées ?',
+    category: 'Génomique des populations',
+    image: 'ours-brun',
+    imageAlt: 'Ours brun traversant une clairière en forêt',
+    subtitle:
+      'Une étude démo-génétique de la population d’ours brun pour l’association Pays de l’Ours – ADET.',
+    facts: [
+      { label: 'Commanditaire', value: 'Association Pays de l’Ours – ADET' },
+      { label: 'Partenaire scientifique', value: 'UMR BIOGECO (INRAE, Université de Bordeaux)' },
+      { label: 'Espèce', value: 'Ours brun, Ursus arctos' },
+      { label: 'Données', value: 'Suivi de la population, de 1975 à 2024' },
+      { label: 'Approche', value: 'Modélisation démo-génétique, projections jusqu’en 2050' },
+      { label: 'Année', value: '2025' },
+    ],
+    context:
+      'Proche de l’extinction dans les Pyrénées au milieu des années 1990, l’ours brun y a été renforcé à partir de 1996 par des lâchers d’ours venus de Slovénie. La population est estimée à 104 individus en 2024. Issue d’un petit nombre de fondateurs, elle reste génétiquement fragile : sa consanguinité augmente depuis le début des années 2000, alors même que ses effectifs croissent.',
+    question:
+      'Quel est l’état génétique de la population, et quels apports d’ours limiteraient la consanguinité d’ici 2050 ?',
+    approach:
+      'Synthèse des données du suivi de la population : un pedigree établi à partir de treize marqueurs microsatellites, sur des poils et des fèces, de 1975 à 2024. Après estimation des paramètres démographiques, la population est simulée de 2024 à 2050 : de 0 à 200 ours introduits entre 2030 et 2040, avec de 0 à 100 % de mâles, soit 2 475 généalogies simulées.',
+    result:
+      'Sans nouvel apport, la consanguinité continue d’augmenter jusqu’en 2050. Un renforcement modéré mais structuré est la mesure la plus efficace : 30 ours introduits sur dix ans, dont environ 70 % de femelles, freinent la hausse de la consanguinité et augmentent la taille efficace de la population. Maintenir la connectivité entre les deux noyaux de population et coordonner la gestion entre la France, l’Espagne et l’Andorre complètent ces mesures.',
+    service: 'genomique-des-populations',
+    source: '',
+    details: {
+      regionsTitle: 'Délai entre deux portées',
+      regionsNote:
+        'Part des reproductions des ourses selon le nombre d’années écoulées depuis leur dernière mise bas, d’après les données de suivi jusqu’en 2024 (figure 3 du rapport) ; 1,86 an en moyenne. « 0 an » : portées de plusieurs pères, comptées comme deux reproductions.',
+      regionsUnit: ' %',
+      regions: [
+        { name: '0 an', value: 7.5 },
+        { name: '1 an', value: 11.3 },
+        { name: '2 ans', value: 64.2 },
+        { name: '3 ans', value: 11.3 },
+        { name: '4 ans', value: 5.7 },
+      ],
+      figuresTitle: 'Les figures du rapport',
+      figures: [
+        {
+          image: 'fig-ours-consanguinite',
+          caption:
+            'Figure 6 du rapport : consanguinité moyenne simulée, sans introduction (a) et avec 30 ours introduits sur dix ans (b) ; médiane de 50 simulations.',
+        },
+        {
+          image: 'fig-ours-effectifs',
+          caption:
+            'Figure 4 du rapport : effectifs de la population, observés de 2000 à 2024 puis simulés jusqu’en 2050.',
+          size: 'medium',
+        },
+      ],
+      funnelTitle: 'Des données de suivi aux projections',
+      funnel: [
+        { value: '1975-2024', label: 'années de suivi de la population analysées' },
+        {
+          value: '13',
+          label: 'marqueurs microsatellites pour identifier chaque ours et établir le pedigree',
+        },
+        { value: '104', label: 'ours estimés en 2024, dans un intervalle de 97 à 123' },
+        { value: '2 475', label: 'généalogies simulées jusqu’en 2050' },
+        { value: '0 à 200', label: 'ours introduits selon les scénarios, de 0 à 100 % de mâles' },
+      ],
+      findingsTitle: 'Ce que montrent les simulations',
+      findings: [
+        'Sans intervention, l’érosion génétique se poursuit lentement mais inexorablement : la consanguinité moyenne continue d’augmenter jusqu’en 2050.',
+        'Dans le modèle, les effectifs atteignent la capacité de charge fixée vers 2035, avec plus de 400 ours.',
+        'Plus les ours introduits sont nombreux, plus la taille efficace et la diversité génétique augmentent : la richesse allélique passe de 5,6 à plus de 7 allèles par locus.',
+        'À nombre égal, des introductions majoritairement féminines peuvent doubler la taille efficace génétique. La consanguinité varie de 0,40, pour des apports limités et surtout masculins, à 0,14 pour des apports importants et surtout féminins.',
+        'Le scénario recommandé, 30 ours sur dix ans dont environ 70 % de femelles, freine la hausse de la consanguinité par rapport à l’absence d’apport.',
+      ],
+      perspectiveTitle: 'Pour aller plus loin',
+      perspective:
+        'Les projections gagnent à être actualisées avec les nouvelles données de suivi. LDgenX propose de partager et de codévelopper ses modèles de simulation avec l’Office français de la biodiversité, pour affiner les stratégies de gestion de la population.',
+      rolesTitle: 'Qui a fait quoi',
+      roles: [
+        'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX). Coordination scientifique : Maeva Leitwein ; outils de modélisation et statistiques : Emilie Delpuech.',
+        'Simulations : stage de Master 2 de l’École pratique des hautes études (EPHE), recruté pour le projet.',
+        'Partenaire scientifique : UMR BIOGECO (INRAE, Université de Bordeaux).',
+        'Données de suivi : réseau Ours brun, piloté par l’Office français de la biodiversité avec les services espagnols et andorrans.',
+      ],
+    },
+  },
+  {
+    id: 'adne-estuaire-milieu-turbide',
+    slug: 'adne-estuaire-milieu-turbide',
+    title: 'Lire l’ADN des poissons dans les eaux turbides.',
+    category: 'ADN environnemental',
+    image: 'estuaire-gironde',
+    imageAlt: 'L’embouchure de l’estuaire de la Gironde vue de l’espace, aux eaux chargées de sédiments',
+    subtitle:
+      'Un projet pilote en Gironde pour comparer des méthodes de filtration de l’eau dans des estuaires turbides.',
+    facts: [
+      { label: 'Projet', value: 'ADNe Estuaire, projet pilote' },
+      { label: 'Sites', value: 'Bègles, Cadillac et Le Verdon (Gironde)' },
+      { label: 'Turbidité', value: 'De 14 à plus de 800 NTU' },
+      { label: 'Échantillons', value: '43, analysés en double' },
+      { label: 'Approche', value: 'Métabarcoding ADNe, marqueur 12S des poissons' },
+      { label: 'Période', value: 'Octobre 2025' },
+    ],
+    context:
+      'Dans les estuaires, l’eau chargée en particules complique l’ADN environnemental : les filtres colmatent vite et les particules peuvent gêner les analyses. Ce projet pilote visait à optimiser les protocoles d’ADNe en milieu turbide.',
+    question:
+      'Quels dispositifs et quelles tailles de filtre conviennent selon la turbidité, et quels poissons détecte-t-on ?',
+    approach:
+      'En octobre 2025, l’eau de trois sites aux turbidités contrastées a été filtrée avec deux systèmes : une pompe triple avec capsules Waterra (pores de 0,45, 1,2 et 5 µm) et une Stick Pump à fort débit (filtre de 20 µm), de 2 à 30 litres selon le colmatage. Les 43 échantillons ont été analysés en métabarcoding sur le marqueur 12S des poissons (Teleo, lectures courtes Illumina), en double ; 12 d’entre eux l’ont aussi été en fragment long (Oxford Nanopore).',
+    result:
+      'La turbidité pèse fortement sur la détection : à Bègles (740 à 800 NTU), seules quelques espèces résistantes ressortent, comme le bar et le mulet porc, alors que Le Verdon (14 NTU) présente la plus grande richesse. Au total, 26 taxons sont identifiés. Les filtres de 5 µm concentrent les signaux les plus forts, les filtres plus fins un signal plus diffus mais plus diversifié. Le projet recommande de répéter les prélèvements dans le temps et de croiser les outils d’analyse bioinformatique.',
+    service: 'adn-environnemental-adne',
+    source: '',
+    details: {
+      regionsTitle: 'Espèces détectées par site',
+      regionsNote:
+        'Richesse spécifique par site, toutes campagnes confondues, en lecture courte (table 5 du rapport), du site le plus turbide au plus clair : Bègles, Cadillac, Le Verdon.',
+      regions: [
+        { name: 'Bègles', value: 6 },
+        { name: 'Cadillac', value: 11 },
+        { name: 'Le Verdon', value: 17 },
+      ],
+      figuresTitle: 'Les figures du rapport',
+      figures: [
+        {
+          image: 'fig-estuaire-taxons',
+          caption:
+            'Figure 2 du rapport : espèces détectées en lecture courte, par site, turbidité et taille de filtre ; la taille des cercles suit l’abondance relative des séquences.',
+        },
+        {
+          bars: [
+            { name: 'Lecture courte seule', value: 14 },
+            { name: 'Les deux lectures', value: 12 },
+            { name: 'Lecture longue seule', value: 2 },
+          ],
+          caption:
+            'D’après la figure supplémentaire 3 du rapport : nombre d’espèces détectées par la lecture courte seule, par la lecture longue seule ou par les deux.',
+        },
+      ],
+      funnelTitle: 'Du terrain aux espèces',
+      funnel: [
+        { value: '3', label: 'sites, de 14 à plus de 800 NTU' },
+        { value: '43', label: 'échantillons filtrés, extraits et analysés en double' },
+        { value: '36 730 010', label: 'séquences brutes en lecture courte' },
+        { value: '12', label: 'échantillons séquencés aussi en fragment long (12S complet)' },
+        { value: '26', label: 'taxons identifiés sur l’ensemble des sites' },
+      ],
+      findingsTitle: 'Ce que montrent les analyses',
+      findings: [
+        'Bègles, le site le plus turbide (740 à 800 NTU) : trois espèces seulement, dont le bar et le mulet porc, avec des signaux faibles.',
+        'Le Verdon, en eau claire (14 NTU) : la richesse la plus élevée, avec des espèces marines côtières, de la zone intertidale et d’eau douce.',
+        'Quand la turbidité baisse entre deux passages sur un même site, le signal du bar devient nettement plus fort : la turbidité pourrait expliquer à elle seule une part importante de la variabilité de détection.',
+        'Les filtres de 5 µm concentrent les signaux les plus forts ; ceux de 0,45 et 1,2 µm captent un signal plus diffus mais plus diversifié.',
+        'Lectures courtes et longues se recoupent : 12 espèces communes, soit 86 % des taxons du fragment long, qui en révèle deux autres, le rouquié et la grémille.',
+        'Réanalysées avec un second outil bioinformatique, les lectures courtes livrent 26 taxons, contre 2 espèces en première analyse : croiser les outils d’analyse fait partie des recommandations.',
+      ],
+      perspectiveTitle: 'Pour aller plus loin',
+      perspective:
+        'Répéter les prélèvements dans le temps sur chaque site et combiner des marqueurs de longueurs différentes : ce sont les deux pistes retenues pour consolider le protocole, avant toute diffusion publique des occurrences.',
+      rolesTitle: 'Qui a fait quoi',
+      roles: [
+        'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX).',
+        'Extraction de l’ADN, séquençage en fragment long (MinION) et analyses bioinformatiques : LDgenX.',
+        'Amplifications et séquençage en lecture courte : plateforme PGTB (Bordeaux), sur Illumina MiSeq i100.',
+      ],
+    },
+  },
+  {
     id: 'biodiversite-eolien-offshore',
     slug: 'biodiversite-eolien-offshore',
     title: 'Explorer la biodiversité des parcs éoliens offshore.',
@@ -1241,7 +1430,9 @@ export const studies: Study[] = [
     image: 'cas-eolien-offshore',
     subtitle:
       'L’ADN environnemental au service du suivi des milieux marins autour des parcs éoliens.',
+    status: 'ongoing',
     facts: [
+      { label: 'Statut', value: 'Étude en cours' },
       { label: 'Contexte', value: 'Parcs éoliens offshore' },
       { label: 'Milieu', value: 'Biodiversité marine' },
       { label: 'Approche', value: 'ADN environnemental' },
@@ -1262,19 +1453,18 @@ export const studies: Study[] = [
     title: 'Les communautés microbiennes des microplastiques.',
     category: 'Microbiologie',
     image: 'cas-microplastiques',
-    subtitle: 'Caractériser les micro-organismes qui colonisent les microplastiques.',
+    subtitle: 'Le séquençage des communautés microbiennes qui colonisent les microplastiques.',
     facts: [
+      { label: 'Rôle de LDgenX', value: 'Séquençage' },
       { label: 'Supports', value: 'Microplastiques' },
       { label: 'Domaine', value: 'Microbiologie environnementale' },
-      { label: 'Objet', value: 'Inventaire des communautés microbiennes' },
     ],
     context:
       'Dans l’eau, les microplastiques sont colonisés par des communautés de micro-organismes. Les caractériser aide à mieux comprendre ces supports et leur place dans les milieux.',
     question: 'Quelles communautés microbiennes caractériser sur ces supports ?',
-    approach:
-      'Séquençage 16S pour les bactéries, ITS pour les champignons, métabarcoding microbien ou métagénomique : l’analyse se choisit selon le niveau de caractérisation recherché.',
+    approach: 'Notre intervention s’est limitée au séquençage des échantillons du projet.',
     result: '',
-    service: 'analyse-des-communautes-microbiennes',
+    service: 'sequencage-dpcr',
     source: 'https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes',
   },
 ];
@@ -1321,8 +1511,6 @@ export const featuredStudy = {
       text: 'La marée fait varier le niveau et le mélange des eaux au fil de la journée.',
     },
   ],
-  mapNote:
-    'Animation illustrative : les particules et leurs mouvements ne représentent aucune mesure de l’étude.',
   sourceLabel: 'La publication de l’Agence de l’eau',
 };
 

@@ -9,7 +9,7 @@ What is built into the site so that search engines (Google, Bing, Qwant, DuckDuc
 | Page type | Count | Why it matters |
 |---|---|---|
 | One page per publication (`/recherche/<article>`, `/en/research/<article>`) | 27 × 2 | Each article can rank for its topic and be cited by AI assistants: faithful French title, summary, question, approach, findings, limits, DOI, authors linked to team profiles, `ScholarlyArticle` structured data. Before, articles were only a dialog on one page. |
-| Targeted DNA tests (`/services/tests-adn-cibles`) | 2 | Captures "détection espèce ADN", "test ADN espèce", "dPCR ADNe", and every species name: the 21 species are in the page text and in structured data as taxa (common + Latin names). |
+| Targeted DNA tests (`/services/tests-adn-cibles`) | 2 | Captures "détection espèce ADN", "test ADN espèce", "dPCR ADNe", and every species name: the 22 species are in the page text and in structured data as taxa (common + Latin names). |
 | Lapwing case study (`/etudes-de-cas/genomique-vanneau-huppe`) | 2 | A real, data-rich case study (HAL report, 438 birds, 40,746 SNPs), with the client named (Fédération nationale des chasseurs). |
 | FAQ (`/faq`) | 2 | 15 answered questions, `FAQPage` structured data. The format AI assistants quote most. |
 | Glossary (`/glossaire`) | 2 | 26 defined terms (ADNe, dPCR, qPCR, SNP, GWAS, CIR…), `DefinedTermSet`: definitional queries and AI answers. |
@@ -83,10 +83,7 @@ Local: Palavas-les-Flots, Montpellier, Hérault, Occitanie appear in the about a
 
 ## 3. Launch checklist (in order)
 
-1. **Finish the legal pages** (left for later at your request). The public registry shows facts the legal notice must use:
-   - registered office: 6 place du 8 Mai 1945, 34690 Fabrègues;
-   - NAF code **72.11Z** (the page currently says 7112B);
-   - president: Maeva Leitwein; managing director: Emilie Delpuech.
+1. **Legal pages:** done (24 October 2026): registered office in Fabrègues, NAF code 72.11Z, publication director Maeva Leitwein (president), host Cloudflare.
 2. **Host**:
    - serve `https://www.ldgenx.fr` with `ldgenx.fr` → 301 → `www`;
    - point `ldgenx.com` here (its old addresses are already redirected by `_redirects`);

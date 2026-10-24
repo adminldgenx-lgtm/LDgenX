@@ -56,6 +56,8 @@ export const applicationIds = [
 const studies = [
   'ichtyofaune-artois-picardie',
   'genomique-vanneau-huppe',
+  'demogenetique-ours-pyrenees',
+  'adne-estuaire-milieu-turbide',
   'biodiversite-eolien-offshore',
   'communautes-microplastiques',
 ];
@@ -75,6 +77,7 @@ const people: Pairs = [
 ];
 // Articles of the research page, newest first: the French address is the id.
 const publications: Pairs = [
+  ['levure-replication-adn-polymerase-alpha-2026', 'yeast-dna-replication-polymerase-alpha-2026'],
   ['bar-cortisol-temperature-2026', 'sea-bass-cortisol-temperature-2026'],
   ['bar-sex-ratio-temperature-gwas-2026', 'sea-bass-sex-ratio-gwas-2026'],
   ['bar-survie-larvaire-introgression-2026', 'sea-bass-larval-survival-introgression-2026'],
@@ -141,6 +144,8 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
     studies: [
       ['ichtyofaune-artois-picardie', 'artois-picardie-fish-survey'],
       ['genomique-vanneau-huppe', 'northern-lapwing-genomics'],
+      ['demogenetique-ours-pyrenees', 'pyrenean-brown-bear-demogenetics'],
+      ['adne-estuaire-milieu-turbide', 'estuary-edna-turbid-water'],
       ['biodiversite-eolien-offshore', 'offshore-wind-biodiversity'],
       ['communautes-microplastiques', 'microplastic-microbial-communities'],
     ],

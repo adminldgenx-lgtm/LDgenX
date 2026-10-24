@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useCatalog, useRoutes } from '../i18n';
-import { AnimatedHeading, useActiveRow, useReducedMotion } from '../components/motion';
+import { AnimatedHeading, useActiveRow } from '../components/motion';
+import { scrollBehavior } from '../lib/motion-preference';
 import { Eyebrow, Photo, PhotoStack, TextLink } from '../components/ui';
 
 export function Workflow() {
@@ -9,7 +10,6 @@ export function Workflow() {
   const section = useRef<HTMLElement>(null);
   const rows = useRef<(HTMLDivElement | null)[]>([]);
   const active = useActiveRow(section, rows);
-  const reduced = useReducedMotion();
 
   const goToStep = (index: number) => {
     const row = rows.current[index];
@@ -17,7 +17,7 @@ export function Workflow() {
     const bounds = row.getBoundingClientRect();
     window.scrollTo({
       top: window.scrollY + bounds.top + bounds.height / 2 - window.innerHeight * 0.52,
-      behavior: reduced ? 'instant' : 'smooth',
+      behavior: scrollBehavior(),
     });
   };
 

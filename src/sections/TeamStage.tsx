@@ -2,12 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { useCatalog, useRoutes } from '../i18n';
 import { researchLink } from '../pages/Research';
-import {
-  useMediaQuery,
-  useNearViewport,
-  usePointerVars,
-  useReducedMotion,
-} from '../components/motion';
+import { useMediaQuery, useNearViewport, usePointerVars } from '../components/motion';
 import { Photo, Reveal } from '../components/ui';
 
 /* The team on the homepage: three portraits in arched frames on a quiet stage of drifting
@@ -22,11 +17,10 @@ export function TeamStage() {
   const r = useRoutes();
   const ref = useRef<HTMLDivElement>(null);
   const live = useNearViewport(ref, '0px');
-  const reduced = useReducedMotion();
   const phone = useMediaQuery('(max-width: 800px)');
   const [active, setActive] = useState(0);
   const [held, setHeld] = useState(false);
-  const cycling = live && !held && !reduced && !phone;
+  const cycling = live && !held && !phone;
 
   useEffect(() => {
     if (!cycling) return;
@@ -36,7 +30,7 @@ export function TeamStage() {
 
   return (
     <div ref={ref} className="team-stage" onPointerLeave={() => setHeld(false)}>
-      <TeamField live={live && !reduced} />
+      <TeamField live={live} />
       <div className="team-stage-row">
         {team.map((p, i) => (
           <Reveal key={p.name} className="team-stage-slot" delay={i * 0.12}>

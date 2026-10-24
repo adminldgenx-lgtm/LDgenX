@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties, type MouseEvent } from
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { PhotoStack, TextLink } from '../components/ui';
-import { usePresence, useReducedMotion } from '../components/motion';
+import { usePresence } from '../components/motion';
 import { useCatalog, useRoutes, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
@@ -66,7 +66,6 @@ export function Header() {
   const header = useRef<HTMLElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const location = useLocation();
-  const reduced = useReducedMotion();
   // On the homepage the header is transparent at the top of the dark hero, deep navy while the
   // hero scrolls beneath it, and back to its usual light style once the hero has passed.
   const meta = getPage(location.pathname);
@@ -94,8 +93,8 @@ export function Header() {
     return () => observer.disconnect();
   }, [isHome]);
   // Panels stay mounted while they fade out; the last menu shown keeps its content meanwhile.
-  const megaState = usePresence(menu !== null, reduced ? 0 : 170);
-  const sheetState = usePresence(mobile, reduced ? 0 : 240);
+  const megaState = usePresence(menu !== null, 170);
+  const sheetState = usePresence(mobile, 240);
   const [shownMenu, setShownMenu] = useState(menu);
   const [preview, setPreview] = useState<number | null>(null);
   if (menu && menu !== shownMenu) {

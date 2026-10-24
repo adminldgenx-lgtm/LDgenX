@@ -848,10 +848,9 @@ export const customAssay: CustomAssay = {
   },
   quantNote:
     'dPCR estimates a quantity of target DNA, as a number of copies; it does not directly count the individuals present.',
-  illustration: 'Illustration of the principle',
   contextImage: {
-    name: 'detection-vison',
-    alt: 'A mink photographed outdoors',
+    name: 'vison-europe',
+    alt: 'A European mink with wet fur, on the ground',
     caption: 'Biodiversity at the heart of targeted DNA analysis.',
   },
   targetsLabel: 'Our target species',
@@ -893,7 +892,7 @@ export const customAssay: CustomAssay = {
   },
   wall: {
     eyebrow: 'Primers and probes in house',
-    title: '21 species,\nready to be searched for.',
+    title: '22 species,\nready to be searched for.',
     intro:
       'Mammals, fish, a reptile and invertebrates: LDgenX holds primers and probes for each of these species. Choose one to see its details.',
     otherTitle: 'Your species is not listed?',

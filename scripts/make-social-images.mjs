@@ -1,6 +1,6 @@
 // Social cards (1200 × 630 JPEG, the format every network reads) for each picture a page
 // shares, in the layout of the existing cards: the logo on a navy panel, the photograph whole on
-// the right, its credit when it has one. Reads the built pages (run after `npm run build`), writes
+// the right, without any credit. Reads the built pages (run after `npm run build`), writes
 // public/images/social-<name>.jpg and the list in src/lib/social-images.ts.
 //
 // Usage: LDGENX_PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node scripts/make-social-images.mjs
@@ -15,23 +15,15 @@ if (!modulePath)
   throw new Error('Set LDGENX_PLAYWRIGHT_MODULE to an installed Playwright package.');
 const { chromium } = createRequire(import.meta.url)(modulePath);
 
-// Cards made by hand earlier (credited or composed with care) are kept as they are.
-const kept = new Set(['equipe-maxime', 'selection-unima']);
-const credits = Object.fromEntries(
-  [
-    ...JSON.parse(readFileSync(path.join(root, 'data/licensed-photos.json'), 'utf8')).photos,
-    ...JSON.parse(readFileSync(path.join(root, 'data/client-photos.json'), 'utf8')).photos,
-  ]
-    .filter((p) => p.credit)
-    .map((p) => [p.name, p.credit]),
-);
+// The card made by hand earlier is kept as it is.
+const kept = new Set(['equipe-maxime']);
 
 const pages = [];
 const walk = (dir) => {
   for (const entry of readdirSync(dir)) {
     const full = path.join(dir, entry);
     if (statSync(full).isDirectory()) walk(full);
-    else if (entry === 'index.html') pages.push(full);
+    else if (entry.endsWith('.html')) pages.push(full);
   }
 };
 walk(path.join(root, 'dist'));
@@ -70,7 +62,6 @@ for (const name of [...names].sort()) {
     <div style="position:absolute;left:360px;top:48px;width:800px;height:534px;background:${figure ? '#ffffff' : '#0d2a45'};overflow:hidden">
       <img src="${photo}" style="width:100%;height:100%;object-fit:${figure ? 'contain' : 'cover'}">
     </div>
-    ${credits[name] ? `<div style="position:absolute;right:50px;bottom:16px;color:#dfe8ee;font-size:16px">${credits[name]}</div>` : ''}
   </body></html>`);
   await page.waitForFunction(() => [...document.images].every((i) => i.complete));
   await page.screenshot({

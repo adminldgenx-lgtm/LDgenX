@@ -275,15 +275,17 @@ export function buildLlms({ catalogs, pages, company }) {
       if (s.result) p(`${w.result}: ${s.result}`);
       if (s.details) {
         const d = s.details;
-        out.push(`${d.regionsTitle}:`);
-        bullets(d.regions.map((x) => `${x.name}: ${x.value}`));
+        if (d.regions) {
+          out.push(`${d.regionsTitle}:`);
+          bullets(d.regions.map((x) => `${x.name}: ${x.value}${d.regionsUnit ?? ''}`));
+        }
         out.push(`${d.funnelTitle}:`);
         bullets(d.funnel.map((x) => `${x.value} ${x.label}`));
         out.push(`${d.findingsTitle}:`);
         bullets(d.findings);
         p(`${d.perspectiveTitle}: ${d.perspective}`);
         bullets(d.roles);
-        bullets(d.documents.map((x) => `${x.label} (${x.meta}): ${x.url}`));
+        if (d.documents) bullets(d.documents.map((x) => `${x.label} (${x.meta}): ${x.url}`));
       }
       if (s.id === c.featuredStudy.slug) {
         bullets(c.featuredStudy.steps.map((x) => `${x.title}: ${x.text}`));

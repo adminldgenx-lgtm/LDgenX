@@ -1,10 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { useNearViewport, useReducedMotion } from './motion';
+import { useNearViewport } from './motion';
 
 /* A quiet living background for page heroes and closing sections: a double helix of points
    lying across the area, turning slowly, with a little loose dust around it. Points near the
-   pointer step aside and brighten. It runs only on screen; with reduced motion it is drawn once,
-   still. Decoration only. */
+   pointer step aside and brighten. It runs only on screen. Decoration only. */
 
 type Tone = 'light' | 'dark';
 
@@ -23,12 +22,11 @@ export function AmbientField({
 }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const near = useNearViewport(canvas, '80px 0px');
-  const reduced = useReducedMotion();
 
   useEffect(() => {
     const element = canvas.current;
     const context = element?.getContext('2d');
-    if (!element || !context || (!near && !reduced)) return;
+    if (!element || !context || !near) return;
     let width = 0,
       height = 0,
       frame = 0,
@@ -65,7 +63,7 @@ export function AmbientField({
     host?.addEventListener('pointerleave', leave);
 
     const draw = (now: number) => {
-      const t = reduced ? 0 : now / 1000;
+      const t = now / 1000;
       context.clearRect(0, 0, width, height);
       // The helix lies along a gentle diagonal, from lower left to upper right, or low and flat.
       const low = lane === 'bottom';
@@ -134,12 +132,8 @@ export function AmbientField({
       draw(now);
       frame = requestAnimationFrame(loop);
     };
-    if (reduced) draw(0);
-    else frame = requestAnimationFrame(loop);
-    const observer = new ResizeObserver(() => {
-      resize();
-      if (reduced) draw(0);
-    });
+    frame = requestAnimationFrame(loop);
+    const observer = new ResizeObserver(resize);
     observer.observe(element);
     return () => {
       cancelAnimationFrame(frame);
@@ -147,7 +141,7 @@ export function AmbientField({
       host?.removeEventListener('pointermove', move);
       host?.removeEventListener('pointerleave', leave);
     };
-  }, [near, reduced, tone, lane]);
+  }, [near, tone, lane]);
 
   return <canvas ref={canvas} className={`ambient-field ${className}`} aria-hidden="true" />;
 }

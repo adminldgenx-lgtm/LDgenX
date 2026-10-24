@@ -1,12 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { useCatalog, useRoutes } from '../i18n';
-import {
-  AnimatedHeading,
-  useNearViewport,
-  usePointerVars,
-  useReducedMotion,
-} from '../components/motion';
+import { AnimatedHeading, useNearViewport, usePointerVars } from '../components/motion';
 import { Eyebrow, Reveal, TextLink } from '../components/ui';
 import { createLab } from '../lib/lab-scenes';
 
@@ -53,7 +48,6 @@ export function Lab({ only }: { only?: number }) {
   const root = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const live = useNearViewport(root, '0px');
-  const reduced = useReducedMotion();
   const [chosen, setProject] = useState(0);
   const project = only ?? chosen;
   const [step, setStep] = useState(0);
@@ -61,7 +55,7 @@ export function Lab({ only }: { only?: number }) {
   const [hold, setHold] = useState(false);
   const state = useRef({ project, step });
   state.current = { project, step };
-  const playing = auto !== 'off' && live && !hold && !reduced;
+  const playing = auto !== 'off' && live && !hold;
   const current = innovations[project];
 
   const advance = () => {
@@ -75,16 +69,10 @@ export function Lab({ only }: { only?: number }) {
   const lab = useRef<ReturnType<typeof createLab>>(null);
   useEffect(() => {
     const element = canvas.current;
-    if (!element || (!live && !reduced)) return;
+    if (!element || !live) return;
     lab.current ??= createLab(element);
     const current = lab.current;
     if (!current) return;
-    // Reduced motion: each change settles the scene at once, without animating it.
-    if (reduced) {
-      const now = performance.now();
-      for (let k = 0; k < 120; k++) current.draw(now + k * 16, state.current);
-      return;
-    }
     current.wake();
     let frame = 0;
     const loop = (now: number) => {
@@ -98,7 +86,7 @@ export function Lab({ only }: { only?: number }) {
       cancelAnimationFrame(frame);
       resize.disconnect();
     };
-  }, [live, reduced, reduced ? project : 0, reduced ? step : 0]);
+  }, [live]);
 
   const single = only !== undefined;
   return (
@@ -149,7 +137,6 @@ export function Lab({ only }: { only?: number }) {
             onPointerLeave={() => setHold(false)}
           >
             <canvas ref={canvas} className="lab-canvas" aria-hidden="true" />
-            <p className="lab-caption">{ui.common.illustration}</p>
           </div>
           <ol className="lab-steps" data-paused={!playing || undefined}>
             {current.steps.map((name, i) => (
@@ -163,7 +150,7 @@ export function Lab({ only }: { only?: number }) {
                   }}
                 >
                   <span className="lab-step-bar" aria-hidden="true">
-                    {i === step && auto !== 'off' && !reduced && (
+                    {i === step && auto !== 'off' && (
                       <span
                         key={`${project}-${step}`}
                         style={{ '--step': `${STEP_MS}ms` } as CSSProperties}
