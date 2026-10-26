@@ -48,6 +48,8 @@ Les textes utilisent une espace fine insécable (U+202F) avant `; ! ?` et une es
 
 ## Publication (Cloudflare Pages)
 
+Frontend actuellement en ligne : [ldgenx-12k.pages.dev](https://ldgenx-12k.pages.dev/). Administration : [connexion administrateur](https://ldgenx-12k.pages.dev/admin/connexion). Le domaine `www.ldgenx.fr` sera raccordé ultérieurement.
+
 Projet Cloudflare Pages relié au dépôt :
 
 - **Build** : commande `npm run build`, dossier de sortie `dist`, Node 22 (fichier `.node-version`).
@@ -102,7 +104,7 @@ Le formulaire de contact envoie les demandes au backend Supabase : elles apparai
 
 Le compte administrateur est `admin.ldgenx@gmail.com` ; son mot de passe a été défini à la demande du propriétaire et vérifié sur le backend réel le 26 octobre. Aucun mot de passe n’est conservé dans les fichiers du projet. Si une récupération locale devient nécessaire, `npm run supabase:admin-link` génère un lien privé temporaire. Le bouton de compte de la barre de navigation affiche « Connexion » ou « Mon compte » selon la session Supabase ; il conduit les administrateurs et les clients vers leur espace respectif.
 
-**Différé à la demande du propriétaire** : fournisseur d’e-mails (validation des inscriptions, invitations, réinitialisation et notifications), puis connexion Google. Le backend est déployé sur Supabase ; le nouveau build du site reste à publier sur Cloudflare Pages. Les instructions et les contrôles sont dans [docs/PORTAL.md](docs/PORTAL.md).
+**Différé à la demande du propriétaire** : fournisseur d’e-mails (validation des inscriptions, invitations, réinitialisation et notifications), puis connexion Google. Le backend est déployé sur Supabase et le frontend actuel est accessible sur `https://ldgenx-12k.pages.dev` ; le raccordement du domaine final reste à effectuer. Les instructions et les contrôles sont dans [docs/PORTAL.md](docs/PORTAL.md).
 
 ## Avant la mise en ligne
 

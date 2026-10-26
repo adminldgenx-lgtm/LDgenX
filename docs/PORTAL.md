@@ -11,12 +11,12 @@ The previous browser-only implementation, fictitious accounts, sample messages, 
 - Private Storage bucket `portal-files`; 10 MB maximum per file. Message attachments: up to six, 20 MB combined.
 - Authentication uses Supabase Auth with email/password. A read-only live recheck on 26 October found `mailer_autoconfirm: true` (addresses automatically confirmed), whereas the setup script specifies `false`. No live settings were changed during the content audit. Before full launch, configure email delivery, restore the intended verification setting and test the email-dependent journeys.
 - Administrator: `admin.ldgenx@gmail.com`, active and assigned its role in the database. Password set at the owner’s explicit request and verified with real password authentication and the admin API on 26 October; no password is stored in project files. The superseded local setup-link artifact was removed.
-- Production Auth site URL: `https://www.ldgenx.fr`; local development and preview callback URLs also allowed.
+- Current online frontend and Auth site URL: `https://ldgenx-12k.pages.dev`. The future `https://www.ldgenx.fr` and apex domain remain allowed, alongside local development/preview callbacks. Server-generated account/file links use `PORTAL_SITE_URL`; the current value is saved in the ignored administrative environment file.
 - Automatic maintenance scheduled every 15 minutes, including expired file removal and notification processing.
 - Public contact submissions reach the administration inbox; booking buttons point to `/espace/reserver`.
 - Google authentication is intentionally deferred.
 - **Email delivery is deferred at the owner's request.** Verification messages, invitations, password-reset emails and notification emails require a sender provider. They are not production-ready until it is configured. Pending notification records are retained in a private outbox; no email was sent during setup or tests.
-- The Supabase backend is live. This workspace contains a production build; publishing that build to Cloudflare Pages is a separate hosting step and has not been performed here.
+- The Supabase backend is live. The owner supplied the deployed frontend at `https://ldgenx-12k.pages.dev`; real administrator login and every admin section were verified there on 26 October. The custom-domain switch remains a later step.
 
 ## Local use and administrator access
 
@@ -167,3 +167,11 @@ Publish the rebuilt site to make `/espace` and `/admin` available on `www.ldgenx
 The public header shows “Connexion” / “Sign in” without a session and “Mon compte” / “My account” with a checked user icon and green indicator when signed in. It listens to the same Supabase Auth session as the portal, including sign-in/sign-out in another tab. Auth is loaded in a browser effect so public prerendering remains safe. The `/espace` entry route resolves the current role on the server-backed portal session and sends the visitor to the appropriate client/admin area. The button carries the public page’s language into the login screen. Compact layouts keep the account control visible; the quote request stays available in the mobile menu and page content.
 
 Run `npm run check:account-browser` against the local production preview to check real client/admin sessions, persistence, cross-tab login/logout, production CSP and responsive header bounds. This test uses temporary accounts and deletes them afterward.
+
+## Origin configuration and the 26 October access fix
+
+The failed browser used `http://127.0.0.1:5174`, while the original allowlist covered only 5173 and 4173. The current online frontend, `https://ldgenx-12k.pages.dev`, also needed an explicit entry. CORS and Auth callbacks now share `supabase/functions/_shared/origins.ts`: production domains, the current Pages address, and localhost/127.0.0.1 on ports 5173, 5174, 4173 and 4174. Unknown origins remain rejected; no wildcard CORS was introduced. `npm run check:portal-origins` checks live preflight/health responses, rejected origins, Auth callback coverage and the configured current site URL.
+
+Administrator login is at `https://ldgenx-12k.pages.dev/admin/connexion`. In the Supabase dashboard, the administrator appears under Authentication → Users and in Table Editor → `public.portal_profiles`, with `role = admin` and `status = active`. Client and administrator identities share this profile table.
+
+Set `PORTAL_SITE_URL` to the new allowed frontend origin before rerunning setup when switching the final domain. The setup script validates it and uses it for both Supabase Auth and the Edge runtime. The maintenance function uses the same configured URL for file-notification links.

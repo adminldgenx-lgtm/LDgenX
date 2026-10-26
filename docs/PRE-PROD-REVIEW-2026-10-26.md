@@ -1,5 +1,7 @@
 # LDgenX — content and pre-production review, 26 October 2026
 
+**Later access verification:** the owner supplied the online deployment `https://ldgenx-12k.pages.dev`. The missing CORS/Auth origins were corrected, and real administrator login plus all admin sections passed there and on local port 5174. See [live-origin follow-up](qa-2026-10-26/README.md#live-origin-access-fix--26-october-2026). Deployment statements below describe the earlier content-audit snapshot.
+
 **The content audit and local production checks are complete. Full launch approval remains on hold for the client terms of sale and email-dependent portal journeys.** The new website has not been published. This report supersedes earlier launch-status notes; those remain as history.
 
 ## What was reviewed and corrected

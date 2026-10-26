@@ -1,0 +1,471 @@
+{
+  "passed": true,
+  "origin": "http://127.0.0.1:5174",
+  "administrator": "admin.ldgenx@gmail.com",
+  "checked": [
+    {
+      "path": "/admin/messages",
+      "heading": "Messages",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/messages?vue=site",
+      "heading": "Messages",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/demandes",
+      "heading": "Demandes",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/agenda",
+      "heading": "Agenda",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/clients",
+      "heading": "Clients",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/parametres",
+      "heading": "Paramètres",
+      "dataLoaded": true
+    },
+    {
+      "path": "/admin/compte",
+      "heading": "Mon compte",
+      "dataLoaded": true
+    }
+  ],
+  "navbarRoleRouting": true,
+  "pageErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity/read",
+      "status": 204
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity/read",
+      "status": 204
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/team",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/team",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/retention",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/appointments",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/activity",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/session",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/booking/config",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/threads",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/inquiries",
+      "status": 200
+    },
+    {
+      "path": "/functions/v1/portal/clients",
+      "status": 200
+    }
+  ]
+}

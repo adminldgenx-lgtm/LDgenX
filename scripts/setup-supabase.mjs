@@ -15,6 +15,10 @@ import {
   defaultBooking,
   defaultRetention,
 } from '../supabase/functions/_shared/defaults.ts';
+import { portalOrigins, portalAuthRedirects } from '../supabase/functions/_shared/origins.ts';
+const siteUrl = (credentials.PORTAL_SITE_URL ?? 'https://www.ldgenx.fr').replace(/\/+$/, '');
+if (!portalOrigins.includes(siteUrl))
+  throw new Error('PORTAL_SITE_URL must be one of the configured portal origins.');
 const project = await management('');
 if (project.status !== 'ACTIVE_HEALTHY')
   throw new Error('Supabase project is not healthy');
@@ -54,15 +58,8 @@ await writeFile('supabase-auth-before.local', JSON.stringify(before, null, 2), {
 await management(
   '/config/auth',
   {
-    site_url: 'https://www.ldgenx.fr',
-    uri_allow_list: [
-      'https://www.ldgenx.fr/espace/**',
-      'https://ldgenx.fr/espace/**',
-      'http://localhost:5173/espace/**',
-      'http://127.0.0.1:5173/espace/**',
-      'http://localhost:4173/espace/**',
-      'http://127.0.0.1:4173/espace/**',
-    ].join(','),
+    site_url: siteUrl,
+    uri_allow_list: portalAuthRedirects.join(','),
     external_email_enabled: true,
     mailer_autoconfirm: false,
     password_min_length: 8,
@@ -79,11 +76,10 @@ await management('/secrets', [
   { name: 'PORTAL_POOLER_HOST', value: pooler.db_host },
   { name: 'PORTAL_POOLER_USER', value: pooler.db_user },
   { name: 'PORTAL_JOB_SECRET', value: jobSecret },
-  { name: 'PORTAL_SITE_URL', value: 'https://www.ldgenx.fr' },
+  { name: 'PORTAL_SITE_URL', value: siteUrl },
   {
     name: 'PORTAL_ALLOWED_ORIGINS',
-    value:
-      'https://www.ldgenx.fr,https://ldgenx.fr,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173',
+    value: portalOrigins.join(','),
   },
 ]);
 await query(

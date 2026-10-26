@@ -9,6 +9,7 @@ export async function runJobs(sql: Sql, admin: SupabaseClient) {
       await tx`select pg_try_advisory_xact_lock(hashtextextended('portal-jobs',0)) as acquired`;
     if (!lock[0].acquired) return { busy: true };
     const stamp = new Date().toISOString();
+    const filesUrl = `${(Deno.env.get('PORTAL_SITE_URL') ?? 'https://www.ldgenx.fr').replace(/\/+$/, '')}/espace/fichiers`;
     const due =
       await tx`select id,object_path from public.portal_files where data->>'expiresAt' is not null and data->>'expiresAt' <= ${stamp} and not (data->>'kept')::boolean for update`;
     for (const f of due) {
@@ -25,7 +26,7 @@ export async function runJobs(sql: Sql, admin: SupabaseClient) {
     const notices =
       await tx`select distinct p.id,p.data->>'email' as email,p.data->>'locale' as locale,f.data->>'expiresAt' as expiry from public.portal_files f join public.portal_profiles p on f.client_id=p.id where p.status<>'disabled' and (p.data->'notify'->>'weeklyPurge')::boolean and f.data->>'expiresAt' > ${stamp} and f.data->>'expiresAt' < ${new Date(Date.now() + 86400000).toISOString()}`;
     for (const n of notices)
-      await tx`insert into private.portal_email_outbox(recipient,subject,body,dedupe_key) values(${n.email},'LDgenX — Fichiers / Files',${n.locale === 'en' ? `Download your files before their deletion: ${n.expiry}\nhttps://www.ldgenx.fr/espace/fichiers` : `Téléchargez vos fichiers avant leur suppression : ${n.expiry}\nhttps://www.ldgenx.fr/espace/fichiers`},${`purge:${n.id}:${n.expiry}`}) on conflict(dedupe_key) do nothing`;
+      await tx`insert into private.portal_email_outbox(recipient,subject,body,dedupe_key) values(${n.email},'LDgenX — Fichiers / Files',${n.locale === 'en' ? `Download your files before their deletion: ${n.expiry}\n${filesUrl}` : `Téléchargez vos fichiers avant leur suppression : ${n.expiry}\n${filesUrl}`},${`purge:${n.id}:${n.expiry}`}) on conflict(dedupe_key) do nothing`;
     const cleanup =
       await tx`select path from private.portal_storage_cleanup limit 100`;
     let deleted = 0;

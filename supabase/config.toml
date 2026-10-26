@@ -40,7 +40,7 @@ file_size_limit = "10MiB"
 [auth]
 enabled = true
 site_url = "http://localhost:5173"
-additional_redirect_urls = ["http://localhost:5173/espace/**", "http://127.0.0.1:5173/espace/**", "http://localhost:4173/espace/**", "http://127.0.0.1:4173/espace/**"]
+additional_redirect_urls = ["http://localhost:5173/espace/**", "http://127.0.0.1:5173/espace/**", "http://localhost:5174/espace/**", "http://127.0.0.1:5174/espace/**", "http://localhost:4173/espace/**", "http://127.0.0.1:4173/espace/**", "http://localhost:4174/espace/**", "http://127.0.0.1:4174/espace/**"]
 jwt_expiry = 3600
 enable_signup = true
 minimum_password_length = 8

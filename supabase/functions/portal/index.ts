@@ -4,6 +4,7 @@ import { PortalService, email, text } from '../_shared/service.ts';
 import { PortalError, type User } from '../_shared/types.ts';
 import { repository } from './repository.ts';
 import { runJobs } from './jobs.ts';
+import { portalOrigins } from '../_shared/origins.ts';
 
 const projectUrl = Deno.env.get('SUPABASE_URL')!;
 const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -28,7 +29,7 @@ const sql = postgres(connection.toString(), {
 const origins = new Set(
   (
     Deno.env.get('PORTAL_ALLOWED_ORIGINS') ??
-    'https://www.ldgenx.fr,https://ldgenx.fr,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173'
+    portalOrigins.join(',')
   )
     .split(',')
     .map((x) => x.trim()),
