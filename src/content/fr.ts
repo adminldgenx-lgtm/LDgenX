@@ -1334,8 +1334,9 @@ export const studies: Study[] = [
         'Les projections gagnent à être actualisées avec les nouvelles données de suivi. LDgenX propose de partager et de codévelopper ses modèles de simulation avec l’Office français de la biodiversité, pour affiner les stratégies de gestion de la population.',
       rolesTitle: 'Qui a fait quoi',
       roles: [
-        'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX). Coordination scientifique : Maeva Leitwein ; outils de modélisation et statistiques : Emilie Delpuech.',
-        'Simulations : stage de Master 2 de l’École pratique des hautes études (EPHE), recruté pour le projet.',
+        'Commanditaire : Alain Reynes, association Pays de l’Ours – ADET.',
+        'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX). Coordination scientifique : Maeva Leitwein.',
+        'Outils de modélisation et statistiques : Emilie Delpuech et Virgil Fivet (UMR BIOGECO), dans le cadre du stage d’Anouk Glazmann d’Hont, étudiante en Master 2 à l’École pratique des hautes études (EPHE), recrutée pour le projet.',
         'Partenaire scientifique : UMR BIOGECO (INRAE, Université de Bordeaux).',
         'Données de suivi : réseau Ours brun, piloté par l’Office français de la biodiversité avec les services espagnols et andorrans.',
       ],
@@ -1351,6 +1352,7 @@ export const studies: Study[] = [
     subtitle:
       'Un projet pilote en Gironde pour comparer des méthodes de filtration de l’eau dans des estuaires turbides.',
     facts: [
+      { label: 'Commanditaire', value: 'INRAE' },
       { label: 'Projet', value: 'ADNe Estuaire, projet pilote' },
       { label: 'Sites', value: 'Bègles, Cadillac et Le Verdon (Gironde)' },
       { label: 'Turbidité', value: 'De 14 à plus de 800 NTU' },
@@ -1416,6 +1418,8 @@ export const studies: Study[] = [
         'Répéter les prélèvements dans le temps sur chaque site et combiner des marqueurs de longueurs différentes : ce sont les deux pistes retenues pour consolider le protocole, avant toute diffusion publique des occurrences.',
       rolesTitle: 'Qui a fait quoi',
       roles: [
+        'Commanditaire : INRAE.',
+        'Échantillonnages : Thibault Dindard et Bertrand Villeneuve.',
         'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX).',
         'Extraction de l’ADN, séquençage en fragment long (MinION) et analyses bioinformatiques : LDgenX.',
         'Amplifications et séquençage en lecture courte : plateforme PGTB (Bordeaux), sur Illumina MiSeq i100.',

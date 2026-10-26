@@ -1226,8 +1226,9 @@ export const studies: Study[] = [
         'The projections should be updated with new monitoring data. LDgenX offers to share and co-develop its simulation models with the French Biodiversity Agency (OFB), to refine the management strategies for the population.',
       rolesTitle: 'Who did what',
       roles: [
-        'Report: Maeva Leitwein and Emilie Delpuech (LDgenX). Scientific coordination: Maeva Leitwein; modelling tools and statistics: Emilie Delpuech.',
-        'Simulations: a Master’s internship (M2) from the École pratique des hautes études (EPHE), recruited for the project.',
+        'Commissioned by: Alain Reynes, Pays de l’Ours – ADET association.',
+        'Report: Maeva Leitwein and Emilie Delpuech (LDgenX). Scientific coordination: Maeva Leitwein.',
+        'Modelling tools and statistics: Emilie Delpuech and Virgil Fivet (UMR BIOGECO), as part of the internship of Anouk Glazmann d’Hont, a second-year Master’s (M2) student at the École pratique des hautes études (EPHE), recruited for the project.',
         'Scientific partner: UMR BIOGECO (INRAE, University of Bordeaux).',
         'Monitoring data: the Brown Bear Network, led by the French Biodiversity Agency (OFB) with the Spanish and Andorran services.',
       ],
@@ -1243,6 +1244,7 @@ export const studies: Study[] = [
     subtitle:
       'A pilot project in the Gironde comparing water filtration methods in turbid estuaries.',
     facts: [
+      { label: 'Client', value: 'INRAE' },
       { label: 'Project', value: 'ADNe Estuaire, pilot project' },
       { label: 'Sites', value: 'Bègles, Cadillac and Le Verdon (Gironde, France)' },
       { label: 'Turbidity', value: 'From 14 to more than 800 NTU' },
@@ -1308,6 +1310,8 @@ export const studies: Study[] = [
         'Repeating the sampling over time at each site and combining markers of different lengths: these are the two avenues chosen to consolidate the protocol, before any public release of the occurrences.',
       rolesTitle: 'Who did what',
       roles: [
+        'Commissioned by: INRAE.',
+        'Sampling: Thibault Dindard and Bertrand Villeneuve.',
         'Report: Maeva Leitwein and Emilie Delpuech (LDgenX).',
         'DNA extraction, long-fragment sequencing (MinION) and bioinformatic analyses: LDgenX.',
         'Amplification and short-read sequencing: PGTB platform (Bordeaux), on an Illumina MiSeq i100.',
