@@ -6,3 +6,8 @@ dist/
 test-results/
 # Confidential client documents (reports, contracts): kept out of the repository.
 /ldgenx 23oct file\ /
+
+# Private setup links and administrative environment files.
+*.local.html
+.env
+supabase/.temp/

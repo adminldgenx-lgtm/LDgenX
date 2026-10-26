@@ -46,7 +46,7 @@ export const knowledge = {
           {
             question: 'Quelle différence entre métabarcoding et dPCR ?',
             answer:
-              'Le métabarcoding inventorie de nombreuses espèces à la fois, à partir de marqueurs génétiques (12S, COI, 18S, ITS…). La PCR digitale (dPCR) cible une seule espèce : elle détecte et quantifie son ADN grâce à des amorces et une sonde qui lui sont propres.',
+              'Le métabarcoding recherche plusieurs espèces à partir de marqueurs génétiques partagés par les groupes ciblés (12S, COI, 18S, ITS…). La PCR digitale (dPCR) détecte et quantifie des séquences d’ADN ciblées. Nos tests d’espèces utilisent des amorces et une sonde spécifiques ; des analyses multiplex peuvent rechercher plusieurs cibles lorsque le protocole le permet.',
             link: {
               to: { kind: 'service', id: 'tests-adn-cibles' },
               label: 'Les tests ADN ciblés',
@@ -111,7 +111,7 @@ export const knowledge = {
           {
             question: 'Vos prestations sont-elles éligibles au crédit d’impôt recherche ?',
             answer:
-              'Oui. LDgenX est agréée au titre du crédit d’impôt recherche (CIR) : les travaux de R&D que vous lui confiez entrent dans l’assiette de votre CIR, qui permet de récupérer 30 % de leur montant, dans les conditions et plafonds prévus par la réglementation.',
+              'LDgenX est agréée au titre du crédit d’impôt recherche (CIR). Les travaux de R&D éligibles que vous lui confiez peuvent entrer dans l’assiette de votre CIR, sous réserve des conditions applicables à votre entreprise et au projet. L’agrément du prestataire ne rend pas automatiquement toute prestation éligible.',
             link: {
               to: { kind: 'application', id: 'recherche-publique-privee' },
               label: 'La recherche publique et privée',
@@ -196,7 +196,7 @@ export const knowledge = {
         term: 'Crédit d’impôt recherche',
         also: 'CIR',
         definition:
-          'Dispositif fiscal qui permet aux entreprises de récupérer une part de leurs dépenses de recherche et développement (30 % jusqu’à 100 millions d’euros). Les travaux confiés à un organisme agréé, comme LDgenX, entrent dans son assiette, dans les limites prévues par la loi.',
+          'Crédit d’impôt portant sur des dépenses de recherche et développement éligibles. En métropole, le taux est de 30 % jusqu’à 100 millions d’euros de dépenses, puis de 5 % au-delà. Les travaux confiés à un organisme agréé, comme LDgenX, peuvent être retenus sous réserve des conditions applicables au projet, aux dépenses et à l’entreprise.',
         link: {
           to: { kind: 'application', id: 'recherche-publique-privee' },
           label: 'Recherche publique & privée',
@@ -207,7 +207,7 @@ export const knowledge = {
         term: 'Consanguinité',
         also: 'Fis',
         definition:
-          'Reproduction entre individus apparentés, qui réduit la diversité génétique d’une population. L’indice Fis mesure l’écart entre l’hétérozygotie observée et celle attendue : proche de 0, il décrit une population bien mélangée.',
+          'Reproduction entre individus apparentés, qui augmente la probabilité de porter deux copies d’un même allèle hérité d’un ancêtre commun. L’indice Fis mesure le déficit ou l’excès d’hétérozygotes par rapport à l’attente sous accouplements aléatoires dans une population ; une valeur proche de 0 ne suffit pas, à elle seule, à démontrer l’absence de structure génétique.',
       },
       {
         id: 'dpcr',
@@ -246,13 +246,13 @@ export const knowledge = {
         term: 'GWAS',
         also: 'étude d’association pangénomique',
         definition:
-          'Analyse qui teste, sur l’ensemble du génome, l’association entre des marqueurs génétiques et un caractère (croissance, résistance à une maladie, sexe…), pour repérer les régions qui le contrôlent.',
+          'Analyse qui teste, à l’échelle du génome, l’association entre des marqueurs génétiques et un caractère (croissance, résistance à une maladie, sexe…). Les régions associées orientent la recherche de gènes candidats, sans démontrer à elles seules une relation causale.',
       },
       {
         id: 'heritabilite',
         term: 'Héritabilité',
         definition:
-          'Part de la variation d’un caractère, dans une population, qui s’explique par des différences génétiques entre individus. Plus elle est élevée, plus la sélection peut faire progresser ce caractère.',
+          'Part de la variation d’un caractère attribuable à des différences génétiques dans une population et un environnement donnés. L’héritabilité ne mesure pas la part génétique du caractère chez un individu ; la réponse à la sélection dépend aussi de la variation génétique disponible et du programme de sélection.',
       },
       {
         id: 'introgression',
@@ -299,7 +299,7 @@ export const knowledge = {
         term: 'qPCR',
         also: 'PCR quantitative',
         definition:
-          'Amplification d’une région d’ADN suivie en temps réel par fluorescence. Elle détecte une cible et estime sa quantité par comparaison avec une gamme d’étalonnage.',
+          'Amplification d’une région d’ADN suivie en temps réel par fluorescence. La qPCR détecte une cible et permet une quantification absolue à l’aide d’une gamme d’étalonnage, ou une quantification relative par comparaison avec une référence.',
       },
       {
         id: 'qtl',
@@ -337,7 +337,7 @@ export const knowledge = {
         term: 'Séquençage longue lecture',
         also: 'Nanopore',
         definition:
-          'Séquençage de fragments d’ADN de plusieurs milliers de bases d’un seul tenant. Il améliore la résolution taxonomique et l’assemblage des génomes.',
+          'Séquençage de longs fragments d’ADN d’un seul tenant, souvent de plusieurs milliers de bases. Selon le protocole et les références disponibles, il peut améliorer l’assemblage des génomes ou la résolution taxonomique.',
       },
       {
         id: 'snp',
@@ -351,7 +351,7 @@ export const knowledge = {
         term: 'WGS',
         also: 'séquençage du génome entier',
         definition:
-          'Séquençage de la totalité du génome d’un individu, pour découvrir l’ensemble de ses variants et étudier l’adaptation, l’histoire ou l’architecture génétique des caractères.',
+          'Séquençage visant l’ensemble du génome d’un individu, pour rechercher des variants et étudier l’adaptation, l’histoire ou l’architecture génétique des caractères. Les régions couvertes et les variants détectables dépendent de la technologie, de la profondeur de séquençage et de l’analyse.',
       },
     ] as GlossaryTerm[],
   },
@@ -376,11 +376,13 @@ export const knowledge = {
 // The research tax credit: LDgenX holds the CIR approval (confirmed by the client, October 2026).
 export const cir = {
   eyebrow: 'Crédit d’impôt recherche',
+  sourceLabel: 'Conditions officielles du CIR',
+  sourceUrl: 'https://entreprendre.service-public.gouv.fr/vosdroits/F23533',
   value: '30 %',
-  valueLabel: 'de vos travaux de R&D récupérés en crédit d’impôt',
+  valueLabel: 'taux applicable aux dépenses de R&D éligibles en métropole',
   title: 'LDgenX est agréée CIR.',
-  text: 'Les travaux de recherche et développement que vous nous confiez entrent dans l’assiette de votre crédit d’impôt recherche : vous récupérez 30 % de leur montant.',
-  note: 'Dans les conditions et plafonds prévus par l’article 244 quater B du code général des impôts, pour les entreprises éligibles au CIR.',
+  text: 'Les travaux de R&D éligibles que vous nous confiez peuvent entrer dans l’assiette de votre crédit d’impôt recherche. L’éligibilité s’apprécie selon la nature des travaux et la situation de votre entreprise.',
+  note: 'En métropole : 30 % jusqu’à 100 millions d’euros de dépenses éligibles, puis 5 % au-delà, dans les conditions et plafonds de l’article 244 quater B du code général des impôts.',
   action: 'Parler de votre projet de R&D',
 };
 

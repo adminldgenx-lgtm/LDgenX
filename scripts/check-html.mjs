@@ -6,6 +6,7 @@ import { pageFile } from './page-file.mjs';
 
 await ready;
 
+const portal = await access('dist/portal.html').then(() => true, () => false);
 const titles = new Set(),
   descriptions = new Set();
 let links = 0,
@@ -54,7 +55,7 @@ for (const page of pages) {
     if (/\.[a-z\d]+$/i.test(url)) await access(path.join('dist', url.slice(1)));
     else
       assert(
-        pages.some((p) => p.path === url) || redirects[url],
+        pages.some((p) => p.path === url) || redirects[url] || (portal && /^\/(espace|admin)(\/|$)/.test(url)),
         `${page.path}: broken link ${url}`,
       );
     links++;

@@ -28,7 +28,7 @@ export const knowledge = {
           {
             question: 'What is the difference between metabarcoding and dPCR?',
             answer:
-              'Metabarcoding surveys many species at once from genetic markers (12S, COI, 18S, ITS…). Digital PCR (dPCR) targets a single species: it detects and quantifies its DNA with primers and a probe specific to it.',
+              'Metabarcoding surveys multiple species using genetic markers shared by the target groups (12S, COI, 18S, ITS…). Digital PCR (dPCR) detects and quantifies targeted DNA sequences. Our species assays use specific primers and a probe; multiplex assays can investigate several targets when the protocol supports them.',
             link: {
               to: { kind: 'service', id: 'tests-adn-cibles' },
               label: 'Targeted DNA tests',
@@ -93,7 +93,7 @@ export const knowledge = {
           {
             question: 'Are your services eligible for the French research tax credit?',
             answer:
-              'Yes. LDgenX is approved for the French research tax credit (crédit d’impôt recherche, CIR): R&D work you entrust to us counts towards your CIR base, which returns 30% of its cost, within the conditions and ceilings set by French law.',
+              'LDgenX is approved for the French research tax credit (CIR). Eligible R&D work you outsource to us may count towards your CIR, subject to the conditions applying to your company and project. A provider’s approval does not automatically make every service eligible.',
             link: {
               to: { kind: 'application', id: 'recherche-publique-privee' },
               label: 'Public and private research',
@@ -178,7 +178,7 @@ export const knowledge = {
         term: 'Research tax credit',
         also: 'CIR, crédit d’impôt recherche',
         definition:
-          'A French tax scheme that returns part of companies’ research and development expenditure (30% up to €100 million). Work entrusted to an approved organisation such as LDgenX counts towards it, within legal limits.',
+          'A tax credit on eligible research and development expenditure. In mainland France, the rate is 30% up to €100 million of expenditure, then 5% above that threshold. Work outsourced to an approved organisation such as LDgenX may qualify, subject to the conditions applying to the project, expenditure and company.',
         link: {
           to: { kind: 'application', id: 'recherche-publique-privee' },
           label: 'Public & private research',
@@ -189,7 +189,7 @@ export const knowledge = {
         term: 'Inbreeding',
         also: 'Fis',
         definition:
-          'Mating between related individuals, which reduces the genetic diversity of a population. The Fis index measures the gap between observed and expected heterozygosity: close to 0, it describes a well-mixed population.',
+          'Mating between related individuals, which increases the probability of carrying two copies of an allele inherited from a common ancestor. Fis measures a deficit or excess of heterozygotes relative to expectations under random mating within a population; a value near 0 does not, on its own, demonstrate the absence of genetic structure.',
       },
       {
         id: 'dpcr',
@@ -228,13 +228,13 @@ export const knowledge = {
         term: 'GWAS',
         also: 'genome-wide association study',
         definition:
-          'An analysis that tests, across the whole genome, the association between genetic markers and a trait (growth, disease resistance, sex…), to locate the regions that control it.',
+          'An analysis that tests associations between genetic markers and a trait (growth, disease resistance, sex…) across the genome. Associated regions guide the search for candidate genes, without establishing a causal relationship on their own.',
       },
       {
         id: 'heritabilite',
         term: 'Heritability',
         definition:
-          'The share of a trait’s variation, within a population, explained by genetic differences between individuals. The higher it is, the more selection can improve the trait.',
+          'The share of variation in a trait attributable to genetic differences in a particular population and environment. Heritability does not measure the genetic share of an individual’s trait; the response to selection also depends on available genetic variation and the breeding programme.',
       },
       {
         id: 'introgression',
@@ -281,7 +281,7 @@ export const knowledge = {
         term: 'qPCR',
         also: 'quantitative PCR',
         definition:
-          'Amplification of a DNA region followed in real time by fluorescence. It detects a target and estimates its amount against a standard curve.',
+          'Amplification of a DNA region monitored in real time by fluorescence. qPCR detects a target and supports absolute quantification using a standard curve, or relative quantification against a reference.',
       },
       {
         id: 'qtl',
@@ -319,7 +319,7 @@ export const knowledge = {
         term: 'Long-read sequencing',
         also: 'Nanopore',
         definition:
-          'Sequencing DNA fragments several thousand bases long in one piece. It improves taxonomic resolution and genome assembly.',
+          'Sequencing long DNA fragments in one piece, often several thousand bases long. Depending on the protocol and available references, it can improve genome assembly or taxonomic resolution.',
       },
       {
         id: 'snp',
@@ -333,7 +333,7 @@ export const knowledge = {
         term: 'WGS',
         also: 'whole-genome sequencing',
         definition:
-          'Sequencing an individual’s entire genome, to discover all its variants and study adaptation, history or the genetic architecture of traits.',
+          'Sequencing that aims to cover an individual’s whole genome to investigate variants, adaptation, history or the genetic architecture of traits. Coverage and detectable variants depend on the technology, sequencing depth and analysis.',
       },
     ] as GlossaryTerm[],
   },
@@ -357,11 +357,13 @@ export const knowledge = {
 
 export const cir = {
   eyebrow: 'French research tax credit',
+  sourceLabel: 'Official CIR conditions',
+  sourceUrl: 'https://entreprendre.service-public.gouv.fr/vosdroits/F23533',
   value: '30%',
-  valueLabel: 'of your R&D work returned as a tax credit',
+  valueLabel: 'rate on eligible R&D expenditure in mainland France',
   title: 'LDgenX is CIR-approved.',
-  text: 'Research and development work you entrust to us counts towards your French research tax credit (crédit d’impôt recherche): you recover 30% of its cost.',
-  note: 'Within the conditions and ceilings of article 244 quater B of the French general tax code, for companies eligible for the CIR.',
+  text: 'Eligible R&D work you outsource to us may count towards your French research tax credit. Eligibility depends on the nature of the work and your company’s circumstances.',
+  note: 'In mainland France: 30% up to €100 million of eligible expenditure, then 5% above that threshold, within the conditions and ceilings of article 244 quater B of the French general tax code.',
   action: 'Discuss your R&D project',
 };
 

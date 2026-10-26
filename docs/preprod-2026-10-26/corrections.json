@@ -1,0 +1,506 @@
+[
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:consanguinite",
+    "before": "Reproduction entre individus apparentés, qui réduit la diversité génétique d’une population. L’indice Fis mesure l’écart entre l’hétérozygotie observée et celle attendue : proche de 0, il décrit une population bien mélangée.",
+    "after": "Reproduction entre individus apparentés, qui augmente la probabilité de porter deux copies d’un même allèle hérité d’un ancêtre commun. L’indice Fis mesure le déficit ou l’excès d’hétérozygotes par rapport à l’attente sous accouplements aléatoires dans une population ; une valeur proche de 0 ne suffit pas, à elle seule, à démontrer l’absence de structure génétique."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:heritabilite",
+    "before": "Part de la variation d’un caractère, dans une population, qui s’explique par des différences génétiques entre individus. Plus elle est élevée, plus la sélection peut faire progresser ce caractère.",
+    "after": "Part de la variation d’un caractère attribuable à des différences génétiques dans une population et un environnement donnés. L’héritabilité ne mesure pas la part génétique du caractère chez un individu ; la réponse à la sélection dépend aussi de la variation génétique disponible et du programme de sélection."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:gwas",
+    "before": "Analyse qui teste, sur l’ensemble du génome, l’association entre des marqueurs génétiques et un caractère (croissance, résistance à une maladie, sexe…), pour repérer les régions qui le contrôlent.",
+    "after": "Analyse qui teste, à l’échelle du génome, l’association entre des marqueurs génétiques et un caractère (croissance, résistance à une maladie, sexe…). Les régions associées orientent la recherche de gènes candidats, sans démontrer à elles seules une relation causale."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:wgs",
+    "before": "Séquençage de la totalité du génome d’un individu, pour découvrir l’ensemble de ses variants et étudier l’adaptation, l’histoire ou l’architecture génétique des caractères.",
+    "after": "Séquençage visant l’ensemble du génome d’un individu, pour rechercher des variants et étudier l’adaptation, l’histoire ou l’architecture génétique des caractères. Les régions couvertes et les variants détectables dépendent de la technologie, de la profondeur de séquençage et de l’analyse."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:sequencage-longue-lecture",
+    "before": "Séquençage de fragments d’ADN de plusieurs milliers de bases d’un seul tenant. Il améliore la résolution taxonomique et l’assemblage des génomes.",
+    "after": "Séquençage de longs fragments d’ADN d’un seul tenant, souvent de plusieurs milliers de bases. Selon le protocole et les références disponibles, il peut améliorer l’assemblage des génomes ou la résolution taxonomique."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:qpcr",
+    "before": "Amplification d’une région d’ADN suivie en temps réel par fluorescence. Elle détecte une cible et estime sa quantité par comparaison avec une gamme d’étalonnage.",
+    "after": "Amplification d’une région d’ADN suivie en temps réel par fluorescence. La qPCR détecte une cible et permet une quantification absolue à l’aide d’une gamme d’étalonnage, ou une quantification relative par comparaison avec une référence."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "glossary:cir",
+    "before": "Dispositif fiscal qui permet aux entreprises de récupérer une part de leurs dépenses de recherche et développement (30 % jusqu’à 100 millions d’euros). Les travaux confiés à un organisme agréé, comme LDgenX, entrent dans son assiette, dans les limites prévues par la loi.",
+    "after": "Crédit d’impôt portant sur des dépenses de recherche et développement éligibles. En métropole, le taux est de 30 % jusqu’à 100 millions d’euros de dépenses, puis de 5 % au-delà. Les travaux confiés à un organisme agréé, comme LDgenX, peuvent être retenus sous réserve des conditions applicables au projet, aux dépenses et à l’entreprise."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "FAQ:dPCR scope",
+    "before": "Le métabarcoding inventorie de nombreuses espèces à la fois, à partir de marqueurs génétiques (12S, COI, 18S, ITS…). La PCR digitale (dPCR) cible une seule espèce : elle détecte et quantifie son ADN grâce à des amorces et une sonde qui lui sont propres.",
+    "after": "Le métabarcoding recherche plusieurs espèces à partir de marqueurs génétiques partagés par les groupes ciblés (12S, COI, 18S, ITS…). La PCR digitale (dPCR) détecte et quantifie des séquences d’ADN ciblées. Nos tests d’espèces utilisent des amorces et une sonde spécifiques ; des analyses multiplex peuvent rechercher plusieurs cibles lorsque le protocole le permet."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "FAQ:CIR eligibility",
+    "before": "Oui. LDgenX est agréée au titre du crédit d’impôt recherche (CIR) : les travaux de R&D que vous lui confiez entrent dans l’assiette de votre CIR, qui permet de récupérer 30 % de leur montant, dans les conditions et plafonds prévus par la réglementation.",
+    "after": "LDgenX est agréée au titre du crédit d’impôt recherche (CIR). Les travaux de R&D éligibles que vous lui confiez peuvent entrer dans l’assiette de votre CIR, sous réserve des conditions applicables à votre entreprise et au projet. L’agrément du prestataire ne rend pas automatiquement toute prestation éligible."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "CIR:value label",
+    "before": "de vos travaux de R&D récupérés en crédit d’impôt",
+    "after": "taux applicable aux dépenses de R&D éligibles en métropole"
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "CIR:conditional benefit",
+    "before": "Les travaux de recherche et développement que vous nous confiez entrent dans l’assiette de votre crédit d’impôt recherche : vous récupérez 30 % de leur montant.",
+    "after": "Les travaux de R&D éligibles que vous nous confiez peuvent entrer dans l’assiette de votre crédit d’impôt recherche. L’éligibilité s’apprécie selon la nature des travaux et la situation de votre entreprise."
+  },
+  {
+    "file": "src/content/knowledge.fr.ts",
+    "label": "CIR:rate limits",
+    "before": "Dans les conditions et plafonds prévus par l’article 244 quater B du code général des impôts, pour les entreprises éligibles au CIR.",
+    "after": "En métropole : 30 % jusqu’à 100 millions d’euros de dépenses éligibles, puis 5 % au-delà, dans les conditions et plafonds de l’article 244 quater B du code général des impôts."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "WGS:remove exhaustive claim",
+    "before": "Analyse exhaustive du génome pour la découverte de variants, les études d’adaptation et les analyses évolutives.",
+    "after": "Séquençage à l’échelle du génome pour rechercher des variants et étudier l’adaptation et l’histoire évolutive."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "WGS:coverage",
+    "before": "Étude exhaustive du génome.",
+    "after": "Séquençage visant l’ensemble du génome, avec une couverture adaptée au projet."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "dPCR:remove unsupported sensitivity superlative",
+    "before": "Détection et quantification ultra-sensibles d’espèces ou de pathogènes ciblés grâce à la PCR digitale.",
+    "after": "Détection et quantification de l’ADN d’espèces ou de pathogènes ciblés grâce à la PCR digitale."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Lapwing:inference scope",
+    "before": "Toutes les analyses convergent : pas de structuration génétique marquée et une diversité génétique forte. Les vanneaux échantillonnés en France proviennent d’une même population, bien mélangée et peu structurée.",
+    "after": "Les analyses ne révèlent pas de structuration génétique marquée parmi les oiseaux échantillonnés en France et montrent une diversité génétique élevée. Ces résultats sont compatibles avec une population faiblement structurée ; ils ne permettent pas d’attribuer à chaque oiseau une région de nidification."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Lapwing:Fis interpretation",
+    "before": "Indice de consanguinité (Fis) proche de 0 dans toutes les régions : une population globalement bien mélangée.",
+    "after": "Indice Fis proche de 0 dans toutes les régions : pas de déficit marqué d’hétérozygotes dans les groupes analysés."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:conflicting source years omitted",
+    "before": "Octobre 2025",
+    "after": "Campagne d’octobre"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:uncertain year",
+    "before": "En octobre 2025, l’eau de trois sites aux turbidités contrastées a été filtrée avec deux systèmes : une pompe triple avec capsules Waterra (pores de 0,45, 1,2 et 5 µm) et une Stick Pump à fort débit (filtre de 20 µm), de 2 à 30 litres selon le colmatage. Les 43 échantillons ont été analysés en métabarcoding sur le marqueur 12S des poissons (Teleo, lectures courtes Illumina), en double ; 12 d’entre eux l’ont aussi été en fragment long (Oxford Nanopore).",
+    "after": "Lors d’une campagne d’octobre, l’eau de trois sites aux turbidités contrastées a été filtrée avec deux systèmes : une pompe triple avec capsules Waterra (pores de 0,45, 1,2 et 5 µm) et une Stick Pump à fort débit (filtre de 20 µm), de 2 à 30 litres selon le colmatage. Les 43 échantillons ont été analysés en métabarcoding sur le marqueur 12S des poissons (Teleo, lectures courtes Illumina), en double ; 12 d’entre eux l’ont aussi été en fragment long (Oxford Nanopore)."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:26 short-read taxa and inference limits",
+    "before": "La turbidité pèse fortement sur la détection : à Bègles (740 à 800 NTU), seules quelques espèces résistantes ressortent, comme le bar et le mulet porc, alors que Le Verdon (14 NTU) présente la plus grande richesse. Au total, 26 taxons sont identifiés. Les filtres de 5 µm concentrent les signaux les plus forts, les filtres plus fins un signal plus diffus mais plus diversifié. Le projet recommande de répéter les prélèvements dans le temps et de croiser les outils d’analyse bioinformatique.",
+    "after": "La richesse détectée est la plus faible à Bègles (740 à 800 NTU) et la plus élevée au Verdon (14 NTU). La réanalyse des lectures courtes identifie 26 taxons sur l’ensemble des sites et campagnes. Les filtres de 5 µm concentrent les signaux les plus forts, les filtres plus fins un signal plus diffus mais plus diversifié. Le projet recommande de répéter les prélèvements et de comparer les outils bioinformatiques ; ces observations ne permettent pas d’isoler à elles seules l’effet de la turbidité."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:scope of 26",
+    "before": "taxons identifiés sur l’ensemble des sites",
+    "after": "taxons identifiés en lecture courte, sur l’ensemble des sites"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:6 pooled taxa, not 3",
+    "before": "Bègles, le site le plus turbide (740 à 800 NTU) : trois espèces seulement, dont le bar et le mulet porc, avec des signaux faibles.",
+    "after": "Bègles, le site le plus turbide (740 à 800 NTU), présente la richesse la plus faible : six taxons en lecture courte, toutes campagnes confondues (table 5 du rapport)."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:association rather than causation",
+    "before": "Quand la turbidité baisse entre deux passages sur un même site, le signal du bar devient nettement plus fort : la turbidité pourrait expliquer à elle seule une part importante de la variabilité de détection.",
+    "after": "Entre deux passages sur un même site, une baisse de la turbidité s’accompagne d’un signal du bar plus fort. Cette association doit être interprétée avec les autres facteurs biologiques et techniques de détection."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Conservation:published marker counts",
+    "before": "196K et 11 803 marqueurs SNP",
+    "after": "196 639 SNP (truite) ; environ 33 000 SNP (omble)"
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Conservation:historical stocking context",
+    "before": "L’omble de fontaine (*Salvelinus fontinalis*) est une espèce à fort intérêt socio-économique au Canada. Dans la province de Québec, une souche domestique a été créée il y a une centaine d’années afin de repeupler les rivières pour la pêche sportive. Chaque année plus de 650 tonnes d’ombles de fontaine sont ainsi déversées dans les rivières du Canada, favorisant ainsi les évènements d’hybridation entre individus domestiques et sauvages ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).",
+    "after": "L’omble de fontaine (*Salvelinus fontinalis*) fait l’objet de repeuplements destinés à la pêche sportive au Québec. Ces introductions ont entraîné des mélanges entre populations sauvages et souche domestique, étudiés par [Leitwein et al. (2019)](https://doi.org/10.1111/mec.15256)."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Conservation:final paper rather than preliminary dataset",
+    "before": "À l’aide de 11 803 marqueurs SNP, l’ancestralité des individus a pu être inférée et la proportion d’allèles domestiques dans les rivières sauvages estimée. Grâce à l’information de liaison et la proportion d’ancestralité domestique, il a été possible d’identifier les classes hybrides des individus. Les individus ont été catégorisés soit comme (i) « hybrides récents », c’est-à-dire des descendants de premières générations de croisements entre individus sauvages et domestiques (< 10 générations) ; ou (ii) « hybrides anciens », c’est-à-dire des descendants issus d’un mélange lointain (> 10 générations). Une fois les individus assignés à leur classe hybride, le taux d’introgression d’allèles domestiques le long du génome a pu être estimé. Cette approche a révélé une forte variabilité, avec des régions génomiques à forte ou faible ancestralité domestique, qui sont susceptibles d’être sous sélection naturelle (Figure 1 ; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).",
+    "after": "L’article publié analyse environ 33 000 SNP cartographiés chez 611 individus de 24 populations repeuplées. Les segments d’ascendance permettent de distinguer des hybrides de générations précoces ou plus tardives et d’estimer l’introgression domestique le long du génome. Les régions favorisant ou défavorisant cette ascendance varient selon l’échelle étudiée et le contexte de recombinaison (Figure 1 ; [Leitwein et al. 2019](https://doi.org/10.1111/mec.15256))."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Conservation:limit beneficial-introgression generalisation",
+    "before": "Dans le cas de l’omble de fontaine, nous avons pu observer des variations d’ancestralité domestique dans les populations sauvages. Pour les individus hybrides, des effets bénéfiques de l’introgression d’allèles domestiques dans les populations sauvages ont principalement pu être observés. Les allèles domestiques apportent (i) de la diversité dans les régions du génome « sauvage » à faible diversité génétique et (ii) le masquage d’allèles récessifs potentiellement délétères.",
+    "after": "Chez l’omble de fontaine, certains profils sont compatibles avec un effet favorable lié au masquage d’allèles récessifs potentiellement délétères dans les populations sauvages. Les résultats de 2019 et 2021 montrent toutefois des effets variables selon les populations et les régions génomiques ; ils ne permettent pas de considérer tout apport d’allèles domestiques comme bénéfique."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:distinguish resource and assay",
+    "before": "86 175 SNP (séquençage RAD), puce de 12 204 SNP",
+    "after": "75 684 SNP cartographiés ; ressource de 12 204 SNP ; panel de 192 SNP"
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:mapped markers in final article",
+    "before": "Dans l’étude de [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), l’utilisation de 86 175 marqueurs SNP (polymorphismes d’un seul nucléotide) issus de séquençage RAD a permis d’identifier la proportion d’allèles domestiques (Atlantique et Méditerranéen) dans les populations sauvages du bassin de l’Orb.",
+    "after": "Dans l’étude de [Leitwein et al. (2018)](https://doi.org/10.1111/mec.14816), 75 684 SNP cartographiés issus du ddRAD-seq ont servi à décrire les contributions des souches domestiques atlantique et méditerranéenne dans les populations sauvages du bassin de l’Orb."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:remove fictitious high-density chip",
+    "before": "Développement d’outils génomiques : la puce truite haute densité",
+    "after": "Développement d’outils génomiques : une ressource SNP et un panel ciblé"
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:12204 resource versus 192 panel",
+    "before": "À l’issue de cette étude, nous avons développé une puce haute densité de 12 204 marqueurs SNP répartis de façon homogène le long des 40 groupes de liaison (LG pour *Linkage Group* en anglais) de la truite (*Salmo trutta*) (Figure 3 ; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).",
+    "after": "[Saint-Pé et al. (2019)](https://doi.org/10.1186/s12864-019-5958-9) ont identifié une ressource de 12 204 SNP répartis sur les 40 groupes de liaison de la truite commune (*Salmo trutta*). À partir de cette ressource, ils ont développé un panel de faible densité de 192 SNP (Figure 3)."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:validated evaluation scope",
+    "before": "Cette puce permet une gestion à moindre coût, régulière et comparable, entre les différentes études de génétique des populations.",
+    "after": "Le panel a été évalué sur 1 862 individus dans cinq rivières. Il fournit un outil de génotypage reproductible et économique pour les études de génétique des populations."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:limit performance claim to tested populations",
+    "before": "La puce est à la fois efficace pour distinguer les truites d’origines Atlantique et Méditerranéenne ainsi que les niveaux d’hybridation.",
+    "after": "Dans les populations testées, il distingue les lignées atlantique et méditerranéenne et permet d’étudier le mélange avec les souches domestiques."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Traceability:summary",
+    "before": "Origine des truites du bassin de l’Orb, âge des introductions domestiques et développement d’une puce truite haute densité.",
+    "after": "Origine des truites du bassin de l’Orb, âge des introductions domestiques et développement d’une ressource SNP et d’un panel de génotypage."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Selection:remove misattributed 12.5 percent guarantee",
+    "before": "La sélection génomique a été utilisée pour améliorer de très nombreux caractères d’intérêt possédant une héritabilité assez élevée. Par exemple, ce type d’approche a été appliqué avec succès à de nombreuses espèces d’élevage, et récemment sur des espèces aquacoles pour la résistance à des pathogènes. Elle a permis un gain génétique de 12,5 % en moyenne par génération pour la résistance à différentes maladies. La sélection génomique est donc une approche prometteuse pour lutter contre des maladies affectant les populations sauvages comme les populations domestiques ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).",
+    "after": "La sélection génomique utilise des marqueurs répartis dans le génome pour estimer les valeurs génétiques des reproducteurs. En aquaculture, elle peut améliorer la précision des prédictions de résistance à certaines maladies par rapport à une approche fondée uniquement sur le pedigree. Le gain dépend toutefois du caractère, de la population de référence et du programme de sélection ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920))."
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Fish warming:experimental scope",
+    "before": "Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les plus grands individus apparaissent plus sensibles aux vagues de chaleur que les plus petits.",
+    "after": "Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les individus les plus lourds apparaissent plus sensibles à un stress thermique aigu que les plus légers."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:consanguinite",
+    "before": "Mating between related individuals, which reduces the genetic diversity of a population. The Fis index measures the gap between observed and expected heterozygosity: close to 0, it describes a well-mixed population.",
+    "after": "Mating between related individuals, which increases the probability of carrying two copies of an allele inherited from a common ancestor. Fis measures a deficit or excess of heterozygotes relative to expectations under random mating within a population; a value near 0 does not, on its own, demonstrate the absence of genetic structure."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:heritabilite",
+    "before": "The share of a trait’s variation, within a population, explained by genetic differences between individuals. The higher it is, the more selection can improve the trait.",
+    "after": "The share of variation in a trait attributable to genetic differences in a particular population and environment. Heritability does not measure the genetic share of an individual’s trait; the response to selection also depends on available genetic variation and the breeding programme."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:gwas",
+    "before": "An analysis that tests, across the whole genome, the association between genetic markers and a trait (growth, disease resistance, sex…), to locate the regions that control it.",
+    "after": "An analysis that tests associations between genetic markers and a trait (growth, disease resistance, sex…) across the genome. Associated regions guide the search for candidate genes, without establishing a causal relationship on their own."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:wgs",
+    "before": "Sequencing an individual’s entire genome, to discover all its variants and study adaptation, history or the genetic architecture of traits.",
+    "after": "Sequencing that aims to cover an individual’s whole genome to investigate variants, adaptation, history or the genetic architecture of traits. Coverage and detectable variants depend on the technology, sequencing depth and analysis."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:sequencage-longue-lecture",
+    "before": "Sequencing DNA fragments several thousand bases long in one piece. It improves taxonomic resolution and genome assembly.",
+    "after": "Sequencing long DNA fragments in one piece, often several thousand bases long. Depending on the protocol and available references, it can improve genome assembly or taxonomic resolution."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:qpcr",
+    "before": "Amplification of a DNA region followed in real time by fluorescence. It detects a target and estimates its amount against a standard curve.",
+    "after": "Amplification of a DNA region monitored in real time by fluorescence. qPCR detects a target and supports absolute quantification using a standard curve, or relative quantification against a reference."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "glossary:cir",
+    "before": "A French tax scheme that returns part of companies’ research and development expenditure (30% up to €100 million). Work entrusted to an approved organisation such as LDgenX counts towards it, within legal limits.",
+    "after": "A tax credit on eligible research and development expenditure. In mainland France, the rate is 30% up to €100 million of expenditure, then 5% above that threshold. Work outsourced to an approved organisation such as LDgenX may qualify, subject to the conditions applying to the project, expenditure and company."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "FAQ:dPCR scope",
+    "before": "Metabarcoding surveys many species at once from genetic markers (12S, COI, 18S, ITS…). Digital PCR (dPCR) targets a single species: it detects and quantifies its DNA with primers and a probe specific to it.",
+    "after": "Metabarcoding surveys multiple species using genetic markers shared by the target groups (12S, COI, 18S, ITS…). Digital PCR (dPCR) detects and quantifies targeted DNA sequences. Our species assays use specific primers and a probe; multiplex assays can investigate several targets when the protocol supports them."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "FAQ:CIR eligibility",
+    "before": "Yes. LDgenX is approved for the French research tax credit (crédit d’impôt recherche, CIR): R&D work you entrust to us counts towards your CIR base, which returns 30% of its cost, within the conditions and ceilings set by French law.",
+    "after": "LDgenX is approved for the French research tax credit (CIR). Eligible R&D work you outsource to us may count towards your CIR, subject to the conditions applying to your company and project. A provider’s approval does not automatically make every service eligible."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "CIR:value label",
+    "before": "of your R&D work returned as a tax credit",
+    "after": "rate on eligible R&D expenditure in mainland France"
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "CIR:conditional benefit",
+    "before": "Research and development work you entrust to us counts towards your French research tax credit (crédit d’impôt recherche): you recover 30% of its cost.",
+    "after": "Eligible R&D work you outsource to us may count towards your French research tax credit. Eligibility depends on the nature of the work and your company’s circumstances."
+  },
+  {
+    "file": "src/content/knowledge.en.ts",
+    "label": "CIR:rate limits",
+    "before": "Within the conditions and ceilings of article 244 quater B of the French general tax code, for companies eligible for the CIR.",
+    "after": "In mainland France: 30% up to €100 million of eligible expenditure, then 5% above that threshold, within the conditions and ceilings of article 244 quater B of the French general tax code."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "WGS:remove exhaustive claim",
+    "before": "Comprehensive genome analysis for variant discovery, adaptive genomics and evolutionary studies.",
+    "after": "Genome-wide sequencing to investigate variants, adaptation and evolutionary history."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "WGS:coverage",
+    "before": "Comprehensive genome analysis.",
+    "after": "Sequencing that aims to cover the whole genome, at a depth suited to the project."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "dPCR:remove unsupported sensitivity superlative",
+    "before": "Ultra-sensitive detection and quantification of target species or pathogens using digital PCR (dPCR).",
+    "after": "Detection and quantification of DNA from target species or pathogens using digital PCR."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Lapwing:inference scope",
+    "before": "All analyses converge: no marked genetic structure and high genetic diversity. The lapwings sampled in France come from a single, well-mixed and weakly structured population.",
+    "after": "The analyses reveal no marked genetic structure among the birds sampled in France and show high genetic diversity. These results are consistent with a weakly structured population; they do not assign each bird to a breeding region."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Lapwing:Fis interpretation",
+    "before": "Inbreeding coefficient (Fis) close to 0 in every region: an overall well-mixed population.",
+    "after": "Fis close to 0 in every region: no marked heterozygote deficit in the groups analysed."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:conflicting source years omitted",
+    "before": "October 2025",
+    "after": "October sampling campaign"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:uncertain year",
+    "before": "In October 2025, water from three sites with contrasting turbidity was filtered with two systems: a triple pump with Waterra capsules (0.45, 1.2 and 5 µm pores) and a high-flow Stick Pump (20 µm filter), from 2 to 30 litres depending on clogging. The 43 samples were analysed by metabarcoding on the fish 12S marker (Teleo, Illumina short reads), in duplicate; 12 of them were also sequenced as long fragments (Oxford Nanopore).",
+    "after": "During an October campaign, water from three sites with contrasting turbidity was filtered with two systems: a triple pump with Waterra capsules (0.45, 1.2 and 5 µm pores) and a high-flow Stick Pump (20 µm filter), from 2 to 30 litres depending on clogging. The 43 samples were analysed by metabarcoding on the fish 12S marker (Teleo, Illumina short reads), in duplicate; 12 of them were also sequenced as long fragments (Oxford Nanopore)."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:26 short-read taxa and inference limits",
+    "before": "Turbidity weighs heavily on detection: at Bègles (740 to 800 NTU), only a few hardy species show up, such as European sea bass and thinlip grey mullet, whereas Le Verdon (14 NTU) has the highest richness. In all, 26 taxa are identified. The 5 µm filters concentrate the strongest signals, finer filters a more diffuse but more diverse signal. The project recommends repeating the sampling over time and cross-checking bioinformatic tools.",
+    "after": "Detected richness is lowest at Bègles (740 to 800 NTU) and highest at Le Verdon (14 NTU). Reanalysis of the short reads identifies 26 taxa across sites and campaigns. The 5 µm filters concentrate the strongest signals, while finer filters produce a more diffuse but more diverse signal. The project recommends repeated sampling and comparison of bioinformatic tools; these observations alone do not isolate the effect of turbidity."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:scope of 26",
+    "before": "taxa identified across the sites",
+    "after": "taxa identified by short reads across all sites"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:6 pooled taxa, not 3",
+    "before": "Bègles, the most turbid site (740 to 800 NTU): only three species, including sea bass and thinlip grey mullet, with weak signals.",
+    "after": "Bègles, the most turbid site (740 to 800 NTU), has the lowest richness: six taxa in the short-read results, pooled across campaigns (report table 5)."
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:association rather than causation",
+    "before": "When turbidity drops between two visits to the same site, the sea bass signal becomes much stronger: turbidity alone could explain a large part of the variation in detection.",
+    "after": "Between two visits to the same site, lower turbidity accompanies a stronger sea bass signal. This association must be interpreted alongside other biological and technical factors affecting detection."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Conservation:published marker counts",
+    "before": "196K and 11,803 SNP markers",
+    "after": "196,639 SNPs (brown trout); about 33,000 SNPs (brook trout)"
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Conservation:historical stocking context",
+    "before": "Brook trout (*Salvelinus fontinalis*) is a species of high socio-economic interest in Canada. In the province of Quebec, a domestic strain was created about a hundred years ago to restock rivers for sport fishing. Each year, more than 650 tonnes of brook trout are released into Canadian rivers, promoting hybridisation between domestic and wild individuals ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).",
+    "after": "Brook trout (*Salvelinus fontinalis*) is stocked for recreational fishing in Québec. These introductions have produced admixture between wild populations and a domestic strain, investigated by [Leitwein et al. (2019)](https://doi.org/10.1111/mec.15256)."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Conservation:final paper rather than preliminary dataset",
+    "before": "Using 11,803 SNP markers, the ancestry of individuals could be inferred and the proportion of domestic alleles in wild rivers estimated. Using linkage information and the proportion of domestic ancestry, the hybrid classes of individuals could be identified. Individuals were categorised either as (i) “recent hybrids”, offspring of early generations of crosses between wild and domestic individuals (< 10 generations), or (ii) “ancient hybrids”, offspring of distant admixture (> 10 generations). Once individuals were assigned to their hybrid class, the rate of introgression of domestic alleles along the genome could be estimated. This approach revealed high variability, with genomic regions of high or low domestic ancestry that are likely to be under natural selection (Figure 1; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).",
+    "after": "The published article analyses about 33,000 mapped SNPs in 611 individuals from 24 supplemented populations. Ancestry tracts distinguish early- and later-generation hybrids and estimate domestic introgression along the genome. Regions favouring or disfavouring this ancestry vary with the scale studied and the recombination context (Figure 1; [Leitwein et al. 2019](https://doi.org/10.1111/mec.15256))."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Conservation:limit beneficial-introgression generalisation",
+    "before": "In brook trout, we observed variations of domestic ancestry in wild populations. For hybrid individuals, mainly beneficial effects of the introgression of domestic alleles into wild populations were observed. Domestic alleles bring (i) diversity to regions of the “wild” genome with low genetic diversity and (ii) the masking of potentially deleterious recessive alleles.",
+    "after": "In brook trout, some patterns are consistent with a favourable effect from masking potentially deleterious recessive alleles in wild populations. The 2019 and 2021 results nevertheless show effects that vary among populations and genomic regions; they do not establish that every introduction of domestic alleles is beneficial."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:distinguish resource and assay",
+    "before": "86,175 SNPs (RAD sequencing), 12,204-SNP chip",
+    "after": "75,684 mapped SNPs; 12,204-SNP resource; 192-SNP panel"
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:mapped markers in final article",
+    "before": "In the study by [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), 86,175 SNP (single nucleotide polymorphism) markers from RAD sequencing were used to identify the proportion of domestic (Atlantic and Mediterranean) alleles in the wild populations of the Orb basin.",
+    "after": "In [Leitwein et al. (2018)](https://doi.org/10.1111/mec.14816), 75,684 mapped SNPs obtained by ddRAD-seq described the contributions of Atlantic and Mediterranean domestic strains to wild populations in the Orb basin."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:remove fictitious high-density chip",
+    "before": "Developing genomic tools: the high-density trout chip",
+    "after": "Developing genomic tools: a SNP resource and a targeted panel"
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:12204 resource versus 192 panel",
+    "before": "Following this study, we developed a high-density chip of 12,204 SNP markers spread evenly along the 40 linkage groups (LG) of brown trout (*Salmo trutta*) (Figure 3; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).",
+    "after": "[Saint-Pé et al. (2019)](https://doi.org/10.1186/s12864-019-5958-9) identified a resource of 12,204 SNPs distributed across the 40 linkage groups of brown trout (*Salmo trutta*). From that resource, they developed a low-density panel of 192 SNPs (Figure 3)."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:validated evaluation scope",
+    "before": "This chip allows low-cost, regular and comparable management across population genetic studies.",
+    "after": "The panel was evaluated in 1,862 individuals from five rivers. It provides a reproducible and cost-effective genotyping tool for population genetic studies."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:limit performance claim to tested populations",
+    "before": "It is effective both at distinguishing trout of Atlantic and Mediterranean origin and at measuring hybridisation levels.",
+    "after": "In the populations tested, it distinguishes Atlantic and Mediterranean lineages and supports investigation of admixture with domestic strains."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Traceability:summary",
+    "before": "Origin of the trout of the Orb basin, age of domestic introductions and development of a high-density trout SNP chip.",
+    "after": "Ancestry of trout in the Orb basin, timing of domestic introductions, and development of a SNP resource and genotyping panel."
+  },
+  {
+    "file": "src/content/extra.en.ts",
+    "label": "Selection:remove misattributed 12.5 percent guarantee",
+    "before": "Genomic selection has been used to improve many traits of interest with fairly high heritability. This type of approach has been applied successfully to many farmed species, and recently to aquaculture species for pathogen resistance. It has delivered an average genetic gain of 12.5% per generation for resistance to various diseases. Genomic selection is therefore a promising approach to fight diseases affecting wild as well as domestic populations ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).",
+    "after": "Genomic selection uses markers distributed across the genome to estimate breeding values. In aquaculture, it can improve the accuracy of predictions for resistance to some diseases compared with a pedigree-only approach. Gains nevertheless depend on the trait, reference population and breeding programme ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920))."
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Fish warming:experimental scope",
+    "before": "In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Larger individuals appear more sensitive to heatwaves than smaller ones.",
+    "after": "In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Heavier individuals appear more sensitive to acute heat stress than lighter ones."
+  },
+  {
+    "file": "src/content/pages.en.ts",
+    "label": "Booking:video call is not an in-person appointment",
+    "before": "Pick a slot in the team’s calendar to present your project in person.",
+    "after": "Pick a slot in the team’s calendar to discuss your project with our scientific team."
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Biography:parallel prepositions",
+    "before": "compréhension et l’évaluation",
+    "after": "compréhension et à l’évaluation"
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Biography:grammar",
+    "before": "Couplé à cela, j’étudie",
+    "after": "J’étudie également"
+  },
+  {
+    "file": "src/content/extra.fr.ts",
+    "label": "Biography:discipline names",
+    "before": "outils de biostatistiques et de génomiques",
+    "after": "outils de biostatistique et de génomique"
+  },
+  {
+    "file": "src/content/ui.fr.ts",
+    "label": "Privacy:metadata matches real contact flow",
+    "before": "Informations sur les données et la confidentialité lors de l’utilisation de ce site et de la préparation d’un e-mail à LDgenX.",
+    "after": "Informations sur vos données personnelles, la confidentialité et vos droits lors de l’utilisation du site LDgenX et de vos échanges avec l’équipe."
+  },
+  {
+    "file": "src/content/ui.en.ts",
+    "label": "Privacy:metadata matches real contact flow",
+    "before": "Information on data and privacy when using this site and preparing an email to LDgenX.",
+    "after": "Information on personal data, privacy and your rights when using LDgenX’s website and contacting the team."
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:commissioner follows report cover",
+    "before": "{ label: 'Commanditaire', value: 'INRAE' }",
+    "after": "{ label: 'Commanditaire', value: 'Thibault Dindart' }"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:commissioner attribution",
+    "before": "'Commanditaire : INRAE.'",
+    "after": "'Commanditaire cité dans le rapport : Thibault Dindart.'"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Estuary:remove unestablished fieldwork attribution",
+    "before": "        'Échantillonnages : Thibault Dindard et Bertrand Villeneuve.',\n",
+    "after": ""
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:commissioner follows report cover",
+    "before": "{ label: 'Client', value: 'INRAE' }",
+    "after": "{ label: 'Client', value: 'Thibault Dindart' }"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:commissioner attribution",
+    "before": "'Commissioned by: INRAE.'",
+    "after": "'Commissioner named in the report: Thibault Dindart.'"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Estuary:remove unestablished fieldwork attribution",
+    "before": "        'Sampling: Thibault Dindard and Bertrand Villeneuve.',\n",
+    "after": ""
+  }
+]

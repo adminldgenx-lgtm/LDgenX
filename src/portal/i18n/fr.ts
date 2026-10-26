@@ -34,9 +34,6 @@ export const fr = {
     notifications: 'Notifications',
     markAllRead: 'Tout marquer comme lu',
     noNotifications: 'Rien de nouveau pour l’instant.',
-    demo: 'Démonstration : les données restent dans ce navigateur et aucun e-mail n’est envoyé.',
-    resetDemo: 'Réinitialiser la démo',
-    demoReset: 'Les données de démonstration ont été rétablies.',
     team: 'Équipe LDgenX',
     you: 'Vous',
     unknown: 'Inconnu',
@@ -44,6 +41,10 @@ export const fr = {
     account: 'Mon compte',
   },
   errors: {
+    email_unavailable: 'L’envoi des e-mails est momentanément indisponible. Contactez info@ldgenx.fr.',
+    email_not_confirmed: 'Confirmez votre adresse avec le lien reçu par e-mail avant de vous connecter.',
+    rate_limited: 'Trop de demandes. Veuillez réessayer plus tard.',
+
     invalid_credentials: 'Adresse e-mail ou mot de passe incorrect.',
     email_taken: 'Un compte existe déjà pour cette adresse.',
     not_found: 'Cet élément n’existe plus.',
@@ -65,6 +66,15 @@ export const fr = {
     settings: 'Paramètres',
   },
   auth: {
+    verifyTitle: 'Confirmez votre adresse e-mail',
+    verifySent: 'Consultez votre messagerie et ouvrez le lien de confirmation pour accéder à votre espace.',
+    resetTitle: 'Choisir un nouveau mot de passe',
+    confirmPassword: 'Confirmer le mot de passe',
+    passwordMismatch: 'Les deux mots de passe doivent être identiques.',
+    savePassword: 'Enregistrer le mot de passe',
+    passwordSaved: 'Votre mot de passe a été enregistré.',
+    resetExpired: 'Ce lien a expiré ou a déjà été utilisé. Demandez un nouveau lien.',
+
     loginTitle: 'Connexion',
     loginLead: 'Retrouvez vos échanges avec l’équipe, vos fichiers et vos rendez-vous.',
     email: 'Adresse e-mail',
@@ -76,12 +86,6 @@ export const fr = {
     noAccount: 'Pas encore d’espace ?',
     createAccount: 'Créer un compte',
     haveAccount: 'Déjà un compte ?',
-    demoTitle: 'Accès de démonstration',
-    demoText: 'Mot de passe des comptes de démonstration : {password}',
-    demoClient: 'Entrer comme client',
-    demoAdmin: 'Entrer comme équipe LDgenX',
-    demoWindows:
-      'Ouvrez l’espace client dans une fenêtre et l’administration dans une autre : messages, fichiers et rendez-vous se mettent à jour en direct des deux côtés.',
     registerTitle: 'Créer votre espace client',
     registerLead:
       'Échangez avec l’équipe LDgenX, recevez vos fichiers et prenez rendez-vous au même endroit.',
@@ -146,6 +150,7 @@ export const fr = {
     notGiven: 'Non précisé',
   },
   files: {
+    uploadLimit: '10 Mo par fichier. Jusqu’à 6 pièces jointes et 20 Mo par message.',
     clientLead: 'Les documents déposés pour vous par l’équipe LDgenX.',
     drop: 'Glissez vos fichiers ici ou {browse}',
     browse: 'parcourez votre ordinateur',
@@ -379,7 +384,6 @@ export const fr = {
     lead: 'Disponibilités pour les rendez-vous et suppression hebdomadaire des fichiers.',
     availabilityTab: 'Disponibilités',
     filesTab: 'Fichiers',
-    demoTab: 'Démonstration',
     approval: 'Validation des demandes de rendez-vous',
     approvalManual: 'Manuelle',
     approvalAuto: 'Automatique',
@@ -415,8 +419,6 @@ export const fr = {
     closedDays: 'Jours fermés',
     closedDaysHelp: 'Jours fériés et fermetures : aucun créneau n’y est proposé.',
     addClosedDay: 'Ajouter un jour',
-    demoText:
-      'Ces données de démonstration vivent dans ce navigateur. Les rétablir efface ce que vous avez créé et remet les exemples.',
   },
   activity: {
     team: {

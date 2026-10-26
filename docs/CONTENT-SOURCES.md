@@ -1,5 +1,7 @@
 # Sources et décisions éditoriales
 
+**État du 26 octobre 2026 :** voir [le contrôle préproduction actuel](PRE-PROD-REVIEW-2026-10-26.md). Les portraits générés, la publication des rapports/études et de la photo UNIMA, ainsi que la conservation des messages pendant trois ans au plus ont été confirmés par le propriétaire. Le formulaire et les rendez-vous utilisent désormais Supabase. Les anciennes décisions ci-dessous sont conservées comme historique ; les CGV et les parcours dépendant de l’e-mail restent à finaliser.
+
 Vérification le 5 octobre 2026. Le dossier fourni contenait onze illustrations, trois logos, des favicons et l’audit PDF. Aucun frontend, historique Git, contenu technique ou route réutilisable n’était présent.
 
 ## Sources
@@ -120,13 +122,15 @@ Section « De l’échantillon à la décision » : depuis le 24 octobre 2026, l
 
 ### Portraits de l’équipe
 
-Depuis le 23 octobre 2026, à la demande de l’agence, Maeva, Emilie et Maxime sont de nouveau présentés par leurs **portraits de studio générés avec ChatGPT à partir de leurs photos réelles** (`images/team/portrait-*.png`, WebP 480 et 900 px, ceux du premier commit) ; Damien garde sa photo réelle (`images/team/photo-damien.png`, WebP 480 et 659 px). Les photos réelles reprises de ldgenx.fr (utilisées du 21 au 23 octobre) restent dans `images/official/`. Chaque personne doit valider son portrait ; Maeva prévoit un nouveau portrait (veste de tailleur), qui remplacera le sien. Une séance photo de l’équipe permettrait des portraits homogènes et réels.
+Depuis le 23 octobre 2026, à la demande de l’agence, Maeva, Emilie et Maxime sont de nouveau présentés par leurs **portraits de studio générés avec ChatGPT à partir de leurs photos réelles** (`images/team/portrait-*.png`, WebP 480 et 900 px, ceux du premier commit) ; Damien garde sa photo réelle (`images/team/photo-damien.png`, WebP 480 et 659 px). Les photos réelles reprises de ldgenx.fr (utilisées du 21 au 23 octobre) restent dans `images/official/`. Le propriétaire a confirmé le 26 octobre l’approbation des portraits ; Maeva prévoit un nouveau portrait (veste de tailleur), qui remplacera le sien. Une séance photo de l’équipe permettrait des portraits homogènes et réels.
 
 Le wordmark est utilisé en en-tête, le logo complet en pied de page, le symbole reste disponible dans `public/brand`. Les favicons fournis sont conservés. Seules les marges de canvas ont été recadrées ; le dessin n’est pas modifié.
 
 Palette issue des variantes du logo : navy `#03254B`, vert accent `#73B50F`, vert texte `#2A7416`, complétée par blanc, ivoire `#F7F8F4` et navy sombre `#082F42`. Manrope et Inter sont auto-hébergées.
 
-## À confirmer par LDgenX avant publication
+## Points relevés lors des premières passes (historique)
+
+Les statuts actuels et les confirmations du 26 octobre figurent dans le rapport préproduction lié en tête de ce document. Cette liste décrit les demandes initiales et ne constitue plus la liste des blocages de lancement.
 
 1. **Mentions légales** : directrice de la publication Maeva Leitwein, présidente de la SAS (registre des entreprises) ; hébergeur Cloudflare (le site sera publié sur Cloudflare Pages) ; code NAF 72.11Z et siège social à Fabrègues. À relire par LDgenX.
 2. **Confidentialité** : la politique indique une conservation des messages de trois ans au plus après le dernier échange (durée usuelle pour un prospect, recommandée par la CNIL) : à confirmer par LDgenX. Le reste décrit exactement le fonctionnement du site (aucune mesure d’audience, aucun cookie de suivi).
@@ -229,3 +233,14 @@ E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
 - **Publications** : ajout de l’article de Maxime Lambert dans The EMBO Journal (octobre 2026, DOI 10.1038/s44318-026-00919-5), dont l’affiliation porte « IDgenX, Montpellier » (coquille pour LDgenX). Résumé fait à partir du résumé publié. Des articles plus anciens d’un Maxime Lambert du CBGP (Xylella fastidiosa, 2021 à 2025) n’ont pas été ajoutés : l’identité n’est pas certaine ; la liste envoyée par la cliente tranchera.
 - **Référencement** : trois titres de page raccourcis (vanneaux huppés, génomes bécasse et bécassine, efficacité alimentaire du bar) ; plus aucun avertissement de `check:seo`.
 
+
+
+## Vérification des contenus — 26 octobre 2026
+
+- 84 corrections scientifiques, éditoriales et de métadonnées dans les deux langues ; journal avant/après dans `preprod-2026-10-26/corrections.json`. Les 28 publications ont été rapprochées des métadonnées éditeurs.
+- Les liens CC BY 4.0 figurent désormais dans les légendes des 17 figures de publications reproduites. Ils complètent les références scientifiques ; les anciennes photos décoratives nécessitant un crédit restent retirées.
+- Les rapports source de l’estuaire contredisent leur propre chronologie. La mention publique de l’année est supprimée au profit de « campagne d’octobre » ; aucune deuxième campagne n’est supposée. La qualification antérieure de « coquille » n’est pas une confirmation de la bonne année.
+- Autorisations des portraits, rapports/études et photo UNIMA, et durée de conservation des messages : confirmation reçue du propriétaire le 26 octobre.
+- CGV : la reproduction cliente est conservée ; corrections et clauses proposées dans [CGV-REVIEW.md](preprod-2026-10-26/CGV-REVIEW.md).
+- Le backend est déployé sur Supabase ; le portail est inclus par défaut, avec `LDGENX_PORTAL=0` pour un build public seul. L’envoi d’e-mails est différé. Le contrôle distant retrouve `mailer_autoconfirm: true` et aucun SMTP personnalisé, contrairement à l’intention du script de configuration. La vérification d’adresse et la réception des e-mails restent à finaliser.
+- 153 routes publiques, 306 combinaisons page/largeur dans Chrome, HTML/SEO/typographie/médias et cohérence quantitative FR/EN vérifiés. Le nouveau site n’est pas publié ; la recette du domaine réel suivra son déploiement.

@@ -152,6 +152,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
           </Reveal>
           <Reveal>
             <form id="project-form" className="contact-form" onSubmit={onSubmit}>
+              <input type="hidden" name="locale" value={ui.lang} />
               <div className="form-row">
                 <label className="form-field">
                   {formCopy.name}

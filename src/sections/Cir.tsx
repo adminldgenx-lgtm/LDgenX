@@ -25,7 +25,12 @@ export function CirBlock() {
           <Eyebrow light>{t.eyebrow}</Eyebrow>
           <h2 id="cir-title">{t.title}</h2>
           <p>{t.text}</p>
-          <p className="cir-note">{t.note}</p>
+          <p className="cir-note">
+            {t.note}{' '}
+            <a href={t.sourceUrl} target="_blank" rel="noreferrer">
+              {t.sourceLabel}
+            </a>
+          </p>
           <Button to={r.contact} variant="light">
             {t.action}
           </Button>

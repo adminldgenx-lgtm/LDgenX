@@ -24,7 +24,7 @@ npm run preview
 
 La version de production est disponible sur http://127.0.0.1:4173.
 
-`npm run build` produit le client Vite, un rendu React serveur temporaire, puis **35 pages HTML complètes** dans `dist`. Chaque page contient son contenu, son titre, sa description, sa canonique et ses données structurées avant l’exécution de JavaScript. Le client hydrate le HTML et assure la navigation. Aucun serveur applicatif n’est requis.
+`npm run build` produit le client Vite, un rendu React serveur temporaire, puis **153 pages HTML complètes** dans `dist`. Chaque page contient son contenu, son titre, sa description, sa canonique et ses données structurées avant l’exécution de JavaScript. Le client hydrate le HTML et assure la navigation. Le site public reste statique ; l’espace client et l’administration utilisent le backend Supabase déployé. Voir [docs/PORTAL.md](docs/PORTAL.md).
 
 `check:html` contrôle les H1, les métadonnées uniques, les canoniques, les données structurées, les liens locaux, les images et les espaces insécables de la ponctuation française de toutes les pages. Les pages sont listées dans `src/lib/pages.ts`.
 
@@ -38,7 +38,8 @@ Les textes utilisent une espace fine insécable (U+202F) avant `; ! ?` et une es
 - `src/lib/pages.ts` : catalogue des routes, métadonnées, schémas et migrations.
 - `src/components` : composants d’interface et gestion des métadonnées.
 - `src/sections` : explorateur des services, chaîne scientifique de l’accueil (`Pipeline`), démarche détaillée (`Workflow`, page Expertises), preuves (`Proof` : faits clés et références), cadrage de projet et FAQ (`Practice`), collections éditoriales.
-- `src/lib/contact.ts` : mode du formulaire de contact (envoi direct ou préparation d’e-mail).
+- `src/lib/contact.ts` : envoi du formulaire dans la boîte de réception de l’administration via Supabase.
+- `src/portal` : espace client et administration ; `supabase/functions` : API, authentification vérifiée, fichiers privés et maintenance ; `supabase/migrations` : schéma et permissions.
 - `src/pages` : modèles de pages par famille.
 - `src/layouts` : navigation et pied de page.
 - `src/styles/global.css` : palette, typographie, compositions et adaptations aux écrans.
@@ -50,7 +51,7 @@ Les textes utilisent une espace fine insécable (U+202F) avant `; ! ?` et une es
 Projet Cloudflare Pages relié au dépôt :
 
 - **Build** : commande `npm run build`, dossier de sortie `dist`, Node 22 (fichier `.node-version`).
-- **Variables, facultatives** : `VITE_CONTACT_ENDPOINT` (service d’envoi du formulaire ; sans lui, le formulaire prépare un e-mail dans la messagerie du visiteur) ; `LDGENX_PORTAL=1`, seulement quand l’espace client est relié à son backend (voir docs/PORTAL.md). Sans cette variable, le site publié ne contient ni l’espace client ni l’administration.
+- **Supabase** : URL du projet et clé publiable dans `.env.production` (valeurs publiques). Le portail est inclus au build. `LDGENX_PORTAL=0` permet de l’exclure. Les secrets d’administration restent dans `.env.supabase.local`, ignoré par Git. L’envoi d’e-mails sera configuré ultérieurement ; voir [docs/PORTAL.md](docs/PORTAL.md).
 - **Domaine** : `www.ldgenx.fr`, l’adresse canonique ; ajouter aussi `ldgenx.fr` et le rediriger vers `www` (règle de redirection Cloudflare).
 
 Chaque page est un fichier `adresse.html`, servi par Cloudflare à son adresse sans barre finale (`/contact`), comme les adresses canoniques. `dist/_redirects` applique les redirections 301 des anciennes adresses (avant les fichiers) ; `dist/_headers` ajoute les en-têtes de sécurité (politique de sécurité du contenu stricte, HSTS, interdiction de l’intégration en iframe, permissions désactivées) et le cache des fichiers. `404.html` répond aux adresses inconnues avec un vrai statut 404.
@@ -95,18 +96,14 @@ Deux niveaux de mouvement (`src/lib/motion-preference.ts`, appliqués avant l’
 
 Les animations sont concentrées dans `src/components/motion.tsx` et `src/styles/global.css`. Un observateur unique déclenche les entrées ; le suivi de l’étape active ne lit les positions que lorsque le parcours est à proximité de l’écran, au maximum une fois par frame.
 
-## Contact
+## Contact et espace client
 
-Par défaut, sans fournisseur d’envoi approuvé, le formulaire **prépare un e-mail** dans la messagerie du visiteur et propose la copie du message.
+Le formulaire de contact envoie les demandes au backend Supabase : elles apparaissent dans l’onglet « Formulaire du site » de l’administration. Les boutons de rendez-vous ouvrent `/espace/reserver`. L’espace client est accessible via le pied de page du site ; l’administration est à `/admin`.
 
-Pour un envoi direct, définir au build l’adresse d’un service de formulaire acceptant un `POST` de `FormData` avec réponse JSON (par exemple un endpoint Formspree) :
+Le compte administrateur est `admin.ldgenx@gmail.com` ; son mot de passe a été défini à la demande du propriétaire et vérifié sur le backend réel le 26 octobre. Aucun mot de passe n’est conservé dans les fichiers du projet. Si une récupération locale devient nécessaire, `npm run supabase:admin-link` génère un lien privé temporaire. Le bouton de compte de la barre de navigation affiche « Connexion » ou « Mon compte » selon la session Supabase ; il conduit les administrateurs et les clients vers leur espace respectif.
 
-```sh
-VITE_CONTACT_ENDPOINT=https://formspree.io/f/xxxxxxx npm run build
-```
-
-Le bouton devient « Envoyer ma demande », la mention de consentement et la politique de confidentialité s’adaptent, et la confirmation ne s’affiche qu’après une réponse HTTP 2xx (message d’erreur et copie du message sinon). Le lien de réservation reprend l’agenda publié par LDgenX.
+**Différé à la demande du propriétaire** : fournisseur d’e-mails (validation des inscriptions, invitations, réinitialisation et notifications), puis connexion Google. Le backend est déployé sur Supabase ; le nouveau build du site reste à publier sur Cloudflare Pages. Les instructions et les contrôles sont dans [docs/PORTAL.md](docs/PORTAL.md).
 
 ## Avant la mise en ligne
 
-Consulter [docs/CONTENT-SOURCES.md](docs/CONTENT-SOURCES.md) pour les sources, limites factuelles et éléments à confirmer : informations légales, traitement des e-mails, portraits et droits des figures. La migration des contenus de ldgenx.fr et ldgenx.com, la table des adresses et les décisions attendues du client sont dans [docs/MIGRATION.md](docs/MIGRATION.md). La reconstruction locale ne déploie pas le site officiel.
+Consulter le [rapport préproduction du 26 octobre](docs/PRE-PROD-REVIEW-2026-10-26.md) pour les corrections, les contrôles réussis et les points restant à finaliser (CGV et e-mails). Les sources et l’historique éditorial sont dans [docs/CONTENT-SOURCES.md](docs/CONTENT-SOURCES.md). La migration des contenus de ldgenx.fr et ldgenx.com, la table des adresses et les décisions attendues du client sont dans [docs/MIGRATION.md](docs/MIGRATION.md). La reconstruction locale ne déploie pas le site officiel.

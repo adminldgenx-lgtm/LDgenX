@@ -190,7 +190,7 @@ export const services: Expertise[] = [
       },
       {
         title: 'dPCR ciblée',
-        text: 'Détection et quantification ultra-sensibles d’espèces ou de pathogènes ciblés grâce à la PCR digitale.',
+        text: 'Détection et quantification de l’ADN d’espèces ou de pathogènes ciblés grâce à la PCR digitale.',
       },
       {
         title: 'Séquençage longue lecture',
@@ -271,7 +271,7 @@ export const services: Expertise[] = [
       },
       {
         title: 'Génome entier · WGS',
-        text: 'Analyse exhaustive du génome pour la découverte de variants, les études d’adaptation et les analyses évolutives.',
+        text: 'Séquençage à l’échelle du génome pour rechercher des variants et étudier l’adaptation et l’histoire évolutive.',
       },
       {
         title: 'Panels SNP',
@@ -517,7 +517,7 @@ export const services: Expertise[] = [
       },
       {
         title: 'Génome complet · WGS',
-        text: 'Étude exhaustive du génome.',
+        text: 'Séquençage visant l’ensemble du génome, avec une couverture adaptée au projet.',
       },
       {
         title: 'RADseq et panels SNP',
@@ -1198,7 +1198,7 @@ export const studies: Study[] = [
     approach:
       'Analyse de 479 échantillons de muscle prélevés de 2018 à 2023 dans neuf régions françaises, génotypés par 3D-GBS. Après contrôle qualité, 438 oiseaux et 40 746 SNP ont été analysés : diversité génétique, ADMIXTURE, analyse en composantes principales, identité par état et par descendance.',
     result:
-      'Toutes les analyses convergent : pas de structuration génétique marquée et une diversité génétique forte. Les vanneaux échantillonnés en France proviennent d’une même population, bien mélangée et peu structurée.',
+      'Les analyses ne révèlent pas de structuration génétique marquée parmi les oiseaux échantillonnés en France et montrent une diversité génétique élevée. Ces résultats sont compatibles avec une population faiblement structurée ; ils ne permettent pas d’attribuer à chaque oiseau une région de nidification.',
     service: 'genomique-des-populations',
     source: 'https://hal.science/hal-05490664',
     details: {
@@ -1227,7 +1227,7 @@ export const studies: Study[] = [
       findingsTitle: 'Ce que montrent les analyses',
       findings: [
         'ADMIXTURE : le nombre de groupes génétiques le plus probable est K = 1.',
-        'Indice de consanguinité (Fis) proche de 0 dans toutes les régions : une population globalement bien mélangée.',
+        'Indice Fis proche de 0 dans toutes les régions : pas de déficit marqué d’hétérozygotes dans les groupes analysés.',
         'Analyse en composantes principales : aucun regroupement selon la région, le sexe, l’âge, l’année ou le mois de prélèvement ; trois groupes se distinguent très subtilement sur le premier axe.',
         'Identité par état : la plupart des paires d’oiseaux entre 0,75 et 0,85, ce qui est attendu dans une population naturelle faiblement structurée.',
         'Identité par descendance : seules cinq paires d’oiseaux semblent apparentées.',
@@ -1352,22 +1352,22 @@ export const studies: Study[] = [
     subtitle:
       'Un projet pilote en Gironde pour comparer des méthodes de filtration de l’eau dans des estuaires turbides.',
     facts: [
-      { label: 'Commanditaire', value: 'INRAE' },
+      { label: 'Commanditaire', value: 'Thibault Dindart' },
       { label: 'Projet', value: 'ADNe Estuaire, projet pilote' },
       { label: 'Sites', value: 'Bègles, Cadillac et Le Verdon (Gironde)' },
       { label: 'Turbidité', value: 'De 14 à plus de 800 NTU' },
       { label: 'Échantillons', value: '43, analysés en double' },
       { label: 'Approche', value: 'Métabarcoding ADNe, marqueur 12S des poissons' },
-      { label: 'Période', value: 'Octobre 2025' },
+      { label: 'Période', value: 'Campagne d’octobre' },
     ],
     context:
       'Dans les estuaires, l’eau chargée en particules complique l’ADN environnemental : les filtres colmatent vite et les particules peuvent gêner les analyses. Ce projet pilote visait à optimiser les protocoles d’ADNe en milieu turbide.',
     question:
       'Quels dispositifs et quelles tailles de filtre conviennent selon la turbidité, et quels poissons détecte-t-on ?',
     approach:
-      'En octobre 2025, l’eau de trois sites aux turbidités contrastées a été filtrée avec deux systèmes : une pompe triple avec capsules Waterra (pores de 0,45, 1,2 et 5 µm) et une Stick Pump à fort débit (filtre de 20 µm), de 2 à 30 litres selon le colmatage. Les 43 échantillons ont été analysés en métabarcoding sur le marqueur 12S des poissons (Teleo, lectures courtes Illumina), en double ; 12 d’entre eux l’ont aussi été en fragment long (Oxford Nanopore).',
+      'Lors d’une campagne d’octobre, l’eau de trois sites aux turbidités contrastées a été filtrée avec deux systèmes : une pompe triple avec capsules Waterra (pores de 0,45, 1,2 et 5 µm) et une Stick Pump à fort débit (filtre de 20 µm), de 2 à 30 litres selon le colmatage. Les 43 échantillons ont été analysés en métabarcoding sur le marqueur 12S des poissons (Teleo, lectures courtes Illumina), en double ; 12 d’entre eux l’ont aussi été en fragment long (Oxford Nanopore).',
     result:
-      'La turbidité pèse fortement sur la détection : à Bègles (740 à 800 NTU), seules quelques espèces résistantes ressortent, comme le bar et le mulet porc, alors que Le Verdon (14 NTU) présente la plus grande richesse. Au total, 26 taxons sont identifiés. Les filtres de 5 µm concentrent les signaux les plus forts, les filtres plus fins un signal plus diffus mais plus diversifié. Le projet recommande de répéter les prélèvements dans le temps et de croiser les outils d’analyse bioinformatique.',
+      'La richesse détectée est la plus faible à Bègles (740 à 800 NTU) et la plus élevée au Verdon (14 NTU). La réanalyse des lectures courtes identifie 26 taxons sur l’ensemble des sites et campagnes. Les filtres de 5 µm concentrent les signaux les plus forts, les filtres plus fins un signal plus diffus mais plus diversifié. Le projet recommande de répéter les prélèvements et de comparer les outils bioinformatiques ; ces observations ne permettent pas d’isoler à elles seules l’effet de la turbidité.',
     service: 'adn-environnemental-adne',
     source: '',
     details: {
@@ -1402,13 +1402,13 @@ export const studies: Study[] = [
         { value: '43', label: 'échantillons filtrés, extraits et analysés en double' },
         { value: '36 730 010', label: 'séquences brutes en lecture courte' },
         { value: '12', label: 'échantillons séquencés aussi en fragment long (12S complet)' },
-        { value: '26', label: 'taxons identifiés sur l’ensemble des sites' },
+        { value: '26', label: 'taxons identifiés en lecture courte, sur l’ensemble des sites' },
       ],
       findingsTitle: 'Ce que montrent les analyses',
       findings: [
-        'Bègles, le site le plus turbide (740 à 800 NTU) : trois espèces seulement, dont le bar et le mulet porc, avec des signaux faibles.',
+        'Bègles, le site le plus turbide (740 à 800 NTU), présente la richesse la plus faible : six taxons en lecture courte, toutes campagnes confondues (table 5 du rapport).',
         'Le Verdon, en eau claire (14 NTU) : la richesse la plus élevée, avec des espèces marines côtières, de la zone intertidale et d’eau douce.',
-        'Quand la turbidité baisse entre deux passages sur un même site, le signal du bar devient nettement plus fort : la turbidité pourrait expliquer à elle seule une part importante de la variabilité de détection.',
+        'Entre deux passages sur un même site, une baisse de la turbidité s’accompagne d’un signal du bar plus fort. Cette association doit être interprétée avec les autres facteurs biologiques et techniques de détection.',
         'Les filtres de 5 µm concentrent les signaux les plus forts ; ceux de 0,45 et 1,2 µm captent un signal plus diffus mais plus diversifié.',
         'Lectures courtes et longues se recoupent : 12 espèces communes, soit 86 % des taxons du fragment long, qui en révèle deux autres, le rouquié et la grémille.',
         'Réanalysées avec un second outil bioinformatique, les lectures courtes livrent 26 taxons, contre 2 espèces en première analyse : croiser les outils d’analyse fait partie des recommandations.',
@@ -1418,8 +1418,7 @@ export const studies: Study[] = [
         'Répéter les prélèvements dans le temps sur chaque site et combiner des marqueurs de longueurs différentes : ce sont les deux pistes retenues pour consolider le protocole, avant toute diffusion publique des occurrences.',
       rolesTitle: 'Qui a fait quoi',
       roles: [
-        'Commanditaire : INRAE.',
-        'Échantillonnages : Thibault Dindard et Bertrand Villeneuve.',
+        'Commanditaire cité dans le rapport : Thibault Dindart.',
         'Rapport : Maeva Leitwein et Emilie Delpuech (LDgenX).',
         'Extraction de l’ADN, séquençage en fragment long (MinION) et analyses bioinformatiques : LDgenX.',
         'Amplifications et séquençage en lecture courte : plateforme PGTB (Bordeaux), sur Illumina MiSeq i100.',

@@ -1,0 +1,773 @@
+{
+  "passed": true,
+  "checked": [
+    "signed-out link",
+    "FR/EN labels",
+    "site language carried to login",
+    "real client/admin login",
+    "role-specific destinations",
+    "session persistence",
+    "cross-tab sign-in/sign-out",
+    "production CSP",
+    "breakpoint bounds and overlap"
+  ],
+  "layoutChecks": [
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "fr",
+      "width": 320,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "signed-out",
+      "locale": "en",
+      "width": 320,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "fr",
+      "width": 320,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "client",
+      "locale": "en",
+      "width": 320,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "fr",
+      "width": 320,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1600,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1536,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1441,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1440,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1421,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1420,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1391,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1390,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1366,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1321,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1320,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1280,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 1050,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 768,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 601,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 600,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 420,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 390,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 380,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 379,
+      "problems": []
+    },
+    {
+      "state": "admin",
+      "locale": "en",
+      "width": 320,
+      "problems": []
+    }
+  ],
+  "pageErrors": []
+}

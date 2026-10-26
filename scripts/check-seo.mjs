@@ -131,6 +131,7 @@ for (const page of pages) {
     if (!href.startsWith('/') || href.startsWith('//')) continue;
     const target = href.replace(/\/+$/, '') || '/';
     if (internalTargets.has(target) || target in redirects) continue;
+    if (existsSync(path.join(dist, 'portal.html')) && /^\/(espace|admin)(\/|$)/.test(target)) continue;
     if (existsSync(path.join(dist, target))) continue;
     // Pages kept out of the sitemaps (legal notice, privacy) are still built.
     if (existsSync(path.join(dist, fileOf(target)))) continue;

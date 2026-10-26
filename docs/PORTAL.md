@@ -1,263 +1,169 @@
-# Client area and administration
+# Client portal and Supabase backend
 
-The client area (`/espace`), the administration (`/admin`) and public booking (`/espace/reserver`) form one application, separate from the public site. This version covers four things:
+The portal is a separate React application at `/espace` and `/admin`, built from `portal.html`. The public website stays prerendered. Both applications use the Supabase project `rkkvvqwgxbtnvewyrylj` in EU West (Ireland).
 
-- **Messages:** one conversation per client with the whole team, with attachments.
-- **Files:** the team drops files for a client, who downloads them; a weekly deletion clears them.
-- **Appointments:** requests from clients and visitors, the team's answers, changes, and the team's calendar.
-- **Website messages:** what the public site's contact form sends, in the team's inbox.
+The previous browser-only implementation, fictitious accounts, sample messages, local file database, demo controls and reset buttons have been removed. Business data lives in Supabase; only the Auth session and the language preference are stored in the browser.
 
-Project tracking, quotes and internal notes (the "CRM" part) are planned for later and are not part of this version.
+## Current status — 26 October 2026
 
-All the screens are built. Until the backend exists, they run in **demo mode**: the data lives in the visitor's browser. This document is the contract the backend must fulfil, and the steps to switch it on.
+- Database migrations applied to the live project; Row Level Security enabled on every portal table.
+- `portal` Edge Function deployed and serving the real API.
+- Private Storage bucket `portal-files`; 10 MB maximum per file. Message attachments: up to six, 20 MB combined.
+- Authentication uses Supabase Auth with email/password. A read-only live recheck on 26 October found `mailer_autoconfirm: true` (addresses automatically confirmed), whereas the setup script specifies `false`. No live settings were changed during the content audit. Before full launch, configure email delivery, restore the intended verification setting and test the email-dependent journeys.
+- Administrator: `admin.ldgenx@gmail.com`, active and assigned its role in the database. Password set at the owner’s explicit request and verified with real password authentication and the admin API on 26 October; no password is stored in project files. The superseded local setup-link artifact was removed.
+- Production Auth site URL: `https://www.ldgenx.fr`; local development and preview callback URLs also allowed.
+- Automatic maintenance scheduled every 15 minutes, including expired file removal and notification processing.
+- Public contact submissions reach the administration inbox; booking buttons point to `/espace/reserver`.
+- Google authentication is intentionally deferred.
+- **Email delivery is deferred at the owner's request.** Verification messages, invitations, password-reset emails and notification emails require a sender provider. They are not production-ready until it is configured. Pending notification records are retained in a private outbox; no email was sent during setup or tests.
+- The Supabase backend is live. This workspace contains a production build; publishing that build to Cloudflare Pages is a separate hosting step and has not been performed here.
 
-## Where it lives
+## Local use and administrator access
 
-| What                         | Where                                                                                                                              |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Entry page                   | `portal.html` (built as a second page, with its own bundle: the public site never loads the portal's code)                         |
-| Code                         | `src/portal/`                                                                                                                      |
-| Data model and API contract  | `src/portal/api/types.ts` (`PortalApi`)                                                                                            |
-| Demo backend                 | `src/portal/api/mock.ts`, `seed.ts`, `blobs.ts`                                                                                    |
-| Live backend client          | `src/portal/api/http.ts`                                                                                                           |
-| Rules shared with the server | `src/portal/lib/availability.ts` (free times), `retention.ts` (weekly deletion), `time.ts` (Paris time), `ics.ts` (calendar files) |
-| Interface text               | `src/portal/i18n/fr.ts`, `en.ts` (the compiler checks that both have the same keys)                                                |
-| Styles                       | `src/portal/portal.css`                                                                                                            |
+```sh
+npm ci
+npm run dev
+```
 
-Every address under `/espace` and `/admin` is served `portal.html`:
+Open `http://localhost:5173/espace` for clients and `/admin` for administration. Public booking is `/espace/reserver`.
 
-- in development and preview, by the `ldgenx-portal` plugin in `vite.config.ts`;
-- in production, by the rewrites the build writes into `dist/_redirects`.
+The administrator password is already configured. For a future local recovery without email, the following command generates the ignored file `admin-setup.local.html`. Its link is private, single-use and expires after one hour; keep `npm run dev` running on port 5173 while using it:
 
-The portal is only built when `LDGENX_PORTAL=1` is set. Without it (the default, and the setting for the first public release on Cloudflare Pages), the build has no `portal.html`, no portal rewrites or headers, and `robots.txt` has no `Disallow` lines. Set it once the backend is live.
+```sh
+npm run supabase:admin-link
+```
 
-The area is kept out of search engines three ways: a `noindex` meta tag, an `X-Robots-Tag` header (in `dist/_headers`) and `Disallow` lines in `robots.txt`.
+That command requires the administrative credentials in `.env.supabase.local`. It does not print a token, set a shared default password, or send email. After activation, sign in normally with the administrator email and the password you chose.
 
-## Demo mode and live mode
+## Source map
 
-**Demo mode** is the default:
+| Component | Location |
+| --- | --- |
+| Portal routing and screens | `src/portal/PortalApp.tsx`, `pages/` |
+| Auth, HTTP client and Realtime | `src/portal/api/http.ts`, `src/lib/supabase.ts` |
+| Shared contract | `supabase/functions/_shared/types.ts` |
+| Validated business operations | `supabase/functions/_shared/service.ts` |
+| Shared availability, Paris time and retention calculations | `supabase/functions/_shared/{availability,time,retention}.ts` |
+| Initial booking formats, team and retention settings | `supabase/functions/_shared/defaults.ts` |
+| Verified HTTP router | `supabase/functions/portal/index.ts` |
+| Transactional repository and private Storage access | `supabase/functions/portal/repository.ts` |
+| Expiry, object cleanup, outbox delivery | `supabase/functions/portal/jobs.ts` |
+| Database structure, permissions, lifecycle triggers, cron | `supabase/migrations/` |
+| Administrative setup, deployment, activation and email setup | `scripts/*supabase*.mjs`, `scripts/admin-link.mjs` |
 
-- **Data:** stored in `localStorage`. File contents go to IndexedDB, as bytes, because Safari refuses Blob objects in private windows.
-- **Scope:** everything stays in one browser, and no e-mail is sent. A banner says so, with a reset link.
-- **Demo accounts** (password `demo2026`), one-tap buttons on the sign-in page:
-  - `camille.martin@bureau-exemple.demo` (client);
-  - `maeva@ldgenx.demo` (team).
-- **Two windows, live:** each window keeps its own sign-in. Open the client area in one window and the administration in another, in the same browser: a message, a file or an appointment appears on the other side at once, without reloading.
-- **Sample data:** the clients and their messages are fictitious; the team and the appointment formats are LDgenX's own.
-- **Access rules:** the demo applies the same access rules as the server below, so the screens behave as they will with real data. Writes from several windows go one at a time (Web Locks), as a database transaction would.
+The frontend re-exports shared types and date calculations. The server recomputes availability when accepting a booking; a browser cannot bypass that check by modifying its request.
 
-To try it: `npm run dev`, then open `/espace` and `/admin`. A built copy (`npm run build`, then `npm run preview`) behaves the same.
+## Credentials and configuration
 
-**Live mode:**
+`.env.production` contains the project URL and **public publishable key**. These values are intentionally part of the browser application; they grant no administrative privileges. `.env.example` documents frontend configuration.
 
-- Build with `VITE_PORTAL_API=http`. Add `VITE_PORTAL_API_URL` if the API is not at `/api` on the same domain.
-- Keeping the API on the same domain is recommended: the session cookie stays first-party and no cross-origin (CORS) setup is needed.
+`.env.supabase.local` holds the management token, server key and maintenance key. It is ignored by Git and restricted to the file owner. The database password supplied during handoff was not stored or needed: migrations were applied through the authenticated Management API. No private value may be placed in a `VITE_` variable.
 
-## What the screens do
+`.env.supabase.example` documents the private setup variables. `.env.local` can override frontend settings locally. The portal builds by default; `LDGENX_PORTAL=0` excludes its bundle and routes for a public-site-only build.
 
-**Client area**
+The Edge runtime uses its built-in `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` and `SUPABASE_DB_URL`. The Edge database connection uses the project’s free Supavisor transaction pooler, with prepared statements disabled and at most one connection per worker. The browser limits concurrent API requests and coalesces Realtime invalidations. Custom secrets are `PORTAL_POOLER_HOST`, `PORTAL_POOLER_USER`, `PORTAL_JOB_SECRET`, `PORTAL_SITE_URL`, `PORTAL_ALLOWED_ORIGINS`, and later `RESEND_API_KEY` / `PORTAL_EMAIL_FROM`.
 
-| Page           | Address               | What it does                                                                                                                                                                |
-| -------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Messages       | `/espace/messages`    | The conversation with the LDgenX team, with attachments. A notice warns when files will be deleted soon.                                                                    |
-| Files          | `/espace/fichiers`    | The files the team dropped: note, size, date, the deletion date of each; download one or all.                                                                               |
-| Appointments   | `/espace/rendez-vous` | Request an appointment; see upcoming and past ones with their status; ask for another time; cancel; join the video call; add to Google Calendar or any calendar (`.ics`).   |
-| Account        | `/espace/compte`      | Profile, language (FR/EN), e-mail notifications, password.                                                                                                                  |
-| Sign-up        | `/espace/inscription` | Creates an account, with an optional first message to the team. The account stays _pending_ until the team approves it; meanwhile the client can already write to the team. |
-| Public booking | `/espace/reserver`    | A visitor without an account requests a discovery call (formats marked _open to visitors_).                                                                                 |
+```sh
+npm run supabase:setup  # apply unapplied migrations, seed missing settings, configure Auth/admin
+npm run supabase:deploy # deploy the Edge Function through the Management API
+```
 
-**Administration**
+Setup records migrations in `supabase_migrations.schema_migrations`. It preserves existing settings, accounts, administrator password and activation link. The first Auth configuration snapshot is kept locally in `supabase-auth-before.local`; it is never committed.
 
-| Page     | Address             | What it does                                                                                                                                                                                                                                                                          |
-| -------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Messages | `/admin/messages`   | Two tabs. _Clients:_ every conversation, unread first, searchable; reply with attachments. _Site form:_ the contact-form messages (new, read, handled), reply by e-mail, or invite the sender as a client.                                                                            |
-| Requests | `/admin/demandes`   | Appointment requests waiting for an answer: confirm, confirm at another time or with another person, or decline with a message. Below, the clients' requests for another time: accept or decline.                                                                                     |
-| Calendar | `/admin/agenda`     | Week, month and list views, for the whole team or one person. Each person's opening hours show in the week grid. Click a free time to create an appointment or block time; drag an appointment to move it. Each appointment opens a panel: contact, person, video link, move, cancel. |
-| Clients  | `/admin/clients`    | Search, filter by status, invite. Each client's page has three tabs: messages, files (drop, keep, delete, see what was downloaded) and appointments. Approve or disable an account.                                                                                                   |
-| Settings | `/admin/parametres` | _Availability:_ manual or automatic confirmation, each person's opening hours, the formats (name, length, open to visitors), booking rules, closed days. _Files:_ the weekly deletion. _Demo:_ reset the sample data (demo mode only).                                                |
+## Authentication and permissions
 
-Notifications (the bell, both sides) list what the other side did: a new message or file, a request, an answer, a change, a cancellation, a website message, a new account.
+- Supabase Auth owns passwords, password hashing, refresh tokens, email verification and recovery links. There is no application password table.
+- A database trigger creates a pending client profile after Auth signup. Role and status from user metadata are ignored. Only a trusted administrative operation can assign an administrator role.
+- The Edge Function verifies bearer tokens with `auth.getUser`, then loads the current database role/status on every request. Disabling an account blocks API and Data API access even while its old token remains valid.
+- Clients reach their own conversation, files, appointments and activity. Pending clients can write to the team while awaiting approval. Administrators manage clients, inquiries, schedules and settings.
+- Profile updates allow only names, organisation, phone, language and notification preferences. Arbitrary role, email, ownership and status patches are ignored or rejected.
+- Browser database roles have read grants and restrictive RLS policies; no direct write grants. Sensitive settings, reservations, limits, cron keys and email outbox have no browser read access.
+- The Edge gateway's JWT check is disabled because public booking/contact and publishable keys must work. Authentication is explicitly enforced inside the function on each protected route. This is not an unauthenticated administration API.
+- Browser access uses a strict CORS allowlist. Production CSP permits only the configured Supabase HTTPS and websocket origins in addition to the website itself.
 
-## Appointments
+The `/espace/nouveau-mot-de-passe` screen completes recovery and invitation links. Registration shows a confirmation notice when Auth requires email verification. Email-service errors are shown instead of a false success message. Login continuation paths are restricted to the user's own application area.
 
-**Statuses:** `requested` (waiting for the team), `confirmed`, `declined` (by the team), `cancelled` (by either side).
+## Persistence and file lifecycle
 
-**The flow:**
+Tables separate profiles, messages, files, inquiries, appointments, reservations, activity and settings. Each entity stores its typed API record in `data`, with indexed ownership columns and database consistency constraints. Profiles reference `auth.users` and client-owned records cascade with their profile.
 
-1. **A client or a visitor asks** for a free time. In manual mode the request waits for the team; in automatic mode (Settings) it is confirmed at once.
-2. **The team answers:** confirm (possibly at another time, with another person, or with a video link), or decline with a message.
-3. **The client may ask for another time.** The new time is stored in `change`, and the confirmed time stays held until the team answers. In automatic mode the change applies at once; a request still waiting simply changes.
-4. **The team may also act directly:** create an appointment (confirmed at once), move one, cancel one, block time for one person or the whole team.
+All writes run in database transactions. Related scheduling changes share a transaction-level advisory lock. A GiST exclusion constraint on reservation ranges independently rejects overlapping appointments for the same host, including pending changes. Manual team scheduling can go outside opening hours; client and visitor requests must match a current free slot. Booking uses Europe/Paris, including daylight-saving transitions.
 
-**Free times** (`computeSlots` in `lib/availability.ts`) start from each person's weekly openings, then remove:
+Files use random object names under `<client-id>/<file-id>`. Original filenames are metadata. The bucket has no browser upload/read policies. The API authorizes downloads before issuing a signed URL valid for 60 seconds and logging the download. Clients cannot delete team-uploaded files or change retention.
 
-- closed days and blocked times;
-- the minimum notice and anything beyond the booking horizon;
-- the times already held, with the gap between appointments: confirmed appointments, requests waiting for an answer, and changes waiting for an answer.
+Unkept files expire at the first configured weekly deletion that satisfies their minimum age. Expired records disappear from lists and cannot receive new signed links immediately; the maintenance job removes their underlying objects within its 15-minute interval. Kept files have no expiry. A private cleanup queue retries failed object deletion. The administrator's explicit “purge now” removes all unkept files, as the UI confirmation states.
 
-So two people can never request the same time.
+New objects are removed if an upload transaction fails. Deleting file metadata also queues Storage cleanup through a database trigger, including cascading account deletion. The current upload path is intended for documents and small analysis outputs; multi-gigabyte FASTQ/BAM delivery requires a separate large-file workflow.
 
-**The team schedules freely.** It may set any time, outside opening hours included (the form warns), but never two appointments at once for one person. Requests from clients and visitors, on the other hand, must fall on a free time.
+## API
 
-**Time zones:** opening hours, closed days and the calendar are in Europe/Paris. A visitor elsewhere also sees their own time.
+Base URL: `https://rkkvvqwgxbtnvewyrylj.supabase.co/functions/v1/portal`.
 
-## Endpoints
+JSON requests use the public `apikey`; signed-in calls also carry `Authorization: Bearer <Auth access token>`. Public calls never carry a server key. Errors are JSON `{ "code": "..." }` and are translated by the interface.
 
-**Format:**
+| Routes | Scope |
+| --- | --- |
+| `GET /health` | service liveness |
+| `GET /session`, `PATCH /me` | current profile |
+| `GET /team`, `/clients`, `/users/:id`; `PATCH /clients/:id`; `POST /clients/invitations` | people, with role/ownership checks |
+| `GET /threads`; `GET/POST /threads/:clientId/messages`; `POST /threads/:clientId/read` | conversation and multipart attachments |
+| `GET/POST /inquiries`; `PATCH /inquiries/:id` | public submission, team inbox |
+| `GET /files`; `POST /clients/:clientId/files`; `POST /files/:id/download`; `DELETE/PATCH /files/:id` | authorized private files |
+| `GET/PATCH /retention`; `POST /retention/purge` | retention; team-only changes |
+| `GET/PATCH /booking/config`; `GET /booking/slots`; `POST /booking/blocks`; `DELETE /booking/blocks/:id` | public sanitized configuration; team-only changes |
+| `GET/POST /appointments`; `POST /appointments/requests` | owned/team listing and reservations |
+| `POST /appointments/:id/{answer,change,change/answer,move,cancel}`; `PATCH /appointments/:id` | appointment lifecycle |
+| `GET /activity`; `POST /activity/read` | audience-filtered activity |
+| `POST /jobs` | scheduler-only, requires private job key |
 
-- JSON in and out, except uploads (multipart).
-- Errors answer `{ "code": "<code>" }`, with one of these codes: `invalid_credentials`, `email_taken`, `not_found`, `forbidden`, `unauthenticated`, `slot_taken`, `account_disabled`, `invalid_input`. The screens translate them.
-- Dates are ISO 8601 in UTC; days are `YYYY-MM-DD`.
+Signup, signin, signout, password change and recovery use the Supabase Auth SDK, rather than custom session endpoints. Live updates use Supabase Postgres Changes filtered by RLS, with a 30-second visible-tab polling fallback. No SSE endpoint or cookie server is required.
 
-| Method and path                                        | `PortalApi`                                                                                     | Who                                                      |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `GET /session`                                         | `currentUser` (401 when signed out)                                                             | anyone                                                   |
-| `POST /session`                                        | `signIn`                                                                                        | anyone                                                   |
-| `DELETE /session`                                      | `signOut`                                                                                       | signed in                                                |
-| `POST /accounts`                                       | `signUp` (creates a _pending_ client, signs in; the optional `message` starts the conversation) | anyone                                                   |
-| `POST /password-resets`                                | `requestPasswordReset` (always 204)                                                             | anyone                                                   |
-| `PATCH /me`, `POST /me/password`                       | `updateProfile`, `changePassword`                                                               | signed in                                                |
-| `GET /team`                                            | `listTeam` (names only)                                                                         | signed in                                                |
-| `GET /clients`, `POST /clients/invitations`            | `listClients`, `inviteClient`                                                                   | team                                                     |
-| `PATCH /clients/:id`                                   | `setAccountStatus` (`{ status }`)                                                               | team                                                     |
-| `GET /users/:id`                                       | `getUser`                                                                                       | team; a client: themselves                               |
-| `GET /threads`                                         | `listThreads` (a client gets their own only)                                                    | signed in                                                |
-| `GET /threads/:clientId/messages`                      | `listMessages`                                                                                  | that client, team                                        |
-| `POST /threads/:clientId/messages`                     | `sendMessage` (multipart: `body`, `files`)                                                      | that client, team                                        |
-| `POST /threads/:clientId/read`                         | `markThreadRead`                                                                                | that client, team                                        |
-| `GET /inquiries`, `PATCH /inquiries/:id`               | `listInquiries`, `setInquiryStatus` (`new`, `read`, `done`)                                     | team                                                     |
-| `POST /inquiries`                                      | `submitInquiry`, and the public contact form (see _Going live_)                                 | anyone                                                   |
-| `GET /files?clientId=`                                 | `listFiles` (files past their deletion are never listed)                                        | a client: own; team: all, or one client's                |
-| `POST /clients/:clientId/files`                        | `uploadFile` (multipart: `file`, `note`)                                                        | team; a client in their own space                        |
-| `POST /files/:id/download`                             | `downloadFile`: answers `{ url }`, a signed address valid a few minutes; logs the download      | that client, team                                        |
-| `DELETE /files/:id`                                    | `deleteFile`                                                                                    | uploader, team                                           |
-| `PATCH /files/:id`                                     | `keepFile` (`{ kept }`)                                                                         | team                                                     |
-| `GET /retention`                                       | `getRetention`                                                                                  | signed in                                                |
-| `PATCH /retention`, `POST /retention/purge`            | `updateRetention`, `purgeNow` (answers `{ count }`)                                             | team                                                     |
-| `GET /booking/config`                                  | `getBookingConfig` (blocks only for the team)                                                   | anyone                                                   |
-| `PATCH /booking/config`                                | `updateBookingConfig`                                                                           | team                                                     |
-| `GET /booking/slots?typeId=&from=&to=&hostId=&ignore=` | `availableSlots` (`ignore`: the appointment being changed, whose own time counts as free)       | anyone for formats open to visitors; signed in otherwise |
-| `GET /appointments?from=&to=`                          | `listAppointments`                                                                              | a client: own; team: all                                 |
-| `POST /appointments/requests`                          | `requestAppointment` (`guest` required without a session)                                       | a client; anyone for formats open to visitors            |
-| `POST /appointments`                                   | `scheduleAppointment` (confirmed at once)                                                       | team                                                     |
-| `POST /appointments/:id/answer`                        | `respondToRequest` (`{ accept, reply?, start?, hostId?, meetingUrl? }`)                         | team                                                     |
-| `POST /appointments/:id/change`                        | `requestChange` (`{ start, hostId? }`)                                                          | that client                                              |
-| `POST /appointments/:id/change/answer`                 | `respondToChange` (`{ accept, reply? }`)                                                        | team                                                     |
-| `POST /appointments/:id/move`                          | `moveAppointment` (`{ start, hostId? }`)                                                        | team                                                     |
-| `POST /appointments/:id/cancel`                        | `cancelAppointment` (`{ reason? }`)                                                             | that client, team; visitors through a signed link        |
-| `PATCH /appointments/:id`                              | `updateAppointment` (video link, person, subject)                                               | team                                                     |
-| `POST /booking/blocks`, `DELETE /booking/blocks/:id`   | `addBlock`, `removeBlock`                                                                       | team                                                     |
-| `GET /activity?limit=`, `POST /activity/read`          | `listActivity`, `markActivityRead` (`{ ids?, kinds?, clientId? }`)                              | signed in (filtered by audience)                         |
-| `GET /events`                                          | `subscribe`: server-sent events, one message whenever data concerning the user changes          | signed in                                                |
+Public mutation rate limits are persisted in Postgres: five contact submissions or eight booking mutations per hour per source address; authenticated mutations allow 120 per minute per account. Input validation limits field sizes, upload counts, query windows and scheduling settings. Logs contain error classifications, never request bodies, passwords, tokens or SQL text.
 
-**Live updates:** both sides stay up to date through `GET /events`. After each change, send an event to the client concerned and to every signed-in team member; the screens then reload what they show. The demo does the same between windows.
+## Email, when enabled later
 
-## Rules the server must enforce
+Supabase's default sender is restricted to project-team addresses and is not suitable for client delivery. See [Supabase SMTP documentation](https://supabase.com/docs/guides/auth/auth-smtp). The prepared integration supports [Resend's free plan](https://resend.com/pricing); no paid plan has been enabled.
 
-The demo applies these in the browser, which protects nothing. The server must check every one of them on every request.
+1. Create a free Resend account and verify a sender domain through DNS.
+2. Add the API key and a verified sender to `.env.supabase.local`:
 
-- **Ownership:**
-  - a client reaches only their own conversation, files, appointments and notifications;
-  - the team reaches everything;
-  - team accounts are never created by sign-up;
-  - a disabled account cannot sign in (`account_disabled`).
-- **Never sent to a client:** calendar blocks and their reasons, the website messages, other clients' data. Free times are given without saying who holds the others.
-- **Messages:** the team reads as one. A client's message counts as read by the team once any team member has opened it.
-- **Files:**
-  - a client deletes only the files they uploaded;
-  - a file past its deletion time is never listed or downloaded, even before the job removes it.
-- **Requests and changes from clients and visitors:**
-  - recompute the free times with the rules of `lib/availability.ts`, inside the transaction that writes the request;
-  - when two people ask for the same time, the second gets `slot_taken`, and the screen offers the remaining times.
-- **No double booking per person:**
-  - add a database constraint on held times. In PostgreSQL: a `holds` table (appointment, person, time range) with an exclusion constraint `EXCLUDE USING gist (host_id WITH =, span WITH &&)`;
-  - each confirmed appointment, request waiting for an answer and change waiting for an answer has one row;
-  - the gap between appointments is a booking rule for requests, not part of the constraint, because the team may set appointments back to back.
-- **Who does what:**
-  - only the client asks for a change;
-  - only the team confirms, declines, moves, creates appointments and blocks time;
-  - either side cancels.
-- **Times:** stored in UTC. Opening hours, closed days and the weekly deletion are expressed in Europe/Paris.
+   ```dotenv
+   RESEND_API_KEY=re_replace-with-private-key
+   PORTAL_EMAIL_FROM="LDgenX <notifications@ldgenx.fr>"
+   ```
 
-## Weekly deletion of files
+3. Run `npm run supabase:email`. This configures Auth SMTP and the Edge mail provider; it sends no test email.
+4. Verify a real signup, invitation and password reset, then verify transactional delivery and provider logs.
 
-- **When a file goes:** its `expires_at` is computed on upload with `expiryFor` (`lib/retention.ts`): the first deletion that leaves the file online for at least `minimumDays`. Recompute it when the settings change, and when the team keeps or stops keeping a file.
-- **The job:** a scheduled task, hourly or at the set hour:
-  - deletes the files where `kept = false` and `expires_at <= now()`, from storage and from the database;
-  - records a `purge` activity with the count.
-- **The reminder e-mail**, 24 to 48 hours before each deletion, goes to every client with files leaving (if their `notify.weeklyPurge` is on). It lists the files and flags those not yet downloaded.
-- **The notice** shown to clients comes from the settings; `{date}` is replaced by the next deletion.
+The outbox retries transient delivery failures, uses an idempotency key, observes notification preferences, discards stale notification work after two days, and retains delivery metadata for at most 30 days. Auth emails go directly through configured SMTP. Existing notification preferences do not imply mail delivery is enabled.
 
-## E-mails
+## Validation
 
-All transactional, in the account's language. A French or EU provider fits the GDPR best, for example Brevo.
+```sh
+npm run typecheck
+npm run check:backend
+npm run test:portal
+npm run lint
+npm run build
+npm run check:html
+npm run check:seo
+npm run check:typography
+npm run preview
+npm run check:http
+npm run check:supabase
+npm run check:portal-browser
+```
 
-| E-mail                                                                                                        | To                | When                                                     |
-| ------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------- |
-| New account to approve                                                                                        | team              | sign-up                                                  |
-| Account approved; invitation (choose a password)                                                              | client            | approval, invitation                                     |
-| Password reset (single-use link, about 1 h)                                                                   | client            | request                                                  |
-| New message                                                                                                   | the other side    | sending (if `notify.messages` allows)                    |
-| New file                                                                                                      | client            | the team drops a file (if `notify.files` allows)         |
-| New website message                                                                                           | team              | contact form                                             |
-| New appointment request; change requested; cancelled by the client                                            | team              | the client's or visitor's action                         |
-| Appointment confirmed (with `.ics` and video link), declined, moved or cancelled; change accepted or declined | client or visitor | the team's action (visitors get a signed link to cancel) |
-| Appointment reminder                                                                                          | both sides        | 24 h before                                              |
-| Files deleted soon                                                                                            | client            | before each weekly deletion                              |
+The remote tests create confirmed test users through the admin API without sending email, verify authorization against the real Edge API, exercise RLS directly, check private Storage and cleanup, race concurrent reservations, and remove their test data. Browser tests use two isolated sessions and verify bidirectional Realtime, persistence, password recovery, public booking and the actual website form. Screenshots and browser results are in `docs/qa-2026-10-26/`.
 
-## Files
+## Cloudflare Pages
 
-- **Storage:** a private S3-compatible bucket hosted in the EU, for example Scaleway or OVHcloud. Downloads go through short-lived signed addresses only; the bucket is never public.
-- **Large sequencing files:** FASTQ and BAM files can weigh tens of gigabytes. Use presigned multipart uploads straight to the bucket, with the API recording the file once the upload completes. The demo's single upload request is fine for documents, not for raw data.
-- **Uploads:** scan for viruses (ClamAV) before a file is offered for download; check size and type; keep the original file name for display only.
-- **Downloads:** log each one (`downloads`: who, when). The team uses this to see whether a client has fetched their results.
+Use Node 22, build `npm run build`, output `dist`. Public Supabase configuration is already in `.env.production`; hosting variables can override it. `portal.html`, portal rewrites, noindex rules and Supabase-compatible CSP are generated automatically.
 
-## Security
+Publish the rebuilt site to make `/espace` and `/admin` available on `www.ldgenx.fr`. Configure email before opening client registration. Google signup/signin can then be added through Supabase Auth using the same profiles and authorization rules; provider configuration and UI are intentionally absent in this phase.
 
-- **Passwords:** hashed with Argon2id, at least 8 characters. Rate-limit sign-in, sign-up, password resets, appointment requests from visitors and the contact form.
-- **Session:** an HTTP-only, `Secure`, `SameSite=Lax` cookie, renewed at sign-in, ending after a period of inactivity. Check the `Origin` header on every non-GET request.
-- **Team accounts:** two-factor authentication recommended.
-- **Headers on `/espace` and `/admin`:** a Content Security Policy and `frame-ancestors 'none'`.
-- **Audit:** the activity table keeps who did what and when.
+## Public navbar account button
 
-## GDPR
+The public header shows “Connexion” / “Sign in” without a session and “Mon compte” / “My account” with a checked user icon and green indicator when signed in. It listens to the same Supabase Auth session as the portal, including sign-in/sign-out in another tab. Auth is loaded in a browser effect so public prerendering remains safe. The `/espace` entry route resolves the current role on the server-backed portal session and sends the visitor to the appropriate client/admin area. The button carries the public page’s language into the login screen. Compact layouts keep the account control visible; the quote request stays available in the mobile menu and page content.
 
-- **Privacy policy:** update it to cover:
-  - client accounts and their messages;
-  - shared files and their weekly deletion;
-  - appointment data, from clients and visitors;
-  - the website messages;
-  - how long each is kept;
-  - the processors (hosting, storage, e-mail).
-- **Consent:** record the consent checkbox with its date, at sign-up and for visitors' requests.
-- **Retention:** set retention periods (for example, inactive accounts after three years, visitors' appointments and website messages after twelve months) and apply them with a scheduled task.
-- **Requests:** answer export and deletion requests; the account page directs clients to info@ldgenx.fr.
-
-## Suggested stack
-
-Any stack that implements the contract works. A small one:
-
-- **API:** Node.js (Fastify or Hono) with PostgreSQL;
-- **Storage and e-mail:** an S3-compatible bucket and Brevo;
-- **Hosting:** in France, for example Scaleway or Clever Cloud.
-
-Supabase in its EU region is a quicker alternative: it provides authentication, database, storage and live updates, with row-level security policies written from the rules above.
-
-## Going live, in order
-
-1. **API:** build it to this contract and serve it at `/api` on the site's domain.
-2. **Team accounts:** create one account per team member, with two-factor authentication. The first one uses the address Maeva Leitwein gave on 23 October 2026 for the administration (in her e-mail; kept out of this repository). In Settings, check each person's opening hours and which people take appointments.
-3. **Build:** with `VITE_PORTAL_API=http`, then run through the demo's scenarios, with a client and a team member in two windows:
-   - sign-up and approval;
-   - messages both ways, with attachments;
-   - a file dropped by the team, then downloaded;
-   - a request, then confirmed; another declined; a change accepted; a move; a cancellation;
-   - a visitor's request from `/espace/reserver`;
-   - the weekly deletion, with the reminder.
-4. **Public site:**
-   - **Booking:** replace `appointment` in `src/content/site.ts` (today the cal.com link) by `/espace/reserver`. Every "Prendre rendez-vous" button then opens the new calendar. Do not switch before the backend is live: in demo mode a request stays in the visitor's browser and the team never sees it.
-   - **Contact form:** set `VITE_CONTACT_ENDPOINT` to `https://<domain>/api/inquiries`. `POST /inquiries` must then also accept the form's multipart fields (`name`, `email`, `organization`, `sector`, `material`, `timeline`, `message`, `privacy`), answer 2xx in JSON, and store `organization` as `organisation`. The form has no language field: add a hidden `locale` input, or store `fr`. The messages then arrive in the team's inbox.
-   - **Links:** add an "Espace client" link to the header and footer.
-5. **Video links:** one per appointment (Google Meet through the Calendar API, Microsoft Teams, or a Jitsi or Whereby room), or one fixed room per person.
-6. **The team's own calendars** (recommended): read their busy times (Google or Microsoft free/busy) and treat them as blocks; write confirmed appointments into them. Personal calendars then stay the reference.
-7. **Privacy policy:** publish the update.
+Run `npm run check:account-browser` against the local production preview to check real client/admin sessions, persistence, cross-tab login/logout, production CSP and responsive header bounds. This test uses temporary accounts and deletes them afterward.

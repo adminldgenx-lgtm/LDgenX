@@ -23,7 +23,7 @@ export const works: Work[] = [
     image: 'cas-truites',
     facts: [
       { label: 'Species', value: 'Brown trout, brook trout' },
-      { label: 'Markers', value: '196K and 11,803 SNP markers' },
+      { label: 'Markers', value: '196,639 SNPs (brown trout); about 33,000 SNPs (brook trout)' },
       { label: 'Publications', value: 'Leitwein et al. 2016, 2019 and 2021' },
     ],
     service: 'genomique-des-populations',
@@ -49,8 +49,8 @@ export const works: Work[] = [
       {
         title: 'Genomic landscape of domestic ancestry in brook trout',
         paragraphs: [
-          'Brook trout (*Salvelinus fontinalis*) is a species of high socio-economic interest in Canada. In the province of Quebec, a domestic strain was created about a hundred years ago to restock rivers for sport fishing. Each year, more than 650 tonnes of brook trout are released into Canadian rivers, promoting hybridisation between domestic and wild individuals ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
-          'Using 11,803 SNP markers, the ancestry of individuals could be inferred and the proportion of domestic alleles in wild rivers estimated. Using linkage information and the proportion of domestic ancestry, the hybrid classes of individuals could be identified. Individuals were categorised either as (i) “recent hybrids”, offspring of early generations of crosses between wild and domestic individuals (< 10 generations), or (ii) “ancient hybrids”, offspring of distant admixture (> 10 generations). Once individuals were assigned to their hybrid class, the rate of introgression of domestic alleles along the genome could be estimated. This approach revealed high variability, with genomic regions of high or low domestic ancestry that are likely to be under natural selection (Figure 1; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
+          'Brook trout (*Salvelinus fontinalis*) is stocked for recreational fishing in Québec. These introductions have produced admixture between wild populations and a domestic strain, investigated by [Leitwein et al. (2019)](https://doi.org/10.1111/mec.15256).',
+          'The published article analyses about 33,000 mapped SNPs in 611 individuals from 24 supplemented populations. Ancestry tracts distinguish early- and later-generation hybrids and estimate domestic introgression along the genome. Regions favouring or disfavouring this ancestry vary with the scale studied and the recombination context (Figure 1; [Leitwein et al. 2019](https://doi.org/10.1111/mec.15256)).',
         ],
         figure: {
           image: 'fig-omble-ancestralite',
@@ -64,7 +64,7 @@ export const works: Work[] = [
       {
         title: 'Effects of introducing domestic alleles',
         paragraphs: [
-          'In brook trout, we observed variations of domestic ancestry in wild populations. For hybrid individuals, mainly beneficial effects of the introgression of domestic alleles into wild populations were observed. Domestic alleles bring (i) diversity to regions of the “wild” genome with low genetic diversity and (ii) the masking of potentially deleterious recessive alleles.',
+          'In brook trout, some patterns are consistent with a favourable effect from masking potentially deleterious recessive alleles in wild populations. The 2019 and 2021 results nevertheless show effects that vary among populations and genomic regions; they do not establish that every introduction of domestic alleles is beneficial.',
           'Beyond these potential beneficial effects, however, purging of domestic alleles was also observed. These mechanisms reflect negative effects of introducing domestic alleles into some regions of the genome ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256) and [2021](https://pubmed.ncbi.nlm.nih.gov/33916757/)).',
           'For example, on linkage group 26 (Figure 2), an excess of domestic ancestry associated with potentially deleterious recessive alleles can be observed.',
         ],
@@ -85,11 +85,11 @@ export const works: Work[] = [
     title: 'Traceability',
     category: 'Scientific work · population genomics',
     summary:
-      'Origin of the trout of the Orb basin, age of domestic introductions and development of a high-density trout SNP chip.',
+      'Ancestry of trout in the Orb basin, timing of domestic introductions, and development of a SNP resource and genotyping panel.',
     image: 'fig-puce-truite',
     facts: [
       { label: 'Species', value: 'Brown trout (Salmo trutta)' },
-      { label: 'Markers', value: '86,175 SNPs (RAD sequencing), 12,204-SNP chip' },
+      { label: 'Markers', value: '75,684 mapped SNPs; 12,204-SNP resource; 192-SNP panel' },
       { label: 'Publications', value: 'Leitwein et al. 2018, Saint-Pé et al. 2019' },
     ],
     service: 'genomique-des-populations',
@@ -99,7 +99,7 @@ export const works: Work[] = [
         title: 'Genomic analyses for traceability: the trout of the Orb',
         paragraphs: [
           'The Mediterranean basin of the Orb (Hérault), a river in southern France covering 1,580 km², has been restocked since the late 1960s with domestic brown trout (*Salmo trutta*) of Atlantic and Mediterranean origin, to increase the local Mediterranean populations for recreational fishing.',
-          'In the study by [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), 86,175 SNP (single nucleotide polymorphism) markers from RAD sequencing were used to identify the proportion of domestic (Atlantic and Mediterranean) alleles in the wild populations of the Orb basin.',
+          'In [Leitwein et al. (2018)](https://doi.org/10.1111/mec.14816), 75,684 mapped SNPs obtained by ddRAD-seq described the contributions of Atlantic and Mediterranean domestic strains to wild populations in the Orb basin.',
           'This identified individuals of Atlantic domestic origin (fish-farm escapees) in the Gravezon river, individuals of Mediterranean domestic origin in the Mare river, and hybrid individuals carrying Atlantic and Mediterranean domestic alleles in all three wild rivers (Figure 1).',
         ],
         figure: {
@@ -128,11 +128,11 @@ export const works: Work[] = [
         },
       },
       {
-        title: 'Developing genomic tools: the high-density trout chip',
+        title: 'Developing genomic tools: a SNP resource and a targeted panel',
         paragraphs: [
-          'Following this study, we developed a high-density chip of 12,204 SNP markers spread evenly along the 40 linkage groups (LG) of brown trout (*Salmo trutta*) (Figure 3; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).',
-          'This chip allows low-cost, regular and comparable management across population genetic studies.',
-          'It is effective both at distinguishing trout of Atlantic and Mediterranean origin and at measuring hybridisation levels.',
+          '[Saint-Pé et al. (2019)](https://doi.org/10.1186/s12864-019-5958-9) identified a resource of 12,204 SNPs distributed across the 40 linkage groups of brown trout (*Salmo trutta*). From that resource, they developed a low-density panel of 192 SNPs (Figure 3).',
+          'The panel was evaluated in 1,862 individuals from five rivers. It provides a reproducible and cost-effective genotyping tool for population genetic studies.',
+          'In the populations tested, it distinguishes Atlantic and Mediterranean lineages and supports investigation of admixture with domestic strains.',
         ],
         figure: {
           image: 'fig-puce-truite',
@@ -184,7 +184,7 @@ export const works: Work[] = [
       {
         title: 'Studying genetic values to select traits of interest',
         paragraphs: [
-          'Genomic selection has been used to improve many traits of interest with fairly high heritability. This type of approach has been applied successfully to many farmed species, and recently to aquaculture species for pathogen resistance. It has delivered an average genetic gain of 12.5% per generation for resistance to various diseases. Genomic selection is therefore a promising approach to fight diseases affecting wild as well as domestic populations ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
+          'Genomic selection uses markers distributed across the genome to estimate breeding values. In aquaculture, it can improve the accuracy of predictions for resistance to some diseases compared with a pedigree-only approach. Gains nevertheless depend on the trait, reference population and breeding programme ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
           'In a reference article on genomic prediction, [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0) showed similar genomic prediction using either (i) a training set of animals from genetically related lines or (ii) a training set from the target population. Combining related data with data from the target population can improve accuracy for some traits (Figure 3).',
           'These quantitative genetics results improve the design of reference populations, especially for starting genomic selection in populations with few historical samples.',
         ],

@@ -5,6 +5,7 @@ export const ui = {
   ogLocale: 'en_GB',
   common: {
     home: 'Home',
+    clientArea: 'Client area',
     newTab: ' (opens in a new tab)',
     breadcrumb: 'Breadcrumb',
     skip: 'Skip to content',
@@ -19,6 +20,9 @@ export const ui = {
     figure: 'Figure',
   },
   header: {
+    signIn: 'Sign in',
+    account: 'My account',
+    signedIn: 'Signed in',
     servicesTitle: 'One question.\nComplementary expertise.',
     applicationsTitle: 'Knowledge of life,\nin your field.',
     mainNav: 'Main navigation',
@@ -159,7 +163,8 @@ export const ui = {
     layers: 'Show on the map',
     outcome: 'What the study brings',
     cta: 'See the study',
-    sectionLabel: 'Case study: fish in the ports and estuaries of Artois-Picardie',
+    sectionLabel:
+      'Case study: fish in the ports and estuaries of Artois-Picardie',
     skip: 'Skip the study',
     mapData: 'Map data',
     srSites: 'The eight sampled sites',
@@ -277,7 +282,8 @@ export const ui = {
     text: 'The filtration equipment we offer for environmental DNA, with its characteristics.',
     specs: 'Characteristics',
     prices: 'Prices',
-    priceNote: 'A quote specifies the equipment, its availability and the terms of sale.',
+    priceNote:
+      'A quote specifies the equipment, its availability and the terms of sale.',
     quote: 'Ask for a quote for this equipment',
   },
   studyPage: {
@@ -295,7 +301,8 @@ export const ui = {
     studiesSr: 'The studies',
     worksEyebrow: 'Scientific work',
     worksTitle: 'The team’s\nscientific work.',
-    worksText: 'Research published by the team members, with its figures and references.',
+    worksText:
+      'Research published by the team members, with its figures and references.',
     publications: 'All publications',
   },
   results: {
@@ -455,7 +462,8 @@ export const ui = {
     search: 'Search the resources',
     placeholder: 'Search a topic',
     count: (n: number) => `${n} resource${n > 1 ? 's' : ''}`,
-    empty: 'No resource for this search. Try another topic or select “Explore all”.',
+    empty:
+      'No resource for this search. Try another topic or select “Explore all”.',
     contents: 'Article contents',
     contentsTitle: 'IN THIS RESOURCE',
     expertise: 'Discover the related service',
@@ -499,11 +507,14 @@ export const ui = {
     contact: 'Contact LDgenX',
   },
   privacy: {
+    portalTitle: 'Client area',
+    portal:
+      'The optional client area uses Supabase in the Europe West (Ireland) region for authentication, profiles, conversations, appointments and files. A sign-in session is stored in your browser. Each client can access their own data; the LDgenX team can access it to provide the service. Files show their automatic deletion date in the client area, except documents kept by the team.',
     navigationTitle: 'Browsing',
     navigation:
-      'This site uses no audience analytics, no advertising and no tracking cookies, and requires no account. Fonts and images are served from the site. It is hosted by Cloudflare, which processes the technical data needed to deliver the pages and keep them secure, such as the IP address.',
+      'This site uses no audience analytics, no advertising and no tracking cookies, and browsing the public website requires no account. Fonts and images are served from the site. It is hosted by Cloudflare, which processes the technical data needed to deliver the pages and keep them secure, such as the IP address.',
     formTitle: 'Contact form',
-    form: 'The information entered in the form is passed on to the LDgenX team through the form delivery service chosen by the company, for the sole purpose of answering your request. It is not stored in browser storage.',
+    form: 'The information entered in the form is passed on to the LDgenX team through Supabase in the Europe West (Ireland) region, for the sole purpose of answering your request. It is not stored in browser storage.',
     mailtoTitle: 'Contact form',
     mailto:
       'The form prepares a message in your mail application. The data entered are not stored in browser storage and are not sent to a form server by this site. Sending remains your decision, from your mail application.',
@@ -511,11 +522,12 @@ export const ui = {
       'The message contains the information you entered so the LDgenX team can understand your request. A clipboard copy is only created if you use the “Copy my message” action.',
     linksTitle: 'External links',
     links:
-      'The booking link and partner websites open separate services. Their operation and their processing of data are governed by their own policies.',
+      'Partner websites open separate services. Their operation and their processing of data are governed by their own policies.',
     dataTitle: 'Your data and your rights',
     dataBefore:
       'LDgenX SAS is the controller of the messages you send it. They are used only to answer your request and for any relationship that follows, and are kept for at most three years after the last exchange. To access, correct or erase your data, write to ',
-    dataAfter: '. You may also lodge a complaint with the French data protection authority (CNIL).',
+    dataAfter:
+      '. You may also lodge a complaint with the French data protection authority (CNIL).',
   },
   contactPage: {
     mailGreeting: 'Hello LDgenX team,',
@@ -647,7 +659,8 @@ export const ui = {
     partners: {
       label: 'Partners',
       title: 'Partners and scientific ecosystem | LDgenX',
-      description: 'The research institutes, supporters and organisations that trust LDgenX.',
+      description:
+        'The research institutes, supporters and organisations that trust LDgenX.',
     },
     resources: {
       label: 'Resources',
@@ -672,7 +685,7 @@ export const ui = {
       label: 'Privacy',
       title: 'Privacy policy | LDgenX',
       description:
-        'Information on data and privacy when using this site and preparing an email to LDgenX.',
+        'Information on personal data, privacy and your rights when using LDgenX’s website and contacting the team.',
     },
     terms: {
       label: 'Terms of sale',
@@ -680,7 +693,8 @@ export const ui = {
       description: 'LDgenX’s general terms of sale and services, in French.',
     },
     llms: {
-      summary: 'French company applying genomics to biodiversity, agriculture and aquaculture.',
+      summary:
+        'French company applying genomics to biodiversity, agriculture and aquaculture.',
       expertises: 'Services',
       applications: 'Applications',
       more: 'Studies, scientific work and references',

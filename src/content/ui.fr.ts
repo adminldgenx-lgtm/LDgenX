@@ -5,6 +5,7 @@ export const ui = {
   ogLocale: 'fr_FR',
   common: {
     home: 'Accueil',
+    clientArea: 'Espace client',
     newTab: ' (nouvel onglet)',
     breadcrumb: 'Fil d’Ariane',
     skip: 'Aller au contenu',
@@ -19,6 +20,9 @@ export const ui = {
     figure: 'Figure',
   },
   header: {
+    signIn: 'Connexion',
+    account: 'Mon compte',
+    signedIn: 'Connecté',
     servicesTitle: 'Une question.\nDes expertises complémentaires.',
     applicationsTitle: 'La connaissance du vivant,\nsur votre terrain.',
     mainNav: 'Navigation principale',
@@ -159,7 +163,8 @@ export const ui = {
     layers: 'Voir sur la carte',
     outcome: 'Ce que l’étude apporte',
     cta: 'Voir l’étude',
-    sectionLabel: 'Étude de cas : l’ichtyofaune des ports et estuaires d’Artois-Picardie',
+    sectionLabel:
+      'Étude de cas : l’ichtyofaune des ports et estuaires d’Artois-Picardie',
     skip: 'Passer l’étude',
     mapData: 'Données cartographiques',
     srSites: 'Les huit sites échantillonnés',
@@ -172,7 +177,11 @@ export const ui = {
       { id: 'slack', name: 'Slack', area: 'Pas-de-Calais' },
       { id: 'boulogne', name: 'Boulogne', area: 'Pas-de-Calais' },
       { id: 'canche', name: 'Baie de la Canche', area: 'Pas-de-Calais' },
-      { id: 'authie', name: 'Baie de l’Authie', area: 'Pas-de-Calais et Somme' },
+      {
+        id: 'authie',
+        name: 'Baie de l’Authie',
+        area: 'Pas-de-Calais et Somme',
+      },
       { id: 'somme', name: 'Estuaire de la Somme', area: 'Somme' },
     ],
     towns: {} as Record<string, string>,
@@ -268,7 +277,8 @@ export const ui = {
     text: 'Le matériel de filtration que nous proposons pour l’ADN environnemental, avec ses caractéristiques.',
     specs: 'Caractéristiques',
     prices: 'Prix',
-    priceNote: 'Un devis précise le matériel, sa disponibilité et les conditions de vente.',
+    priceNote:
+      'Un devis précise le matériel, sa disponibilité et les conditions de vente.',
     quote: 'Demander un devis pour ce matériel',
   },
   studyPage: {
@@ -458,7 +468,8 @@ export const ui = {
     chainTitle: 'Du terrain à l’analyse.\nDe l’analyse au sens.',
     chainNote:
       'Conception scientifique, échantillonnage, analyses moléculaires, séquençage, bioinformatique et interprétation : nous relions les étapes au contexte de votre projet.',
-    imageAlt: 'Travail de laboratoire associant analyses moléculaires et données génomiques',
+    imageAlt:
+      'Travail de laboratoire associant analyses moléculaires et données génomiques',
     missionEyebrow: 'Notre mission',
     missionTitle: 'La génomique,\nau service des décisions.',
     deeptechTitle: 'La recherche\nau cœur de l’entreprise.',
@@ -492,11 +503,14 @@ export const ui = {
     contact: 'Contacter LDgenX',
   },
   privacy: {
+    portalTitle: 'Espace client',
+    portal:
+      'L’espace client facultatif utilise Supabase, dans la région Europe Ouest (Irlande), pour l’authentification, le profil, les échanges, les rendez-vous et les fichiers. Une session de connexion est conservée dans votre navigateur. Chaque client accède à ses propres données ; l’équipe LDgenX y accède pour assurer le service. La date de suppression automatique des fichiers est affichée dans l’espace client, sauf pour les documents conservés par l’équipe.',
     navigationTitle: 'Navigation',
     navigation:
-      'Ce site n’utilise ni outil de mesure d’audience, ni publicité, ni cookie de suivi, et ne demande aucun compte. Les polices et les images sont servies depuis le site. Il est hébergé par Cloudflare, qui traite les données techniques nécessaires à l’affichage des pages et à leur sécurité, comme l’adresse IP.',
+      'Ce site n’utilise ni outil de mesure d’audience, ni publicité, ni cookie de suivi, et la consultation du site public ne demande aucun compte. Les polices et les images sont servies depuis le site. Il est hébergé par Cloudflare, qui traite les données techniques nécessaires à l’affichage des pages et à leur sécurité, comme l’adresse IP.',
     formTitle: 'Formulaire de contact',
-    form: 'Les informations saisies dans le formulaire sont transmises à l’équipe LDgenX par l’intermédiaire du service d’envoi de formulaires retenu par l’entreprise, dans le seul but de répondre à votre demande. Elles ne sont pas enregistrées dans un stockage du navigateur.',
+    form: 'Les informations saisies dans le formulaire sont transmises à l’équipe LDgenX via Supabase, dans la région Europe Ouest (Irlande), dans le seul but de répondre à votre demande. Elles ne sont pas enregistrées dans un stockage du navigateur.',
     mailtoTitle: 'Formulaire de contact',
     mailto:
       'Le formulaire prépare un message dans votre application de messagerie. Les données saisies ne sont pas enregistrées dans un stockage du navigateur et ne sont pas transmises à un serveur de formulaire par ce site. L’envoi reste à votre initiative dans votre messagerie.',
@@ -504,7 +518,7 @@ export const ui = {
       'Le message contient les informations que vous avez renseignées pour permettre à l’équipe LDgenX de comprendre votre demande. Une copie dans le presse-papiers n’est créée que si vous utilisez l’action « Copier mon message ».',
     linksTitle: 'Liens externes',
     links:
-      'Le lien de rendez-vous et les sites des partenaires ouvrent des services distincts. Leur fonctionnement et leur traitement des données sont régis par leurs propres politiques.',
+      'Les sites des partenaires ouvrent des services distincts. Leur fonctionnement et leur traitement des données sont régis par leurs propres politiques.',
     dataTitle: 'Vos données et vos droits',
     dataBefore:
       'LDgenX SAS est responsable du traitement des messages que vous lui adressez. Ils servent uniquement à répondre à votre demande et à la relation qui peut en découler, et sont conservés au plus trois ans après le dernier échange. Pour accéder à vos données, les rectifier ou les faire effacer, écrivez à ',
@@ -667,7 +681,7 @@ export const ui = {
       label: 'Confidentialité',
       title: 'Politique de confidentialité | LDgenX',
       description:
-        'Informations sur les données et la confidentialité lors de l’utilisation de ce site et de la préparation d’un e-mail à LDgenX.',
+        'Informations sur vos données personnelles, la confidentialité et vos droits lors de l’utilisation du site LDgenX et de vos échanges avec l’équipe.',
     },
     terms: {
       label: 'CGV',

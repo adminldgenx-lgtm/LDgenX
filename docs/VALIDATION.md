@@ -1,5 +1,7 @@
 # Validation du frontend
 
+**Contrôle actuel — 26 octobre 2026 :** [contenus et préproduction](PRE-PROD-REVIEW-2026-10-26.md), [backend Supabase](qa-2026-10-26/README.md). Les sections ci-dessous conservent les résultats et limites des passes antérieures.
+
 6 octobre 2026 — version locale de production, animations et parcours mobile améliorés, nettoyage éditorial demandé, puis refonte lisibilité / preuves / conversion.
 
 ## Refonte lisibilité, preuves et conversion

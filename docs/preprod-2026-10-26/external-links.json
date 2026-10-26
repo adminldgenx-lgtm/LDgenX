@@ -1,0 +1,925 @@
+[
+  {
+    "url": "https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental",
+    "pages": [
+      "/",
+      "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "/en",
+      "/en/case-studies/artois-picardie-fish-survey"
+    ],
+    "status": 200,
+    "finalUrl": "https://www.eau-artois-picardie.fr/etude-de-la-biodiversite-de-lichtyofaune-dans-les-estuaires-et-les-ports-avec-ladn-environnemental",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://www.openstreetmap.org/copyright",
+    "pages": [
+      "/",
+      "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "/en",
+      "/en/case-studies/artois-picardie-fish-survey"
+    ],
+    "status": 200,
+    "finalUrl": "https://www.openstreetmap.org/copyright",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://www.linkedin.com/company/ldgenx/",
+    "pages": [
+      "/",
+      "/services",
+      "/services/adn-environnemental-adne",
+      "/services/genomique-des-populations",
+      "/services/analyse-des-communautes-microbiennes",
+      "/services/selection",
+      "/services/bioinformatique",
+      "/services/sequencage-dpcr",
+      "/services/tests-adn-cibles",
+      "/services/recherche-developpement",
+      "/services/materiel",
+      "/services/conservation",
+      "/services/tracabilite",
+      "/services/selection-genomique",
+      "/applications",
+      "/applications/biodiversite-conservation",
+      "/applications/aquaculture-peche",
+      "/applications/agriculture-agroecologie",
+      "/applications/environnement-bureaux-d-etudes",
+      "/applications/recherche-publique-privee",
+      "/applications/energies-renouvelables",
+      "/etudes-de-cas",
+      "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "/etudes-de-cas/genomique-vanneau-huppe",
+      "/etudes-de-cas/demogenetique-ours-pyrenees",
+      "/etudes-de-cas/adne-estuaire-milieu-turbide",
+      "/etudes-de-cas/biodiversite-eolien-offshore",
+      "/etudes-de-cas/communautes-microplastiques",
+      "/innovation",
+      "/innovation/dna-ecotrace",
+      "/innovation/edna-clock",
+      "/a-propos",
+      "/a-propos/equipe",
+      "/equipe/dr-maeva-leitwein",
+      "/equipe/dr-emilie-delpuech",
+      "/equipe/dr-damien-crestel",
+      "/recherche",
+      "/recherche/levure-replication-adn-polymerase-alpha-2026",
+      "/recherche/bar-cortisol-temperature-2026",
+      "/recherche/bar-sex-ratio-temperature-gwas-2026",
+      "/recherche/bar-survie-larvaire-introgression-2026",
+      "/recherche/poissons-tolerance-rechauffement-taille-2025",
+      "/recherche/genomes-becasse-becassine-2025",
+      "/recherche/bar-introgression-fitness-2025",
+      "/recherche/bar-croissance-larvaire-temperature-2025",
+      "/recherche/bar-selection-efficacite-alimentaire-2025",
+      "/recherche/bar-introgression-teneur-gras-2024",
+      "/recherche/bar-determinisme-sexe-energie-2024",
+      "/recherche/bar-temperature-femelles-2024",
+      "/recherche/bar-resistance-vnn-2023",
+      "/recherche/capelan-methylation-reproduction-2023",
+      "/recherche/truite-pigmentation-gwas-2023",
+      "/recherche/saumon-coho-elevage-expression-2022",
+      "/recherche/omble-ascendance-repeuplement-2021",
+      "/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "/recherche/saumon-coho-epigenome-germinal-2021",
+      "/recherche/haplotypes-genomique-conservation-2020",
+      "/recherche/omble-diversite-petites-populations-2020",
+      "/recherche/porc-prediction-genomique-2020",
+      "/recherche/omble-recombinaison-ascendance-2019",
+      "/recherche/truite-ressource-snp-2019",
+      "/recherche/truite-trois-ascendances-2018",
+      "/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "/recherche/truite-carte-liaison-2017",
+      "/recherche/truite-orb-diversite-2016",
+      "/faq",
+      "/glossaire",
+      "/plan-du-site",
+      "/a-propos/partenaires",
+      "/ressources",
+      "/ressources/comprendre-adn-environnemental",
+      "/ressources/bioinformatique-question-biologique",
+      "/ressources/genomique-filiere-aquacole",
+      "/contact",
+      "/mentions-legales",
+      "/politique-confidentialite",
+      "/cgvs/cgvs",
+      "/en",
+      "/en/services",
+      "/en/services/environmental-dna-edna",
+      "/en/services/population-genomics",
+      "/en/services/microbial-community-analysis",
+      "/en/services/genomic-selection",
+      "/en/services/bioinformatics",
+      "/en/services/sequencing-dpcr",
+      "/en/services/targeted-dna-tests-dpcr",
+      "/en/services/research-development",
+      "/en/services/equipment",
+      "/en/services/conservation",
+      "/en/services/traceability",
+      "/en/services/genomic-selection-page",
+      "/en/applications",
+      "/en/applications/biodiversity-conservation",
+      "/en/applications/aquaculture-fisheries",
+      "/en/applications/agriculture-agroecology",
+      "/en/applications/environment-consultancies",
+      "/en/applications/public-private-research",
+      "/en/applications/renewable-energy",
+      "/en/case-studies",
+      "/en/case-studies/artois-picardie-fish-survey",
+      "/en/case-studies/northern-lapwing-genomics",
+      "/en/case-studies/pyrenean-brown-bear-demogenetics",
+      "/en/case-studies/estuary-edna-turbid-water",
+      "/en/case-studies/offshore-wind-biodiversity",
+      "/en/case-studies/microplastic-microbial-communities",
+      "/en/innovation",
+      "/en/innovation/dna-ecotrace",
+      "/en/innovation/ednaclock",
+      "/en/about-us",
+      "/en/about-us/team",
+      "/en/team/dr-maeva-leitwein",
+      "/en/team/dr-emilie-delpuech",
+      "/en/team/dr-damien-crestel",
+      "/en/research",
+      "/en/research/yeast-dna-replication-polymerase-alpha-2026",
+      "/en/research/sea-bass-cortisol-temperature-2026",
+      "/en/research/sea-bass-sex-ratio-gwas-2026",
+      "/en/research/sea-bass-larval-survival-introgression-2026",
+      "/en/research/fish-warming-tolerance-body-mass-2025",
+      "/en/research/woodcock-jack-snipe-genomes-2025",
+      "/en/research/sea-bass-introgression-fitness-2025",
+      "/en/research/sea-bass-larval-growth-temperature-2025",
+      "/en/research/sea-bass-feed-efficiency-selection-2025",
+      "/en/research/sea-bass-introgression-muscle-fat-2024",
+      "/en/research/sea-bass-sex-determination-energy-2024",
+      "/en/research/sea-bass-temperature-female-ratio-2024",
+      "/en/research/sea-bass-vnn-resistance-2023",
+      "/en/research/capelin-dna-methylation-2023",
+      "/en/research/brown-trout-pigmentation-gwas-2023",
+      "/en/research/coho-salmon-hatchery-expression-2022",
+      "/en/research/stocking-ancestry-landscape-2021",
+      "/en/research/pig-feed-efficiency-gwas-2021",
+      "/en/research/salmon-germline-epigenome-2021",
+      "/en/research/haplotypes-conservation-genomics-2020",
+      "/en/research/brook-charr-small-populations-2020",
+      "/en/research/pig-genomic-prediction-2020",
+      "/en/research/brook-charr-recombination-ancestry-2019",
+      "/en/research/brown-trout-snp-array-2019",
+      "/en/research/brown-trout-three-way-admixture-2018",
+      "/en/research/rainbow-trout-san-francisco-2017",
+      "/en/research/brown-trout-linkage-map-2017",
+      "/en/research/brown-trout-orb-diversity-2016",
+      "/en/faq",
+      "/en/glossary",
+      "/en/site-map",
+      "/en/about-us/partners",
+      "/en/resources",
+      "/en/resources/understanding-environmental-dna",
+      "/en/resources/bioinformatics-biological-question",
+      "/en/resources/genomics-aquaculture",
+      "/en/contact",
+      "/en/legal-notice",
+      "/en/privacy-policy"
+    ],
+    "status": 200,
+    "finalUrl": "https://www.linkedin.com/company/ldgenx/",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27666575/",
+    "pages": [
+      "/services/conservation",
+      "/recherche/truite-orb-diversite-2016",
+      "/en/services/conservation",
+      "/en/research/brown-trout-orb-diversity-2016"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/mec.15256",
+    "pages": [
+      "/services/conservation",
+      "/recherche",
+      "/recherche/omble-recombinaison-ascendance-2019",
+      "/en/services/conservation",
+      "/en/research",
+      "/en/research/brook-charr-recombination-ancestry-2019"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+    "pages": [
+      "/services/conservation",
+      "/en/services/conservation"
+    ],
+    "status": 403,
+    "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1111/mec.15256",
+    "classification": "unverified"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33916757/",
+    "pages": [
+      "/services/conservation",
+      "/recherche/omble-ascendance-repeuplement-2021",
+      "/en/services/conservation",
+      "/en/research/stocking-ancestry-landscape-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/mec.14816",
+    "pages": [
+      "/services/tracabilite",
+      "/recherche",
+      "/recherche/truite-trois-ascendances-2018",
+      "/en/services/traceability",
+      "/en/research",
+      "/en/research/brown-trout-three-way-admixture-2018"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30054960/",
+    "pages": [
+      "/services/tracabilite",
+      "/recherche/truite-trois-ascendances-2018",
+      "/en/services/traceability",
+      "/en/research/brown-trout-three-way-admixture-2018"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1186/s12864-019-5958-9",
+    "pages": [
+      "/services/tracabilite",
+      "/recherche",
+      "/recherche/truite-ressource-snp-2019",
+      "/en/services/traceability",
+      "/en/research",
+      "/en/research/brown-trout-snp-array-2019"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23533",
+    "pages": [
+      "/services/recherche-developpement",
+      "/applications/recherche-publique-privee",
+      "/en/services/research-development",
+      "/en/applications/public-private-research"
+    ],
+    "status": 200,
+    "finalUrl": "https://entreprendre.service-public.gouv.fr/vosdroits/F23533",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://doi.org/10.1101/2022.05.31.494209",
+    "pages": [
+      "/services/selection-genomique",
+      "/en/services/genomic-selection-page"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.3389/fgene.2021.665920",
+    "pages": [
+      "/services/selection-genomique",
+      "/en/services/genomic-selection-page"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1186/s12711-020-00576-0",
+    "pages": [
+      "/services/selection-genomique",
+      "/recherche",
+      "/recherche/porc-prediction-genomique-2020",
+      "/en/services/genomic-selection-page",
+      "/en/research",
+      "/en/research/pig-genomic-prediction-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/eviter-reduire-compenser-impacts-lenvironnement",
+    "pages": [
+      "/applications/environnement-bureaux-d-etudes",
+      "/en/applications/environment-consultancies"
+    ],
+    "status": 206,
+    "finalUrl": "https://www.ecologie.gouv.fr/politiques-publiques/eviter-reduire-compenser-impacts-lenvironnement",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://www.eau-artois-picardie.fr/sites/default/files/rapport_final_adne_estuaires_et_ports_aeap_0.pdf",
+    "pages": [
+      "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "/en/case-studies/artois-picardie-fish-survey"
+    ],
+    "status": 206,
+    "finalUrl": "https://www.eau-artois-picardie.fr/sites/default/files/rapport_final_adne_estuaires_et_ports_aeap_0.pdf",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://www.eau-artois-picardie.fr/sites/default/files/presentation_reunion_de_restitution_adne_estuaires_et_ports_aeap_30062026_0.pdf",
+    "pages": [
+      "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "/en/case-studies/artois-picardie-fish-survey"
+    ],
+    "status": 206,
+    "finalUrl": "https://www.eau-artois-picardie.fr/sites/default/files/presentation_reunion_de_restitution_adne_estuaires_et_ports_aeap_30062026_0.pdf",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9",
+    "pages": [
+      "/services/tracabilite",
+      "/en/services/traceability"
+    ],
+    "status": 200,
+    "finalUrl": "https://idp.springer.com/transit?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1186%2Fs12864-019-5958-9&code=b605d412-807e-45cb-a5b0-d87faab7bfc6",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://hal.science/hal-05490664",
+    "pages": [
+      "/etudes-de-cas/genomique-vanneau-huppe",
+      "/en/case-studies/northern-lapwing-genomics"
+    ],
+    "status": 200,
+    "finalUrl": "https://hal.science/hal-05490664",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://doi.org/10.1038/s44318-026-00919-5",
+    "pages": [
+      "/recherche",
+      "/recherche/levure-replication-adn-polymerase-alpha-2026",
+      "/en/research",
+      "/en/research/yeast-dna-replication-polymerase-alpha-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.cbpa.2026.112004",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-cortisol-temperature-2026",
+      "/en/research",
+      "/en/research/sea-bass-cortisol-temperature-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1038/s41437-026-00841-w",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-sex-ratio-temperature-gwas-2026",
+      "/en/research",
+      "/en/research/sea-bass-sex-ratio-gwas-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.aquaculture.2025.743605",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-survie-larvaire-introgression-2026",
+      "/en/research",
+      "/en/research/sea-bass-larval-survival-introgression-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1242/jeb.250612",
+    "pages": [
+      "/recherche",
+      "/recherche/poissons-tolerance-rechauffement-taille-2025",
+      "/en/research",
+      "/en/research/fish-warming-tolerance-body-mass-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.56179/001c.143981",
+    "pages": [
+      "/recherche",
+      "/recherche/genomes-becasse-becassine-2025",
+      "/en/research",
+      "/en/research/woodcock-jack-snipe-genomes-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1093/evolut/qpaf079",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-introgression-fitness-2025",
+      "/en/research",
+      "/en/research/sea-bass-introgression-fitness-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/eva.70083",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-croissance-larvaire-temperature-2025",
+      "/en/research",
+      "/en/research/sea-bass-larval-growth-temperature-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.aquaculture.2024.741682",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-selection-efficacite-alimentaire-2025",
+      "/en/research",
+      "/en/research/sea-bass-feed-efficiency-selection-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1093/molbev/msae194",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-introgression-teneur-gras-2024",
+      "/en/research",
+      "/en/research/sea-bass-introgression-muscle-fat-2024"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.gene.2024.148721",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-determinisme-sexe-energie-2024",
+      "/en/research",
+      "/en/research/sea-bass-sex-determination-energy-2024"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.aquaculture.2024.740758",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-temperature-femelles-2024",
+      "/en/research",
+      "/en/research/sea-bass-temperature-female-ratio-2024"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1186/s12711-023-00805-2",
+    "pages": [
+      "/recherche",
+      "/recherche/bar-resistance-vnn-2023",
+      "/en/research",
+      "/en/research/sea-bass-vnn-resistance-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1093/evolut/qpac028",
+    "pages": [
+      "/recherche",
+      "/recherche/capelan-methylation-reproduction-2023",
+      "/en/research",
+      "/en/research/capelin-dna-methylation-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/jfb.15243",
+    "pages": [
+      "/recherche",
+      "/recherche/truite-pigmentation-gwas-2023",
+      "/en/research",
+      "/en/research/brown-trout-pigmentation-gwas-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1093/gbe/evac036",
+    "pages": [
+      "/recherche",
+      "/recherche/saumon-coho-elevage-expression-2022",
+      "/en/research",
+      "/en/research/coho-salmon-hatchery-expression-2022"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.3390/genes12040524",
+    "pages": [
+      "/recherche",
+      "/recherche/omble-ascendance-repeuplement-2021",
+      "/en/research",
+      "/en/research/stocking-ancestry-landscape-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1186/s12711-021-00642-1",
+    "pages": [
+      "/recherche",
+      "/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "/en/research",
+      "/en/research/pig-feed-efficiency-gwas-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/eva.13235",
+    "pages": [
+      "/recherche",
+      "/recherche/saumon-coho-epigenome-germinal-2021",
+      "/en/research",
+      "/en/research/salmon-germline-epigenome-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.tree.2019.10.012",
+    "pages": [
+      "/recherche",
+      "/recherche/haplotypes-genomique-conservation-2020",
+      "/en/research",
+      "/en/research/haplotypes-conservation-genomics-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/mec.15566",
+    "pages": [
+      "/recherche",
+      "/recherche/omble-diversite-petites-populations-2020",
+      "/en/research",
+      "/en/research/brook-charr-small-populations-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/eva.12416",
+    "pages": [
+      "/recherche",
+      "/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "/en/research",
+      "/en/research/rainbow-trout-san-francisco-2017"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1534/g3.116.038497",
+    "pages": [
+      "/recherche",
+      "/recherche/truite-carte-liaison-2017",
+      "/en/research",
+      "/en/research/brown-trout-linkage-map-2017"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1111/jfb.13131",
+    "pages": [
+      "/recherche",
+      "/recherche/truite-orb-diversite-2016",
+      "/en/research",
+      "/en/research/brown-trout-orb-diversity-2016"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42859192/",
+    "pages": [
+      "/recherche/levure-replication-adn-polymerase-alpha-2026",
+      "/en/research/yeast-dna-replication-polymerase-alpha-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42066891/",
+    "pages": [
+      "/recherche/bar-cortisol-temperature-2026",
+      "/en/research/sea-bass-cortisol-temperature-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41957174/",
+    "pages": [
+      "/recherche/bar-sex-ratio-temperature-gwas-2026",
+      "/en/research/sea-bass-sex-ratio-gwas-2026"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40948321/",
+    "pages": [
+      "/recherche/poissons-tolerance-rechauffement-taille-2025",
+      "/en/research/fish-warming-tolerance-body-mass-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40243218/",
+    "pages": [
+      "/recherche/bar-introgression-fitness-2025",
+      "/en/research/sea-bass-introgression-fitness-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40012956/",
+    "pages": [
+      "/recherche/bar-croissance-larvaire-temperature-2025",
+      "/en/research/sea-bass-larval-growth-temperature-2025"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39271153/",
+    "pages": [
+      "/recherche/bar-introgression-teneur-gras-2024",
+      "/en/research/sea-bass-introgression-muscle-fat-2024"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38925525/",
+    "pages": [
+      "/recherche/bar-determinisme-sexe-energie-2024",
+      "/en/research/sea-bass-sex-determination-energy-2024"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37143017/",
+    "pages": [
+      "/recherche/bar-resistance-vnn-2023",
+      "/en/research/sea-bass-vnn-resistance-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB88728",
+    "pages": [
+      "/etudes-de-cas/genomique-vanneau-huppe",
+      "/en/case-studies/northern-lapwing-genomics"
+    ],
+    "status": 206,
+    "finalUrl": "https://www.ebi.ac.uk/ena/browser/view/PRJEB88728",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://doi.org/10.1101/2021.01.28.428603",
+    "pages": [
+      "/recherche/capelan-methylation-reproduction-2023",
+      "/en/research/capelin-dna-methylation-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36622671/",
+    "pages": [
+      "/recherche/capelan-methylation-reproduction-2023",
+      "/en/research/capelin-dna-methylation-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36218076/",
+    "pages": [
+      "/recherche/truite-pigmentation-gwas-2023",
+      "/en/research/brown-trout-pigmentation-gwas-2023"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35276004/",
+    "pages": [
+      "/recherche/saumon-coho-elevage-expression-2022",
+      "/en/research/coho-salmon-hatchery-expression-2022"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34126920/",
+    "pages": [
+      "/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "/en/research/pig-feed-efficiency-gwas-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34745334/",
+    "pages": [
+      "/recherche/saumon-coho-epigenome-germinal-2021",
+      "/en/research/salmon-germline-epigenome-2021"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31810774/",
+    "pages": [
+      "/recherche/haplotypes-genomique-conservation-2020",
+      "/en/research/haplotypes-conservation-genomics-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "pages": [
+      "/recherche/bar-resistance-vnn-2023",
+      "/recherche/omble-ascendance-repeuplement-2021",
+      "/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "/recherche/saumon-coho-epigenome-germinal-2021",
+      "/recherche/porc-prediction-genomique-2020",
+      "/recherche/truite-ressource-snp-2019",
+      "/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "/recherche/truite-carte-liaison-2017",
+      "/en/research/sea-bass-vnn-resistance-2023",
+      "/en/research/stocking-ancestry-landscape-2021",
+      "/en/research/pig-feed-efficiency-gwas-2021",
+      "/en/research/salmon-germline-epigenome-2021",
+      "/en/research/pig-genomic-prediction-2020",
+      "/en/research/brown-trout-snp-array-2019",
+      "/en/research/rainbow-trout-san-francisco-2017",
+      "/en/research/brown-trout-linkage-map-2017"
+    ],
+    "status": 206,
+    "finalUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://doi.org/10.1101/660621",
+    "pages": [
+      "/recherche/omble-diversite-petites-populations-2020",
+      "/en/research/brook-charr-small-populations-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33463857/",
+    "pages": [
+      "/recherche/omble-diversite-petites-populations-2020",
+      "/en/research/brook-charr-small-populations-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33028194/",
+    "pages": [
+      "/recherche/porc-prediction-genomique-2020",
+      "/en/research/pig-genomic-prediction-2020"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1101/702696",
+    "pages": [
+      "/recherche/omble-recombinaison-ascendance-2019",
+      "/en/research/brook-charr-recombination-ancestry-2019"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31579957/",
+    "pages": [
+      "/recherche/omble-recombinaison-ascendance-2019",
+      "/en/research/brook-charr-recombination-ancestry-2019"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://hal.science/hal-02395119v1",
+    "pages": [
+      "/recherche/haplotypes-genomique-conservation-2020",
+      "/en/research/haplotypes-conservation-genomics-2020"
+    ],
+    "status": 200,
+    "finalUrl": "https://hal.science/hal-02395119v1",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31307373/",
+    "pages": [
+      "/recherche/truite-ressource-snp-2019",
+      "/en/research/brown-trout-snp-array-2019"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://doi.org/10.1101/302380",
+    "pages": [
+      "/recherche/truite-trois-ascendances-2018",
+      "/en/research/brown-trout-three-way-admixture-2018"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://hal.science/hal-02395970v1",
+    "pages": [
+      "/recherche/omble-recombinaison-ascendance-2019",
+      "/en/research/brook-charr-recombination-ancestry-2019"
+    ],
+    "status": 200,
+    "finalUrl": "https://hal.science/hal-02395970v1",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28035235/",
+    "pages": [
+      "/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "/en/research/rainbow-trout-san-francisco-2017"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28235829/",
+    "pages": [
+      "/recherche/truite-carte-liaison-2017",
+      "/en/research/brown-trout-linkage-map-2017"
+    ],
+    "status": "bibliographic-reference",
+    "verification": "DOIs/PubMed checked against publisher metadata; ORCID identifiers preserved from sources"
+  },
+  {
+    "url": "https://hal.science/hal-01922616v1",
+    "pages": [
+      "/recherche/truite-trois-ascendances-2018",
+      "/en/research/brown-trout-three-way-admixture-2018"
+    ],
+    "status": 200,
+    "finalUrl": "https://hal.science/hal-01922616v1",
+    "classification": "reachable"
+  },
+  {
+    "url": "https://hal.science/hal-01922655v1",
+    "pages": [
+      "/recherche/truite-orb-diversite-2016",
+      "/en/research/brown-trout-orb-diversity-2016"
+    ],
+    "status": 200,
+    "finalUrl": "https://hal.science/hal-01922655v1",
+    "classification": "reachable"
+  }
+]

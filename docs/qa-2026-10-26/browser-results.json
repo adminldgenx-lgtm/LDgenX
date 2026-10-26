@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checked": [
+    "client/admin login",
+    "pending-account messaging",
+    "private attachment",
+    "Realtime in both directions",
+    "persistent session and messages",
+    "desktop and mobile layout",
+    "all client and admin routes",
+    "real recovery link and password update",
+    "public guest booking submitted and persisted",
+    "contact form to database"
+  ],
+  "pageErrors": [],
+  "apiErrors": []
+}

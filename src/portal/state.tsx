@@ -21,8 +21,15 @@ interface Loaded<T> {
 }
 
 /** Loads with `load`, again when `deps` change and whenever the data changes anywhere. */
-export function useData<T>(load: () => Promise<T>, deps: unknown[] = []): Loaded<T> {
-  const [state, setState] = useState<{ data?: T; error: PortalError | null; loading: boolean }>({
+export function useData<T>(
+  load: () => Promise<T>,
+  deps: unknown[] = [],
+): Loaded<T> {
+  const [state, setState] = useState<{
+    data?: T;
+    error: PortalError | null;
+    loading: boolean;
+  }>({
     error: null,
     loading: true,
   });
@@ -34,16 +41,26 @@ export function useData<T>(load: () => Promise<T>, deps: unknown[] = []): Loaded
     setState((s) => ({ ...s, loading: true }));
     latest
       .current()
-      .then((data) => ticket === run.current && setState({ data, error: null, loading: false }))
+      .then(
+        (data) =>
+          ticket === run.current &&
+          setState({ data, error: null, loading: false }),
+      )
       .catch((error: unknown) => {
         if (ticket !== run.current) return;
-        const portalError = error instanceof PortalError ? error : new PortalError('network');
+        const portalError =
+          error instanceof PortalError ? error : new PortalError('network');
         setState((s) => ({ ...s, error: portalError, loading: false }));
       });
   }, []);
   useEffect(reload, deps);
   useEffect(() => api.subscribe(reload), [reload]);
-  return { data: state.data, error: state.error, loading: state.loading, reload };
+  return {
+    data: state.data,
+    error: state.error,
+    loading: state.loading,
+    reload,
+  };
 }
 
 /* ---------------------------------------------------------------- Toasts */
@@ -54,7 +71,9 @@ interface Toast {
   text: string;
   kind: ToastKind;
 }
-const ToastContext = createContext<(text: string, kind?: ToastKind) => void>(() => {});
+const ToastContext = createContext<(text: string, kind?: ToastKind) => void>(
+  () => {},
+);
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -87,7 +106,10 @@ export function useAction() {
   const { t } = useI18n();
   const [busy, setBusy] = useState(false);
   const run = useCallback(
-    async <T,>(action: () => Promise<T>, success?: string): Promise<T | undefined> => {
+    async <T,>(
+      action: () => Promise<T>,
+      success?: string,
+    ): Promise<T | undefined> => {
       setBusy(true);
       try {
         const result = await action();
@@ -95,7 +117,10 @@ export function useAction() {
         return result;
       } catch (error) {
         const code = error instanceof PortalError ? error.code : 'generic';
-        toast(t.errors[code as keyof typeof t.errors] ?? t.errors.generic, 'error');
+        toast(
+          t.errors[code as keyof typeof t.errors] ?? t.errors.generic,
+          'error',
+        );
         return undefined;
       } finally {
         setBusy(false);
@@ -111,6 +136,7 @@ export function useAction() {
 interface Session {
   user: User | null;
   ready: boolean;
+  error: PortalError | null;
   /** `syncLocale`: take the account's language (at sign-in), or keep the one on screen. */
   setUser: (user: User | null, syncLocale?: boolean) => void;
   signOut: () => Promise<void>;
@@ -120,6 +146,7 @@ const SessionContext = createContext<Session | null>(null);
 export function SessionProvider({ children }: { children: ReactNode }) {
   const [user, setUserState] = useState<User | null>(null);
   const [ready, setReady] = useState(false);
+  const [sessionError, setSessionError] = useState<PortalError | null>(null);
   const { setLocale } = useI18n();
   const setUser = useCallback(
     (next: User | null, syncLocale = true) => {
@@ -134,9 +161,15 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         .currentUser()
         .then((current) => {
           setUserState(current);
+          setSessionError(null);
           setReady(true);
         })
-        .catch(() => setReady(true));
+        .catch((error: unknown) => {
+          setSessionError(
+            error instanceof PortalError ? error : new PortalError('network'),
+          );
+          setReady(true);
+        });
     check();
     return api.subscribe(check);
   }, []);
@@ -145,7 +178,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     setUserState(null);
   }, []);
   return (
-    <SessionContext.Provider value={{ user, ready, setUser, signOut }}>
+    <SessionContext.Provider
+      value={{ user, ready, error: sessionError, setUser, signOut }}
+    >
       {children}
     </SessionContext.Provider>
   );
@@ -164,7 +199,9 @@ export function useUser() {
 
 /** Whether a media query matches, kept up to date. */
 export function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
+  const [matches, setMatches] = useState(
+    () => window.matchMedia(query).matches,
+  );
   useEffect(() => {
     const list = window.matchMedia(query);
     const update = () => setMatches(list.matches);

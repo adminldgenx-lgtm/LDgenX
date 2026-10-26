@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { api, PortalError } from '../api';
-import { DEMO_ACCOUNTS, DEMO_PASSWORD } from '../api/seed';
-import { fill, useI18n } from '../i18n';
+import { useI18n } from '../i18n';
 import { useSession } from '../state';
 import { Button, Field, Fill } from '../ui';
 import { OpenLayout } from '../layout';
@@ -19,7 +18,17 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  if (user) return <Navigate to={params.get('suite') ?? home(user.role)} replace />;
+  const requested = params.get('suite');
+  const destination =
+    requested &&
+    new RegExp(`^/${user?.role === 'admin' ? 'admin' : 'espace'}(?:/|$)`).test(
+      requested,
+    )
+      ? requested
+      : user
+        ? home(user.role)
+        : '/espace';
+  if (user) return <Navigate to={destination} replace />;
   const signIn = async (address: string, secret: string) => {
     setBusy(true);
     setError(null);
@@ -28,7 +37,10 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
       setUser(signed);
       const next = params.get('suite');
       navigate(
-        next && next.startsWith(signed.role === 'admin' ? '/admin' : '/espace')
+        next &&
+          new RegExp(
+            `^/${signed.role === 'admin' ? 'admin' : 'espace'}(?:/|$)`,
+          ).test(next)
           ? next
           : home(signed.role),
         {
@@ -45,7 +57,9 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
   return (
     <OpenLayout>
       <div className="p-auth-card">
-        <p className="p-eyebrow">{admin ? t.common.admin : t.common.clientArea}</p>
+        <p className="p-eyebrow">
+          {admin ? t.common.admin : t.common.clientArea}
+        </p>
         <h1>{t.auth.loginTitle}</h1>
         <p className="p-lead">{t.auth.loginLead}</p>
         <form
@@ -91,36 +105,12 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
             <Link to="/espace/mot-de-passe">{t.auth.forgot}</Link>
             {!admin && (
               <span>
-                {t.auth.noAccount} <Link to="/espace/inscription">{t.auth.createAccount}</Link>
+                {t.auth.noAccount}{' '}
+                <Link to="/espace/inscription">{t.auth.createAccount}</Link>
               </span>
             )}
           </div>
         </form>
-        {api.mode === 'mock' && (
-          <div className="p-demo-access">
-            <strong>{t.auth.demoTitle}</strong>
-            <p className="p-help">{fill(t.auth.demoText, { password: DEMO_PASSWORD })}</p>
-            <div className="p-row">
-              <Button
-                variant="secondary"
-                size="small"
-                disabled={busy}
-                onClick={() => signIn(DEMO_ACCOUNTS.client, DEMO_PASSWORD)}
-              >
-                {t.auth.demoClient}
-              </Button>
-              <Button
-                variant="secondary"
-                size="small"
-                disabled={busy}
-                onClick={() => signIn(DEMO_ACCOUNTS.team, DEMO_PASSWORD)}
-              >
-                {t.auth.demoAdmin}
-              </Button>
-            </div>
-            <p className="p-help">{t.auth.demoWindows}</p>
-          </div>
-        )}
       </div>
     </OpenLayout>
   );
@@ -143,9 +133,11 @@ export function RegisterPage() {
   const [tried, setTried] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [verificationSent, setVerificationSent] = useState(false);
   if (user) return <Navigate to={home(user.role)} replace />;
-  const set = (key: keyof typeof form) => (event: { target: { value: string } }) =>
-    setForm({ ...form, [key]: event.target.value });
+  const set =
+    (key: keyof typeof form) => (event: { target: { value: string } }) =>
+      setForm({ ...form, [key]: event.target.value });
   const errors = {
     firstName: !form.firstName.trim() && t.common.required,
     lastName: !form.lastName.trim() && t.common.required,
@@ -161,8 +153,11 @@ export function RegisterPage() {
     setBusy(true);
     setError(null);
     try {
-      setUser(await api.signUp({ ...form, locale }));
-      navigate('/espace/messages', { replace: true });
+      const created = await api.signUp({ ...form, locale });
+      if (created) {
+        setUser(created);
+        navigate('/espace/messages', { replace: true });
+      } else setVerificationSent(true);
     } catch (e) {
       const code = e instanceof PortalError ? e.code : 'network';
       setError(t.errors[code as keyof typeof t.errors] ?? t.errors.generic);
@@ -170,6 +165,18 @@ export function RegisterPage() {
       setBusy(false);
     }
   };
+  if (verificationSent)
+    return (
+      <OpenLayout>
+        <div className="p-auth-card">
+          <h1>{t.auth.verifyTitle}</h1>
+          <p className="p-lead" role="status">
+            {t.auth.verifySent}
+          </p>
+          <Link to="/espace/connexion">{t.auth.backToLogin}</Link>
+        </div>
+      </OpenLayout>
+    );
   return (
     <OpenLayout>
       <div className="p-auth-card" data-wide>
@@ -241,7 +248,11 @@ export function RegisterPage() {
                 />
               )}
             </Field>
-            <Field label={t.auth.password} help={t.auth.passwordHint} error={show('password')}>
+            <Field
+              label={t.auth.password}
+              help={t.auth.passwordHint}
+              error={show('password')}
+            >
               {(id, d) => (
                 <input
                   id={id}
@@ -265,7 +276,10 @@ export function RegisterPage() {
               />
             )}
           </Field>
-          <label className="p-check" data-invalid={show('consent') ? '' : undefined}>
+          <label
+            className="p-check"
+            data-invalid={show('consent') ? '' : undefined}
+          >
             <input
               type="checkbox"
               checked={consent}
@@ -276,7 +290,11 @@ export function RegisterPage() {
                 text={t.auth.consent}
                 values={{
                   link: (
-                    <a href="/politique-confidentialite" target="_blank" rel="noreferrer">
+                    <a
+                      href="/politique-confidentialite"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       {t.auth.privacy}
                     </a>
                   ),
@@ -284,7 +302,9 @@ export function RegisterPage() {
               />
             </span>
           </label>
-          {show('consent') && <p className="p-error">{t.auth.consentRequired}</p>}
+          {show('consent') && (
+            <p className="p-error">{t.auth.consentRequired}</p>
+          )}
           {error && (
             <p className="p-error" role="alert">
               {error}
@@ -296,7 +316,8 @@ export function RegisterPage() {
           </Button>
           <p className="p-auth-links">
             <span>
-              {t.auth.haveAccount} <Link to="/espace/connexion">{t.auth.signIn}</Link>
+              {t.auth.haveAccount}{' '}
+              <Link to="/espace/connexion">{t.auth.signIn}</Link>
             </span>
           </p>
         </form>
@@ -310,6 +331,7 @@ export function ForgotPage() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   return (
     <OpenLayout>
       <div className="p-auth-card">
@@ -326,9 +348,16 @@ export function ForgotPage() {
               onSubmit={async (event) => {
                 event.preventDefault();
                 setBusy(true);
-                await api.requestPasswordReset(email).catch(() => {});
-                setBusy(false);
-                setSent(true);
+                setError(null);
+                try {
+                  await api.requestPasswordReset(email);
+                  setSent(true);
+                } catch (e) {
+                  const code = e instanceof PortalError ? e.code : 'network';
+                  setError(t.errors[code] ?? t.errors.generic);
+                } finally {
+                  setBusy(false);
+                }
               }}
             >
               <Field label={t.auth.email}>
@@ -343,6 +372,11 @@ export function ForgotPage() {
                   />
                 )}
               </Field>
+              {error && (
+                <p className="p-error" role="alert">
+                  {error}
+                </p>
+              )}
               <Button type="submit" busy={busy} className="p-wide">
                 {t.auth.sendLink}
               </Button>
@@ -352,6 +386,103 @@ export function ForgotPage() {
         <p className="p-auth-links">
           <Link to="/espace/connexion">{t.auth.backToLogin}</Link>
         </p>
+      </div>
+    </OpenLayout>
+  );
+}
+
+/** Destination for password-recovery and invitation links issued by Supabase Auth. */
+export function ResetPasswordPage() {
+  const { t } = useI18n();
+  const { user } = useSession();
+  const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const submit = async () => {
+    setError(null);
+    if (password.length < 8) {
+      setError(t.auth.passwordShort);
+      return;
+    }
+    if (password !== confirm) {
+      setError(t.auth.passwordMismatch);
+      return;
+    }
+    setBusy(true);
+    try {
+      await api.setPassword(password);
+      setSaved(true);
+    } catch (e) {
+      const code = e instanceof PortalError ? e.code : 'network';
+      setError(t.errors[code] ?? t.errors.generic);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <OpenLayout>
+      <div className="p-auth-card">
+        <h1>{t.auth.resetTitle}</h1>
+        {saved ? (
+          <>
+            <p role="status">{t.auth.passwordSaved}</p>
+            <Link to={user ? home(user.role) : '/espace/connexion'}>
+              {t.common.clientArea}
+            </Link>
+          </>
+        ) : !user ? (
+          <>
+            <p className="p-error" role="alert">
+              {t.auth.resetExpired}
+            </p>
+            <Link to="/espace/mot-de-passe">{t.auth.sendLink}</Link>
+          </>
+        ) : (
+          <form
+            className="p-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              void submit();
+            }}
+          >
+            <Field label={t.auth.password} help={t.auth.passwordHint}>
+              {(id) => (
+                <input
+                  id={id}
+                  type="password"
+                  autoComplete="new-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={8}
+                />
+              )}
+            </Field>
+            <Field label={t.auth.confirmPassword}>
+              {(id) => (
+                <input
+                  id={id}
+                  type="password"
+                  autoComplete="new-password"
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
+                  required
+                  minLength={8}
+                />
+              )}
+            </Field>
+            {error && (
+              <p className="p-error" role="alert">
+                {error}
+              </p>
+            )}
+            <Button type="submit" busy={busy}>
+              {t.auth.savePassword}
+            </Button>
+          </form>
+        )}
       </div>
     </OpenLayout>
   );

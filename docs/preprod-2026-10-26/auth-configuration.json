@@ -1,0 +1,11 @@
+{
+  "checkedOn": "2026-10-26",
+  "source": "Supabase Management API /v1/projects/rkkvvqwgxbtnvewyrylj/config/auth (read-only; safe fields only)",
+  "siteUrl": "https://www.ldgenx.fr",
+  "customSmtpConfigured": false,
+  "mailerAutoconfirm": true,
+  "signupEnabled": true,
+  "emailPasswordAuthEnabled": true,
+  "settingsChangedByThisAudit": false,
+  "emailsSentByThisAudit": false
+}

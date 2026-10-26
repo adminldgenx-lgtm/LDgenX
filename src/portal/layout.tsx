@@ -17,30 +17,9 @@ import {
 } from 'lucide-react';
 import { api } from './api';
 import { useI18n } from './i18n';
-import { useData, useSession, useToast } from './state';
-import { Avatar, Button, Loading } from './ui';
+import { useData, useSession } from './state';
+import { Avatar, Button, Loading, ErrorNote } from './ui';
 import { Notifications } from './shared';
-
-function DemoBar() {
-  const { t } = useI18n();
-  const toast = useToast();
-  if (api.mode !== 'mock') return null;
-  return (
-    <div className="p-demo" role="note">
-      <span>{t.common.demo}</span>
-      <button
-        type="button"
-        className="p-link"
-        onClick={async () => {
-          await api.resetDemo?.();
-          toast(t.common.demoReset, 'info');
-        }}
-      >
-        {t.common.resetDemo}
-      </button>
-    </div>
-  );
-}
 
 export function LanguageSwitch() {
   const { t, locale, setLocale } = useI18n();
@@ -66,7 +45,12 @@ export function LanguageSwitch() {
 function Brand({ area, to }: { area: string; to: string }) {
   return (
     <Link to={to} className="p-brand">
-      <img src="/brand/lockup-navy-160.webp" alt="LDgenX" width={570} height={160} />
+      <img
+        src="/brand/lockup-navy-160.webp"
+        alt="LDgenX"
+        width={570}
+        height={160}
+      />
       <span>{area}</span>
     </Link>
   );
@@ -113,7 +97,8 @@ function Shell({
     if (!open) {
       const target = focusAfter.current;
       focusAfter.current = null;
-      if (target === 'main') document.getElementById('p-main')?.focus({ preventScroll: true });
+      if (target === 'main')
+        document.getElementById('p-main')?.focus({ preventScroll: true });
       if (target === 'menu') menuButton.current?.focus();
       return;
     }
@@ -150,7 +135,10 @@ function Shell({
   const foot = (
     <div className="p-side-foot">
       <Link to={account} className="p-me">
-        <Avatar name={name} colour={user.role === 'admin' ? '#03254b' : '#2a7416'} />
+        <Avatar
+          name={name}
+          colour={user.role === 'admin' ? '#03254b' : '#2a7416'}
+        />
         <div>
           <strong>{name}</strong>
           <span>{t.common.account}</span>
@@ -176,7 +164,6 @@ function Shell({
       </aside>
       {/* While the phone menu is open, the page behind it is out of reach. */}
       <div className="p-body" inert={open}>
-        <DemoBar />
         <header className="p-top">
           <button
             ref={menuButton}
@@ -201,7 +188,12 @@ function Shell({
         </main>
       </div>
       {open && (
-        <div className="p-drawer" role="dialog" aria-modal="true" aria-label={t.common.menu}>
+        <div
+          className="p-drawer"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.common.menu}
+        >
           <div className="p-drawer-panel">
             <div className="p-drawer-head">
               <Brand area={area} to={home} />
@@ -232,7 +224,13 @@ function Shell({
 }
 
 export function Gate({ children }: { children: ReactNode }) {
-  const { ready } = useSession();
+  const { ready, error } = useSession();
+  if (error)
+    return (
+      <div className="p-gate">
+        <ErrorNote onRetry={() => window.location.reload()} />
+      </div>
+    );
   if (!ready)
     return (
       <div className="p-gate">
@@ -250,15 +248,26 @@ export function ClientShell() {
   const { user } = useSession();
   const location = useLocation();
   const client = user?.role === 'client';
-  const threads = useData(() => (client ? api.listThreads() : Promise.resolve([])), [user?.id]);
-  const files = useData(() => (client ? api.listFiles() : Promise.resolve([])), [user?.id]);
+  const threads = useData(
+    () => (client ? api.listThreads() : Promise.resolve([])),
+    [user?.id],
+  );
+  const files = useData(
+    () => (client ? api.listFiles() : Promise.resolve([])),
+    [user?.id],
+  );
   if (user?.role === 'admin') return <Navigate to="/admin/messages" replace />;
   if (!user)
     return (
-      <Navigate to={`/espace/connexion?suite=${encodeURIComponent(location.pathname)}`} replace />
+      <Navigate
+        to={`/espace/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        replace
+      />
     );
   const fresh = (files.data ?? []).filter(
-    (f) => f.direction === 'to_client' && !f.downloads.some((d) => d.userId === user.id),
+    (f) =>
+      f.direction === 'to_client' &&
+      !f.downloads.some((d) => d.userId === user.id),
   ).length;
   return (
     <Shell
@@ -298,16 +307,28 @@ export function AdminShell() {
   const { user } = useSession();
   const location = useLocation();
   const admin = user?.role === 'admin';
-  const threads = useData(() => (admin ? api.listThreads() : Promise.resolve([])), [user?.id]);
-  const inquiries = useData(() => (admin ? api.listInquiries() : Promise.resolve([])), [user?.id]);
+  const threads = useData(
+    () => (admin ? api.listThreads() : Promise.resolve([])),
+    [user?.id],
+  );
+  const inquiries = useData(
+    () => (admin ? api.listInquiries() : Promise.resolve([])),
+    [user?.id],
+  );
   const appointments = useData(
     () => (admin ? api.listAppointments() : Promise.resolve([])),
     [user?.id],
   );
-  const clients = useData(() => (admin ? api.listClients() : Promise.resolve([])), [user?.id]);
+  const clients = useData(
+    () => (admin ? api.listClients() : Promise.resolve([])),
+    [user?.id],
+  );
   if (!user)
     return (
-      <Navigate to={`/admin/connexion?suite=${encodeURIComponent(location.pathname)}`} replace />
+      <Navigate
+        to={`/admin/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        replace
+      />
     );
   if (!admin) return <AdminOnly />;
   const waiting = (appointments.data ?? []).filter(
@@ -324,7 +345,8 @@ export function AdminShell() {
           label: t.nav.messages,
           icon: <Inbox size={19} aria-hidden="true" />,
           count:
-            total(threads.data) + (inquiries.data ?? []).filter((i) => i.status === 'new').length,
+            total(threads.data) +
+            (inquiries.data ?? []).filter((i) => i.status === 'new').length,
         },
         {
           to: '/admin/demandes',
@@ -341,7 +363,8 @@ export function AdminShell() {
           to: '/admin/clients',
           label: t.nav.clients,
           icon: <Users size={19} aria-hidden="true" />,
-          count: (clients.data ?? []).filter((c) => c.status === 'pending').length,
+          count: (clients.data ?? []).filter((c) => c.status === 'pending')
+            .length,
         },
         {
           to: '/admin/parametres',
@@ -362,7 +385,11 @@ function AdminOnly() {
         <h1>{t.common.admin}</h1>
         <p>{t.auth.adminOnly}</p>
         <div className="p-row">
-          <Link className="p-button" data-variant="secondary" to="/espace/messages">
+          <Link
+            className="p-button"
+            data-variant="secondary"
+            to="/espace/messages"
+          >
             {t.common.clientArea}
           </Link>
           <Button variant="ghost" onClick={signOut}>
@@ -379,10 +406,14 @@ export function OpenLayout({ children }: { children: ReactNode }) {
   const { t } = useI18n();
   return (
     <div className="p-auth">
-      <DemoBar />
       <header className="p-auth-top">
         <a href="/" className="p-brand">
-          <img src="/brand/lockup-navy-160.webp" alt="LDgenX" width={570} height={160} />
+          <img
+            src="/brand/lockup-navy-160.webp"
+            alt="LDgenX"
+            width={570}
+            height={160}
+          />
         </a>
         <div className="p-top-actions">
           <a className="p-link" href="/">

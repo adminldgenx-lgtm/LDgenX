@@ -28,7 +28,7 @@ export const works: Work[] = [
     image: 'cas-truites',
     facts: [
       { label: 'Espèces', value: 'Truite commune, omble de fontaine' },
-      { label: 'Marqueurs', value: '196K et 11 803 marqueurs SNP' },
+      { label: 'Marqueurs', value: '196 639 SNP (truite) ; environ 33 000 SNP (omble)' },
       { label: 'Publications', value: 'Leitwein et al. 2016, 2019 et 2021' },
     ],
     service: 'genomique-des-populations',
@@ -54,8 +54,8 @@ export const works: Work[] = [
       {
         title: 'Paysage génomique d’ancestralité domestique chez l’omble de fontaine',
         paragraphs: [
-          'L’omble de fontaine (*Salvelinus fontinalis*) est une espèce à fort intérêt socio-économique au Canada. Dans la province de Québec, une souche domestique a été créée il y a une centaine d’années afin de repeupler les rivières pour la pêche sportive. Chaque année plus de 650 tonnes d’ombles de fontaine sont ainsi déversées dans les rivières du Canada, favorisant ainsi les évènements d’hybridation entre individus domestiques et sauvages ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
-          'À l’aide de 11 803 marqueurs SNP, l’ancestralité des individus a pu être inférée et la proportion d’allèles domestiques dans les rivières sauvages estimée. Grâce à l’information de liaison et la proportion d’ancestralité domestique, il a été possible d’identifier les classes hybrides des individus. Les individus ont été catégorisés soit comme (i) « hybrides récents », c’est-à-dire des descendants de premières générations de croisements entre individus sauvages et domestiques (< 10 générations) ; ou (ii) « hybrides anciens », c’est-à-dire des descendants issus d’un mélange lointain (> 10 générations). Une fois les individus assignés à leur classe hybride, le taux d’introgression d’allèles domestiques le long du génome a pu être estimé. Cette approche a révélé une forte variabilité, avec des régions génomiques à forte ou faible ancestralité domestique, qui sont susceptibles d’être sous sélection naturelle (Figure 1 ; [Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256)).',
+          'L’omble de fontaine (*Salvelinus fontinalis*) fait l’objet de repeuplements destinés à la pêche sportive au Québec. Ces introductions ont entraîné des mélanges entre populations sauvages et souche domestique, étudiés par [Leitwein et al. (2019)](https://doi.org/10.1111/mec.15256).',
+          'L’article publié analyse environ 33 000 SNP cartographiés chez 611 individus de 24 populations repeuplées. Les segments d’ascendance permettent de distinguer des hybrides de générations précoces ou plus tardives et d’estimer l’introgression domestique le long du génome. Les régions favorisant ou défavorisant cette ascendance varient selon l’échelle étudiée et le contexte de recombinaison (Figure 1 ; [Leitwein et al. 2019](https://doi.org/10.1111/mec.15256)).',
         ],
         figure: {
           image: 'fig-omble-ancestralite',
@@ -69,7 +69,7 @@ export const works: Work[] = [
       {
         title: 'Effets de l’introduction d’allèles domestiques',
         paragraphs: [
-          'Dans le cas de l’omble de fontaine, nous avons pu observer des variations d’ancestralité domestique dans les populations sauvages. Pour les individus hybrides, des effets bénéfiques de l’introgression d’allèles domestiques dans les populations sauvages ont principalement pu être observés. Les allèles domestiques apportent (i) de la diversité dans les régions du génome « sauvage » à faible diversité génétique et (ii) le masquage d’allèles récessifs potentiellement délétères.',
+          'Chez l’omble de fontaine, certains profils sont compatibles avec un effet favorable lié au masquage d’allèles récessifs potentiellement délétères dans les populations sauvages. Les résultats de 2019 et 2021 montrent toutefois des effets variables selon les populations et les régions génomiques ; ils ne permettent pas de considérer tout apport d’allèles domestiques comme bénéfique.',
           'Cependant, au-delà de ces potentiels effets bénéfiques, des effets de purge des allèles domestiques ont également pu être observés. Ces mécanismes reflètent des effets négatifs de l’introduction d’allèles domestiques dans certaines régions du génome ([Leitwein et al. 2019](https://onlinelibrary.wiley.com/doi/10.1111/mec.15256) et [2021](https://pubmed.ncbi.nlm.nih.gov/33916757/)).',
           'Par exemple, sur le groupe de liaison 26 (Figure 2), nous pouvons observer un excès d’ancestralité domestique associé à des allèles récessifs potentiellement délétères.',
         ],
@@ -90,11 +90,11 @@ export const works: Work[] = [
     title: 'Traçabilité',
     category: 'Travaux scientifiques · génomique des populations',
     summary:
-      'Origine des truites du bassin de l’Orb, âge des introductions domestiques et développement d’une puce truite haute densité.',
+      'Origine des truites du bassin de l’Orb, âge des introductions domestiques et développement d’une ressource SNP et d’un panel de génotypage.',
     image: 'fig-puce-truite',
     facts: [
       { label: 'Espèce', value: 'Truite commune (Salmo trutta)' },
-      { label: 'Marqueurs', value: '86 175 SNP (séquençage RAD), puce de 12 204 SNP' },
+      { label: 'Marqueurs', value: '75 684 SNP cartographiés ; ressource de 12 204 SNP ; panel de 192 SNP' },
       { label: 'Publications', value: 'Leitwein et al. 2018, Saint-Pé et al. 2019' },
     ],
     service: 'genomique-des-populations',
@@ -104,7 +104,7 @@ export const works: Work[] = [
         title: 'Exemple d’analyses génomiques de traçabilité : les truites de l’Orb',
         paragraphs: [
           'Le bassin méditerranéen de l’Orb (Hérault), cours d’eau du sud de la France, d’une superficie de 1 580 km², est soumis depuis la fin des années 1960 à des repeuplements de truites domestiques (*Salmo trutta*) d’origine atlantique et méditerranéenne. L’objectif est ainsi d’augmenter les populations locales méditerranéennes pour la pêche récréative.',
-          'Dans l’étude de [Leitwein et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/30054960/), l’utilisation de 86 175 marqueurs SNP (polymorphismes d’un seul nucléotide) issus de séquençage RAD a permis d’identifier la proportion d’allèles domestiques (Atlantique et Méditerranéen) dans les populations sauvages du bassin de l’Orb.',
+          'Dans l’étude de [Leitwein et al. (2018)](https://doi.org/10.1111/mec.14816), 75 684 SNP cartographiés issus du ddRAD-seq ont servi à décrire les contributions des souches domestiques atlantique et méditerranéenne dans les populations sauvages du bassin de l’Orb.',
           'Ainsi nous avons pu identifier des individus d’origine domestique Atlantique (c’est-à-dire échappés de pisciculture) dans la rivière de Gravezon, des individus d’origine domestique Méditerranéenne dans la rivière de la Mare, ainsi que des individus hybrides ayant des allèles domestiques Atlantique et Méditerranéen dans les trois rivières sauvages (Figure 1).',
         ],
         figure: {
@@ -133,11 +133,11 @@ export const works: Work[] = [
         },
       },
       {
-        title: 'Développement d’outils génomiques : la puce truite haute densité',
+        title: 'Développement d’outils génomiques : une ressource SNP et un panel ciblé',
         paragraphs: [
-          'À l’issue de cette étude, nous avons développé une puce haute densité de 12 204 marqueurs SNP répartis de façon homogène le long des 40 groupes de liaison (LG pour *Linkage Group* en anglais) de la truite (*Salmo trutta*) (Figure 3 ; [Saint-Pé et al. 2019](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5958-9)).',
-          'Cette puce permet une gestion à moindre coût, régulière et comparable, entre les différentes études de génétique des populations.',
-          'La puce est à la fois efficace pour distinguer les truites d’origines Atlantique et Méditerranéenne ainsi que les niveaux d’hybridation.',
+          '[Saint-Pé et al. (2019)](https://doi.org/10.1186/s12864-019-5958-9) ont identifié une ressource de 12 204 SNP répartis sur les 40 groupes de liaison de la truite commune (*Salmo trutta*). À partir de cette ressource, ils ont développé un panel de faible densité de 192 SNP (Figure 3).',
+          'Le panel a été évalué sur 1 862 individus dans cinq rivières. Il fournit un outil de génotypage reproductible et économique pour les études de génétique des populations.',
+          'Dans les populations testées, il distingue les lignées atlantique et méditerranéenne et permet d’étudier le mélange avec les souches domestiques.',
         ],
         figure: {
           image: 'fig-puce-truite',
@@ -189,7 +189,7 @@ export const works: Work[] = [
       {
         title: 'Études des valeurs génétiques pour la sélection de caractères d’intérêt',
         paragraphs: [
-          'La sélection génomique a été utilisée pour améliorer de très nombreux caractères d’intérêt possédant une héritabilité assez élevée. Par exemple, ce type d’approche a été appliqué avec succès à de nombreuses espèces d’élevage, et récemment sur des espèces aquacoles pour la résistance à des pathogènes. Elle a permis un gain génétique de 12,5 % en moyenne par génération pour la résistance à différentes maladies. La sélection génomique est donc une approche prometteuse pour lutter contre des maladies affectant les populations sauvages comme les populations domestiques ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
+          'La sélection génomique utilise des marqueurs répartis dans le génome pour estimer les valeurs génétiques des reproducteurs. En aquaculture, elle peut améliorer la précision des prédictions de résistance à certaines maladies par rapport à une approche fondée uniquement sur le pedigree. Le gain dépend toutefois du caractère, de la population de référence et du programme de sélection ([Griot et al. 2021](https://doi.org/10.3389/fgene.2021.665920)).',
           'D’autre part, dans un article de référence pour la prédiction génomique, [Aliakbari et al. (2020)](https://doi.org/10.1186/s12711-020-00576-0) ont mis en évidence une prédiction génomique similaire en utilisant soit (i) un jeu de données dit d’entraînement comprenant des animaux de lignées génétiquement apparentées, soit (ii) un ensemble d’entraînement provenant de la population ciblée. Combiner des données apparentées et des données de la population cible peut améliorer la précision pour certains caractères (Figure 3).',
           'Ces résultats de génétique quantitative donnent une meilleure connaissance pour la conception des populations de référence, en particulier pour initier la sélection génomique dans des populations où le nombre d’échantillons historiques est faible.',
         ],
@@ -223,9 +223,9 @@ export const people: Person[] = [
     bio: 'Spécialisée en génomique et en épigénomique, Maeva étudie la diversité, l’adaptation et les interactions entre populations naturelles et domestiques. Elle met son expérience de recherche au service des questions de conservation et de gestion.',
     biography: [
       'Issue du milieu académique et originaire de l’archipel de Molène en Bretagne, je suis particulièrement intéressée par l’utilisation des outils génomiques pour la conservation de la biodiversité.',
-      'Mes travaux de recherche s’intéressent principalement à la compréhension et l’évaluation des mécanismes évolutifs qui modulent la biodiversité intra et inter-populationnelle à différentes échelles de temps.',
+      'Mes travaux de recherche s’intéressent principalement à la compréhension et à l’évaluation des mécanismes évolutifs qui modulent la biodiversité intra et inter-populationnelle à différentes échelles de temps.',
       'Après un Master en biologie marine, je me suis spécialisée lors de mon doctorat dans l’utilisation de la génomique pour évaluer les conséquences de l’introduction d’individus domestiques dans les populations sauvages. Durant mon post-doctorat au Canada, j’ai utilisé les outils génomiques et épigénomiques afin d’étudier l’impact des piscicultures sur le patrimoine génomique et la valeur sélective des populations sauvages. Ces approches m’ont permis de comprendre les forces évolutives (positives ou négatives) qui modulent le paysage génomique des populations naturelles.',
-      'De retour en France depuis 2021, j’étudie à présent les effets de la température, dans le cadre du réchauffement climatique, sur le déterminisme du sexe chez le bar européen. Couplé à cela, j’étudie les effets de mélanges entre lignées (ancestralité) sur le phénotype des individus et les conséquences dans l’adaptation des espèces à leur environnement.',
+      'De retour en France depuis 2021, j’étudie à présent les effets de la température, dans le cadre du réchauffement climatique, sur le déterminisme du sexe chez le bar européen. J’étudie également les effets de mélanges entre lignées (ancestralité) sur le phénotype des individus et les conséquences dans l’adaptation des espèces à leur environnement.',
       'Au sein de LDgenX, j’apporte mon expertise en génomique afin de répondre à des questions de conservation pour une meilleure gestion des populations naturelles et domestiques.',
     ],
     source: 'https://www.ldgenx.fr/equipe/dr-maeva-leitwein',
@@ -282,7 +282,7 @@ export const people: Person[] = [
     bio: 'Ingénieur agronome, Damien a consacré son doctorat aux bases génétiques de l’adaptation à la température du bar européen. Il met la biostatistique, la modélisation et la génomique au service des projets, de l’ADNe à l’évolution des populations naturelles.',
     biography: [
       'Ayant grandi dans le milieu agricole en Bretagne, j’ai effectué une formation d’ingénieur agronome, spécialisée en sciences halieutiques et aquacoles. J’ai ensuite réalisé un doctorat portant sur les bases génétiques de l’adaptation à la température du bar européen, espèce aquacole majeure en Europe. Ce parcours témoigne de mon attrait pour la biodiversité et les sciences du vivant, et de mon souhait de renforcer les connaissances sur l’évolution de la biodiversité face au changement global actuel.',
-      'Mes expériences ont permis de développer mes compétences depuis la mise en place et la gestion d’expérimentations, la récolte des données, jusqu’à l’analyse de celles-ci en utilisant des outils de biostatistiques et de génomiques. Grâce à ce parcours, je peux m’adapter à divers projets nécessitant le traitement de données phénotypiques et génomiques. Dans le cadre de mes analyses, j’ai utilisé différents outils et langages bio-informatiques permettant de répondre à des sujets de génétique des populations et de génétique quantitative. J’ai aussi été amené à gérer de gros jeux de données phénotypiques nécessitant des compétences en modélisation afin de mettre en place des modèles plus ou moins complexes.',
+      'Mes expériences ont permis de développer mes compétences depuis la mise en place et la gestion d’expérimentations, la récolte des données, jusqu’à l’analyse de celles-ci en utilisant des outils de biostatistique et de génomique. Grâce à ce parcours, je peux m’adapter à divers projets nécessitant le traitement de données phénotypiques et génomiques. Dans le cadre de mes analyses, j’ai utilisé différents outils et langages bio-informatiques permettant de répondre à des sujets de génétique des populations et de génétique quantitative. J’ai aussi été amené à gérer de gros jeux de données phénotypiques nécessitant des compétences en modélisation afin de mettre en place des modèles plus ou moins complexes.',
       'Au sein de LDgenX, mes connaissances en biologie évolutive et en analyse bio-informatique et statistique permettent de répondre aux différents sujets d’étude, de l’utilisation de l’ADNe à l’évolution des populations naturelles.',
     ],
     source: 'Présentation transmise par LDgenX (octobre 2026)',

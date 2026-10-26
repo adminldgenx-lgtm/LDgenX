@@ -7,6 +7,7 @@ import { useCatalog, useRoutes, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
 import { loadCatalog } from '../content/catalog';
+import { AccountLink } from './AccountLink';
 
 type MenuKey = 'services' | 'applications';
 
@@ -199,6 +200,7 @@ export function Header() {
                 {ui.header.otherLanguageName}
               </span>
             </Link>
+            <AccountLink />
             <Link to={r.contact} className="header-cta">
               <span>{copy.navigation.contact}</span>
               <ArrowRight

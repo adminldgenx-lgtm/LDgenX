@@ -4,13 +4,17 @@
 // build checks that it matches the catalogues (see allPages in lib/pages.ts).
 import type { Locale, RouteSource } from '../lib/routes';
 
+export const portalEnabled = import.meta.env?.VITE_PORTAL_ENABLED !== '0';
+
 export const company = {
   name: 'LDgenX',
   origin: 'https://www.ldgenx.fr',
   email: 'info@ldgenx.fr',
   address: 'Station Ifremer · 51 route de Maguelone',
   city: '34250 Palavas-les-Flots, France',
-  appointment: 'https://cal.com/ldgenx-echange/decouverte',
+  appointment: portalEnabled
+    ? '/espace/reserver'
+    : 'https://cal.com/ldgenx-echange/decouverte',
   english: 'https://www.ldgenx.com/',
   linkedin: 'https://www.linkedin.com/company/ldgenx/',
   // Public registry (recherche-entreprises.api.gouv.fr, October 2026) and OpenStreetMap.
@@ -77,29 +81,62 @@ const people: Pairs = [
 ];
 // Articles of the research page, newest first: the French address is the id.
 const publications: Pairs = [
-  ['levure-replication-adn-polymerase-alpha-2026', 'yeast-dna-replication-polymerase-alpha-2026'],
+  [
+    'levure-replication-adn-polymerase-alpha-2026',
+    'yeast-dna-replication-polymerase-alpha-2026',
+  ],
   ['bar-cortisol-temperature-2026', 'sea-bass-cortisol-temperature-2026'],
   ['bar-sex-ratio-temperature-gwas-2026', 'sea-bass-sex-ratio-gwas-2026'],
-  ['bar-survie-larvaire-introgression-2026', 'sea-bass-larval-survival-introgression-2026'],
-  ['poissons-tolerance-rechauffement-taille-2025', 'fish-warming-tolerance-body-mass-2025'],
+  [
+    'bar-survie-larvaire-introgression-2026',
+    'sea-bass-larval-survival-introgression-2026',
+  ],
+  [
+    'poissons-tolerance-rechauffement-taille-2025',
+    'fish-warming-tolerance-body-mass-2025',
+  ],
   ['genomes-becasse-becassine-2025', 'woodcock-jack-snipe-genomes-2025'],
   ['bar-introgression-fitness-2025', 'sea-bass-introgression-fitness-2025'],
-  ['bar-croissance-larvaire-temperature-2025', 'sea-bass-larval-growth-temperature-2025'],
-  ['bar-selection-efficacite-alimentaire-2025', 'sea-bass-feed-efficiency-selection-2025'],
-  ['bar-introgression-teneur-gras-2024', 'sea-bass-introgression-muscle-fat-2024'],
-  ['bar-determinisme-sexe-energie-2024', 'sea-bass-sex-determination-energy-2024'],
+  [
+    'bar-croissance-larvaire-temperature-2025',
+    'sea-bass-larval-growth-temperature-2025',
+  ],
+  [
+    'bar-selection-efficacite-alimentaire-2025',
+    'sea-bass-feed-efficiency-selection-2025',
+  ],
+  [
+    'bar-introgression-teneur-gras-2024',
+    'sea-bass-introgression-muscle-fat-2024',
+  ],
+  [
+    'bar-determinisme-sexe-energie-2024',
+    'sea-bass-sex-determination-energy-2024',
+  ],
   ['bar-temperature-femelles-2024', 'sea-bass-temperature-female-ratio-2024'],
   ['bar-resistance-vnn-2023', 'sea-bass-vnn-resistance-2023'],
   ['capelan-methylation-reproduction-2023', 'capelin-dna-methylation-2023'],
   ['truite-pigmentation-gwas-2023', 'brown-trout-pigmentation-gwas-2023'],
-  ['saumon-coho-elevage-expression-2022', 'coho-salmon-hatchery-expression-2022'],
+  [
+    'saumon-coho-elevage-expression-2022',
+    'coho-salmon-hatchery-expression-2022',
+  ],
   ['omble-ascendance-repeuplement-2021', 'stocking-ancestry-landscape-2021'],
   ['porc-efficacite-alimentaire-gwas-2021', 'pig-feed-efficiency-gwas-2021'],
   ['saumon-coho-epigenome-germinal-2021', 'salmon-germline-epigenome-2021'],
-  ['haplotypes-genomique-conservation-2020', 'haplotypes-conservation-genomics-2020'],
-  ['omble-diversite-petites-populations-2020', 'brook-charr-small-populations-2020'],
+  [
+    'haplotypes-genomique-conservation-2020',
+    'haplotypes-conservation-genomics-2020',
+  ],
+  [
+    'omble-diversite-petites-populations-2020',
+    'brook-charr-small-populations-2020',
+  ],
   ['porc-prediction-genomique-2020', 'pig-genomic-prediction-2020'],
-  ['omble-recombinaison-ascendance-2019', 'brook-charr-recombination-ancestry-2019'],
+  [
+    'omble-recombinaison-ascendance-2019',
+    'brook-charr-recombination-ancestry-2019',
+  ],
   ['truite-ressource-snp-2019', 'brown-trout-snp-array-2019'],
   ['truite-trois-ascendances-2018', 'brown-trout-three-way-admixture-2018'],
   ['truite-arc-en-ciel-san-francisco-2017', 'rainbow-trout-san-francisco-2017'],
@@ -160,7 +197,10 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
     ],
     resources: [
       ['comprendre-adn-environnemental', 'understanding-environmental-dna'],
-      ['bioinformatique-question-biologique', 'bioinformatics-biological-question'],
+      [
+        'bioinformatique-question-biologique',
+        'bioinformatics-biological-question',
+      ],
       ['genomique-filiere-aquacole', 'genomics-aquaculture'],
     ],
     people,

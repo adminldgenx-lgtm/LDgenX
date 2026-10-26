@@ -5,7 +5,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { I18nProvider, useI18n } from './i18n';
 import { SessionProvider, ToastProvider, useSession } from './state';
 import { AdminShell, ClientShell, Gate } from './layout';
-import { ForgotPage, LoginPage, RegisterPage } from './pages/auth';
+import { ForgotPage, LoginPage, RegisterPage, ResetPasswordPage } from './pages/auth';
 import {
   AccountPage,
   ClientAppointmentsPage,
@@ -50,6 +50,7 @@ export function PortalApp() {
               <Route path="/espace/connexion" element={<LoginPage />} />
               <Route path="/espace/inscription" element={<RegisterPage />} />
               <Route path="/espace/mot-de-passe" element={<ForgotPage />} />
+              <Route path="/espace/nouveau-mot-de-passe" element={<ResetPasswordPage />} />
               <Route path="/espace/reserver" element={<PublicBookingPage />} />
               <Route element={<ClientShell />}>
                 <Route path="/espace/messages" element={<ClientMessagesPage />} />

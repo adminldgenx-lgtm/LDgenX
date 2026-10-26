@@ -35,9 +35,6 @@ export const en: Dictionary = {
     notifications: 'Notifications',
     markAllRead: 'Mark all as read',
     noNotifications: 'Nothing new for now.',
-    demo: 'Demonstration: data stays in this browser and no e-mail is sent.',
-    resetDemo: 'Reset the demo',
-    demoReset: 'The demonstration data has been restored.',
     team: 'LDgenX team',
     you: 'You',
     unknown: 'Unknown',
@@ -45,6 +42,10 @@ export const en: Dictionary = {
     account: 'My account',
   },
   errors: {
+    email_unavailable: 'Email delivery is currently unavailable. Contact info@ldgenx.fr.',
+    email_not_confirmed: 'Confirm your email address using the link in your inbox before signing in.',
+    rate_limited: 'Too many requests. Please try again later.',
+
     invalid_credentials: 'Incorrect e-mail address or password.',
     email_taken: 'An account already exists for this address.',
     not_found: 'This item no longer exists.',
@@ -66,6 +67,15 @@ export const en: Dictionary = {
     settings: 'Settings',
   },
   auth: {
+    verifyTitle: 'Confirm your email address',
+    verifySent: 'Check your inbox and open the confirmation link to access your account.',
+    resetTitle: 'Choose a new password',
+    confirmPassword: 'Confirm password',
+    passwordMismatch: 'Both passwords must match.',
+    savePassword: 'Save password',
+    passwordSaved: 'Your password has been saved.',
+    resetExpired: 'This link has expired or has already been used. Request a new link.',
+
     loginTitle: 'Sign in',
     loginLead: 'Find your exchanges with the team, your files and your appointments.',
     email: 'E-mail address',
@@ -77,12 +87,6 @@ export const en: Dictionary = {
     noAccount: 'No account yet?',
     createAccount: 'Create an account',
     haveAccount: 'Already have an account?',
-    demoTitle: 'Demonstration access',
-    demoText: 'Password of the demonstration accounts: {password}',
-    demoClient: 'Enter as a client',
-    demoAdmin: 'Enter as the LDgenX team',
-    demoWindows:
-      'Open the client area in one window and the administration in another: messages, files and appointments update live on both sides.',
     registerTitle: 'Create your client area',
     registerLead:
       'Talk with the LDgenX team, receive your files and book appointments in one place.',
@@ -146,6 +150,7 @@ export const en: Dictionary = {
     notGiven: 'Not specified',
   },
   files: {
+    uploadLimit: '10 MB per file. Up to 6 attachments and 20 MB per message.',
     clientLead: 'Documents dropped for you by the LDgenX team.',
     drop: 'Drop your files here or {browse}',
     browse: 'browse your computer',
@@ -378,7 +383,6 @@ export const en: Dictionary = {
     lead: 'Availability for appointments and the weekly deletion of files.',
     availabilityTab: 'Availability',
     filesTab: 'Files',
-    demoTab: 'Demonstration',
     approval: 'Approval of appointment requests',
     approvalManual: 'Manual',
     approvalAuto: 'Automatic',
@@ -413,8 +417,6 @@ export const en: Dictionary = {
     closedDays: 'Closed days',
     closedDaysHelp: 'Public holidays and closures: no slots are offered on them.',
     addClosedDay: 'Add a day',
-    demoText:
-      'This demonstration data lives in this browser. Restoring it erases what you have created and brings back the examples.',
   },
   activity: {
     team: {

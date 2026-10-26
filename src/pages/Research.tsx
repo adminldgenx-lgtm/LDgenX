@@ -770,7 +770,16 @@ export function PublicationPage({ meta }: { meta: PageMeta }) {
                     legend={`${f.label}. ${f.caption}`}
                     caption={
                       <>
-                        {t.caption}. {f.credit}.
+                        {t.caption}. {f.credit}.{' '}
+                        {p.licence === 'CC BY 4.0' && (
+                          <a
+                            href="https://creativecommons.org/licenses/by/4.0/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            CC BY 4.0
+                          </a>
+                        )}
                       </>
                     }
                   />

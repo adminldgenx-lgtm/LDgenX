@@ -36,10 +36,26 @@ for (const page of pages) {
     await access('dist' + new URL(preview).pathname);
     social++;
   }
-  // No credit anywhere: every outside picture is in the public domain or under CC0.
+  // Decorative photographs are public-domain/CC0. Published scientific figures
+  // retain their attribution and licence in their captions.
   const text = html.replace(/<script[\s\S]*?<\/script>/g, '');
-  assert(!/CC BY|Wikimedia|Sketchfab|id="credits"/.test(text), `${page.path}: credit left`);
-  report.push({ path: page.path, media: [...new Set(relevant)], social: previews });
+  const withoutScientificCaptions = text.replace(/<figcaption>[\s\S]*?<\/figcaption>/g, '');
+  assert(
+    !/CC BY|Wikimedia|Sketchfab|id="credits"/.test(withoutScientificCaptions),
+    `${page.path}: retired decorative attribution`,
+  );
+  for (const caption of text.matchAll(/<figcaption>([\s\S]*?)<\/figcaption>/g)) {
+    if (caption[1].includes('CC BY 4.0'))
+      assert(
+        caption[1].includes('href="https://creativecommons.org/licenses/by/4.0/"'),
+        `${page.path}: scientific licence missing its link`,
+      );
+  }
+  report.push({
+    path: page.path,
+    media: [...new Set(relevant)],
+    social: previews,
+  });
 }
 for (const name of await readdir('dist/assets'))
   if (/\.(js|css)$/.test(name)) {
@@ -49,7 +65,7 @@ for (const name of await readdir('dist/assets'))
     assert(!assigned.test(body), `${name}: retired image in a lazy catalogue`);
   }
 console.log(
-  `Passed: ${pages.length} FR/EN pages, ${replacements} real/neutral image occurrences, ${social} social tags, no credit, lazy bundles; nine retired visuals unused.`,
+  `Passed: ${pages.length} FR/EN pages, ${replacements} real/neutral image occurrences, ${social} social tags, scientific licence links, lazy bundles; nine retired visuals unused.`,
 );
 if (process.argv.includes('--report')) {
   const { writeFile } = await import('node:fs/promises');

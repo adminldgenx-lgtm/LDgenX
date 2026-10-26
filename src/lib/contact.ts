@@ -1,13 +1,21 @@
-// The contact form sends directly only when an approved form service is configured
-// at build time. Without it, the form prepares an e-mail in the visitor's mail app.
-export const contactEndpoint = (import.meta.env.VITE_CONTACT_ENDPOINT ?? '').trim();
+// The public form reaches the same inbox as the client portal.
+const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL ?? '').trim();
+const key = (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? '').trim();
+export const contactEndpoint = (
+  import.meta.env.VITE_CONTACT_ENDPOINT ??
+  (supabaseUrl ? `${supabaseUrl}/functions/v1/portal/inquiries` : '')
+).trim();
 export const directContact = /^https:\/\//.test(contactEndpoint);
 
 export async function sendContact(form: HTMLFormElement) {
+  const headers: Record<string, string> = { Accept: 'application/json' };
+  if (contactEndpoint.startsWith(supabaseUrl + '/functions/') && key)
+    headers.apikey = key;
   const response = await fetch(contactEndpoint, {
     method: 'POST',
     body: new FormData(form),
-    headers: { Accept: 'application/json' },
+    headers,
   });
-  if (!response.ok) throw new Error(`Contact endpoint answered ${response.status}`);
+  if (!response.ok)
+    throw new Error(`Contact endpoint answered ${response.status}`);
 }

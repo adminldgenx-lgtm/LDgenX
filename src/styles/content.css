@@ -2254,17 +2254,6 @@ main {
   }
 }
 
-/* The navigation gained "Recherche": just above the menu-sheet breakpoint, it tightens a
-   little more so every entry stays on one line. */
-@media (min-width: 1181px) and (max-width: 1260px) {
-  .desktop-nav {
-    gap: 16px;
-  }
-  .header-inner {
-    gap: 18px;
-  }
-}
-
 /* Targeted DNA assay: the four steps, told by a small scene. */
 .assay-section {
   background: var(--cream);

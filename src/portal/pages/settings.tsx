@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Plus, Trash2, X } from 'lucide-react';
-import { api, type BookingConfig, type RetentionSettings, type WeeklyRule } from '../api';
+import {
+  api,
+  type BookingConfig,
+  type RetentionSettings,
+  type WeeklyRule,
+} from '../api';
 import { fill, useI18n } from '../i18n';
 import { useAction, useData, useToast } from '../state';
 import {
@@ -20,7 +25,7 @@ import {
 } from '../ui';
 import { nextPurgeAfter } from '../lib/retention';
 
-type Tab = 'availability' | 'files' | 'demo';
+type Tab = 'availability' | 'files';
 
 export function SettingsPage() {
   const { t } = useI18n();
@@ -31,9 +36,9 @@ export function SettingsPage() {
     ['availability', t.settings.availabilityTab],
     ['files', t.settings.filesTab],
   ];
-  if (api.mode === 'mock') tabs.push(['demo', t.settings.demoTab]);
   // An unknown tab in the address opens the first one.
-  const tab = tabs.find(([id]) => id === params.get('onglet'))?.[0] ?? 'availability';
+  const tab =
+    tabs.find(([id]) => id === params.get('onglet'))?.[0] ?? 'availability';
   return (
     <>
       <PageHeader title={t.nav.settings} lead={t.settings.lead} />
@@ -68,7 +73,6 @@ export function SettingsPage() {
           ) : (
             <Loading />
           ))}
-        {tab === 'demo' && <DemoPanel />}
       </div>
     </>
   );
@@ -81,18 +85,36 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
   const { run, busy } = useAction();
   const [form, setForm] = useState(config);
   const [newDay, setNewDay] = useState('');
-  const setType = (id: string, patch: Partial<BookingConfig['types'][number]>) =>
-    setForm({ ...form, types: form.types.map((x) => (x.id === id ? { ...x, ...patch } : x)) });
+  const setType = (
+    id: string,
+    patch: Partial<BookingConfig['types'][number]>,
+  ) =>
+    setForm({
+      ...form,
+      types: form.types.map((x) => (x.id === id ? { ...x, ...patch } : x)),
+    });
   const setHost = (id: string, bookable: boolean) =>
-    setForm({ ...form, hosts: form.hosts.map((h) => (h.id === id ? { ...h, bookable } : h)) });
+    setForm({
+      ...form,
+      hosts: form.hosts.map((h) => (h.id === id ? { ...h, bookable } : h)),
+    });
   const setRule = (id: string, patch: Partial<WeeklyRule>) =>
-    setForm({ ...form, rules: form.rules.map((r) => (r.id === id ? { ...r, ...patch } : r)) });
+    setForm({
+      ...form,
+      rules: form.rules.map((r) => (r.id === id ? { ...r, ...patch } : r)),
+    });
   const addRule = (hostId: string, weekday: number) =>
     setForm({
       ...form,
       rules: [
         ...form.rules,
-        { id: `rule-${Date.now()}-${ruleSeq++}`, hostId, weekday, start: '09:00', end: '12:00' },
+        {
+          id: `rule-${Date.now()}-${ruleSeq++}`,
+          hostId,
+          weekday,
+          start: '09:00',
+          end: '12:00',
+        },
       ],
     });
   const removeRule = (id: string) =>
@@ -110,7 +132,11 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
     format: (n: number) => string,
     onChange: (n: number) => void,
   ) => (
-    <select id={id} value={value} onChange={(e) => onChange(Number(e.target.value))}>
+    <select
+      id={id}
+      value={value}
+      onChange={(e) => onChange(Number(e.target.value))}
+    >
       {options.map((n) => (
         <option key={n} value={n}>
           {format(n)}
@@ -131,7 +157,9 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
           ]}
         />
         <p className="p-help">
-          {form.approval === 'auto' ? t.settings.approvalAutoHelp : t.settings.approvalManualHelp}
+          {form.approval === 'auto'
+            ? t.settings.approvalAutoHelp
+            : t.settings.approvalManualHelp}
         </p>
       </Card>
 
@@ -159,7 +187,11 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                         <tr key={weekday}>
                           <th scope="row">{dayName}</th>
                           <td>
-                            {!rules.length && <span className="p-muted">{t.settings.closed}</span>}
+                            {!rules.length && (
+                              <span className="p-muted">
+                                {t.settings.closed}
+                              </span>
+                            )}
                             {rules.map((r) => (
                               <span key={r.id} className="p-range">
                                 <input
@@ -167,7 +199,9 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                                   step={900}
                                   aria-label={`${dayName} · ${t.agenda.start}`}
                                   value={r.start}
-                                  onChange={(e) => setRule(r.id, { start: e.target.value })}
+                                  onChange={(e) =>
+                                    setRule(r.id, { start: e.target.value })
+                                  }
                                 />
                                 –
                                 <input
@@ -175,7 +209,9 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                                   step={900}
                                   aria-label={`${dayName} · ${t.agenda.end}`}
                                   value={r.end}
-                                  onChange={(e) => setRule(r.id, { end: e.target.value })}
+                                  onChange={(e) =>
+                                    setRule(r.id, { end: e.target.value })
+                                  }
                                 />
                                 <button
                                   type="button"
@@ -192,7 +228,8 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                               className="p-link p-add"
                               onClick={() => addRule(h.id, weekday)}
                             >
-                              <Plus size={14} aria-hidden="true" /> {t.settings.addRange}
+                              <Plus size={14} aria-hidden="true" />{' '}
+                              {t.settings.addRange}
                             </button>
                           </td>
                         </tr>
@@ -209,14 +246,22 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
       <Card title={t.settings.types}>
         <div className="p-type-settings">
           {form.types.map((x) => (
-            <div key={x.id} className="p-type-setting" style={{ borderLeftColor: x.colour }}>
+            <div
+              key={x.id}
+              className="p-type-setting"
+              style={{ borderLeftColor: x.colour }}
+            >
               <div className="p-grid-2">
                 <Field label={`${t.settings.typeLabel} · FR`}>
                   {(id) => (
                     <input
                       id={id}
                       value={x.label.fr}
-                      onChange={(e) => setType(x.id, { label: { ...x.label, fr: e.target.value } })}
+                      onChange={(e) =>
+                        setType(x.id, {
+                          label: { ...x.label, fr: e.target.value },
+                        })
+                      }
                     />
                   )}
                 </Field>
@@ -225,7 +270,11 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                     <input
                       id={id}
                       value={x.label.en}
-                      onChange={(e) => setType(x.id, { label: { ...x.label, en: e.target.value } })}
+                      onChange={(e) =>
+                        setType(x.id, {
+                          label: { ...x.label, en: e.target.value },
+                        })
+                      }
                     />
                   )}
                 </Field>
@@ -318,7 +367,10 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
                   className="p-icon-button"
                   aria-label={`${t.common.delete} ${d}`}
                   onClick={() =>
-                    setForm({ ...form, closedDays: form.closedDays.filter((x) => x !== d) })
+                    setForm({
+                      ...form,
+                      closedDays: form.closedDays.filter((x) => x !== d),
+                    })
                   }
                 >
                   <X size={14} />
@@ -364,7 +416,9 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
   const files = useData(() => api.listFiles(), []);
   const [form, setForm] = useState(settings);
   const next = nextPurgeAfter(Date.now(), form);
-  const preview = fill(form.notice[locale], { date: `${dateTime(next)} (${relative(next)})` });
+  const preview = fill(form.notice[locale], {
+    date: `${dateTime(next)} (${relative(next)})`,
+  });
   const removable = (files.data ?? []).filter((f) => !f.kept);
   return (
     <div className="p-columns" data-even>
@@ -381,7 +435,9 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                 <select
                   id={id}
                   value={form.weekday}
-                  onChange={(e) => setForm({ ...form, weekday: Number(e.target.value) })}
+                  onChange={(e) =>
+                    setForm({ ...form, weekday: Number(e.target.value) })
+                  }
                 >
                   {t.weekdays.map((d, i) => (
                     <option key={d} value={i}>
@@ -396,7 +452,9 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                 <select
                   id={id}
                   value={form.hour}
-                  onChange={(e) => setForm({ ...form, hour: Number(e.target.value) })}
+                  onChange={(e) =>
+                    setForm({ ...form, hour: Number(e.target.value) })
+                  }
                 >
                   {Array.from({ length: 24 }, (_, h) => (
                     <option key={h} value={h}>
@@ -407,13 +465,18 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
               )}
             </Field>
           </div>
-          <Field label={t.settings.minimumDays} help={t.settings.minimumDaysHelp}>
+          <Field
+            label={t.settings.minimumDays}
+            help={t.settings.minimumDaysHelp}
+          >
             {(id, d) => (
               <select
                 id={id}
                 aria-describedby={d}
                 value={form.minimumDays}
-                onChange={(e) => setForm({ ...form, minimumDays: Number(e.target.value) })}
+                onChange={(e) =>
+                  setForm({ ...form, minimumDays: Number(e.target.value) })
+                }
               >
                 {[1, 2, 3, 4, 5, 6].map((n) => (
                   <option key={n} value={n}>
@@ -423,7 +486,10 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
               </select>
             )}
           </Field>
-          <Field label={`${t.settings.notice} · FR`} help={t.settings.noticeHelp}>
+          <Field
+            label={`${t.settings.notice} · FR`}
+            help={t.settings.noticeHelp}
+          >
             {(id, d) => (
               <textarea
                 id={id}
@@ -431,7 +497,10 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                 rows={3}
                 value={form.notice.fr}
                 onChange={(e) =>
-                  setForm({ ...form, notice: { ...form.notice, fr: e.target.value } })
+                  setForm({
+                    ...form,
+                    notice: { ...form.notice, fr: e.target.value },
+                  })
                 }
               />
             )}
@@ -443,7 +512,10 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                 rows={3}
                 value={form.notice.en}
                 onChange={(e) =>
-                  setForm({ ...form, notice: { ...form.notice, en: e.target.value } })
+                  setForm({
+                    ...form,
+                    notice: { ...form.notice, en: e.target.value },
+                  })
                 }
               />
             )}
@@ -451,7 +523,9 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
           <div className="p-form-actions">
             <Button
               busy={busy}
-              onClick={() => run(() => api.updateRetention(form), t.common.saved)}
+              onClick={() =>
+                run(() => api.updateRetention(form), t.common.saved)
+              }
             >
               {t.common.save}
             </Button>
@@ -476,7 +550,9 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
             <div>
               {settings.enabled && (
                 <p className="p-big">
-                  {fill(t.retention.next, { date: dateTime(nextPurgeAfter(Date.now(), settings)) })}
+                  {fill(t.retention.next, {
+                    date: dateTime(nextPurgeAfter(Date.now(), settings)),
+                  })}
                 </p>
               )}
               <p className="p-muted">
@@ -485,13 +561,16 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                   removable.filter(
                     (f) =>
                       f.expiresAt &&
-                      Date.parse(f.expiresAt) <= nextPurgeAfter(Date.now(), settings),
+                      Date.parse(f.expiresAt) <=
+                        nextPurgeAfter(Date.now(), settings),
                   ).length,
                 )}
               </p>
               {settings.lastPurgeAt && (
                 <p className="p-muted">
-                  {fill(t.retention.lastPurge, { date: dateTime(settings.lastPurgeAt) })}
+                  {fill(t.retention.lastPurge, {
+                    date: dateTime(settings.lastPurgeAt),
+                  })}
                 </p>
               )}
             </div>
@@ -507,7 +586,8 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
                   )
                 ) {
                   const count = await run(() => api.purgeNow());
-                  if (count !== undefined) toast(plural(t.retention.purged, count));
+                  if (count !== undefined)
+                    toast(plural(t.retention.purged, count));
                 }
               }}
             >
@@ -518,26 +598,5 @@ function RetentionForm({ settings }: { settings: RetentionSettings }) {
       </div>
       {confirm.element}
     </div>
-  );
-}
-
-function DemoPanel() {
-  const { t } = useI18n();
-  const toast = useToast();
-  return (
-    <Card title={t.settings.demoTab}>
-      <p>{t.settings.demoText}</p>
-      <div className="p-row">
-        <Button
-          variant="danger"
-          onClick={async () => {
-            await api.resetDemo?.();
-            toast(t.common.demoReset, 'info');
-          }}
-        >
-          {t.common.resetDemo}
-        </Button>
-      </div>
-    </Card>
   );
 }

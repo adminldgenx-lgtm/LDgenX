@@ -16,7 +16,11 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link to={r.home} className="footer-lockup" aria-label={ui.common.homeLink}>
+          <Link
+            to={r.home}
+            className="footer-lockup"
+            aria-label={ui.common.homeLink}
+          >
             <img
               src="/brand/lockup-navy-160.webp"
               srcSet="/brand/lockup-navy-96.webp 343w, /brand/lockup-navy-160.webp 570w"
@@ -65,6 +69,9 @@ export function Footer() {
             <br />
             {company.city}
           </p>
+          {import.meta.env.VITE_PORTAL_ENABLED !== '0' && (
+            <a href="/espace/connexion">{ui.common.clientArea}</a>
+          )}
           <Link to={r.contact}>{copy.labels.quote}</Link>
           <a href={company.appointment} target="_blank" rel="noreferrer">
             {copy.labels.appointment}
@@ -87,7 +94,11 @@ export function Footer() {
             LinkedIn
             <span className="sr-only">{ui.common.newTab}</span>
           </a>
-          <Link to={meta.alternates[other] ?? bases[other].home} hrefLang={other} lang={other}>
+          <Link
+            to={meta.alternates[other] ?? bases[other].home}
+            hrefLang={other}
+            lang={other}
+          >
             {t.otherLanguage}
           </Link>
           {/* Full or reduced animations, whatever the system asks; remembered on this browser. */}

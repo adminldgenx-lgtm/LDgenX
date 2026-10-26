@@ -211,7 +211,7 @@ export const research = {
       themes: ['adaptation', 'aquaculture'],
       services: ['recherche-developpement'],
       summary:
-        'In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Larger individuals appear more sensitive to heatwaves than smaller ones.',
+        'In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Heavier individuals appear more sensitive to acute heat stress than lighter ones.',
       question: 'Within a species, do larger fish cope less well with rapid warming?',
       approach:
         'Temperature of fatigue during sustained aerobic exercise (CTSmax protocol) and maximum oxygen uptake measured in farmed sea bass and tilapia and in wild sea bass and seabream.',

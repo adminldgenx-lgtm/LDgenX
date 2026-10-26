@@ -217,7 +217,7 @@ export const research = {
       themes: ['adaptation', 'aquaculture'],
       services: ['recherche-developpement'],
       summary:
-        'Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les plus grands individus apparaissent plus sensibles aux vagues de chaleur que les plus petits.',
+        'Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les individus les plus lourds apparaissent plus sensibles à un stress thermique aigu que les plus légers.',
       question:
         'Au sein d’une même espèce, les poissons les plus grands supportent-ils moins bien un réchauffement rapide ?',
       approach:

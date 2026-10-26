@@ -1,3 +1,5 @@
+import { loadEnv } from 'vite';
+const buildEnv = { ...loadEnv('production', process.cwd(), ''), ...process.env };
 import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -19,8 +21,7 @@ import { pageFile } from './page-file.mjs';
 await ready;
 
 const root = path.resolve('dist');
-// The client area and the administration are built only on request (LDGENX_PORTAL=1), once their
-// backend is connected: without it the production site ships no demo application.
+// The portal is built by default. A public-site-only build can exclude it with LDGENX_PORTAL=0.
 const portal = existsSync(path.join(root, 'portal.html'));
 const built = await readFile(path.join(root, 'index.html'), 'utf8');
 if (!built.includes('<!--app-html-->') || !built.includes('<!--seo-head-->'))
@@ -130,7 +131,9 @@ await writeFile(path.join(root, 'redirects.json'), JSON.stringify(redirects, nul
 // and cannot be framed. Then a long cache for fingerprinted assets, plain text for the
 // language-model files, which stay out of search results, as does the client area when built.
 // A header set by two matching rules would be joined, so each rule sets different headers.
-const contact = (process.env.VITE_CONTACT_ENDPOINT ?? '').trim();
+const contact = (buildEnv.VITE_CONTACT_ENDPOINT ?? '').trim();
+const supabase = (buildEnv.VITE_SUPABASE_URL ?? '').trim();
+const supabaseOrigin = /^https:\/\//.test(supabase) ? ` ${new URL(supabase).origin} ${new URL(supabase).origin.replace('https:', 'wss:')}` : '';
 const contactOrigin = /^https:\/\//.test(contact) ? ` ${new URL(contact).origin}` : '';
 const policy = [
   "default-src 'self'",
@@ -139,7 +142,7 @@ const policy = [
   "img-src 'self' data: blob:",
   "font-src 'self'",
   "media-src 'self'",
-  `connect-src 'self'${contactOrigin}`,
+  `connect-src 'self'${contactOrigin}${supabaseOrigin}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

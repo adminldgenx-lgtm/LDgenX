@@ -84,7 +84,11 @@ export function RetentionNotice() {
       <CalendarClock size={20} aria-hidden="true" />
       <div>
         <strong>{t.retention.title}</strong>
-        <p>{fill(data.notice[locale], { date: `${dateTime(next)} (${relative(next)})` })}</p>
+        <p>
+          {fill(data.notice[locale], {
+            date: `${dateTime(next)} (${relative(next)})`,
+          })}
+        </p>
       </div>
     </div>
   );
@@ -124,7 +128,13 @@ export async function downloadFile(file: FileItem) {
   saveBlob(await api.downloadFile(file.id), file.name);
 }
 
-export function FileRow({ file, people }: { file: FileItem; people: Map<string, Person> }) {
+export function FileRow({
+  file,
+  people,
+}: {
+  file: FileItem;
+  people: Map<string, Person>;
+}) {
   const { t, short, relative, size } = useI18n();
   const user = useUser();
   const { run, busy } = useAction();
@@ -139,7 +149,8 @@ export function FileRow({ file, people }: { file: FileItem; people: Map<string, 
       <div className="p-file-main">
         <p className="p-file-name">{file.name}</p>
         <p className="p-file-meta">
-          {size(file.size)} · {short(file.createdAt)} · {fill(t.files.by, { name: author })}
+          {size(file.size)} · {short(file.createdAt)} ·{' '}
+          {fill(t.files.by, { name: author })}
         </p>
         {file.note && <p className="p-file-note">{file.note}</p>}
         <p className="p-file-meta">
@@ -153,7 +164,9 @@ export function FileRow({ file, people }: { file: FileItem; people: Map<string, 
           {admin && file.direction === 'to_client' && (
             <Badge tone={clientDownload ? 'navy' : 'neutral'}>
               {clientDownload
-                ? fill(t.files.downloadedOn, { date: relative(clientDownload.at) })
+                ? fill(t.files.downloadedOn, {
+                    date: relative(clientDownload.at),
+                  })
                 : t.files.notDownloaded}
             </Badge>
           )}
@@ -194,7 +207,10 @@ export function FileRow({ file, people }: { file: FileItem; people: Map<string, 
             size="small"
             onClick={async () => {
               if (
-                await confirm.ask(fill(t.files.deleteConfirm, { name: file.name }), t.common.delete)
+                await confirm.ask(
+                  fill(t.files.deleteConfirm, { name: file.name }),
+                  t.common.delete,
+                )
               )
                 run(() => api.deleteFile(file.id), t.files.deleted);
             }}
@@ -245,17 +261,25 @@ export function Thread({ clientId }: { clientId: string }) {
   const yesterday = teamDay(Date.now() - 86_400_000);
   const dayLabel = (iso: string) => {
     const key = teamDay(Date.parse(iso));
-    return key === today ? t.common.today : key === yesterday ? t.common.yesterday : date(iso);
+    return key === today
+      ? t.common.today
+      : key === yesterday
+        ? t.common.yesterday
+        : date(iso);
   };
   const sameSide = (m: Message) =>
-    user.role === 'admin' ? people.get(m.authorId)?.role === 'admin' : m.authorId === user.id;
+    user.role === 'admin'
+      ? people.get(m.authorId)?.role === 'admin'
+      : m.authorId === user.id;
   return (
     <div className="p-thread">
       <div ref={list} className="p-messages" aria-live="polite">
         {messages.loading && !messages.data ? (
           <Loading />
         ) : !count ? (
-          <Empty>{user.role === 'admin' ? t.messages.emptyTeam : t.messages.empty}</Empty>
+          <Empty>
+            {user.role === 'admin' ? t.messages.emptyTeam : t.messages.empty}
+          </Empty>
         ) : (
           messages.data!.map((m, i) => {
             const author = people.get(m.authorId);
@@ -273,11 +297,16 @@ export function Thread({ clientId }: { clientId: string }) {
                   </p>
                 )}
                 <article className="p-message" data-own={own || undefined}>
-                  <Avatar name={author?.name ?? '?'} colour={fromTeam ? '#03254b' : '#2a7416'} />
+                  <Avatar
+                    name={author?.name ?? '?'}
+                    colour={fromTeam ? '#03254b' : '#2a7416'}
+                  />
                   <div className="p-bubble">
                     <header>
                       <strong>
-                        {m.authorId === user.id ? t.common.you : (author?.name ?? t.common.unknown)}
+                        {m.authorId === user.id
+                          ? t.common.you
+                          : (author?.name ?? t.common.unknown)}
                       </strong>
                       {fromTeam && m.authorId !== user.id && (
                         <span className="p-muted"> · LDgenX</span>
@@ -297,7 +326,8 @@ export function Thread({ clientId }: { clientId: string }) {
                                   className="p-attachment"
                                   onClick={() => run(() => downloadFile(f))}
                                 >
-                                  <Paperclip size={14} aria-hidden="true" /> {f.name}
+                                  <Paperclip size={14} aria-hidden="true" />{' '}
+                                  {f.name}
                                 </button>
                               ) : (
                                 <span className="p-attachment" data-gone>
@@ -334,8 +364,12 @@ export function Thread({ clientId }: { clientId: string }) {
                 <button
                   type="button"
                   className="p-icon-button"
-                  aria-label={fill(t.messages.removeAttachment, { name: f.name })}
-                  onClick={() => setAttachments(attachments.filter((_, j) => j !== i))}
+                  aria-label={fill(t.messages.removeAttachment, {
+                    name: f.name,
+                  })}
+                  onClick={() =>
+                    setAttachments(attachments.filter((_, j) => j !== i))
+                  }
                 >
                   <X size={14} />
                 </button>
@@ -370,13 +404,19 @@ export function Thread({ clientId }: { clientId: string }) {
             aria-label={t.messages.placeholder}
             rows={1}
             onKeyDown={(event) => {
-              if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) send();
+              if (event.key === 'Enter' && (event.metaKey || event.ctrlKey))
+                send();
             }}
           />
-          <Button type="submit" busy={busy} disabled={!body.trim() && !attachments.length}>
+          <Button
+            type="submit"
+            busy={busy}
+            disabled={!body.trim() && !attachments.length}
+          >
             {t.common.send}
           </Button>
         </div>
+        <p className="p-help">{t.files.uploadLimit}</p>
       </form>
     </div>
   );
@@ -409,12 +449,19 @@ export function useActivity() {
       const values: Record<string, string | number> = { ...a.data };
       if (typeof values.type === 'string')
         values.type =
-          booking.data?.types.find((x) => x.id === values.type)?.label[locale] ?? values.type;
-      if (typeof values.start === 'string') values.start = dateTime(values.start);
-      return fill(sentences[a.kind] ?? t.activity.team[a.kind] ?? a.kind, values);
+          booking.data?.types.find((x) => x.id === values.type)?.label[
+            locale
+          ] ?? values.type;
+      if (typeof values.start === 'string')
+        values.start = dateTime(values.start);
+      return fill(
+        sentences[a.kind] ?? t.activity.team[a.kind] ?? a.kind,
+        values,
+      );
     },
     link(a: Activity) {
-      if (user.role === 'admin') return (TEAM_LINKS[a.kind] ?? (() => '/admin/agenda'))(a);
+      if (user.role === 'admin')
+        return (TEAM_LINKS[a.kind] ?? (() => '/admin/agenda'))(a);
       return CLIENT_LINKS[a.kind] ?? '/espace/rendez-vous';
     },
   };
@@ -428,13 +475,15 @@ export function Notifications() {
   const { sentence, link } = useActivity();
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLDivElement>(null);
-  const unread = activity.data?.filter((a) => !a.readBy.includes(user.id)) ?? [];
+  const unread =
+    activity.data?.filter((a) => !a.readBy.includes(user.id)) ?? [];
   useEffect(() => {
     if (!open) return;
     const close = (event: PointerEvent) => {
       if (!box.current?.contains(event.target as Node)) setOpen(false);
     };
-    const escape = (event: KeyboardEvent) => event.key === 'Escape' && setOpen(false);
+    const escape = (event: KeyboardEvent) =>
+      event.key === 'Escape' && setOpen(false);
     document.addEventListener('pointerdown', close);
     document.addEventListener('keydown', escape);
     return () => {
@@ -453,15 +502,25 @@ export function Notifications() {
       >
         <Bell size={20} />
         {!!unread.length && (
-          <span className="p-bell-count">{unread.length > 9 ? '9+' : unread.length}</span>
+          <span className="p-bell-count">
+            {unread.length > 9 ? '9+' : unread.length}
+          </span>
         )}
       </button>
       {open && (
-        <div className="p-popover" role="dialog" aria-label={t.common.notifications}>
+        <div
+          className="p-popover"
+          role="dialog"
+          aria-label={t.common.notifications}
+        >
           <header>
             <strong>{t.common.notifications}</strong>
             {!!unread.length && (
-              <button type="button" className="p-link" onClick={() => api.markActivityRead()}>
+              <button
+                type="button"
+                className="p-link"
+                onClick={() => api.markActivityRead()}
+              >
                 {t.common.markAllRead}
               </button>
             )}
@@ -471,7 +530,10 @@ export function Notifications() {
           ) : (
             <ul>
               {activity.data.slice(0, 14).map((a) => (
-                <li key={a.id} data-unread={!a.readBy.includes(user.id) || undefined}>
+                <li
+                  key={a.id}
+                  data-unread={!a.readBy.includes(user.id) || undefined}
+                >
                   <Link
                     to={link(a)}
                     onClick={() => {

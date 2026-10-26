@@ -104,7 +104,10 @@ export function TeamPage({ meta }: { meta: PageMeta }) {
   return (
     <>
       <PageHero meta={meta} {...pageCopy.team} />
-      <section className="section-space delivery-section" aria-labelledby="team-title">
+      <section
+        className="section-space delivery-section"
+        aria-labelledby="team-title"
+      >
         <div className="container">
           <h2 id="team-title" className="sr-only">
             {ui.about.teamSr}
@@ -140,7 +143,10 @@ export function PartnersPage({ meta }: { meta: PageMeta }) {
   return (
     <>
       <PageHero meta={meta} {...pageCopy.partners} />
-      <section className="section-space trust-wall-section" aria-labelledby="ecosystem-title">
+      <section
+        className="section-space trust-wall-section"
+        aria-labelledby="ecosystem-title"
+      >
         <div className="container">
           <h2 id="ecosystem-title" className="sr-only">
             {ui.about.partnersSr}
@@ -148,7 +154,10 @@ export function PartnersPage({ meta }: { meta: PageMeta }) {
           <Ecosystem />
         </div>
       </section>
-      <section className="section-space delivery-section" aria-labelledby="logos-title">
+      <section
+        className="section-space delivery-section"
+        aria-labelledby="logos-title"
+      >
         <div className="container">
           <h2 id="logos-title" className="sr-only">
             {ui.about.logos}
@@ -171,7 +180,9 @@ export function PersonPage({ meta }: { meta: PageMeta }) {
   const t = ui.person;
   const p = people.find((p) => p.id === meta.id)!;
   const service = services.find((s) => s.id === p.service);
-  const publications = research.publications.filter((x) => x.members.includes(p.id));
+  const publications = research.publications.filter((x) =>
+    x.members.includes(p.id),
+  );
   return (
     <>
       <PageHero meta={meta} eyebrow={t.eyebrow} title={p.name} intro={p.bio} />
@@ -179,7 +190,11 @@ export function PersonPage({ meta }: { meta: PageMeta }) {
         <div className="container person-layout">
           <Reveal className="person-portrait">
             <figure>
-              <Photo name={p.photo} alt={p.name} sizes="(max-width: 800px) 80vw, 30vw" />
+              <Photo
+                name={p.photo}
+                alt={p.name}
+                sizes="(max-width: 800px) 80vw, 30vw"
+              />
             </figure>
             <p className="person-role">{p.role}</p>
             {service && (
@@ -191,7 +206,10 @@ export function PersonPage({ meta }: { meta: PageMeta }) {
           <div className="person-biography">
             <Eyebrow>{t.biography}</Eyebrow>
             {p.biography.map((paragraph, i) => (
-              <Reveal key={paragraph.slice(0, 40)} delay={Math.min(i, 3) * 0.05}>
+              <Reveal
+                key={paragraph.slice(0, 40)}
+                delay={Math.min(i, 3) * 0.05}
+              >
                 <p>{paragraph}</p>
               </Reveal>
             ))}
@@ -329,6 +347,8 @@ export function PrivacyPage({ meta }: { meta: PageMeta }) {
           <h2>{directContact ? t.formTitle : t.mailtoTitle}</h2>
           <p>{directContact ? t.form : t.mailto}</p>
           <p>{t.message}</p>
+          <h2>{t.portalTitle}</h2>
+          <p>{t.portal}</p>
           <h2>{t.linksTitle}</h2>
           <p>{t.links}</p>
           <h2>{t.dataTitle}</h2>

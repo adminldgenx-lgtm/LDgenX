@@ -1,0 +1,2487 @@
+[
+  {
+    "id": "levure-replication-adn-polymerase-alpha-2026",
+    "doi": "10.1038/s44318-026-00919-5",
+    "status": 200,
+    "title": "Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα",
+    "siteTitle": "Switch from canonical to recombination-dependent DNA synthesis by M-CDK phosphorylation of DNA Polα",
+    "journal": "The EMBO Journal",
+    "siteJournal": "The EMBO Journal",
+    "dates": {
+      "published": [
+        2026,
+        10,
+        10
+      ],
+      "published-online": [
+        2026,
+        10,
+        10
+      ],
+      "issued": [
+        2026,
+        10,
+        10
+      ]
+    },
+    "siteYear": 2026,
+    "siteIssue": "en ligne avant impression",
+    "authors": [
+      {
+        "given": "Juan de Dios",
+        "family": "Barba Tena",
+        "ORCID": "https://orcid.org/0000-0002-3562-8071"
+      },
+      {
+        "given": "Riccardo",
+        "family": "Montecchi"
+      },
+      {
+        "given": "Maxime",
+        "family": "Lambert",
+        "ORCID": "https://orcid.org/0000-0001-7572-5696"
+      },
+      {
+        "given": "Thomas",
+        "family": "Defrance",
+        "ORCID": "https://orcid.org/0009-0003-7182-4517"
+      },
+      {
+        "given": "Elisabeth",
+        "family": "Gueydon"
+      },
+      {
+        "given": "Julie",
+        "family": "Petit"
+      },
+      {
+        "given": "Marjorie",
+        "family": "Drac",
+        "ORCID": "https://orcid.org/0000-0003-3236-5015"
+      },
+      {
+        "given": "Noémie",
+        "family": "Legoff",
+        "ORCID": "https://orcid.org/0009-0007-6828-1768"
+      },
+      {
+        "given": "Michela",
+        "family": "Galli"
+      },
+      {
+        "given": "Isabelle",
+        "family": "Goiffon",
+        "ORCID": "https://orcid.org/0009-0000-8681-7916"
+      },
+      {
+        "given": "Thierry",
+        "family": "Gostan",
+        "ORCID": "https://orcid.org/0000-0002-1087-8015"
+      },
+      {
+        "given": "Khadija",
+        "family": "El Koulali"
+      },
+      {
+        "given": "Serge",
+        "family": "Urbach",
+        "ORCID": "https://orcid.org/0000-0001-8663-2006"
+      },
+      {
+        "given": "David",
+        "family": "Toczyski",
+        "ORCID": "https://orcid.org/0000-0001-5924-0365"
+      },
+      {
+        "given": "Nicolas",
+        "family": "Talarek",
+        "ORCID": "https://orcid.org/0000-0003-2804-7372"
+      },
+      {
+        "given": "Etienne",
+        "family": "Schwob",
+        "ORCID": "https://orcid.org/0000-0002-9369-6419"
+      }
+    ],
+    "siteAuthors": [
+      "Barba Tena JD",
+      "Montecchi R",
+      "Lambert M",
+      "Defrance T",
+      "Gueydon E",
+      "Petit J",
+      "Drac M",
+      "Legoff N",
+      "Galli M",
+      "Goiffon I",
+      "Gostan T",
+      "El Koulali K",
+      "Urbach S",
+      "Toczyski DP",
+      "Talarek N",
+      "Schwob E"
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "source": "https://doi.org/10.1038/s44318-026-00919-5",
+    "relations": {}
+  },
+  {
+    "id": "bar-cortisol-temperature-2026",
+    "doi": "10.1016/j.cbpa.2026.112004",
+    "status": 200,
+    "title": "Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish",
+    "siteTitle": "Water-borne cortisol is correlated with acclimatization temperature but not metabolic rate in a teleost fish",
+    "journal": "Comparative Biochemistry and Physiology Part A: Molecular &amp; Integrative Physiology",
+    "siteJournal": "Comparative Biochemistry and Physiology Part A: Molecular & Integrative Physiology",
+    "dates": {
+      "published": [
+        2026,
+        7
+      ],
+      "published-print": [
+        2026,
+        7
+      ],
+      "issued": [
+        2026,
+        7
+      ]
+    },
+    "siteYear": 2026,
+    "volume": "317",
+    "pages": "112004",
+    "articleNumber": "112004",
+    "siteIssue": "317, 112004",
+    "authors": [
+      {
+        "given": "Elisa",
+        "family": "Sniecinski"
+      },
+      {
+        "given": "Théo P.",
+        "family": "Navarro"
+      },
+      {
+        "given": "Tallulah",
+        "family": "Bailey"
+      },
+      {
+        "given": "Damien",
+        "family": "Crestel"
+      },
+      {
+        "given": "François",
+        "family": "Allal"
+      },
+      {
+        "given": "Anthony",
+        "family": "Maire"
+      },
+      {
+        "given": "Marie-Laure",
+        "family": "Bégout"
+      },
+      {
+        "given": "Benjamin",
+        "family": "Geffroy"
+      },
+      {
+        "given": "David J.",
+        "family": "McKenzie"
+      }
+    ],
+    "siteAuthors": [
+      "Sniecinski E",
+      "Navarro TP",
+      "Bailey T",
+      "Crestel D",
+      "Allal F",
+      "Maire A",
+      "Bégout ML",
+      "Geffroy B",
+      "McKenzie DJ"
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "source": "https://doi.org/10.1016/j.cbpa.2026.112004",
+    "relations": {}
+  },
+  {
+    "id": "bar-sex-ratio-temperature-gwas-2026",
+    "doi": "10.1038/s41437-026-00841-w",
+    "status": 200,
+    "title": "Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios",
+    "journal": "Heredity",
+    "dates": {
+      "published": [
+        2026,
+        4,
+        9
+      ],
+      "published-print": [
+        2026,
+        6
+      ],
+      "published-online": [
+        2026,
+        4,
+        9
+      ],
+      "issued": [
+        2026,
+        4,
+        9
+      ]
+    },
+    "volume": "135",
+    "issue": "6",
+    "pages": "385-396",
+    "authors": [
+      {
+        "given": "Damien",
+        "family": "Crestel",
+        "ORCID": "https://orcid.org/0009-0006-6022-9853"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet"
+      },
+      {
+        "given": "Emilie",
+        "family": "Delpuech",
+        "ORCID": "https://orcid.org/0000-0003-0848-4903"
+      },
+      {
+        "given": "Nuria",
+        "family": "Sanchez-Baizan",
+        "ORCID": "https://orcid.org/0000-0002-3722-5188"
+      },
+      {
+        "given": "Frédéric",
+        "family": "Clota"
+      },
+      {
+        "given": "Marie-Odile",
+        "family": "Blanc"
+      },
+      {
+        "given": "Théo",
+        "family": "Navarro",
+        "ORCID": "https://orcid.org/0009-0004-5345-1267"
+      },
+      {
+        "given": "Stéphane",
+        "family": "Lallement",
+        "ORCID": "https://orcid.org/0000-0001-5008-0385"
+      },
+      {
+        "given": "Félix",
+        "family": "Moulard"
+      },
+      {
+        "given": "François",
+        "family": "Ruelle"
+      },
+      {
+        "given": "David J.",
+        "family": "McKenzie"
+      },
+      {
+        "given": "François",
+        "family": "Allal",
+        "ORCID": "https://orcid.org/0000-0002-8232-904X"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte",
+        "ORCID": "https://orcid.org/0000-0001-9929-4587"
+      }
+    ],
+    "licences": [
+      "https://www.springernature.com/gp/researchers/text-and-data-mining",
+      "https://www.springernature.com/gp/researchers/text-and-data-mining"
+    ],
+    "source": "https://doi.org/10.1038/s41437-026-00841-w",
+    "relations": {},
+    "siteTitle": "Quantitative genetics and GWAS reveal population-specific sex-ratio responses in wild European seabass (Dicentrarchus labrax) under various temperature scenarios",
+    "siteJournal": "Heredity",
+    "siteYear": 2026,
+    "siteAuthors": [
+      "Crestel D",
+      "Vergnet A",
+      "Delpuech E",
+      "Sanchez-Baizan N",
+      "Clota F",
+      "Blanc MO",
+      "Navarro T",
+      "Lallement S",
+      "Moulard F",
+      "Ruelle F",
+      "McKenzie DJ",
+      "Allal F",
+      "Vandeputte M"
+    ],
+    "siteIssue": "135(6), 385–396"
+  },
+  {
+    "id": "bar-survie-larvaire-introgression-2026",
+    "doi": "10.1016/j.aquaculture.2025.743605",
+    "status": 200,
+    "title": "Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes",
+    "siteTitle": "Larval survival in European seabass (Dicentrarchus labrax) is shaped by the natural thermal regime of their population of origin and the level of introgression of Atlantic and Mediterranean genomes",
+    "journal": "Aquaculture",
+    "siteJournal": "Aquaculture",
+    "dates": {
+      "published": [
+        2026,
+        3
+      ],
+      "published-print": [
+        2026,
+        3
+      ],
+      "issued": [
+        2026,
+        3
+      ]
+    },
+    "siteYear": 2026,
+    "volume": "615",
+    "pages": "743605",
+    "articleNumber": "743605",
+    "siteIssue": "615, 743605",
+    "authors": [
+      {
+        "given": "Damien",
+        "family": "Crestel"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet"
+      },
+      {
+        "given": "Emilie",
+        "family": "Delpuech"
+      },
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Frédéric",
+        "family": "Clota"
+      },
+      {
+        "given": "Marie-Odile",
+        "family": "Blanc"
+      },
+      {
+        "given": "Théo",
+        "family": "Navarro"
+      },
+      {
+        "given": "Stéphane",
+        "family": "Lallement"
+      },
+      {
+        "given": "Félix",
+        "family": "Moulard"
+      },
+      {
+        "given": "François",
+        "family": "Ruelle"
+      },
+      {
+        "given": "David J.",
+        "family": "McKenzie"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte"
+      },
+      {
+        "given": "François",
+        "family": "Allal"
+      }
+    ],
+    "siteAuthors": [
+      "Crestel D",
+      "Vergnet A",
+      "Delpuech E",
+      "Leitwein M",
+      "Clota F",
+      "Blanc MO",
+      "Navarro T",
+      "Lallement S",
+      "Moulard F",
+      "Ruelle F",
+      "McKenzie DJ",
+      "Vandeputte M",
+      "Allal F"
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1016/j.aquaculture.2025.743605",
+    "relations": {}
+  },
+  {
+    "id": "poissons-tolerance-rechauffement-taille-2025",
+    "doi": "10.1242/jeb.250612",
+    "status": 200,
+    "title": "Evidence that tolerance of acute warming declines with increasing body mass within fish species",
+    "siteTitle": "Evidence that tolerance of acute warming declines with increasing body mass within fish species",
+    "journal": "Journal of Experimental Biology",
+    "siteJournal": "Journal of Experimental Biology",
+    "dates": {
+      "published": [
+        2025,
+        9,
+        1
+      ],
+      "published-print": [
+        2025,
+        9,
+        1
+      ],
+      "published-online": [
+        2025,
+        9,
+        15
+      ],
+      "issued": [
+        2025,
+        9,
+        1
+      ]
+    },
+    "siteYear": 2025,
+    "volume": "228",
+    "issue": "17",
+    "articleNumber": "jeb250612",
+    "siteIssue": "228(17), jeb250612",
+    "authors": [
+      {
+        "given": "Théo P.",
+        "family": "Navarro",
+        "ORCID": "https://orcid.org/0009-0004-5345-1267"
+      },
+      {
+        "given": "Davide",
+        "family": "Thambithurai",
+        "ORCID": "https://orcid.org/0000-0002-0338-3778"
+      },
+      {
+        "given": "Emma",
+        "family": "Duquenne-Delobel"
+      },
+      {
+        "given": "Damien",
+        "family": "Crestel",
+        "ORCID": "https://orcid.org/0009-0006-6022-9853"
+      },
+      {
+        "given": "Francois",
+        "family": "Allal",
+        "ORCID": "https://orcid.org/0000-0002-8232-904X"
+      },
+      {
+        "given": "Germain",
+        "family": "Salou"
+      },
+      {
+        "given": "Gilbert",
+        "family": "Dutto"
+      },
+      {
+        "given": "Felipe R.",
+        "family": "Blasco"
+      },
+      {
+        "given": "Jérôme",
+        "family": "Bourjea",
+        "ORCID": "https://orcid.org/0000-0001-7149-3648"
+      },
+      {
+        "given": "David J.",
+        "family": "McKenzie",
+        "ORCID": "https://orcid.org/0000-0003-0961-9101"
+      }
+    ],
+    "siteAuthors": [
+      "Navarro TP",
+      "Thambithurai D",
+      "Duquenne-Delobel E",
+      "Crestel D",
+      "Allal F",
+      "Salou G",
+      "Dutto G",
+      "Blasco FR",
+      "Bourjea J",
+      "McKenzie DJ"
+    ],
+    "licences": [
+      "http://www.biologists.com/user-licence-1-2/"
+    ],
+    "source": "https://doi.org/10.1242/jeb.250612",
+    "relations": {}
+  },
+  {
+    "id": "genomes-becasse-becassine-2025",
+    "doi": "10.56179/001c.143981",
+    "status": 200,
+    "title": "Chromosome-scale genome sequences of two Charadriiformes species: <i>Scolopax rusticola</i> and <i>Lymnocryptes minimus</i>",
+    "siteTitle": "Chromosome-scale genome sequences of two Charadriiformes species: Scolopax rusticola and Lymnocryptes minimus",
+    "journal": "Biodiversity Genomes",
+    "siteJournal": "Biodiversity Genomes",
+    "dates": {
+      "published": [
+        2025,
+        9,
+        4
+      ],
+      "published-online": [
+        2025,
+        9,
+        4
+      ],
+      "issued": [
+        2025,
+        9,
+        4
+      ]
+    },
+    "siteYear": 2025,
+    "siteIssue": "2025",
+    "authors": [
+      {
+        "given": "Emilie",
+        "family": "Delpuech"
+      },
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Arnaud",
+        "family": "Couloux"
+      },
+      {
+        "given": "Karine",
+        "family": "Labadie"
+      },
+      {
+        "given": "Corinne",
+        "family": "Cruaud"
+      },
+      {
+        "given": "Jean-Marc",
+        "family": "Aury"
+      },
+      {
+        "given": "Carole",
+        "family": "Bodin"
+      },
+      {
+        "given": "Pascal",
+        "family": "Lapébie"
+      }
+    ],
+    "siteAuthors": [
+      "Delpuech E",
+      "Leitwein M",
+      "Couloux A",
+      "Labadie K",
+      "Cruaud C",
+      "Aury JM",
+      "Bodin C",
+      "Lapébie P"
+    ],
+    "source": "https://doi.org/10.56179/001c.143981",
+    "relations": {}
+  },
+  {
+    "id": "bar-introgression-fitness-2025",
+    "doi": "10.1093/evolut/qpaf079",
+    "status": 200,
+    "title": "Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass",
+    "siteTitle": "Reduced fitness associated with introgression within the Western Mediterranean admixed population of European seabass",
+    "journal": "Evolution",
+    "siteJournal": "Evolution",
+    "dates": {
+      "published": [
+        2025,
+        4,
+        17
+      ],
+      "published-print": [
+        2025,
+        9,
+        12
+      ],
+      "published-online": [
+        2025,
+        4,
+        17
+      ],
+      "issued": [
+        2025,
+        4,
+        17
+      ]
+    },
+    "siteYear": 2025,
+    "volume": "79",
+    "issue": "8",
+    "pages": "1681-1689",
+    "siteIssue": "79(8), 1681–1689",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Bruno",
+        "family": "Ernande"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte",
+        "ORCID": "https://orcid.org/0000-0001-9929-4587"
+      },
+      {
+        "given": "Frederic",
+        "family": "Clota"
+      },
+      {
+        "given": "François",
+        "family": "Allal",
+        "ORCID": "https://orcid.org/0000-0002-8232-904X"
+      }
+    ],
+    "siteAuthors": [
+      "Leitwein M",
+      "Ernande B",
+      "Vandeputte M",
+      "Clota F",
+      "Allal F"
+    ],
+    "licences": [
+      "https://academic.oup.com/pages/standard-publication-reuse-rights"
+    ],
+    "source": "https://doi.org/10.1093/evolut/qpaf079",
+    "relations": {}
+  },
+  {
+    "id": "bar-croissance-larvaire-temperature-2025",
+    "doi": "10.1111/eva.70083",
+    "status": 200,
+    "title": "Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?",
+    "siteTitle": "Do European Seabass Larvae Grow Better in Their Natural Temperature Regime?",
+    "journal": "Evolutionary Applications",
+    "siteJournal": "Evolutionary Applications",
+    "dates": {
+      "published": [
+        2025,
+        2
+      ],
+      "published-print": [
+        2025,
+        2
+      ],
+      "published-online": [
+        2025,
+        2,
+        25
+      ],
+      "issued": [
+        2025,
+        2
+      ]
+    },
+    "siteYear": 2025,
+    "volume": "18",
+    "issue": "2",
+    "articleNumber": "e70083",
+    "siteIssue": "18(2), e70083",
+    "authors": [
+      {
+        "given": "Damien",
+        "family": "Crestel",
+        "ORCID": "https://orcid.org/0009-0006-6022-9853"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet",
+        "ORCID": "https://orcid.org/0000-0001-8748-6426"
+      },
+      {
+        "given": "Frédéric",
+        "family": "Clota",
+        "ORCID": "https://orcid.org/0009-0007-9496-1783"
+      },
+      {
+        "given": "Marie‐Odile",
+        "family": "Blanc"
+      },
+      {
+        "given": "Théo",
+        "family": "Navarro"
+      },
+      {
+        "given": "Stéphane",
+        "family": "Lallement"
+      },
+      {
+        "given": "Félix",
+        "family": "Moulard"
+      },
+      {
+        "given": "David",
+        "family": "McKenzie",
+        "ORCID": "https://orcid.org/0000-0003-0961-9101"
+      },
+      {
+        "given": "François",
+        "family": "Allal",
+        "ORCID": "https://orcid.org/0000-0002-8232-904X"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte",
+        "ORCID": "https://orcid.org/0000-0001-9929-4587"
+      }
+    ],
+    "siteAuthors": [
+      "Crestel D",
+      "Vergnet A",
+      "Clota F",
+      "Blanc MO",
+      "Navarro T",
+      "Lallement S",
+      "Moulard F",
+      "McKenzie D",
+      "Allal F",
+      "Vandeputte M"
+    ],
+    "licences": [
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1111/eva.70083",
+    "relations": {}
+  },
+  {
+    "id": "bar-selection-efficacite-alimentaire-2025",
+    "doi": "10.1016/j.aquaculture.2024.741682",
+    "status": 200,
+    "title": "Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex",
+    "siteTitle": "Genomic selection for individual feed efficiency in the European seabass: Response to selection on efficiency, commercial traits and sex",
+    "journal": "Aquaculture",
+    "siteJournal": "Aquaculture",
+    "dates": {
+      "published": [
+        2025,
+        1
+      ],
+      "published-print": [
+        2025,
+        1
+      ],
+      "issued": [
+        2025,
+        1
+      ]
+    },
+    "siteYear": 2025,
+    "volume": "595",
+    "pages": "741682",
+    "articleNumber": "741682",
+    "siteIssue": "595, 741682",
+    "authors": [
+      {
+        "given": "François",
+        "family": "Allal"
+      },
+      {
+        "given": "Mathieu",
+        "family": "Besson"
+      },
+      {
+        "given": "Emilie",
+        "family": "Delpuech"
+      },
+      {
+        "given": "Chloé",
+        "family": "Barrier-Loiseau"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet"
+      },
+      {
+        "given": "Franck",
+        "family": "Morell"
+      },
+      {
+        "given": "Marie-Odile",
+        "family": "Blanc"
+      },
+      {
+        "given": "Stéphane",
+        "family": "Lallement"
+      },
+      {
+        "given": "Frédéric",
+        "family": "Clota"
+      },
+      {
+        "given": "François",
+        "family": "Ruelle"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte"
+      }
+    ],
+    "siteAuthors": [
+      "Allal F",
+      "Besson M",
+      "Delpuech E",
+      "Barrier-Loiseau C",
+      "Vergnet A",
+      "Morell F",
+      "Blanc MO",
+      "Lallement S",
+      "Clota F",
+      "Ruelle F",
+      "Vandeputte M"
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1016/j.aquaculture.2024.741682",
+    "relations": {}
+  },
+  {
+    "id": "bar-introgression-teneur-gras-2024",
+    "doi": "10.1093/molbev/msae194",
+    "status": 200,
+    "title": "The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone",
+    "siteTitle": "The Fate of a Polygenic Phenotype Within the Genomic Landscapes of Introgression in the European Seabass Hybrid Zone",
+    "journal": "Molecular Biology and Evolution",
+    "siteJournal": "Molecular Biology and Evolution",
+    "dates": {
+      "published": [
+        2024,
+        9
+      ],
+      "published-print": [
+        2024,
+        9,
+        4
+      ],
+      "published-online": [
+        2024,
+        9,
+        13
+      ],
+      "issued": [
+        2024,
+        9
+      ]
+    },
+    "siteYear": 2024,
+    "volume": "41",
+    "issue": "9",
+    "articleNumber": "msae194",
+    "siteIssue": "41(9), msae194",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Ghislain",
+        "family": "Durif",
+        "ORCID": "https://orcid.org/0000-0003-2567-1401"
+      },
+      {
+        "given": "Emilie",
+        "family": "Delpuech",
+        "ORCID": "https://orcid.org/0000-0003-0848-4903"
+      },
+      {
+        "given": "Pierre-Alexandre",
+        "family": "Gagnaire",
+        "ORCID": "https://orcid.org/0000-0002-1908-3235"
+      },
+      {
+        "given": "Bruno",
+        "family": "Ernande",
+        "ORCID": "https://orcid.org/0000-0002-0727-5774"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte",
+        "ORCID": "https://orcid.org/0000-0001-9929-4587"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet",
+        "ORCID": "https://orcid.org/0000-0001-8748-6426"
+      },
+      {
+        "given": "Maud",
+        "family": "Duranton",
+        "ORCID": "https://orcid.org/0000-0003-3943-8061"
+      },
+      {
+        "given": "Frederic",
+        "family": "Clota",
+        "ORCID": "https://orcid.org/0009-0007-9496-1783"
+      },
+      {
+        "given": "François",
+        "family": "Allal",
+        "ORCID": "https://orcid.org/0000-0002-8232-904X"
+      }
+    ],
+    "siteAuthors": [
+      "Leitwein M",
+      "Durif G",
+      "Delpuech E",
+      "Gagnaire PA",
+      "Ernande B",
+      "Vandeputte M",
+      "Vergnet A",
+      "Duranton M",
+      "Clota F",
+      "Allal F"
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by-nc/4.0/"
+    ],
+    "source": "https://doi.org/10.1093/molbev/msae194",
+    "relations": {}
+  },
+  {
+    "id": "bar-determinisme-sexe-energie-2024",
+    "doi": "10.1016/j.gene.2024.148721",
+    "status": 200,
+    "title": "Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)",
+    "siteTitle": "Thermal modulation of energy allocation during sex determination in the European sea bass (Dicentrarchus labrax)",
+    "journal": "Gene",
+    "siteJournal": "Gene",
+    "dates": {
+      "published": [
+        2024,
+        11
+      ],
+      "published-print": [
+        2024,
+        11
+      ],
+      "issued": [
+        2024,
+        11
+      ]
+    },
+    "siteYear": 2024,
+    "volume": "927",
+    "pages": "148721",
+    "articleNumber": "148721",
+    "siteIssue": "927, 148721",
+    "authors": [
+      {
+        "given": "Oswaldo",
+        "family": "Tovar-Bohórquez",
+        "ORCID": "https://orcid.org/0009-0000-2903-7454"
+      },
+      {
+        "given": "David",
+        "family": "McKenzie",
+        "ORCID": "https://orcid.org/0000-0003-0961-9101"
+      },
+      {
+        "given": "Damien",
+        "family": "Crestel",
+        "ORCID": "https://orcid.org/0009-0006-6022-9853"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte"
+      },
+      {
+        "given": "Benjamin",
+        "family": "Geffroy",
+        "ORCID": "https://orcid.org/0000-0001-6120-1103"
+      }
+    ],
+    "siteAuthors": [
+      "Tovar-Bohórquez O",
+      "McKenzie D",
+      "Crestel D",
+      "Vandeputte M",
+      "Geffroy B"
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1016/j.gene.2024.148721",
+    "relations": {}
+  },
+  {
+    "id": "bar-temperature-femelles-2024",
+    "doi": "10.1016/j.aquaculture.2024.740758",
+    "status": 200,
+    "title": "Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax",
+    "siteTitle": "Post-larval exposure to warm temperature enhances female ratio, while starvation and photoperiod do not: The case of European seabass, Dicentrarchus labrax",
+    "journal": "Aquaculture",
+    "siteJournal": "Aquaculture",
+    "dates": {
+      "published": [
+        2024,
+        5
+      ],
+      "published-print": [
+        2024,
+        5
+      ],
+      "issued": [
+        2024,
+        5
+      ]
+    },
+    "siteYear": 2024,
+    "volume": "586",
+    "pages": "740758",
+    "articleNumber": "740758",
+    "siteIssue": "586, 740758",
+    "authors": [
+      {
+        "given": "Frédéric",
+        "family": "Clota"
+      },
+      {
+        "given": "Alexander",
+        "family": "Goikoetxea"
+      },
+      {
+        "given": "Alain",
+        "family": "Vergnet"
+      },
+      {
+        "given": "Marie-Odile",
+        "family": "Blanc"
+      },
+      {
+        "given": "Stéphane",
+        "family": "Lallement"
+      },
+      {
+        "given": "François",
+        "family": "Ruelle"
+      },
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "François",
+        "family": "Allal"
+      },
+      {
+        "given": "Benjamin",
+        "family": "Geffroy"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte"
+      }
+    ],
+    "siteAuthors": [
+      "Clota F",
+      "Goikoetxea A",
+      "Vergnet A",
+      "Blanc MO",
+      "Lallement S",
+      "Ruelle F",
+      "Leitwein M",
+      "Allal F",
+      "Geffroy B",
+      "Vandeputte M"
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "source": "https://doi.org/10.1016/j.aquaculture.2024.740758",
+    "relations": {}
+  },
+  {
+    "id": "bar-resistance-vnn-2023",
+    "doi": "10.1186/s12711-023-00805-2",
+    "status": 200,
+    "title": "Whole‐genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass",
+    "journal": "Genetics Selection Evolution",
+    "dates": {
+      "published": [
+        2023,
+        5,
+        4
+      ],
+      "published-online": [
+        2023,
+        5,
+        4
+      ],
+      "issued": [
+        2023,
+        5,
+        4
+      ]
+    },
+    "volume": "55",
+    "issue": "1",
+    "articleNumber": "30",
+    "authors": [
+      {
+        "given": "Emilie",
+        "family": "Delpuech",
+        "ORCID": "https://orcid.org/0000-0003-0848-4903"
+      },
+      {
+        "given": "Marc",
+        "family": "Vandeputte"
+      },
+      {
+        "given": "Romain",
+        "family": "Morvezen"
+      },
+      {
+        "given": "Anastasia",
+        "family": "Bestin"
+      },
+      {
+        "given": "Mathieu",
+        "family": "Besson"
+      },
+      {
+        "given": "Joseph",
+        "family": "Brunier"
+      },
+      {
+        "given": "Aline",
+        "family": "Bajek"
+      },
+      {
+        "given": "Boudjema",
+        "family": "Imarazene"
+      },
+      {
+        "given": "Yoannah",
+        "family": "François"
+      },
+      {
+        "given": "Olivier",
+        "family": "Bouchez"
+      },
+      {
+        "given": "Xavier",
+        "family": "Cousin"
+      },
+      {
+        "given": "Charles",
+        "family": "Poncet"
+      },
+      {
+        "given": "Thierry",
+        "family": "Morin"
+      },
+      {
+        "given": "Jean-Sébastien",
+        "family": "Bruant"
+      },
+      {
+        "given": "Béatrice",
+        "family": "Chatain"
+      },
+      {
+        "given": "Pierrick",
+        "family": "Haffray"
+      },
+      {
+        "given": "Florence",
+        "family": "Phocas"
+      },
+      {
+        "given": "François",
+        "family": "Allal"
+      }
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "source": "https://doi.org/10.1186/s12711-023-00805-2",
+    "relations": {},
+    "siteTitle": "Whole-genome sequencing identifies interferon-induced protein IFI6/IFI27-like as a strong candidate gene for VNN resistance in European sea bass",
+    "siteJournal": "Genetics Selection Evolution",
+    "siteYear": 2023,
+    "siteAuthors": [
+      "Delpuech E",
+      "Vandeputte M",
+      "Morvezen R",
+      "Bestin A",
+      "Besson M",
+      "Brunier J",
+      "Bajek A",
+      "Imarazene B",
+      "François Y",
+      "Bouchez O",
+      "Cousin X",
+      "Poncet C",
+      "Morin T",
+      "Bruant JS",
+      "Chatain B",
+      "Haffray P",
+      "Phocas F",
+      "Allal F"
+    ],
+    "siteIssue": "55, 30"
+  },
+  {
+    "id": "capelan-methylation-reproduction-2023",
+    "doi": "10.1093/evolut/qpac028",
+    "status": 200,
+    "title": "Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish",
+    "siteTitle": "Genome-wide DNA methylation predicts environmentally driven life history variation in a marine fish",
+    "journal": "Evolution",
+    "siteJournal": "Evolution",
+    "dates": {
+      "published": [
+        2022,
+        12,
+        8
+      ],
+      "published-print": [
+        2023,
+        1,
+        23
+      ],
+      "published-online": [
+        2022,
+        12,
+        8
+      ],
+      "issued": [
+        2022,
+        12,
+        8
+      ]
+    },
+    "siteYear": 2023,
+    "volume": "77",
+    "issue": "1",
+    "pages": "186-198",
+    "siteIssue": "77(1), 186–198",
+    "authors": [
+      {
+        "given": "Clare J",
+        "family": "Venney"
+      },
+      {
+        "given": "Hugo",
+        "family": "Cayuela"
+      },
+      {
+        "given": "Clément",
+        "family": "Rougeux"
+      },
+      {
+        "given": "Martin",
+        "family": "Laporte"
+      },
+      {
+        "given": "Claire",
+        "family": "Mérot"
+      },
+      {
+        "given": "Eric",
+        "family": "Normandeau"
+      },
+      {
+        "given": "Maëva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Yann",
+        "family": "Dorant"
+      },
+      {
+        "given": "Kim",
+        "family": "Præbel"
+      },
+      {
+        "given": "Ellen",
+        "family": "Kenchington"
+      },
+      {
+        "given": "Marie",
+        "family": "Clément"
+      },
+      {
+        "given": "Pascal",
+        "family": "Sirois"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez",
+        "ORCID": "https://orcid.org/0000-0002-8085-9709"
+      }
+    ],
+    "siteAuthors": [
+      "Venney CJ",
+      "Cayuela H",
+      "Rougeux C",
+      "Laporte M",
+      "Mérot C",
+      "Normandeau E",
+      "Leitwein M",
+      "Dorant Y",
+      "Præbel K",
+      "Kenchington E",
+      "Clément M",
+      "Sirois P",
+      "Bernatchez L"
+    ],
+    "licences": [
+      "https://academic.oup.com/pages/standard-publication-reuse-rights"
+    ],
+    "source": "https://doi.org/10.1093/evolut/qpac028",
+    "relations": {}
+  },
+  {
+    "id": "truite-pigmentation-gwas-2023",
+    "doi": "10.1111/jfb.15243",
+    "status": 200,
+    "title": "Redundancy analysis, genome‐wide association studies and the pigmentation of brown trout (<i>Salmo trutta</i> L.)",
+    "siteTitle": "Redundancy analysis, genome-wide association studies and the pigmentation of brown trout (Salmo trutta L.)",
+    "journal": "Journal of Fish Biology",
+    "siteJournal": "Journal of Fish Biology",
+    "dates": {
+      "published": [
+        2022,
+        11,
+        9
+      ],
+      "published-print": [
+        2023,
+        1
+      ],
+      "published-online": [
+        2022,
+        11,
+        9
+      ],
+      "issued": [
+        2022,
+        11,
+        9
+      ]
+    },
+    "siteYear": 2023,
+    "volume": "102",
+    "issue": "1",
+    "pages": "96-118",
+    "siteIssue": "102(1), 96–118",
+    "authors": [
+      {
+        "given": "Théo",
+        "family": "Valette"
+      },
+      {
+        "given": "Maëva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Jean‐Marc",
+        "family": "Lascaux"
+      },
+      {
+        "given": "Erick",
+        "family": "Desmarais"
+      },
+      {
+        "given": "Patrick",
+        "family": "Berrebi"
+      },
+      {
+        "given": "Bruno",
+        "family": "Guinand",
+        "ORCID": "https://orcid.org/0000-0002-6934-1677"
+      }
+    ],
+    "siteAuthors": [
+      "Valette T",
+      "Leitwein M",
+      "Lascaux JM",
+      "Desmarais E",
+      "Berrebi P",
+      "Guinand B"
+    ],
+    "licences": [
+      "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    ],
+    "source": "https://doi.org/10.1111/jfb.15243",
+    "relations": {}
+  },
+  {
+    "id": "saumon-coho-elevage-expression-2022",
+    "doi": "10.1093/gbe/evac036",
+    "status": 200,
+    "title": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (<i>O. kisutch</i>)",
+    "journal": "Genome Biology and Evolution",
+    "dates": {
+      "published": [
+        2022,
+        3,
+        11
+      ],
+      "published-print": [
+        2022,
+        4,
+        10
+      ],
+      "published-online": [
+        2022,
+        3,
+        11
+      ],
+      "issued": [
+        2022,
+        3,
+        11
+      ]
+    },
+    "volume": "14",
+    "issue": "4",
+    "articleNumber": "evac036",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Kyle",
+        "family": "Wellband"
+      },
+      {
+        "given": "Hugo",
+        "family": "Cayuela"
+      },
+      {
+        "given": "Jérémy",
+        "family": "Le Luyer"
+      },
+      {
+        "given": "Kayla",
+        "family": "Mohns"
+      },
+      {
+        "given": "Ruth",
+        "family": "Withler"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez",
+        "ORCID": "https://orcid.org/0000-0002-8085-9709"
+      }
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by-nc/4.0/"
+    ],
+    "source": "https://doi.org/10.1093/gbe/evac036",
+    "relations": {},
+    "siteTitle": "Strong Parallel Differential Gene Expression Induced by Hatchery Rearing Weakly Associated with Methylation Signals in Adult Coho Salmon (O. kisutch)",
+    "siteJournal": "Genome Biology and Evolution",
+    "siteYear": 2022,
+    "siteAuthors": [
+      "Leitwein M",
+      "Wellband K",
+      "Cayuela H",
+      "Le Luyer J",
+      "Mohns K",
+      "Withler R",
+      "Bernatchez L"
+    ],
+    "siteIssue": "14(4), evac036"
+  },
+  {
+    "id": "omble-ascendance-repeuplement-2021",
+    "doi": "10.3390/genes12040524",
+    "status": 200,
+    "title": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations",
+    "journal": "Genes",
+    "dates": {
+      "published": [
+        2021,
+        4,
+        3
+      ],
+      "published-online": [
+        2021,
+        4,
+        3
+      ],
+      "issued": [
+        2021,
+        4,
+        3
+      ]
+    },
+    "volume": "12",
+    "issue": "4",
+    "pages": "524",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Hugo",
+        "family": "Cayuela"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez"
+      }
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.3390/genes12040524",
+    "relations": {},
+    "siteTitle": "Associative Overdominance and Negative Epistasis Shape Genome-Wide Ancestry Landscape in Supplemented Fish Populations",
+    "siteJournal": "Genes",
+    "siteYear": 2021,
+    "siteAuthors": [
+      "Leitwein M",
+      "Cayuela H",
+      "Bernatchez L"
+    ],
+    "siteIssue": "12(4), 524"
+  },
+  {
+    "id": "porc-efficacite-alimentaire-gwas-2021",
+    "doi": "10.1186/s12711-021-00642-1",
+    "status": 200,
+    "title": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency",
+    "siteTitle": "Identification of genomic regions affecting production traits in pigs divergently selected for feed efficiency",
+    "journal": "Genetics Selection Evolution",
+    "siteJournal": "Genetics Selection Evolution",
+    "dates": {
+      "published": [
+        2021,
+        6,
+        14
+      ],
+      "published-print": [
+        2021,
+        12
+      ],
+      "published-online": [
+        2021,
+        6,
+        14
+      ],
+      "issued": [
+        2021,
+        6,
+        14
+      ]
+    },
+    "siteYear": 2021,
+    "volume": "53",
+    "issue": "1",
+    "articleNumber": "49",
+    "siteIssue": "53, 49",
+    "authors": [
+      {
+        "given": "Emilie",
+        "family": "Delpuech"
+      },
+      {
+        "given": "Amir",
+        "family": "Aliakbari"
+      },
+      {
+        "given": "Yann",
+        "family": "Labrune"
+      },
+      {
+        "given": "Katia",
+        "family": "Fève"
+      },
+      {
+        "given": "Yvon",
+        "family": "Billon"
+      },
+      {
+        "given": "Hélène",
+        "family": "Gilbert"
+      },
+      {
+        "given": "Juliette",
+        "family": "Riquet",
+        "ORCID": "https://orcid.org/0000-0001-7787-031X"
+      }
+    ],
+    "siteAuthors": [
+      "Delpuech E",
+      "Aliakbari A",
+      "Labrune Y",
+      "Fève K",
+      "Billon Y",
+      "Gilbert H",
+      "Riquet J"
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "source": "https://doi.org/10.1186/s12711-021-00642-1",
+    "relations": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/2020.10.28.358564",
+          "asserted-by": "object"
+        }
+      ]
+    }
+  },
+  {
+    "id": "saumon-coho-epigenome-germinal-2021",
+    "doi": "10.1111/eva.13235",
+    "status": 200,
+    "title": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration",
+    "journal": "Evolutionary Applications",
+    "dates": {
+      "published": [
+        2021,
+        5,
+        4
+      ],
+      "published-print": [
+        2021,
+        10
+      ],
+      "published-online": [
+        2021,
+        5,
+        4
+      ],
+      "issued": [
+        2021,
+        5,
+        4
+      ]
+    },
+    "volume": "14",
+    "issue": "10",
+    "pages": "2402-2413",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Martin",
+        "family": "Laporte",
+        "ORCID": "https://orcid.org/0000-0002-0622-123X"
+      },
+      {
+        "given": "Jeremy",
+        "family": "Le Luyer",
+        "ORCID": "https://orcid.org/0000-0001-9409-3196"
+      },
+      {
+        "given": "Kayla",
+        "family": "Mohns"
+      },
+      {
+        "given": "Eric",
+        "family": "Normandeau"
+      },
+      {
+        "given": "Ruth",
+        "family": "Withler"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez"
+      }
+    ],
+    "licences": [
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1111/eva.13235",
+    "relations": {},
+    "siteTitle": "Epigenomic modifications induced by hatchery rearing persist in germ line cells of adult salmon after their oceanic migration",
+    "siteJournal": "Evolutionary Applications",
+    "siteYear": 2021,
+    "siteAuthors": [
+      "Leitwein M",
+      "Laporte M",
+      "Le Luyer J",
+      "Mohns K",
+      "Normandeau E",
+      "Withler R",
+      "Bernatchez L"
+    ],
+    "siteIssue": "14(10), 2402–2413"
+  },
+  {
+    "id": "haplotypes-genomique-conservation-2020",
+    "doi": "10.1016/j.tree.2019.10.012",
+    "status": 200,
+    "title": "Using Haplotype Information for Conservation Genomics",
+    "journal": "Trends in Ecology &amp; Evolution",
+    "dates": {
+      "published": [
+        2020,
+        3
+      ],
+      "published-print": [
+        2020,
+        3
+      ],
+      "issued": [
+        2020,
+        3
+      ]
+    },
+    "volume": "35",
+    "issue": "3",
+    "pages": "245-258",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Maud",
+        "family": "Duranton"
+      },
+      {
+        "given": "Quentin",
+        "family": "Rougemont"
+      },
+      {
+        "given": "Pierre-Alexandre",
+        "family": "Gagnaire"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez"
+      }
+    ],
+    "licences": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "source": "https://doi.org/10.1016/j.tree.2019.10.012",
+    "relations": {},
+    "siteTitle": "Using Haplotype Information for Conservation Genomics",
+    "siteJournal": "Trends in Ecology & Evolution",
+    "siteYear": 2020,
+    "siteAuthors": [
+      "Leitwein M",
+      "Duranton M",
+      "Rougemont Q",
+      "Gagnaire PA",
+      "Bernatchez L"
+    ],
+    "siteIssue": "35(3), 245–258"
+  },
+  {
+    "id": "omble-diversite-petites-populations-2020",
+    "doi": "10.1111/mec.15566",
+    "status": 200,
+    "title": "Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (\n                    <i>Salvelinus fontinalis</i>\n                    ) case study",
+    "journal": "Molecular Ecology",
+    "dates": {
+      "published": [
+        2020,
+        8,
+        13
+      ],
+      "published-print": [
+        2020,
+        9
+      ],
+      "published-online": [
+        2020,
+        8,
+        13
+      ],
+      "issued": [
+        2020,
+        8,
+        13
+      ]
+    },
+    "volume": "29",
+    "issue": "18",
+    "pages": "3429-3445",
+    "authors": [
+      {
+        "given": "Anne‐Laure",
+        "family": "Ferchaud",
+        "ORCID": "https://orcid.org/0000-0002-9577-5508"
+      },
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Martin",
+        "family": "Laporte"
+      },
+      {
+        "given": "Damien",
+        "family": "Boivin‐Delisle"
+      },
+      {
+        "given": "Bérénice",
+        "family": "Bougas"
+      },
+      {
+        "given": "Cécilia",
+        "family": "Hernandez"
+      },
+      {
+        "given": "Éric",
+        "family": "Normandeau"
+      },
+      {
+        "given": "Isabel",
+        "family": "Thibault"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez"
+      }
+    ],
+    "licences": [
+      "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    ],
+    "source": "https://doi.org/10.1111/mec.15566",
+    "relations": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/660621",
+          "asserted-by": "object"
+        }
+      ]
+    },
+    "siteTitle": "Adaptive and maladaptive genetic diversity in small populations: Insights from the Brook Charr (Salvelinus fontinalis) case study",
+    "siteJournal": "Molecular Ecology",
+    "siteYear": 2020,
+    "siteAuthors": [
+      "Ferchaud AL",
+      "Leitwein M",
+      "Laporte M",
+      "Boivin-Delisle D",
+      "Bougas B",
+      "Hernandez C",
+      "Normandeau É",
+      "Thibault I",
+      "Bernatchez L"
+    ],
+    "siteIssue": "29(18), 3429–3445"
+  },
+  {
+    "id": "porc-prediction-genomique-2020",
+    "doi": "10.1186/s12711-020-00576-0",
+    "status": 200,
+    "title": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs",
+    "journal": "Genetics Selection Evolution",
+    "dates": {
+      "published": [
+        2020,
+        10,
+        7
+      ],
+      "published-print": [
+        2020,
+        12
+      ],
+      "published-online": [
+        2020,
+        10,
+        7
+      ],
+      "issued": [
+        2020,
+        10,
+        7
+      ]
+    },
+    "volume": "52",
+    "issue": "1",
+    "articleNumber": "57",
+    "authors": [
+      {
+        "given": "Amir",
+        "family": "Aliakbari",
+        "ORCID": "https://orcid.org/0000-0002-5213-054X"
+      },
+      {
+        "given": "Emilie",
+        "family": "Delpuech"
+      },
+      {
+        "given": "Yann",
+        "family": "Labrune"
+      },
+      {
+        "given": "Juliette",
+        "family": "Riquet"
+      },
+      {
+        "given": "Hélène",
+        "family": "Gilbert"
+      }
+    ],
+    "licences": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "source": "https://doi.org/10.1186/s12711-020-00576-0",
+    "relations": {},
+    "siteTitle": "The impact of training on data from genetically-related lines on the accuracy of genomic predictions for feed efficiency traits in pigs",
+    "siteJournal": "Genetics Selection Evolution",
+    "siteYear": 2020,
+    "siteAuthors": [
+      "Aliakbari A",
+      "Delpuech E",
+      "Labrune Y",
+      "Riquet J",
+      "Gilbert H"
+    ],
+    "siteIssue": "52, 57"
+  },
+  {
+    "id": "omble-recombinaison-ascendance-2019",
+    "doi": "10.1111/mec.15256",
+    "status": 200,
+    "title": "The role of recombination on genome‐wide patterns of local ancestry exemplified by supplemented brook charr populations",
+    "journal": "Molecular Ecology",
+    "dates": {
+      "published": [
+        2019,
+        10,
+        22
+      ],
+      "published-print": [
+        2019,
+        11
+      ],
+      "published-online": [
+        2019,
+        10,
+        22
+      ],
+      "issued": [
+        2019,
+        10,
+        22
+      ]
+    },
+    "volume": "28",
+    "issue": "21",
+    "pages": "4755-4769",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Hugo",
+        "family": "Cayuela",
+        "ORCID": "https://orcid.org/0000-0002-3529-0736"
+      },
+      {
+        "given": "Anne‐Laure",
+        "family": "Ferchaud",
+        "ORCID": "https://orcid.org/0000-0002-9577-5508"
+      },
+      {
+        "given": "Éric",
+        "family": "Normandeau",
+        "ORCID": "https://orcid.org/0000-0003-2841-9391"
+      },
+      {
+        "given": "Pierre‐Alexandre",
+        "family": "Gagnaire",
+        "ORCID": "https://orcid.org/0000-0002-1908-3235"
+      },
+      {
+        "given": "Louis",
+        "family": "Bernatchez",
+        "ORCID": "https://orcid.org/0000-0002-8085-9709"
+      }
+    ],
+    "licences": [
+      "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    ],
+    "source": "https://doi.org/10.1111/mec.15256",
+    "relations": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/702696",
+          "asserted-by": "object"
+        }
+      ]
+    },
+    "siteTitle": "The role of recombination on genome-wide patterns of local ancestry exemplified by supplemented brook charr populations",
+    "siteJournal": "Molecular Ecology",
+    "siteYear": 2019,
+    "siteAuthors": [
+      "Leitwein M",
+      "Cayuela H",
+      "Ferchaud AL",
+      "Normandeau É",
+      "Gagnaire PA",
+      "Bernatchez L"
+    ],
+    "siteIssue": "28(21), 4755–4769"
+  },
+  {
+    "id": "truite-ressource-snp-2019",
+    "doi": "10.1186/s12864-019-5958-9",
+    "status": 200,
+    "title": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics",
+    "journal": "BMC Genomics",
+    "dates": {
+      "published": [
+        2019,
+        7,
+        15
+      ],
+      "published-print": [
+        2019,
+        12
+      ],
+      "published-online": [
+        2019,
+        7,
+        15
+      ],
+      "issued": [
+        2019,
+        7,
+        15
+      ]
+    },
+    "volume": "20",
+    "issue": "1",
+    "articleNumber": "582",
+    "authors": [
+      {
+        "given": "Keoni",
+        "family": "Saint-Pé"
+      },
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Laurence",
+        "family": "Tissot"
+      },
+      {
+        "given": "Nicolas",
+        "family": "Poulet"
+      },
+      {
+        "given": "Bruno",
+        "family": "Guinand"
+      },
+      {
+        "given": "Patrick",
+        "family": "Berrebi"
+      },
+      {
+        "given": "Geoffrey",
+        "family": "Marselli"
+      },
+      {
+        "given": "Jean-Marc",
+        "family": "Lascaux"
+      },
+      {
+        "given": "Pierre-Alexandre",
+        "family": "Gagnaire"
+      },
+      {
+        "given": "Simon",
+        "family": "Blanchet"
+      }
+    ],
+    "licences": [
+      "http://creativecommons.org/licenses/by/4.0/",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1186/s12864-019-5958-9",
+    "relations": {},
+    "siteTitle": "Development of a large SNPs resource and a low-density SNP array for brown trout (Salmo trutta) population genetics",
+    "siteJournal": "BMC Genomics",
+    "siteYear": 2019,
+    "siteAuthors": [
+      "Saint-Pé K",
+      "Leitwein M",
+      "Tissot L",
+      "Poulet N",
+      "Guinand B",
+      "Berrebi P",
+      "Marselli G",
+      "Lascaux JM",
+      "Gagnaire PA",
+      "Blanchet S"
+    ],
+    "siteIssue": "20, 582"
+  },
+  {
+    "id": "truite-trois-ascendances-2018",
+    "doi": "10.1111/mec.14816",
+    "status": 200,
+    "title": "Genomic consequences of a recent three‐way admixture in supplemented wild brown trout populations revealed by local ancestry tracts",
+    "journal": "Molecular Ecology",
+    "dates": {
+      "published": [
+        2018,
+        8,
+        17
+      ],
+      "published-print": [
+        2018,
+        9
+      ],
+      "published-online": [
+        2018,
+        8,
+        17
+      ],
+      "issued": [
+        2018,
+        8,
+        17
+      ]
+    },
+    "volume": "27",
+    "issue": "17",
+    "pages": "3466-3483",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein",
+        "ORCID": "https://orcid.org/0000-0001-5172-0970"
+      },
+      {
+        "given": "Pierre‐Alexandre",
+        "family": "Gagnaire",
+        "ORCID": "https://orcid.org/0000-0002-1908-3235"
+      },
+      {
+        "given": "Erick",
+        "family": "Desmarais"
+      },
+      {
+        "given": "Patrick",
+        "family": "Berrebi",
+        "ORCID": "https://orcid.org/0000-0002-9026-4987"
+      },
+      {
+        "given": "Bruno",
+        "family": "Guinand"
+      }
+    ],
+    "licences": [
+      "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    ],
+    "source": "https://doi.org/10.1111/mec.14816",
+    "relations": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/302380",
+          "asserted-by": "object"
+        }
+      ]
+    },
+    "siteTitle": "Genomic consequences of a recent three-way admixture in supplemented wild brown trout populations revealed by local ancestry tracts",
+    "siteJournal": "Molecular Ecology",
+    "siteYear": 2018,
+    "siteAuthors": [
+      "Leitwein M",
+      "Gagnaire PA",
+      "Desmarais E",
+      "Berrebi P",
+      "Guinand B"
+    ],
+    "siteIssue": "27(17), 3466–3483"
+  },
+  {
+    "id": "truite-arc-en-ciel-san-francisco-2017",
+    "doi": "10.1111/eva.12416",
+    "status": 200,
+    "title": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (<i>Oncorhynchus mykiss</i>) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape",
+    "journal": "Evolutionary Applications",
+    "dates": {
+      "published": [
+        2016,
+        10,
+        27
+      ],
+      "published-print": [
+        2017,
+        1
+      ],
+      "published-online": [
+        2016,
+        10,
+        27
+      ],
+      "issued": [
+        2016,
+        10,
+        27
+      ]
+    },
+    "volume": "10",
+    "issue": "1",
+    "pages": "56-67",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "John Carlos",
+        "family": "Garza"
+      },
+      {
+        "given": "Devon E",
+        "family": "Pearse"
+      }
+    ],
+    "licences": [
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "source": "https://doi.org/10.1111/eva.12416",
+    "relations": {},
+    "siteTitle": "Ancestry and adaptive evolution of anadromous, resident, and adfluvial rainbow trout (Oncorhynchus mykiss) in the San Francisco bay area: application of adaptive genomic variation to conservation in a highly impacted landscape",
+    "siteJournal": "Evolutionary Applications",
+    "siteYear": 2017,
+    "siteAuthors": [
+      "Leitwein M",
+      "Garza JC",
+      "Pearse DE"
+    ],
+    "siteIssue": "10(1), 56–67"
+  },
+  {
+    "id": "truite-carte-liaison-2017",
+    "doi": "10.1534/g3.116.038497",
+    "status": 200,
+    "title": "A Dense Brown Trout (\n                    <i>Salmo trutta</i>\n                    ) Linkage Map Reveals Recent Chromosomal Rearrangements in the\n                    <i>Salmo</i>\n                    Genus and the Impact of Selection on Linked Neutral Diversity",
+    "journal": "G3 Genes|Genomes|Genetics",
+    "dates": {
+      "published": [
+        2017,
+        4,
+        1
+      ],
+      "published-print": [
+        2017,
+        4,
+        1
+      ],
+      "published-online": [
+        2017,
+        4,
+        1
+      ],
+      "issued": [
+        2017,
+        4,
+        1
+      ]
+    },
+    "volume": "7",
+    "issue": "4",
+    "pages": "1365-1376",
+    "authors": [
+      {
+        "given": "Maeva",
+        "family": "Leitwein"
+      },
+      {
+        "given": "Bruno",
+        "family": "Guinand"
+      },
+      {
+        "given": "Juliette",
+        "family": "Pouzadoux"
+      },
+      {
+        "given": "Erick",
+        "family": "Desmarais"
+      },
+      {
+        "given": "Patrick",
+        "family": "Berrebi"
+      },
+      {
+        "given": "Pierre-Alexandre",
+        "family": "Gagnaire"
+      }
+    ],
+    "licences": [
+      "https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model"
+    ],
+    "source": "https://doi.org/10.1534/g3.116.038497",
+    "relations": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/094763",
+          "asserted-by": "object"
+        }
+      ]
+    },
+    "siteTitle": "A Dense Brown Trout (Salmo trutta) Linkage Map Reveals Recent Chromosomal Rearrangements in the Salmo Genus and the Impact of Selection on Linked Neutral Diversity",
+    "siteJournal": "G3: Genes|Genomes|Genetics",
+    "siteYear": 2017,
+    "siteAuthors": [
+      "Leitwein M",
+      "Guinand B",
+      "Pouzadoux J",
+      "Desmarais E",
+      "Berrebi P",
+      "Gagnaire PA"
+    ],
+    "siteIssue": "7(4), 1365–1376"
+  },
+  {
+    "id": "truite-orb-diversite-2016",
+    "doi": "10.1111/jfb.13131",
+    "status": 200,
+    "title": "Genome‐wide nucleotide diversity of hatchery‐reared<scp>A</scp>tlantic and<scp>M</scp>editerranean strains of brown trout<i>Salmo trutta</i>compared to wild<scp>M</scp>editerranean populations",
+    "journal": "Journal of Fish Biology",
+    "dates": {
+      "published": [
+        2016,
+        9,
+        25
+      ],
+      "published-print": [
+        2016,
+        12
+      ],
+      "published-online": [
+        2016,
+        9,
+        25
+      ],
+      "issued": [
+        2016,
+        9,
+        25
+      ]
+    },
+    "volume": "89",
+    "issue": "6",
+    "pages": "2717-2734",
+    "authors": [
+      {
+        "given": "M.",
+        "family": "Leitwein"
+      },
+      {
+        "given": "P.‐A.",
+        "family": "Gagnaire"
+      },
+      {
+        "given": "E.",
+        "family": "Desmarais"
+      },
+      {
+        "given": "S.",
+        "family": "Guendouz"
+      },
+      {
+        "given": "M.",
+        "family": "Rohmer"
+      },
+      {
+        "given": "P.",
+        "family": "Berrebi"
+      },
+      {
+        "given": "B.",
+        "family": "Guinand"
+      }
+    ],
+    "licences": [
+      "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    ],
+    "source": "https://doi.org/10.1111/jfb.13131",
+    "relations": {},
+    "siteTitle": "Genome-wide nucleotide diversity of hatchery-reared Atlantic and Mediterranean strains of brown trout Salmo trutta compared to wild Mediterranean populations",
+    "siteJournal": "Journal of Fish Biology",
+    "siteYear": 2016,
+    "siteAuthors": [
+      "Leitwein M",
+      "Gagnaire PA",
+      "Desmarais E",
+      "Guendouz S",
+      "Rohmer M",
+      "Berrebi P",
+      "Guinand B"
+    ],
+    "siteIssue": "89(6), 2717–2734"
+  }
+]

@@ -1,5 +1,7 @@
 # LDgenX — pre-production review (21 October 2026)
 
+**Historical report.** Current findings, completed corrections and launch requirements: [26 October review](PRE-PROD-REVIEW-2026-10-26.md). Portrait, report/case-study, UNIMA and message-retention approvals have since been confirmed.
+
 Scope: all 140 built pages (FR + EN), read from the actual rendered output, plus the source content files. Build, lint, typecheck, typography, assay and HTML checks all pass. The hero video stays as it is.
 
 **Verdict: not ready to go public yet.** The code is ready. What blocks is (A) legal pages that still say "draft", (B) an event banner that expires today, (C) three AI-generated team portraits that nobody has approved, and (D) the copy: across the site it reads like a third party describing LDgenX with sources, not like LDgenX speaking to a client. Your feeling about the text is right; the details are below.

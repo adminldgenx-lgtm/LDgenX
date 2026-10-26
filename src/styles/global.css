@@ -4255,7 +4255,7 @@ h3 {
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
   height: var(--header-h);
 }
 .brand {
@@ -4282,7 +4282,7 @@ h3 {
   display: flex;
   align-items: stretch;
   align-self: stretch;
-  gap: 30px;
+  gap: 18px;
   margin-left: auto;
 }
 .desktop-nav > a,
@@ -4295,7 +4295,7 @@ h3 {
   border: 0;
   background: none;
   color: inherit;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;
   transition: color 0.2s;
 }
@@ -4331,7 +4331,7 @@ h3 {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 14px;
 }
 .language {
   font-size: 13px;
@@ -4345,6 +4345,41 @@ h3 {
 }
 .language-divider {
   padding: 0 6px;
+}
+
+.header-account {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+.header-account:hover,
+.header-account[data-signed-in] {
+  background: rgb(115 181 15 / 0.12);
+}
+.header-account-icon {
+  position: relative;
+  display: inline-flex;
+}
+.header-account-status {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
 }
 
 /* Quote request: the brand green, with a light sweep crossing it like a scanner line. */
@@ -4642,26 +4677,13 @@ h3 {
 }
 
 /* Narrower desktops tighten the navigation; tablets and phones switch to the menu sheet. */
-@media (max-width: 1320px) {
-  .header-inner {
-    gap: 24px;
-  }
-  .desktop-nav {
-    gap: 22px;
-  }
-  .desktop-nav > a,
-  .nav-menu-trigger {
-    font-size: 14px;
-  }
-  .header-actions {
-    gap: 18px;
-  }
+@media (max-width: 1440px) {
   .brand {
     width: 164px;
     height: 46px;
   }
 }
-@media (max-width: 1180px) {
+@media (max-width: 1320px) {
   .desktop-nav,
   .header-actions > .language {
     display: none;
@@ -4671,6 +4693,11 @@ h3 {
   }
   .header-actions {
     margin-left: auto;
+  }
+}
+@media (max-width: 1420px) {
+  .header-account-label {
+    display: none;
   }
 }
 @media (max-width: 1050px) {
@@ -4694,6 +4721,16 @@ h3 {
   }
   .header-cta-arrow {
     display: none;
+  }
+}
+@media (max-width: 600px) {
+  .header-actions > .header-cta {
+    display: none;
+  }
+}
+@media (min-width: 380px) and (max-width: 600px) {
+  .header-account-label {
+    display: inline;
   }
 }
 @media (max-width: 420px) {

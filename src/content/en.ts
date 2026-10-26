@@ -155,7 +155,7 @@ export const services: Expertise[] = [
       },
       {
         title: 'Targeted dPCR',
-        text: 'Ultra-sensitive detection and quantification of target species or pathogens using digital PCR (dPCR).',
+        text: 'Detection and quantification of DNA from target species or pathogens using digital PCR.',
       },
       {
         title: 'Long-read sequencing',
@@ -235,7 +235,7 @@ export const services: Expertise[] = [
       },
       {
         title: 'Whole-genome sequencing · WGS',
-        text: 'Comprehensive genome analysis for variant discovery, adaptive genomics and evolutionary studies.',
+        text: 'Genome-wide sequencing to investigate variants, adaptation and evolutionary history.',
       },
       {
         title: 'Custom SNP panels',
@@ -483,7 +483,7 @@ export const services: Expertise[] = [
         title: 'Metagenomics',
         text: 'Taxonomic and functional analysis of biological communities.',
       },
-      { title: 'Whole-genome sequencing · WGS', text: 'Comprehensive genome analysis.' },
+      { title: 'Whole-genome sequencing · WGS', text: 'Sequencing that aims to cover the whole genome, at a depth suited to the project.' },
       {
         title: 'RAD-seq & custom SNP panels',
         text: 'Population genomics and genotyping applications.',
@@ -1090,7 +1090,7 @@ export const studies: Study[] = [
     approach:
       'Analysis of 479 muscle samples collected from 2018 to 2023 in nine French regions, genotyped by 3D-GBS. After quality control, 438 birds and 40,746 SNPs were analysed: genetic diversity, ADMIXTURE, principal component analysis, identity by state and by descent.',
     result:
-      'All analyses converge: no marked genetic structure and high genetic diversity. The lapwings sampled in France come from a single, well-mixed and weakly structured population.',
+      'The analyses reveal no marked genetic structure among the birds sampled in France and show high genetic diversity. These results are consistent with a weakly structured population; they do not assign each bird to a breeding region.',
     service: 'genomique-des-populations',
     source: 'https://hal.science/hal-05490664',
     details: {
@@ -1119,7 +1119,7 @@ export const studies: Study[] = [
       findingsTitle: 'What the analyses show',
       findings: [
         'ADMIXTURE: the most likely number of genetic groups is K = 1.',
-        'Inbreeding coefficient (Fis) close to 0 in every region: an overall well-mixed population.',
+        'Fis close to 0 in every region: no marked heterozygote deficit in the groups analysed.',
         'Principal component analysis: no grouping by region, sex, age, year or month of sampling; three groups stand out very subtly on the first axis.',
         'Identity by state: most pairs of birds between 0.75 and 0.85, as expected in a weakly structured natural population.',
         'Identity by descent: only five pairs of birds appear related.',
@@ -1244,22 +1244,22 @@ export const studies: Study[] = [
     subtitle:
       'A pilot project in the Gironde comparing water filtration methods in turbid estuaries.',
     facts: [
-      { label: 'Client', value: 'INRAE' },
+      { label: 'Client', value: 'Thibault Dindart' },
       { label: 'Project', value: 'ADNe Estuaire, pilot project' },
       { label: 'Sites', value: 'Bègles, Cadillac and Le Verdon (Gironde, France)' },
       { label: 'Turbidity', value: 'From 14 to more than 800 NTU' },
       { label: 'Samples', value: '43, analysed in duplicate' },
       { label: 'Approach', value: 'eDNA metabarcoding, fish 12S marker' },
-      { label: 'Period', value: 'October 2025' },
+      { label: 'Period', value: 'October sampling campaign' },
     ],
     context:
       'In estuaries, water loaded with particles makes environmental DNA harder: filters clog quickly and particles can interfere with the analyses. This pilot project aimed to optimise eDNA protocols in turbid water.',
     question:
       'Which devices and filter sizes suit which turbidity, and which fish can be detected?',
     approach:
-      'In October 2025, water from three sites with contrasting turbidity was filtered with two systems: a triple pump with Waterra capsules (0.45, 1.2 and 5 µm pores) and a high-flow Stick Pump (20 µm filter), from 2 to 30 litres depending on clogging. The 43 samples were analysed by metabarcoding on the fish 12S marker (Teleo, Illumina short reads), in duplicate; 12 of them were also sequenced as long fragments (Oxford Nanopore).',
+      'During an October campaign, water from three sites with contrasting turbidity was filtered with two systems: a triple pump with Waterra capsules (0.45, 1.2 and 5 µm pores) and a high-flow Stick Pump (20 µm filter), from 2 to 30 litres depending on clogging. The 43 samples were analysed by metabarcoding on the fish 12S marker (Teleo, Illumina short reads), in duplicate; 12 of them were also sequenced as long fragments (Oxford Nanopore).',
     result:
-      'Turbidity weighs heavily on detection: at Bègles (740 to 800 NTU), only a few hardy species show up, such as European sea bass and thinlip grey mullet, whereas Le Verdon (14 NTU) has the highest richness. In all, 26 taxa are identified. The 5 µm filters concentrate the strongest signals, finer filters a more diffuse but more diverse signal. The project recommends repeating the sampling over time and cross-checking bioinformatic tools.',
+      'Detected richness is lowest at Bègles (740 to 800 NTU) and highest at Le Verdon (14 NTU). Reanalysis of the short reads identifies 26 taxa across sites and campaigns. The 5 µm filters concentrate the strongest signals, while finer filters produce a more diffuse but more diverse signal. The project recommends repeated sampling and comparison of bioinformatic tools; these observations alone do not isolate the effect of turbidity.',
     service: 'adn-environnemental-adne',
     source: '',
     details: {
@@ -1294,13 +1294,13 @@ export const studies: Study[] = [
         { value: '43', label: 'samples filtered, extracted and analysed in duplicate' },
         { value: '36,730,010', label: 'raw short-read sequences' },
         { value: '12', label: 'samples also sequenced as long fragments (full 12S)' },
-        { value: '26', label: 'taxa identified across the sites' },
+        { value: '26', label: 'taxa identified by short reads across all sites' },
       ],
       findingsTitle: 'What the analyses show',
       findings: [
-        'Bègles, the most turbid site (740 to 800 NTU): only three species, including sea bass and thinlip grey mullet, with weak signals.',
+        'Bègles, the most turbid site (740 to 800 NTU), has the lowest richness: six taxa in the short-read results, pooled across campaigns (report table 5).',
         'Le Verdon, in clear water (14 NTU): the highest richness, with coastal marine, intertidal and freshwater species.',
-        'When turbidity drops between two visits to the same site, the sea bass signal becomes much stronger: turbidity alone could explain a large part of the variation in detection.',
+        'Between two visits to the same site, lower turbidity accompanies a stronger sea bass signal. This association must be interpreted alongside other biological and technical factors affecting detection.',
         'The 5 µm filters concentrate the strongest signals; the 0.45 and 1.2 µm filters capture a more diffuse but more diverse signal.',
         'Short and long reads overlap: 12 shared species, 86% of the long-fragment taxa, which add two more, the goldsinny wrasse and the ruffe.',
         'Reanalysed with a second bioinformatic tool, the short reads yield 26 taxa, against 2 species in the first analysis: cross-checking analysis tools is one of the recommendations.',
@@ -1310,8 +1310,7 @@ export const studies: Study[] = [
         'Repeating the sampling over time at each site and combining markers of different lengths: these are the two avenues chosen to consolidate the protocol, before any public release of the occurrences.',
       rolesTitle: 'Who did what',
       roles: [
-        'Commissioned by: INRAE.',
-        'Sampling: Thibault Dindard and Bertrand Villeneuve.',
+        'Commissioner named in the report: Thibault Dindart.',
         'Report: Maeva Leitwein and Emilie Delpuech (LDgenX).',
         'DNA extraction, long-fragment sequencing (MinION) and bioinformatic analyses: LDgenX.',
         'Amplification and short-read sequencing: PGTB platform (Bordeaux), on an Illumina MiSeq i100.',

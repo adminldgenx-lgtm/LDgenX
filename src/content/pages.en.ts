@@ -69,7 +69,7 @@ export const pageCopy = {
 export const contactPaths = {
   appointment: {
     title: 'Book a conversation',
-    text: 'Pick a slot in the team’s calendar to present your project in person.',
+    text: 'Pick a slot in the team’s calendar to discuss your project with our scientific team.',
     action: 'Schedule a meeting',
   },
   form: {
