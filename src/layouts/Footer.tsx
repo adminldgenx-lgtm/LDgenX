@@ -4,9 +4,13 @@ import { setMotionLevel } from '../lib/motion-preference';
 import { useCatalog, useRoutes, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
+import { listedExpertises } from '../lib/expertises';
+import { footerDirectory } from '../lib/footer';
+import { appointmentLink } from '../lib/appointment-link';
+import { ChevronDown } from 'lucide-react';
 
 export function Footer() {
-  const { company, copy, services, applications, ui } = useCatalog();
+  const { company, copy, services, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.footer;
   const reduced = useMotionLevel() === 'reduced';
@@ -16,11 +20,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link
-            to={r.home}
-            className="footer-lockup"
-            aria-label={ui.common.homeLink}
-          >
+          <Link to={r.home} className="footer-lockup" aria-label={ui.common.homeLink}>
             <img
               src="/brand/lockup-navy-160.webp"
               srcSet="/brand/lockup-navy-96.webp 343w, /brand/lockup-navy-160.webp 570w"
@@ -39,13 +39,11 @@ export function Footer() {
         </div>
         <div>
           <p className="footer-label">{t.expertises}</p>
-          {services.slice(0, 6).map((s) => (
+          {listedExpertises(services).map((s) => (
             <Link key={s.id} to={r.service(s.id)}>
               {s.title}
             </Link>
           ))}
-          <Link to={r.service('tests-adn-cibles')}>{t.links.tests}</Link>
-          <Link to={r.service('materiel')}>{t.links.equipment}</Link>
         </div>
         <div>
           <p className="footer-label">{t.explore}</p>
@@ -56,6 +54,7 @@ export function Footer() {
           <Link to={r.publications}>{t.links.publications}</Link>
           <Link to={r.partners}>{t.links.partners}</Link>
           <Link to={r.resources}>{t.links.resources}</Link>
+          <Link to={r.service('materiel')}>{t.links.equipment}</Link>
           <Link to={r.faq}>{t.links.faq}</Link>
           <Link to={r.glossary}>{t.links.glossary}</Link>
         </div>
@@ -70,15 +69,35 @@ export function Footer() {
             {company.city}
           </p>
           {import.meta.env.VITE_PORTAL_ENABLED !== '0' && (
-            <a href="/espace/connexion">{ui.common.clientArea}</a>
+            <a href={`/espace/connexion?lang=${meta.locale}`}>{ui.common.clientArea}</a>
           )}
           <Link to={r.contact}>{copy.labels.quote}</Link>
-          <a href={company.appointment} target="_blank" rel="noreferrer">
+          <a href={appointmentLink(meta.locale)} target="_blank" rel="noreferrer">
             {copy.labels.appointment}
             <span className="sr-only">{ui.common.newTab}</span>
           </a>
         </div>
       </div>
+      <nav className="container footer-directory" aria-label={t.directoryTitle}>
+        <h2>{t.directoryTitle}</h2>
+        <div className="footer-directory-grid">
+          {footerDirectory(meta.locale).map((group) => (
+            <details key={group.key} data-footer-group={group.key}>
+              <summary>
+                <span>{t.directoryGroups[group.key]}</span>
+                <ChevronDown size={18} aria-hidden="true" />
+              </summary>
+              <ul>
+                {group.pages.map((page) => (
+                  <li key={page.path}>
+                    <Link to={page.path}>{page.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))}
+        </div>
+      </nav>
       <div className="container footer-bottom">
         <span>
           © {new Date().getFullYear()} {t.rights}
@@ -111,13 +130,6 @@ export function Footer() {
           </button>
         </div>
       </div>
-      <nav className="sr-only" aria-label={t.sectors}>
-        {applications.map((a) => (
-          <Link key={a.id} to={r.application(a.id)}>
-            {a.title}
-          </Link>
-        ))}
-      </nav>
     </footer>
   );
 }

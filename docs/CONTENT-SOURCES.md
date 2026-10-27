@@ -252,3 +252,11 @@ E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
 - Sept expertises affichées. Le matériel reste accessible depuis l’ADNe et le pied de page ; la R&D est regroupée dans l’application Recherche publique & privée, avec redirections permanentes et publications associées. Le bloc « Votre projet en pratique » reste uniquement dans les Applications. Présentation ERC corrigée.
 - Navigation principale à cinq entrées, accès compte conservé ; rubrique « Guides & méthodes » en pied de page. Les trois guides restent disponibles à leurs adresses existantes.
 - Version locale construite : 151 pages publiques, 97 redirections, 302 contrôles page/largeur, 138 contrôles de navigation/session et huit contrôles après le dernier ajustement scientifique. La version Pages en ligne n’inclut pas encore ces modifications. Détail et preuves : [CLIENT-CHANGES-2026-10-27.md](CLIENT-CHANGES-2026-10-27.md).
+
+### Complément — audit joint et navigation, 27 octobre 2026
+
+- Le composant d’aperçu de l’accueil respecte désormais la même exclusion de l’étiquette « Panels SNP » que la page Expertises. La formulation scientifique reste sur la page dédiée.
+- Les miniatures Artois-Picardie utilisent la photographie LDgenX existante `terrain-prelevement`, image d’illustration de filtration sur le terrain. Cartographie, stations et figures scientifiques sont conservées uniquement dans leur fiche ; aucun visuel neuf ni résultat scientifique ajouté.
+- Ressources et ses trois guides conservés. Le pied de page comprend les 76 pages publiques FR et les 75 pages EN, regroupées en huit rubriques dépliables ; matériel classé sous Explorer, y compris dans les documents de découverte générés. Les rubriques Expertises et Applications de la barre principale conduisent directement à leurs pages ; les flèches ouvrent leurs menus.
+- Le premier rendez-vous est accessible sans compte via le parcours public existant, avec maintien de la langue et messages d’erreur explicites. Les protections des parcours privés sont conservées.
+- Recette : 604 combinaisons page/largeur, 150 états de navigation/session après la modification de la barre, 76 assertions API/RLS/Storage et huit scénarios interactifs FR/EN ; aucune nouvelle publication frontend pendant cette passe. Bilan, limites et commandes : [FINAL-REVIEW-2026-10-27.md](FINAL-REVIEW-2026-10-27.md).

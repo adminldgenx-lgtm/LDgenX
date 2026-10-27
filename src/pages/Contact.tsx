@@ -9,6 +9,7 @@ import { AmbientField } from '../components/AmbientField';
 import { LiveList } from '../components/Steps';
 import { Faq } from '../sections/Practice';
 import { scrollBehavior } from '../lib/motion-preference';
+import { appointmentLink } from '../lib/appointment-link';
 
 type Status = { tone: 'info' | 'success' | 'error'; text: string } | null;
 
@@ -91,7 +92,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
             <p>{contactPaths.appointment.text}</p>
             <a
               className="button button-light"
-              href={company.appointment}
+              href={appointmentLink(meta.locale)}
               target="_blank"
               rel="noreferrer"
             >
@@ -128,7 +129,7 @@ export function ContactPage({ meta }: { meta: PageMeta }) {
             <p className="booking-card-title">{t.bookingBenefits}</p>
             <LiveList items={booking.benefits} />
             <p className="booking-note">{booking.note}</p>
-            <Button href={company.appointment}>{contactPaths.appointment.action}</Button>
+            <Button href={appointmentLink(meta.locale)}>{contactPaths.appointment.action}</Button>
           </Reveal>
         </div>
       </section>

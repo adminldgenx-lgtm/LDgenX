@@ -5,7 +5,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { parseEnv } from 'node:util';
 import { ref, serviceKey, query, literal } from './lib/supabase-management.mjs';
 const origin = process.argv[2] ?? 'http://127.0.0.1:4173';
-const output = 'docs/qa-2026-10-26';
+const output = process.env.LDGENX_QA_OUTPUT ?? 'docs/qa-2026-10-26';
 await mkdir(output, { recursive: true });
 const run = randomUUID().slice(0, 8),
   users = [],

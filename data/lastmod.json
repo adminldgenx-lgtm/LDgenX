@@ -1,295 +1,295 @@
 {
   "/": {
-    "hash": "b26544fdcc37ff69",
+    "hash": "92b504d5ade423ae",
     "date": "2026-10-27"
   },
   "/services": {
-    "hash": "fde115f9f0c53e36",
+    "hash": "8e0a9046c1f7b0eb",
     "date": "2026-10-27"
   },
   "/services/adn-environnemental-adne": {
-    "hash": "d77182ab518b2a0e",
+    "hash": "73e74456c6caae3a",
     "date": "2026-10-27"
   },
   "/services/genomique-des-populations": {
-    "hash": "691f36d8fbfefc67",
+    "hash": "9a5d349d25bb23c9",
     "date": "2026-10-27"
   },
   "/services/analyse-des-communautes-microbiennes": {
-    "hash": "f6973d8152f7fdcf",
+    "hash": "c024c3d4eb0dfb84",
     "date": "2026-10-27"
   },
   "/services/selection": {
-    "hash": "65a5904816da0ba2",
+    "hash": "2400adf251f21124",
     "date": "2026-10-27"
   },
   "/services/bioinformatique": {
-    "hash": "d8bf60ae7cfbeb60",
+    "hash": "24015fef2ea55364",
     "date": "2026-10-27"
   },
   "/services/sequencage-dpcr": {
-    "hash": "8aeb4be6f8402b23",
+    "hash": "9acf6582ca0ea3b3",
     "date": "2026-10-27"
   },
   "/services/tests-adn-cibles": {
-    "hash": "1af880f9f34df472",
+    "hash": "34115a330570c794",
     "date": "2026-10-27"
   },
   "/services/materiel": {
-    "hash": "8fcadf3b7772eeb6",
+    "hash": "4ab219c21096be40",
     "date": "2026-10-27"
   },
   "/services/conservation": {
-    "hash": "1a36bd682d917ba0",
-    "date": "2026-10-26"
+    "hash": "c2a12eab761f15e7",
+    "date": "2026-10-27"
   },
   "/services/tracabilite": {
-    "hash": "b43a56070a388292",
-    "date": "2026-10-26"
+    "hash": "950144d7a7ac29e2",
+    "date": "2026-10-27"
   },
   "/services/selection-genomique": {
-    "hash": "1bc2544376a264c4",
-    "date": "2026-10-26"
+    "hash": "3e8cc36d693ffe5c",
+    "date": "2026-10-27"
   },
   "/applications": {
-    "hash": "34b4e9e3ce7ef68f",
-    "date": "2026-10-26"
+    "hash": "ad3c69a08656e32f",
+    "date": "2026-10-27"
   },
   "/applications/biodiversite-conservation": {
-    "hash": "9cede9c0fafbbe8e",
-    "date": "2026-10-26"
+    "hash": "2c271b238f669143",
+    "date": "2026-10-27"
   },
   "/applications/aquaculture-peche": {
-    "hash": "41ea9793d5fee14c",
-    "date": "2026-10-26"
+    "hash": "751262c619b67ec3",
+    "date": "2026-10-27"
   },
   "/applications/agriculture-agroecologie": {
-    "hash": "f58e886dc905cfd9",
-    "date": "2026-10-26"
+    "hash": "b549966d18817b15",
+    "date": "2026-10-27"
   },
   "/applications/environnement-bureaux-d-etudes": {
-    "hash": "d7e78588f8fe6a51",
+    "hash": "7e94f12b5e376a23",
     "date": "2026-10-27"
   },
   "/applications/recherche-publique-privee": {
-    "hash": "2894d77bc0ea5f18",
+    "hash": "3ad7e9792435b9d2",
     "date": "2026-10-27"
   },
   "/applications/energies-renouvelables": {
-    "hash": "5587d22d994b020e",
+    "hash": "a145257f76b5d5d9",
     "date": "2026-10-27"
   },
   "/etudes-de-cas": {
-    "hash": "e37eb70a0c13a5c9",
-    "date": "2026-10-26"
+    "hash": "b05f38c8edbd8d01",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/ichtyofaune-artois-picardie": {
-    "hash": "6cd813ce27e8d952",
-    "date": "2026-10-26"
+    "hash": "17c0c17575d6427f",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/genomique-vanneau-huppe": {
-    "hash": "6578ddba96adc896",
-    "date": "2026-10-26"
+    "hash": "18fae356b410e788",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/demogenetique-ours-pyrenees": {
-    "hash": "3af9125a843d96ac",
-    "date": "2026-10-26"
+    "hash": "2c6f5378aa60d2a9",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/adne-estuaire-milieu-turbide": {
-    "hash": "57cc90e404660f56",
-    "date": "2026-10-26"
+    "hash": "b6c374e1e4e0ad9d",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/biodiversite-eolien-offshore": {
-    "hash": "70d118f779a1bb4b",
-    "date": "2026-10-26"
+    "hash": "e2de74c889ee0bca",
+    "date": "2026-10-27"
   },
   "/etudes-de-cas/communautes-microplastiques": {
-    "hash": "053465979cc91697",
-    "date": "2026-10-26"
+    "hash": "5ab83e03a8da0c78",
+    "date": "2026-10-27"
   },
   "/innovation": {
-    "hash": "ac11140e2cf9a9d6",
+    "hash": "69d5b74d78aefb05",
     "date": "2026-10-27"
   },
   "/innovation/dna-ecotrace": {
-    "hash": "745302cee10eb2c6",
+    "hash": "a0d75483afa15551",
     "date": "2026-10-27"
   },
   "/innovation/edna-clock": {
-    "hash": "3cc9e40d4b684012",
+    "hash": "a8b019af1e88959e",
     "date": "2026-10-27"
   },
   "/a-propos": {
-    "hash": "7b8604f30af01774",
-    "date": "2026-10-26"
+    "hash": "094ce3f0f244a454",
+    "date": "2026-10-27"
   },
   "/a-propos/equipe": {
-    "hash": "f5424ace7e805fea",
-    "date": "2026-10-26"
+    "hash": "8d65c41ec8a5bf51",
+    "date": "2026-10-27"
   },
   "/equipe/dr-maeva-leitwein": {
-    "hash": "b06ae505127cdd0e",
-    "date": "2026-10-26"
+    "hash": "62da821c7e5c4054",
+    "date": "2026-10-27"
   },
   "/equipe/dr-emilie-delpuech": {
-    "hash": "e2c2c3a1bf930770",
-    "date": "2026-10-26"
+    "hash": "679540816d550492",
+    "date": "2026-10-27"
   },
   "/equipe/dr-damien-crestel": {
-    "hash": "a1a4b98d7b700c7f",
-    "date": "2026-10-26"
+    "hash": "5c3795ecb273853a",
+    "date": "2026-10-27"
   },
   "/recherche": {
-    "hash": "6ed9539ee8964460",
-    "date": "2026-10-26"
+    "hash": "21e71529179cf3d3",
+    "date": "2026-10-27"
   },
   "/recherche/levure-replication-adn-polymerase-alpha-2026": {
-    "hash": "f97a2a2d9d1c521b",
+    "hash": "113948a254d0e311",
     "date": "2026-10-27"
   },
   "/recherche/bar-cortisol-temperature-2026": {
-    "hash": "7fe97becedb38291",
+    "hash": "77fdd06b39b7e794",
     "date": "2026-10-27"
   },
   "/recherche/bar-sex-ratio-temperature-gwas-2026": {
-    "hash": "57b68f41f6b4835b",
+    "hash": "39cb55b5c463c761",
     "date": "2026-10-27"
   },
   "/recherche/bar-survie-larvaire-introgression-2026": {
-    "hash": "09a0855f1bd4c901",
+    "hash": "ac26a6a0b23e2b5f",
     "date": "2026-10-27"
   },
   "/recherche/poissons-tolerance-rechauffement-taille-2025": {
-    "hash": "fa5ac7ecff805d71",
+    "hash": "4e19056e2d5feecc",
     "date": "2026-10-27"
   },
   "/recherche/genomes-becasse-becassine-2025": {
-    "hash": "89a2cc6f17d61357",
-    "date": "2026-10-26"
+    "hash": "f63e366bcc27058c",
+    "date": "2026-10-27"
   },
   "/recherche/bar-introgression-fitness-2025": {
-    "hash": "d1a50a9e0ac2388f",
-    "date": "2026-10-26"
+    "hash": "93a8593f8e400b0a",
+    "date": "2026-10-27"
   },
   "/recherche/bar-croissance-larvaire-temperature-2025": {
-    "hash": "666241fd420ff663",
+    "hash": "27177ed2d4091a7d",
     "date": "2026-10-27"
   },
   "/recherche/bar-selection-efficacite-alimentaire-2025": {
-    "hash": "ae057eca7be9f563",
-    "date": "2026-10-26"
+    "hash": "4de18f148b139a00",
+    "date": "2026-10-27"
   },
   "/recherche/bar-introgression-teneur-gras-2024": {
-    "hash": "26d620fdf9d1c591",
-    "date": "2026-10-26"
+    "hash": "3251854d4505d312",
+    "date": "2026-10-27"
   },
   "/recherche/bar-determinisme-sexe-energie-2024": {
-    "hash": "d7a266d540cf17bd",
-    "date": "2026-10-26"
+    "hash": "f11244b630bee128",
+    "date": "2026-10-27"
   },
   "/recherche/bar-temperature-femelles-2024": {
-    "hash": "0bd7aebff0da3321",
+    "hash": "ed27ce40e52dbb19",
     "date": "2026-10-27"
   },
   "/recherche/bar-resistance-vnn-2023": {
-    "hash": "77fd255b01786976",
-    "date": "2026-10-26"
+    "hash": "56d76ac311dd201a",
+    "date": "2026-10-27"
   },
   "/recherche/capelan-methylation-reproduction-2023": {
-    "hash": "28870c8016436aa6",
-    "date": "2026-10-26"
+    "hash": "f34eb57c463d5b68",
+    "date": "2026-10-27"
   },
   "/recherche/truite-pigmentation-gwas-2023": {
-    "hash": "66473e87d48178c9",
-    "date": "2026-10-26"
+    "hash": "e0292f33afef0a22",
+    "date": "2026-10-27"
   },
   "/recherche/saumon-coho-elevage-expression-2022": {
-    "hash": "c4d1d72ef26fa56f",
-    "date": "2026-10-26"
+    "hash": "bed60f781e361439",
+    "date": "2026-10-27"
   },
   "/recherche/omble-ascendance-repeuplement-2021": {
-    "hash": "f9c13c319cd1310e",
-    "date": "2026-10-26"
+    "hash": "f0cc7c4e0505609f",
+    "date": "2026-10-27"
   },
   "/recherche/porc-efficacite-alimentaire-gwas-2021": {
-    "hash": "3764d9eb19b8ddd5",
-    "date": "2026-10-26"
+    "hash": "4cbe33edb02cc043",
+    "date": "2026-10-27"
   },
   "/recherche/saumon-coho-epigenome-germinal-2021": {
-    "hash": "f18dfa8939ed560d",
-    "date": "2026-10-26"
+    "hash": "b33cd3d02ece49b6",
+    "date": "2026-10-27"
   },
   "/recherche/haplotypes-genomique-conservation-2020": {
-    "hash": "46130987dbd215e8",
-    "date": "2026-10-26"
+    "hash": "6eecf215731470cb",
+    "date": "2026-10-27"
   },
   "/recherche/omble-diversite-petites-populations-2020": {
-    "hash": "be803564e80778d3",
-    "date": "2026-10-26"
+    "hash": "ce44dbd7d2c7d9e3",
+    "date": "2026-10-27"
   },
   "/recherche/porc-prediction-genomique-2020": {
-    "hash": "2ce5e6076fa78eac",
-    "date": "2026-10-26"
+    "hash": "b34ac96f8e0b1856",
+    "date": "2026-10-27"
   },
   "/recherche/omble-recombinaison-ascendance-2019": {
-    "hash": "5d1ddd7ff34196fe",
-    "date": "2026-10-26"
+    "hash": "c3f790fa427caf7c",
+    "date": "2026-10-27"
   },
   "/recherche/truite-ressource-snp-2019": {
-    "hash": "9d4be7666580d661",
-    "date": "2026-10-26"
+    "hash": "b38ba7757a4b83a8",
+    "date": "2026-10-27"
   },
   "/recherche/truite-trois-ascendances-2018": {
-    "hash": "568fcdbf42b2beed",
-    "date": "2026-10-26"
+    "hash": "7cb9d1cd5bbad1b4",
+    "date": "2026-10-27"
   },
   "/recherche/truite-arc-en-ciel-san-francisco-2017": {
-    "hash": "ea3cb87e7851f4ac",
-    "date": "2026-10-26"
+    "hash": "4bbe4ee774f9f672",
+    "date": "2026-10-27"
   },
   "/recherche/truite-carte-liaison-2017": {
-    "hash": "d979238d1f8d2a28",
-    "date": "2026-10-26"
+    "hash": "33c7fe847a950284",
+    "date": "2026-10-27"
   },
   "/recherche/truite-orb-diversite-2016": {
-    "hash": "8913d915a55e9bc0",
-    "date": "2026-10-26"
+    "hash": "20e34ae6e73cacff",
+    "date": "2026-10-27"
   },
   "/faq": {
-    "hash": "34ce2900798dc4bc",
-    "date": "2026-10-26"
+    "hash": "74683b533c993118",
+    "date": "2026-10-27"
   },
   "/glossaire": {
-    "hash": "1e7373446cb9bf2e",
-    "date": "2026-10-26"
+    "hash": "04e204b84a718007",
+    "date": "2026-10-27"
   },
   "/plan-du-site": {
     "hash": "be7c84bd785ef305",
     "date": "2026-10-27"
   },
   "/a-propos/partenaires": {
-    "hash": "b8103ad00b24c922",
-    "date": "2026-10-26"
+    "hash": "2f9c1a8b4acb6fe7",
+    "date": "2026-10-27"
   },
   "/ressources": {
-    "hash": "845e1698b73f1eae",
+    "hash": "e8a2ad13b31c2edf",
     "date": "2026-10-27"
   },
   "/ressources/comprendre-adn-environnemental": {
-    "hash": "548940c1abdcea55",
+    "hash": "a60996bb8d8aa6ea",
     "date": "2026-10-27"
   },
   "/ressources/bioinformatique-question-biologique": {
-    "hash": "1dd1d7e91c544385",
+    "hash": "d6e73ce633f6104c",
     "date": "2026-10-27"
   },
   "/ressources/genomique-filiere-aquacole": {
-    "hash": "368fd93b4defe824",
+    "hash": "dd101ff2903c0cdd",
     "date": "2026-10-27"
   },
   "/contact": {
-    "hash": "af62b35706f0335d",
-    "date": "2026-10-26"
+    "hash": "8e477905de0312d4",
+    "date": "2026-10-27"
   },
   "/mentions-legales": {
     "hash": "a2d1141c9b016cdb",
@@ -304,296 +304,296 @@
     "date": "2026-10-23"
   },
   "/en": {
-    "hash": "9c24065e84c072e7",
+    "hash": "4aa76b230b27bfae",
     "date": "2026-10-27"
   },
   "/en/services": {
-    "hash": "d0f6fb0be79ce772",
+    "hash": "8551f531e3273639",
     "date": "2026-10-27"
   },
   "/en/services/environmental-dna-edna": {
-    "hash": "f34cc99f47a0b416",
+    "hash": "438d58c531094666",
     "date": "2026-10-27"
   },
   "/en/services/population-genomics": {
-    "hash": "2571902cfb635c92",
+    "hash": "7df819e2041aeb03",
     "date": "2026-10-27"
   },
   "/en/services/microbial-community-analysis": {
-    "hash": "d741b19e59c983c9",
+    "hash": "dbca607cc7baa18d",
     "date": "2026-10-27"
   },
   "/en/services/genomic-selection": {
-    "hash": "c4d86e6f476ceb76",
+    "hash": "4129c623d846f235",
     "date": "2026-10-27"
   },
   "/en/services/bioinformatics": {
-    "hash": "e1bc24afb626cc81",
+    "hash": "7c243b785f76939a",
     "date": "2026-10-27"
   },
   "/en/services/sequencing-dpcr": {
-    "hash": "0c4203b2bcdb4599",
+    "hash": "859dada2350aa1c1",
     "date": "2026-10-27"
   },
   "/en/services/targeted-dna-tests-dpcr": {
-    "hash": "1cfae7dc907ea744",
+    "hash": "16e1d6e5c215d50e",
     "date": "2026-10-27"
   },
   "/en/services/equipment": {
-    "hash": "c608505ffea830d6",
+    "hash": "2c7b7b68e51ada77",
     "date": "2026-10-27"
   },
   "/en/services/conservation": {
-    "hash": "fd2e2f971ea16a8f",
-    "date": "2026-10-26"
+    "hash": "adcaa1904397fd69",
+    "date": "2026-10-27"
   },
   "/en/services/traceability": {
-    "hash": "1168926dc78e2930",
-    "date": "2026-10-26"
+    "hash": "bba85a0be6af8bc3",
+    "date": "2026-10-27"
   },
   "/en/services/genomic-selection-page": {
-    "hash": "81b738071e7be510",
-    "date": "2026-10-26"
+    "hash": "ef7ff359ad162aa0",
+    "date": "2026-10-27"
   },
   "/en/applications": {
-    "hash": "d21df910695374bb",
-    "date": "2026-10-26"
+    "hash": "7ddd5ddcc7c5745e",
+    "date": "2026-10-27"
   },
   "/en/applications/biodiversity-conservation": {
-    "hash": "200bd8eea7e47d79",
-    "date": "2026-10-26"
+    "hash": "0638b075c87f336b",
+    "date": "2026-10-27"
   },
   "/en/applications/aquaculture-fisheries": {
-    "hash": "5a5e8f82bf54663f",
-    "date": "2026-10-26"
+    "hash": "08ca801d2a4b5387",
+    "date": "2026-10-27"
   },
   "/en/applications/agriculture-agroecology": {
-    "hash": "6cbd65f97fa82795",
-    "date": "2026-10-26"
+    "hash": "f71cfe208c78ac63",
+    "date": "2026-10-27"
   },
   "/en/applications/environment-consultancies": {
-    "hash": "d2592bb7a0f70e43",
+    "hash": "d7b1cf5e16ea909a",
     "date": "2026-10-27"
   },
   "/en/applications/public-private-research": {
-    "hash": "986ee56f4e41c68c",
+    "hash": "fff1bba423f7c2f8",
     "date": "2026-10-27"
   },
   "/en/applications/renewable-energy": {
-    "hash": "5ea4fa9c83c244d4",
+    "hash": "27d4417460dd6b17",
     "date": "2026-10-27"
   },
   "/en/case-studies": {
-    "hash": "5f66ecf19585d2c4",
-    "date": "2026-10-26"
+    "hash": "0f666ed9549ea79a",
+    "date": "2026-10-27"
   },
   "/en/case-studies/artois-picardie-fish-survey": {
-    "hash": "0ed566c99defe3ed",
-    "date": "2026-10-26"
+    "hash": "0e9218de5375b10c",
+    "date": "2026-10-27"
   },
   "/en/case-studies/northern-lapwing-genomics": {
-    "hash": "0f57354ce981362c",
-    "date": "2026-10-26"
+    "hash": "07e88d9a0cb56246",
+    "date": "2026-10-27"
   },
   "/en/case-studies/pyrenean-brown-bear-demogenetics": {
-    "hash": "c986dab6090896d2",
-    "date": "2026-10-26"
+    "hash": "6f191a39e39fd506",
+    "date": "2026-10-27"
   },
   "/en/case-studies/estuary-edna-turbid-water": {
-    "hash": "14a1155b51dd2e28",
-    "date": "2026-10-26"
+    "hash": "5bff83f3ed2d371d",
+    "date": "2026-10-27"
   },
   "/en/case-studies/offshore-wind-biodiversity": {
-    "hash": "b5675c5b46b0b476",
-    "date": "2026-10-26"
+    "hash": "29d358d3cdf1d272",
+    "date": "2026-10-27"
   },
   "/en/case-studies/microplastic-microbial-communities": {
-    "hash": "7d660a1069a449b3",
-    "date": "2026-10-26"
+    "hash": "43e833a9fab6ce95",
+    "date": "2026-10-27"
   },
   "/en/innovation": {
-    "hash": "b09ab19640d737fb",
+    "hash": "4d959cb5ad8eb47d",
     "date": "2026-10-27"
   },
   "/en/innovation/dna-ecotrace": {
-    "hash": "28b3b7e5d2e0c469",
+    "hash": "77c5ba5d31b0babb",
     "date": "2026-10-27"
   },
   "/en/innovation/ednaclock": {
-    "hash": "5666c059731be54a",
+    "hash": "43016ee1cacb3542",
     "date": "2026-10-27"
   },
   "/en/about-us": {
-    "hash": "fb59595eab64e470",
-    "date": "2026-10-26"
+    "hash": "aae3304ed4f8ecc1",
+    "date": "2026-10-27"
   },
   "/en/about-us/team": {
-    "hash": "2698e827fab50d46",
-    "date": "2026-10-26"
+    "hash": "9fb2195930395aee",
+    "date": "2026-10-27"
   },
   "/en/team/dr-maeva-leitwein": {
-    "hash": "536b137b9d798b23",
-    "date": "2026-10-26"
+    "hash": "3afddc45f2a84599",
+    "date": "2026-10-27"
   },
   "/en/team/dr-emilie-delpuech": {
-    "hash": "1de2d2a8e992fd44",
-    "date": "2026-10-26"
+    "hash": "90de6c97356a7308",
+    "date": "2026-10-27"
   },
   "/en/team/dr-damien-crestel": {
-    "hash": "845a62bfe673f245",
-    "date": "2026-10-26"
+    "hash": "b5dc52589252caca",
+    "date": "2026-10-27"
   },
   "/en/research": {
-    "hash": "4d61bb240ec35180",
-    "date": "2026-10-26"
+    "hash": "f13004085a100c16",
+    "date": "2026-10-27"
   },
   "/en/research/yeast-dna-replication-polymerase-alpha-2026": {
-    "hash": "7dcd48dee95e6d31",
+    "hash": "dc5918965414e10c",
     "date": "2026-10-27"
   },
   "/en/research/sea-bass-cortisol-temperature-2026": {
-    "hash": "be95fcee6dde4390",
+    "hash": "3d44e0ef3ee1820d",
     "date": "2026-10-27"
   },
   "/en/research/sea-bass-sex-ratio-gwas-2026": {
-    "hash": "ff5fd1e827482527",
+    "hash": "ae72a5b734b68425",
     "date": "2026-10-27"
   },
   "/en/research/sea-bass-larval-survival-introgression-2026": {
-    "hash": "6d4335e4f839a645",
+    "hash": "b726c06d8d5671d0",
     "date": "2026-10-27"
   },
   "/en/research/fish-warming-tolerance-body-mass-2025": {
-    "hash": "03f38592414a15d1",
+    "hash": "26646fd03acf38e3",
     "date": "2026-10-27"
   },
   "/en/research/woodcock-jack-snipe-genomes-2025": {
-    "hash": "1360ac8d311e4eb9",
-    "date": "2026-10-26"
+    "hash": "2045a561d8a7ac02",
+    "date": "2026-10-27"
   },
   "/en/research/sea-bass-introgression-fitness-2025": {
-    "hash": "b5ef4c5f00a50ab0",
-    "date": "2026-10-26"
+    "hash": "022c515fd26cb300",
+    "date": "2026-10-27"
   },
   "/en/research/sea-bass-larval-growth-temperature-2025": {
-    "hash": "d5393632c608b8d3",
+    "hash": "fce0d78613fca2bc",
     "date": "2026-10-27"
   },
   "/en/research/sea-bass-feed-efficiency-selection-2025": {
-    "hash": "e22669d59363f053",
-    "date": "2026-10-26"
+    "hash": "19f4ec8e1e617b21",
+    "date": "2026-10-27"
   },
   "/en/research/sea-bass-introgression-muscle-fat-2024": {
-    "hash": "26c61ed75fd3a0f5",
-    "date": "2026-10-26"
+    "hash": "6a4b7377409db68c",
+    "date": "2026-10-27"
   },
   "/en/research/sea-bass-sex-determination-energy-2024": {
-    "hash": "f38f5ad0ebfb793d",
-    "date": "2026-10-26"
+    "hash": "3706666f40375fd0",
+    "date": "2026-10-27"
   },
   "/en/research/sea-bass-temperature-female-ratio-2024": {
-    "hash": "1c94feeb7697c64d",
+    "hash": "b40f09edf0c2a1e1",
     "date": "2026-10-27"
   },
   "/en/research/sea-bass-vnn-resistance-2023": {
-    "hash": "0f1e188e3601ca0f",
-    "date": "2026-10-26"
+    "hash": "221186f5e6e56024",
+    "date": "2026-10-27"
   },
   "/en/research/capelin-dna-methylation-2023": {
-    "hash": "4fca11427e0020d7",
-    "date": "2026-10-26"
+    "hash": "5489ddc3df128109",
+    "date": "2026-10-27"
   },
   "/en/research/brown-trout-pigmentation-gwas-2023": {
-    "hash": "ebdaa74176f7d1b0",
+    "hash": "97d6a00a006c773a",
     "date": "2026-10-27"
   },
   "/en/research/coho-salmon-hatchery-expression-2022": {
-    "hash": "a94e8ec27d7a4a57",
-    "date": "2026-10-26"
+    "hash": "8c921997ea32bb87",
+    "date": "2026-10-27"
   },
   "/en/research/stocking-ancestry-landscape-2021": {
-    "hash": "69074e1fbe532008",
-    "date": "2026-10-26"
+    "hash": "fae8cf40420ad1e0",
+    "date": "2026-10-27"
   },
   "/en/research/pig-feed-efficiency-gwas-2021": {
-    "hash": "96281340fa7f0bc1",
-    "date": "2026-10-26"
+    "hash": "e3f789a0d82d3121",
+    "date": "2026-10-27"
   },
   "/en/research/salmon-germline-epigenome-2021": {
-    "hash": "7f1cea6732b8f3c7",
-    "date": "2026-10-26"
+    "hash": "d5a36798c94d12ba",
+    "date": "2026-10-27"
   },
   "/en/research/haplotypes-conservation-genomics-2020": {
-    "hash": "38a47457fe2aec59",
-    "date": "2026-10-26"
+    "hash": "36934574b1315a5e",
+    "date": "2026-10-27"
   },
   "/en/research/brook-charr-small-populations-2020": {
-    "hash": "128f0d4f194fd6e8",
-    "date": "2026-10-26"
+    "hash": "12c77c52ee1a05e7",
+    "date": "2026-10-27"
   },
   "/en/research/pig-genomic-prediction-2020": {
-    "hash": "41767c33fe4ec6f1",
-    "date": "2026-10-26"
+    "hash": "67b04e3b5ea7bff2",
+    "date": "2026-10-27"
   },
   "/en/research/brook-charr-recombination-ancestry-2019": {
-    "hash": "b7b7b3a2356176d8",
-    "date": "2026-10-26"
+    "hash": "649c4ca8bf97d0c7",
+    "date": "2026-10-27"
   },
   "/en/research/brown-trout-snp-array-2019": {
-    "hash": "05581438d0315a17",
-    "date": "2026-10-26"
+    "hash": "781a23347a80eefa",
+    "date": "2026-10-27"
   },
   "/en/research/brown-trout-three-way-admixture-2018": {
-    "hash": "c19b7298d655ed7b",
-    "date": "2026-10-26"
+    "hash": "7782f501fd4aa48d",
+    "date": "2026-10-27"
   },
   "/en/research/rainbow-trout-san-francisco-2017": {
-    "hash": "24361dd46f0ae97c",
-    "date": "2026-10-26"
+    "hash": "c2236b0821a5a5f7",
+    "date": "2026-10-27"
   },
   "/en/research/brown-trout-linkage-map-2017": {
-    "hash": "8b257c19dbde819a",
-    "date": "2026-10-26"
+    "hash": "91b0280d57f6e95d",
+    "date": "2026-10-27"
   },
   "/en/research/brown-trout-orb-diversity-2016": {
-    "hash": "599ce8d02dcff9ac",
-    "date": "2026-10-26"
+    "hash": "c0339d918f4fdd74",
+    "date": "2026-10-27"
   },
   "/en/faq": {
-    "hash": "9f6a8ecb9e9dbe0d",
-    "date": "2026-10-26"
+    "hash": "9d6edef453842f00",
+    "date": "2026-10-27"
   },
   "/en/glossary": {
-    "hash": "b6a8d95e78d2ed8d",
-    "date": "2026-10-26"
+    "hash": "2d697dca31bdc075",
+    "date": "2026-10-27"
   },
   "/en/site-map": {
     "hash": "03c26c0c5832c5e8",
     "date": "2026-10-27"
   },
   "/en/about-us/partners": {
-    "hash": "c554dd4862fa76d3",
-    "date": "2026-10-26"
+    "hash": "6e4c8597c0f3cfa4",
+    "date": "2026-10-27"
   },
   "/en/resources": {
-    "hash": "939166bd06b5ca47",
+    "hash": "7215b3d1517cebae",
     "date": "2026-10-27"
   },
   "/en/resources/understanding-environmental-dna": {
-    "hash": "dc1c3357959a7f1e",
+    "hash": "ad3e6c65714d5542",
     "date": "2026-10-27"
   },
   "/en/resources/bioinformatics-biological-question": {
-    "hash": "43ee83a1b002c214",
+    "hash": "8c2a9500ca07e258",
     "date": "2026-10-27"
   },
   "/en/resources/genomics-aquaculture": {
-    "hash": "34c35568fa07d6ec",
+    "hash": "df36538c5f246c81",
     "date": "2026-10-27"
   },
   "/en/contact": {
-    "hash": "2412f0b460abec29",
-    "date": "2026-10-26"
+    "hash": "08d6e316473b4a5b",
+    "date": "2026-10-27"
   },
   "/en/legal-notice": {
     "hash": "cb4d0dd8b8c34034",

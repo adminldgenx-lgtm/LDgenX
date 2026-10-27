@@ -418,7 +418,7 @@ export const booking = {
     'Explore how LDgenX’s innovative genomic solutions can support your objectives',
     'Ask your questions directly to one of LDgenX’s founders and genomics experts',
   ],
-  note: 'This first conversation lets us see together how we can help.',
+  note: 'You can request this first conversation without an account. It lets us see together how we can help.',
   action: '15-minute free consultation',
   alternate: 'https://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1',
 };

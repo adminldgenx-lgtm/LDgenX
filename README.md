@@ -24,7 +24,7 @@ npm run preview
 
 La version de production est disponible sur http://127.0.0.1:4173.
 
-`npm run build` produit le client Vite, un rendu React serveur temporaire, puis **153 pages HTML complètes** dans `dist`. Chaque page contient son contenu, son titre, sa description, sa canonique et ses données structurées avant l’exécution de JavaScript. Le client hydrate le HTML et assure la navigation. Le site public reste statique ; l’espace client et l’administration utilisent le backend Supabase déployé. Voir [docs/PORTAL.md](docs/PORTAL.md).
+`npm run build` produit le client Vite, un rendu React serveur temporaire, puis **151 pages HTML complètes** dans `dist`. Chaque page contient son contenu, son titre, sa description, sa canonique et ses données structurées avant l’exécution de JavaScript. Le client hydrate le HTML et assure la navigation. Le site public reste statique ; l’espace client et l’administration utilisent le backend Supabase déployé. Voir [docs/PORTAL.md](docs/PORTAL.md).
 
 `check:html` contrôle les H1, les métadonnées uniques, les canoniques, les données structurées, les liens locaux, les images et les espaces insécables de la ponctuation française de toutes les pages. Les pages sont listées dans `src/lib/pages.ts`.
 
@@ -101,6 +101,8 @@ Les animations sont concentrées dans `src/components/motion.tsx` et `src/styles
 ## Contact et espace client
 
 Le formulaire de contact envoie les demandes au backend Supabase : elles apparaissent dans l’onglet « Formulaire du site » de l’administration. Les boutons de rendez-vous ouvrent `/espace/reserver`. L’espace client est accessible via le pied de page du site ; l’administration est à `/admin`.
+
+Le premier échange se réserve sans compte ; les liens de rendez-vous transmettent la langue du site au portail. Expertises et Applications sont directement cliquables dans la barre de navigation ; leurs flèches ouvrent les menus. Ressources et l’ensemble des pages publiques figurent dans le répertoire du pied de page. La [dernière recette du 27 octobre](docs/FINAL-REVIEW-2026-10-27.md) documente ces changements locaux et leur état de publication.
 
 Le compte administrateur est `admin.ldgenx@gmail.com` ; son mot de passe a été défini à la demande du propriétaire et vérifié sur le backend réel le 26 octobre. Aucun mot de passe n’est conservé dans les fichiers du projet. Si une récupération locale devient nécessaire, `npm run supabase:admin-link` génère un lien privé temporaire. Le bouton de compte de la barre de navigation affiche « Connexion » ou « Mon compte » selon la session Supabase ; il conduit les administrateurs et les clients vers leur espace respectif.
 

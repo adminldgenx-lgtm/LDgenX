@@ -1,0 +1,49 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "oldMapThumbnail": false,
+    "footerDirectory": false,
+    "homeStudyTeaser": true,
+    "portal": false
+  },
+  {
+    "path": "/services/adn-environnemental-adne",
+    "status": 200,
+    "oldMapThumbnail": true,
+    "footerDirectory": false,
+    "homeStudyTeaser": true,
+    "portal": false
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "oldMapThumbnail": false,
+    "footerDirectory": false,
+    "homeStudyTeaser": true,
+    "portal": false
+  },
+  {
+    "path": "/espace/reserver",
+    "status": 200,
+    "oldMapThumbnail": false,
+    "footerDirectory": false,
+    "homeStudyTeaser": false,
+    "portal": false
+  },
+  {
+    "path": "/en/contact",
+    "status": 200,
+    "oldMapThumbnail": false,
+    "footerDirectory": false,
+    "homeStudyTeaser": true,
+    "portal": false
+  },
+  {
+    "path": "public booking API",
+    "status": 200,
+    "publicTypes": 1,
+    "approval": "manual",
+    "privateBlocks": 0
+  }
+]

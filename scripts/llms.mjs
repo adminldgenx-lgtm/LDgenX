@@ -31,6 +31,7 @@ export function buildLlms({ catalogs, pages, company }) {
       species: 'Espèces pour lesquelles LDgenX dispose d’amorces et de sondes (dPCR)',
       kits: 'Kits d’échantillonnage',
       equipment: 'Matériel de filtration',
+      sampling: 'Échantillonnage & matériel',
       full: 'Texte intégral du site (français et anglais)',
       approaches: 'Approches',
       prestations: 'Prestations',
@@ -69,6 +70,7 @@ export function buildLlms({ catalogs, pages, company }) {
       species: 'Species for which LDgenX holds primers and probes (dPCR)',
       kits: 'Sampling kits',
       equipment: 'Filtration equipment',
+      sampling: 'Sampling & equipment',
       full: 'Full text of the site (French and English)',
       approaches: 'Approaches',
       prestations: 'Services provided',
@@ -110,7 +112,19 @@ export function buildLlms({ catalogs, pages, company }) {
     return [
       `## ${w.services}`,
       list(
-        c.services.map((s) => `- [${s.title}](${url(locale, 'service', s.id)}): ${plain(s.scope)}`),
+        c.services
+          .filter((s) => s.listed !== false)
+          .map(
+            (s) => `- [${s.title}](${url(locale, 'service', s.id)}): ${plain(s.scope)}`,
+          ),
+      ),
+      `\n## ${w.sampling}`,
+      list(
+        c.services
+          .filter((s) => s.listed === false)
+          .map(
+            (s) => `- [${s.title}](${url(locale, 'service', s.id)}): ${plain(s.scope)}`,
+          ),
       ),
       `\n## ${w.applications}`,
       list(
@@ -121,9 +135,12 @@ export function buildLlms({ catalogs, pages, company }) {
       `\n## ${w.studies}`,
       list([
         ...c.studies.map(
-          (s) => `- [${plain(s.title)}](${url(locale, 'study', s.id)}): ${plain(s.subtitle)}`,
+          (s) =>
+            `- [${plain(s.title)}](${url(locale, 'study', s.id)}): ${plain(s.subtitle)}`,
         ),
-        ...c.works.map((x) => `- [${x.title}](${url(locale, 'work', x.id)}): ${plain(x.summary)}`),
+        ...c.works.map(
+          (x) => `- [${x.title}](${url(locale, 'work', x.id)}): ${plain(x.summary)}`,
+        ),
         ...c.innovations.map(
           (x) => `- [${x.title}](${url(locale, 'innovation', x.id)}): ${plain(x.intro)}`,
         ),
@@ -146,10 +163,12 @@ export function buildLlms({ catalogs, pages, company }) {
       ]),
       `\n## ${w.resources}`,
       list([
+        `- [${c.ui.seo.resources.label}](${url(locale, 'resources')})`,
         `- [${w.faq}](${url(locale, 'faq')})`,
         `- [${w.glossary}](${url(locale, 'glossary')})`,
         ...c.resources.map(
-          (x) => `- [${plain(x.title)}](${url(locale, 'article', x.id)}): ${plain(x.intro)}`,
+          (x) =>
+            `- [${plain(x.title)}](${url(locale, 'article', x.id)}): ${plain(x.intro)}`,
         ),
       ]),
     ].join('\n');
@@ -199,6 +218,7 @@ export function buildLlms({ catalogs, pages, company }) {
 
     h(2, w.services);
     for (const s of c.services) {
+      if (s.listed === false) h(2, w.sampling);
       h(3, s.title);
       p(url(locale, 'service', s.id));
       p(`${plain(s.headline)} ${s.intro}`);
@@ -261,6 +281,17 @@ export function buildLlms({ catalogs, pages, company }) {
         p(c.erc.role);
       }
       if (s.cir) p(`${c.cir.title} ${c.cir.text}`);
+      if (s.researchSupport) {
+        const support = s.researchSupport;
+        h(3, support.title);
+        p(`${plain(support.headline)} ${support.intro}`);
+        p(support.need);
+        bullets(support.approaches.map((a) => `${a.title}: ${a.text}`));
+        bullets(support.prestations);
+        bullets(support.uses);
+        bullets(support.cases.map((item) => item.title));
+        p(support.delivery);
+      }
     }
 
     h(2, w.studies);
@@ -285,7 +316,8 @@ export function buildLlms({ catalogs, pages, company }) {
         bullets(d.findings);
         p(`${d.perspectiveTitle}: ${d.perspective}`);
         bullets(d.roles);
-        if (d.documents) bullets(d.documents.map((x) => `${x.label} (${x.meta}): ${x.url}`));
+        if (d.documents)
+          bullets(d.documents.map((x) => `${x.label} (${x.meta}): ${x.url}`));
       }
       if (s.id === c.featuredStudy.slug) {
         bullets(c.featuredStudy.steps.map((x) => `${x.title}: ${x.text}`));

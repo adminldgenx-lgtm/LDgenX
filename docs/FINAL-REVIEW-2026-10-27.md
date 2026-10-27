@@ -1,0 +1,59 @@
+# LDgenX — dernière passe de corrections, 27 octobre 2026
+
+Cette passe applique le texte d’audit joint par le propriétaire, sa demande de conserver Ressources et de relier toutes les pages publiques depuis le pied de page, puis sa demande de rendre les deux rubriques de navigation directement cliquables. Le code a été contrôlé avant modification ; plusieurs corrections scientifiques étaient déjà présentes.
+
+**État de publication : modifications locales construites, publication Cloudflare non déclenchée.** La prévisualisation tourne à `http://127.0.0.1:4174`. Le relevé de la version effectivement publiée au début de cette passe est conservé dans [live-before.json](final-review-2026-10-27/live-before.json). Le site en ligne n’est pas présenté comme intégrant ces modifications.
+
+## Corrections effectuées
+
+| Point | Résultat et fichiers principaux |
+| --- | --- |
+| Navigation Expertises / Applications | Les libellés deviennent de vrais liens vers `/services` et `/applications`, et leurs équivalents anglais. Les flèches restent des boutons distincts d’ouverture des menus. Les liens « Toutes nos expertises » et « Tous les secteurs » des menus ordinateur et mobile sont conservés et testés. `src/layouts/Header.tsx`, `src/styles/global.css`. |
+| « Panels SNP » sur l’accueil | Le composant de l’accueil utilisait encore tous les intitulés d’approches, contrairement à celui de la page Expertises. Il respecte maintenant la même propriété `preview: false`. La description scientifique validée reste dans la page de génomique des populations. `src/sections/ExpertiseTrace.tsx`. |
+| Miniatures Artois-Picardie | Les cartes de présentation utilisent la photographie LDgenX existante `terrain-prelevement`, y compris la carte de la page ADNe, le catalogue d’études, les suggestions et leurs métadonnées de partage. La photographie illustre la filtration d’un prélèvement ; elle n’est pas présentée comme une photo des stations Artois-Picardie. Le parcours cartographique, les stations et les figures scientifiques restent dans la fiche de cette étude, FR/EN. `src/content/fr.ts`, `src/content/en.ts`, `src/lib/pages.ts`. |
+| Matériel | Le pied de page utilise la liste des sept expertises affichées ; le matériel est rangé sous Explorer. La page, ses adresses et le lien depuis l’ADNe restent disponibles. Les fichiers de découverte `llms.txt` et `llms-full.txt` le classent dans Échantillonnage & matériel. Le contenu R&D de l’application est aussi repris dans le document de découverte complet. `src/layouts/Footer.tsx`, `scripts/llms.mjs`. |
+| Ressources et ensemble des pages | Aucune page Ressources ni aucun guide supprimé. Le pied de page nomme explicitement « Ressources · Guides & méthodes ». Un répertoire en huit groupes contient chaque page publique de la langue : 76 en français, 75 en anglais. Les liens sont présents dans le HTML initial, consultables avec des groupes dépliables natifs au clavier ou au pointeur. Les espaces privés ne font pas partie de ce répertoire. `src/lib/footer.ts`, `src/layouts/Footer.tsx`, `src/content/ui.fr.ts`, `src/content/ui.en.ts`, `src/styles/global.css`. |
+| Rendez-vous public | L’architecture existante prévoit déjà un premier échange sans compte. Cette protection n’a pas été modifiée : seuls les formats publics sont proposés aux visiteurs ; rendez-vous et données privées restent protégés. Les textes Contact précisent le parcours sans compte. Les liens transportent la langue dans `/espace/reserver?lang=fr` ou `?lang=en`, y compris depuis le menu, le pied de page et les appels à l’action. `src/lib/appointment-link.ts`, `src/pages/Contact.tsx`, `src/components/ui.tsx`, `src/layouts/Header.tsx`, `src/layouts/Footer.tsx`, catalogues FR/EN. |
+| Langue et erreurs de réservation | La langue du lien est appliquée au portail, à son attribut HTML et à sa préférence mémorisée. Le consentement de réservation renvoie à la confidentialité dans la langue choisie. Une erreur de chargement de configuration affiche une commande Réessayer plutôt qu’un chargement indéfini. Une erreur de soumission ne produit pas de confirmation. `src/portal/i18n/index.tsx`, `src/portal/booking.tsx`, dictionnaires FR/EN. |
+
+Les 151 pages publiques existantes sont conservées ; aucune page artificielle supplémentaire ni changement d’adresse n’a été ajouté. Les canoniques et les liens de langue restent destinés à `https://www.ldgenx.fr`. La grande scène des applications sur l’accueil et les animations existantes sont conservées.
+
+## Contenus validés préservés
+
+La recette spécifique contrôle les formulations ADNe « permet d’identifier les espèces » et « Barcoding : dPCR ciblée », les aperçus sans étiquette SNP, le bloc Projet en pratique réservé aux Applications, la présentation ERC, l’intégralité du contenu R&D dans Recherche publique & privée et les quatre articles corrigés de Damien Crestel dans les deux langues. Les résultats, limites, titres originaux, DOI et figures ne sont pas réécrits pendant cette passe.
+
+Les mentions légales contiennent toujours Maeva Leitwein comme directrice de publication, le code NAF 72.11Z et Cloudflare comme hébergeur. Les vérifications de métadonnées, de totaux des études, des 28 publications, des 22 cibles d’essais et des licences des figures restent réussies.
+
+## Environnement et commandes réellement exécutées
+
+- Installation reproductible et build sous **Node 22.23.4**, version majeure configurée pour Cloudflare, avec **npm 11.11.0**. Le poste utilise par défaut Node 25.8.0 pour les scripts de diagnostic. Aucun changement de dépendance ; `package-lock.json` inchangé.
+- `npm ci` a réussi, puis a été refait avec `npx --yes --package=node@22 --call 'npm ci'`. Audit de 218 paquets : zéro vulnérabilité connue signalée. npm émet un avertissement de dépréciation sur ESLint 9.39.5 ; cette dépendance de développement n’a pas été mise à niveau dans une passe de correction de contenu.
+- Les comptes de recette Supabase sont isolés, confirmés via l’administration sans envoi d’e-mail, puis supprimés. Les pièces jointes, messages, demandes et objets de stockage de test sont nettoyés. Un test de panne a d’abord intercepté une adresse trop précise et créé une demande de test ; cette demande, son activité et sa notification ont été supprimées. Le test corrigé intercepte tous les envois API de son contexte et vérifie que l’interception a bien eu lieu.
+
+| Commande / scénario | Résultat |
+| --- | --- |
+| `npm run typecheck`, `npm run lint` | Réussis. |
+| `npx --yes --package=node@22 --call 'npm run build'` | Réussi : 151 pages publiques, 97 redirections et page 404. |
+| `npm run check:html` | Réussi : 22 266 liens internes, 1 057 références d’images, un H1 par page, hiérarchie des titres, métadonnées et JSON-LD. |
+| `npm run check:seo` | Réussi : 147 pages indexables, aucune erreur ni aucun avertissement ; canoniques, hreflang réciproques, sitemap et robots cohérents. |
+| `npm run check:content`, `check:typography`, `check:assays`, `check:media` | Réussis : parité FR/EN, références et chiffres, typographie, provenance des essais et médias actifs. |
+| `npm run check:backend`, `npm run test:portal` | Typage du backend réussi ; huit tests métier et de permissions réussis. |
+| `npm run check:supabase` | 76 assertions réussies sur le backend réellement déployé : droits, isolation entre deux clients, Storage privé, rétention, messages, réception des demandes et réservations concurrentes. |
+| `npm run check:http -- http://127.0.0.1:4174` | 151 accès directs avec le bon document, 97 réponses HTTP 301 et vraie réponse 404. |
+| `LDGENX_QA_OUTPUT=docs/final-review-2026-10-27 LDGENX_QA_WIDTHS=375,390,412,1440 npm run check:launch-browser -- http://127.0.0.1:4174` | 604 combinaisons page/largeur réussies, zéro anomalie signalée sur les H1, images, débordements, JavaScript et CSP. Ce balayage précède l’ajout final des liens de rubrique ; ce dernier est contrôlé par les scénarios de navigation et les 150 contrôles de barre ci-dessous. |
+| `LDGENX_QA_OUTPUT=docs/final-review-2026-10-27 npm run check:client-changes -- http://127.0.0.1:4174` | Réussi après les liens de rubrique : correction scientifique, présence des ressources, couverture de toutes les pages par le pied de page, cartes hors fiche absentes, sept expertises, cinq entrées principales et redirections R&D. |
+| `LDGENX_QA_OUTPUT=docs/final-review-2026-10-27 npm run check:portal-browser -- http://127.0.0.1:4174` | Réussi : connexions réelles client/admin, routes privées, pièce jointe, messages Realtime dans les deux sens, persistance, récupération par lien réel et changement du mot de passe d’un compte de test, demande de rendez-vous invitée enregistrée et formulaire de contact reçu en base. Aucune erreur API ou JavaScript détectée. |
+| `LDGENX_QA_OUTPUT=docs/final-review-2026-10-27 npm run check:account-browser -- http://127.0.0.1:4174` | Réussi après les liens de rubrique : 150 états de barre de navigation, 25 largeurs × deux langues × visiteur/client/admin ; persistance, destinations par rôle, connexion/déconnexion entre onglets, absence de débordement et d’erreur CSP/JavaScript. |
+| `LDGENX_QA_WIDTHS=390,1440 LDGENX_QA_OUTPUT=docs/final-review-2026-10-27/dev npm run check:final-review -- http://127.0.0.1:5174` | Réussi dans le serveur de développement : deux langues, mobile et ordinateur, liens de rubrique, menus, répertoire, ADN, carte, réservation publique, erreur de soumission et reprise après erreur. |
+| `npm run check:final-review -- http://127.0.0.1:4174` | Réussi : huit combinaisons FR/EN à 375, 390, 412 et 1 440 px ; liens de rubrique et liens « toutes », menus clavier/mobile, répertoire complet, étapes ADN, carte et couches après transition, formulaires, réservation sans connexion dans la bonne langue, confidentialité, panne de soumission sans confirmation et reprise après panne de configuration. Résultat : [interactive-results.json](final-review-2026-10-27/interactive-results.json). |
+
+Les captures et résultats JSON sont dans [final-review-2026-10-27](final-review-2026-10-27/). Les tests n’ont pas retiré de protection d’authentification. Le parcours de réservation complet vérifie la réception effective par le serveur avant d’afficher « Demande envoyée » ; ce message ne signifie pas que l’équipe a confirmé un rendez-vous.
+
+## Limites et vérifications après publication
+
+1. **NON VÉRIFIÉ sur la nouvelle version en ligne :** la présente version n’a pas été déployée par cette passe. Après publication Pages, vérifier les liens des rubriques et les liens « toutes », la nouvelle présentation du pied de page, le panneau SNP, les miniatures photographiques, l’accès direct/rechargement des pages profondes, les 301, le vrai 404, les fichiers chargés et les en-têtes réels du CDN.
+2. **Envoi et réception d’e-mails : non configurés, différés par le propriétaire.** Les contrôles réussis portent sur les demandes reçues dans Supabase et les parcours du portail. Ils ne certifient pas la réception d’invitations, de réinitialisations ou de confirmations dans une boîte mail. Le lien de récupération de test a été généré directement par l’administration, sans livraison par e-mail.
+3. **CGV :** le texte client reste conservé ; les points nécessitant sa validation sont dans [CGV-REVIEW.md](preprod-2026-10-26/CGV-REVIEW.md). Cette passe ne vaut pas validation du contrat.
+4. **Bascule vers `www.ldgenx.fr` : non effectuée.** Vérifier DNS, TLS, redirection de l’apex, anciennes adresses et en-têtes ; actualiser `PORTAL_SITE_URL` et vérifier les callbacks Auth ainsi que les liens générés. Les canoniques et hreflang restent déjà établis pour ce domaine ; ils ne doivent pas être remplacés par `pages.dev`.
+
+Aucun commit, push, changement DNS, déploiement frontend ou configuration Google n’a été effectué pendant cette passe. Les fonctions Supabase déployées n’ont pas été modifiées.

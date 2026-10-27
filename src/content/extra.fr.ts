@@ -446,7 +446,7 @@ export const booking = {
     'découvrir ce que LDgenX peut vous apporter comme approche innovante',
     'poser vos questions à l’une des fondatrices de LDgenX',
   ],
-  note: 'Ce premier échange permet de voir ensemble comment nous pouvons vous aider.',
+  note: 'La demande de premier échange est accessible sans compte. Elle permet de voir ensemble comment nous pouvons vous aider.',
   action: '15 minutes gratuites',
   alternate: 'https://axonaut.com/public/booking/b4afed/pageShow/rendez-vous-avec-ldgenx-9b56c1',
 };

@@ -8,8 +8,12 @@ const origin = process.argv[2] ?? 'http://127.0.0.1:4173';
 const out = process.env.LDGENX_QA_OUTPUT ?? 'docs/preprod-2026-10-26';
 await mkdir(out, { recursive: true });
 const csp = (await readFile('dist/_headers', 'utf8')).match(/Content-Security-Policy: (.+)/)[1];
+const widths = process.env.LDGENX_QA_WIDTHS
+  ? process.env.LDGENX_QA_WIDTHS.split(',').map(Number)
+  : [320, 1440];
+assert(widths.length && widths.every((width) => Number.isInteger(width) && width >= 200 && width <= 2560));
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
-const tasks = site.pages.flatMap((p) => [320, 1440].map((width) => ({ path: p.path, width })));
+const tasks = site.pages.flatMap((p) => widths.map((width) => ({ path: p.path, width })));
 let cursor = 0;
 const rows = [],
   errors = [];
@@ -95,7 +99,7 @@ try {
     JSON.stringify(
       {
         routes: site.pages.length,
-        viewports: [320, 1440],
+        viewports: widths,
         tested: rows.length,
         errors,
         rows,

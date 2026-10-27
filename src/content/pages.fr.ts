@@ -69,8 +69,8 @@ export const pageCopy = {
 export const contactPaths = {
   appointment: {
     title: 'Réserver un échange',
-    text: 'Choisissez un créneau sur l’agenda de l’équipe pour présenter votre projet de vive voix.',
-    action: 'Prendre rendez-vous',
+    text: 'Consultez les disponibilités et proposez un créneau pour présenter votre projet, sans créer de compte.',
+    action: 'Réserver sans compte',
   },
   form: {
     title: 'Décrire votre projet',

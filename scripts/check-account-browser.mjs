@@ -18,7 +18,7 @@ const users = [],
   layoutChecks = [];
 const widths = [
   1600, 1536, 1441, 1440, 1421, 1420, 1391, 1390, 1366, 1321, 1320, 1280, 1201, 1200, 1050, 768,
-  601, 600, 420, 390, 380, 379, 320,
+  601, 600, 420, 412, 390, 380, 379, 375, 320,
 ];
 const csp = (await readFile('dist/_headers', 'utf8')).match(/Content-Security-Policy: (.+)/)[1];
 

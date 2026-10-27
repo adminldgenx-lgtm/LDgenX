@@ -200,7 +200,7 @@ export const fr = {
     leadManual: 'Choisissez un créneau libre : l’équipe confirme votre demande.',
     leadAuto: 'Choisissez un créneau libre : il vous est réservé aussitôt.',
     publicLead:
-      'Un projet, une question liée à l’ADN environnemental ou à la génomique ? Choisissez un créneau avec l’équipe.',
+      'Un projet, une question liée à l’ADN environnemental ou à la génomique ? Demandez un créneau avec l’équipe, sans créer de compte.',
     stepType: 'Le rendez-vous',
     stepTime: 'Date et heure',
     stepDetails: 'Votre message',

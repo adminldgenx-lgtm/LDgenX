@@ -4,6 +4,8 @@
 
 Later on 27 October, the client's content/navigation changes were implemented and verified locally. That newer build has 151 public pages and 97 redirects; it is not yet published to Pages. Its scope and current evidence are in [the client-change review](CLIENT-CHANGES-2026-10-27.md). The deployment checks and counts below describe the earlier version assessed in this readiness review.
 
+The subsequent attached audit and direct-navbar-link requests are covered by [the final local review](FINAL-REVIEW-2026-10-27.md), including the complete footer, map thumbnails, public booking and fresh connected tests. It does not constitute a frontend deployment or completion of the deferred email/contract work below.
+
 ## Current deployment
 
 Frontend: `https://ldgenx-12k.pages.dev`. Supabase project: `rkkvvqwgxbtnvewyrylj`. The administrator profile is active with the administrator role. Auth and server-generated account links use the current Pages address. Local ports 5173/5174 and 4173/4174, the Pages address and the future final domains are explicitly allowed; unknown origins remain rejected.

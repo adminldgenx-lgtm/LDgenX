@@ -228,7 +228,7 @@ export const services: Expertise[] = [
     cases: [
       {
         title: 'Analyse ichtyologique pour l’Agence de l’eau Artois-Picardie',
-        image: 'carte-artois-picardie',
+        image: 'terrain-prelevement',
         link: { kind: 'study', id: 'ichtyofaune-artois-picardie' },
       },
       {
@@ -1160,9 +1160,9 @@ export const studies: Study[] = [
     slug: 'ichtyofaune-artois-picardie',
     title: 'Lire la biodiversité des ports et des estuaires.',
     category: 'ADN environnemental',
-    image: 'carte-artois-picardie',
+    image: 'terrain-prelevement',
     imageAlt:
-      'Carte des sites échantillonnés sur la façade maritime, de Dunkerque à l’estuaire de la Somme',
+      'Filtration d’un prélèvement d’eau sur le terrain (photographie d’illustration)',
     subtitle: 'Une étude de l’ichtyofaune pour l’Agence de l’eau Artois-Picardie.',
     facts: [
       { label: 'Commanditaire', value: 'Agence de l’eau Artois-Picardie' },

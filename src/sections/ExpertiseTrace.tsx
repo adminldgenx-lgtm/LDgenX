@@ -265,7 +265,7 @@ export function ExpertiseTrace() {
             <div className="trace-panel-side">
               <p className="trace-panel-label">{ui.landscape.approaches}</p>
               <ul className="trace-panel-tags">
-                {service.approaches.slice(0, 4).map((a) => (
+                {service.approaches.filter((a) => a.preview !== false).slice(0, 4).map((a) => (
                   <li key={a.title}>{a.title}</li>
                 ))}
               </ul>

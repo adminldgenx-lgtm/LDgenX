@@ -10,6 +10,8 @@ Current launch verdict: [production readiness, 27 October](PRODUCTION-READINESS-
 
 The later [client content/navigation changes](CLIENT-CHANGES-2026-10-27.md) are verified locally and await frontend publication. Their lighter navbar retains account access; client/admin routing and 138 responsive session states were checked against the live backend.
 
+The [final review](FINAL-REVIEW-2026-10-27.md) supersedes that local navigation snapshot: direct overview links, a complete public footer directory and 150 navbar session/layout checks. The existing guest booking route is explicitly advertised without an account, carries `?lang=fr` or `?lang=en`, and has tested failure/retry behavior. Real contact submission, guest booking, client/admin journeys and 76 live API/security assertions passed; actual email delivery remains deferred.
+
 - Database migrations applied to the live project; Row Level Security enabled on every portal table.
 - `portal` Edge Function deployed and serving the real API.
 - Private Storage bucket `portal-files`; 10 MB maximum per file. Message attachments: up to six, 20 MB combined.

@@ -7,7 +7,7 @@ import { pageFile } from './page-file.mjs';
 const site = await import('../.prerender/entry-server.js');
 await site.ready;
 const origin = process.argv[2] ?? 'http://127.0.0.1:4173';
-const out = 'docs/client-changes-2026-10-27';
+const out = process.env.LDGENX_QA_OUTPUT ?? 'docs/client-changes-2026-10-27';
 await mkdir(out, { recursive: true });
 const plain = (s) =>
   s
@@ -23,8 +23,15 @@ const html = async (path) => readFile('dist/' + pageFile(path), 'utf8');
 const main = async (path) => (await html(path)).match(/<main\b[\s\S]*?<\/main>/)[0];
 const results = [];
 const mapPages = [];
-for (const page of site.pages)
+const mapAssets = /(?:carte-artois-picardie|ap-carte-stations|ap-rapport-carte|ap-site-[a-z-]+)-\d+\.(?:webp|jpg|png)/;
+for (const page of site.pages) {
   if (/class="journey(?:\s|")/.test(await main(page.path))) mapPages.push(page.path);
+  if (!(page.kind === 'study' && page.id === 'ichtyofaune-artois-picardie'))
+    assert(!mapAssets.test(await html(page.path)), page.path + ': scientific map outside its case');
+  const footer = (await html(page.path)).match(/<footer\b[\s\S]*?<\/footer>/)[0];
+  for (const target of site.pages.filter((p) => p.locale === page.locale))
+    assert(footer.includes(`href="${target.path}"`), `${page.path}: footer missing ${target.path}`);
+}
 assert.deepEqual(
   mapPages.sort(),
   ['fr', 'en'].map((locale) => address(locale, 'study', 'ichtyofaune-artois-picardie')).sort(),
@@ -37,6 +44,13 @@ for (const locale of ['fr', 'en']) {
   assert.equal(services.length, 7);
   assert(!services.some((s) => ['materiel', 'recherche-developpement'].includes(s.id)));
   const home = await main(locale === 'fr' ? '/' : '/en');
+  const footer = (await html(locale === 'fr' ? '/' : '/en')).match(/<footer\b[\s\S]*?<\/footer>/)[0];
+  const footerServices = footer.match(/data-footer-group="services"[\s\S]*?<\/details>/)[0];
+  assert(!footerServices.includes(address(locale, 'service', 'materiel')));
+  const discovery = await readFile('dist/llms.txt', 'utf8');
+  const expertiseIndex = discovery.split(locale === 'fr' ? '## Expertises' : '## Services')[1].split('\n## ')[0];
+  assert(!expertiseIndex.includes(address(locale, 'service', 'materiel')));
+  assert(discovery.includes(address(locale, 'service', 'materiel')));
   assert(!/class="journey(?:\s|")/.test(home), `${locale}: map still on homepage`);
   assert(
     /class="journey(?:\s|")/.test(
@@ -167,8 +181,14 @@ try {
   page.on('pageerror', (e) => errors.push(e.message));
   for (const locale of ['fr', 'en']) {
     const c = site.catalogs[locale];
+    await page.goto(origin + (locale === 'fr' ? '/' : '/en'));
+    const homePop = c.services.find((s) => s.id === 'genomique-des-populations');
+    const homeTab = page.getByRole('tab').filter({ hasText: homePop.title });
+    await homeTab.scrollIntoViewIfNeeded();
+    await homeTab.click();
+    await expect(page.locator('.trace-panel-tags')).not.toContainText(/SNP/);
     await page.goto(origin + address(locale, 'services'));
-    await expect(page.locator('.desktop-nav').locator(':scope > a, :scope > button')).toHaveCount(
+    await expect(page.locator('.desktop-nav').locator(':scope > a, :scope > .nav-dropdown')).toHaveCount(
       5,
     );
     await expect(page.locator('.desktop-nav')).toContainText('Publications');

@@ -69,8 +69,8 @@ export const pageCopy = {
 export const contactPaths = {
   appointment: {
     title: 'Book a conversation',
-    text: 'Pick a slot in the team’s calendar to discuss your project with our scientific team.',
-    action: 'Schedule a meeting',
+    text: 'Check availability and request a time to discuss your project, without creating an account.',
+    action: 'Book without an account',
   },
   form: {
     title: 'Describe your project',

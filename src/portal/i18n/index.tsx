@@ -1,6 +1,6 @@
 // The portal's language: the account's choice once signed in, before that the visitor's last
 // choice or their browser's. Text comes from fr.ts / en.ts; dates are formatted in Paris time.
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { fr, type Dictionary } from './fr';
 import { en } from './en';
 import type { Locale } from '../api/types';
@@ -10,6 +10,8 @@ const dictionaries: Record<Locale, Dictionary> = { fr, en };
 const KEY = 'ldgenx-portal-locale';
 
 function initialLocale(): Locale {
+  const requested = new URLSearchParams(window.location.search).get('lang');
+  if (requested === 'fr' || requested === 'en') return requested;
   try {
     const saved = localStorage.getItem(KEY);
     if (saved === 'fr' || saved === 'en') return saved;
@@ -56,13 +58,15 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setState] = useState<Locale>(initialLocale);
   const setLocale = useCallback((next: Locale) => {
     setState(next);
-    document.documentElement.lang = next;
+  }, []);
+  useEffect(() => {
+    document.documentElement.lang = locale;
     try {
-      localStorage.setItem(KEY, next);
+      localStorage.setItem(KEY, locale);
     } catch {
       // Not remembered: the choice holds for this visit.
     }
-  }, []);
+  }, [locale]);
   const value = useMemo<I18n>(() => {
     const tag = locale === 'fr' ? 'fr-FR' : 'en-GB';
     const formatters = new Map<string, Intl.DateTimeFormat>();

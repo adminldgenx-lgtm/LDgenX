@@ -4,7 +4,8 @@ import { AnimatedHeading, useEntrance, usePointerVars } from './motion';
 import { AmbientField } from './AmbientField';
 import { DecodeOnce } from './Decode';
 import { breadcrumbs, type PageMeta } from '../lib/pages';
-import { useCatalog, useRoutes } from '../i18n';
+import { useCatalog, useRoutes, useLocale } from '../i18n';
+import { appointmentLink } from '../lib/appointment-link';
 import { imageUrl, imageWidths } from '../lib/images';
 import { clientPhotos } from '../content/client-photos';
 import { equipmentMedia } from '../content/equipment-media';
@@ -135,11 +136,12 @@ export function Button({
 
 /** The two ways to start a project: a quote request and a booked call. */
 export function ProjectActions({ light = false }: { light?: boolean }) {
-  const { copy, company } = useCatalog();
+  const { copy } = useCatalog();
+  const locale = useLocale();
   return (
     <div className="project-actions">
       <Button variant={light ? 'light' : 'primary'}>{copy.labels.quote}</Button>
-      <Button href={company.appointment} variant={light ? 'ghost' : 'outline'}>
+      <Button href={appointmentLink(locale)} variant={light ? 'ghost' : 'outline'}>
         {copy.labels.appointment}
       </Button>
     </div>

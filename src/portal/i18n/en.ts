@@ -200,7 +200,7 @@ export const en: Dictionary = {
     leadManual: 'Choose a free slot: the team confirms your request.',
     leadAuto: 'Choose a free slot: it is booked for you at once.',
     publicLead:
-      'A project, a question about environmental DNA or genomics? Choose a slot with the team.',
+      'A project, a question about environmental DNA or genomics? Request a time with the team, without creating an account.',
     stepType: 'The appointment',
     stepTime: 'Date and time',
     stepDetails: 'Your message',

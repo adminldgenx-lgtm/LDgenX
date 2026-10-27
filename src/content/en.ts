@@ -190,7 +190,7 @@ export const services: Expertise[] = [
     cases: [
       {
         title: 'Ichthyological survey for the Artois-Picardie Water Agency',
-        image: 'carte-artois-picardie',
+        image: 'terrain-prelevement',
         link: { kind: 'study', id: 'ichtyofaune-artois-picardie' },
       },
       {
@@ -1047,8 +1047,8 @@ export const studies: Study[] = [
     slug: 'artois-picardie-fish-survey',
     title: 'Reading the biodiversity of ports and estuaries.',
     category: 'Environmental DNA',
-    image: 'carte-artois-picardie',
-    imageAlt: 'Map of the sampled sites along the coast, from Dunkirk to the Somme estuary',
+    image: 'terrain-prelevement',
+    imageAlt: 'Filtering a water sample in the field (illustrative photograph)',
     subtitle: 'A fish survey for the Artois-Picardie Water Agency.',
     facts: [
       { label: 'Client', value: 'Artois-Picardie Water Agency' },

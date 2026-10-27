@@ -23,7 +23,7 @@ import {
 } from './api';
 import { fill, useI18n } from './i18n';
 import { useAction, useData, useSession, useToast } from './state';
-import { Button, Dialog, Field, Fill, Loading } from './ui';
+import { Button, Dialog, ErrorNote, Field, Fill, Loading } from './ui';
 import {
   TEAM_ZONE,
   addDays,
@@ -37,6 +37,7 @@ import {
   type DayKey,
 } from './lib/time';
 import { googleCalendarUrl, icsFile, saveBlob } from './lib/ics';
+import { bases } from '../lib/routes';
 
 const monthStart = (key: DayKey) => {
   const { year, month } = parseDay(key);
@@ -340,6 +341,7 @@ export function RequestFlow({
   const [done, setDone] = useState<Appointment | null>(null);
   const [round, setRound] = useState(0);
 
+  if (config.error) return <ErrorNote onRetry={config.reload} />;
   if (!config.data) return <Loading lines={4} />;
   const cfg = config.data;
   const types = cfg.types.filter((x) => x.active && (user && !publicMode ? true : x.public));
@@ -619,7 +621,7 @@ export function RequestFlow({
                   text={t.auth.consent}
                   values={{
                     link: (
-                      <a href="/politique-confidentialite" target="_blank" rel="noreferrer">
+                      <a href={bases[locale].privacy} target="_blank" rel="noreferrer">
                         {t.auth.privacy}
                       </a>
                     ),

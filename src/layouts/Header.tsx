@@ -3,12 +3,13 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { PhotoStack, TextLink } from '../components/ui';
 import { usePresence } from '../components/motion';
-import { useCatalog, useRoutes, type Locale } from '../i18n';
+import { useCatalog, useRoutes, useLocale, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
 import { loadCatalog } from '../content/catalog';
 import { AccountLink } from './AccountLink';
 import { listedExpertises } from '../lib/expertises';
+import { appointmentLink } from '../lib/appointment-link';
 
 type MenuKey = 'services' | 'applications';
 
@@ -164,17 +165,25 @@ export function Header() {
           </Link>
           <nav className="desktop-nav" aria-label={ui.header.mainNav}>
             {(['services', 'applications'] as const).map((key) => (
-              <button
+              <div
                 key={key}
-                className={`nav-menu-trigger ${menu === key || location.pathname.startsWith(menus[key].to) ? 'active' : ''}`}
+                className={`nav-dropdown ${menu === key || location.pathname.startsWith(menus[key].to) ? 'active' : ''}`}
                 onMouseEnter={() => setMenu(key)}
-                onClick={(event) => setMenu(event.detail === 0 && menu === key ? null : key)}
-                aria-expanded={menu === key}
-                aria-controls={`mega-${key}`}
               >
-                {copy.navigation[key]}
-                <ChevronDown size={12} aria-hidden="true" />
-              </button>
+                <NavLink className="nav-overview" to={menus[key].to}>
+                  {copy.navigation[key]}
+                </NavLink>
+                <button
+                  type="button"
+                  className="nav-menu-trigger"
+                  aria-label={`${copy.navigation[key]} · ${ui.header.openMenu}`}
+                  aria-expanded={menu === key}
+                  aria-controls={`mega-${key}`}
+                  onClick={() => setMenu(menu === key ? null : key)}
+                >
+                  <ChevronDown size={12} aria-hidden="true" />
+                </button>
+              </div>
             ))}
             {links.map(([to, label]) => (
               <NavLink key={to} to={to} onMouseEnter={() => setMenu(null)}>
@@ -320,7 +329,8 @@ function MegaMenu({
   onNavigate: (event: MouseEvent) => void;
 }) {
   const content = useMenus()[menu];
-  const { company, copy, ui } = useCatalog();
+  const { copy, ui } = useCatalog();
+  const locale = useLocale();
   const item = preview === null ? null : content.items[preview];
   // Every image is mounted at once, so moving across the entries is a pure crossfade.
   const images = [content.image, ...new Set(content.items.map((i) => i.image))];
@@ -366,7 +376,7 @@ function MegaMenu({
         <p>{ui.header.megaFoot}</p>
         <div>
           <TextLink to={content.to}>{content.all}</TextLink>
-          <a className="text-link" href={company.appointment} target="_blank" rel="noreferrer">
+          <a className="text-link" href={appointmentLink(locale)} target="_blank" rel="noreferrer">
             {copy.labels.appointment}
             <span className="sr-only">{ui.common.newTab}</span>
           </a>

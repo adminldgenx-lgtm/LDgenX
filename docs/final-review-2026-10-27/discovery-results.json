@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "locale": "fr",
+      "publicPages": 76,
+      "legalIdentity": true
+    },
+    {
+      "locale": "en",
+      "publicPages": 75,
+      "legalIdentity": true
+    }
+  ],
+  "canonicalOrigin": "https://www.ldgenx.fr",
+  "privateNoindex": true
+}

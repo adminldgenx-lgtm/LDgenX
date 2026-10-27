@@ -1,0 +1,28 @@
+{
+  "acceptance-results": {
+    "passed": true
+  },
+  "interactive-results": {
+    "passed": true,
+    "checked": 8
+  },
+  "account-navbar-results": {
+    "passed": true,
+    "checked": 150
+  },
+  "browser-results": {
+    "passed": true
+  },
+  "public-browser-results": {
+    "passed": true,
+    "checked": 604
+  },
+  "discovery-results": {
+    "passed": true
+  },
+  "environment": {
+    "buildNode": "22.23.4",
+    "npm": "11.11.0",
+    "diagnosticNode": "v25.8.0"
+  }
+}
