@@ -48,7 +48,7 @@ export const ui = {
       team: 'Notre équipe',
       publications: 'Recherche & publications',
       partners: 'Partenaires',
-      resources: 'Ressources & Expertise',
+      resources: 'Guides & méthodes',
       equipment: 'Matériel d’échantillonnage',
       tests: 'Tests ADN ciblés',
       faq: 'Questions fréquentes',
@@ -272,6 +272,7 @@ export const ui = {
       'Présentez-nous le contexte, le site ou la population étudiée, les objectifs et les données existantes. Ce premier échange permet de cadrer le besoin et de discuter des étapes d’accompagnement.',
   },
   equipment: {
+    explore: 'Voir le matériel d’échantillonnage',
     eyebrow: 'Le matériel',
     title: 'Trois outils\npour filtrer sur le terrain.',
     text: 'Le matériel de filtration que nous proposons pour l’ADN environnemental, avec ses caractéristiques.',
@@ -659,8 +660,8 @@ export const ui = {
         'Les instituts de recherche, les soutiens et les organisations qui font confiance à LDgenX.',
     },
     resources: {
-      label: 'Ressources',
-      title: 'Ressources & expertise en génomique | LDgenX',
+      label: 'Guides & méthodes',
+      title: 'Guides et méthodes en génomique | LDgenX',
       description:
         'Des repères pour comprendre l’ADN environnemental, la bioinformatique et les applications de la génomique en aquaculture.',
     },

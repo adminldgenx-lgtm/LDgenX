@@ -9,7 +9,7 @@ export const copy = {
     applications: 'Applications',
     studies: 'Études de cas',
     innovation: 'Innovation',
-    research: 'Recherche',
+    research: 'Publications',
     about: 'À propos',
     resources: 'Ressources',
     contact: 'Demander un devis',
@@ -133,6 +133,8 @@ export const workflow = [
 export interface Expertise {
   /** Same in every language: the French slug. */
   id: string;
+  /** False for supporting pages that do not belong in the expertise catalogue. */
+  listed?: boolean;
   slug: string;
   title: string;
   short: string;
@@ -142,7 +144,7 @@ export interface Expertise {
   headline: string;
   intro: string;
   need: string;
-  approaches: { title: string; text: string }[];
+  approaches: { title: string; text: string; preview?: boolean }[];
   uses: string[];
   sectors: string[];
   delivery: string;
@@ -177,7 +179,7 @@ export const services: Expertise[] = [
     image: 'terrain-prelevement',
     headline: 'Révéler la biodiversité, à partir de ses traces.',
     intro:
-      'L’ADN environnemental (ADNe) permet d’étudier les espèces à partir des traces d’ADN présentes dans l’eau, les sols, les sédiments ou les biofilms. LDgenX accompagne vos projets de surveillance, de conservation et d’étude d’impact.',
+      'L’ADN environnemental (ADNe) permet d’identifier les espèces à partir des traces d’ADN présentes dans l’eau, les sols, les sédiments ou les biofilms. LDgenX accompagne vos projets de surveillance, de conservation et d’étude d’impact.',
     need: 'Vous cherchez à inventorier un milieu, suivre une espèce ou éclairer une décision de gestion ? L’approche se construit à partir de votre question, du milieu étudié et des groupes biologiques qui vous intéressent.',
     approaches: [
       {
@@ -189,7 +191,7 @@ export const services: Expertise[] = [
         text: 'Analyse globale des communautés biologiques.',
       },
       {
-        title: 'dPCR ciblée',
+        title: 'Barcoding : dPCR ciblée',
         text: 'Détection et quantification de l’ADN d’espèces ou de pathogènes ciblés grâce à la PCR digitale.',
       },
       {
@@ -275,7 +277,8 @@ export const services: Expertise[] = [
       },
       {
         title: 'Panels SNP',
-        text: 'Développement de panels SNP sur mesure pour le suivi génétique, l’assignation d’individus, les tests de parenté et les programmes de conservation.',
+        text: 'Développement de panels SNP sur mesure pour le suivi génétique, l’assignation de parenté et la mise en place de programmes de conservation.',
+        preview: false,
       },
       {
         title: 'Marqueurs génétiques',
@@ -630,68 +633,6 @@ export const services: Expertise[] = [
     },
   },
   {
-    id: 'recherche-developpement',
-    slug: 'recherche-developpement',
-    title: 'Recherche & Développement',
-    short: 'Construire les approches scientifiques de demain.',
-    scope:
-      'Réponses aux appels à projets, accompagnement et conseil pour vos projets de recherche.',
-    image: 'terrain-kayak',
-    headline: 'Votre problématique peut ouvrir une nouvelle voie.',
-    intro:
-      'LDgenX est ouverte aux collaborations scientifiques, techniques et industrielles. L’équipe développe de nouvelles approches qui associent ADN environnemental, séquençage et bioinformatique.',
-    need: 'Un besoin de développement moléculaire, une question encore ouverte ou un projet collaboratif ? Le premier échange permet de préciser la problématique et les expertises à réunir.',
-    approaches: [
-      {
-        title: 'Conception scientifique',
-        text: 'Définir les objectifs et explorer les approches pertinentes.',
-      },
-      {
-        title: 'Développement moléculaire',
-        text: 'Concevoir des outils adaptés à une question biologique.',
-      },
-      {
-        title: 'Bioinformatique',
-        text: 'Développer les approches d’analyse spécifiques au projet.',
-      },
-      {
-        title: 'Collaboration',
-        text: 'Mobiliser des expertises scientifiques et techniques complémentaires.',
-      },
-    ],
-    uses: [
-      'Projets collaboratifs',
-      'Développement d’outils',
-      'ADN environnemental',
-      'Innovation génomique',
-    ],
-    sectors: [
-      'recherche-publique-privee',
-      'biodiversite-conservation',
-      'energies-marines-renouvelables',
-    ],
-    delivery:
-      'Chaque projet de R&D commence par un cadrage commun. Les objectifs de développement, les étapes et les modalités de collaboration se définissent avec les partenaires du projet.',
-    cir: true,
-    prestations: ['Réponses aux appels à projets', 'Accompagnement', 'Conseils'],
-    cases: [
-      {
-        title: 'DNA EcoTrace',
-        image: 'schema-ecotrace',
-        link: { kind: 'innovation', id: 'dna-ecotrace' },
-      },
-      { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
-    ],
-    headings: {
-      need: 'Une question ouverte ?\nConstruisons la méthode.',
-      methods: 'Concevoir, développer,\ncollaborer.',
-      prestations: 'Un appui\nà chaque étape du projet.',
-      uses: 'Des domaines\nà explorer ensemble.',
-      cases: 'Nos projets\nde recherche.',
-    },
-    source: 'https://www.ldgenx.fr/a-propos/innovation',
-  },
-  {
     id: 'materiel',
     slug: 'materiel',
     title: 'Matériel d’échantillonnage',
@@ -724,10 +665,76 @@ export const services: Expertise[] = [
       uses: 'Pour quels\nprojets ?',
     },
     source: 'https://www.ldgenx.fr/services/materiel',
+    listed: false,
   },
 ];
 
+export const researchSupport: Expertise = {
+  id: 'recherche-developpement',
+  slug: 'recherche-developpement',
+  title: 'Recherche & Développement',
+  short: 'Construire les approches scientifiques de demain.',
+  scope:
+    'Réponses aux appels à projets, accompagnement et conseil pour vos projets de recherche.',
+  image: 'terrain-kayak',
+  headline: 'Votre problématique peut ouvrir une nouvelle voie.',
+  intro:
+    'LDgenX est ouverte aux collaborations scientifiques, techniques et industrielles. L’équipe développe de nouvelles approches qui associent ADN environnemental, séquençage et bioinformatique.',
+  need: 'Un besoin de développement moléculaire, une question encore ouverte ou un projet collaboratif ? Le premier échange permet de préciser la problématique et les expertises à réunir.',
+  approaches: [
+    {
+      title: 'Conception scientifique',
+      text: 'Définir les objectifs et explorer les approches pertinentes.',
+    },
+    {
+      title: 'Développement moléculaire',
+      text: 'Concevoir des outils adaptés à une question biologique.',
+    },
+    {
+      title: 'Bioinformatique',
+      text: 'Développer les approches d’analyse spécifiques au projet.',
+    },
+    {
+      title: 'Collaboration',
+      text: 'Mobiliser des expertises scientifiques et techniques complémentaires.',
+    },
+  ],
+  uses: [
+    'Projets collaboratifs',
+    'Développement d’outils',
+    'ADN environnemental',
+    'Innovation génomique',
+  ],
+  sectors: [
+    'recherche-publique-privee',
+    'biodiversite-conservation',
+    'energies-marines-renouvelables',
+  ],
+  delivery:
+    'Chaque projet de R&D commence par un cadrage commun. Les objectifs de développement, les étapes et les modalités de collaboration se définissent avec les partenaires du projet.',
+  cir: true,
+  prestations: ['Réponses aux appels à projets', 'Accompagnement', 'Conseils'],
+  cases: [
+    {
+      title: 'DNA EcoTrace',
+      image: 'schema-ecotrace',
+      link: { kind: 'innovation', id: 'dna-ecotrace' },
+    },
+    { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
+  ],
+  headings: {
+    need: 'Une question ouverte ?\nConstruisons la méthode.',
+    methods: 'Concevoir, développer,\ncollaborer.',
+    prestations: 'Un appui\nà chaque étape du projet.',
+    uses: 'Des domaines\nà explorer ensemble.',
+    cases: 'Nos projets\nde recherche.',
+  },
+  source: 'https://www.ldgenx.fr/a-propos/innovation',
+};
+
 export interface Sector {
+  /** R&D collaboration content belongs to the public/private research application. */
+  researchSupport?: Expertise;
   id: string;
   slug: string;
   title: string;
@@ -1041,7 +1048,7 @@ export const applications: Sector[] = [
         text: 'Collaborations scientifiques et techniques autour de nouvelles applications de la génomique.',
       },
     ],
-    services: ['recherche-developpement', 'bioinformatique', 'sequencage-dpcr'],
+    services: ['bioinformatique', 'sequencage-dpcr', 'adn-environnemental-adne'],
     cir: true,
     uses: [],
     examples: [],
@@ -1051,6 +1058,7 @@ export const applications: Sector[] = [
       related: 'Biologie moléculaire,\nséquençage, bioinformatique.',
     },
     source: 'https://www.ldgenx.fr/a-propos/innovation',
+    researchSupport: researchSupport,
   },
   {
     id: 'energies-marines-renouvelables',

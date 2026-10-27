@@ -4,7 +4,11 @@ The portal is a separate React application at `/espace` and `/admin`, built from
 
 The previous browser-only implementation, fictitious accounts, sample messages, local file database, demo controls and reset buttons have been removed. Business data lives in Supabase; only the Auth session and the language preference are stored in the browser.
 
-## Current status — 26 October 2026
+## Current status — rechecked 27 October 2026
+
+Current launch verdict: [production readiness, 27 October](PRODUCTION-READINESS-2026-10-27.md). Email delivery/verification and the updated client CGV remain unfinished.
+
+The later [client content/navigation changes](CLIENT-CHANGES-2026-10-27.md) are verified locally and await frontend publication. Their lighter navbar retains account access; client/admin routing and 138 responsive session states were checked against the live backend.
 
 - Database migrations applied to the live project; Row Level Security enabled on every portal table.
 - `portal` Edge Function deployed and serving the real API.

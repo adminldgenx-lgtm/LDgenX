@@ -141,6 +141,8 @@ export interface ResearchPublication {
   licence: string;
   themes: string[];
   services: string[];
+  /** Application contexts, distinct from the technical expertises used in the paper. */
+  applications?: string[];
   summary: string;
   question: string;
   approach: string;

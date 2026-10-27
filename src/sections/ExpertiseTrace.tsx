@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import { Photo, TextLink } from '../components/ui';
 import { AnimatedHeading, useNearViewport, useSeen } from '../components/motion';
+import { listedExpertises } from '../lib/expertises';
 
 /* The expertises on the homepage, after the DNA helix: a sequencing trace, the curve a DNA
    reader draws, with one peak per expertise. The chosen expertise's peak rises in its colour and
@@ -54,7 +55,7 @@ export function ExpertiseTrace() {
   const { copy, services, ui } = useCatalog();
   const r = useRoutes();
   const items = IDS.map((id) => services.find((s) => s.id === id)!);
-  const others = services.filter((s) => !IDS.includes(s.id));
+  const others = listedExpertises(services).filter((s) => !IDS.includes(s.id));
   const section = useRef<HTMLElement>(null);
   const live = useNearViewport(section, '0px');
   const seen = useSeen(section);

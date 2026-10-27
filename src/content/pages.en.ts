@@ -43,7 +43,7 @@ export const pageCopy = {
       'Innovation support, research institutes and organisations that trust us: different relationships, brought together around the knowledge of life.',
   },
   resources: {
-    eyebrow: 'Resources & expertise',
+    eyebrow: 'Guides & methods',
     title: 'Knowledge\nis for sharing.',
     intro:
       'Scientific guides to understand the approaches, prepare your projects and explore the applications of genomics.',

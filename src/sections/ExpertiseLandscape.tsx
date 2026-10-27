@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
 import type { Expertise } from '../content/fr';
+import { listedExpertises } from '../lib/expertises';
 import { Photo, TextLink } from '../components/ui';
 import { AnimatedHeading, useMediaQuery, useMotionLevel, usePresence } from '../components/motion';
 
@@ -289,7 +290,7 @@ export function ExpertiseLandscape({
     peak,
     service: services.find((s) => s.id === peak.slug)!,
   }));
-  const others = services.filter((s) => !PEAKS.some((p) => p.slug === s.id));
+  const others = listedExpertises(services).filter((s) => !PEAKS.some((p) => p.slug === s.id));
   const mobile = useMediaQuery('(max-width: 800px)');
   // Up to tablet width the card docks under the landscape, with the list of expertises.
   const docked = useMediaQuery('(max-width: 1250px)');
@@ -866,7 +867,7 @@ function ExpertiseCard({
           <h3>{service.title}</h3>
           <p className="landscape-card-text">{service.scope}</p>
           <ul className="landscape-card-tags" aria-label={ui.landscape.approaches}>
-            {service.approaches.slice(0, 3).map((a) => (
+            {service.approaches.filter((a) => a.preview !== false).slice(0, 3).map((a) => (
               <li key={a.title}>{a.title}</li>
             ))}
           </ul>

@@ -7,7 +7,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { ref, serviceKey, query, literal } from './lib/supabase-management.mjs';
 
 const origin = process.argv[2] ?? 'http://127.0.0.1:4173';
-const output = 'docs/qa-2026-10-26';
+const output = process.env.LDGENX_QA_OUTPUT ?? 'docs/qa-2026-10-26';
 await mkdir(output, { recursive: true });
 const service = createClient(`https://${ref}.supabase.co`, await serviceKey(), {
   auth: { persistSession: false, autoRefreshToken: false },
@@ -17,8 +17,8 @@ const users = [],
   pageErrors = [],
   layoutChecks = [];
 const widths = [
-  1600, 1536, 1441, 1440, 1421, 1420, 1391, 1390, 1366, 1321, 1320, 1280, 1050, 768, 601, 600, 420, 390, 380,
-  379, 320,
+  1600, 1536, 1441, 1440, 1421, 1420, 1391, 1390, 1366, 1321, 1320, 1280, 1201, 1200, 1050, 768,
+  601, 600, 420, 390, 380, 379, 320,
 ];
 const csp = (await readFile('dist/_headers', 'utf8')).match(/Content-Security-Policy: (.+)/)[1];
 

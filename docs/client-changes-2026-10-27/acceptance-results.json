@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "locale": "fr",
+      "staticAcceptancePassed": true,
+      "expertises": 7,
+      "publications": 28,
+      "interactiveAcceptancePassed": true
+    },
+    {
+      "locale": "en",
+      "staticAcceptancePassed": true,
+      "expertises": 7,
+      "publications": 28,
+      "interactiveAcceptancePassed": true
+    }
+  ],
+  "runtimeErrors": []
+}

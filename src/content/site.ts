@@ -45,7 +45,6 @@ const services = [
   'bioinformatique',
   'sequencage-dpcr',
   'tests-adn-cibles',
-  'recherche-developpement',
   'materiel',
 ];
 /** Application sectors, in the order of the catalogues. */
@@ -167,7 +166,6 @@ const slugs: Record<Locale, Record<keyof RouteSource, Pairs>> = {
       ['bioinformatique', 'bioinformatics'],
       ['sequencage-dpcr', 'sequencing-dpcr'],
       ['tests-adn-cibles', 'targeted-dna-tests-dpcr'],
-      ['recherche-developpement', 'research-development'],
       ['materiel', 'equipment'],
     ],
     applications: [

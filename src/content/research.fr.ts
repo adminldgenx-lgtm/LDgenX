@@ -42,7 +42,7 @@ export const research = {
       text: 'abstract',
       licence: 'CC BY 4.0',
       themes: [],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'Chez la levure, cette étude examine ce qui se passe quand une cellule entre en mitose avant d’avoir fini de copier son ADN. La kinase mitotique M-CDK phosphoryle l’ADN polymérase α : la cellule bascule alors d’une réplication classique vers une synthèse d’ADN fondée sur la recombinaison, plus sujette aux erreurs.',
       question:
@@ -54,6 +54,7 @@ export const research = {
       limit:
         'Travail mené chez la levure ; les auteurs y voient une explication possible de l’évolution plus rapide des régions du génome répliquées tardivement.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-cortisol-temperature-2026',
@@ -83,18 +84,19 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['adaptation', 'aquaculture'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'Chez le bar européen, cette étude examine comment la température d’acclimatation saisonnière influence le métabolisme et le cortisol accumulé dans l’eau. Les deux augmentent avec la température, mais ne sont pas clairement corrélés entre eux une fois la masse des poissons prise en compte.',
       question:
         'La température d’acclimatation modifie-t-elle le métabolisme et le cortisol libéré dans l’eau, et ces deux mesures sont-elles liées ?',
       approach:
-        'Bars de la population atlantique élevés pendant trois ans sous trois régimes thermiques suivant les variations saisonnières (témoin atlantique, modérément chaud, chaud) ; mesure de la consommation d’oxygène en tunnel de nage et du cortisol accumulé dans l’eau, à différentes températures au fil de l’année.',
+        'Bars de la population atlantique élevés pendant trois ans sous trois régimes thermiques suivant les variations saisonnières (atlantiques [témoin], ouest-méditerranéennes [modérément chaud] et est-méditerranéennes [chaud]) ; mesure de la consommation d’oxygène en tunnel de nage et du cortisol accumulé dans l’eau, à différentes températures au fil de l’année.',
       finding:
         'Le métabolisme et le cortisol augmentent avec la température d’acclimatation, avec une sensibilité semblable entre régimes ; à température égale, le cortisol reste plus élevé dans le régime témoin que dans le régime chaud.',
       limit:
-        'Une seule population a été étudiée ; les auteurs présentent ce travail comme la première exploration de ces relations chez un poisson.',
+        'Une seule population étudiée : qu’en est-il des populations méditerranéennes ? Cette étude est la première exploration des relations entre température d’acclimatation, taux métabolique et cortisol libéré dans l’eau chez une espèce de poisson.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-sex-ratio-temperature-gwas-2026',
@@ -136,9 +138,9 @@ export const research = {
       approach:
         'Descendants des populations atlantique (AT), de Méditerranée occidentale (WM) et orientale (EM), élevés sous quatre régimes thermiques : trois reproduisant les températures de ces mers et un régime d’élevage maximisant les femelles ; analyses de génétique quantitative et étude d’association pangénomique (GWAS).',
       finding:
-        'La population atlantique présente un sex-ratio relativement équilibré et davantage de femelles que les deux autres ; l’héritabilité de la tendance sexuelle, d’environ 0,62, est stable entre populations et régimes ; sept SNP du groupe de liaison 19 sont associés au sexe chez la population atlantique.',
+        'La population atlantique présente un sex-ratio relativement équilibré avec davantage de femelles que les deux autres populations ; l’héritabilité de la tendance sexuelle, d’environ 0,62, est stable entre populations et régimes ; sept SNP du chromosome 19 sont associés au sexe chez la population atlantique.',
       limit:
-        'Résultats obtenus en conditions expérimentales ; la région QTL contient un gène impliqué dans le déterminisme du sexe chez les poissons, sans que son rôle soit démontré ici, et aucun QTL n’est détecté pour les deux populations méditerranéennes.',
+        'Résultats obtenus en conditions expérimentales ; la région QTL contient un gène impliqué dans le déterminisme du sexe chez les poissons, sans que son rôle soit démontré ici.',
       figures: [],
     },
     {
@@ -175,15 +177,15 @@ export const research = {
       themes: ['adaptation', 'ascendance', 'aquaculture'],
       services: ['genomique-des-populations', 'selection', 'bioinformatique'],
       summary:
-        'La survie des larves de bar européen a été suivie sous quatre régimes thermiques : les températures naturelles de ses trois populations et celles d’une écloserie. Les populations atlantique et de Méditerranée orientale survivent mieux dans les températures de leur milieu d’origine, et plus l’introgression entre génomes atlantique et méditerranéen est élevée, plus la survie baisse.',
+        'La survie des larves de bar européen a été suivie dans quatre régimes thermiques : les températures naturelles de ses trois populations et celles typiques d’une écloserie. Les populations atlantique et de Méditerranée orientale survivent mieux dans les températures de leur milieu d’origine, et plus l’introgression entre génomes atlantique et méditerranéen est élevée, plus la survie baisse.',
       question:
         'La température et l’origine génétique influencent-elles la survie des larves de bar européen ?',
       approach:
         'Larves des populations atlantique (AT), de Méditerranée occidentale (WM) et orientale (EM) élevées sous quatre régimes thermiques : trois reproduisant les températures naturelles de chaque population et un régime typique d’écloserie.',
       finding:
-        'La survie est maximale vers 13,6 °C pour la population atlantique, contre plus de 17 °C pour les populations méditerranéennes ; un niveau d’introgression élevé réduit la survie, ce qui explique en partie les faibles performances de la population de Méditerranée occidentale.',
+        'Dans les régimes expérimentaux, la survie de la population atlantique est la plus élevée autour de 13,6 °C. L’introgression entre génomes atlantique et méditerranéen est associée à une diminution de la survie. Les températures testées ne permettent pas de déterminer la température maximale de survie des populations méditerranéennes.',
       limit:
-        'Les auteurs relient l’effet de l’introgression à une purge de l’ascendance introgressée ou à des barrières d’isolement reproductif ; ils recommandent d’en tenir compte pour constituer des lignées domestiquées ou sélectionnées.',
+        'L’étude recommande de tenir compte de l’introgression pour constituer des lignées sélectionnées ; les températures expérimentales utilisées étaient trop faibles pour identifier la température maximale de survie des populations méditerranéennes.',
       figures: [],
     },
     {
@@ -215,7 +217,7 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['adaptation', 'aquaculture'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'Dans quatre populations de poissons d’élevage et sauvages (bar européen, tilapia du Nil, daurade royale), couvrant des masses d’environ 20 à 800 g, la tolérance à un réchauffement aigu diminue avec la masse corporelle. Les individus les plus lourds apparaissent plus sensibles à un stress thermique aigu que les plus légers.',
       question:
@@ -227,6 +229,7 @@ export const research = {
       limit:
         'Le protocole ne révèle pas de limitation cardiorespiratoire plus forte chez les grands individus qu’aux températures habituelles : les mécanismes de cette baisse restent à préciser.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'genomes-becasse-becassine-2025',
@@ -335,9 +338,9 @@ export const research = {
       approach:
         'Élevage en conditions communes sous trois régimes thermiques saisonniers ; suivi de la croissance de 20 jours après éclosion jusqu’à 1,5 g, l’origine de chaque individu étant retrouvée par assignation de parenté à l’aide de 96 SNP.',
       finding:
-        'La survie est plus élevée dans les régimes plus chauds jusqu’à 23 mm ; la population atlantique est plus longue que les populations méditerranéennes dans tous les régimes et apparaît la plus robuste aux variations de température au stade larvaire.',
+        'La survie est plus élevée dans les régimes plus chauds jusqu’à 23 mm. Les larves de la population atlantique sont plus longues que celles des populations méditerranéennes dans chacun des régimes testés.',
       limit:
-        'Il reste à établir si cette croissance élevée reflète une adaptation locale à un régime thermique relativement froid.',
+        'Il reste à établir si cette croissance élevée reflète une adaptation locale à un régime thermique relativement froid (théorie de variation à contre-gradient).',
       figures: [],
     },
     {
@@ -485,7 +488,7 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['aquaculture', 'adaptation'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'En élevage, le bar européen produit souvent une majorité de mâles, alors que les femelles grandissent plus vite et mûrissent plus tard. Deux expériences testent la photopériode, la température et le jeûne : seule une température post-larvaire plus chaude augmente la proportion de femelles, de 30,4 % à 19 °C à 48,7 % à 25 °C.',
       question:
@@ -497,6 +500,7 @@ export const research = {
       limit:
         'Résultats obtenus après un traitement initial froid à 16 °C jusqu’à 90 jours ; ils proposent un levier d’élevage pour compenser le déficit de femelles, pas un contrôle complet du sexe.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-resistance-vnn-2023',

@@ -12,7 +12,7 @@ export const copy = {
     applications: 'Applications',
     studies: 'Case studies',
     innovation: 'Innovation',
-    research: 'Research',
+    research: 'Publications',
     about: 'About us',
     resources: 'Resources',
     contact: 'Ask for a quote',
@@ -142,7 +142,7 @@ export const services: Expertise[] = [
     image: 'terrain-prelevement',
     headline: 'Monitor biodiversity using environmental DNA (eDNA).',
     intro:
-      'Environmental DNA (eDNA) enables the detection and identification of species present in an ecosystem from water, soil, sediment or biofilm samples. LDgenX provides tailored eDNA solutions to support biodiversity monitoring, conservation and environmental impact assessments.',
+      'Environmental DNA (eDNA) makes it possible to identify species from DNA traces present in water, soil, sediment or biofilms. LDgenX supports biodiversity monitoring, conservation and environmental impact assessments.',
     need: 'Do you need to survey a site, monitor a species or inform a management decision? The approach is built from your question, the environment studied and the biological groups you are interested in.',
     approaches: [
       {
@@ -154,7 +154,7 @@ export const services: Expertise[] = [
         text: 'Comprehensive analysis of biological communities through untargeted sequencing.',
       },
       {
-        title: 'Targeted dPCR',
+        title: 'Barcoding: targeted dPCR',
         text: 'Detection and quantification of DNA from target species or pathogens using digital PCR.',
       },
       {
@@ -239,7 +239,8 @@ export const services: Expertise[] = [
       },
       {
         title: 'Custom SNP panels',
-        text: 'Development of tailored SNP panels for genetic monitoring, individual assignment, parentage testing and conservation programmes.',
+        text: 'Development of tailored SNP panels for genetic monitoring, parentage assignment and the establishment of conservation programmes.',
+        preview: false,
       },
       {
         title: 'Genetic marker discovery',
@@ -600,72 +601,6 @@ export const services: Expertise[] = [
     },
   },
   {
-    id: 'recherche-developpement',
-    slug: 'research-development',
-    title: 'Research & Development',
-    short: 'Building the scientific approaches of tomorrow.',
-    scope:
-      'Grant proposal support, scientific consulting, project support and guidance for your research.',
-    image: 'terrain-kayak',
-    headline: 'Your question can open a new path.',
-    intro:
-      'Partner with LDgenX to accelerate your research and innovation projects. The team welcomes scientific, technical and industrial collaborations and develops new approaches combining environmental DNA, sequencing and bioinformatics.',
-    need: 'A molecular development need, an open question or a collaborative project? A first conversation clarifies the question and the expertise to bring together.',
-    approaches: [
-      {
-        title: 'Scientific design',
-        text: 'Setting the objectives and exploring the relevant approaches.',
-      },
-      {
-        title: 'Molecular development',
-        text: 'Designing tools suited to a biological question.',
-      },
-      {
-        title: 'Bioinformatics',
-        text: 'Developing the analysis approaches specific to the project.',
-      },
-      {
-        title: 'Collaboration',
-        text: 'Bringing together complementary scientific and technical expertise.',
-      },
-    ],
-    uses: [
-      'Grant proposal support',
-      'Scientific consulting',
-      'Project support and guidance',
-      'Genomic innovation',
-    ],
-    sectors: [
-      'recherche-publique-privee',
-      'biodiversite-conservation',
-      'energies-marines-renouvelables',
-    ],
-    delivery:
-      'Every R&D project starts with joint scoping. The development objectives, the steps and the terms of collaboration are defined with the project partners.',
-    cir: true,
-    prestations: [
-      'Grant proposal support',
-      'Project support and guidance',
-      'Scientific consulting',
-    ],
-    cases: [
-      {
-        title: 'DNA EcoTrace',
-        image: 'schema-ecotrace',
-        link: { kind: 'innovation', id: 'dna-ecotrace' },
-      },
-      { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
-    ],
-    headings: {
-      need: 'An open question?\nLet’s build the method.',
-      methods: 'Design, develop,\ncollaborate.',
-      prestations: 'Support\nat every stage.',
-      uses: 'Fields\nto explore together.',
-      cases: 'Our research\nprojects.',
-    },
-    source: 'https://www.ldgenx.com/about-us/innovation',
-  },
-  {
     id: 'materiel',
     slug: 'equipment',
     title: 'Sampling equipment',
@@ -698,8 +633,76 @@ export const services: Expertise[] = [
       uses: 'For which\nprojects?',
     },
     source: 'https://www.ldgenx.com/services/equipment',
+    listed: false,
   },
 ];
+
+export const researchSupport: Expertise = {
+  id: 'recherche-developpement',
+  slug: 'research-development',
+  title: 'Research & Development',
+  short: 'Building the scientific approaches of tomorrow.',
+  scope:
+    'Grant proposal support, scientific consulting, project support and guidance for your research.',
+  image: 'terrain-kayak',
+  headline: 'Your question can open a new path.',
+  intro:
+    'Partner with LDgenX to accelerate your research and innovation projects. The team welcomes scientific, technical and industrial collaborations and develops new approaches combining environmental DNA, sequencing and bioinformatics.',
+  need: 'A molecular development need, an open question or a collaborative project? A first conversation clarifies the question and the expertise to bring together.',
+  approaches: [
+    {
+      title: 'Scientific design',
+      text: 'Setting the objectives and exploring the relevant approaches.',
+    },
+    {
+      title: 'Molecular development',
+      text: 'Designing tools suited to a biological question.',
+    },
+    {
+      title: 'Bioinformatics',
+      text: 'Developing the analysis approaches specific to the project.',
+    },
+    {
+      title: 'Collaboration',
+      text: 'Bringing together complementary scientific and technical expertise.',
+    },
+  ],
+  uses: [
+    'Grant proposal support',
+    'Scientific consulting',
+    'Project support and guidance',
+    'Genomic innovation',
+  ],
+  sectors: [
+    'recherche-publique-privee',
+    'biodiversite-conservation',
+    'energies-marines-renouvelables',
+  ],
+  delivery:
+    'Every R&D project starts with joint scoping. The development objectives, the steps and the terms of collaboration are defined with the project partners.',
+  cir: true,
+  prestations: [
+    'Grant proposal support',
+    'Project support and guidance',
+    'Scientific consulting',
+  ],
+  cases: [
+    {
+      title: 'DNA EcoTrace',
+      image: 'schema-ecotrace',
+      link: { kind: 'innovation', id: 'dna-ecotrace' },
+    },
+    { title: 'eDNAClock', image: 'ednaclock', link: { kind: 'innovation', id: 'edna-clock' } },
+  ],
+  headings: {
+    need: 'An open question?\nLet’s build the method.',
+    methods: 'Design, develop,\ncollaborate.',
+    prestations: 'Support\nat every stage.',
+    uses: 'Fields\nto explore together.',
+    cases: 'Our research\nprojects.',
+  },
+  source: 'https://www.ldgenx.com/about-us/innovation',
+};
 
 export const applications: Sector[] = [
   {
@@ -981,7 +984,7 @@ export const applications: Sector[] = [
         text: 'Scientific and technical collaborations around new applications of genomics.',
       },
     ],
-    services: ['recherche-developpement', 'bioinformatique', 'sequencage-dpcr'],
+    services: ['bioinformatique', 'sequencage-dpcr', 'adn-environnemental-adne'],
     cir: true,
     uses: [],
     examples: [],
@@ -991,6 +994,7 @@ export const applications: Sector[] = [
       related: 'Molecular biology,\nsequencing, bioinformatics.',
     },
     source: 'https://www.ldgenx.com/about-us/innovation',
+    researchSupport: researchSupport,
   },
   {
     id: 'energies-marines-renouvelables',

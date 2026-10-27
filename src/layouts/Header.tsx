@@ -8,6 +8,7 @@ import { bases } from '../lib/routes';
 import { getPage } from '../lib/pages';
 import { loadCatalog } from '../content/catalog';
 import { AccountLink } from './AccountLink';
+import { listedExpertises } from '../lib/expertises';
 
 type MenuKey = 'services' | 'applications';
 
@@ -23,7 +24,7 @@ function useMenus() {
       text: copy.home.servicesIntro,
       all: copy.labels.allServices,
       to: r.services,
-      items: services.map((s) => ({ ...s, to: r.service(s.id) })),
+      items: listedExpertises(services).map((s) => ({ ...s, to: r.service(s.id) })),
     },
     applications: {
       label: copy.navigation.applications,
@@ -57,10 +58,8 @@ export function Header() {
   const menus = useMenus();
   const links = [
     [r.studies, copy.navigation.studies],
-    [r.innovations, copy.navigation.innovation],
     [r.publications, copy.navigation.research],
     [r.about, copy.navigation.about],
-    [r.resources, copy.navigation.resources],
   ];
   const [menu, setMenu] = useState<MenuKey | null>(null);
   const [mobile, setMobile] = useState(false);

@@ -36,7 +36,7 @@ export const research = {
       text: 'abstract',
       licence: 'CC BY 4.0',
       themes: [],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'In yeast, this study examines what happens when a cell enters mitosis before it has finished copying its DNA. The mitotic kinase M-CDK phosphorylates DNA polymerase α: the cell then switches from canonical replication to a recombination-based DNA synthesis that is more error-prone.',
       question:
@@ -48,6 +48,7 @@ export const research = {
       limit:
         'The work was done in yeast; the authors present the mechanism as a potential explanation for the faster evolution of late-replicating genomic regions.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-cortisol-temperature-2026',
@@ -77,18 +78,19 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['adaptation', 'aquaculture'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'In European sea bass, this study examines how seasonal acclimatization temperature affects metabolic rate and the cortisol accumulated in the water. Both rise with temperature, but they show no clear correlation once fish mass is accounted for.',
       question:
         'Does acclimatization temperature change metabolic rate and water-borne cortisol, and are the two measures related?',
       approach:
-        'Sea bass from the Atlantic population reared for three years under three thermal regimes following seasonal variation (Atlantic control, moderately warm, warm); oxygen uptake measured by swim-tunnel respirometry and water-borne cortisol sampled at different temperatures through the year.',
+        'Sea bass from the Atlantic population reared for three years under three thermal regimes following seasonal variations (Atlantic [control], Western Mediterranean [moderately warm] and Eastern Mediterranean [warm]); oxygen uptake measured in a swim tunnel and cortisol accumulated in the water measured at different temperatures throughout the year.',
       finding:
         'Metabolic rate and cortisol both increase with acclimatization temperature, with similar thermal sensitivity across regimes; at a given temperature, cortisol stays higher in the control regime than in the warm one.',
       limit:
-        'A single population was studied; the authors present this work as the first investigation of these relationships in a fish species.',
+        'Only one population was studied: what about the Mediterranean populations? This study is the first exploration of the relationships between acclimatization temperature, metabolic rate and water-borne cortisol in a fish species.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-sex-ratio-temperature-gwas-2026',
@@ -130,9 +132,9 @@ export const research = {
       approach:
         'Offspring of the Atlantic (AT), Western Mediterranean (WM) and Eastern Mediterranean (EM) populations reared under four thermal regimes: three mimicking these seas and a husbandry regime maximising females; quantitative genetics and a genome-wide association study (GWAS).',
       finding:
-        'The Atlantic population has a relatively balanced sex ratio and more females than the other two; heritability of sex tendency, around 0.62, is consistent across populations and regimes; seven SNPs on linkage group 19 are associated with sex in the Atlantic population.',
+        'The Atlantic population has a relatively balanced sex ratio with more females than the other two populations; heritability of sex tendency, around 0.62, is stable across populations and regimes; seven SNPs on chromosome 19 are associated with sex in the Atlantic population.',
       limit:
-        'Results come from experimental conditions; the QTL region contains a gene involved in fish sex determination, without its role being demonstrated here, and no QTL is found in the two Mediterranean populations.',
+        'Results were obtained under experimental conditions; the QTL region contains a gene involved in sex determination in fish, without its role being demonstrated here.',
       figures: [],
     },
     {
@@ -169,15 +171,15 @@ export const research = {
       themes: ['adaptation', 'ascendance', 'aquaculture'],
       services: ['genomique-des-populations', 'selection', 'bioinformatique'],
       summary:
-        'Larval survival in European sea bass was followed under four thermal regimes: the natural temperatures of its three populations and a hatchery regime. The Atlantic and Eastern Mediterranean populations survive better at the temperatures of their home waters, and the higher the introgression between Atlantic and Mediterranean genomes, the lower the survival.',
+        'Larval survival in European sea bass was followed under four thermal regimes: the natural temperatures of its three populations and temperatures typical of a hatchery. The Atlantic and Eastern Mediterranean populations survive better at the temperatures of their home waters, and the higher the introgression between Atlantic and Mediterranean genomes, the lower the survival.',
       question:
         'Do temperature and genetic origin affect the survival of European sea bass larvae?',
       approach:
         "Larvae of the Atlantic (AT), Western Mediterranean (WM) and Eastern Mediterranean (EM) populations reared under four thermal regimes: three reflecting each population's natural temperatures and a typical hatchery regime.",
       finding:
-        'Survival peaks around 13.6 °C for the Atlantic population, compared with above 17 °C for the Mediterranean populations; higher introgression lowers survival, which partly explains the poor performance of the Western Mediterranean population.',
+        'Under the experimental regimes, survival of the Atlantic population is highest around 13.6 °C. Introgression between Atlantic and Mediterranean genomes is associated with lower survival. The temperatures tested do not establish the maximum survival temperature of the Mediterranean populations.',
       limit:
-        'The authors link the introgression effect to purging of introgressed ancestry or to reproductive isolation barriers, and recommend considering it when establishing domesticated or selected lineages.',
+        'The study recommends accounting for introgression when establishing selected lineages; the experimental temperatures used were too low to identify the maximum survival temperature of the Mediterranean populations.',
       figures: [],
     },
     {
@@ -209,7 +211,7 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['adaptation', 'aquaculture'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'In four populations of farmed and wild fish (European sea bass, Nile tilapia, gilthead seabream), spanning roughly 20 to 800 g, tolerance of acute warming declines with body mass. Heavier individuals appear more sensitive to acute heat stress than lighter ones.',
       question: 'Within a species, do larger fish cope less well with rapid warming?',
@@ -220,6 +222,7 @@ export const research = {
       limit:
         'The protocol does not reveal a greater size-related cardiorespiratory limitation than at usual temperatures: the mechanisms behind the decline remain to be clarified.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'genomes-becasse-becassine-2025',
@@ -327,9 +330,9 @@ export const research = {
       approach:
         "Common-garden rearing under three seasonal thermal regimes; growth followed from 20 days post-hatch to 1.5 g, with each individual's origin found by parentage assignment using 96 SNPs.",
       finding:
-        'Survival is higher in warmer regimes until 23 mm; the Atlantic population is longer than the Mediterranean ones in every regime and appears the most robust to temperature variation at the larval stage.',
+        'Survival is higher in warmer regimes until 23 mm. Larvae from the Atlantic population are longer than those from the Mediterranean populations under each of the regimes tested.',
       limit:
-        'Whether this high growth reflects local adaptation to a relatively cold thermal regime remains to be established.',
+        'Whether this high growth reflects local adaptation to a relatively cold thermal regime remains to be established (countergradient variation hypothesis).',
       figures: [],
     },
     {
@@ -477,7 +480,7 @@ export const research = {
       text: 'abstract',
       licence: '',
       themes: ['aquaculture', 'adaptation'],
-      services: ['recherche-developpement'],
+      services: [],
       summary:
         'Farmed European sea bass often produce a majority of males, while females grow faster and mature later. Two experiments test photoperiod, temperature and fasting: only a warmer post-larval temperature increases the proportion of females, from 30.4% at 19 °C to 48.7% at 25 °C.',
       question:
@@ -489,6 +492,7 @@ export const research = {
       limit:
         'Results follow an initial cold treatment at 16 °C until 90 days; they offer a rearing lever to make up for the shortage of females, not full control of sex.',
       figures: [],
+      applications: ['recherche-publique-privee'],
     },
     {
       id: 'bar-resistance-vnn-2023',
@@ -655,7 +659,7 @@ export const research = {
       finding:
         '337 colour-patterning loci over 35 of the 40 linkage groups, pointing to a polygenic architecture; they are associated with 218 candidate genes, including known pigmentation genes (PMEL, SLC45A2, SOX10).',
       limit:
-        'Associated loci and candidate genes, without functional demonstration; redundancy analysis also proves useful to follow pigmentation across generations of hatchery introgression.',
+        'Associated loci and candidate genes, without functional demonstration; redundancy analysis is also useful for following pigmentation across generations of hatchery introgression.',
       figures: [],
     },
     {

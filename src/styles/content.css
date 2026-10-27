@@ -2888,27 +2888,21 @@ main {
   gap: 12px;
   padding: 12px 14px;
   border: 1px solid var(--line);
-  color: var(--muted);
+  color: var(--navy);
+  background: #f4f7ef;
   transition:
     background 0.45s,
     color 0.45s,
     border-color 0.45s;
 }
 .erc-letter {
+  color: #3d6b10;
   font-family: var(--heading);
   font-size: 34px;
   line-height: 1;
 }
 .erc-word {
   font-size: 15px;
-}
-.erc-letters li[data-on] {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: white;
-}
-.erc-letters li[data-on] .erc-letter {
-  color: #9fd65a;
 }
 .erc-timeline {
   position: relative;
@@ -4360,4 +4354,50 @@ main {
   aspect-ratio: 592 / 789;
   width: min(100%, 380px);
   justify-self: center;
+}
+
+/* Compact entry to the Artois-Picardie study; its interactive map stays on the case page. */
+.home-study-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 40px;
+  margin-top: 36px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: white;
+}
+.home-study-teaser h3 {
+  margin-top: 12px;
+  max-width: 32ch;
+  font-size: 26px;
+  line-height: 1.3;
+}
+.home-study-teaser p:not(.eyebrow) {
+  margin-top: 16px;
+  max-width: 62ch;
+  color: var(--muted);
+}
+.research-support-need {
+  max-width: 68ch;
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.research-support-sectors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  margin-top: 32px;
+}
+@media (max-width: 700px) {
+  .home-study-teaser {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px;
+  }
+  .home-study-teaser h3 {
+    font-size: 23px;
+  }
 }

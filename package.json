@@ -16,6 +16,7 @@
     "check:assays": "node scripts/build-assay-targets.mjs --check",
     "check:seo": "node scripts/check-seo.mjs",
     "check:content": "node scripts/check-launch-content.mjs",
+    "check:client-changes": "node scripts/check-client-changes.mjs",
     "check:media": "node scripts/check-equipment-media.mjs",
     "check:launch-browser": "node scripts/check-launch-browser.mjs",
     "check:external-links": "node scripts/check-external-links.mjs",

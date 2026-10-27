@@ -5,7 +5,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 const site = await import('../.prerender/entry-server.js');
 await site.ready;
 const origin = process.argv[2] ?? 'http://127.0.0.1:4173';
-const out = 'docs/preprod-2026-10-26';
+const out = process.env.LDGENX_QA_OUTPUT ?? 'docs/preprod-2026-10-26';
 await mkdir(out, { recursive: true });
 const csp = (await readFile('dist/_headers', 'utf8')).match(/Content-Security-Policy: (.+)/)[1];
 const browser = await chromium.launch({ channel: 'chrome', headless: true });

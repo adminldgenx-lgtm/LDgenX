@@ -1,0 +1,130 @@
+[
+  {
+    "file": "src/content/fr.ts",
+    "label": "Client request 3: parentage/conservation"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Client request 4: identify species"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Client request 5: barcoding label"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Client request 9: technical methods for research application"
+  },
+  {
+    "file": "src/content/fr.ts",
+    "label": "Clarify publication navigation"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Client request 3: parentage/conservation"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Client request 4: identify species"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Client request 5: barcoding label"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Client request 9: technical methods for research application"
+  },
+  {
+    "file": "src/content/en.ts",
+    "label": "Clarify publication navigation"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-cortisol-temperature-2026 approach"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-cortisol-temperature-2026 limit"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-sex-ratio-temperature-gwas-2026 finding"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-sex-ratio-temperature-gwas-2026 limit"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-survie-larvaire-introgression-2026 summary"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-survie-larvaire-introgression-2026 limit"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "Damien correction: bar-croissance-larvaire-temperature-2025 limit"
+  },
+  {
+    "file": "src/content/research.fr.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-cortisol-temperature-2026 approach"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-cortisol-temperature-2026 limit"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-sex-ratio-temperature-gwas-2026 finding"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-sex-ratio-temperature-gwas-2026 limit"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-survie-larvaire-introgression-2026 summary"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-survie-larvaire-introgression-2026 limit"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "R&D is an application context"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "Damien correction: bar-croissance-larvaire-temperature-2025 limit"
+  },
+  {
+    "file": "src/content/research.en.ts",
+    "label": "R&D is an application context"
+  }
+]

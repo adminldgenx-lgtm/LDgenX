@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { useCatalog, useRoutes } from '../i18n';
-import { Button, Eyebrow, SectionHeading, FinalCTA } from '../components/ui';
+import { Button, Eyebrow, SectionHeading, FinalCTA, TextLink, Reveal } from '../components/ui';
 import { HeroVideo } from '../components/HeroVideo';
 import { DnaProcess } from '../sections/DnaProcess';
 import { KeyFacts } from '../sections/Proof';
 import { ExpertiseTrace } from '../sections/ExpertiseTrace';
 import { CustomAssayTeaser } from '../sections/CustomAssay';
-import { StudyJourney } from '../sections/StudyJourney';
 import { ApplicationAtlas } from '../sections/ApplicationAtlas';
 
 /** Whether a dated item is still current: through the whole of its last day. */
@@ -45,9 +44,10 @@ function HeroNews() {
 }
 
 export function Home() {
-  const { copy, ui } = useCatalog();
+  const { copy, ui, studies } = useCatalog();
   const r = useRoutes();
   const [first, second] = ui.hero.lines;
+  const featuredStudy = studies.find((study) => study.id === 'ichtyofaune-artois-picardie')!;
   return (
     <>
       <div className="dna-hero-wrap">
@@ -114,11 +114,18 @@ export function Home() {
             title={copy.home.studiesTitle}
             link={{ to: r.studies, label: copy.labels.allStudies }}
           />
+          <Reveal className="home-study-teaser">
+            <div>
+              <Eyebrow>Artois-Picardie</Eyebrow>
+              <h3>{featuredStudy.title}</h3>
+              <p>{featuredStudy.subtitle}</p>
+            </div>
+            <TextLink to={r.study(featuredStudy.id)}>{ui.expertisePage.exploreStudy}</TextLink>
+          </Reveal>
         </div>
       </section>
       {/* The page ends on the studies, at the client's request (23 October 2026): the other
           studies, R&D, partners, team and publications have their own pages. */}
-      <StudyJourney />
       <FinalCTA />
     </>
   );

@@ -958,21 +958,18 @@ export const erc = {
       text: 'Inventaire de biodiversité par ADNe et recherche d’espèces protégées ou invasives : repérer les enjeux tôt aide à éviter, puis à réduire les impacts.',
       deliverable:
         'Liste des espèces détectées par site, avec leur interprétation et leurs limites.',
-      letters: [0, 1],
     },
     {
       label: 'Suivre les évolutions',
       moment: 'Pendant et après les travaux',
       text: 'Les mêmes protocoles, aux mêmes sites, à des périodes comparables : les campagnes successives montrent comment la biodiversité évolue.',
       deliverable: 'Comparaison entre campagnes, cartes et analyses statistiques.',
-      letters: [1],
     },
     {
       label: 'Documenter les mesures',
       moment: 'Pendant l’exploitation',
       text: 'Sur les sites concernés par des mesures de réduction ou de compensation, l’ADNe renseigne la présence des espèces visées et l’évolution des communautés.',
       deliverable: 'Rapport d’aide à la décision, à verser au suivi des mesures.',
-      letters: [1, 2],
     },
   ],
   deliverableLabel: 'Ce que vous recevez',

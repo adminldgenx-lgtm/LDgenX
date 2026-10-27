@@ -37,7 +37,7 @@ function RelatedServices({ ids }: { ids: string[] }) {
     <div className="related-links">
       {ids
         .map((id) => services.find((s) => s.id === id))
-        .filter((s): s is ExpertiseData => Boolean(s))
+        .filter((s): s is ExpertiseData => Boolean(s) && s?.listed !== false)
         .map((s, i) => (
           <Reveal key={s.id} delay={i * 0.1}>
             <TiltLink className="related-link" to={r.service(s.id)}>
@@ -56,13 +56,15 @@ function RelatedServices({ ids }: { ids: string[] }) {
 }
 
 /** The team's articles that share this expertise's field: the topics put forward first. */
-function RelatedPublications({ id }: { id: string }) {
+function RelatedPublications({ id, applicationId }: { id?: string; applicationId?: string }) {
   const { research, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.research;
   const featured = research.featured.map((f) => f.publication);
   const items = research.publications
-    .filter((p) => p.services.includes(id))
+    .filter((p) =>
+      applicationId ? p.applications?.includes(applicationId) : p.services.includes(id!),
+    )
     .sort(
       (a, b) =>
         Number(featured.includes(b.id)) - Number(featured.includes(a.id)) || b.year - a.year,
@@ -75,7 +77,10 @@ function RelatedPublications({ id }: { id: string }) {
           eyebrow={t.relatedEyebrow}
           title={t.relatedTitle}
           link={{
-            to: researchLink(r.publications, { expertise: id }),
+            to: researchLink(
+              r.publications,
+              applicationId ? { application: applicationId } : { expertise: id! },
+            ),
             label: t.relatedAll(items.length),
           }}
         />
@@ -143,7 +148,7 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
   const t = ui.expertisePage;
   const s = services.find((s) => s.id === meta.id)!;
   const h = s.headings ?? {};
-  const dark = ['bioinformatique', 'sequencage-dpcr', 'recherche-developpement'].includes(s.id);
+  const dark = ['bioinformatique', 'sequencage-dpcr'].includes(s.id);
   const related = services
     .filter(
       (x) =>
@@ -225,7 +230,18 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           </div>
         </section>
       )}
-      <ProjectPractice intro={s.delivery} />
+      {s.id === 'adn-environnemental-adne' && (
+        <section className="section-space sampling-access" aria-label={ui.equipment.title}>
+          <div className="container">
+            <SectionHeading
+              eyebrow={ui.equipment.eyebrow}
+              title={services.find((service) => service.id === 'materiel')!.title}
+              body={services.find((service) => service.id === 'materiel')!.scope}
+              link={{ to: r.service('materiel'), label: ui.equipment.explore }}
+            />
+          </div>
+        </section>
+      )}
       {!s.cases.some((c) => c.link?.kind === 'study') && <RelatedStudy id={s.id} />}
       <RelatedPublications id={s.id} />
       <section className="section-space">
@@ -413,6 +429,7 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
           <StepRows items={s.needs} />
         </div>
       </section>
+      {s.researchSupport && <ResearchSupport support={s.researchSupport} />}
       {s.cir && <CirBlock />}
       {s.approaches && (
         <section className="section-space sector-approaches">
@@ -496,9 +513,76 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
           </div>
         </section>
       )}
-      <ProjectPractice intro={t.practiceIntro} />
+      <ProjectPractice intro={s.researchSupport?.delivery ?? t.practiceIntro} />
+      {s.researchSupport && <RelatedPublications applicationId={s.id} />}
       {s.study && <RelatedStudy studyId={s.study} />}
       <FinalCTA />
+    </>
+  );
+}
+
+/** Collaboration is an application context; its methods remain distinct expertises. */
+function ResearchSupport({ support }: { support: ExpertiseData }) {
+  const { ui, applications } = useCatalog();
+  const r = useRoutes();
+  const h = support.headings;
+  return (
+    <>
+      <section className="section-space research-support-intro" id="recherche-developpement">
+        <div className="container">
+          <SectionHeading eyebrow={support.title} title={support.headline} body={support.intro} />
+          <Reveal>
+            <p className="research-support-need">{support.need}</p>
+          </Reveal>
+        </div>
+      </section>
+      <section className="approach-section">
+        <div className="container approach-layout">
+          <div className="approach-heading">
+            <Eyebrow>{ui.expertisePage.approachesEyebrow}</Eyebrow>
+            <AnimatedHeading text={h?.methods ?? ui.expertisePage.approachesTitle} />
+          </div>
+          <StepRows items={support.approaches} />
+        </div>
+      </section>
+      <section className="section-space prestation-section">
+        <div className="container prestation-layout">
+          <div>
+            <Eyebrow>{ui.expertisePage.prestationsEyebrow}</Eyebrow>
+            <AnimatedHeading text={h?.prestations ?? ui.expertisePage.prestationsTitle} />
+          </div>
+          <LiveList className="prestation-list" items={support.prestations} />
+        </div>
+      </section>
+      <section className="use-section">
+        <AmbientField tone="dark" className="use-field" />
+        <div className="container use-layout">
+          <div>
+            <Eyebrow light>{ui.expertisePage.applicationUses}</Eyebrow>
+            <AnimatedHeading text={h?.uses ?? ui.expertisePage.usesTitle} />
+          </div>
+          <LiveList className="use-list" items={support.uses} />
+        </div>
+      </section>
+      <section className="section-space cases-section">
+        <div className="container">
+          <Eyebrow>{ui.expertisePage.casesEyebrow}</Eyebrow>
+          <AnimatedHeading text={h?.cases ?? ui.expertisePage.casesTitle} />
+          <CaseCards cases={support.cases} />
+          <div className="research-support-sectors">
+            {support.sectors
+              .filter((id) => id !== 'recherche-publique-privee')
+              .map((id) => {
+                const sector = applications.find((application) => application.id === id)!;
+                return (
+                  <TextLink key={id} to={r.application(id)}>
+                    {sector.title}
+                  </TextLink>
+                );
+              })}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

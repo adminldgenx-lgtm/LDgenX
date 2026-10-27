@@ -1,3 +1,4 @@
+import { listedExpertises } from '../lib/expertises';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -169,12 +170,20 @@ export function SiteMapPage({ meta }: { meta: PageMeta }) {
         { to: r.innovations, label: seo.innovations.label },
         { to: r.publications, label: seo.publications.label },
         { to: r.resources, label: seo.resources.label },
+        {
+          to: r.service('materiel'),
+          label: catalog.services.find((s) => s.id === 'materiel')!.title,
+        },
         { to: r.contact, label: copy.labels.quote },
       ],
     },
     {
       title: g.services,
-      links: catalog.services.map((s) => ({ to: r.service(s.id), label: s.title, meta: s.short })),
+      links: listedExpertises(catalog.services).map((s) => ({
+        to: r.service(s.id),
+        label: s.title,
+        meta: s.short,
+      })),
     },
     {
       title: g.applications,

@@ -244,3 +244,11 @@ E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
 - CGV : la reproduction cliente est conservée ; corrections et clauses proposées dans [CGV-REVIEW.md](preprod-2026-10-26/CGV-REVIEW.md).
 - Le backend est déployé sur Supabase ; le portail est inclus par défaut, avec `LDGENX_PORTAL=0` pour un build public seul. L’envoi d’e-mails est différé. Le contrôle distant retrouve `mailer_autoconfirm: true` et aucun SMTP personnalisé, contrairement à l’intention du script de configuration. La vérification d’adresse et la réception des e-mails restent à finaliser.
 - 153 routes publiques, 306 combinaisons page/largeur dans Chrome, HTML/SEO/typographie/médias et cohérence quantitative FR/EN vérifiés. Le nouveau site n’est pas publié ; la recette du domaine réel suivra son déploiement.
+
+## Retours de la cliente — 27 octobre 2026
+
+- Source : e-mail d’Émilie Delpuech et texte intégral du document « Remarque site web Article Damien », transmis par le propriétaire. Corrections des quatre articles de Damien Crestel intégrées dans les deux langues, sans modifier les titres originaux, références ni légendes. Les blocs de résultats et de limites ont été harmonisés pour ne pas affirmer une température maximale méditerranéenne ou une adaptation locale non établies.
+- Carte Artois-Picardie réservée à son étude de cas ; aperçu du dôme sans « Panels SNP » ; formulations demandées pour les panels SNP, l’identification par ADNe et « Barcoding : dPCR ciblée ».
+- Sept expertises affichées. Le matériel reste accessible depuis l’ADNe et le pied de page ; la R&D est regroupée dans l’application Recherche publique & privée, avec redirections permanentes et publications associées. Le bloc « Votre projet en pratique » reste uniquement dans les Applications. Présentation ERC corrigée.
+- Navigation principale à cinq entrées, accès compte conservé ; rubrique « Guides & méthodes » en pied de page. Les trois guides restent disponibles à leurs adresses existantes.
+- Version locale construite : 151 pages publiques, 97 redirections, 302 contrôles page/largeur, 138 contrôles de navigation/session et huit contrôles après le dernier ajustement scientifique. La version Pages en ligne n’inclut pas encore ces modifications. Détail et preuves : [CLIENT-CHANGES-2026-10-27.md](CLIENT-CHANGES-2026-10-27.md).

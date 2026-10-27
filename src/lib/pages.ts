@@ -3,6 +3,7 @@ import { company, routeSources } from '../content/site';
 import { imageUrl, socialImageUrl } from './images';
 import { heroPosterPreload } from './hero';
 import { bases, localeOf, locales, routesFor, type Locale } from './routes';
+import { listedExpertises } from './expertises';
 
 export type PageKind =
   | 'home'
@@ -303,6 +304,9 @@ export function allPages(): PageMeta[] {
 // that replaces each of them. Addresses that differ from a page only by their capitals are
 // served by the host rules alone (see scripts/prerender.mjs).
 export const redirects: Record<string, string> = {
+  '/services/recherche-developpement': '/applications/recherche-publique-privee',
+  '/en/services/research-development': '/en/applications/public-private-research',
+  '/services/research-development': '/en/applications/public-private-research',
   '/equipe': bases.fr.team,
   '/publications': bases.fr.publications,
   // The renewable-energy application now covers onshore wind and solar as well.
@@ -373,7 +377,9 @@ export function breadcrumbs(meta: PageMeta) {
   const pages = pagesOf(meta.locale);
   if (meta.path === home) return crumbs;
   const parentPath =
-    meta.kind === 'person'
+    meta.kind === 'service' && meta.id === 'materiel'
+      ? routesFor(meta.locale, catalog(meta.locale)).service('adn-environnemental-adne')
+      : meta.kind === 'person'
       ? bases[meta.locale].team
       : meta.path.slice(0, meta.path.lastIndexOf('/'));
   const chain: PageMeta[] = [];
@@ -456,7 +462,7 @@ function organization(locale: Locale) {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: c.ui.seo.services.label,
-      itemListElement: c.services.map((s) => ({
+      itemListElement: listedExpertises(c.services).map((s) => ({
         '@type': 'Offer',
         itemOffered: node(`${company.origin}${r.service(s.id)}#service`),
       })),
@@ -514,9 +520,18 @@ function article(locale: Locale, id: string) {
     ...(p.themes.length > 0 && {
       keywords: p.themes.map((t) => c.ui.research.themes[t]).join(', '),
     }),
-    about: c.services
-      .filter((s) => p.services.includes(s.id))
-      .map((s) => node(`${company.origin}${r.service(s.id)}#service`)),
+    about: [
+      ...c.services
+        .filter((s) => p.services.includes(s.id))
+        .map((s) => node(`${company.origin}${r.service(s.id)}#service`)),
+      ...c.applications
+        .filter((application) => p.applications?.includes(application.id))
+        .map((application) => ({
+          '@type': 'Thing',
+          name: application.title,
+          url: company.origin + r.application(application.id),
+        })),
+    ],
     ...(p.licence.startsWith('CC BY') && {
       license: 'https://creativecommons.org/licenses/by/4.0/',
     }),

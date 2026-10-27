@@ -4683,7 +4683,7 @@ h3 {
     height: 46px;
   }
 }
-@media (max-width: 1320px) {
+@media (max-width: 1200px) {
   .desktop-nav,
   .header-actions > .language {
     display: none;
@@ -4695,7 +4695,7 @@ h3 {
     margin-left: auto;
   }
 }
-@media (max-width: 1420px) {
+@media (max-width: 379px) {
   .header-account-label {
     display: none;
   }

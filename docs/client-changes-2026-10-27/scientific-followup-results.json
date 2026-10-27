@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checked": 8,
+  "rows": [
+    {
+      "path": "/recherche/bar-survie-larvaire-introgression-2026",
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/recherche/bar-survie-larvaire-introgression-2026",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/recherche/bar-croissance-larvaire-temperature-2025",
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/recherche/bar-croissance-larvaire-temperature-2025",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/en/research/sea-bass-larval-survival-introgression-2026",
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/en/research/sea-bass-larval-survival-introgression-2026",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/en/research/sea-bass-larval-growth-temperature-2025",
+      "width": 320,
+      "scrollWidth": 320,
+      "h1": 1,
+      "runtimeErrors": []
+    },
+    {
+      "path": "/en/research/sea-bass-larval-growth-temperature-2025",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "runtimeErrors": []
+    }
+  ]
+}

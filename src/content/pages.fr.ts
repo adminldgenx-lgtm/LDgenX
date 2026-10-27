@@ -43,7 +43,7 @@ export const pageCopy = {
       'Soutiens à l’innovation, instituts de recherche et organisations qui nous font confiance : des relations différentes, réunies autour de la connaissance du vivant.',
   },
   resources: {
-    eyebrow: 'Ressources & expertise',
+    eyebrow: 'Guides & méthodes',
     title: 'La connaissance\nse partage.',
     intro:
       'Des repères scientifiques pour comprendre les approches, préparer vos projets et explorer les applications de la génomique.',

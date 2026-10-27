@@ -48,7 +48,7 @@ export const ui = {
       team: 'Our team',
       publications: 'Research & publications',
       partners: 'Partners',
-      resources: 'Resources & expertise',
+      resources: 'Guides & methods',
       equipment: 'Sampling equipment',
       tests: 'Targeted DNA tests',
       faq: 'FAQ',
@@ -277,6 +277,7 @@ export const ui = {
       'Tell us about the context, the site or population studied, the objectives and the existing data. This first conversation scopes the need and the steps of support.',
   },
   equipment: {
+    explore: 'View sampling equipment',
     eyebrow: 'The equipment',
     title: 'Three tools\nto filter in the field.',
     text: 'The filtration equipment we offer for environmental DNA, with its characteristics.',
@@ -663,8 +664,8 @@ export const ui = {
         'The research institutes, supporters and organisations that trust LDgenX.',
     },
     resources: {
-      label: 'Resources',
-      title: 'Resources & expertise in genomics | LDgenX',
+      label: 'Guides & methods',
+      title: 'Guides & methods in genomics | LDgenX',
       description:
         'Guides to understand environmental DNA, bioinformatics and the applications of genomics in aquaculture.',
     },

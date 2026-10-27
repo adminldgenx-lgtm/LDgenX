@@ -151,7 +151,7 @@ export function InnovationsPage({ meta }: { meta: PageMeta }) {
           </div>
           <Reveal>
             <p>{t.collaborationText}</p>
-            <Button variant="light" to={r.service('recherche-developpement')}>
+            <Button variant="light" to={r.application('recherche-publique-privee')}>
               {t.collaborationAction}
             </Button>
           </Reveal>
@@ -219,7 +219,7 @@ export function InnovationPage({ meta }: { meta: PageMeta }) {
           <div className="related-links">
             {services
               .filter((s) =>
-                ['adn-environnemental-adne', 'bioinformatique', 'recherche-developpement'].includes(
+                ['adn-environnemental-adne', 'bioinformatique', 'sequencage-dpcr'].includes(
                   s.id,
                 ),
               )

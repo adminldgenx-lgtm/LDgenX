@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "origin": "https://ldgenx-12k.pages.dev",
+  "routes": [
+    "/admin/messages",
+    "/admin/messages?vue=site",
+    "/admin/demandes",
+    "/admin/agenda",
+    "/admin/clients",
+    "/admin/parametres",
+    "/admin/compte"
+  ],
+  "navbarRoleRouting": true,
+  "errors": [],
+  "badResponses": []
+}

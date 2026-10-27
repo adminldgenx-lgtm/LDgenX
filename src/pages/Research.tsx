@@ -25,7 +25,7 @@ export const plainTitle = (text: string) => text.replace(/\*/g, '');
    catalogue lists every reference with search and filters kept in the address, so a filtered
    list can be shared. Each article has a page of its own, with its summary and reference. */
 
-const PARAMS = ['q', 'theme', 'author', 'year', 'expertise'] as const;
+const PARAMS = ['q', 'theme', 'author', 'year', 'expertise', 'application'] as const;
 
 /** The address of the research page with the given query. */
 export function researchLink(base: string, query: Record<string, string>) {
@@ -397,14 +397,16 @@ function Catalogue({
   params: URLSearchParams;
   update: (changes: Record<string, string | null>) => void;
 }) {
-  const { research, people, services, ui } = useCatalog();
+  const { research, people, services, applications, copy, ui } = useCatalog();
   const t = ui.research;
   const [preview, setPreview] = useState<string | null>(null);
   const query = params.get('q') ?? '';
   const theme = params.get('theme');
   const author = params.get('author');
   const year = params.get('year');
-  const expertise = params.get('expertise');
+  const legacyResearch = params.get('expertise') === 'recherche-developpement';
+  const expertise = legacyResearch ? null : params.get('expertise');
+  const application = params.get('application') ?? (legacyResearch ? 'recherche-publique-privee' : null);
   const [draft, setDraft] = useState(query);
   useEffect(() => setDraft(query), [query]);
 
@@ -412,6 +414,7 @@ function Catalogue({
   const years = [...new Set(research.publications.map((p) => p.year))].sort((a, b) => b - a);
   const themes = Object.keys(t.themes);
   const expertiseTitle = services.find((s) => s.id === expertise)?.title;
+  const applicationTitle = applications.find((sector) => sector.id === application)?.title;
 
   const items = useMemo(() => {
     const needle = fold(query.trim());
@@ -421,12 +424,13 @@ function Catalogue({
         (!author || p.members.includes(author)) &&
         (!year || String(p.year) === year) &&
         (!expertise || p.services.includes(expertise)) &&
+        (!application || p.applications?.includes(application)) &&
         (!needle ||
           fold(
             [p.readingTitle, p.title, p.journal, p.authors.join(' '), p.summary].join(' '),
           ).includes(needle)),
     );
-  }, [research.publications, query, theme, author, year, expertise]);
+  }, [research.publications, query, theme, author, year, expertise, application]);
   const filtered = PARAMS.some((key) => params.get(key));
   const signature = PARAMS.map((key) => params.get(key) ?? '').join('|');
 
@@ -517,7 +521,7 @@ function Catalogue({
               </select>
             </label>
           </div>
-          {(expertiseTitle || filtered) && (
+          {(expertiseTitle || applicationTitle || filtered) && (
             <div className="research-active">
               {expertiseTitle && (
                 <button
@@ -526,6 +530,13 @@ function Catalogue({
                   onClick={() => update({ expertise: null })}
                 >
                   {`${t.expertise}${ui.lang === 'fr' ? '\u00a0: ' : ': '}${expertiseTitle}`}
+                  <X size={14} aria-hidden="true" />
+                  <span className="sr-only">{t.removeFilter}</span>
+                </button>
+              )}
+              {applicationTitle && (
+                <button type="button" className="research-active-chip" onClick={() => update({ application: null, ...(legacyResearch ? { expertise: null } : {}) })}>
+                  {`${copy.navigation.applications}${ui.lang === 'fr' ? '\u00a0: ' : ': '}${applicationTitle}`}
                   <X size={14} aria-hidden="true" />
                   <span className="sr-only">{t.removeFilter}</span>
                 </button>
@@ -675,12 +686,13 @@ export function citation(p: ResearchPublication) {
 
 /** One article of the team: its summary, the points to remember, its figures and reference. */
 export function PublicationPage({ meta }: { meta: PageMeta }) {
-  const { research, people, services, ui } = useCatalog();
+  const { research, people, services, applications, copy, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.research;
   const p = research.publications.find((x) => x.id === meta.id)!;
   const [copied, setCopied] = useState(false);
   const related = services.filter((s) => p.services.includes(s.id));
+  const relatedApplications = applications.filter((application) => p.applications?.includes(application.id));
   const members = people.filter((person) => p.members.includes(person.id));
   // Other articles sharing a theme, newest first.
   const others = research.publications
@@ -836,6 +848,20 @@ export function PublicationPage({ meta }: { meta: PageMeta }) {
                       <Link to={r.service(s.id)}>
                         {s.title}
                         <ArrowRight size={15} aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedApplications.length > 0 && (
+              <div className="research-panel-services">
+                <h2>{copy.navigation.applications}</h2>
+                <ul>
+                  {relatedApplications.map((application) => (
+                    <li key={application.id}>
+                      <Link to={r.application(application.id)}>
+                        {application.title}<ArrowRight size={15} aria-hidden="true" />
                       </Link>
                     </li>
                   ))}

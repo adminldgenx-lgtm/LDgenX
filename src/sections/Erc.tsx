@@ -4,10 +4,8 @@ import { useCatalog } from '../i18n';
 import { Eyebrow, Reveal } from '../components/ui';
 import { AnimatedHeading } from '../components/motion';
 
-/* "Des données pour éclairer la séquence ERC": three moments of a project (baseline, monitoring,
-   measures). Choosing one moves the line along the project and lights the steps of the
-   "Éviter, Réduire, Compenser" sequence it informs; the text says what the analyses bring and
-   what is delivered. */
+/* ERC is the reference sequence. The separate project-phase selector explains where DNA
+   analyses contribute; phases do not stand in for the three regulatory steps. */
 
 export function ErcModule() {
   const { erc, ui } = useCatalog();
@@ -42,9 +40,9 @@ export function ErcModule() {
           className="erc-board"
           style={{ '--at': active / (erc.states.length - 1) } as CSSProperties}
         >
-          <ol className="erc-letters" aria-label="Éviter, Réduire, Compenser">
-            {erc.letters.map((word, i) => (
-              <li key={word} data-on={state.letters.includes(i) || undefined}>
+          <ol className="erc-letters" aria-label={erc.letters.join(', ')}>
+            {erc.letters.map((word) => (
+              <li key={word}>
                 <span className="erc-letter" aria-hidden="true">
                   {word[0]}
                 </span>
