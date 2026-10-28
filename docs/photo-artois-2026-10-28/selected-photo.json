@@ -1,0 +1,102 @@
+{
+  "title": "File:Ambleteuse slack.jpg",
+  "size": 5748607,
+  "width": 3500,
+  "height": 1386,
+  "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Ambleteuse_slack.jpg/1280px-Ambleteuse_slack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "thumbwidth": 1280,
+  "thumbheight": 507,
+  "responsiveUrls": {
+    "2": "https://upload.wikimedia.org/wikipedia/commons/6/67/Ambleteuse_slack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  },
+  "thumbattribs": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Ambleteuse_slack.jpg/1280px-Ambleteuse_slack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 1280,
+    "height": 507,
+    "srcset": "https://upload.wikimedia.org/wikipedia/commons/6/67/Ambleteuse_slack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+  },
+  "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Ambleteuse_slack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ambleteuse_slack.jpg",
+  "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31543687",
+  "extmetadata": {
+    "DateTime": {
+      "value": "2014-03-10 22:51:21",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Ambleteuse slack",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "Self-published work|Panoramics in Pas-de-Calais|Point bars in Pas-de-Calais|Slack River in Ambleteuse|Buildings in Ambleteuse",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "La Slack à Ambleteuse.",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2014-03-10 23:50:34",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/wiki/User:Velvet\" title=\"User:Velvet\">Velvet</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC BY-SA 3.0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Attribution-Share Alike 3.0",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "true",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc-by-sa-3.0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "originalDownloadUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Ambleteuse_slack.jpg",
+  "downloadedAt": "2026-10-28T13:19:10.585Z",
+  "sha256": "678e24d7f16c098505b8006170927d04962d4bc5cd5c5823c55b5fbd220e7e25",
+  "decision": "Authentic photograph of the Slack at Ambleteuse; selected for environmental subject and verified location. No generative edits or colour changes."
+}

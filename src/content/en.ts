@@ -190,7 +190,7 @@ export const services: Expertise[] = [
     cases: [
       {
         title: 'Ichthyological survey for the Artois-Picardie Water Agency',
-        image: 'terrain-prelevement',
+        image: 'estuaire-slack',
         link: { kind: 'study', id: 'ichtyofaune-artois-picardie' },
       },
       {
@@ -1047,8 +1047,8 @@ export const studies: Study[] = [
     slug: 'artois-picardie-fish-survey',
     title: 'Reading the biodiversity of ports and estuaries.',
     category: 'Environmental DNA',
-    image: 'terrain-prelevement',
-    imageAlt: 'Filtering a water sample in the field (illustrative photograph)',
+    image: 'estuaire-slack',
+    imageAlt: 'The Slack estuary at Ambleteuse, between shingle banks and dunes',
     subtitle: 'A fish survey for the Artois-Picardie Water Agency.',
     facts: [
       { label: 'Client', value: 'Artois-Picardie Water Agency' },

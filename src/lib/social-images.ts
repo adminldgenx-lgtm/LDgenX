@@ -15,6 +15,7 @@ export const socialImages = new Set([
   'eolien-en-mer',
   'equipe-maxime',
   'estuaire-gironde',
+  'estuaire-slack',
   'fig-puce-truite',
   'materiel-pompe',
   'ours-brun',

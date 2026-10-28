@@ -96,7 +96,7 @@ function alignmentSvg(width = 1600, height = 1200) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">${parts.join('')}</svg>`;
 }
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: process.env.LDGENX_BROWSER_CHANNEL || undefined });
 const page = await browser.newPage();
 const only = process.argv.slice(2);
 for (const photo of manifest.photos.filter((p) => !only.length || only.includes(p.name))) {

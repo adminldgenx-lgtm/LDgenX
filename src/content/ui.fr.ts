@@ -511,6 +511,7 @@ export const ui = {
       'Téléphone : +1 650 319 8930',
     ],
     aiTitle: 'Intelligence artificielle',
+    photoTitle: 'Photographie d’illustration',
     ai: 'Certaines illustrations, la vidéo d’accueil et les portraits de Maeva Leitwein, Emilie Delpuech et Maxime Lambert ont été réalisés avec l’aide de l’intelligence artificielle, les portraits à partir de leurs photographies.',
     contact: 'Contacter LDgenX',
   },

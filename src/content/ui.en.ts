@@ -515,6 +515,7 @@ export const ui = {
       'Phone: +1 650 319 8930',
     ],
     aiTitle: 'Artificial intelligence',
+    photoTitle: 'Illustrative photograph',
     ai: 'Some illustrations, the homepage video and the portraits of Maeva Leitwein, Emilie Delpuech and Maxime Lambert were made with the help of artificial intelligence, the portraits from their photographs.',
     contact: 'Contact LDgenX',
   },

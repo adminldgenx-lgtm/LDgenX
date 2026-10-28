@@ -116,7 +116,7 @@ function buildPages(locale: Locale, c: Catalog): PageMeta[] {
       seo.studies.label,
       seo.studies.title,
       seo.studies.description,
-      'terrain-prelevement',
+      'estuaire-slack',
     ),
     ...c.studies.map((s) =>
       page(

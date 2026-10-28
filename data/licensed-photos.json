@@ -1,5 +1,5 @@
 {
-  "note": "Pictures that are not LDgenX's own, with their source and licence. Since 24 October 2026 every one of them is in the public domain or under CC0, so the site shows no credit: European mink (iNaturalist, CC0), brown bear (CC0), Gironde estuary (NASA), biofilm (CDC), offshore wind (U.S. DOE). The read-alignment illustration is drawn by the script. Prepared by scripts/prepare-licensed-photos.mjs; registry in src/content/licensed-photos.ts.",
+  "note": "Third-party pictures with their source and image-specific licence. The Slack estuary photograph is CC BY-SA 3.0, with attribution in the FR/EN legal notices; its resized variants retain that licence. Other photographic assets are public domain/CC0 or supplied by LDgenX. The alignment illustration is drawn by the script. Prepared by scripts/prepare-licensed-photos.mjs; registry in src/content/licensed-photos.ts.",
   "photos": [
     {
       "name": "eolien-en-mer",
@@ -157,6 +157,30 @@
       "height": 1365,
       "altFr": "L’embouchure de l’estuaire de la Gironde vue de la Station spatiale internationale, aux eaux chargées de sédiments",
       "altEn": "The mouth of the Gironde estuary seen from the International Space Station, its waters laden with sediment"
+    },
+    {
+      "name": "estuaire-slack",
+      "kind": "photo",
+      "sourceFile": "images/licensed/estuaire-slack.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Ambleteuse_slack.jpg",
+      "author": "Velvet",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Velvet",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attributionRequired": true,
+      "taken": "2014-03-10",
+      "subject": "The Slack at Ambleteuse, near its mouth, with shingle banks and dunes. Illustrates the sampled Slack environment; not a photograph of the LDgenX 2025 field campaign. No generative edits, colour changes or scene alterations. Responsive resizing, WebP encoding and a JPEG share preview; CSS frames thumbnails. The share preview includes the source credit outside the photograph.",
+      "widths": [
+        480,
+        640,
+        1000,
+        1536,
+        2048
+      ],
+      "width": 2048,
+      "height": 811,
+      "altFr": "L’estuaire de la Slack à Ambleteuse, entre berges de galets et dunes",
+      "altEn": "The Slack estuary at Ambleteuse, between shingle banks and dunes"
     }
   ]
 }

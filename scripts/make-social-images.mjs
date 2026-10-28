@@ -1,6 +1,6 @@
 // Social cards (1200 × 630 JPEG, the format every network reads) for each picture a page
 // shares, in the layout of the existing cards: the logo on a navy panel, the photograph whole on
-// the right, without any credit. Reads the built pages (run after `npm run build`), writes
+// the right. Required photo attribution sits below the image. Reads the built pages, writes
 // public/images/social-<name>.jpg and the list in src/lib/social-images.ts.
 //
 // Usage: LDGENX_PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node scripts/make-social-images.mjs
@@ -14,9 +14,11 @@ const modulePath = process.env.LDGENX_PLAYWRIGHT_MODULE;
 if (!modulePath)
   throw new Error('Set LDGENX_PLAYWRIGHT_MODULE to an installed Playwright package.');
 const { chromium } = createRequire(import.meta.url)(modulePath);
+const licensedPhotos = JSON.parse(readFileSync(path.join(root, 'data/licensed-photos.json'), 'utf8')).photos;
 
 // The card made by hand earlier is kept as it is.
 const kept = new Set(['equipe-maxime']);
+const only = new Set(process.argv.slice(2));
 
 const pages = [];
 const walk = (dir) => {
@@ -44,15 +46,26 @@ const largest = (name) =>
     .sort((a, b) => b - a)[0];
 
 const logo = `data:image/webp;base64,${readFileSync(path.join(root, 'public/brand/lockup-light-160.webp')).toString('base64')}`;
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: process.env.LDGENX_BROWSER_CHANNEL || undefined });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 const made = [...kept];
+if (only.size) {
+  const previous = readFileSync(path.join(root, 'src/lib/social-images.ts'), 'utf8');
+  for (const [, name] of previous.matchAll(/^ {2}'([a-z0-9-]+)',$/gm)) {
+    if (existsSync(path.join(root, `public/images/social-${name}.jpg`))) made.push(name);
+  }
+}
 for (const name of [...names].sort()) {
   if (kept.has(name)) continue;
+  if (only.size && !only.has(name)) {
+    if (existsSync(path.join(root, `public/images/social-${name}.jpg`))) made.push(name);
+    continue;
+  }
   const width = largest(name);
   if (!width) continue;
   // Scientific figures are shown whole, on white; photographs fill the frame.
   const figure = /^(pub|fig)-/.test(name);
+  const attribution = licensedPhotos.find((p) => p.name === name && p.attributionRequired);
   const photo = `data:image/webp;base64,${readFileSync(path.join(root, `public/images/${name}-${width}.webp`)).toString('base64')}`;
   await page.setContent(`<!doctype html><html><body style="margin:0;width:1200px;height:630px;background:#071c33;font-family:Helvetica,Arial,sans-serif;position:relative;overflow:hidden">
     <img src="${logo}" style="position:absolute;left:65px;top:168px;width:250px">
@@ -62,6 +75,7 @@ for (const name of [...names].sort()) {
     <div style="position:absolute;left:360px;top:48px;width:800px;height:534px;background:${figure ? '#ffffff' : '#0d2a45'};overflow:hidden">
       <img src="${photo}" style="width:100%;height:100%;object-fit:${figure ? 'contain' : 'cover'}">
     </div>
+    ${attribution ? `<div style="position:absolute;left:360px;top:596px;width:800px;color:#dfe8ee;font-size:12px;line-height:1.3">Photo : ${attribution.author} · ${attribution.licence} · ${attribution.source.replace('https://', '')}</div>` : ''}
   </body></html>`);
   await page.waitForFunction(() => [...document.images].every((i) => i.complete));
   await page.screenshot({
@@ -72,7 +86,7 @@ for (const name of [...names].sort()) {
   made.push(name);
 }
 await browser.close();
-const list = made
+const list = [...new Set(made)]
   .filter((name) => existsSync(path.join(root, `public/images/social-${name}.jpg`)))
   .sort();
 writeFileSync(

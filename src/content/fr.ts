@@ -228,7 +228,7 @@ export const services: Expertise[] = [
     cases: [
       {
         title: 'Analyse ichtyologique pour l’Agence de l’eau Artois-Picardie',
-        image: 'terrain-prelevement',
+        image: 'estuaire-slack',
         link: { kind: 'study', id: 'ichtyofaune-artois-picardie' },
       },
       {
@@ -1160,9 +1160,9 @@ export const studies: Study[] = [
     slug: 'ichtyofaune-artois-picardie',
     title: 'Lire la biodiversité des ports et des estuaires.',
     category: 'ADN environnemental',
-    image: 'terrain-prelevement',
+    image: 'estuaire-slack',
     imageAlt:
-      'Filtration d’un prélèvement d’eau sur le terrain (photographie d’illustration)',
+      'L’estuaire de la Slack à Ambleteuse, entre berges de galets et dunes',
     subtitle: 'Une étude de l’ichtyofaune pour l’Agence de l’eau Artois-Picardie.',
     facts: [
       { label: 'Commanditaire', value: 'Agence de l’eau Artois-Picardie' },

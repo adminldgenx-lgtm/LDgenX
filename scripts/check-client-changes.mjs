@@ -68,6 +68,10 @@ for (const locale of ['fr', 'en']) {
       p.path + ': application practical block missing',
     );
   const edna = c.services.find((s) => s.id === 'adn-environnemental-adne');
+  const agencyCase = edna.cases.find((item) => item.link?.id === 'ichtyofaune-artois-picardie');
+  const turbidCase = edna.cases.find((item) => item.link?.id === 'adne-estuaire-milieu-turbide');
+  assert.notEqual(agencyCase.image, turbidCase.image, 'Agency and turbid-water projects need distinct photographs');
+  assert.equal(agencyCase.image, c.studies.find((study) => study.id === 'ichtyofaune-artois-picardie').image);
   assert(
     edna.approaches.some(
       (a) => a.title === (locale === 'fr' ? 'Barcoding : dPCR ciblée' : 'Barcoding: targeted dPCR'),

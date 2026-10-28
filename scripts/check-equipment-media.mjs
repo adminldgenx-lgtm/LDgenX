@@ -4,6 +4,8 @@ import { readFile, readdir, access } from 'node:fs/promises';
 import { pages, ready } from '../.prerender/entry-server.js';
 import { pageFile } from './page-file.mjs';
 await ready;
+const creditedPhotos = JSON.parse(await readFile('data/licensed-photos.json', 'utf8'))
+  .photos.filter((photo) => photo.attributionRequired);
 const retired = [
   'laboratoire',
   'sequencage',
@@ -36,10 +38,22 @@ for (const page of pages) {
     await access('dist' + new URL(preview).pathname);
     social++;
   }
-  // Decorative photographs are public-domain/CC0. Published scientific figures
-  // retain their attribution and licence in their captions.
+  // Original decorative photographs are public-domain/CC0; the Slack exception is credited
+  // in the legal notice. Scientific figures retain attribution in their captions.
   const text = html.replace(/<script[\s\S]*?<\/script>/g, '');
-  const withoutScientificCaptions = text.replace(/<figcaption>[\s\S]*?<\/figcaption>/g, '');
+  let withoutScientificCaptions = text.replace(/<figcaption>[\s\S]*?<\/figcaption>/g, '');
+  // The Slack photograph is a deliberate, attributed exception to the public-domain assets.
+  // Verify its complete licence record before excluding the legal credit from the old-media check.
+  if (page.kind === 'legal') {
+    const credits = text.match(/<div data-photo-licences[^>]*>[\s\S]*?<\/div>/)?.[0] ?? '';
+    for (const photo of creditedPhotos) {
+      assert(credits.includes(`data-photo-credit="${photo.name}"`), `${page.path}: missing photo credit`);
+      assert(credits.includes(photo.author), `${page.path}: missing photographer`);
+      assert(credits.includes(`href="${photo.source}"`), `${page.path}: missing photo source`);
+      assert(credits.includes(`href="${photo.licenceUrl}"`), `${page.path}: missing photo licence`);
+    }
+    withoutScientificCaptions = withoutScientificCaptions.replace(credits, '');
+  }
   assert(
     !/CC BY|Wikimedia|Sketchfab|id="credits"/.test(withoutScientificCaptions),
     `${page.path}: retired decorative attribution`,

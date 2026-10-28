@@ -19,6 +19,7 @@ import { AmbientField } from '../components/AmbientField';
 import { LiveList } from '../components/Steps';
 import { KeyFacts, Ecosystem } from '../sections/Proof';
 import { TeamStage } from '../sections/TeamStage';
+import { photoAttributions } from '../content/licensed-photos';
 
 export function AboutPage({ meta }: { meta: PageMeta }) {
   const { pageCopy, copy, companyStory, ui } = useCatalog();
@@ -327,6 +328,20 @@ export function LegalPage({ meta }: { meta: PageMeta }) {
           </p>
           <h2>{t.aiTitle}</h2>
           <p>{t.ai}</p>
+          <div data-photo-licences>
+            <h2>{t.photoTitle}</h2>
+            {photoAttributions.map((credit) => (
+              <p key={credit.image} data-photo-credit={credit.image}>
+                <a href={credit.source}>{credit.title[meta.locale]}</a>
+                {' — '}
+                <a href={credit.authorUrl}>{credit.author}</a>
+                {' · '}
+                <a href={credit.licenceUrl}>{credit.licence}</a>
+                {'. '}
+                {credit.note[meta.locale]}
+              </p>
+            ))}
+          </div>
           <TextLink to={r.contact}>{t.contact}</TextLink>
         </div>
       </section>

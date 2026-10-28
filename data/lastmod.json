@@ -8,8 +8,8 @@
     "date": "2026-10-27"
   },
   "/services/adn-environnemental-adne": {
-    "hash": "73e74456c6caae3a",
-    "date": "2026-10-27"
+    "hash": "e996cfe26293117b",
+    "date": "2026-10-28"
   },
   "/services/genomique-des-populations": {
     "hash": "9a5d349d25bb23c9",
@@ -80,32 +80,32 @@
     "date": "2026-10-27"
   },
   "/etudes-de-cas": {
-    "hash": "b05f38c8edbd8d01",
-    "date": "2026-10-27"
+    "hash": "5d21005c327f793c",
+    "date": "2026-10-28"
   },
   "/etudes-de-cas/ichtyofaune-artois-picardie": {
     "hash": "17c0c17575d6427f",
     "date": "2026-10-27"
   },
   "/etudes-de-cas/genomique-vanneau-huppe": {
-    "hash": "18fae356b410e788",
-    "date": "2026-10-27"
+    "hash": "0539cbdc8f7de3c8",
+    "date": "2026-10-28"
   },
   "/etudes-de-cas/demogenetique-ours-pyrenees": {
-    "hash": "2c6f5378aa60d2a9",
-    "date": "2026-10-27"
+    "hash": "0e069caa96837e69",
+    "date": "2026-10-28"
   },
   "/etudes-de-cas/adne-estuaire-milieu-turbide": {
-    "hash": "b6c374e1e4e0ad9d",
-    "date": "2026-10-27"
+    "hash": "3c68563201108620",
+    "date": "2026-10-28"
   },
   "/etudes-de-cas/biodiversite-eolien-offshore": {
-    "hash": "e2de74c889ee0bca",
-    "date": "2026-10-27"
+    "hash": "ed0edb7c35de9bfe",
+    "date": "2026-10-28"
   },
   "/etudes-de-cas/communautes-microplastiques": {
-    "hash": "5ab83e03a8da0c78",
-    "date": "2026-10-27"
+    "hash": "868328c15008a9bb",
+    "date": "2026-10-28"
   },
   "/innovation": {
     "hash": "69d5b74d78aefb05",
@@ -292,8 +292,8 @@
     "date": "2026-10-27"
   },
   "/mentions-legales": {
-    "hash": "a2d1141c9b016cdb",
-    "date": "2026-10-24"
+    "hash": "c35ac4cef816f2d8",
+    "date": "2026-10-28"
   },
   "/politique-confidentialite": {
     "hash": "188ef1341df1f9eb",
@@ -312,8 +312,8 @@
     "date": "2026-10-27"
   },
   "/en/services/environmental-dna-edna": {
-    "hash": "438d58c531094666",
-    "date": "2026-10-27"
+    "hash": "46b4760f2fb2eeb3",
+    "date": "2026-10-28"
   },
   "/en/services/population-genomics": {
     "hash": "7df819e2041aeb03",
@@ -384,32 +384,32 @@
     "date": "2026-10-27"
   },
   "/en/case-studies": {
-    "hash": "0f666ed9549ea79a",
-    "date": "2026-10-27"
+    "hash": "e19b0949918546d5",
+    "date": "2026-10-28"
   },
   "/en/case-studies/artois-picardie-fish-survey": {
     "hash": "0e9218de5375b10c",
     "date": "2026-10-27"
   },
   "/en/case-studies/northern-lapwing-genomics": {
-    "hash": "07e88d9a0cb56246",
-    "date": "2026-10-27"
+    "hash": "f794e42abeef676b",
+    "date": "2026-10-28"
   },
   "/en/case-studies/pyrenean-brown-bear-demogenetics": {
-    "hash": "6f191a39e39fd506",
-    "date": "2026-10-27"
+    "hash": "7a99b40b0e4bf9b3",
+    "date": "2026-10-28"
   },
   "/en/case-studies/estuary-edna-turbid-water": {
-    "hash": "5bff83f3ed2d371d",
-    "date": "2026-10-27"
+    "hash": "05c12fe6993aff24",
+    "date": "2026-10-28"
   },
   "/en/case-studies/offshore-wind-biodiversity": {
-    "hash": "29d358d3cdf1d272",
-    "date": "2026-10-27"
+    "hash": "4ed0b9d1a34e8855",
+    "date": "2026-10-28"
   },
   "/en/case-studies/microplastic-microbial-communities": {
-    "hash": "43e833a9fab6ce95",
-    "date": "2026-10-27"
+    "hash": "8428aee88e891191",
+    "date": "2026-10-28"
   },
   "/en/innovation": {
     "hash": "4d959cb5ad8eb47d",
@@ -596,8 +596,8 @@
     "date": "2026-10-27"
   },
   "/en/legal-notice": {
-    "hash": "cb4d0dd8b8c34034",
-    "date": "2026-10-24"
+    "hash": "e1caeb463169f844",
+    "date": "2026-10-28"
   },
   "/en/privacy-policy": {
     "hash": "d824870b4dbda093",
