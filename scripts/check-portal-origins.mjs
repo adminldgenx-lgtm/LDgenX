@@ -49,9 +49,10 @@ if (credentials.PORTAL_SITE_URL)
 const redirects = String(auth.uri_allow_list).split(',');
 for (const url of portalAuthRedirects)
   assert(redirects.includes(url), `Missing Auth callback: ${url}`);
-await mkdir('docs/qa-2026-10-26', { recursive: true });
+const output = process.env.LDGENX_QA_OUTPUT ?? 'docs/qa-2026-10-26';
+await mkdir(output, { recursive: true });
 await writeFile(
-  'docs/qa-2026-10-26/portal-origins-results.json',
+  `${output}/portal-origins-results.json`,
   JSON.stringify(
     {
       passed: true,

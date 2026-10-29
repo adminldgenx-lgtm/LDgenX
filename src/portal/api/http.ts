@@ -1,5 +1,6 @@
 // Supabase Auth and the verified Edge API implement the portal contract.
 import { PortalError, type PortalApi, type User } from './types';
+import { portalSiteOrigin } from '../../../supabase/functions/_shared/site';
 
 import {
   supabase,
@@ -50,7 +51,7 @@ function authError(error: { code?: string; status?: number } | null) {
       (error.status === 429 ? 'rate_limited' : 'network'),
   );
 }
-const redirect = (path: string) => `${window.location.origin}${path}`;
+const redirect = (path: string) => `${portalSiteOrigin(window.location.origin)}${path}`;
 
 async function request<T>(
   method: string,

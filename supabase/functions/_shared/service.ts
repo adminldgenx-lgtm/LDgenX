@@ -19,6 +19,7 @@ import {
 import { computeSlots, heldSpans } from './availability.ts';
 import { fileExpiry } from './retention.ts';
 import { DAY, MINUTE } from './time.ts';
+import { productionOrigin } from './site.ts';
 
 export interface Records {
   profiles: User;
@@ -248,7 +249,7 @@ export class PortalService {
           fr
             ? 'LDgenX — Nouvelle activité dans votre espace'
             : 'LDgenX — New activity in your account',
-          `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\nhttps://www.ldgenx.fr/${person.role === 'admin' ? 'admin' : 'espace'}`,
+          `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\n${productionOrigin}/${person.role === 'admin' ? 'admin' : 'espace'}`,
           eventId,
         );
       }

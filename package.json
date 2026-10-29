@@ -31,7 +31,10 @@
     "check:portal-browser": "node scripts/check-portal-browser.mjs",
     "check:account-browser": "node scripts/check-account-browser.mjs",
     "check:portal-origins": "node scripts/check-portal-origins.mjs",
-    "supabase:email": "node scripts/configure-supabase-email.mjs"
+    "supabase:email": "node scripts/configure-supabase-email.mjs",
+    "supabase:production-domain": "node scripts/configure-production-domain.mjs",
+    "check:production-config": "node scripts/check-production-config.mjs",
+    "check:production-domain": "node scripts/check-production-domain.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",

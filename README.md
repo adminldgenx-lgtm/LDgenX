@@ -48,13 +48,13 @@ Les textes utilisent une espace fine insécable (U+202F) avant `; ! ?` et une es
 
 ## Publication (Cloudflare Pages)
 
-Frontend actuellement en ligne : [ldgenx-12k.pages.dev](https://ldgenx-12k.pages.dev/). Administration : [connexion administrateur](https://ldgenx-12k.pages.dev/admin/connexion). Le domaine `www.ldgenx.fr` sera raccordé ultérieurement.
+Frontend de production : [www.ldgenx.fr](https://www.ldgenx.fr/). Administration : [connexion administrateur](https://www.ldgenx.fr/admin/connexion). Les variantes `ldgenx.fr`, `ldgenx.com` et `www.ldgenx.com` redirigent vers cette adresse en conservant le chemin et les paramètres. L’adresse Pages sert aux vérifications techniques et porte une directive `noindex`.
 
 Projet Cloudflare Pages relié au dépôt :
 
 - **Build** : commande `npm run build`, dossier de sortie `dist`, Node 22 (fichier `.node-version`).
 - **Supabase** : URL du projet et clé publiable dans `.env.production` (valeurs publiques). Le portail est inclus au build. `LDGENX_PORTAL=0` permet de l’exclure. Les secrets d’administration restent dans `.env.supabase.local`, ignoré par Git. L’envoi d’e-mails sera configuré ultérieurement ; voir [docs/PORTAL.md](docs/PORTAL.md).
-- **Domaine** : `www.ldgenx.fr`, l’adresse canonique ; ajouter aussi `ldgenx.fr` et le rediriger vers `www` (règle de redirection Cloudflare).
+- **Domaine** : `www.ldgenx.fr`, l’adresse canonique partagée par les métadonnées, les fichiers de découverte, les retours Auth et les liens du backend (`supabase/functions/_shared/site.ts`). Les redirections de domaines sont des règles Cloudflare, distinctes des migrations de chemins générées dans `_redirects`.
 
 Chaque page est un fichier `adresse.html`, servi par Cloudflare à son adresse sans barre finale (`/contact`), comme les adresses canoniques. `dist/_redirects` applique les redirections 301 des anciennes adresses (avant les fichiers) ; `dist/_headers` ajoute les en-têtes de sécurité (politique de sécurité du contenu stricte, HSTS, interdiction de l’intégration en iframe, permissions désactivées) et le cache des fichiers. `404.html` répond aux adresses inconnues avec un vrai statut 404.
 
@@ -65,6 +65,10 @@ Les adresses de ldgenx.fr sont conservées telles quelles (`/services/selection`
 Les URLs canoniques utilisent `https://www.ldgenx.fr`. Pour un environnement de préproduction, protéger l’indexation au niveau de l’hébergeur. Ne pas remplacer la version officielle sans validation de l’entreprise.
 
 Les fichiers `robots.txt`, `sitemap.xml`, `llms.txt` et le mapping de redirections sont générés à chaque build. Les mentions légales et la page de confidentialité sont en `noindex`, sans intérêt dans les résultats de recherche.
+
+Les routes privées sont réécrites vers `/portal` (sans `.html`) pour éviter que la normalisation de Cloudflare ne transforme la réécriture en redirection visible. `npm run check:production-config` contrôle ce point et les exclusions des espaces privés et des previews. `npm run check:production-domain` vérifie les quatre domaines, tous les sitemaps et pages publiques, les métadonnées, images, anciens chemins et vrais 404 sur le site déployé. `LDGENX_DNS_SERVER=1.1.1.1` permet un diagnostic avec DNS public pendant une propagation, sans désactiver la validation TLS.
+
+`npm run supabase:production-domain` aligne uniquement la Site URL Auth, les retours autorisés et les origines/liens Edge sur le domaine principal ; il conserve les comptes, permissions, données et réglages e-mail/Google. L’envoi d’e-mails et les intégrations Google restent différés.
 
 Avec la prévisualisation de production déjà lancée, `npm run check:http` vérifie les réponses de toutes les pages, les 301 et le 404. `docs/VALIDATION.md` récapitule les vérifications effectuées.
 

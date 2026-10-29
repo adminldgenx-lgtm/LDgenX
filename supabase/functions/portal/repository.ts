@@ -8,6 +8,7 @@ import {
   type User,
 } from '../_shared/types.ts';
 import { heldSpans } from '../_shared/availability.ts';
+import { portalSiteOrigin } from '../_shared/site.ts';
 
 export function repository(
   sql: Sql,
@@ -95,7 +96,7 @@ export function repository(
         input.email,
         {
           data: { ...input, phone: '' },
-          redirectTo: `${Deno.env.get('PORTAL_SITE_URL') ?? 'https://www.ldgenx.fr'}/espace/nouveau-mot-de-passe`,
+          redirectTo: `${portalSiteOrigin(Deno.env.get('PORTAL_SITE_URL'))}/espace/nouveau-mot-de-passe`,
         },
       );
       if (error || !data.user)

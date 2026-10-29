@@ -122,7 +122,9 @@ await writeFile(
     '\n' +
     // The client area and the administration: one application for every address below them.
     (portal
-      ? '/espace /portal.html 200\n/espace/* /portal.html 200\n/admin /portal.html 200\n/admin/* /portal.html 200\n'
+      // An .html rewrite target is normalized by Pages into a visible 308 to /portal,
+      // losing the requested route. The extensionless target keeps the rewrite internal.
+      ? '/espace /portal 200\n/espace/* /portal 200\n/admin /portal 200\n/admin/* /portal 200\n'
       : ''),
 );
 await writeFile(path.join(root, 'redirects.json'), JSON.stringify(redirects, null, 2));
@@ -160,6 +162,9 @@ const security = [
 ];
 const rules = [
   ['/*', security],
+  // The public production domain is indexable; Pages addresses are previews/aliases.
+  ['https://:project.pages.dev/*', ['X-Robots-Tag: noindex']],
+  ['https://:version.:project.pages.dev/*', ['X-Robots-Tag: noindex']],
   ['/assets/*', ['Cache-Control: public, max-age=31536000, immutable']],
   ['/images/*', ['Cache-Control: public, max-age=2592000']],
   ['/llms.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
@@ -167,7 +172,10 @@ const rules = [
   ...(portal
     ? [
         ['/portal.html', ['X-Robots-Tag: noindex, nofollow', 'Cache-Control: no-cache']],
+        ['/portal', ['X-Robots-Tag: noindex, nofollow', 'Cache-Control: no-cache']],
+        ['/espace', ['X-Robots-Tag: noindex, nofollow']],
         ['/espace/*', ['X-Robots-Tag: noindex, nofollow']],
+        ['/admin', ['X-Robots-Tag: noindex, nofollow']],
         ['/admin/*', ['X-Robots-Tag: noindex, nofollow']],
       ]
     : []),

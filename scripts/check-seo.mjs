@@ -7,10 +7,11 @@ import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pageFile } from './page-file.mjs';
+import { productionOrigin } from '../supabase/functions/_shared/site.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
-const origin = 'https://www.ldgenx.fr';
+const origin = productionOrigin;
 const errors = [];
 const warnings = [];
 const fail = (page, message) => errors.push(`${page}: ${message}`);

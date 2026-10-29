@@ -16,7 +16,8 @@ import {
   defaultRetention,
 } from '../supabase/functions/_shared/defaults.ts';
 import { portalOrigins, portalAuthRedirects } from '../supabase/functions/_shared/origins.ts';
-const siteUrl = (credentials.PORTAL_SITE_URL ?? 'https://www.ldgenx.fr').replace(/\/+$/, '');
+import { productionOrigin } from '../supabase/functions/_shared/site.ts';
+const siteUrl = (credentials.PORTAL_SITE_URL ?? productionOrigin).replace(/\/+$/, '');
 if (!portalOrigins.includes(siteUrl))
   throw new Error('PORTAL_SITE_URL must be one of the configured portal origins.');
 const project = await management('');
@@ -123,7 +124,7 @@ try {
     type: 'recovery',
     email: adminEmail,
     options: {
-      redirectTo: 'http://localhost:5173/espace/nouveau-mot-de-passe',
+      redirectTo: `${siteUrl}/espace/nouveau-mot-de-passe`,
     },
   });
   if (error || !data.properties?.action_link)
@@ -133,7 +134,7 @@ try {
     .replaceAll('"', '&quot;');
   await writeFile(
     'admin-setup.local.html',
-    `<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="referrer" content="no-referrer"><title>Configuration administrateur LDgenX</title><body style="font:18px system-ui;max-width:650px;margin:80px auto;padding:24px"><h1>Compte administrateur LDgenX</h1><p>Compte : ${adminEmail}</p><p>Lancez <code>npm run dev</code>, puis ouvrez ce lien privé pour choisir votre mot de passe. Le lien est à usage unique et expire après une heure.</p><p><a href="${safe}">Choisir mon mot de passe</a></p><p>Si le lien a expiré, lancez <code>npm run supabase:admin-link</code>.</p></body></html>`,
+    `<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="referrer" content="no-referrer"><title>Configuration administrateur LDgenX</title><body style="font:18px system-ui;max-width:650px;margin:80px auto;padding:24px"><h1>Compte administrateur LDgenX</h1><p>Compte : ${adminEmail}</p><p>Ouvrez ce lien privé pour choisir votre mot de passe. Il retourne sur ${siteUrl}. Le lien est à usage unique et expire après une heure.</p><p><a href="${safe}">Choisir mon mot de passe</a></p><p>Si le lien a expiré, lancez <code>npm run supabase:admin-link</code>.</p></body></html>`,
     { mode: 0o600 },
   );
 }
