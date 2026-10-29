@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-29T10:17:29.446Z",
+  "projectStatus": "ACTIVE_HEALTHY",
+  "auth": {
+    "site_url": "https://www.ldgenx.fr",
+    "uri_allow_list": "https://www.ldgenx.fr/espace/connexion,https://www.ldgenx.fr/espace/nouveau-mot-de-passe,https://ldgenx.fr/espace/connexion,https://ldgenx.fr/espace/nouveau-mot-de-passe,https://ldgenx.com/espace/connexion,https://ldgenx.com/espace/nouveau-mot-de-passe,https://www.ldgenx.com/espace/connexion,https://www.ldgenx.com/espace/nouveau-mot-de-passe,https://ldgenx-12k.pages.dev/espace/connexion,https://ldgenx-12k.pages.dev/espace/nouveau-mot-de-passe,http://localhost:5173/espace/**,http://localhost:5174/espace/**,http://localhost:4173/espace/**,http://localhost:4174/espace/**,http://127.0.0.1:5173/espace/**,http://127.0.0.1:5174/espace/**,http://127.0.0.1:4173/espace/**,http://127.0.0.1:4174/espace/**",
+    "external_google_enabled": false,
+    "mailer_autoconfirm": true,
+    "smtp_host": null,
+    "disable_signup": false
+  },
+  "functions": [
+    {
+      "slug": "portal",
+      "status": "ACTIVE",
+      "version": 15,
+      "verify_jwt": false
+    }
+  ],
+  "mailSettingsUnchanged": true,
+  "googleCalendarConfigured": false
+}

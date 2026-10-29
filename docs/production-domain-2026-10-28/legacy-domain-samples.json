@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "start": "https://ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/a-propos/innovation?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/en/services/environmental-dna-edna?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/a-propos/innovation?utm_source=domain-check&lang=en",
+      "final": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/a-propos/innovation?utm_source=domain-check&lang=en",
+          "status": 301,
+          "location": "/innovation?utm_source=domain-check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/innovation?utm_source=domain-check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    }
+  ]
+}

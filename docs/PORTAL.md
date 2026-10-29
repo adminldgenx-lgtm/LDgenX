@@ -17,12 +17,12 @@ The [final review](FINAL-REVIEW-2026-10-27.md) supersedes that local navigation 
 - Private Storage bucket `portal-files`; 10 MB maximum per file. Message attachments: up to six, 20 MB combined.
 - Authentication uses Supabase Auth with email/password. A read-only live recheck on 26 October found `mailer_autoconfirm: true` (addresses automatically confirmed), whereas the setup script specifies `false`. No live settings were changed during the content audit. Before full launch, configure email delivery, restore the intended verification setting and test the email-dependent journeys.
 - Administrator: `admin.ldgenx@gmail.com`, active and assigned its role in the database. Password set at the owner’s explicit request and verified with real password authentication and the admin API on 26 October; no password is stored in project files. The superseded local setup-link artifact was removed.
-- Current online frontend and Auth site URL: `https://ldgenx-12k.pages.dev`. The future `https://www.ldgenx.fr` and apex domain remain allowed, alongside local development/preview callbacks. Server-generated account/file links use `PORTAL_SITE_URL`; the current value is saved in the ignored administrative environment file.
+- Production frontend and Auth Site URL: `https://www.ldgenx.fr`. The .fr/.com aliases redirect permanently to this origin, preserving paths and queries. Exact production Auth callback paths and explicit local/preview callbacks share the configuration in `supabase/functions/_shared/site.ts` and `origins.ts`. `PORTAL_SITE_URL` is aligned remotely and in the ignored administrative environment file.
 - Automatic maintenance scheduled every 15 minutes, including expired file removal and notification processing.
 - Public contact submissions reach the administration inbox; booking buttons point to `/espace/reserver`.
 - Google authentication is intentionally deferred.
 - **Email delivery is deferred at the owner's request.** Verification messages, invitations, password-reset emails and notification emails require a sender provider. They are not production-ready until it is configured. Pending notification records are retained in a private outbox; no email was sent during setup or tests.
-- The Supabase backend is live. The owner supplied the deployed frontend at `https://ldgenx-12k.pages.dev`; real administrator login and every admin section were verified there on 26 October. The custom-domain switch remains a later step.
+- The Supabase backend and custom-domain frontend are live. Production-domain verification, including actual client/admin journeys and private-file/recovery/booking tests, is recorded in [PRODUCTION-DOMAIN-2026-10-29.md](PRODUCTION-DOMAIN-2026-10-29.md). OVH email settings, DNS mail records and Cloudflare email protection were left unchanged.
 
 ## Local use and administrator access
 
@@ -33,13 +33,13 @@ npm run dev
 
 Open `http://localhost:5173/espace` for clients and `/admin` for administration. Public booking is `/espace/reserver`.
 
-The administrator password is already configured. For a future local recovery without email, the following command generates the ignored file `admin-setup.local.html`. Its link is private, single-use and expires after one hour; keep `npm run dev` running on port 5173 while using it:
+The administrator password is already configured. For future recovery without email, this command generates the ignored file `admin-setup.local.html`. Its private, single-use link expires after one hour and returns to `PORTAL_SITE_URL`, which is the canonical production domain by default:
 
 ```sh
 npm run supabase:admin-link
 ```
 
-That command requires the administrative credentials in `.env.supabase.local`. It does not print a token, set a shared default password, or send email. After activation, sign in normally with the administrator email and the password you chose.
+That command requires the administrative credentials in `.env.supabase.local`. It generates only a recovery link, without rerunning setup, altering Auth/email settings, sending an email or printing a token. After activation, sign in normally with the administrator email and the password you chose.
 
 ## Source map
 
@@ -166,7 +166,9 @@ The remote tests create confirmed test users through the admin API without sendi
 
 Use Node 22, build `npm run build`, output `dist`. Public Supabase configuration is already in `.env.production`; hosting variables can override it. `portal.html`, portal rewrites, noindex rules and Supabase-compatible CSP are generated automatically.
 
-Publish the rebuilt site to make `/espace` and `/admin` available on `www.ldgenx.fr`. Configure email before opening client registration. Google signup/signin can then be added through Supabase Auth using the same profiles and authorization rules; provider configuration and UI are intentionally absent in this phase.
+The production site serves `/espace` and `/admin` directly. Private rewrites target `/portal` without the `.html` extension, preventing Cloudflare's HTML normalization from redirecting away from the requested route. Production pages remain indexable; private routes and Pages previews are excluded. Run `npm run check:production-config` after building and `npm run check:production-domain` against the deployed site.
+
+Email delivery and Google signup/signin remain deferred. Configure a sender and test email-dependent journeys before claiming delivery/verification is available; OVH mail is independent of the portal sender. Google sign-in and Calendar sync have not been enabled.
 
 ## Public navbar account button
 

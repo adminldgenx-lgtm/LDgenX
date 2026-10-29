@@ -1,0 +1,264 @@
+{
+  "passed": true,
+  "siteUrl": "https://www.ldgenx.fr",
+  "approvedOrigins": [
+    "https://www.ldgenx.fr",
+    "https://ldgenx.fr",
+    "https://ldgenx.com",
+    "https://www.ldgenx.com",
+    "https://ldgenx-12k.pages.dev",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:4173",
+    "http://localhost:4174",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:4173",
+    "http://127.0.0.1:4174"
+  ],
+  "rejectedOrigins": [
+    "https://untrusted.example",
+    "null",
+    "https://www.ldgenx.fr.evil.example",
+    "http://localhost.evil.example:5174",
+    "http://127.0.0.1:51740"
+  ],
+  "authCallbacksVerified": [
+    "https://www.ldgenx.fr/espace/connexion",
+    "https://www.ldgenx.fr/espace/nouveau-mot-de-passe",
+    "https://ldgenx.fr/espace/connexion",
+    "https://ldgenx.fr/espace/nouveau-mot-de-passe",
+    "https://ldgenx.com/espace/connexion",
+    "https://ldgenx.com/espace/nouveau-mot-de-passe",
+    "https://www.ldgenx.com/espace/connexion",
+    "https://www.ldgenx.com/espace/nouveau-mot-de-passe",
+    "https://ldgenx-12k.pages.dev/espace/connexion",
+    "https://ldgenx-12k.pages.dev/espace/nouveau-mot-de-passe",
+    "http://localhost:5173/espace/**",
+    "http://localhost:5174/espace/**",
+    "http://localhost:4173/espace/**",
+    "http://localhost:4174/espace/**",
+    "http://127.0.0.1:5173/espace/**",
+    "http://127.0.0.1:5174/espace/**",
+    "http://127.0.0.1:4173/espace/**",
+    "http://127.0.0.1:4174/espace/**"
+  ],
+  "requests": [
+    {
+      "origin": "https://www.ldgenx.fr",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "https://www.ldgenx.fr"
+    },
+    {
+      "origin": "https://www.ldgenx.fr",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "https://www.ldgenx.fr"
+    },
+    {
+      "origin": "https://ldgenx.fr",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "https://ldgenx.fr"
+    },
+    {
+      "origin": "https://ldgenx.fr",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "https://ldgenx.fr"
+    },
+    {
+      "origin": "https://ldgenx.com",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "https://ldgenx.com"
+    },
+    {
+      "origin": "https://ldgenx.com",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "https://ldgenx.com"
+    },
+    {
+      "origin": "https://www.ldgenx.com",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "https://www.ldgenx.com"
+    },
+    {
+      "origin": "https://www.ldgenx.com",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "https://www.ldgenx.com"
+    },
+    {
+      "origin": "https://ldgenx-12k.pages.dev",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "https://ldgenx-12k.pages.dev"
+    },
+    {
+      "origin": "https://ldgenx-12k.pages.dev",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "https://ldgenx-12k.pages.dev"
+    },
+    {
+      "origin": "http://localhost:5173",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://localhost:5173"
+    },
+    {
+      "origin": "http://localhost:5173",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://localhost:5173"
+    },
+    {
+      "origin": "http://localhost:5174",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://localhost:5174"
+    },
+    {
+      "origin": "http://localhost:5174",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://localhost:5174"
+    },
+    {
+      "origin": "http://localhost:4173",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://localhost:4173"
+    },
+    {
+      "origin": "http://localhost:4173",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://localhost:4173"
+    },
+    {
+      "origin": "http://localhost:4174",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://localhost:4174"
+    },
+    {
+      "origin": "http://localhost:4174",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://localhost:4174"
+    },
+    {
+      "origin": "http://127.0.0.1:5173",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://127.0.0.1:5173"
+    },
+    {
+      "origin": "http://127.0.0.1:5173",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://127.0.0.1:5173"
+    },
+    {
+      "origin": "http://127.0.0.1:5174",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://127.0.0.1:5174"
+    },
+    {
+      "origin": "http://127.0.0.1:5174",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://127.0.0.1:5174"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://127.0.0.1:4173"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://127.0.0.1:4173"
+    },
+    {
+      "origin": "http://127.0.0.1:4174",
+      "method": "OPTIONS",
+      "status": 204,
+      "allowOrigin": "http://127.0.0.1:4174"
+    },
+    {
+      "origin": "http://127.0.0.1:4174",
+      "method": "GET",
+      "status": 200,
+      "allowOrigin": "http://127.0.0.1:4174"
+    },
+    {
+      "origin": "https://untrusted.example",
+      "method": "OPTIONS",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "https://untrusted.example",
+      "method": "GET",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "null",
+      "method": "OPTIONS",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "null",
+      "method": "GET",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "https://www.ldgenx.fr.evil.example",
+      "method": "OPTIONS",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "https://www.ldgenx.fr.evil.example",
+      "method": "GET",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "http://localhost.evil.example:5174",
+      "method": "OPTIONS",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "http://localhost.evil.example:5174",
+      "method": "GET",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "http://127.0.0.1:51740",
+      "method": "OPTIONS",
+      "status": 403,
+      "allowOrigin": null
+    },
+    {
+      "origin": "http://127.0.0.1:51740",
+      "method": "GET",
+      "status": 403,
+      "allowOrigin": null
+    }
+  ]
+}

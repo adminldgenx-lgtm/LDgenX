@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-28T15:37:02.012Z",
+  "siteUrl": "https://www.ldgenx.fr",
+  "authRedirects": [
+    "https://www.ldgenx.fr/espace/connexion",
+    "https://www.ldgenx.fr/espace/nouveau-mot-de-passe",
+    "https://ldgenx.fr/espace/connexion",
+    "https://ldgenx.fr/espace/nouveau-mot-de-passe",
+    "https://ldgenx.com/espace/connexion",
+    "https://ldgenx.com/espace/nouveau-mot-de-passe",
+    "https://www.ldgenx.com/espace/connexion",
+    "https://www.ldgenx.com/espace/nouveau-mot-de-passe",
+    "https://ldgenx-12k.pages.dev/espace/connexion",
+    "https://ldgenx-12k.pages.dev/espace/nouveau-mot-de-passe",
+    "http://localhost:5173/espace/**",
+    "http://localhost:5174/espace/**",
+    "http://localhost:4173/espace/**",
+    "http://localhost:4174/espace/**",
+    "http://127.0.0.1:5173/espace/**",
+    "http://127.0.0.1:5174/espace/**",
+    "http://127.0.0.1:4173/espace/**",
+    "http://127.0.0.1:4174/espace/**"
+  ],
+  "allowedOrigins": [
+    "https://www.ldgenx.fr",
+    "https://ldgenx.fr",
+    "https://ldgenx.com",
+    "https://www.ldgenx.com",
+    "https://ldgenx-12k.pages.dev",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:4173",
+    "http://localhost:4174",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:4173",
+    "http://127.0.0.1:4174"
+  ],
+  "emailAndProviderSettingsPreserved": true,
+  "edgeSecretsUpdated": [
+    "PORTAL_SITE_URL",
+    "PORTAL_ALLOWED_ORIGINS"
+  ]
+}
