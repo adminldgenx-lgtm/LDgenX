@@ -261,7 +261,7 @@ export function ClientShell() {
   if (!user)
     return (
       <Navigate
-        to={`/espace/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        to={`/espace/connexion?suite=${encodeURIComponent(location.pathname + location.search)}`}
         replace
       />
     );
@@ -327,7 +327,7 @@ export function AdminShell() {
   if (!user)
     return (
       <Navigate
-        to={`/admin/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        to={`/admin/connexion?suite=${encodeURIComponent(location.pathname + location.search)}`}
         replace
       />
     );

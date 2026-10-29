@@ -42,11 +42,16 @@ try {
   });
   const page = await context.newPage();
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto(origin + "/admin/connexion?lang=fr");
+  await page.goto(origin + "/admin/parametres?onglet=google&lang=fr");
   await page.getByLabel("Adresse e-mail", { exact: true }).fill(email);
   await page.getByLabel("Mot de passe", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Se connecter", exact: true }).click();
-  await page.waitForURL("**/admin/messages");
+  await page.waitForURL(
+    (url) =>
+      url.pathname === "/admin/parametres" &&
+      url.searchParams.get("onglet") === "google",
+  );
+  check("Logged-out admin link preserves the Calendar tab after sign-in");
   await page.goto(origin + "/admin/parametres?onglet=google");
   await expect(
     page.getByRole("button", { name: "Connecter Google Agenda", exact: true }),
