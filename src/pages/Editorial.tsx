@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import { Search } from 'lucide-react';
-import { useCatalog, useRoutes } from '../i18n';
+import { useCatalog, useRoutes, useLocale } from '../i18n';
+import { catalog as originalCatalog } from '../content/catalog';
+import { useEditorial } from '../editorial/context';
 import { type PageMeta } from '../lib/pages';
 import {
   PageHero,
@@ -22,6 +24,7 @@ import { StudyJourney } from '../sections/StudyJourney';
 import { Lab } from '../sections/Innovation';
 import { StudyResults } from '../sections/StudyResults';
 import { WorkCards } from './Works';
+import { EditorialCards } from '../editorial/PublicDocument';
 
 export function StudiesPage({ meta }: { meta: PageMeta }) {
   const { pageCopy, ui } = useCatalog();
@@ -36,6 +39,7 @@ export function StudiesPage({ meta }: { meta: PageMeta }) {
             {t.studiesSr}
           </h2>
           <StudyPanels all label={ui.panels.allLabel} />
+          <EditorialCards kind="study" />
         </div>
       </section>
       <section className="section-space delivery-section" aria-label={t.worksEyebrow}>
@@ -128,6 +132,13 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
       <FinalCTA />
     </>
   );
+}
+/** Existing validated scientific visualizations stay intact when the surrounding text is edited. */
+export function LegacyStudyEvidence({ id }: { id: string }) {
+  const { studies, featuredStudy } = originalCatalog(useLocale());
+  const study = studies.find((s) => s.id === id);
+  if (!study) return null;
+  return <>{id === featuredStudy.slug && <><StudyJourney /><StudyResults /></>}{study.details && <StudyDetails details={study.details} />}</>;
 }
 
 export function InnovationsPage({ meta }: { meta: PageMeta }) {
@@ -248,7 +259,10 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
   const t = ui.resourcesPage;
   const [category, setCategory] = useState(t.all);
   const [query, setQuery] = useState('');
-  const categories = [t.all, ...new Set(resources.map((r) => r.category))];
+  const { index } = useEditorial(), locale = useLocale();
+  const extra = index.filter((r) => r.kind === 'article' && r.locale === locale && r.status === 'published' && !r.legacyId);
+  const categories = [t.all, ...new Set([...resources, ...extra].map((r) => r.category))];
+  const extraFiltered = extra.filter((r) => (category === t.all || r.category === category) && `${r.title} ${r.summary} ${r.category}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(query.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()));
   const filtered = resources.filter(
     (r) =>
       (category === t.all || r.category === category) &&
@@ -290,10 +304,11 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
             </label>
           </div>
           <div aria-live="polite">
-            <span className="sr-only">{t.count(filtered.length)}</span>
-            {filtered.length ? (
+            <span className="sr-only">{t.count(filtered.length + extraFiltered.length)}</span>
+            {filtered.length + extraFiltered.length ? (
               <div className="filter-results" key={`${category}|${query.trim()}`}>
                 <ResourceGrid items={filtered} />
+                <EditorialCards kind="article" entries={extraFiltered} />
               </div>
             ) : (
               <p className="no-results">{t.empty}</p>

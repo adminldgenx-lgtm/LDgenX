@@ -6,6 +6,8 @@ import { loadCatalog } from './content/catalog';
 import { localeAt } from './lib/pages';
 import './styles/global.css';
 import './styles/content.css';
+import './editorial/editorial.css';
+import { EditorialProvider, readEditorialBootstrap } from './editorial/context';
 
 // The page's own language is loaded before hydration, so the first render matches the
 // server's markup.
@@ -14,7 +16,7 @@ loadCatalog(localeAt(location.pathname)).then(() => {
   const application = (
     <BrowserRouter>
       <Suspense fallback={null}>
-        <App />
+        <EditorialProvider initial={readEditorialBootstrap()}><App /></EditorialProvider>
       </Suspense>
     </BrowserRouter>
   );

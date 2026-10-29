@@ -1,0 +1,1704 @@
+[
+  {
+    "at": 2769,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 2769,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 3051,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_profiles"
+  },
+  {
+    "at": 3629,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 614
+  },
+  {
+    "at": 4083,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 4090,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 938
+  },
+  {
+    "at": 4133,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 4179,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 523
+  },
+  {
+    "at": 4285,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 627
+  },
+  {
+    "at": 4286,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 628
+  },
+  {
+    "at": 4608,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_profiles"
+  },
+  {
+    "at": 4609,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_profiles"
+  },
+  {
+    "at": 4732,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 553
+  },
+  {
+    "at": 4741,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 651
+  },
+  {
+    "at": 4860,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 574
+  },
+  {
+    "at": 5113,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 828
+  },
+  {
+    "at": 5140,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 398
+  },
+  {
+    "at": 5125,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 839,
+    "count": 0
+  },
+  {
+    "at": 5238,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 850
+  },
+  {
+    "at": 5246,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 513
+  },
+  {
+    "at": 5584,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 469
+  },
+  {
+    "at": 5584,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 457
+  },
+  {
+    "at": 5614,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 473
+  },
+  {
+    "at": 5758,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 513
+  },
+  {
+    "at": 5760,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 176
+  },
+  {
+    "at": 6184,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 6185,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 6188,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 527
+  },
+  {
+    "at": 6189,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 6197,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 583
+  },
+  {
+    "at": 6206,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 446
+  },
+  {
+    "at": 6186,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 602,
+    "count": 0
+  },
+  {
+    "at": 6347,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 586
+  },
+  {
+    "at": 6417,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 653
+  },
+  {
+    "at": 6472,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 284
+  },
+  {
+    "at": 6504,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 315
+  },
+  {
+    "at": 6545,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 356
+  },
+  {
+    "at": 6546,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 357
+  },
+  {
+    "at": 6865,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 448
+  },
+  {
+    "at": 6995,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 449
+  },
+  {
+    "at": 7008,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 504
+  },
+  {
+    "at": 7371,
+    "method": "POST",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 1174
+  },
+  {
+    "at": 7424,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 559
+  },
+  {
+    "at": 7447,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 439
+  },
+  {
+    "at": 7475,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 928
+  },
+  {
+    "at": 7508,
+    "method": "GET",
+    "path": "/functions/v1/portal/appointments",
+    "status": 200,
+    "elapsed": 513
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_files"
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_files"
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 7895,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 7896,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 448
+  },
+  {
+    "at": 7919,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 445
+  },
+  {
+    "at": 7924,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 450
+  },
+  {
+    "at": 7925,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 451
+  },
+  {
+    "at": 7976,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 502
+  },
+  {
+    "at": 7977,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 553
+  },
+  {
+    "at": 8035,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 560,
+    "count": 1
+  },
+  {
+    "at": 8103,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 594
+  },
+  {
+    "at": 8461,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 542
+  },
+  {
+    "at": 8523,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 547
+  },
+  {
+    "at": 8523,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 598
+  },
+  {
+    "at": 8519,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 594,
+    "count": 1
+  },
+  {
+    "at": 8576,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 580
+  },
+  {
+    "at": 8577,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 581
+  },
+  {
+    "at": 8771,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 734
+  },
+  {
+    "at": 8795,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 692
+  },
+  {
+    "at": 9331,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 870
+  },
+  {
+    "at": 9491,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 969
+  },
+  {
+    "at": 9501,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 978
+  },
+  {
+    "at": 9550,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 973
+  },
+  {
+    "at": 9793,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 1217
+  },
+  {
+    "at": 10184,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 1661
+  },
+  {
+    "at": 10469,
+    "method": "GET",
+    "path": "/functions/v1/portal/appointments",
+    "status": 200,
+    "elapsed": 916
+  },
+  {
+    "at": 10480,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 1685
+  },
+  {
+    "at": 10739,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 946
+  },
+  {
+    "at": 10758,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 1987
+  },
+  {
+    "at": 10874,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 1373
+  },
+  {
+    "at": 10884,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 1552
+  },
+  {
+    "at": 10893,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 1401
+  },
+  {
+    "at": 10914,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 445
+  },
+  {
+    "at": 11091,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 907,
+    "count": 1
+  },
+  {
+    "at": 11180,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 699
+  },
+  {
+    "at": 11217,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 477,
+    "count": 1
+  },
+  {
+    "at": 11312,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 554
+  },
+  {
+    "at": 11358,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 465
+  },
+  {
+    "at": 11418,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 503
+  },
+  {
+    "at": 11484,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 600
+  },
+  {
+    "at": 11499,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 407
+  },
+  {
+    "at": 11572,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 698
+  },
+  {
+    "at": 11904,
+    "method": "POST",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 724
+  },
+  {
+    "at": 11955,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 11963,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 11963,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 12073,
+    "method": "POST",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/read",
+    "status": 204,
+    "elapsed": 851
+  },
+  {
+    "at": 12319,
+    "method": "POST",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/read",
+    "status": 204,
+    "elapsed": 961
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_messages"
+  },
+  {
+    "at": 12488,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 12508,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 443
+  },
+  {
+    "at": 12549,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 475
+  },
+  {
+    "at": 12570,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 509
+  },
+  {
+    "at": 12611,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 551
+  },
+  {
+    "at": 12612,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 551
+  },
+  {
+    "at": 12633,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 568
+  },
+  {
+    "at": 12647,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 582
+  },
+  {
+    "at": 12775,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 456
+  },
+  {
+    "at": 13011,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 503
+  },
+  {
+    "at": 13019,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 470
+  },
+  {
+    "at": 13093,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 523
+  },
+  {
+    "at": 13140,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 493
+  },
+  {
+    "at": 13140,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 506,
+    "count": 2
+  },
+  {
+    "at": 13224,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 449
+  },
+  {
+    "at": 13436,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 425
+  },
+  {
+    "at": 13448,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 837
+  },
+  {
+    "at": 13522,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 382
+  },
+  {
+    "at": 13531,
+    "method": "GET",
+    "path": "/functions/v1/portal/appointments",
+    "status": 200,
+    "elapsed": 511
+  },
+  {
+    "at": 13533,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 921
+  },
+  {
+    "at": 13539,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 446
+  },
+  {
+    "at": 13572,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 431
+  },
+  {
+    "at": 13675,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 451
+  },
+  {
+    "at": 13908,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 472
+  },
+  {
+    "at": 13924,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 402
+  },
+  {
+    "at": 13987,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 454
+  },
+  {
+    "at": 14002,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 554
+  },
+  {
+    "at": 14013,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 441
+  },
+  {
+    "at": 14074,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 541,
+    "count": 2
+  },
+  {
+    "at": 14139,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 600
+  },
+  {
+    "at": 14155,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 480,
+    "count": 2
+  },
+  {
+    "at": 14380,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 392
+  },
+  {
+    "at": 14399,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 491
+  },
+  {
+    "at": 14414,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 411
+  },
+  {
+    "at": 14414,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 489
+  },
+  {
+    "at": 14454,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 441
+  },
+  {
+    "at": 14511,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 436
+  },
+  {
+    "at": 14569,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 429
+  },
+  {
+    "at": 14724,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 569
+  },
+  {
+    "at": 14815,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 435
+  },
+  {
+    "at": 14875,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 476
+  },
+  {
+    "at": 14924,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 510
+  },
+  {
+    "at": 14959,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 448
+  },
+  {
+    "at": 15013,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 559
+  },
+  {
+    "at": 15069,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 655
+  },
+  {
+    "at": 15182,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 458
+  },
+  {
+    "at": 15334,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 459
+  },
+  {
+    "at": 15439,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 514,
+    "count": 2
+  },
+  {
+    "at": 15448,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 632
+  },
+  {
+    "at": 15449,
+    "method": "GET",
+    "path": "/functions/v1/portal/appointments",
+    "status": 200,
+    "elapsed": 489
+  },
+  {
+    "at": 15488,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 419
+  },
+  {
+    "at": 15575,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 1006
+  },
+  {
+    "at": 15937,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 488
+  },
+  {
+    "at": 15995,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 16016,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 16017,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 459
+  },
+  {
+    "at": 16075,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 587,
+    "count": 2
+  },
+  {
+    "at": 16139,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 564
+  },
+  {
+    "at": 16301,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 853
+  },
+  {
+    "at": 16413,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 476
+  },
+  {
+    "at": 16488,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 830
+  },
+  {
+    "at": 16494,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 467
+  },
+  {
+    "at": 16497,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 470
+  },
+  {
+    "at": 16504,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 477
+  },
+  {
+    "at": 16557,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 482
+  },
+  {
+    "at": 16614,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 475
+  },
+  {
+    "at": 16816,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 514
+  },
+  {
+    "at": 17225,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 812
+  },
+  {
+    "at": 17344,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 850
+  },
+  {
+    "at": 17369,
+    "method": "GET",
+    "path": "/functions/v1/portal/retention",
+    "status": 200,
+    "elapsed": 881
+  },
+  {
+    "at": 17370,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 756
+  },
+  {
+    "at": 17375,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 818
+  },
+  {
+    "at": 17381,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 877
+  },
+  {
+    "at": 17429,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 932,
+    "count": 2
+  },
+  {
+    "at": 17803,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 428
+  },
+  {
+    "at": 17820,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 595
+  },
+  {
+    "at": 17826,
+    "method": "GET",
+    "path": "/functions/v1/portal/appointments",
+    "status": 200,
+    "elapsed": 456
+  },
+  {
+    "at": 17882,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 512
+  },
+  {
+    "at": 17907,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 562
+  },
+  {
+    "at": 17907,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 1091
+  },
+  {
+    "at": 18245,
+    "method": "GET",
+    "path": "/functions/v1/portal/team",
+    "status": 200,
+    "elapsed": 443
+  },
+  {
+    "at": 18279,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 459
+  },
+  {
+    "at": 18349,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/messages",
+    "status": 200,
+    "elapsed": 523,
+    "count": 2
+  },
+  {
+    "at": 18428,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 520
+  },
+  {
+    "at": 18493,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 18493,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 418
+  },
+  {
+    "at": 18513,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 18794,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 548
+  },
+  {
+    "at": 19153,
+    "method": "POST",
+    "path": "/functions/v1/portal/threads/756b4312-53c8-482e-a0ac-4fb9890d848c/read",
+    "status": 204,
+    "elapsed": 802
+  },
+  {
+    "at": 19334,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 444
+  },
+  {
+    "at": 19373,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 19373,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 19690,
+    "method": "GET",
+    "path": "/functions/v1/portal/clients",
+    "status": 200,
+    "elapsed": 434
+  },
+  {
+    "at": 19900,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 645
+  },
+  {
+    "at": 19903,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 647
+  },
+  {
+    "at": 19921,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 665
+  },
+  {
+    "at": 20137,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 20150,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 20303,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 589
+  },
+  {
+    "at": 20438,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 747
+  },
+  {
+    "at": 20484,
+    "method": "GET",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 200,
+    "elapsed": 584
+  },
+  {
+    "at": 20739,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 930
+  },
+  {
+    "at": 20794,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 479
+  },
+  {
+    "at": 20807,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 492
+  },
+  {
+    "at": 20850,
+    "method": "GET",
+    "path": "/functions/v1/portal/threads",
+    "status": 200,
+    "elapsed": 535
+  },
+  {
+    "at": 20986,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 426
+  },
+  {
+    "at": 21052,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 21072,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 21370,
+    "method": "GET",
+    "path": "/functions/v1/portal/files",
+    "status": 200,
+    "elapsed": 631
+  },
+  {
+    "at": 21878,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 489
+  },
+  {
+    "at": 21935,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 21970,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 22729,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 522
+  },
+  {
+    "at": 22888,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 22921,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 23583,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 563
+  },
+  {
+    "at": 24864,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 1023
+  },
+  {
+    "at": 24977,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 24996,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 25606,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 1667
+  },
+  {
+    "at": 26120,
+    "method": "GET",
+    "path": "/functions/v1/portal/activity",
+    "status": 200,
+    "elapsed": 1246
+  },
+  {
+    "at": 26126,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 1252
+  },
+  {
+    "at": 26143,
+    "method": "GET",
+    "path": "/functions/v1/portal/users/756b4312-53c8-482e-a0ac-4fb9890d848c",
+    "status": 200,
+    "elapsed": 1269
+  },
+  {
+    "at": 30773,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 30781,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 32353,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 1612
+  },
+  {
+    "at": 32995,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 2151
+  },
+  {
+    "at": 33789,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 433
+  },
+  {
+    "at": 34368,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_profiles"
+  },
+  {
+    "at": 34633,
+    "transport": "websocket",
+    "event": "phx_reply",
+    "status": "ok"
+  },
+  {
+    "at": 34677,
+    "transport": "websocket",
+    "event": "system",
+    "status": "ok"
+  },
+  {
+    "at": 35023,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 551
+  },
+  {
+    "at": 35024,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 601
+  },
+  {
+    "at": 35435,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 1098
+  },
+  {
+    "at": 35545,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/slots",
+    "status": 200,
+    "elapsed": 507
+  },
+  {
+    "at": 37188,
+    "method": "POST",
+    "path": "/functions/v1/portal/appointments/requests",
+    "status": 200,
+    "elapsed": 1009
+  },
+  {
+    "at": 37422,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_appointments"
+  },
+  {
+    "at": 37429,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_appointments"
+  },
+  {
+    "at": 37429,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 37430,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_appointments"
+  },
+  {
+    "at": 37430,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_appointments"
+  },
+  {
+    "at": 37430,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 37679,
+    "method": "GET",
+    "path": "/functions/v1/portal/booking/config",
+    "status": 200,
+    "elapsed": 389
+  },
+  {
+    "at": 38037,
+    "method": "GET",
+    "path": "/functions/v1/portal/session",
+    "status": 200,
+    "elapsed": 505
+  },
+  {
+    "at": 40263,
+    "method": "POST",
+    "path": "/functions/v1/portal/inquiries",
+    "status": 204,
+    "elapsed": 778
+  },
+  {
+    "at": 40489,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_activity"
+  },
+  {
+    "at": 40489,
+    "transport": "websocket",
+    "event": "postgres_changes",
+    "table": "portal_inquiries"
+  }
+]

@@ -3132,3 +3132,6 @@ button.p-attachment:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Google sign-in keeps identity consent separate from calendar access. */
+.p-google-auth{margin:24px 0 8px}.p-google{background:#fff!important;color:#1f1f1f!important;border:1px solid #c5cbd1!important;font-family:Arial,sans-serif;min-height:44px;gap:12px}.p-google:hover{background:#f7f9fc!important}.p-google svg{flex-shrink:0}.p-auth-divider{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;margin:22px 0}.p-auth-divider:before,.p-auth-divider:after{content:'';height:1px;background:var(--line-soft);flex:1}.p-google-auth .p-help{font-size:11px;margin-top:10px;line-height:1.6}

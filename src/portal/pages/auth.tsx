@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { api, PortalError } from '../api';
 import { useI18n } from '../i18n';
 import { useSession } from '../state';
 import { Button, Field, Fill } from '../ui';
 import { OpenLayout } from '../layout';
+import { GoogleSignIn } from '../GoogleSignIn';
 
 const home = (role: 'admin' | 'client') =>
   role === 'admin' ? '/admin/messages' : '/espace/messages';
@@ -12,7 +13,6 @@ const home = (role: 'admin' | 'client') =>
 export function LoginPage({ admin = false }: { admin?: boolean }) {
   const { t } = useI18n();
   const { user, setUser } = useSession();
-  const navigate = useNavigate();
   const [params] = useSearchParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,18 +35,6 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
     try {
       const signed = await api.signIn(address, secret);
       setUser(signed);
-      const next = params.get('suite');
-      navigate(
-        next &&
-          new RegExp(
-            `^/${signed.role === 'admin' ? 'admin' : 'espace'}(?:/|$)`,
-          ).test(next)
-          ? next
-          : home(signed.role),
-        {
-          replace: true,
-        },
-      );
     } catch (e) {
       const code = e instanceof PortalError ? e.code : 'network';
       setError(t.errors[code as keyof typeof t.errors] ?? t.errors.generic);
@@ -62,6 +50,7 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
         </p>
         <h1>{t.auth.loginTitle}</h1>
         <p className="p-lead">{t.auth.loginLead}</p>
+        <GoogleSignIn admin={admin} disabled={busy} />
         <form
           className="p-form"
           onSubmit={(event) => {
@@ -119,7 +108,6 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
 export function RegisterPage() {
   const { t, locale } = useI18n();
   const { user, setUser } = useSession();
-  const navigate = useNavigate();
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -156,7 +144,6 @@ export function RegisterPage() {
       const created = await api.signUp({ ...form, locale });
       if (created) {
         setUser(created);
-        navigate('/espace/messages', { replace: true });
       } else setVerificationSent(true);
     } catch (e) {
       const code = e instanceof PortalError ? e.code : 'network';
@@ -183,6 +170,7 @@ export function RegisterPage() {
         <p className="p-eyebrow">{t.common.clientArea}</p>
         <h1>{t.auth.registerTitle}</h1>
         <p className="p-lead">{t.auth.registerLead}</p>
+        <GoogleSignIn disabled={busy} />
         <form
           className="p-form"
           noValidate

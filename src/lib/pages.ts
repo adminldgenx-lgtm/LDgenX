@@ -4,6 +4,7 @@ import { imageUrl, socialImageUrl } from './images';
 import { heroPosterPreload } from './hero';
 import { bases, localeOf, locales, routesFor, type Locale } from './routes';
 import { listedExpertises } from './expertises';
+import { editorialHead } from '../editorial/meta';
 
 export type PageKind =
   | 'home'
@@ -33,6 +34,7 @@ export type PageKind =
   | 'terms'
   | 'not-found';
 export interface PageMeta {
+  editorial?: import('../../supabase/functions/_shared/editorial').EditorialSummary;
   path: string;
   title: string;
   description: string;
@@ -767,6 +769,7 @@ export const escapeHtml = (value: string) =>
 /** The page's head: title, description, robots, canonical, language versions, social cards and
  *  structured data. `lastmod` (server only) dates the page's last change. */
 export function renderHead(meta: PageMeta, lastmod?: string) {
+  if (meta.editorial) return editorialHead(meta);
   const title = escapeHtml(meta.title),
     description = escapeHtml(meta.description),
     url = escapeHtml(company.origin + meta.path);

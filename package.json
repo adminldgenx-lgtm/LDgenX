@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1 --port 5173",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "build": "npm run typecheck && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs",
+    "build": "npm run typecheck && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs && node scripts/build-editorial-worker.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "check:html": "node scripts/check-html.mjs",
     "check:http": "node scripts/check-http.mjs",
@@ -34,13 +34,30 @@
     "supabase:email": "node scripts/configure-supabase-email.mjs",
     "supabase:production-domain": "node scripts/configure-production-domain.mjs",
     "check:production-config": "node scripts/check-production-config.mjs",
-    "check:production-domain": "node scripts/check-production-domain.mjs"
+    "check:production-domain": "node scripts/check-production-domain.mjs",
+    "check:editorial": "node scripts/prepare-editorial.mjs && deno check supabase/functions/editorial/index.ts && deno test --allow-read=.prerender tests/editorial.test.ts",
+    "supabase:editorial-setup": "node scripts/setup-editorial.mjs",
+    "supabase:editorial-deploy": "node scripts/deploy-editorial.mjs",
+    "check:editorial-api": "node scripts/check-editorial-api.mjs",
+    "check:editorial-browser": "node scripts/check-editorial-browser.mjs",
+    "check:editorial-render": "node scripts/check-editorial-render.mjs",
+    "supabase:google-auth": "node scripts/configure-google-auth.mjs",
+    "check:google-auth": "node scripts/check-google-provider.mjs",
+    "check:google-browser": "node scripts/check-google-browser.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/manrope": "^5.2.8",
     "@supabase/supabase-js": "^2.118.0",
     "@tailwindcss/vite": "^4.1.13",
+    "@tiptap/core": "^3.32.1",
+    "@tiptap/extension-placeholder": "^3.32.1",
+    "@tiptap/extension-subscript": "^3.32.1",
+    "@tiptap/extension-superscript": "^3.32.1",
+    "@tiptap/extension-table": "^3.32.1",
+    "@tiptap/pm": "^3.32.1",
+    "@tiptap/react": "^3.32.1",
+    "@tiptap/starter-kit": "^3.32.1",
     "lucide-react": "^0.468.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -62,6 +79,7 @@
     "supabase": "^2.122.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "wrangler": "^4.155.0"
   }
 }

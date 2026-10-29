@@ -4,7 +4,7 @@ import globals from 'globals';
 
 export default tseslint.config(
   // ldgenx-atlas-2d holds the reference assets and preview of the applications atlas.
-  { ignores: ['dist/**', '.prerender/**', 'node_modules/**', 'ldgenx-atlas-2d/**'] },
+  { ignores: ['dist/**', '.prerender/**', '.wrangler/**', 'node_modules/**', 'ldgenx-atlas-2d/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

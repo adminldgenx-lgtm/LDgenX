@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-29T15:48:42.683Z",
+  "checks": [
+    "fr: mobile button starts real Supabase/Google PKCE handoff with identity scopes only",
+    "fr: cancelled Google consent returns a usable login page",
+    "en: mobile button starts real Supabase/Google PKCE handoff with identity scopes only",
+    "en: cancelled Google consent returns a usable login page"
+  ],
+  "errors": [],
+  "limitation": "Tests stop at Google account consent; no real user Google account was impersonated."
+}

@@ -8,6 +8,7 @@ import { FinalCTA, PageHero, Reveal } from '../components/ui';
 import { useEntrance } from '../components/motion';
 import { AmbientField } from '../components/AmbientField';
 import { RichText } from '../components/Figure';
+import { useEditorial } from '../editorial/context';
 
 /* Reference pages: frequently asked questions, the glossary and the site map. Their text is in
    the page's HTML from the start (answers inside <details> are part of the document), so search
@@ -154,6 +155,7 @@ export function GlossaryPage({ meta }: { meta: PageMeta }) {
 
 /** Every page of the site, grouped as in the navigation: a path for readers and for crawlers. */
 export function SiteMapPage({ meta }: { meta: PageMeta }) {
+  const editorial = useEditorial().index.filter((r) => r.locale === meta.locale && r.status === 'published' && !r.legacyId);
   const catalog = useCatalog();
   const { knowledge, ui, copy } = catalog;
   const r = useRoutes();
@@ -233,6 +235,10 @@ export function SiteMapPage({ meta }: { meta: PageMeta }) {
       ],
     },
   ];
+  for (const row of editorial) {
+    const title = row.kind === 'study' ? g.studies : row.kind === 'publication' ? g.research : g.resources;
+    groups.find((group) => group.title === title)?.links.push({ to: row.path, label: row.title, meta: row.category });
+  }
   return (
     <>
       <PageHero

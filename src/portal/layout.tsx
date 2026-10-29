@@ -14,6 +14,7 @@ import {
   UserRound,
   Users,
   X,
+  BookOpen,
 } from 'lucide-react';
 import { api } from './api';
 import { useI18n } from './i18n';
@@ -303,7 +304,7 @@ export function ClientShell() {
 }
 
 export function AdminShell() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { user } = useSession();
   const location = useLocation();
   const admin = user?.role === 'admin';
@@ -340,6 +341,11 @@ export function AdminShell() {
       home="/admin/messages"
       account="/admin/compte"
       items={[
+        {
+          to: '/admin/contenus',
+          label: locale === 'fr' ? 'Contenus' : 'Content',
+          icon: <BookOpen size={19} aria-hidden="true" />,
+        },
         {
           to: '/admin/messages',
           label: t.nav.messages,

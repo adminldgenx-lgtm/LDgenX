@@ -10,6 +10,8 @@ import { imageUrl, imageWidths } from '../lib/images';
 import { clientPhotos } from '../content/client-photos';
 import { equipmentMedia } from '../content/equipment-media';
 import { licensedPhotos } from '../content/licensed-photos';
+import { useEditorial } from '../editorial/context';
+import { MediaImage } from '../editorial/media-view';
 
 export function Reveal({
   children,
@@ -51,6 +53,8 @@ export function Photo({
   const phase = useEntrance(ref);
   const widths = imageWidths(name);
   const { ui } = useCatalog();
+  const editorial = useEditorial().index.find((r) => name === `cms-entry:${r.id}`);
+  if (editorial?.cover) return <MediaImage image={editorial.cover} media={editorial.coverMedia} className={`photo ${className}`} eager={eager} sizes={sizes} />;
   // Credits are listed in the legal notice, not printed on the pictures.
   const metadata = clientPhotos[name] ?? equipmentMedia[name] ?? licensedPhotos[name];
   const picture = (

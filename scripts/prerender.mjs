@@ -56,6 +56,7 @@ const withLang = (html, locale) =>
   html
     .replace('<html lang="fr">', `<html lang="${catalogs[locale].ui.htmlLang}">`)
     .replace('</head>', `${preloads[locale]}</head>`);
+await writeFile('.prerender/editorial-templates.json', JSON.stringify({ fr: withLang(template, 'fr'), en: withLang(template, 'en') }));
 // Each page's date of last change: kept from one build to the next while its content stays the
 // same (data/lastmod.json), so sitemaps and structured data date real changes only.
 const lastmodFile = path.resolve('data/lastmod.json');
@@ -77,7 +78,8 @@ for (const page of pages) {
     file,
     withLang(template, page.locale)
       .replace('<!--app-html-->', output.html)
-      .replace('<!--seo-head-->', head),
+      .replace('<!--seo-head-->', head)
+      .replace('</body>', '<script id="ldgenx-editorial" type="application/json">{"index":[],"document":null}</script></body>'),
   );
 }
 await writeFile(lastmodFile, `${JSON.stringify(dates, null, 2)}\n`);
@@ -141,9 +143,10 @@ const policy = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  `img-src 'self' data: blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
   "font-src 'self'",
-  "media-src 'self'",
+  `media-src 'self' blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
+  'frame-src https://www.youtube-nocookie.com https://player.vimeo.com',
   `connect-src 'self'${contactOrigin}${supabaseOrigin}`,
   "object-src 'none'",
   "base-uri 'self'",

@@ -5,7 +5,7 @@ import { PhotoStack, TextLink } from '../components/ui';
 import { usePresence } from '../components/motion';
 import { useCatalog, useRoutes, useLocale, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
-import { getPage } from '../lib/pages';
+import { usePublicMeta } from '../editorial/context';
 import { loadCatalog } from '../content/catalog';
 import { AccountLink } from './AccountLink';
 import { listedExpertises } from '../lib/expertises';
@@ -69,7 +69,7 @@ export function Header() {
   const location = useLocation();
   // On the homepage the header is transparent at the top of the dark hero, deep navy while the
   // hero scrolls beneath it, and back to its usual light style once the hero has passed.
-  const meta = getPage(location.pathname);
+  const meta = usePublicMeta(location.pathname);
   const isHome = meta.kind === 'home';
   // The same page in the other language, or that language's homepage.
   const other: Locale = meta.locale === 'fr' ? 'en' : 'fr';

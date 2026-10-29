@@ -115,3 +115,5 @@ Le compte administrateur est `admin.ldgenx@gmail.com` ; son mot de passe a été
 ## Avant la mise en ligne
 
 Consulter le [rapport préproduction du 26 octobre](docs/PRE-PROD-REVIEW-2026-10-26.md) pour les corrections, les contrôles réussis et les points restant à finaliser (CGV et e-mails). Les sources et l’historique éditorial sont dans [docs/CONTENT-SOURCES.md](docs/CONTENT-SOURCES.md). La migration des contenus de ldgenx.fr et ldgenx.com, la table des adresses et les décisions attendues du client sont dans [docs/MIGRATION.md](docs/MIGRATION.md). La reconstruction locale ne déploie pas le site officiel.
+
+The scientific content editor is available at `/admin/contenus`; its media library is at `/admin/medias`. See [the editorial guide](docs/EDITORIAL.md) for drafts, review, publication, scientific references, WebP/video limits and maintenance. Existing bilingual content is imported as private working copies, without replacing the current public pages until an administrator publishes. [Google identity setup and calendar status](docs/GOOGLE.md) are documented separately.

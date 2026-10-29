@@ -16,6 +16,8 @@ import { AmbientField } from '../components/AmbientField';
 import { AnimatedHeading, useNearViewport, useSeen } from '../components/motion';
 import { DecodeOnce } from '../components/Decode';
 import { Figure, RichText } from '../components/Figure';
+import { EditorialCards } from '../editorial/PublicDocument';
+import { useEditorial } from '../editorial/context';
 
 /** A title marked for display (*Latin names*), as plain text. */
 export const plainTitle = (text: string) => text.replace(/\*/g, '');
@@ -106,7 +108,8 @@ function FeaturedResearch({ items }: { items: ResearchFeatured[] }) {
     setActive(next);
     tabs.current[next]?.focus();
   };
-  const item = items[active];
+  const item = items[active] ?? items[0];
+  if (!item) return null;
   const publication = research.publications.find((p) => p.id === item.publication)!;
   const service = services.find((s) => s.id === publication.services[0]);
   return (
@@ -411,10 +414,13 @@ function Catalogue({
   useEffect(() => setDraft(query), [query]);
 
   const authors = people.filter((p) => research.publications.some((x) => x.members.includes(p.id)));
-  const years = [...new Set(research.publications.map((p) => p.year))].sort((a, b) => b - a);
   const themes = Object.keys(t.themes);
   const expertiseTitle = services.find((s) => s.id === expertise)?.title;
   const applicationTitle = applications.find((sector) => sector.id === application)?.title;
+  const { index } = useEditorial();
+  const extra = index.filter((p) => !p.legacyId && p.status === 'published' && p.kind === 'publication' && p.locale === ui.lang);
+  const years = [...new Set([...research.publications.map((p) => p.year), ...extra.map((p) => Number(p.year)).filter(Boolean)])].sort((a,b) => b-a);
+  const extraItems = extra.filter((p) => (!theme || p.category === t.themes[theme]) && (!author || fold(p.author).includes(fold(people.find((x) => x.id === author)?.name.split(' ').at(-1) ?? author))) && (!year || p.year === year) && !expertise && !application && fold(`${p.title} ${p.summary} ${p.author} ${p.journal}`).includes(fold(query.trim())));
 
   const items = useMemo(() => {
     const needle = fold(query.trim());
@@ -554,7 +560,7 @@ function Catalogue({
           )}
         </div>
         <p className="research-count" aria-live="polite">
-          {t.count(items.length)}
+          {t.count(items.length + extraItems.length)}
         </p>
         {items.length ? (
           <ol className="research-list" key={signature} data-preview={preview || undefined}>
@@ -567,7 +573,7 @@ function Catalogue({
               />
             ))}
           </ol>
-        ) : (
+        ) : extraItems.length ? null : (
           <div className="research-empty">
             <p>{t.empty}</p>
             <button
@@ -579,6 +585,7 @@ function Catalogue({
             </button>
           </div>
         )}
+        <EditorialCards kind="publication" entries={extraItems} />
       </div>
     </section>
   );

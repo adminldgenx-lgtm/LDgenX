@@ -11,7 +11,7 @@ export function AccountLink() {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    if (!portalEnabled) return;
+    if (import.meta.env.SSR || !portalEnabled) return;
     let disposed = false;
     let unsubscribe: (() => void) | undefined;
     // Load Auth in the browser only: prerendered pages always start with the sign-in link.

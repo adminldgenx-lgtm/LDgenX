@@ -56,8 +56,8 @@ function groupFor(page: PageMeta): FooterGroup {
 }
 
 /** Real, current public pages only. Portal routes and historical redirects are not a directory. */
-export function footerDirectory(locale: Locale) {
-  const pages = pagePaths.filter((path) => localeOf(path) === locale).map(getPage);
+export function footerDirectory(locale: Locale, currentPages?: PageMeta[]) {
+  const pages = currentPages ? currentPages.filter((p) => p.locale === locale) : pagePaths.filter((path) => localeOf(path) === locale).map(getPage);
   return groupOrder.map((key) => ({
     key,
     pages: pages.filter((page) => groupFor(page) === key),
