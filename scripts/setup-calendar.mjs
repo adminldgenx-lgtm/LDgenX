@@ -17,21 +17,25 @@ if (!credentials.GOOGLE_CALENDAR_ENCRYPTION_KEY)
 if (!credentials.GOOGLE_CALENDAR_JOB_SECRET)
   generated.GOOGLE_CALENDAR_JOB_SECRET = randomBytes(32).toString("hex");
 if (Object.keys(generated).length) await saveCredentials(generated);
-const version = "20261029140000";
-if (
-  !(
+for (const [version, name] of [
+  ["20261029140000", "google_calendar"],
+  ["20261029210000", "google_calendar_blocks"],
+]) {
+  if (
+    !(
+      await query(
+        `select version from supabase_migrations.schema_migrations where version=${literal(version)}`,
+      )
+    ).length
+  ) {
+    const migration = await readFile(
+      `supabase/migrations/${version}_${name}.sql`,
+      "utf8",
+    );
     await query(
-      `select version from supabase_migrations.schema_migrations where version=${literal(version)}`,
-    )
-  ).length
-) {
-  const migration = await readFile(
-    `supabase/migrations/${version}_google_calendar.sql`,
-    "utf8",
-  );
-  await query(
-    `begin; ${migration}\n insert into supabase_migrations.schema_migrations(version,name,statements) values(${literal(version)},'google_calendar',array[${literal(migration)}]); commit;`,
-  );
+      `begin; ${migration}\n insert into supabase_migrations.schema_migrations(version,name,statements) values(${literal(version)},${literal(name)},array[${literal(migration)}]); commit;`,
+    );
+  }
 }
 await management(
   "/secrets",

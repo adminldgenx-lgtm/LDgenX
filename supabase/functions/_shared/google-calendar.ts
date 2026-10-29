@@ -4,6 +4,7 @@ import type { Appointment, BookingConfig, TimeBlock } from "./types.ts";
 import {
   CalendarError,
   appointmentGoogleEvents,
+  blockGoogleEvents,
   googleEventSpans,
   type GoogleEvent,
 } from "./calendar.ts";
@@ -199,6 +200,14 @@ export async function externalCalendarBusy(
     }
     const known =
       await sql`select e.calendar_id,e.event_id,e.kind,e.appointment_id,a.data from private.google_calendar_events e join public.portal_appointments a on a.id=e.appointment_id`;
+    const knownBlocks =
+      await sql`select * from private.google_calendar_block_events`;
+    const desiredBlocks = config.blocks.flatMap((block) =>
+      blockGoogleEvents(block, config, connection.managed).map((event) => ({
+        blockId: block.id,
+        event,
+      })),
+    );
     for (const host of hosts) {
       const calendar = connection.managed[host.id];
       if (!calendar) {
@@ -263,6 +272,30 @@ export async function externalCalendarBusy(
         )
           await sql`insert into private.google_calendar_outbox(appointment_id) values(${item.row.appointment_id}) on conflict(appointment_id) do nothing`;
       }
+      for (const row of knownBlocks.filter((r) => r.calendar_id === calendar)) {
+        const expected = desiredBlocks.find(
+          (d) => d.blockId === row.block_id && d.event.hostId === row.host_id,
+        )?.event;
+        const actual = events.find((e) => e.id === row.event_id);
+        const matches =
+          expected &&
+          actual &&
+          actual.status !== "cancelled" &&
+          actual.transparency !== "transparent" &&
+          actual.start?.dateTime &&
+          actual.end?.dateTime &&
+          Date.parse(actual.start.dateTime) ===
+            Date.parse(expected.body.start.dateTime) &&
+          Date.parse(actual.end.dateTime) ===
+            Date.parse(expected.body.end.dateTime);
+        if (matches) knownIds.add(String(row.event_id));
+        else if (
+          !expected ||
+          (Date.parse(expected.body.start.dateTime) < Date.parse(to) &&
+            Date.parse(expected.body.end.dateTime) > Date.parse(from))
+        )
+          await sql`insert into private.google_calendar_block_outbox(block_id) values(${row.block_id}) on conflict(block_id) do nothing`;
+      }
       blocks.push(...googleEventSpans(events, knownIds, host.id));
     }
     if (recordHealth)
@@ -277,10 +310,33 @@ export async function externalCalendarBusy(
 export async function enqueueCalendarAppointment(sql: Sql, id: string) {
   await sql`insert into private.google_calendar_outbox(appointment_id) select ${id}::uuid where exists(select 1 from private.google_calendar_connection where id=true and enabled) on conflict(appointment_id) do update set revision=now(),attempts=0,next_attempt_at=now(),last_error=null`;
 }
+export async function enqueueCalendarBlocks(
+  sql: Sql,
+  config: BookingConfig,
+  previous?: BookingConfig,
+) {
+  const [connection] =
+    await sql`select enabled from private.google_calendar_connection where id=true`;
+  if (!connection?.enabled) return;
+  const mapped =
+    await sql`select distinct block_id from private.google_calendar_block_events`;
+  const ids = [
+    ...new Set([
+      ...config.blocks.map((b) => b.id),
+      ...(previous?.blocks ?? []).map((b) => b.id),
+      ...mapped.map((r) => String(r.block_id)),
+    ]),
+  ];
+  if (ids.length) {
+    await sql`insert into private.google_calendar_block_outbox ${sql(ids.map((block_id) => ({ block_id })))} on conflict(block_id) do update set revision=now(),attempts=0,next_attempt_at=now(),last_error=null`;
+  }
+}
 // Deterministic replacement IDs make retries safe even after Google retains a deleted-event tombstone.
 export async function upsertCalendarEvent(
   token: string,
-  event: ReturnType<typeof appointmentGoogleEvents>[number],
+  event:
+    | ReturnType<typeof appointmentGoogleEvents>[number]
+    | ReturnType<typeof blockGoogleEvents>[number],
   revision: string | Date,
 ) {
   const write = async () => {
@@ -309,7 +365,7 @@ export async function upsertCalendarEvent(
   } catch (error) {
     if (!(error instanceof CalendarError && error.code === "google_410"))
       throw error;
-    event.eventId = `ldg${event.body.extendedProperties.private.ldgenxAppointment.replaceAll("-", "")}${event.kind === "main" ? 0 : 1}${new Date(revision).getTime()}`;
+    event.eventId = `${event.baseEventId}${new Date(revision).getTime()}`;
     event.body.id = event.eventId;
     await write();
   }
@@ -335,8 +391,8 @@ export async function runCalendarSync(sql: Sql, onlyId?: string) {
       return;
     }
     const jobs = onlyId
-      ? await tx`select * from private.google_calendar_outbox where appointment_id=${onlyId} and next_attempt_at<=now() limit 1`
-      : await tx`select * from private.google_calendar_outbox where next_attempt_at<=now() order by revision limit 10`;
+      ? await tx`select appointment_id,revision::text as revision from private.google_calendar_outbox where appointment_id=${onlyId} and next_attempt_at<=now() limit 1`
+      : await tx`select appointment_id,revision::text as revision from private.google_calendar_outbox where next_attempt_at<=now() order by revision limit 5`;
     for (const job of jobs) {
       if (Date.now() - started > 20000) break;
       try {
@@ -382,19 +438,74 @@ export async function runCalendarSync(sql: Sql, onlyId?: string) {
           await upsertCalendarEvent(token, event, job.revision);
           await tx`insert into private.google_calendar_events(appointment_id,kind,calendar_id,event_id) values(${job.appointment_id},${event.kind},${event.calendarId},${event.eventId}) on conflict(appointment_id,kind) do update set calendar_id=excluded.calendar_id,event_id=excluded.event_id`;
         }
-        await tx`delete from private.google_calendar_outbox where appointment_id=${job.appointment_id} and revision=${job.revision}`;
+        await tx`delete from private.google_calendar_outbox where appointment_id=${job.appointment_id} and revision::text=${job.revision}::text`;
         synced++;
       } catch (error) {
         const code =
           error instanceof CalendarError ? error.code : "google_unavailable";
-        await tx`update private.google_calendar_outbox set attempts=attempts+1,last_error=${code},next_attempt_at=now()+least(900,power(2,least(attempts,6))*15)*interval '1 second' where appointment_id=${job.appointment_id} and revision=${job.revision}`;
+        await tx`update private.google_calendar_outbox set attempts=attempts+1,last_error=${code},next_attempt_at=now()+least(900,power(2,least(attempts,6))*15)*interval '1 second' where appointment_id=${job.appointment_id} and revision::text=${job.revision}::text`;
+        await tx`update private.google_calendar_connection set last_error=${code} where id=true`;
+      }
+    }
+    const [setting] =
+      await tx`select data from public.portal_settings where id='booking'`;
+    const config = setting.data as BookingConfig;
+    const blockJobs =
+      await tx`select block_id,revision::text as revision from private.google_calendar_block_outbox where next_attempt_at<=now() order by revision limit 5`;
+    for (const job of blockJobs) {
+      if (Date.now() - started > 20000) break;
+      try {
+        const block = config.blocks.find((b) => b.id === job.block_id);
+        const desired = block
+          ? blockGoogleEvents(block, config, conn.managed)
+          : [];
+        const old =
+          await tx`select * from private.google_calendar_block_events where block_id=${job.block_id}`;
+        for (const event of old)
+          if (
+            !desired.some(
+              (d) =>
+                d.hostId === event.host_id &&
+                d.calendarId === event.calendar_id,
+            )
+          ) {
+            try {
+              await calendarGoogleRequest(
+                token,
+                `/calendars/${encodeURIComponent(event.calendar_id)}/events/${encodeURIComponent(event.event_id)}?sendUpdates=none`,
+                "DELETE",
+              );
+            } catch (error) {
+              if (!(
+                error instanceof CalendarError &&
+                ["google_404", "google_410"].includes(error.code)
+              ))
+                throw error;
+            }
+            await tx`delete from private.google_calendar_block_events where block_id=${job.block_id} and host_id=${event.host_id}`;
+          }
+        for (const event of desired) {
+          const mapping = old.find(
+            (e) =>
+              e.host_id === event.hostId && e.calendar_id === event.calendarId,
+          );
+          if (mapping) event.body.id = event.eventId = String(mapping.event_id);
+          await upsertCalendarEvent(token, event, job.revision);
+          await tx`insert into private.google_calendar_block_events(block_id,host_id,calendar_id,event_id) values(${job.block_id},${event.hostId},${event.calendarId},${event.eventId}) on conflict(block_id,host_id) do update set calendar_id=excluded.calendar_id,event_id=excluded.event_id`;
+        }
+        await tx`delete from private.google_calendar_block_outbox where block_id=${job.block_id} and revision::text=${job.revision}::text`;
+        synced++;
+      } catch (error) {
+        const code =
+          error instanceof CalendarError ? error.code : "google_unavailable";
+        await tx`update private.google_calendar_block_outbox set attempts=attempts+1,last_error=${code},next_attempt_at=now()+least(900,power(2,least(attempts,6))*15)*interval '1 second' where block_id=${job.block_id} and revision::text=${job.revision}::text`;
         await tx`update private.google_calendar_connection set last_error=${code} where id=true`;
       }
     }
     if (synced)
-      await tx`update private.google_calendar_connection set last_sync_at=now(),last_error=case when exists(select 1 from private.google_calendar_outbox where last_error is not null) then last_error else null end where id=true`;
+      await tx`update private.google_calendar_connection set last_sync_at=now(),last_error=coalesce((select last_error from private.google_calendar_outbox where last_error is not null limit 1),(select last_error from private.google_calendar_block_outbox where last_error is not null limit 1)) where id=true`;
   });
   const [pending] =
-    await sql`select count(*)::int as count from private.google_calendar_outbox`;
+    await sql`select ((select count(*) from private.google_calendar_outbox)+(select count(*) from private.google_calendar_block_outbox))::int as count`;
   return { synced, pending: pending.count };
 }

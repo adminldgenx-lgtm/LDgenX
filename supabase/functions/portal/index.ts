@@ -314,6 +314,13 @@ function requestContext() {
           console.error("calendar_export_queued");
         }
       }
+      if (!isRead && path.startsWith("/booking")) {
+        try {
+          await runCalendarSync(sql);
+        } catch {
+          console.error("calendar_export_queued");
+        }
+      }
       return respond(result);
     } catch (e) {
       const err = e as { code?: string; message?: string };

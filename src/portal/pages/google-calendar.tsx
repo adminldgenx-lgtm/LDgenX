@@ -85,8 +85,8 @@ export function GoogleCalendarPanel() {
       <Card title={fr ? "Google Agenda" : "Google Calendar"}>
         <p>
           {fr
-            ? "Les rendez-vous LDgenX sont envoyés vers un agenda dédié par personne. Les indisponibilités Google bloquent les créneaux correspondants dans le portail."
-            : "LDgenX appointments are sent to a dedicated calendar per person. Google busy times block the corresponding portal slots."}
+            ? "Les rendez-vous et les créneaux bloqués dans LDgenX sont envoyés vers un agenda dédié par personne. Les indisponibilités Google bloquent les créneaux correspondants dans le portail."
+            : "LDgenX appointments and blocked times are sent to a dedicated calendar per person. Google busy times block the corresponding portal slots."}
         </p>
         <p className="p-help">
           {fr ? "Compte à autoriser : " : "Account to authorize: "}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29T21:09:36.989Z",
+  "checks": [
+    "Website API appointment creates a mapped Google event",
+    "Real Google event time matches the portal appointment",
+    "Website move updates the same Google event",
+    "Website cancellation removes the Google event",
+    "Whole-team block exports to every bookable person’s Google calendar",
+    "Real Google block events preserve times and their managed identity",
+    "Managed block copies are not imported as duplicate Google busy entries",
+    "Deleting the website block removes every managed Google copy",
+    "Connected status reports successful export with no pending work or error"
+  ],
+  "realGoogle": true,
+  "fixturesRemoved": true
+}

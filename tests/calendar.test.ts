@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { defaultBooking } from "../supabase/functions/_shared/defaults.ts";
-import { atMinutes, addDays, teamDay, weekdayOf, DAY } from "../supabase/functions/_shared/time.ts";
+import {
+  atMinutes,
+  addDays,
+  teamDay,
+  weekdayOf,
+  DAY,
+} from "../supabase/functions/_shared/time.ts";
 import {
   PortalService,
   type Repository,
@@ -14,6 +20,7 @@ import {
 } from "../supabase/functions/_shared/types.ts";
 import {
   appointmentGoogleEvents,
+  blockGoogleEvents,
   googleEventSpans,
   validateCalendarMap,
   CalendarError,
@@ -22,6 +29,7 @@ import {
   encryptCalendarCredentials,
   externalCalendarBusy,
   upsertCalendarEvent,
+  runCalendarSync,
 } from "../supabase/functions/_shared/google-calendar.ts";
 import type { Sql } from "npm:postgres@3.4.7";
 const id = "92efda45-aae8-400c-8191-3c480c4a8ee1";
@@ -239,7 +247,7 @@ test("deleted Google exports are recreated under deterministic replacement IDs a
   const requests: { url: string; method: string; body: unknown }[] = [];
   const event = appointmentGoogleEvents(fixture, managed)[0];
   const old = event.eventId;
-  const revision = "2026-10-29T16:00:00Z";
+  const revision = "2026-10-29 16:00:00.123456+00";
   const remote = new Map<string, unknown>();
   globalThis.fetch = async (input, init) => {
     const url = String(input);
@@ -272,6 +280,7 @@ test("deleted Google exports are recreated under deterministic replacement IDs a
     );
     assert.equal(first.eventId, retry.eventId);
     assert.notEqual(first.eventId, old);
+    assert.match(first.eventId, /^[a-v0-9]+$/);
     assert.equal(remote.size, 1);
     assert(requests.every((r) => r.url.endsWith("sendUpdates=none")));
   } finally {
@@ -311,6 +320,8 @@ test("live-busy bridge ignores only matching managed events; moved events block 
       return [connection];
     if (text.includes("select data from public.portal_settings"))
       return [{ data: config }];
+    if (text.includes("select * from private.google_calendar_block_events"))
+      return [];
     if (text.includes("select e.calendar_id"))
       return [
         {
@@ -384,4 +395,119 @@ test("an enabled disconnected calendar never silently falls back to unprotected 
   await assert.rejects(externalCalendarBusy(sql, iso(9), iso(12)), {
     code: "refresh_required",
   });
+});
+
+test("whole-team blocked times export to every bookable calendar without copying private reasons", () => {
+  const c = structuredClone(defaultBooking),
+    block = {
+      ...fixture,
+      id: "block-one",
+      hostId: null,
+      reason: "PRIVATE INTERNAL REASON",
+    };
+  const events = blockGoogleEvents(block, c, managed);
+  assert.equal(events.length, c.hosts.filter((h) => h.bookable).length);
+  assert.deepEqual(events.map((e) => e.hostId).sort(), [
+    "damien",
+    "emilie",
+    "maeva",
+  ]);
+  for (const event of events) {
+    assert.match(event.eventId, /^[a-v0-9]{5,1024}$/);
+    assert(!JSON.stringify(event).includes("PRIVATE"));
+    assert.equal(event.body.transparency, "opaque");
+    assert.equal(event.body.extendedProperties.private.ldgenxBlock, block.id);
+  }
+  assert.equal(
+    blockGoogleEvents({ ...block, hostId: "emilie" }, c, managed).length,
+    1,
+  );
+  assert.equal(
+    blockGoogleEvents({ ...block, hostId: "maxime" }, c, managed).length,
+    0,
+  );
+});
+test("administrators cannot schedule an appointment inside a portal blocked time", async () => {
+  const r = repo([]),
+    setting = r.setting;
+  r.setting = async (key) => {
+    const c = (await setting(key)) as typeof defaultBooking;
+    c.blocks = [block];
+    return c as never;
+  };
+  await assert.rejects(
+    new PortalService(r, {
+      id: "admin",
+      role: "admin",
+      status: "active",
+    } as User).scheduleAppointment({
+      typeId: "decouverte",
+      hostId: "maeva",
+      start: iso(10),
+      clientId: null,
+      guest: fixture.guest!,
+      topic: "",
+      meetingUrl: "",
+    }),
+    { code: "slot_taken" },
+  );
+});
+test("outbox acknowledgement preserves PostgreSQL microseconds instead of leaving successful exports pending", async () => {
+  Deno.env.set("GOOGLE_CALENDAR_ENCRYPTION_KEY", btoa("x".repeat(32)));
+  const credentials = await encryptCalendarCredentials({
+    accessToken: "MOCK",
+    refreshToken: "MOCK",
+    expiresAt: Date.now() + 3600000,
+  });
+  const revision = "2026-10-29 20:00:00.123456+00";
+  let pending = true;
+  const observed: unknown[] = [];
+  const tag = async (parts: TemplateStringsArray, ...values: unknown[]) => {
+    const text = parts.join("?");
+    if (text.includes("select * from private.google_calendar_connection"))
+      return [{ enabled: true, credentials, managed }];
+    if (text.includes("pg_try_advisory_xact_lock")) return [{ acquired: true }];
+    if (text.includes("select appointment_id"))
+      return pending
+        ? [
+            {
+              appointment_id: id,
+              revision: text.includes("revision::text")
+                ? revision
+                : new Date(revision),
+            },
+          ]
+        : [];
+    if (text.includes("select data from public.portal_appointments"))
+      return [{ data: fixture }];
+    if (text.includes("select * from private.google_calendar_events"))
+      return [];
+    if (text.includes("insert into private.google_calendar_events")) return [];
+    if (text.includes("delete from private.google_calendar_outbox")) {
+      observed.push(values[1]);
+      if (text.includes("revision::text") && values[1] === revision) pending = false;
+      return [];
+    }
+    if (text.includes("select data from public.portal_settings"))
+      return [{ data: structuredClone(defaultBooking) }];
+    if (text.includes("select block_id")) return [];
+    if (text.includes("update private.google_calendar_connection")) return [];
+    if (text.includes("select ((select count(*)"))
+      return [{ count: pending ? 1 : 0 }];
+    throw new Error("Unexpected SQL in outbox regression");
+  };
+  const sql = Object.assign(tag, {
+    begin: async (fn: (tx: Sql) => Promise<unknown>) =>
+      fn(sql as unknown as Sql),
+  }) as unknown as Sql;
+  const original = globalThis.fetch;
+  globalThis.fetch = async () => Response.json({ id: "exported" });
+  try {
+    const result = await runCalendarSync(sql, id);
+    assert.equal(result.synced, 1);
+    assert.equal(result.pending, 0);
+    assert.deepEqual(observed, [revision]);
+  } finally {
+    globalThis.fetch = original;
+  }
 });

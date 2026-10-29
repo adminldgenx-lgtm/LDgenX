@@ -13,6 +13,7 @@ import {
   calendarGoogleRequest,
   encryptCalendarCredentials,
   externalCalendarBusy,
+  enqueueCalendarBlocks,
   runCalendarSync,
 } from "../_shared/google-calendar.ts";
 import type { BookingConfig } from "../_shared/types.ts";
@@ -190,6 +191,10 @@ async function consumeCallback(url: URL, sql: Sql) {
       await tx`select pg_advisory_xact_lock(hashtextextended('booking',0))`;
       await tx`update private.google_calendar_connection set enabled=true,last_error=null,updated_at=now() where id=true`;
       await tx`insert into private.google_calendar_outbox(appointment_id) select id from public.portal_appointments where data->>'status' in ('requested','confirmed') and (data->>'end')::timestamptz>now()-interval '1 day' on conflict(appointment_id) do update set revision=now(),attempts=0,next_attempt_at=now(),last_error=null`;
+      await enqueueCalendarBlocks(
+        tx as unknown as Sql,
+        await booking(tx as unknown as Sql),
+      );
     });
     await runCalendarSync(sql);
   } finally {
@@ -261,7 +266,7 @@ Deno.serve(async (req) => {
       const [row] =
         await sql`select enabled,owner_email,credentials is not null as connected,managed,busy,last_sync_at,coalesce(last_busy_error,last_error) as last_error,last_busy_checked_at,refresh_expires_at from private.google_calendar_connection where id=true`;
       const [pending] =
-        await sql`select count(*)::int as count from private.google_calendar_outbox`;
+        await sql`select ((select count(*) from private.google_calendar_outbox)+(select count(*) from private.google_calendar_block_outbox))::int as count`;
       return respond({
         configured: ready(),
         expectedOwner: CALENDAR_OWNER,

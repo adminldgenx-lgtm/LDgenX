@@ -96,6 +96,7 @@ export function appointmentGoogleEvents(
       kind,
       calendarId,
       eventId,
+      baseEventId: eventId,
       body: {
         id: eventId,
         status: "confirmed",
@@ -122,4 +123,49 @@ export function appointmentGoogleEvents(
       },
     };
   });
+}
+
+/** A whole-team block has one managed copy in each bookable person's calendar. */
+export function blockGoogleEvents(
+  block: TimeBlock,
+  config: BookingConfig,
+  managed: Record<string, string>,
+) {
+  const eventId =
+    "ldgb" +
+    [...new TextEncoder().encode(block.id)]
+      .map((v) => v.toString(16).padStart(2, "0"))
+      .join("");
+  return config.hosts
+    .filter((h) => h.bookable && (!block.hostId || block.hostId === h.id))
+    .map((host) => {
+      const calendarId = managed[host.id];
+      if (!calendarId) throw new CalendarError("host_not_configured");
+      return {
+        kind: "block" as const,
+        hostId: host.id,
+        calendarId,
+        eventId,
+        baseEventId: eventId,
+        body: {
+          id: eventId,
+          status: "confirmed",
+          summary: "LDgenX · indisponibilité",
+          description: `Créneau bloqué dans le portail LDgenX.\nhttps://www.ldgenx.fr/admin/agenda\nRéférence : ${block.id}\nLes modifications et suppressions se font dans LDgenX.`,
+          start: {
+            dateTime: new Date(block.start).toISOString(),
+            timeZone: "Europe/Paris",
+          },
+          end: {
+            dateTime: new Date(block.end).toISOString(),
+            timeZone: "Europe/Paris",
+          },
+          transparency: "opaque",
+          extendedProperties: {
+            private: { ldgenxBlock: block.id, ldgenxHost: host.id },
+          },
+          reminders: { useDefault: false },
+        },
+      };
+    });
 }

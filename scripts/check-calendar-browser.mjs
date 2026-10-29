@@ -53,18 +53,27 @@ try {
   );
   check("Logged-out admin link preserves the Calendar tab after sign-in");
   await page.goto(origin + "/admin/parametres?onglet=google");
+  const [connection] = await query(
+    "select enabled,credentials is not null as connected from private.google_calendar_connection where id=true",
+  );
   await expect(
-    page.getByRole("button", { name: "Connecter Google Agenda", exact: true }),
+    page.getByRole("button", {
+      name: connection.connected
+        ? "Reconnecter Google"
+        : "Connecter Google Agenda",
+      exact: true,
+    }),
   ).toBeVisible();
-  await expect(
-    page.getByText("Synchronisation non activée", { exact: true }),
-  ).toBeVisible();
+  if (!connection.enabled)
+    await expect(
+      page.getByText("Synchronisation non activée", { exact: true }),
+    ).toBeVisible();
   check(
-    "Actual admin status shows an unconnected Calendar without claiming synchronization",
+    "Actual admin status accurately reflects the current Google connection",
   );
   await mkdir(output, { recursive: true });
   await page.screenshot({
-    path: output + "/calendar-not-connected-fr.png",
+    path: output + "/calendar-current-connection-fr.png",
     fullPage: true,
   });
   await expect
@@ -140,15 +149,15 @@ try {
       )
         .toISOString()
         .slice(0, 10);
-      return reply([
-        {
-          id: "google:qa:maeva",
-          hostId: "maeva",
+      return reply(
+        ["maeva", "emilie", "damien"].map((hostId) => ({
+          id: `google:qa:${hostId}`,
+          hostId,
           start: day + "T09:00:00Z",
           end: day + "T10:00:00Z",
           reason: "Google Calendar",
-        },
-      ]);
+        })),
+      );
     }
     return route.continue();
   });
@@ -213,13 +222,25 @@ try {
   check("Mobile settings fit without horizontal overflow");
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto(origin + "/admin/agenda");
-  await expect(
-    page.locator(".p-week-block").filter({ hasText: "Google Calendar" }),
-  ).toBeVisible();
-  await expect(
-    page.locator(".p-week-block").filter({ hasText: "Google Calendar" }),
-  ).toBeDisabled();
-  check("Google busy intervals are visible and read-only in agenda");
+  const googleBlocks = page
+    .locator(".p-week-block")
+    .filter({ hasText: "Google Calendar" });
+  await expect(googleBlocks).toHaveCount(3);
+  const boxes = [];
+  for (let i = 0; i < 3; i++) {
+    await expect(googleBlocks.nth(i)).toBeVisible();
+    await expect(googleBlocks.nth(i)).toBeDisabled();
+    boxes.push(await googleBlocks.nth(i).boundingBox());
+  }
+  boxes.sort((a, b) => a.x - b.x);
+  if (
+    boxes[0].x + boxes[0].width > boxes[1].x + 1 ||
+    boxes[1].x + boxes[1].width > boxes[2].x + 1
+  )
+    throw new Error("Google busy blocks obscure each other");
+  check(
+    "Simultaneous Google busy intervals remain visible in separate read-only lanes",
+  );
   await page.getByRole("radio", { name: "Month", exact: true }).click();
   await expect(
     page.locator(".p-month-more").filter({ hasText: "Google" }).first(),

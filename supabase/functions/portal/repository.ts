@@ -11,6 +11,7 @@ import { heldSpans } from '../_shared/availability.ts';
 import { portalSiteOrigin } from '../_shared/site.ts';
 import {
   enqueueCalendarAppointment,
+  enqueueCalendarBlocks,
   externalCalendarBusy,
 } from '../_shared/google-calendar.ts';
 
@@ -81,7 +82,19 @@ export function repository(
       return rows[0].data;
     },
     async setSetting(key, value) {
+      const previous =
+        key === 'booking'
+          ? (
+              await sql`select data from public.portal_settings where id='booking'`
+            )[0]?.data
+          : undefined;
       await sql`insert into public.portal_settings(id,data) values (${key},${sql.json(value as never)}) on conflict(id) do update set data=excluded.data`;
+      if (key === 'booking')
+        await enqueueCalendarBlocks(
+          sql,
+          value as import('../_shared/types.ts').BookingConfig,
+          previous,
+        );
     },
     async upload(file, path) {
       const { error } = await storage.storage

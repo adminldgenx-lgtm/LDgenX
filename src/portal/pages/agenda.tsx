@@ -645,41 +645,49 @@ function WeekGrid({
                     }}
                   />
                 ))}
-                {place(dayBlocks).map(({ item, top, height: h }) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    className="p-week-block"
-                    disabled={item.id.startsWith('google:')}
-                    style={{ top, height: h }}
-                    title={item.reason}
-                    onClick={async () => {
-                      if (item.id.startsWith('google:')) return;
-                      if (
-                        await confirm.ask(
-                          `${t.agenda.removeBlock} · ${item.reason || t.agenda.blocked}`,
-                          t.agenda.removeBlock,
+                {place(dayBlocks).map(
+                  ({ item, top, height: h, lane, lanes }) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      className="p-week-block"
+                      disabled={item.id.startsWith('google:')}
+                      style={{
+                        top,
+                        height: h,
+                        left: `calc(${(lane / lanes) * 100}% + 2px)`,
+                        width: `calc(${100 / lanes}% - 4px)`,
+                        right: 'auto',
+                      }}
+                      title={item.reason}
+                      onClick={async () => {
+                        if (item.id.startsWith('google:')) return;
+                        if (
+                          await confirm.ask(
+                            `${t.agenda.removeBlock} · ${item.reason || t.agenda.blocked}`,
+                            t.agenda.removeBlock,
+                          )
                         )
-                      )
-                        run(
-                          () => api.removeBlock(item.id),
-                          t.agenda.blockRemoved,
-                        );
-                    }}
-                  >
-                    <Lock size={12} aria-hidden="true" />{' '}
-                    {item.reason || t.agenda.blocked}
-                    {item.hostId && (
-                      <>
-                        {' '}
-                        ·{' '}
-                        {config.hosts
-                          .find((x) => x.id === item.hostId)
-                          ?.name.replace(/^Dr /, '')}
-                      </>
-                    )}
-                  </button>
-                ))}
+                          run(
+                            () => api.removeBlock(item.id),
+                            t.agenda.blockRemoved,
+                          );
+                      }}
+                    >
+                      <Lock size={12} aria-hidden="true" />{' '}
+                      {item.reason || t.agenda.blocked}
+                      {item.hostId && (
+                        <>
+                          {' '}
+                          ·{' '}
+                          {config.hosts
+                            .find((x) => x.id === item.hostId)
+                            ?.name.replace(/^Dr /, '')}
+                        </>
+                      )}
+                    </button>
+                  ),
+                )}
                 {place(items.filter((i) => inDay(i.start))).map(
                   ({ item, top, height: h, lane, lanes }) => {
                     const a = item.appointment;

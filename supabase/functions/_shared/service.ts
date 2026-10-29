@@ -315,7 +315,16 @@ export class PortalService {
       date(start) >= date(end)
     )
       throw new PortalError('invalid_input');
-    // Team scheduling may go outside opening hours, but it still respects held appointments.
+    // Team scheduling may go outside opening hours, but must respect blocked time.
+    if (
+      c.blocks.some(
+        (b) =>
+          (!b.hostId || b.hostId === hostId) &&
+          Date.parse(start) < Date.parse(b.end) &&
+          Date.parse(end) > Date.parse(b.start),
+      )
+    )
+      throw new PortalError('slot_taken');
     if (
       (await this.db.list('appointments')).some(
         (a) =>
