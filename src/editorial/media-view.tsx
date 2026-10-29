@@ -102,7 +102,7 @@ export function ContentVideo({
             <button
               type="button"
               onClick={() => setPlay(true)}
-              aria-label={`${locale === "fr" ? "Lire" : "Play"} : ${title}`}
+              aria-label={`${locale === "fr" ? "Lire" : "Play"} : ${title}`}
             >
               <Play size={36} aria-hidden="true" />
               <strong>{title}</strong>

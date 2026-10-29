@@ -54,6 +54,7 @@ export const fr = {
     account_disabled: 'Ce compte est désactivé. Contactez LDgenX.',
     invalid_input: 'Vérifiez les informations saisies.',
     network: 'Le service ne répond pas. Réessayez dans un instant.',
+    calendar_unavailable: 'La disponibilité Google ne peut pas être vérifiée. Aucun créneau ne peut être réservé ou déplacé pour le moment. Contactez LDgenX ou réessayez plus tard.',
     generic: 'Une erreur est survenue.',
   },
   nav: {
@@ -381,7 +382,7 @@ export const fr = {
     deleteText: 'Pour supprimer votre compte et vos données, écrivez à {email}.',
   },
   settings: {
-    lead: 'Disponibilités pour les rendez-vous et suppression hebdomadaire des fichiers.',
+    lead: 'Disponibilités, connexion Google Agenda et conservation des fichiers.',
     availabilityTab: 'Disponibilités',
     filesTab: 'Fichiers',
     approval: 'Validation des demandes de rendez-vous',

@@ -151,7 +151,7 @@ function discovery(path: string, index: EditorialSummary[]) {
     const published = index.filter((r) => r.status === "published");
     if (published.length)
       text +=
-        "\n\n## Articles et études actualisés / Updated articles and studies\n\nLes contenus éditoriaux récents sont résumés ici ; le texte intégral et les références figurent aux adresses canoniques suivantes.\n\n" +
+        "\n\n## Articles et études actualisés / Updated articles and studies\n\nLes contenus éditoriaux récents sont résumés ici ; le texte intégral et les références figurent aux adresses canoniques suivantes.\n\n" +
         published
           .map(
             (r) =>
@@ -226,6 +226,49 @@ function response(
 export default {
   async fetch(request: Request, env: WorkerEnvironment) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/auth/google/callback") {
+      if (request.method !== "GET")
+        return new Response(null, {
+          status: 405,
+          headers: { Allow: "GET", "Cache-Control": "no-store" },
+        });
+      try {
+        const target = new URL(
+          `${__EDITORIAL_SUPABASE__.url}/functions/v1/calendar/callback`,
+        );
+        for (const key of ["state", "code", "error"]) {
+          const value = url.searchParams.get(key);
+          if (value) target.searchParams.set(key, value);
+        }
+        const upstream = await fetch(target, {
+          redirect: "manual",
+          signal: AbortSignal.timeout(90000),
+        });
+        const location = upstream.headers.get("Location");
+        if (
+          upstream.status !== 303 ||
+          !location?.startsWith(`${productionOrigin}/admin/parametres?`)
+        )
+          throw new Error("callback_unavailable");
+        return new Response(null, {
+          status: 303,
+          headers: {
+            Location: location,
+            "Cache-Control": "no-store",
+            "Referrer-Policy": "no-referrer",
+          },
+        });
+      } catch {
+        return new Response(null, {
+          status: 303,
+          headers: {
+            Location: `${productionOrigin}/admin/parametres?onglet=google&calendar=connection_failed`,
+            "Cache-Control": "no-store",
+            "Referrer-Policy": "no-referrer",
+          },
+        });
+      }
+    }
     const eligible =
       /^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)|^\/(?:api\/editorial\/|sitemap\.xml$|sitemaps\/|plan-du-site$|en\/site-map$|llms(?:-full)?\.txt$)/.test(
         url.pathname,

@@ -24,17 +24,19 @@ import {
   useConfirm,
 } from '../ui';
 import { nextPurgeAfter } from '../lib/retention';
+import { GoogleCalendarPanel } from './google-calendar';
 
-type Tab = 'availability' | 'files';
+type Tab = 'availability' | 'files' | 'google';
 
 export function SettingsPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [params, setParams] = useSearchParams();
   const retention = useData(() => api.getRetention(), []);
   const booking = useData(() => api.getBookingConfig(), []);
   const tabs: [Tab, string][] = [
     ['availability', t.settings.availabilityTab],
     ['files', t.settings.filesTab],
+    ['google', locale === 'fr' ? 'Google Agenda' : 'Google Calendar'],
   ];
   // An unknown tab in the address opens the first one.
   const tab =
@@ -54,6 +56,7 @@ export function SettingsPage() {
         aria-labelledby={`tab-${tab}`}
         className="p-tabpanel"
       >
+        {tab === 'google' && <GoogleCalendarPanel />}
         {tab === 'availability' &&
           (booking.error ? (
             <ErrorNote onRetry={booking.reload} />

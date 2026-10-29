@@ -5,6 +5,7 @@ import { PortalError, type User } from "../_shared/types.ts";
 import { repository } from "./repository.ts";
 import { runJobs } from "./jobs.ts";
 import { portalOrigins } from "../_shared/origins.ts";
+import { runCalendarSync } from "../_shared/google-calendar.ts";
 
 const projectUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -44,6 +45,7 @@ function requestContext() {
     rate_limited: 429,
     email_unavailable: 503,
     network: 503,
+    calendar_unavailable: 503,
   };
 
   async function handle(req: Request) {
@@ -296,6 +298,21 @@ function requestContext() {
         if (uploaded.length)
           await admin.storage.from("portal-files").remove(uploaded);
         throw e;
+      }
+      if (
+        !isRead &&
+        path.startsWith("/appointments") &&
+        result &&
+        typeof result === "object" &&
+        "id" in result
+      ) {
+        // The reservation is already committed. Export failures stay queued and must not
+        // turn a successful booking into an apparent failure that a client retries.
+        try {
+          await runCalendarSync(sql, String(result.id));
+        } catch {
+          console.error("calendar_export_queued");
+        }
       }
       return respond(result);
     } catch (e) {

@@ -414,7 +414,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         !a.getAttribute("href")!.startsWith("#") &&
         !window.confirm(
           l(
-            "Quitter avec des modifications non enregistrées ? Une copie locale de secours est conservée dans ce navigateur.",
+            "Quitter avec des modifications non enregistrées ? Une copie locale de secours est conservée dans ce navigateur.",
             "Leave with unsaved changes? A local recovery copy is kept in this browser.",
           ),
         )
@@ -683,7 +683,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               />
               <small>
                 {l(
-                  "Pour un nom latin dans le titre, entourez-le d’astérisques : *Dicentrarchus labrax*.",
+                  "Pour un nom latin dans le titre, entourez-le d’astérisques : *Dicentrarchus labrax*.",
                   "For a Latin name in the title, surround it with asterisks: *Dicentrarchus labrax*.",
                 )}
               </small>
@@ -863,7 +863,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             <h2>{l("Publication", "Publishing")}</h2>
             <p className="p-help">
               {l(
-                "Les enregistrements et restaurations modifient le brouillon uniquement. « Publier » diffuse explicitement cette version.",
+                "Les enregistrements et restaurations modifient le brouillon uniquement. « Publier » diffuse explicitement cette version.",
                 "Saving and restoring affect the draft only. “Publish” explicitly releases this version.",
               )}
             </p>
@@ -1255,7 +1255,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       <Dialog
         open={withdraw}
         onClose={() => !busy && setWithdraw(false)}
-        title={l("Retirer ce contenu du site ?", "Withdraw this content?")}
+        title={l("Retirer ce contenu du site ?", "Withdraw this content?")}
         footer={
           <>
             <Button
@@ -1294,7 +1294,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       >
         <p>
           {l(
-            "La page publique affichera « contenu retiré » et disparaîtra des listes, du pied de page et des sitemaps. Le brouillon et son historique restent disponibles.",
+            "La page publique affichera « contenu retiré » et disparaîtra des listes, du pied de page et des sitemaps. Le brouillon et son historique restent disponibles.",
             "The public page will show “content withdrawn” and disappear from listings, the footer and sitemaps. The draft and history remain available.",
           )}
         </p>
@@ -1302,7 +1302,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       <Dialog
         open={deleting}
         onClose={() => !busy && setDeleting(false)}
-        title={l("Supprimer ce brouillon ?", "Delete this draft?")}
+        title={l("Supprimer ce brouillon ?", "Delete this draft?")}
         footer={
           <>
             <Button variant="secondary" onClick={() => setDeleting(false)}>

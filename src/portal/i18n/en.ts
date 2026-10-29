@@ -55,6 +55,7 @@ export const en: Dictionary = {
     account_disabled: 'This account is disabled. Please contact LDgenX.',
     invalid_input: 'Please check the information entered.',
     network: 'The service is not responding. Please try again in a moment.',
+    calendar_unavailable: 'Google availability cannot be checked. Appointments cannot be booked or moved for now. Contact LDgenX or try again later.',
     generic: 'Something went wrong.',
   },
   nav: {
@@ -380,7 +381,7 @@ export const en: Dictionary = {
     deleteText: 'To delete your account and your data, write to {email}.',
   },
   settings: {
-    lead: 'Availability for appointments and the weekly deletion of files.',
+    lead: 'Availability, Google Calendar connection and file retention.',
     availabilityTab: 'Availability',
     filesTab: 'Files',
     approval: 'Approval of appointment requests',

@@ -1,0 +1,7 @@
+# Google Calendar release — 29 October 2026
+
+Implemented: separate administrator OAuth connection, encrypted private offline credentials, one app-created output calendar per bookable staff member, per-person external busy calendars, live server availability checks for public/client/admin reservations and moves, buffered overlap prevention, transactional outbox, retries and reconciliation, and localized responsive administration and agenda overlays. The privacy page describes Google identity and Calendar data use in French and English.
+
+Verified before owner authorization: 11 Calendar logic/network-mock tests and 8 existing portal unit tests; 33 live Calendar API checks; 76 existing live portal API assertions. Eight browser flows pass in French, English and mobile layouts, with no browser exceptions. Static HTML and metadata checks pass for 151 generated pages / 147 indexable pages. Browser evidence is in `docs/calendar-qa`. Connected Calendar UI states use mocks; disposable test users are removed. No real Google account consent or calendar event changes are performed by these tests.
+
+The project remains unconnected until the owner publishes the Google OAuth app, authorizes `admin.ldgenx@gmail.com` and maps/shares the relevant staff calendars. A real export/busy/update/cancel round trip must follow authorization before operational acceptance. The existing content publishing and basic Google login release remains in place.

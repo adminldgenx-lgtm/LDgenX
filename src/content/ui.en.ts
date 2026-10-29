@@ -520,6 +520,9 @@ export const ui = {
     contact: 'Contact LDgenX',
   },
   privacy: {
+    googleTitle: 'Google sign-in and Google Calendar',
+    google: 'Optional Google sign-in provides Supabase with the identity information authorized by Google (identifier, name and email address) to create or find your LDgenX account. It does not grant calendar access. A separate authorization, restricted to LDgenX administrators, enables appointment synchronization: creating dedicated calendars, exporting appointment times and status, and reading busy intervals from shared, configured calendars. Client names, email addresses and subjects are not sent in Google events; private event titles and descriptions are not imported. Calendar connection tokens are encrypted before server storage. Google data is used only for these features, never for advertising or training artificial intelligence models. You can revoke access in your Google account settings. Administrators can disconnect Calendar in the portal; this removes stored tokens without deleting previously created calendars and events. Contact LDgenX to request deletion of your data.',
+    googlePolicy: 'The use and transfer of information received from Google APIs comply with the Google API Services User Data Policy, including the Limited Use requirements.',
     portalTitle: 'Client area',
     portal:
       'The optional client area uses Supabase in the Europe West (Ireland) region for authentication, profiles, conversations, appointments and files. A sign-in session is stored in your browser. Each client can access their own data; the LDgenX team can access it to provide the service. Files show their automatic deletion date in the client area, except documents kept by the team.',

@@ -21,7 +21,7 @@ const errors: Record<string, [string, string]> = {
     "This document was edited elsewhere. Your text is preserved here. Export your draft, then reload the current version to compare.",
   ],
   unavailable: [
-    "Le service est momentanément indisponible. Votre brouillon reste à l’écran ; réessayez.",
+    "Le service est momentanément indisponible. Votre brouillon reste à l’écran ; réessayez.",
     "The service is temporarily unavailable. Your draft remains on screen; please retry.",
   ],
   unauthenticated: [
@@ -61,7 +61,7 @@ const errors: Record<string, [string, string]> = {
     "This browser cannot produce WebP. Use a recent browser.",
   ],
   file_too_large: [
-    "Fichier trop volumineux : images optimisées 4 MB maximum au total, vidéo 20 MB maximum.",
+    "Fichier trop volumineux : images optimisées 4 MB maximum au total, vidéo 20 MB maximum.",
     "File too large: optimised images up to 4 MB total, video up to 20 MB.",
   ],
   video_format: [
@@ -73,7 +73,7 @@ const errors: Record<string, [string, string]> = {
     "Uploaded videos are limited to 3 minutes. For longer videos, use a YouTube or Vimeo link.",
   ],
   invalid_input: [
-    "Vérifiez le format des champs : liens HTTPS, DOI, année et longueur des textes.",
+    "Vérifiez le format des champs : liens HTTPS, DOI, année et longueur des textes.",
     "Check field formats: HTTPS links, DOI, year and text length.",
   ],
   video_url: [

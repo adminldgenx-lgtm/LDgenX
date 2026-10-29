@@ -289,6 +289,7 @@ export class PortalError extends Error {
       | 'account_disabled'
       | 'invalid_input'
       | 'network'
+      | 'calendar_unavailable'
       | 'email_unavailable'
       | 'email_not_confirmed'
       | 'rate_limited',

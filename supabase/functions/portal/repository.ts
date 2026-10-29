@@ -9,6 +9,10 @@ import {
 } from '../_shared/types.ts';
 import { heldSpans } from '../_shared/availability.ts';
 import { portalSiteOrigin } from '../_shared/site.ts';
+import {
+  enqueueCalendarAppointment,
+  externalCalendarBusy,
+} from '../_shared/google-calendar.ts';
 
 export function repository(
   sql: Sql,
@@ -16,6 +20,13 @@ export function repository(
   uploaded: string[],
 ): Repository {
   return {
+    async externalBusy(from, to) {
+      try {
+        return await externalCalendarBusy(sql, from, to);
+      } catch {
+        throw new PortalError('calendar_unavailable');
+      }
+    },
     async get(kind, id) {
       // IDs are validated before use so malformed client input never becomes a SQL cast error.
       if (
@@ -55,6 +66,7 @@ export function repository(
         await sql`update public.portal_appointments set client_id=${a.clientId} where id=${a.id}`;
         for (const h of heldSpans(a))
           await sql`insert into public.portal_reservations(appointment_id,host_id,slot) values (${a.id},${h.hostId},tstzrange(${new Date(h.span.start).toISOString()}::timestamptz,${new Date(h.span.end).toISOString()}::timestamptz,'[)'))`;
+        await enqueueCalendarAppointment(sql, a.id);
       }
     },
     async remove(kind, id) {

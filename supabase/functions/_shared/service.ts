@@ -30,6 +30,7 @@ export interface Records {
   activity: Activity;
 }
 export interface Repository {
+  externalBusy?(from: string, to: string): Promise<TimeBlock[]>;
   get<K extends keyof Records>(kind: K, id: string): Promise<Records[K] | null>;
   list<K extends keyof Records>(
     kind: K,
@@ -258,6 +259,29 @@ export class PortalService {
   private async config() {
     return this.db.setting<BookingConfig>('booking');
   }
+  private async withGoogleBusy(
+    config: BookingConfig,
+    from: number,
+    to: number,
+  ) {
+    if (!this.db.externalBusy) return config;
+    const buffer = config.bufferMinutes * MINUTE;
+    const blocks = await this.db.externalBusy(
+      new Date(from - buffer).toISOString(),
+      new Date(to + buffer).toISOString(),
+    );
+    return {
+      ...config,
+      blocks: [
+        ...config.blocks,
+        ...blocks.map((b) => ({
+          ...b,
+          start: new Date(Date.parse(b.start) - buffer).toISOString(),
+          end: new Date(Date.parse(b.end) + buffer).toISOString(),
+        })),
+      ],
+    };
+  }
   private async freeSlot(
     typeId: string,
     start: string,
@@ -267,7 +291,7 @@ export class PortalService {
     const config = await this.config();
     const at = Date.parse(date(start));
     const slot = computeSlots(
-      config,
+      await this.withGoogleBusy(config, at, at + DAY),
       await this.db.list('appointments'),
       typeId,
       at,
@@ -302,6 +326,22 @@ export class PortalService {
               Date.parse(start) < h.span.end &&
               Date.parse(end) > h.span.start,
           ),
+      )
+    )
+      throw new PortalError('slot_taken');
+    const buffer = c.bufferMinutes * MINUTE;
+    const google = this.db.externalBusy
+      ? await this.db.externalBusy(
+          new Date(Date.parse(start) - buffer).toISOString(),
+          new Date(Date.parse(end) + buffer).toISOString(),
+        )
+      : [];
+    if (
+      google.some(
+        (b) =>
+          (!b.hostId || b.hostId === hostId) &&
+          Date.parse(start) < Date.parse(b.end) + buffer &&
+          Date.parse(end) > Date.parse(b.start) - buffer,
       )
     )
       throw new PortalError('slot_taken');
@@ -686,7 +726,7 @@ export class PortalService {
     if (end <= begin || end - begin > 93 * DAY)
       throw new PortalError('invalid_input');
     return computeSlots(
-      c,
+      await this.withGoogleBusy(c, begin, end),
       await this.db.list('appointments'),
       typeId,
       begin,

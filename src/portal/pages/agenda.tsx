@@ -3,6 +3,7 @@
 // where the team works. A free time is clicked to create an appointment; a confirmed appointment
 // is dragged to move it.
 import {
+  useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
@@ -11,13 +12,26 @@ import {
   type PointerEvent,
 } from 'react';
 import { ChevronLeft, ChevronRight, Lock, Plus } from 'lucide-react';
-import { api, type Appointment, type BookingConfig, type TimeBlock } from '../api';
+import {
+  api,
+  type Appointment,
+  type BookingConfig,
+  type TimeBlock,
+} from '../api';
 import { fill, useI18n } from '../i18n';
 import { useAction, useData, useMediaQuery } from '../state';
-import { Button, Card, Empty, Loading, PageHeader, Segmented, StatusPill, useConfirm } from '../ui';
+import {
+  Button,
+  Card,
+  Empty,
+  Loading,
+  PageHeader,
+  Segmented,
+  StatusPill,
+  useConfirm,
+} from '../ui';
 import { AppointmentPanel, NewDialog, useWho, type NewDraft } from '../team';
 import {
-  DAY,
   addDays,
   atMinutes,
   minutesOf,
@@ -29,6 +43,7 @@ import {
   type DayKey,
 } from '../lib/time';
 import { nextOpening } from '../lib/availability';
+import { calendarApi } from '../calendar-api';
 
 const FIRST_HOUR = 8;
 const LAST_HOUR = 19;
@@ -46,7 +61,9 @@ interface Placed<T> {
 }
 
 /** Positions the events of one day in the grid, side by side where they overlap. */
-function place<T extends { start: string; end: string }>(items: T[]): Placed<T>[] {
+function place<T extends { start: string; end: string }>(
+  items: T[],
+): Placed<T>[] {
   const sorted = [...items].sort((a, b) => a.start.localeCompare(b.start));
   const placed: Placed<T>[] = [];
   let group: Placed<T>[] = [];
@@ -63,7 +80,9 @@ function place<T extends { start: string; end: string }>(items: T[]): Placed<T>[
     const height = Math.max(24, (length * HOUR_HEIGHT) / 60);
     const begin = Date.parse(item.start);
     if (group.length && begin >= groupEnd) flush();
-    const used = new Set(group.filter((p) => Date.parse(p.item.end) > begin).map((p) => p.lane));
+    const used = new Set(
+      group.filter((p) => Date.parse(p.item.end) > begin).map((p) => p.lane),
+    );
     let lane = 0;
     while (used.has(lane)) lane++;
     const entry = { item, top, height, lane, lanes: 1 };
@@ -113,6 +132,18 @@ export function AgendaPage() {
       }),
     [range.from, range.to],
   );
+  const google = useData(
+    () =>
+      calendarApi.busy(
+        atMinutes(range.from, 0).toISOString(),
+        atMinutes(range.to, 0).toISOString(),
+      ),
+    [range.from, range.to],
+  );
+  useEffect(() => {
+    const timer = window.setInterval(google.reload, 60000);
+    return () => window.clearInterval(timer);
+  }, [google.reload]);
   const who = useWho();
   const { run } = useAction();
   const cfg = config.data;
@@ -121,32 +152,49 @@ export function AgendaPage() {
       (a.status === 'confirmed' || a.status === 'requested') &&
       (!hostId || a.hostId === hostId || a.change?.hostId === hostId),
   );
-  const blocks = (cfg?.blocks ?? []).filter((b) => !hostId || !b.hostId || b.hostId === hostId);
+  const blocks = [
+    ...(cfg?.blocks ?? []),
+    ...(google.error ? [] : (google.data ?? [])),
+  ].filter((b) => !hostId || !b.hostId || b.hostId === hostId);
   const open = appointments.data?.find((a) => a.id === openId) ?? null;
   const move = (direction: 1 | -1) => {
     if (view === 'week') setAnchor(addDays(anchor, 7 * direction));
     else {
       const { year, month } = parseDay(anchor);
       const d = new Date(Date.UTC(year, month - 1 + direction, 1));
-      setAnchor(`${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-01`);
+      setAnchor(
+        `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-01`,
+      );
     }
   };
   const tag = locale === 'fr' ? 'fr-FR' : 'en-GB';
   const label =
     view === 'month'
-      ? new Intl.DateTimeFormat(tag, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
-          new Date(Date.UTC(parseDay(anchor).year, parseDay(anchor).month - 1, 1)),
+      ? new Intl.DateTimeFormat(tag, {
+          month: 'long',
+          year: 'numeric',
+          timeZone: 'UTC',
+        }).format(
+          new Date(
+            Date.UTC(parseDay(anchor).year, parseDay(anchor).month - 1, 1),
+          ),
         )
       : `${date(atMinutes(range.from, 720).toISOString(), { weekday: false })} – ${date(atMinutes(addDays(range.to, -1), 720).toISOString(), { weekday: false, year: true })}`;
   // The form opens on the person's next free opening, in the period shown (never in the past).
   const startDraft = (kind?: 'block') => {
     const today = teamDay(Date.now());
-    const base = view === 'week' ? range.from : view === 'month' ? anchor : today;
+    const base =
+      view === 'week' ? range.from : view === 'month' ? anchor : today;
     const from = base > today ? base : today;
     const person = hostId || cfg?.hosts.find((h) => h.bookable)?.id || '';
-    const found = cfg && nextOpening(cfg, appointments.data ?? [], person, from, Date.now());
+    const found =
+      cfg &&
+      nextOpening(cfg, appointments.data ?? [], person, from, Date.now());
     const w = wallTime(Date.now());
-    const soon = Math.min(23 * 60, Math.ceil((w.hour * 60 + w.minute + 1) / 15) * 15);
+    const soon = Math.min(
+      23 * 60,
+      Math.ceil((w.hour * 60 + w.minute + 1) / 15) * 15,
+    );
     setDraft({
       ...(found ?? { day: from, minutes: from === today ? soon : 9 * 60 }),
       hostId: hostId || undefined,
@@ -155,7 +203,10 @@ export function AgendaPage() {
   };
   // A time already taken is refused, and said so, by the shared action helper.
   const moveTo = (a: Appointment, start: number) =>
-    run(() => api.moveAppointment(a.id, new Date(start).toISOString()), t.agenda.moved);
+    run(
+      () => api.moveAppointment(a.id, new Date(start).toISOString()),
+      t.agenda.moved,
+    );
 
   return (
     <>
@@ -173,6 +224,14 @@ export function AgendaPage() {
           </>
         }
       />
+      {google.error && (
+        <p className="p-notice" data-tone="amber" role="alert">
+          {t.errors.calendar_unavailable}{' '}
+          <Button variant="ghost" size="small" onClick={google.reload}>
+            {t.common.retry}
+          </Button>
+        </p>
+      )}
       <div className="p-toolbar p-agenda-toolbar">
         {view !== 'list' ? (
           <div className="p-row">
@@ -184,7 +243,11 @@ export function AgendaPage() {
             >
               <ChevronLeft size={20} />
             </button>
-            <Button variant="ghost" size="small" onClick={() => setAnchor(teamDay(Date.now()))}>
+            <Button
+              variant="ghost"
+              size="small"
+              onClick={() => setAnchor(teamDay(Date.now()))}
+            >
               {t.common.today}
             </Button>
             <button
@@ -236,7 +299,9 @@ export function AgendaPage() {
           blocks={blocks}
           name={(a) => who(a).name}
           onOpen={setOpenId}
-          onEmpty={(day, minutes) => setDraft({ day, minutes, hostId: hostId || undefined })}
+          onEmpty={(day, minutes) =>
+            setDraft({ day, minutes, hostId: hostId || undefined })
+          }
           onMove={moveTo}
         />
       ) : view === 'month' ? (
@@ -245,6 +310,7 @@ export function AgendaPage() {
           month={parseDay(anchor).month}
           appointments={visible}
           config={cfg}
+          blocks={blocks}
           name={(a) => who(a).name}
           onOpen={setOpenId}
           onDay={(d) => {
@@ -270,7 +336,9 @@ export function AgendaPage() {
                             type="button"
                             className="p-agenda-item"
                             data-status={a.status}
-                            data-past={Date.parse(a.end) < Date.now() || undefined}
+                            data-past={
+                              Date.parse(a.end) < Date.now() || undefined
+                            }
                             onClick={() => setOpenId(a.id)}
                             style={{ '--type': type?.colour } as CSSProperties}
                           >
@@ -278,7 +346,8 @@ export function AgendaPage() {
                               {time(a.start)}–{time(a.end)}
                             </span>
                             <span>
-                              <strong>{who(a).name}</strong> · {type?.label[locale]}
+                              <strong>{who(a).name}</strong> ·{' '}
+                              {type?.label[locale]}
                               <span className="p-muted p-block">
                                 {cfg.hosts.find((h) => h.id === a.hostId)?.name}
                               </span>
@@ -301,12 +370,30 @@ export function AgendaPage() {
           )}
         </Card>
       )}
+      {view === 'list' && blocks.some((b) => b.id.startsWith('google:')) && (
+        <Card title={locale === 'fr' ? 'Google Agenda' : 'Google Calendar'}>
+          <ul className="p-stack">
+            {blocks
+              .filter((b) => b.id.startsWith('google:'))
+              .sort((a, b) => a.start.localeCompare(b.start))
+              .map((b) => (
+                <li key={b.id}>
+                  <Lock size={12} aria-hidden="true" /> {date(b.start)}{' '}
+                  {time(b.start)} – {date(b.end)} {time(b.end)} ·{' '}
+                  {cfg?.hosts.find((h) => h.id === b.hostId)?.name}
+                </li>
+              ))}
+          </ul>
+        </Card>
+      )}
       <AppointmentPanel
         appointment={open}
         config={cfg ?? emptyConfig}
         onClose={() => setOpenId(null)}
       />
-      {cfg && <NewDialog draft={draft} config={cfg} onClose={() => setDraft(null)} />}
+      {cfg && (
+        <NewDialog draft={draft} config={cfg} onClose={() => setDraft(null)} />
+      )}
     </>
   );
 }
@@ -360,13 +447,21 @@ function WeekGrid({
   const days = Array.from({ length: 7 }, (_, i) => addDays(from, i));
   const today = teamDay(Date.now());
   const now = wallTime(Date.now());
-  const nowTop = ((now.hour * 60 + now.minute - FIRST_HOUR * 60) * HOUR_HEIGHT) / 60;
-  const hours = Array.from({ length: LAST_HOUR - FIRST_HOUR }, (_, i) => FIRST_HOUR + i);
+  const nowTop =
+    ((now.hour * 60 + now.minute - FIRST_HOUR * 60) * HOUR_HEIGHT) / 60;
+  const hours = Array.from(
+    { length: LAST_HOUR - FIRST_HOUR },
+    (_, i) => FIRST_HOUR + i,
+  );
   const height = (LAST_HOUR - FIRST_HOUR) * HOUR_HEIGHT;
   const closed = new Set(config.closedDays);
   const columns = useRef<(HTMLDivElement | null)[]>([]);
   // Dragging: where the appointment would land, shown as it moves.
-  const [preview, setPreview] = useState<{ id: string; col: number; minutes: number } | null>(null);
+  const [preview, setPreview] = useState<{
+    id: string;
+    col: number;
+    minutes: number;
+  } | null>(null);
   const drag = useRef<{
     appointment: Appointment;
     x: number;
@@ -402,8 +497,16 @@ function WeekGrid({
       : []),
   ]);
 
-  const startDrag = (event: PointerEvent<HTMLButtonElement>, a: Appointment) => {
-    if (a.status !== 'confirmed' || event.button !== 0 || event.pointerType === 'touch') return;
+  const startDrag = (
+    event: PointerEvent<HTMLButtonElement>,
+    a: Appointment,
+  ) => {
+    if (
+      a.status !== 'confirmed' ||
+      event.button !== 0 ||
+      event.pointerType === 'touch'
+    )
+      return;
     const box = event.currentTarget.getBoundingClientRect();
     drag.current = {
       appointment: a,
@@ -418,7 +521,8 @@ function WeekGrid({
   const moveDrag = (event: PointerEvent<HTMLButtonElement>) => {
     const d = drag.current;
     if (!d) return;
-    if (!d.moved && Math.hypot(event.clientX - d.x, event.clientY - d.y) < 5) return;
+    if (!d.moved && Math.hypot(event.clientX - d.x, event.clientY - d.y) < 5)
+      return;
     d.moved = true;
     const col = columns.current.findIndex((c) => {
       const r = c?.getBoundingClientRect();
@@ -426,10 +530,16 @@ function WeekGrid({
     });
     if (col < 0) return;
     const r = columns.current[col]!.getBoundingClientRect();
-    const length = (Date.parse(d.appointment.end) - Date.parse(d.appointment.start)) / 60_000;
-    let minutes = FIRST_HOUR * 60 + ((event.clientY - r.top) / HOUR_HEIGHT) * 60 - d.offset;
+    const length =
+      (Date.parse(d.appointment.end) - Date.parse(d.appointment.start)) /
+      60_000;
+    let minutes =
+      FIRST_HOUR * 60 + ((event.clientY - r.top) / HOUR_HEIGHT) * 60 - d.offset;
     minutes = Math.round(minutes / SNAP) * SNAP;
-    minutes = Math.min(Math.max(minutes, FIRST_HOUR * 60), LAST_HOUR * 60 - length);
+    minutes = Math.min(
+      Math.max(minutes, FIRST_HOUR * 60),
+      LAST_HOUR * 60 - length,
+    );
     d.landing = { col, minutes };
     setPreview({ id: d.appointment.id, col, minutes });
   };
@@ -445,7 +555,10 @@ function WeekGrid({
 
   return (
     <div className="p-week-wrap" ref={wrap}>
-      <div className="p-week" style={{ '--hour': `${HOUR_HEIGHT}px` } as CSSProperties}>
+      <div
+        className="p-week"
+        style={{ '--hour': `${HOUR_HEIGHT}px` } as CSSProperties}
+      >
         <div className="p-week-head">
           <span />
           {days.map((d) => (
@@ -467,26 +580,38 @@ function WeekGrid({
             const openings = closed.has(d)
               ? []
               : config.rules.filter(
-                  (r) => r.weekday === weekday && (!hostId || r.hostId === hostId),
+                  (r) =>
+                    r.weekday === weekday && (!hostId || r.hostId === hostId),
                 );
             const dayStart = atMinutes(d, 0).getTime();
-            const dayEnd = dayStart + DAY;
+            const dayEnd = atMinutes(addDays(d, 1), 0).getTime();
             const inDay = (start: string) =>
               Date.parse(start) >= dayStart && Date.parse(start) < dayEnd;
             const dayBlocks = blocks
-              .filter((b) => Date.parse(b.end) > dayStart && Date.parse(b.start) < dayEnd)
+              .filter(
+                (b) =>
+                  Date.parse(b.end) > dayStart && Date.parse(b.start) < dayEnd,
+              )
               .map((b) => ({
                 ...b,
                 start: new Date(
-                  Math.max(Date.parse(b.start), atMinutes(d, FIRST_HOUR * 60).getTime()),
+                  Math.max(
+                    Date.parse(b.start),
+                    atMinutes(d, FIRST_HOUR * 60).getTime(),
+                  ),
                 ).toISOString(),
                 end: new Date(
-                  Math.min(Date.parse(b.end), atMinutes(d, LAST_HOUR * 60).getTime()),
+                  Math.min(
+                    Date.parse(b.end),
+                    atMinutes(d, LAST_HOUR * 60).getTime(),
+                  ),
                 ).toISOString(),
               }))
               .filter((b) => b.end > b.start);
             const ghostHere =
-              preview && preview.col === col ? appointments.find((a) => a.id === preview.id) : null;
+              preview && preview.col === col
+                ? appointments.find((a) => a.id === preview.id)
+                : null;
             return (
               <div
                 key={d}
@@ -500,7 +625,8 @@ function WeekGrid({
                   if (event.target !== event.currentTarget) return;
                   const minutes =
                     FIRST_HOUR * 60 +
-                    Math.floor((event.nativeEvent.offsetY / HOUR_HEIGHT) * 2) * 30;
+                    Math.floor((event.nativeEvent.offsetY / HOUR_HEIGHT) * 2) *
+                      30;
                   onEmpty(d, minutes);
                 }}
               >
@@ -509,8 +635,13 @@ function WeekGrid({
                     key={r.id}
                     className="p-week-open"
                     style={{
-                      top: ((minutesOf(r.start) - FIRST_HOUR * 60) * HOUR_HEIGHT) / 60,
-                      height: ((minutesOf(r.end) - minutesOf(r.start)) * HOUR_HEIGHT) / 60,
+                      top:
+                        ((minutesOf(r.start) - FIRST_HOUR * 60) * HOUR_HEIGHT) /
+                        60,
+                      height:
+                        ((minutesOf(r.end) - minutesOf(r.start)) *
+                          HOUR_HEIGHT) /
+                        60,
                     }}
                   />
                 ))}
@@ -519,23 +650,32 @@ function WeekGrid({
                     key={item.id}
                     type="button"
                     className="p-week-block"
+                    disabled={item.id.startsWith('google:')}
                     style={{ top, height: h }}
                     title={item.reason}
                     onClick={async () => {
+                      if (item.id.startsWith('google:')) return;
                       if (
                         await confirm.ask(
                           `${t.agenda.removeBlock} · ${item.reason || t.agenda.blocked}`,
                           t.agenda.removeBlock,
                         )
                       )
-                        run(() => api.removeBlock(item.id), t.agenda.blockRemoved);
+                        run(
+                          () => api.removeBlock(item.id),
+                          t.agenda.blockRemoved,
+                        );
                     }}
                   >
-                    <Lock size={12} aria-hidden="true" /> {item.reason || t.agenda.blocked}
+                    <Lock size={12} aria-hidden="true" />{' '}
+                    {item.reason || t.agenda.blocked}
                     {item.hostId && (
                       <>
                         {' '}
-                        · {config.hosts.find((x) => x.id === item.hostId)?.name.replace(/^Dr /, '')}
+                        ·{' '}
+                        {config.hosts
+                          .find((x) => x.id === item.hostId)
+                          ?.name.replace(/^Dr /, '')}
                       </>
                     )}
                   </button>
@@ -545,7 +685,8 @@ function WeekGrid({
                     const a = item.appointment;
                     const type = config.types.find((x) => x.id === a.typeId);
                     const host = config.hosts.find(
-                      (x) => x.id === (item.ghost ? a.change!.hostId : a.hostId),
+                      (x) =>
+                        x.id === (item.ghost ? a.change!.hostId : a.hostId),
                     );
                     const short = h < 46;
                     const dragging = preview?.id === a.id && !item.ghost;
@@ -555,7 +696,9 @@ function WeekGrid({
                         type="button"
                         className="p-week-event"
                         data-status={a.status}
-                        data-past={Date.parse(item.end) < Date.now() || undefined}
+                        data-past={
+                          Date.parse(item.end) < Date.now() || undefined
+                        }
                         data-ghost={item.ghost || undefined}
                         data-short={short || undefined}
                         data-dragging={dragging || undefined}
@@ -599,9 +742,15 @@ function WeekGrid({
                             </strong>
                             <span>{name(a)}</span>
                             {a.status === 'requested' ? (
-                              <span className="p-week-host">{t.agenda.requested}</span>
+                              <span className="p-week-host">
+                                {t.agenda.requested}
+                              </span>
                             ) : (
-                              h > 62 && <span className="p-week-host">{host?.name}</span>
+                              h > 62 && (
+                                <span className="p-week-host">
+                                  {host?.name}
+                                </span>
+                              )
                             )}
                           </>
                         )}
@@ -613,17 +762,22 @@ function WeekGrid({
                   <span
                     className="p-week-preview"
                     style={{
-                      top: ((preview.minutes - FIRST_HOUR * 60) * HOUR_HEIGHT) / 60,
+                      top:
+                        ((preview.minutes - FIRST_HOUR * 60) * HOUR_HEIGHT) /
+                        60,
                       height: Math.max(
                         24,
-                        ((Date.parse(ghostHere.end) - Date.parse(ghostHere.start)) / 60_000) *
+                        ((Date.parse(ghostHere.end) -
+                          Date.parse(ghostHere.start)) /
+                          60_000) *
                           (HOUR_HEIGHT / 60),
                       ),
                     }}
                     aria-hidden="true"
                   >
                     {String(Math.floor(preview.minutes / 60)).padStart(2, '0')}:
-                    {String(preview.minutes % 60).padStart(2, '0')} · {name(ghostHere)}
+                    {String(preview.minutes % 60).padStart(2, '0')} ·{' '}
+                    {name(ghostHere)}
                   </span>
                 )}
                 {d === today && nowTop > 0 && nowTop < height && (
@@ -647,6 +801,7 @@ function MonthGrid({
   month,
   appointments,
   config,
+  blocks,
   name,
   onOpen,
   onDay,
@@ -655,6 +810,7 @@ function MonthGrid({
   month: number;
   appointments: Appointment[];
   config: BookingConfig;
+  blocks: TimeBlock[];
   name: (a: Appointment) => string;
   onOpen: (id: string) => void;
   onDay: (day: DayKey) => void;
@@ -672,6 +828,12 @@ function MonthGrid({
       ))}
       {days.map((d) => {
         const items = byDay.get(d) ?? [];
+        const googleBusy = blocks.filter(
+          (b) =>
+            b.id.startsWith('google:') &&
+            Date.parse(b.start) < atMinutes(addDays(d, 1), 0).getTime() &&
+            Date.parse(b.end) > atMinutes(d, 0).getTime(),
+        ).length;
         return (
           <div
             key={d}
@@ -679,7 +841,11 @@ function MonthGrid({
             data-other={parseDay(d).month !== month || undefined}
             data-today={d === today || undefined}
           >
-            <button type="button" className="p-month-date" onClick={() => onDay(d)}>
+            <button
+              type="button"
+              className="p-month-date"
+              onClick={() => onDay(d)}
+            >
               {parseDay(d).day}
             </button>
             {items.slice(0, 3).map((a) => {
@@ -699,8 +865,21 @@ function MonthGrid({
               );
             })}
             {items.length > 3 && (
-              <button type="button" className="p-link p-month-more" onClick={() => onDay(d)}>
+              <button
+                type="button"
+                className="p-link p-month-more"
+                onClick={() => onDay(d)}
+              >
                 {fill(t.agenda.more, { count: items.length - 3 })}
+              </button>
+            )}
+            {googleBusy > 0 && (
+              <button
+                type="button"
+                className="p-link p-month-more"
+                onClick={() => onDay(d)}
+              >
+                <Lock size={12} aria-hidden="true" /> Google · {googleBusy}
               </button>
             )}
           </div>

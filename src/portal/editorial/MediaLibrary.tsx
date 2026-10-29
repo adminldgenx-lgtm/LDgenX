@@ -72,7 +72,7 @@ export function MediaLibrary({
       </p>
       <p className="p-help">
         {l(
-          "Vidéos : MP4/WebM, 20 MB et 3 minutes maximum. Pour les formats longs, le lecteur accepte YouTube et Vimeo sans stocker la vidéo sur Supabase.",
+          "Vidéos : MP4/WebM, 20 MB et 3 minutes maximum. Pour les formats longs, le lecteur accepte YouTube et Vimeo sans stocker la vidéo sur Supabase.",
           "Video: MP4/WebM, up to 20 MB and 3 minutes. For longer videos, the editor supports YouTube and Vimeo without storing the video in Supabase.",
         )}
       </p>
@@ -211,7 +211,7 @@ export function MediaLibrary({
       <Dialog
         open={!!remove}
         onClose={() => !busy && setRemove(null)}
-        title={l("Supprimer ce média ?", "Delete this media?")}
+        title={l("Supprimer ce média ?", "Delete this media?")}
         footer={
           <>
             <Button

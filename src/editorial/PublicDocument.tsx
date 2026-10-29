@@ -225,7 +225,7 @@ export function EditorialDocumentView({
         <div className="cms-byline">
           <span>
             {content.kind === "publication" &&
-              (fr ? "Auteurs de l’article : " : "Paper authors: ")}
+              (fr ? "Auteurs de l’article : " : "Paper authors: ")}
             {d.author}
           </span>
           {!preview && (
@@ -248,7 +248,7 @@ export function EditorialDocumentView({
                 {" "}
                 ·{" "}
                 <a href={`https://doi.org/${d.doi}`} rel="noreferrer">
-                  DOI : {d.doi}
+                  DOI : {d.doi}
                 </a>
               </>
             )}

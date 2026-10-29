@@ -76,6 +76,7 @@ await writeFile(
         "/llms.txt",
         "/llms-full.txt",
         "/api/editorial/*",
+        "/api/auth/google/callback",
       ],
       exclude: [],
     },
