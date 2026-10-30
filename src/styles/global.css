@@ -4766,7 +4766,7 @@ h3 {
     height: 46px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .desktop-nav,
   .header-actions > .language {
     display: none;

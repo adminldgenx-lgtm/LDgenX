@@ -60,6 +60,7 @@ export function Header() {
   const links = [
     [r.studies, copy.navigation.studies],
     [r.publications, copy.navigation.research],
+    [r.resources, copy.navigation.resources],
     [r.about, copy.navigation.about],
   ];
   const [menu, setMenu] = useState<MenuKey | null>(null);
