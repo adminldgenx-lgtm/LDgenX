@@ -183,3 +183,11 @@ The failed browser used `http://127.0.0.1:5174`, while the original allowlist co
 Administrator login is at `https://ldgenx-12k.pages.dev/admin/connexion`. In the Supabase dashboard, the administrator appears under Authentication → Users and in Table Editor → `public.portal_profiles`, with `role = admin` and `status = active`. Client and administrator identities share this profile table.
 
 Set `PORTAL_SITE_URL` to the new allowed frontend origin before rerunning setup when switching the final domain. The setup script validates it and uses it for both Supabase Auth and the Edge runtime. The maintenance function uses the same configured URL for file-notification links.
+
+## Workspace usability follow-up — 30 October 2026
+
+Client administration displays actual all/pending/active/disabled counts, with filters that preserve the other query parameters. Name, organisation and email search accepts accents and full names. Disabling a client requires confirmation and preserves messages, files and appointments; the existing server and RLS checks still reject disabled sessions. This release adds no role or database permissions.
+
+The client file screen separates received files from the client's own message attachments, with accent-insensitive filename/note search and newest-first ordering. It uses the same protected file listing and download API. Client and administrator file/appointment screens expose retry actions when reads fail. A missing retention configuration is reported as unavailable instead of being presented as retention disabled.
+
+`node scripts/check-workspace-ux.mjs <origin>` checks real API and Data API isolation, fixture suspension/reactivation and a private scientific draft. File and unavailable-service views use synthetic browser fixtures. It sends no mail and creates no appointment or publication. The CLI-only JSON transport keeps credentials in pipes and does not blindly repeat writes. Disposable account creation can recover an ambiguous response by its unique fixture email.

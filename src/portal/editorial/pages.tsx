@@ -36,6 +36,13 @@ import {
 } from "../../../supabase/functions/_shared/editorial";
 import "../../editorial/editorial.css";
 import "./admin.css";
+import { searchText } from "../../lib/search";
+import {
+  scientificOutline,
+  outlineLabels,
+  canStartStructure,
+  readWritingRecovery,
+} from "./writing";
 
 function useEntries() {
   const l = useWords();
@@ -92,9 +99,9 @@ export function ContentListPage() {
         (state === "published" && e.publication?.status === "published") ||
         (state === "existing" && !!e.legacyId && !e.publication) ||
         (state === "withdrawn" && e.publication?.status === "withdrawn")) &&
-      `${e.document.title} ${e.document.summary} ${e.slug}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+      searchText(
+        `${e.document.title} ${e.document.summary} ${e.slug}`,
+      ).includes(searchText(query)),
   );
   return (
     <div className="cms-admin">
@@ -271,6 +278,7 @@ export function ContentListPage() {
           <label>
             {l("Type", "Type")}
             <select
+              aria-label={l("Type", "Type")}
               value={newKind}
               onChange={(e) => setNewKind(e.target.value as ContentKind)}
             >
@@ -284,6 +292,7 @@ export function ContentListPage() {
           <label>
             {l("Langue du texte", "Text language")}
             <select
+              aria-label={l("Langue du texte", "Text language")}
               value={newLocale}
               onChange={(e) => setNewLocale(e.target.value as "fr" | "en")}
             >
@@ -315,10 +324,18 @@ export function ContentEditorPage() {
   useEffect(() => {
     setEntry(null);
     setError("");
+    let current = true;
     void cms
       .get(id!)
-      .then(setEntry)
-      .catch((e) => setError(cmsError(e, l)));
+      .then((value) => {
+        if (current) setEntry(value);
+      })
+      .catch((e) => {
+        if (current) setError(cmsError(e, l));
+      });
+    return () => {
+      current = false;
+    };
   }, [id]);
   if (error)
     return (
@@ -345,6 +362,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     [doc, setDoc] = useState(initial.document),
     [slug, setSlug] = useState(initial.slug),
     [media, setMedia] = useState<EditorialMedia[]>([]),
+    [mediaError, setMediaError] = useState(false),
+    [editorReady, setEditorReady] = useState(false),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [notice, setNotice] = useState(""),
@@ -365,11 +384,11 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     slug: string;
   } | null>(() => {
     try {
-      const v = JSON.parse(localStorage.getItem(backupKey) || "null");
-      return v &&
-        JSON.stringify(v.document) !== JSON.stringify(initial.document)
-        ? v
-        : null;
+      return readWritingRecovery(
+        localStorage.getItem(backupKey),
+        initial.document,
+        initial.slug,
+      );
     } catch {
       return null;
     }
@@ -377,11 +396,44 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
   const dirty =
     JSON.stringify(doc) !== JSON.stringify(entry.document) ||
     slug !== entry.slug;
+  const mediaRequest = useRef(0),
+    mediaCheckedAt = useRef(0);
+  const loadMedia = async () => {
+    mediaCheckedAt.current = Date.now();
+    const request = ++mediaRequest.current;
+    try {
+      const value = await cms.media();
+      if (request === mediaRequest.current) {
+        const ids = new Set(value.map((item) => item.id));
+        setMedia((current) => [
+          ...value,
+          ...current.filter((item) => !ids.has(item.id)),
+        ]);
+        setMediaError(false);
+      }
+    } catch {
+      if (request === mediaRequest.current) setMediaError(true);
+    }
+  };
   useEffect(() => {
-    void cms
-      .media()
-      .then(setMedia)
-      .catch(() => {});
+    const refresh = () => {
+      if (
+        document.visibilityState === "visible" &&
+        Date.now() - mediaCheckedAt.current >= 30 * 60 * 1000
+      )
+        void loadMedia();
+    };
+    refresh();
+    // Private image links last one hour. Renew during long writing sessions and on return.
+    const timer = window.setInterval(refresh, 30 * 60 * 1000);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+      mediaRequest.current++;
+    };
   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -429,7 +481,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       window.removeEventListener("beforeunload", unload);
       document.removeEventListener("click", click, true);
     };
-  }, [dirty]);
+  }, [dirty, locale]);
   const change = (key: keyof EditorialDocument, value: unknown) => {
     setDoc((old) => ({
       ...old,
@@ -486,6 +538,33 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       setBusy(false);
     }
   };
+  const persistDraft = () =>
+    action(async () => {
+      await save();
+      setNotice(
+        l(
+          "Brouillon enregistré. Le site public reste sur sa dernière version publiée.",
+          "Draft saved. The public site keeps its last published version.",
+        ),
+      );
+    });
+  useEffect(() => {
+    const keydown = (event: KeyboardEvent) => {
+      if (
+        (event.metaKey || event.ctrlKey) &&
+        !event.altKey &&
+        !event.shiftKey &&
+        !event.isComposing &&
+        !event.defaultPrevented &&
+        event.key.toLowerCase() === "s"
+      ) {
+        event.preventDefault();
+        if (!busy && dirty && !event.repeat) void persistDraft();
+      }
+    };
+    window.addEventListener("keydown", keydown);
+    return () => window.removeEventListener("keydown", keydown);
+  }, [doc, slug, entry.version, dirty, busy, locale]);
   const exportDraft = () => {
     const blob = new Blob(
         [
@@ -595,25 +674,57 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             <Eye size={17} />
             {l("Aperçu", "Preview")}
           </Button>
-          <Button
-            busy={busy}
-            onClick={() =>
-              action(async () => {
-                await save();
-                setNotice(
-                  l(
-                    "Brouillon enregistré. Le site public reste sur sa dernière version publiée.",
-                    "Draft saved. The public site keeps its last published version.",
-                  ),
-                );
-              })
-            }
-          >
+          <Button busy={busy} onClick={() => void persistDraft()}>
             <Save size={17} />
             {l("Enregistrer", "Save draft")}
           </Button>
         </div>
       </header>
+      <div
+        className="cms-editor-dock"
+        aria-label={l("Navigation et enregistrement", "Navigation and saving")}
+      >
+        <nav aria-label={l("Sections du document", "Document sections")}>
+          <a href="#cms-writing">{l("Rédaction", "Writing")}</a>
+          <a href="#cms-sources">{l("Sources", "Sources")}</a>
+          <a href="#cms-publishing">{l("Publication", "Publishing")}</a>
+        </nav>
+        <span className="cms-save-state">
+          {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
+          {words > 0 && (
+            <>
+              {" "}
+              · {l("lecture", "reading")} ≈{" "}
+              {Math.max(1, Math.ceil(words / 200))} min
+            </>
+          )}
+          <small>
+            {dirty
+              ? l(
+                  "À enregistrer · copie locale de secours",
+                  "Unsaved · local recovery copy",
+                )
+              : `${l("Enregistré", "Saved")} ${new Date(entry.updatedAt).toLocaleTimeString(locale === "fr" ? "fr-FR" : "en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Paris" })} · Paris`}
+          </small>
+        </span>
+        <Button
+          size="small"
+          disabled={!dirty || busy}
+          busy={busy}
+          onClick={() => void persistDraft()}
+          title={l(
+            "Enregistrer le brouillon · ⌘/Ctrl+S",
+            "Save draft · ⌘/Ctrl+S",
+          )}
+          aria-label={l(
+            "Enregistrer le brouillon · ⌘/Ctrl+S",
+            "Save draft · ⌘/Ctrl+S",
+          )}
+        >
+          <Save size={15} />
+          {l("Enregistrer", "Save draft")}
+        </Button>
+      </div>
       {recovery && (
         <div className="cms-notice">
           <p>
@@ -624,6 +735,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
           </p>
           <Button
             variant="secondary"
+            disabled={busy || !editorReady}
             onClick={() => {
               setDoc(recovery.document);
               setSlug(recovery.slug);
@@ -649,6 +761,23 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
           {error}
         </p>
       )}
+      {mediaError && (
+        <div className="cms-notice" role="alert">
+          <p>
+            {l(
+              "Les médias n’ont pas pu être chargés. Réessayez avant de contrôler les figures et l’aperçu.",
+              "Media could not be loaded. Retry before checking figures and preview.",
+            )}
+          </p>
+          <Button
+            variant="secondary"
+            size="small"
+            onClick={() => void loadMedia()}
+          >
+            {l("Recharger les médias", "Reload media")}
+          </Button>
+        </div>
+      )}
       {notice && (
         <p className="cms-notice" role="status">
           {notice}
@@ -669,7 +798,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         </div>
       )}
       <div className="cms-editor-layout">
-        <div className="cms-editor-main">
+        <div className="cms-editor-main" id="cms-writing">
           <fieldset disabled={busy}>
             <label>
               {l("Titre", "Title")}
@@ -767,9 +896,40 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
           <div className="cms-section-head">
             <h2>{l("Texte & figures", "Body & figures")}</h2>
             <span>
-              {words} {l("mots", "words")}
+              {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
             </span>
           </div>
+          {canStartStructure(doc.body) && !entry.legacyId && (
+            <div className="cms-writing-start">
+              <div>
+                <strong>
+                  {l(
+                    "Une trame pour structurer votre texte",
+                    "A structure for your writing",
+                  )}
+                </strong>
+                <p>{outlineLabels(entry.kind, entry.locale).join(" · ")}</p>
+                <small>
+                  {l(
+                    "Seuls les titres sont ajoutés. Rédigez les résultats, les limites et les références à partir de vos sources.",
+                    "Only section headings are added. Write results, limitations and references from your sources.",
+                  )}
+                </small>
+              </div>
+              <Button
+                variant="secondary"
+                disabled={busy || !editorReady}
+                onClick={() => {
+                  const body = scientificOutline(entry.kind, entry.locale);
+                  change("body", body);
+                  editor.current?.set(body);
+                }}
+              >
+                <Plus size={16} />
+                {l("Utiliser cette trame", "Use this structure")}
+              </Button>
+            </div>
+          )}
           <RichEditor
             body={initial.document.body}
             onChange={(body) => change("body", body)}
@@ -783,8 +943,9 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               setVideoOpen(true);
             }}
             handle={editor}
+            onReady={setEditorReady}
           />
-          <fieldset disabled={busy} className="cms-panel">
+          <fieldset disabled={busy} className="cms-panel" id="cms-sources">
             <div className="cms-section-head">
               <h2>{l("Sources & références", "Sources & references")}</h2>
               <Button
@@ -859,7 +1020,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
           </fieldset>
         </div>
         <aside className="cms-editor-aside">
-          <fieldset disabled={busy} className="cms-panel">
+          <fieldset disabled={busy} className="cms-panel" id="cms-publishing">
             <h2>{l("Publication", "Publishing")}</h2>
             <p className="p-help">
               {l(
@@ -867,6 +1028,35 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 "Saving and restoring affect the draft only. “Publish” explicitly releases this version.",
               )}
             </p>
+            <details
+              className="cms-preflight"
+              open={publishIssues.length > 0 || undefined}
+            >
+              <summary>
+                {publishIssues.length
+                  ? `${publishIssues.length} ${l(publishIssues.length === 1 ? "élément à compléter" : "éléments à compléter", publishIssues.length === 1 ? "item to complete" : "items to complete")}`
+                  : l(
+                      "Éléments obligatoires complétés",
+                      "Required items complete",
+                    )}
+              </summary>
+              {publishIssues.length > 0 ? (
+                <ul>
+                  {publishIssues.map((key) => (
+                    <li key={key}>
+                      {issueLabels[key] ? l(...issueLabels[key]) : key}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="p-help">
+                  {l(
+                    "La validation scientifique reste sous votre responsabilité. Vérifiez l’aperçu avant de publier.",
+                    "Scientific validation remains your responsibility. Check the preview before publishing.",
+                  )}
+                </p>
+              )}
+            </details>
             <label className="cms-review">
               <input
                 type="checkbox"

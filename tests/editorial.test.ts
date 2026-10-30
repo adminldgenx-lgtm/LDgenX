@@ -168,3 +168,68 @@ test("scientific table spans survive validation without shifting data columns", 
   d.body.content![0].content![0].content![0].attrs = { colspan: 0, rowspan: 1 };
   rejects(() => validateDocument(d));
 });
+
+test("scientific writing structures contain headings only and cannot pass publication checks as finished text", async () => {
+  const { scientificOutline, canStartStructure } =
+    await import("../src/portal/editorial/writing.ts");
+  for (const kind of ["article", "study", "publication"] as const) {
+    for (const locale of ["fr", "en"] as const) {
+      const draft = emptyDocument();
+      assert(canStartStructure(draft.body));
+      draft.body = scientificOutline(kind, locale);
+      assert(!canStartStructure(draft.body));
+      assert(
+        !canStartStructure({
+          type: "doc",
+          content: [{ type: "figure", attrs: { mediaId: "existing-figure" } }],
+        }),
+      );
+      assert.deepEqual(validateDocument(draft).body, draft.body);
+      assert.equal(
+        draft.body.content?.filter((n) => n.type === "heading").length,
+        4,
+      );
+      assert.equal(
+        draft.body.content
+          ?.filter((n) => n.type === "paragraph")
+          .every((n) => !n.content?.length),
+        true,
+      );
+      assert(publicationIssues(draft, kind).includes("body"));
+      assert(publicationIssues(draft, kind).includes("review"));
+    }
+  }
+});
+
+test("local draft recovery retains URL-only edits, validates data and requires scientific review again", async () => {
+  const { readWritingRecovery } =
+    await import("../src/portal/editorial/writing.ts");
+  const document = emptyDocument();
+  document.reviewed = true;
+  const restored = readWritingRecovery(
+    JSON.stringify({ document, slug: "new-address" }),
+    document,
+    "old-address",
+  );
+  assert(restored);
+  assert.equal(restored.slug, "new-address");
+  assert.equal(restored.document.reviewed, false);
+  assert.deepEqual(restored.document.body, validateDocument(document).body);
+  assert.equal(
+    readWritingRecovery(
+      JSON.stringify({ document, slug: "same" }),
+      document,
+      "same",
+    ),
+    null,
+  );
+  assert.equal(readWritingRecovery("{broken", document, "same"), null);
+  assert.equal(
+    readWritingRecovery(
+      JSON.stringify({ document: { body: { type: "script" } }, slug: "same" }),
+      document,
+      "same",
+    ),
+    null,
+  );
+});

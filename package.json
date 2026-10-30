@@ -49,7 +49,8 @@
     "check:calendar": "deno test --allow-env --allow-read tests/calendar.test.ts tests/portal.test.ts",
     "check:calendar-api": "node scripts/check-calendar-api.mjs",
     "check:calendar-browser": "node scripts/check-calendar-browser.mjs",
-    "check:calendar-connected": "node scripts/check-calendar-connected.mjs --blocks"
+    "check:calendar-connected": "node scripts/check-calendar-connected.mjs --blocks",
+    "check:workspace-ux": "node scripts/check-workspace-ux.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",

@@ -256,6 +256,7 @@ export function RichEditor({
   onImage,
   onVideo,
   handle,
+  onReady,
 }: {
   body: ContentNode;
   onChange: (v: ContentNode) => void;
@@ -264,6 +265,7 @@ export function RichEditor({
   onImage: () => void;
   onVideo: () => void;
   handle: { current: RichHandle | null };
+  onReady?: (ready: boolean) => void;
 }) {
   const l = useWords(),
     mediaStore = useRef<MediaStore>({ current: media, listeners: new Set() });
@@ -332,10 +334,11 @@ export function RichEditor({
           },
         }
       : null;
+    onReady?.(Boolean(editor));
     return () => {
       handle.current = null;
     };
-  }, [editor, handle]);
+  }, [editor, handle, onReady]);
   useEditorState({
     editor,
     selector: ({ editor }) =>

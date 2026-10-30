@@ -1,11 +1,11 @@
 // The team's clients: the list, and each client's page with their conversation, the files
 // dropped for them and their appointments.
-import { useMemo, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { CalendarPlus, Mail, Phone, Search, UserPlus } from 'lucide-react';
-import { api, type Appointment, type InviteInput, type User } from '../api';
-import { fill, useI18n } from '../i18n';
-import { useAction, useData } from '../state';
+import { useMemo, useState } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
+import { CalendarPlus, Mail, Phone, Search, UserPlus } from "lucide-react";
+import { api, type Appointment, type InviteInput, type User } from "../api";
+import { fill, useI18n } from "../i18n";
+import { useAction, useData } from "../state";
 import {
   Avatar,
   Badge,
@@ -20,45 +20,53 @@ import {
   PageHeader,
   Segmented,
   Tabs,
-} from '../ui';
-import { FileRow, nextPurge, Thread, usePeople } from '../shared';
+  useConfirm,
+} from "../ui";
+import { FileRow, nextPurge, Thread, usePeople } from "../shared";
 import {
   AppointmentPanel,
   NewDialog,
   TeamAppointmentRow,
   type NewDraft,
-} from '../team';
-import { teamDay } from '../lib/time';
+} from "../team";
+import { teamDay } from "../lib/time";
+import { searchText } from "../../lib/search";
 
-const statusTone = (status: User['status']) =>
-  status === 'pending' ? 'green' : status === 'disabled' ? 'neutral' : 'navy';
+const statusTone = (status: User["status"]) =>
+  status === "pending" ? "amber" : status === "disabled" ? "neutral" : "navy";
 
 export function ClientsPage() {
   const { t, relative, count: plural } = useI18n();
   const clients = useData(() => api.listClients(), []);
   const threads = useData(() => api.listThreads(), []);
   const [params, setParams] = useSearchParams();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [inviting, setInviting] = useState(false);
   const status =
-    (params.get('statut') as User['status'] | 'all' | null) ?? 'all';
+    (params.get("statut") as User["status"] | "all" | null) ?? "all";
   const unread = useMemo(
     () => new Map((threads.data ?? []).map((th) => [th.clientId, th.unread])),
     [threads.data],
   );
-  const q = query.trim().toLowerCase();
+  const q = searchText(query);
+  const selectStatus = (next: string) => {
+    const value = new URLSearchParams(params);
+    if (next === "all") value.delete("statut");
+    else value.set("statut", next);
+    setParams(value, { replace: true });
+  };
   const shown = (clients.data ?? [])
-    .filter((c) => status === 'all' || c.status === status)
+    .filter((c) => status === "all" || c.status === status)
     .filter(
       (c) =>
         !q ||
-        [c.firstName, c.lastName, c.organisation, c.email].some((v) =>
-          v.toLowerCase().includes(q),
-        ),
+        searchText(
+          [c.firstName, c.lastName, c.organisation, c.email].join(" "),
+        ).includes(q),
     )
     .sort(
       (a, b) =>
-        Number(b.status === 'pending') - Number(a.status === 'pending') ||
+        Number(b.status === "pending") - Number(a.status === "pending") ||
         a.organisation.localeCompare(b.organisation),
     );
   return (
@@ -72,6 +80,27 @@ export function ClientsPage() {
           </Button>
         }
       />
+      {clients.data && (
+        <div className="p-client-overview" aria-label={t.nav.clients}>
+          {(["all", "pending", "active", "disabled"] as const).map((value) => (
+            <button
+              type="button"
+              key={value}
+              aria-pressed={status === value}
+              onClick={() => selectStatus(value)}
+            >
+              <strong>
+                {value === "all"
+                  ? clients.data!.length
+                  : clients.data!.filter((c) => c.status === value).length}
+              </strong>
+              <span>
+                {value === "all" ? t.common.all : t.accountStatus[value]}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
       <div className="p-toolbar">
         <label className="p-search">
           <Search size={18} aria-hidden="true" />
@@ -86,14 +115,12 @@ export function ClientsPage() {
         <Segmented
           label={t.nav.clients}
           value={status}
-          onChange={(next) =>
-            setParams(next === 'all' ? {} : { statut: next }, { replace: true })
-          }
+          onChange={selectStatus}
           options={[
-            ['all', t.common.all],
-            ['pending', t.accountStatus.pending],
-            ['active', t.accountStatus.active],
-            ['disabled', t.accountStatus.disabled],
+            ["all", t.common.all],
+            ["pending", t.accountStatus.pending],
+            ["active", t.accountStatus.active],
+            ["disabled", t.accountStatus.disabled],
           ]}
         />
       </div>
@@ -120,7 +147,7 @@ export function ClientsPage() {
                         {c.firstName} {c.lastName} · {c.organisation}
                       </strong>
                       <span className="p-muted">
-                        {c.email} ·{' '}
+                        {c.email} ·{" "}
                         {fill(t.clients.lastSeen, {
                           date: c.lastSeenAt
                             ? relative(c.lastSeenAt)
@@ -160,10 +187,10 @@ export function InviteDialog({
   const { t, locale } = useI18n();
   const { run, busy } = useAction();
   const blank = {
-    email: '',
-    firstName: '',
-    lastName: '',
-    organisation: '',
+    email: "",
+    firstName: "",
+    lastName: "",
+    organisation: "",
     locale,
     ...initial,
   };
@@ -214,13 +241,13 @@ export function InviteDialog({
               <input
                 id={id}
                 value={form.firstName}
-                onChange={set('firstName')}
+                onChange={set("firstName")}
               />
             )}
           </Field>
           <Field label={t.auth.lastName}>
             {(id) => (
-              <input id={id} value={form.lastName} onChange={set('lastName')} />
+              <input id={id} value={form.lastName} onChange={set("lastName")} />
             )}
           </Field>
         </div>
@@ -230,7 +257,7 @@ export function InviteDialog({
               id={id}
               type="email"
               value={form.email}
-              onChange={set('email')}
+              onChange={set("email")}
             />
           )}
         </Field>
@@ -239,13 +266,13 @@ export function InviteDialog({
             <input
               id={id}
               value={form.organisation}
-              onChange={set('organisation')}
+              onChange={set("organisation")}
             />
           )}
         </Field>
         <Field label={t.account.languagePref}>
           {(id) => (
-            <select id={id} value={form.locale} onChange={set('locale')}>
+            <select id={id} value={form.locale} onChange={set("locale")}>
               <option value="fr">Français</option>
               <option value="en">English</option>
             </select>
@@ -256,20 +283,21 @@ export function InviteDialog({
   );
 }
 
-const TABS = ['messages', 'files', 'appointments'] as const;
+const TABS = ["messages", "files", "appointments"] as const;
 type Tab = (typeof TABS)[number];
 
 export function ClientPage() {
-  const { id = '' } = useParams();
+  const { id = "" } = useParams();
   const { t, date, relative } = useI18n();
   const [params, setParams] = useSearchParams();
   // An unknown tab in the address opens the first one.
-  const tab: Tab = TABS.find((x) => x === params.get('onglet')) ?? 'messages';
+  const tab: Tab = TABS.find((x) => x === params.get("onglet")) ?? "messages";
   const client = useData(() => api.getUser(id), [id]);
   const threads = useData(() => api.listThreads(), []);
   const files = useData(() => api.listFiles(id), [id]);
   const appointments = useData(() => api.listAppointments(), []);
   const { run, busy } = useAction();
+  const confirm = useConfirm();
   if (client.error) return <ErrorNote onRetry={client.reload} />;
   if (!client.data) return <Loading lines={6} />;
   const c = client.data;
@@ -277,13 +305,13 @@ export function ClientPage() {
   const theirs = (appointments.data ?? []).filter((a) => a.clientId === id);
   const live = theirs.filter(
     (a) =>
-      (a.status === 'requested' || a.status === 'confirmed') &&
+      (a.status === "requested" || a.status === "confirmed") &&
       Date.parse(a.end) > Date.now(),
   ).length;
   return (
     <>
       <PageHeader
-        back={{ to: '/admin/clients', label: t.nav.clients }}
+        back={{ to: "/admin/clients", label: t.nav.clients }}
         title={`${c.firstName} ${c.lastName}`}
         lead={
           <span className="p-client-meta">
@@ -295,7 +323,7 @@ export function ClientPage() {
               <Mail size={14} aria-hidden="true" /> {c.email}
             </a>
             {c.phone && (
-              <a href={`tel:${c.phone.replace(/\s/g, '')}`}>
+              <a href={`tel:${c.phone.replace(/\s/g, "")}`}>
                 <Phone size={14} aria-hidden="true" /> {c.phone}
               </a>
             )}
@@ -303,7 +331,7 @@ export function ClientPage() {
               {fill(t.clients.since, {
                 date: date(c.createdAt, { weekday: false, year: true }),
               })}
-              {' · '}
+              {" · "}
               {fill(t.clients.lastSeen, {
                 date: c.lastSeenAt ? relative(c.lastSeenAt) : t.clients.never,
               })}
@@ -312,12 +340,12 @@ export function ClientPage() {
         }
         actions={
           <>
-            {c.status === 'pending' && (
+            {c.status === "pending" && (
               <Button
                 busy={busy}
                 onClick={() =>
                   run(
-                    () => api.setAccountStatus(c.id, 'active'),
+                    () => api.setAccountStatus(c.id, "active"),
                     t.clients.approved,
                   )
                 }
@@ -325,27 +353,35 @@ export function ClientPage() {
                 {t.clients.approve}
               </Button>
             )}
-            {c.status === 'active' && (
+            {c.status === "active" && (
               <Button
                 variant="ghost"
                 busy={busy}
-                onClick={() =>
-                  run(
-                    () => api.setAccountStatus(c.id, 'disabled'),
-                    t.clients.disabled,
+                onClick={async () => {
+                  if (
+                    await confirm.ask(
+                      fill(t.clients.disableConfirm, {
+                        name: `${c.firstName} ${c.lastName}`.trim() || c.email,
+                      }),
+                      t.clients.disable,
+                    )
                   )
-                }
+                    run(
+                      () => api.setAccountStatus(c.id, "disabled"),
+                      t.clients.disabled,
+                    );
+                }}
               >
                 {t.clients.disable}
               </Button>
             )}
-            {c.status === 'disabled' && (
+            {c.status === "disabled" && (
               <Button
                 variant="secondary"
                 busy={busy}
                 onClick={() =>
                   run(
-                    () => api.setAccountStatus(c.id, 'active'),
+                    () => api.setAccountStatus(c.id, "active"),
                     t.common.saved,
                   )
                 }
@@ -361,9 +397,9 @@ export function ClientPage() {
         value={tab}
         onChange={(next) => setParams({ onglet: next }, { replace: true })}
         tabs={[
-          ['messages', t.clients.tabs.messages, unread],
-          ['files', t.clients.tabs.files, files.data?.length],
-          ['appointments', t.clients.tabs.appointments, live],
+          ["messages", t.clients.tabs.messages, unread],
+          ["files", t.clients.tabs.files, files.data?.length],
+          ["appointments", t.clients.tabs.appointments, live],
         ]}
       />
       <div
@@ -372,48 +408,53 @@ export function ClientPage() {
         aria-labelledby={`tab-${tab}`}
         className="p-tabpanel"
       >
-        {tab === 'messages' && (
+        {tab === "messages" && (
           <Card pad={false} className="p-thread-card">
             <Thread clientId={c.id} />
           </Card>
         )}
-        {tab === 'files' && <ClientFiles client={c} />}
-        {tab === 'appointments' && (
+        {tab === "files" && <ClientFiles client={c} />}
+        {tab === "appointments" && (
           <ClientAppointments
             client={c}
             list={theirs}
             loading={!appointments.data}
+            failed={!!appointments.error}
+            retry={appointments.reload}
           />
         )}
       </div>
+      {confirm.element}
     </>
   );
 }
 
 function ClientFiles({ client }: { client: User }) {
-  const { t, dateTime, relative, count: plural } = useI18n();
+  const { t, locale, dateTime, relative, count: plural } = useI18n();
   const files = useData(() => api.listFiles(client.id), [client.id]);
   const retention = useData(() => api.getRetention(), []);
   const people = usePeople();
   const { run, busy } = useAction();
-  const [note, setNote] = useState('');
+  const [note, setNote] = useState("");
   const upload = (list: File[]) =>
     run(
       async () => {
         for (const file of list) await api.uploadFile(client.id, file, note);
-        setNote('');
+        setNote("");
       },
       plural(t.files.uploaded, list.length),
     );
   const toClient = (files.data ?? []).filter(
-    (f) => f.direction === 'to_client',
+    (f) => f.direction === "to_client",
   );
   const fromClient = (files.data ?? []).filter(
-    (f) => f.direction === 'from_client',
+    (f) => f.direction === "from_client",
   );
   const purgeAt = nextPurge(retention.data);
+  if (files.error) return <ErrorNote onRetry={files.reload} />;
   return (
     <div className="p-stack">
+      {retention.error && <ErrorNote onRetry={retention.reload} />}
       <Card
         title={fill(t.files.dropFor, {
           name: `${client.firstName} ${client.lastName}`,
@@ -432,12 +473,16 @@ function ClientFiles({ client }: { client: User }) {
           </label>
         </div>
         <p className="p-help">
-          {purgeAt
-            ? fill(t.retention.next, {
-                date: `${dateTime(purgeAt)} (${relative(purgeAt)})`,
-              })
-            : t.retention.off}
-          {' · '}
+          {retention.error
+            ? locale === "fr"
+              ? "Les règles de conservation sont temporairement indisponibles."
+              : "Retention settings are temporarily unavailable."
+            : purgeAt
+              ? fill(t.retention.next, {
+                  date: `${dateTime(purgeAt)} (${relative(purgeAt)})`,
+                })
+              : t.retention.off}
+          {" · "}
           <Link to="/admin/parametres?onglet=files">{t.nav.settings}</Link>
         </p>
       </Card>
@@ -475,10 +520,14 @@ function ClientAppointments({
   client,
   list,
   loading,
+  failed,
+  retry,
 }: {
   client: User;
   list: Appointment[];
   loading: boolean;
+  failed: boolean;
+  retry: () => void;
 }) {
   const { t } = useI18n();
   const config = useData(() => api.getBookingConfig(), []);
@@ -487,10 +536,19 @@ function ClientAppointments({
   const now = Date.now();
   const upcoming = list.filter(
     (a) =>
-      (a.status === 'requested' || a.status === 'confirmed') &&
+      (a.status === "requested" || a.status === "confirmed") &&
       Date.parse(a.end) > now,
   );
   const past = list.filter((a) => !upcoming.includes(a)).reverse();
+  if (failed || config.error)
+    return (
+      <ErrorNote
+        onRetry={() => {
+          retry();
+          config.reload();
+        }}
+      />
+    );
   if (loading || !config.data) return <Loading lines={4} />;
   const cfg = config.data;
   return (

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-30T04:40:23.702Z",
+  "checks": [
+    "Real client sessions cannot read another client record, messages or files, or access editorial administration",
+    "Direct Supabase Data API also withholds other client profiles and private scientific drafts",
+    "Client overview uses actual counts, accent-insensitive search and a cancellable suspension confirmation",
+    "Disabling the fixture revokes server access; reactivation restores access without deleting the profile",
+    "Optional scientific structure, explicit incomplete checklist and keyboard draft saving survive reload without publication",
+    "Scientific editor navigation, saving controls and checklist fit mobile and switch to English",
+    "Client received/sent files, accent-insensitive search and newest-first ordering work on desktop and mobile",
+    "Failed file and appointment reads display retry controls instead of endless loading or false empty states",
+    "Client navigation cannot render the administrator publishing interface"
+  ],
+  "browserExceptions": [],
+  "fixtureBoundaries": "Real role/status/draft checks; synthetic file/error views; no mail, publications, uploaded files or bookings."
+}

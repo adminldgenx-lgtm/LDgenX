@@ -594,3 +594,121 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Keep long scientific drafts easy to navigate and save. */
+.cms-editor-dock {
+  position: sticky;
+  top: 72px;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 0 0 20px;
+  border: 1px solid #dce4df;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 7px 24px -18px #03254b;
+}
+.cms-editor-dock nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cms-save-state {
+  margin-left: auto;
+  font-size: 12px;
+  color: #173650;
+}
+.cms-save-state small {
+  display: block;
+  font-size: 11px;
+}
+.cms-editor-page [id^="cms-"] {
+  scroll-margin-top: 155px;
+}
+.cms-writing-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid #cfdfc5;
+  border-radius: 12px;
+  padding: 18px;
+  background: #f3f8ee;
+  margin: 0 0 14px;
+}
+.cms-writing-start p {
+  margin: 5px 0;
+  color: #42613b;
+  font-size: 13px;
+}
+.cms-preflight {
+  border: 1px solid #dce4df;
+  border-radius: 9px;
+  padding: 12px;
+  margin: 14px 0;
+}
+.cms-preflight summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+.cms-preflight ul {
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 1.65;
+  margin: 10px 0 0;
+}
+.cms-entry {
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s,
+    transform 0.18s;
+}
+.cms-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 25px -19px #03254b;
+}
+.cms-toolbar button {
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.cms-admin :is(input, textarea, select):focus-visible {
+  outline: 2px solid #2a7416;
+  outline-offset: 2px;
+}
+@media (max-width: 800px) {
+  .cms-editor-dock {
+    top: 68px;
+    padding: 10px;
+    gap: 9px;
+  }
+  .cms-editor-dock nav {
+    width: 100%;
+    font-size: 11px;
+  }
+  .cms-save-state {
+    margin-left: 0;
+    flex: 1;
+  }
+  .cms-writing-start {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .cms-editor-page [id^="cms-"] {
+    scroll-margin-top: 180px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cms-entry {
+    transition: none;
+  }
+  .cms-entry:hover {
+    transform: none;
+  }
+}

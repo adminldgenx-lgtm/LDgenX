@@ -1,15 +1,17 @@
 // The client's side: the conversation with the team, the files the team dropped, the
 // appointments, the account.
-import { useEffect, useState } from 'react';
-import { CalendarPlus, Download } from 'lucide-react';
-import { api, type Appointment, type BookingConfig } from '../api';
-import { fill, useI18n } from '../i18n';
-import { useAction, useData, useSession, useUser } from '../state';
+import { useEffect, useState } from "react";
+import { CalendarPlus, Download, Search } from "lucide-react";
+import { api, type Appointment, type BookingConfig } from "../api";
+import { fill, useI18n } from "../i18n";
+import { useAction, useData, useSession, useUser } from "../state";
 import {
   Button,
   Card,
   DateBlock,
   Empty,
+  ErrorNote,
+  Segmented,
   Field,
   Fill,
   Loading,
@@ -17,7 +19,7 @@ import {
   StatusPill,
   Switch,
   useConfirm,
-} from '../ui';
+} from "../ui";
 import {
   downloadFile,
   ExpiringNotice,
@@ -25,9 +27,10 @@ import {
   RetentionNotice,
   Thread,
   usePeople,
-} from '../shared';
-import { AddToCalendar, ChangeDialog, RequestFlow } from '../booking';
-import { OpenLayout } from '../layout';
+} from "../shared";
+import { AddToCalendar, ChangeDialog, RequestFlow } from "../booking";
+import { OpenLayout } from "../layout";
+import { searchText } from "../../lib/search";
 
 export function ClientMessagesPage() {
   const { t } = useI18n();
@@ -35,7 +38,7 @@ export function ClientMessagesPage() {
   return (
     <>
       <PageHeader title={t.nav.messages} lead={t.messages.clientLead} />
-      {user.status === 'pending' && (
+      {user.status === "pending" && (
         <div className="p-notice" data-tone="info" role="note">
           <p>{t.auth.pending}</p>
         </div>
@@ -49,14 +52,25 @@ export function ClientMessagesPage() {
 }
 
 export function ClientFilesPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const fr = locale === "fr";
+  const [direction, setDirection] = useState<"received" | "sent">("received");
+  const [query, setQuery] = useState("");
   const files = useData(() => api.listFiles(), []);
   const people = usePeople();
   const { run, busy } = useAction();
-  const fromTeam = (files.data ?? []).filter((f) => f.direction === 'to_client');
+  const fromTeam = (files.data ?? []).filter(
+    (f) => f.direction === "to_client",
+  );
+  const sent = (files.data ?? []).filter((f) => f.direction === "from_client");
+  const shown = (direction === "received" ? fromTeam : sent)
+    .filter((f) =>
+      searchText(`${f.name} ${f.note}`).includes(searchText(query)),
+    )
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   // Opening the page reads the notifications of new files.
   useEffect(() => {
-    api.markActivityRead({ kinds: ['file_uploaded'] }).catch(() => {});
+    api.markActivityRead({ kinds: ["file_uploaded"] }).catch(() => {});
   }, []);
   return (
     <>
@@ -64,6 +78,8 @@ export function ClientFilesPage() {
         title={t.nav.files}
         lead={t.files.clientLead}
         actions={
+          direction === "received" &&
+          !query.trim() &&
           fromTeam.length > 1 && (
             <Button
               variant="secondary"
@@ -80,14 +96,67 @@ export function ClientFilesPage() {
         }
       />
       <RetentionNotice />
+      <div className="p-toolbar">
+        <Segmented
+          label={t.nav.files}
+          value={direction}
+          onChange={setDirection}
+          options={[
+            [
+              "received",
+              `${fr ? "Reçus de LDgenX" : "Received from LDgenX"} (${fromTeam.length})`,
+            ],
+            [
+              "sent",
+              `${fr ? "Envoyés à LDgenX" : "Sent to LDgenX"} (${sent.length})`,
+            ],
+          ]}
+        />
+        <label className="p-search">
+          <Search size={18} aria-hidden="true" />
+          <input
+            type="search"
+            aria-label={fr ? "Rechercher un fichier" : "Search files"}
+            placeholder={
+              fr ? "Nom du fichier ou commentaire…" : "File name or note…"
+            }
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </label>
+      </div>
+      {files.data && !files.error && (
+        <p className="p-help">
+          {shown.length}{" "}
+          {fr
+            ? shown.length === 1
+              ? "fichier affiché, du plus récent au plus ancien."
+              : "fichiers affichés, du plus récent au plus ancien."
+            : shown.length === 1
+              ? "file shown, newest first."
+              : "files shown, newest first."}
+        </p>
+      )}
       <Card pad={false}>
-        {!files.data ? (
+        {files.error ? (
+          <ErrorNote onRetry={files.reload} />
+        ) : !files.data ? (
           <Loading />
-        ) : !fromTeam.length ? (
-          <Empty>{t.files.empty}</Empty>
+        ) : !shown.length ? (
+          <Empty>
+            {query.trim()
+              ? fr
+                ? "Aucun fichier ne correspond à cette recherche."
+                : "No files match this search."
+              : direction === "sent"
+                ? fr
+                  ? "Les pièces jointes envoyées dans vos messages apparaîtront ici."
+                  : "Attachments sent in your messages will appear here."
+                : t.files.empty}
+          </Empty>
         ) : (
           <ul className="p-files">
-            {fromTeam.map((f) => (
+            {shown.map((f) => (
               <FileRow key={f.id} file={f} people={people} />
             ))}
           </ul>
@@ -113,12 +182,15 @@ function AppointmentRow({
   const type = config.types.find((x) => x.id === a.typeId);
   const host = config.hosts.find((h) => h.id === a.hostId);
   const live =
-    (a.status === 'requested' || a.status === 'confirmed') && Date.parse(a.end) > Date.now();
+    (a.status === "requested" || a.status === "confirmed") &&
+    Date.parse(a.end) > Date.now();
   return (
     <li
       className="p-appointment"
       data-past={!live || undefined}
-      data-cancelled={a.status === 'cancelled' || a.status === 'declined' || undefined}
+      data-cancelled={
+        a.status === "cancelled" || a.status === "declined" || undefined
+      }
     >
       <DateBlock iso={a.start} />
       <div className="p-appointment-main">
@@ -128,7 +200,7 @@ function AppointmentRow({
         </div>
         <p className="p-muted">
           {date(a.start)} · {time(a.start)}–{time(a.end)}
-          {a.status === 'confirmed' && host && (
+          {a.status === "confirmed" && host && (
             <> · {fill(t.booking.withHost, { name: host.name })}</>
           )}
         </p>
@@ -143,7 +215,7 @@ function AppointmentRow({
             <strong>{t.booking.teamReply}</strong> {a.reply}
           </p>
         )}
-        {live && a.status === 'confirmed' && (
+        {live && a.status === "confirmed" && (
           <div className="p-row">
             {a.meetingUrl && (
               <a
@@ -169,7 +241,9 @@ function AppointmentRow({
             </Button>
           )}
           <Button variant="quiet" size="small" onClick={() => onCancel(a)}>
-            {a.status === 'requested' ? t.booking.cancelRequest : t.booking.cancel}
+            {a.status === "requested"
+              ? t.booking.cancelRequest
+              : t.booking.cancel}
           </Button>
         </div>
       )}
@@ -189,11 +263,11 @@ export function ClientAppointmentsPage() {
     api
       .markActivityRead({
         kinds: [
-          'appointment_confirmed',
-          'appointment_declined',
-          'appointment_cancelled',
-          'appointment_moved',
-          'change_declined',
+          "appointment_confirmed",
+          "appointment_declined",
+          "appointment_cancelled",
+          "appointment_moved",
+          "change_declined",
         ],
       })
       .catch(() => {});
@@ -201,14 +275,16 @@ export function ClientAppointmentsPage() {
   const now = Date.now();
   const all = list.data ?? [];
   const upcoming = all.filter(
-    (a) => (a.status === 'requested' || a.status === 'confirmed') && Date.parse(a.end) > now,
+    (a) =>
+      (a.status === "requested" || a.status === "confirmed") &&
+      Date.parse(a.end) > now,
   );
   const past = all.filter((a) => !upcoming.includes(a)).reverse();
   const cancel = async (a: Appointment) => {
     if (
       await confirm.ask(
         t.booking.cancelConfirm,
-        a.status === 'requested' ? t.booking.cancelRequest : t.booking.cancel,
+        a.status === "requested" ? t.booking.cancelRequest : t.booking.cancel,
       )
     )
       run(() => api.cancelAppointment(a.id), t.booking.cancelledToast);
@@ -243,7 +319,11 @@ export function ClientAppointmentsPage() {
         <Card
           title={t.booking.request}
           action={
-            <button type="button" className="p-link" onClick={() => setRequesting(false)}>
+            <button
+              type="button"
+              className="p-link"
+              onClick={() => setRequesting(false)}
+            >
               {t.common.close}
             </button>
           }
@@ -252,7 +332,14 @@ export function ClientAppointmentsPage() {
         </Card>
       )}
       <Card title={t.booking.upcoming} pad={false}>
-        {!list.data || !config.data ? (
+        {list.error || config.error ? (
+          <ErrorNote
+            onRetry={() => {
+              list.reload();
+              config.reload();
+            }}
+          />
+        ) : !list.data || !config.data ? (
           <Loading />
         ) : upcoming.length ? (
           rows(upcoming)
@@ -283,10 +370,14 @@ export function AccountPage() {
     phone: user.phone,
   });
   const [notify, setNotify] = useState(user.notify);
-  const [passwords, setPasswords] = useState({ current: '', next: '' });
-  const set = (key: keyof typeof profile) => (event: { target: { value: string } }) =>
-    setProfile({ ...profile, [key]: event.target.value });
-  const save = async (patch: Parameters<typeof api.updateProfile>[0], syncLocale = true) => {
+  const [passwords, setPasswords] = useState({ current: "", next: "" });
+  const set =
+    (key: keyof typeof profile) => (event: { target: { value: string } }) =>
+      setProfile({ ...profile, [key]: event.target.value });
+  const save = async (
+    patch: Parameters<typeof api.updateProfile>[0],
+    syncLocale = true,
+  ) => {
     const updated = await run(() => api.updateProfile(patch), t.common.saved);
     if (updated) setUser(updated, syncLocale);
   };
@@ -304,18 +395,41 @@ export function AccountPage() {
           >
             <div className="p-grid-2">
               <Field label={t.auth.firstName}>
-                {(id) => <input id={id} value={profile.firstName} onChange={set('firstName')} />}
+                {(id) => (
+                  <input
+                    id={id}
+                    value={profile.firstName}
+                    onChange={set("firstName")}
+                  />
+                )}
               </Field>
               <Field label={t.auth.lastName}>
-                {(id) => <input id={id} value={profile.lastName} onChange={set('lastName')} />}
+                {(id) => (
+                  <input
+                    id={id}
+                    value={profile.lastName}
+                    onChange={set("lastName")}
+                  />
+                )}
               </Field>
               <Field label={t.auth.organisation}>
                 {(id) => (
-                  <input id={id} value={profile.organisation} onChange={set('organisation')} />
+                  <input
+                    id={id}
+                    value={profile.organisation}
+                    onChange={set("organisation")}
+                  />
                 )}
               </Field>
               <Field label={t.auth.phone} optional>
-                {(id) => <input id={id} type="tel" value={profile.phone} onChange={set('phone')} />}
+                {(id) => (
+                  <input
+                    id={id}
+                    type="tel"
+                    value={profile.phone}
+                    onChange={set("phone")}
+                  />
+                )}
               </Field>
             </div>
             <Field label={t.account.languagePref}>
@@ -324,7 +438,7 @@ export function AccountPage() {
                   id={id}
                   value={locale}
                   onChange={(e) => {
-                    const next = e.target.value as 'fr' | 'en';
+                    const next = e.target.value as "fr" | "en";
                     setLocale(next);
                     save({ locale: next }, false);
                   }}
@@ -344,7 +458,7 @@ export function AccountPage() {
         <div className="p-stack">
           <Card title={t.account.notifications}>
             {(Object.keys(notify) as (keyof typeof notify)[])
-              .filter((key) => user.role === 'client' || key !== 'weeklyPurge')
+              .filter((key) => user.role === "client" || key !== "weeklyPurge")
               .map((key) => (
                 <Switch
                   key={key}
@@ -368,7 +482,7 @@ export function AccountPage() {
                   await api.changePassword(passwords.current, passwords.next);
                   return true;
                 }, t.account.passwordChanged);
-                if (done) setPasswords({ current: '', next: '' });
+                if (done) setPasswords({ current: "", next: "" });
               }}
             >
               <Field label={t.account.currentPassword}>
@@ -378,14 +492,20 @@ export function AccountPage() {
                     type="password"
                     autoComplete="current-password"
                     value={passwords.current}
-                    onChange={(e) => setPasswords({ ...passwords, current: e.target.value })}
+                    onChange={(e) =>
+                      setPasswords({ ...passwords, current: e.target.value })
+                    }
                   />
                 )}
               </Field>
               <Field
                 label={t.account.newPassword}
                 help={t.auth.passwordHint}
-                error={passwords.next && passwords.next.length < 8 ? t.auth.passwordShort : null}
+                error={
+                  passwords.next && passwords.next.length < 8
+                    ? t.auth.passwordShort
+                    : null
+                }
               >
                 {(id, d) => (
                   <input
@@ -394,7 +514,9 @@ export function AccountPage() {
                     type="password"
                     autoComplete="new-password"
                     value={passwords.next}
-                    onChange={(e) => setPasswords({ ...passwords, next: e.target.value })}
+                    onChange={(e) =>
+                      setPasswords({ ...passwords, next: e.target.value })
+                    }
                   />
                 )}
               </Field>
@@ -410,12 +532,14 @@ export function AccountPage() {
               </div>
             </form>
           </Card>
-          {user.role === 'client' && (
+          {user.role === "client" && (
             <Card title={t.account.deleteTitle}>
               <p className="p-muted">
                 <Fill
                   text={t.account.deleteText}
-                  values={{ email: <a href="mailto:info@ldgenx.fr">info@ldgenx.fr</a> }}
+                  values={{
+                    email: <a href="mailto:info@ldgenx.fr">info@ldgenx.fr</a>,
+                  }}
                 />
               </p>
             </Card>
