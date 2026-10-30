@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { portalSiteOrigin } from "../../supabase/functions/_shared/site";
@@ -9,18 +9,32 @@ import { Button } from "./ui";
 export function GoogleSignIn({
   admin = false,
   disabled = false,
+  onBusyChange,
 }: {
   admin?: boolean;
   disabled?: boolean;
+  onBusyChange?: (busy: boolean) => void;
 }) {
   const { locale } = useI18n(),
     fr = locale === "fr",
     [params] = useSearchParams(),
     [busy, setBusy] = useState(false),
     [error, setError] = useState("");
+  useEffect(() => {
+    const resumed = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        setBusy(false);
+        onBusyChange?.(false);
+      }
+    };
+    window.addEventListener("pageshow", resumed);
+    return () => window.removeEventListener("pageshow", resumed);
+  }, [onBusyChange]);
   if (import.meta.env.VITE_GOOGLE_AUTH_ENABLED !== "1") return null;
   const start = async () => {
+    if (busy || disabled) return;
     setBusy(true);
+    onBusyChange?.(true);
     setError("");
     try {
       const target = params.get("suite");
@@ -52,6 +66,7 @@ export function GoogleSignIn({
           : "Google sign-in could not start. Please retry or use your password.",
       );
       setBusy(false);
+      onBusyChange?.(false);
     }
   };
   return (
@@ -83,18 +98,6 @@ export function GoogleSignIn({
         </svg>
         {fr ? "Continuer avec Google" : "Continue with Google"}
       </Button>
-      <p className="p-help">
-        {fr
-          ? "Ouvrez ou créez votre compte LDgenX avec Google."
-          : "Sign in or create your LDgenX account with Google."}{" "}
-        <a
-          href={fr ? "/politique-confidentialite" : "/en/privacy-policy"}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {fr ? "Confidentialité" : "Privacy"}
-        </a>
-      </p>
       {(error || params.get("error")) && (
         <p className="p-error" role="alert">
           {error ||
@@ -104,9 +107,7 @@ export function GoogleSignIn({
         </p>
       )}
       <div className="p-auth-divider">
-        <span>
-          {fr ? "ou avec votre adresse e-mail" : "or with your email address"}
-        </span>
+        <span>{fr ? "ou" : "or"}</span>
       </div>
     </div>
   );

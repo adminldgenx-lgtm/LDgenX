@@ -85,10 +85,11 @@ export const en: Dictionary = {
       "This link has expired or has already been used. Request a new link.",
 
     loginTitle: "Sign in",
-    loginLead:
-      "Find your exchanges with the team, your files and your appointments.",
+    loginLead: "Access your LDgenX account.",
     email: "E-mail address",
     password: "Password",
+    showPassword: "Show password",
+    hidePassword: "Hide password",
     passwordHint: "At least 8 characters.",
     passwordShort: "The password must be at least 8 characters long.",
     forgot: "Forgot your password?",
@@ -96,7 +97,7 @@ export const en: Dictionary = {
     noAccount: "No account yet?",
     createAccount: "Create an account",
     haveAccount: "Already have an account?",
-    registerTitle: "Create your client area",
+    registerTitle: "Create an account",
     registerLead:
       "Talk with the LDgenX team, receive your files and book appointments in one place.",
     firstName: "First name",
@@ -109,7 +110,7 @@ export const en: Dictionary = {
       "I have read the {link} and agree that LDgenX processes this information to answer my requests.",
     privacy: "privacy policy",
     consentRequired: "Your consent is needed to create an account.",
-    register: "Create my area",
+    register: "Create my account",
     registerNote: "The LDgenX team approves every new account.",
     forgotTitle: "Forgotten password",
     forgotLead:

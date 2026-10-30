@@ -84,18 +84,19 @@ export const fr = {
       "Ce lien a expiré ou a déjà été utilisé. Demandez un nouveau lien.",
 
     loginTitle: "Connexion",
-    loginLead:
-      "Retrouvez vos échanges avec l’équipe, vos fichiers et vos rendez-vous.",
+    loginLead: "Accédez à votre compte LDgenX.",
     email: "Adresse e-mail",
     password: "Mot de passe",
+    showPassword: "Afficher le mot de passe",
+    hidePassword: "Masquer le mot de passe",
     passwordHint: "8 caractères au moins.",
     passwordShort: "Le mot de passe doit compter 8 caractères au moins.",
     forgot: "Mot de passe oublié ?",
     signIn: "Se connecter",
-    noAccount: "Pas encore d’espace ?",
+    noAccount: "Pas encore de compte ?",
     createAccount: "Créer un compte",
     haveAccount: "Déjà un compte ?",
-    registerTitle: "Créer votre espace client",
+    registerTitle: "Créer un compte",
     registerLead:
       "Échangez avec l’équipe LDgenX, recevez vos fichiers et prenez rendez-vous au même endroit.",
     firstName: "Prénom",
@@ -108,7 +109,7 @@ export const fr = {
       "J’ai lu la {link} et j’accepte que LDgenX traite ces informations pour répondre à mes demandes.",
     privacy: "politique de confidentialité",
     consentRequired: "Votre accord est nécessaire pour créer un compte.",
-    register: "Créer mon espace",
+    register: "Créer mon compte",
     registerNote: "L’équipe LDgenX valide chaque nouveau compte.",
     forgotTitle: "Mot de passe oublié",
     forgotLead:

@@ -409,11 +409,12 @@ function AdminOnly() {
 
 /** Pages outside the signed-in frame: sign-in, sign-up, public booking. */
 export function OpenLayout({ children }: { children: ReactNode }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const site = locale === 'fr' ? '/' : '/en';
   return (
     <div className="p-auth">
       <header className="p-auth-top">
-        <a href="/" className="p-brand">
+        <a href={site} className="p-brand">
           <img
             src="/brand/lockup-navy-160.webp"
             alt="LDgenX"
@@ -422,7 +423,7 @@ export function OpenLayout({ children }: { children: ReactNode }) {
           />
         </a>
         <div className="p-top-actions">
-          <a className="p-link" href="/">
+          <a className="p-link" href={site}>
             {t.common.backToSite}
           </a>
           <LanguageSwitch />
