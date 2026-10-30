@@ -11,7 +11,7 @@ export const copy = {
     innovation: 'Innovation',
     research: 'Publications',
     about: 'À propos',
-    resources: 'Articles',
+    resources: 'Ressources',
     contact: 'Demander un devis',
   },
   home: {

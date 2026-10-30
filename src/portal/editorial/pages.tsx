@@ -1,5 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import {
   ArrowLeft,
   ExternalLink,
@@ -9,6 +14,10 @@ import {
   Send,
   History,
   Download,
+  ImagePlus,
+  Trash2,
+  RotateCcw,
+  Pencil,
 } from "lucide-react";
 import { Button, Dialog } from "../ui";
 import { useI18n } from "../i18n";
@@ -33,6 +42,7 @@ import {
   type EditorialMedia,
   type EditorialRevision,
   type PublishedDocument,
+  type EditorialPageTemplate,
 } from "../../../supabase/functions/_shared/editorial";
 import "../../editorial/editorial.css";
 import "./admin.css";
@@ -43,6 +53,7 @@ import {
   canStartStructure,
   readWritingRecovery,
 } from "./writing";
+const SitePagePreview = lazy(() => import("./PagePreview"));
 
 function useEntries() {
   const l = useWords();
@@ -66,15 +77,20 @@ function useEntries() {
   return { entries, error, loading, reload };
 }
 function status(entry: EditorialEntry, l: (fr: string, en: string) => string) {
-  return entry.publication?.status === "withdrawn"
-    ? l("Retiré", "Withdrawn")
-    : entry.publication
-      ? entry.version === entry.publishedVersion
-        ? l("Publié", "Published")
-        : l("Publié · modifications en brouillon", "Published · draft changes")
-      : entry.legacyId
-        ? l("Site actuel · copie de travail", "Existing site · working copy")
-        : l("Brouillon privé", "Private draft");
+  return entry.deletedAt
+    ? l("Corbeille", "Trash")
+    : entry.publication?.status === "withdrawn"
+      ? l("Retiré", "Withdrawn")
+      : entry.publication
+        ? entry.version === entry.publishedVersion
+          ? l("Publié", "Published")
+          : l(
+              "Publié · modifications en brouillon",
+              "Published · draft changes",
+            )
+        : entry.legacyId
+          ? l("Site actuel · copie de travail", "Existing site · working copy")
+          : l("Brouillon privé", "Private draft");
 }
 export function ContentListPage() {
   const l = useWords(),
@@ -89,12 +105,53 @@ export function ContentListPage() {
     [newKind, setNewKind] = useState<ContentKind>("article"),
     [newLocale, setNewLocale] = useState<"fr" | "en">(locale),
     [busy, setBusy] = useState(false),
-    [actionError, setActionError] = useState("");
+    [actionError, setActionError] = useState(""),
+    [deletion, setDeletion] = useState<EditorialEntry | null>(null),
+    [notice, setNotice] = useState("");
+  const [pageTemplates, setPageTemplates] = useState<EditorialPageTemplate[]>(
+      [],
+    ),
+    [pagePath, setPagePath] = useState(""),
+    [templateError, setTemplateError] = useState(false);
+  const loadTemplates = () => {
+    setTemplateError(false);
+    void cmsRequest<EditorialPageTemplate[]>("/page-templates")
+      .then(setPageTemplates)
+      .catch(() => setTemplateError(true));
+  };
+  useEffect(loadTemplates, []);
+  const availablePages = pageTemplates.filter((p) => p.locale === newLocale);
+  const selectedPage = availablePages.some((p) => p.path === pagePath)
+    ? pagePath
+    : availablePages[0]?.path;
+  const trashCount = entries.filter((e) => e.deletedAt).length;
+  const restoreEntry = async (e: EditorialEntry) => {
+    setBusy(true);
+    setActionError("");
+    try {
+      await cmsRequest(`/entries/${e.id}/untrash`, "POST", {
+        version: e.version,
+      });
+      setNotice(
+        l(
+          "Contenu restauré en brouillon. Relisez-le avant de le republier.",
+          "Content restored as a draft. Review it before publishing again.",
+        ),
+      );
+      reload();
+    } catch (error) {
+      setActionError(cmsError(error, l));
+    } finally {
+      setBusy(false);
+    }
+  };
   const filtered = entries.filter(
     (e) =>
+      (state === "trash" ? !!e.deletedAt : !e.deletedAt) &&
       (kind === "all" || e.kind === kind) &&
       (language === "all" || e.locale === language) &&
       (state === "all" ||
+        state === "trash" ||
         (state === "draft" && !e.publication && !e.legacyId) ||
         (state === "published" && e.publication?.status === "published") ||
         (state === "existing" && !!e.legacyId && !e.publication) ||
@@ -119,6 +176,24 @@ export function ContentListPage() {
           </p>
         </div>
         <div className="cms-actions">
+          <Button
+            variant="secondary"
+            onClick={() => {
+              setNewKind("page");
+              setCreate(true);
+            }}
+          >
+            {l("Modifier une page du site", "Edit a website page")}
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => setState(state === "trash" ? "all" : "trash")}
+          >
+            <Trash2 size={16} />
+            {state === "trash"
+              ? l("Tous les contenus", "All content")
+              : `${l("Corbeille", "Trash")} (${trashCount})`}
+          </Button>
           <Link
             className="p-button"
             data-variant="secondary"
@@ -126,7 +201,12 @@ export function ContentListPage() {
           >
             {l("Médiathèque", "Media library")}
           </Link>
-          <Button onClick={() => setCreate(true)}>
+          <Button
+            onClick={() => {
+              setNewKind("article");
+              setCreate(true);
+            }}
+          >
             <Plus size={17} />
             {l("Nouveau contenu", "New content")}
           </Button>
@@ -177,6 +257,7 @@ export function ContentListPage() {
             ["published", l("Publiés", "Published")],
             ["existing", l("Site actuel", "Existing site")],
             ["withdrawn", l("Retirés", "Withdrawn")],
+            ["trash", l("Corbeille", "Trash")],
           ].map(([k, v]) => (
             <option key={k} value={k}>
               {v}
@@ -184,6 +265,16 @@ export function ContentListPage() {
           ))}
         </select>
       </div>
+      {notice && (
+        <p className="cms-notice" role="status">
+          {notice}
+        </p>
+      )}
+      {actionError && !create && !deletion && (
+        <p className="p-error" role="alert">
+          {actionError}
+        </p>
+      )}
       {error && (
         <div role="alert" className="p-error">
           {error}{" "}
@@ -201,20 +292,30 @@ export function ContentListPage() {
           </p>
           <div className="cms-entry-list">
             {filtered.map((e) => (
-              <Link
-                key={e.id}
-                to={`/admin/contenus/${e.id}`}
-                className="cms-entry"
-              >
-                <div>
-                  <span className="cms-eyebrow">
-                    {e.locale.toUpperCase()} · {kindNames[locale][e.kind]}
+              <article key={e.id} className="cms-entry">
+                <Link className="cms-entry-main" to={`/admin/contenus/${e.id}`}>
+                  <span className="cms-entry-image">
+                    {e.document.cover &&
+                    (e.document.cover.staticSrc || e.coverMedia) ? (
+                      <MediaImage
+                        image={e.document.cover}
+                        media={e.coverMedia ?? undefined}
+                        sizes="160px"
+                      />
+                    ) : (
+                      <ImagePlus size={28} aria-hidden="true" />
+                    )}
                   </span>
-                  <h2>{e.document.title || l("Sans titre", "Untitled")}</h2>
-                  <p>{e.document.summary}</p>
-                  <small>{contentPath(e.kind, e.locale, e.slug)}</small>
-                </div>
-                <div>
+                  <div>
+                    <span className="cms-eyebrow">
+                      {e.locale.toUpperCase()} · {kindNames[locale][e.kind]}
+                    </span>
+                    <h2>{e.document.title || l("Sans titre", "Untitled")}</h2>
+                    <p>{e.document.summary}</p>
+                    <small>{contentPath(e.kind, e.locale, e.slug)}</small>
+                  </div>
+                </Link>
+                <div className="cms-entry-meta">
                   <span
                     className="cms-status"
                     data-state={e.publication?.status ?? "draft"}
@@ -226,8 +327,55 @@ export function ContentListPage() {
                       locale === "fr" ? "fr-FR" : "en-GB",
                     )}
                   </time>
+                  <div className="cms-entry-actions">
+                    {e.deletedAt ? (
+                      <Button
+                        variant="secondary"
+                        size="small"
+                        disabled={busy}
+                        onClick={() => void restoreEntry(e)}
+                      >
+                        <RotateCcw size={15} />
+                        {l("Restaurer", "Restore")}
+                      </Button>
+                    ) : (
+                      <>
+                        <Link
+                          className="p-button"
+                          data-variant="secondary"
+                          to={`/admin/contenus/${e.id}`}
+                        >
+                          <Pencil size={15} />
+                          {l("Modifier", "Edit")}
+                        </Link>
+                        <Link
+                          className="p-button"
+                          data-variant="ghost"
+                          to={`/admin/contenus/${e.id}?couverture=1`}
+                        >
+                          <ImagePlus size={15} />
+                          {e.document.cover
+                            ? l("Changer l’image", "Change image")
+                            : l("Ajouter une image", "Add image")}
+                        </Link>
+                        <Button
+                          variant="danger"
+                          size="small"
+                          disabled={busy}
+                          aria-label={`${l("Supprimer", "Delete")} ${e.document.title || l("Sans titre", "Untitled")}`}
+                          onClick={() => {
+                            setActionError("");
+                            setDeletion(e);
+                          }}
+                        >
+                          <Trash2 size={15} />
+                          {l("Supprimer", "Delete")}
+                        </Button>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
           {!filtered.length && (
@@ -237,6 +385,72 @@ export function ContentListPage() {
           )}
         </>
       )}
+      <Dialog
+        open={!!deletion}
+        onClose={() => !busy && setDeletion(null)}
+        title={l("Supprimer ce contenu ?", "Delete this content?")}
+        footer={
+          <>
+            <Button
+              variant="secondary"
+              disabled={busy}
+              onClick={() => setDeletion(null)}
+            >
+              {l("Annuler", "Cancel")}
+            </Button>
+            <Button
+              variant="danger"
+              busy={busy}
+              onClick={async () => {
+                if (!deletion) return;
+                setBusy(true);
+                setActionError("");
+                try {
+                  await cmsRequest(`/entries/${deletion.id}/trash`, "POST", {
+                    version: deletion.version,
+                  });
+                  setDeletion(null);
+                  setNotice(
+                    l(
+                      "Contenu déplacé dans la corbeille. Il peut être restauré.",
+                      "Content moved to trash. It can be restored.",
+                    ),
+                  );
+                  reload();
+                } catch (error) {
+                  setActionError(cmsError(error, l));
+                } finally {
+                  setBusy(false);
+                }
+              }}
+            >
+              {l("Déplacer dans la corbeille", "Move to trash")}
+            </Button>
+          </>
+        }
+      >
+        <p>
+          <strong>
+            {deletion?.document.title || l("Sans titre", "Untitled")}
+          </strong>
+        </p>
+        <p>
+          {deletion?.kind === "page"
+            ? l(
+                "Les modifications seront placées dans la corbeille. La page d’origine restera accessible.",
+                "The changes will be moved to trash. The original page remains accessible.",
+              )
+            : l(
+                "Le contenu sera retiré du site et déplacé dans la corbeille. Son texte, ses images et son historique seront conservés pour une restauration.",
+                "The content will be removed from the website and moved to trash. Text, images and history are retained for recovery.",
+              )}
+        </p>
+        {actionError && (
+          <p className="p-error" role="alert">
+            {actionError}
+          </p>
+        )}
+      </Dialog>
       <Dialog
         open={create}
         onClose={() => !busy && setCreate(false)}
@@ -252,6 +466,7 @@ export function ContentListPage() {
             </Button>
             <Button
               busy={busy}
+              disabled={newKind === "page" && !selectedPage}
               onClick={async () => {
                 setBusy(true);
                 setActionError("");
@@ -259,7 +474,11 @@ export function ContentListPage() {
                   const e = await cmsRequest<EditorialEntry>(
                     "/entries",
                     "POST",
-                    { kind: newKind, locale: newLocale },
+                    {
+                      kind: newKind,
+                      locale: newLocale,
+                      ...(newKind === "page" ? { pagePath: selectedPage } : {}),
+                    },
                   );
                   navigate(`/admin/contenus/${e.id}`);
                 } catch (e) {
@@ -301,6 +520,45 @@ export function ContentListPage() {
             </select>
           </label>
         </div>
+        {newKind === "page" && (
+          <>
+            <label>
+              {l("Page à modifier", "Page to edit")}
+              <select
+                aria-label={l("Page à modifier", "Page to edit")}
+                value={selectedPage ?? ""}
+                onChange={(e) => setPagePath(e.target.value)}
+                disabled={!availablePages.length}
+              >
+                <option value="" disabled>
+                  {l("Choisir une page", "Choose a page")}
+                </option>
+                {availablePages.map((p) => (
+                  <option key={p.path} value={p.path}>
+                    {p.label} · {p.path}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <p>
+              {l(
+                "Le modèle, les animations et les sections existantes sont conservés. Vous pouvez modifier le titre, l’introduction, l’image et ajouter du texte, des figures et des vidéos.",
+                "The template, animations and existing sections are preserved. Edit the title, introduction and image, and add text, figures and videos.",
+              )}
+            </p>
+            {templateError && (
+              <p role="alert" className="p-error">
+                {l(
+                  "Les pages n’ont pas pu être chargées.",
+                  "Pages could not be loaded.",
+                )}{" "}
+                <Button onClick={loadTemplates}>
+                  {l("Réessayer", "Retry")}
+                </Button>
+              </p>
+            )}
+          </>
+        )}
         <p>
           {l(
             "Chaque langue est rédigée et validée séparément. Vous pourrez lier une traduction depuis l’éditeur.",
@@ -352,12 +610,70 @@ export function ContentEditorPage() {
     return (
       <p role="status">{l("Chargement du document…", "Loading document…")}</p>
     );
+  if (entry.deletedAt)
+    return <TrashedContent entry={entry} onRestored={setEntry} />;
   return <DocumentEditor key={entry.id} initial={entry} />;
+}
+function TrashedContent({
+  entry,
+  onRestored,
+}: {
+  entry: EditorialEntry;
+  onRestored: (entry: EditorialEntry) => void;
+}) {
+  const l = useWords();
+  const [busy, setBusy] = useState(false),
+    [error, setError] = useState("");
+  return (
+    <div className="cms-admin">
+      <Link to="/admin/contenus">
+        ← {l("Tous les contenus", "All content")}
+      </Link>
+      <h1>
+        {entry.document.title || l("Contenu supprimé", "Deleted content")}
+      </h1>
+      <p>
+        {l(
+          "Ce contenu est dans la corbeille. Restaurez-le pour reprendre la rédaction. La restauration ne le remet pas en ligne.",
+          "This content is in trash. Restore it to resume editing. Restoring does not publish it.",
+        )}
+      </p>
+      <Button
+        busy={busy}
+        onClick={async () => {
+          setBusy(true);
+          setError("");
+          try {
+            onRestored(
+              await cmsRequest<EditorialEntry>(
+                `/entries/${entry.id}/untrash`,
+                "POST",
+                { version: entry.version },
+              ),
+            );
+          } catch (error) {
+            setError(cmsError(error, l));
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        <RotateCcw size={16} />
+        {l("Restaurer le brouillon", "Restore draft")}
+      </Button>
+      {error && (
+        <p role="alert" className="p-error">
+          {error}
+        </p>
+      )}
+    </div>
+  );
 }
 function DocumentEditor({ initial }: { initial: EditorialEntry }) {
   const l = useWords(),
     { locale } = useI18n(),
-    navigate = useNavigate();
+    navigate = useNavigate(),
+    [params] = useSearchParams();
   const [entry, setEntry] = useState(initial),
     [doc, setDoc] = useState(initial.document),
     [slug, setSlug] = useState(initial.slug),
@@ -372,7 +688,9 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     [history, setHistory] = useState<EditorialRevision[] | null>(null),
     [withdraw, setWithdraw] = useState(false),
     [deleting, setDeleting] = useState(false),
-    [picker, setPicker] = useState<"cover" | "figure" | "video" | null>(null),
+    [picker, setPicker] = useState<"cover" | "figure" | "video" | null>(
+      params.get("couverture") === "1" ? "cover" : null,
+    ),
     [videoOpen, setVideoOpen] = useState(false),
     [videoUrl, setVideoUrl] = useState(""),
     [videoFile, setVideoFile] = useState<EditorialMedia | null>(null),
@@ -799,6 +1117,65 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       )}
       <div className="cms-editor-layout">
         <div className="cms-editor-main" id="cms-writing">
+          {entry.kind === "page" && (
+            <p className="cms-notice">
+              {l(
+                "Vous modifiez une page existante. Son modèle et ses sections restent en place. Les blocs rédigés ci-dessous s’ajoutent après son introduction.",
+                "You are editing an existing page. Its template and sections remain in place. Blocks written below appear after its introduction.",
+              )}
+            </p>
+          )}
+          <fieldset
+            disabled={busy}
+            className="cms-panel cms-cover-panel"
+            id="cms-cover"
+          >
+            <div className="cms-section-head">
+              <h2>{l("Image de couverture", "Cover image")}</h2>
+              <Button
+                variant="secondary"
+                size="small"
+                onClick={() => setPicker("cover")}
+              >
+                <ImagePlus size={16} />
+                {doc.cover
+                  ? l("Changer l’image", "Change image")
+                  : l("Ajouter une image", "Add image")}
+              </Button>
+            </div>
+            {doc.cover ? (
+              <>
+                <MediaImage
+                  image={doc.cover}
+                  media={media.find((m) => m.id === doc.cover?.mediaId)}
+                />
+                <ImageFields
+                  image={doc.cover}
+                  onChange={(value: ContentImage) => change("cover", value)}
+                />
+                <Button variant="ghost" onClick={() => change("cover", null)}>
+                  {l("Retirer la couverture", "Remove cover")}
+                </Button>
+              </>
+            ) : (
+              <button
+                type="button"
+                className="cms-cover-add"
+                onClick={() => setPicker("cover")}
+              >
+                <ImagePlus size={30} />
+                <strong>
+                  {l("Ajouter une image de couverture", "Add a cover image")}
+                </strong>
+                <span>
+                  {l(
+                    "Importer une photo ou choisir dans la médiathèque. Elle apparaîtra sur la page et sa carte.",
+                    "Upload a photo or choose from the media library. It will appear on the page and its card.",
+                  )}
+                </span>
+              </button>
+            )}
+          </fieldset>
           <fieldset disabled={busy}>
             <label>
               {l("Titre", "Title")}
@@ -894,7 +1271,14 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             )}
           </fieldset>
           <div className="cms-section-head">
-            <h2>{l("Texte & figures", "Body & figures")}</h2>
+            <h2>
+              {entry.kind === "page"
+                ? l(
+                    "Contenu complémentaire de la page",
+                    "Additional page content",
+                  )
+                : l("Texte & figures", "Body & figures")}
+            </h2>
             <span>
               {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
             </span>
@@ -1116,7 +1500,9 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                   disabled={entry.publication?.status === "withdrawn"}
                   onClick={() => setWithdraw(true)}
                 >
-                  {l("Retirer du site", "Withdraw from site")}
+                  {entry.kind === "page"
+                    ? l("Retirer les modifications", "Withdraw page changes")
+                    : l("Retirer du site", "Withdraw from site")}
                 </Button>
               </>
             )}
@@ -1163,45 +1549,12 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             >
               {l("Version", "Version")} {entry.locale === "fr" ? "EN" : "FR"} →
             </Button>
-            {!entry.legacyId && !entry.publishedVersion && (
-              <Button variant="danger" onClick={() => setDeleting(true)}>
-                {l("Supprimer le brouillon", "Delete draft")}
-              </Button>
-            )}
-          </fieldset>
-          <fieldset disabled={busy} className="cms-panel">
-            <div className="cms-section-head">
-              <h2>{l("Image de couverture", "Cover image")}</h2>
-              <Button
-                variant="secondary"
-                size="small"
-                onClick={() => setPicker("cover")}
-              >
-                {l("Choisir", "Choose")}
-              </Button>
-            </div>
-            {doc.cover ? (
-              <>
-                <MediaImage
-                  image={doc.cover}
-                  media={media.find((m) => m.id === doc.cover?.mediaId)}
-                />
-                <ImageFields
-                  image={doc.cover}
-                  onChange={(value: ContentImage) => change("cover", value)}
-                />
-                <Button variant="ghost" onClick={() => change("cover", null)}>
-                  {l("Retirer la couverture", "Remove cover")}
-                </Button>
-              </>
-            ) : (
-              <p className="p-help">
-                {l(
-                  "Facultative. Elle apparaît sur la page et dans les listes de contenus.",
-                  "Optional. Shown on the page and content listings.",
-                )}
-              </p>
-            )}
+            <Button variant="danger" onClick={() => setDeleting(true)}>
+              <Trash2 size={16} />
+              {entry.kind === "page"
+                ? l("Supprimer les modifications", "Delete page changes")
+                : l("Supprimer le contenu", "Delete content")}
+            </Button>
           </fieldset>
           <fieldset disabled={busy} className="cms-panel">
             <h2>{l("Adresse & référencement", "Address & search engines")}</h2>
@@ -1483,16 +1836,21 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         }
       >
         <p>
-          {l(
-            "La page publique affichera « contenu retiré » et disparaîtra des listes, du pied de page et des sitemaps. Le brouillon et son historique restent disponibles.",
-            "The public page will show “content withdrawn” and disappear from listings, the footer and sitemaps. The draft and history remain available.",
-          )}
+          {entry.kind === "page"
+            ? l(
+                "Les modifications publiées seront retirées. La page retrouvera sa présentation d’origine ; votre brouillon restera disponible.",
+                "Published changes will be withdrawn. The page returns to its original presentation; your draft remains available.",
+              )
+            : l(
+                "La page publique affichera « contenu retiré » et disparaîtra des listes, du pied de page et des sitemaps. Le brouillon et son historique restent disponibles.",
+                "The public page will show “content withdrawn” and disappear from listings, the footer and sitemaps. The draft and history remain available.",
+              )}
         </p>
       </Dialog>
       <Dialog
         open={deleting}
         onClose={() => !busy && setDeleting(false)}
-        title={l("Supprimer ce brouillon ?", "Delete this draft?")}
+        title={l("Supprimer ce contenu ?", "Delete this content?")}
         footer={
           <>
             <Button variant="secondary" onClick={() => setDeleting(false)}>
@@ -1503,7 +1861,10 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               busy={busy}
               onClick={() =>
                 action(async () => {
-                  await cmsRequest(`/entries/${entry.id}`, "DELETE");
+                  const saved = dirty ? await save() : entry;
+                  await cmsRequest(`/entries/${entry.id}/trash`, "POST", {
+                    version: saved.version,
+                  });
                   localStorage.removeItem(backupKey);
                   setDoc(entry.document);
                   setSlug(entry.slug);
@@ -1517,10 +1878,15 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         }
       >
         <p>
-          {l(
-            "Le brouillon et son historique seront supprimés définitivement. Les médias resteront dans la médiathèque.",
-            "The draft and history will be permanently deleted. Media will remain in the library.",
-          )}
+          {entry.kind === "page"
+            ? l(
+                "Les modifications seront retirées et conservées dans la corbeille. La page d’origine restera accessible.",
+                "The changes will be withdrawn and retained in trash. The original page remains accessible.",
+              )
+            : l(
+                "Le contenu sera retiré du site et placé dans la corbeille. Son brouillon, ses images et son historique pourront être restaurés.",
+                "The content will be removed from the website and moved to trash. Its draft, images and history can be restored.",
+              )}
         </p>
       </Dialog>
     </div>
@@ -1536,7 +1902,15 @@ function DraftPreview({ content }: { content: PublishedDocument }) {
   return (
     <div className="cms-preview">
       <LocaleProvider locale={content.locale}>
-        <EditorialDocumentView content={content} preview />
+        {["page", "service", "application"].includes(content.kind) ? (
+          <Suspense
+            fallback={<p>{l("Chargement de la page…", "Loading page…")}</p>}
+          >
+            <SitePagePreview content={content} />
+          </Suspense>
+        ) : (
+          <EditorialDocumentView content={content} preview />
+        )}
       </LocaleProvider>
     </div>
   );

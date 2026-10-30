@@ -12,6 +12,8 @@ import {
 } from "../../supabase/functions/_shared/editorial";
 import { useLocale } from "../i18n";
 import { LegacyStudyEvidence } from "../pages/Editorial";
+import { PageHero, FinalCTA } from "../components/ui";
+import { editorialMeta } from "./meta";
 function ScientificTitle({ text }: { text: string }) {
   return (
     <>
@@ -187,17 +189,57 @@ export function EditorialDocumentView({
     fr = content.locale === "fr";
   const parent = contentBases[content.locale][content.kind];
   const label =
-    content.kind === "study"
+    content.kind === "service"
       ? fr
-        ? "Études de cas"
-        : "Case studies"
-      : content.kind === "publication"
-        ? fr
-          ? "Recherche & publications"
-          : "Research & publications"
-        : fr
-          ? "Articles & guides"
-          : "Articles & guides";
+        ? "Expertises"
+        : "Expertise"
+      : content.kind === "application"
+        ? "Applications"
+        : content.kind === "study"
+          ? fr
+            ? "Études de cas"
+            : "Case studies"
+          : content.kind === "publication"
+            ? fr
+              ? "Recherche & publications"
+              : "Research & publications"
+            : fr
+              ? "Articles & guides"
+              : "Articles & guides";
+  if (content.kind === "service" || content.kind === "application")
+    return (
+      <>
+        <PageHero
+          meta={editorialMeta(content, [])}
+          eyebrow={d.category || label}
+          title={d.title.replace(/\*/g, "")}
+          intro={d.summary}
+          editorial={content}
+        />
+        <section className="section-space">
+          <div className="container cms-document-body">
+            <DocumentBody
+              body={d.body}
+              media={content.media}
+              locale={content.locale}
+            />
+            {d.references.length > 0 && (
+              <div className="cms-references">
+                <h2>{fr ? "Sources & références" : "Sources & references"}</h2>
+                <ol>
+                  {d.references.map((r, i) => (
+                    <li key={i}>
+                      {r.url ? <a href={r.url}>{r.label}</a> : r.label}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+          </div>
+        </section>
+        <FinalCTA />
+      </>
+    );
   return (
     <article className="cms-document">
       <header className="cms-document-hero container">

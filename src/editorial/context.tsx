@@ -59,9 +59,11 @@ export function readEditorialBootstrap(): EditorialBootstrap {
 }
 export function EditorialProvider({
   initial = empty,
+  preview = false,
   children,
 }: {
   initial?: EditorialBootstrap;
+  preview?: boolean;
   children: ReactNode;
 }) {
   const [index, setIndex] = useState(initial.index);
@@ -71,11 +73,26 @@ export function EditorialProvider({
   const [failures, setFailures] = useState<Record<string, string>>({});
   const pending = useMemo(() => new Set<string>(), []);
   useEffect(() => {
+    if (preview) return;
     let alive = true;
     const update = () =>
       publicJson("/index")
         .then((data) => {
-          if (alive && Array.isArray(data)) setIndex(data);
+          if (alive && Array.isArray(data)) {
+            setIndex(data);
+            setDocuments((old) =>
+              Object.fromEntries(
+                Object.entries(old).filter(([path, doc]) =>
+                  data.some(
+                    (r: EditorialSummary) =>
+                      r.path === path &&
+                      r.status === "published" &&
+                      r.updatedAt === doc.updatedAt,
+                  ),
+                ),
+              ),
+            );
+          }
         })
         .catch(() => {});
     void update();
@@ -87,7 +104,7 @@ export function EditorialProvider({
       alive = false;
       document.removeEventListener("visibilitychange", focus);
     };
-  }, []);
+  }, [preview]);
   const state: EditorialState = {
     index,
     documents,
@@ -127,15 +144,28 @@ export function resolveEditorialMeta(
   if (!row)
     return index.length ? filterEditorialAlternates(fallback, index) : fallback;
   if (row.status === "withdrawn")
-    return {
-      ...fallback,
-      kind: "not-found",
-      noindex: true,
-      alternates: {},
-      path: normalized,
-    };
+    if (row.kind === "page") return filterEditorialAlternates(fallback, index);
+    else
+      return {
+        ...fallback,
+        kind: "not-found",
+        noindex: true,
+        alternates: {},
+        path: normalized,
+      };
   return editorialMeta(row, index);
 }
 export function usePublicMeta(path: string) {
   return resolveEditorialMeta(path, useEditorial().index);
+}
+export function usePageDocument(path: string) {
+  const state = useEditorial();
+  const row = state.index.find(
+    (r) => r.kind === "page" && r.path === path && r.status === "published",
+  );
+  const content = state.documents[path];
+  useEffect(() => {
+    if (row && !content) state.load(path);
+  }, [row?.id, row?.updatedAt, content]);
+  return row && content?.kind === "page" ? content : undefined;
 }

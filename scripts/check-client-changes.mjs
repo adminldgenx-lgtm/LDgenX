@@ -193,10 +193,10 @@ try {
     await expect(page.locator('.trace-panel-tags')).not.toContainText(/SNP/);
     await page.goto(origin + address(locale, 'services'));
     await expect(page.locator('.desktop-nav').locator(':scope > a, :scope > .nav-dropdown')).toHaveCount(
-      5,
+      6,
     );
     await expect(page.locator('.desktop-nav')).toContainText('Publications');
-    await expect(page.locator('.desktop-nav')).not.toContainText(c.copy.navigation.resources);
+    await expect(page.locator('.desktop-nav')).toContainText(c.copy.navigation.resources);
     await expect(page.locator('.desktop-nav')).not.toContainText(c.copy.navigation.innovation);
     const pop = c.services.find((s) => s.id === 'genomique-des-populations');
     const trigger = page.getByRole('button', { name: pop.title, exact: true }).first();
@@ -269,7 +269,7 @@ try {
     JSON.stringify({ passed: true, results, runtimeErrors: errors }, null, 2) + '\n',
   );
   console.log(
-    'Passed client acceptance in FR/EN: map placement, preview labels, practice sections, full R&D migration, preserved publications, scientific corrections, five-item navbar, ERC and redirects.',
+    'Passed client acceptance in FR/EN: map placement, preview labels, practice sections, full R&D migration, preserved publications, scientific corrections, six-item navbar, ERC and redirects.',
   );
 } finally {
   await browser.close();

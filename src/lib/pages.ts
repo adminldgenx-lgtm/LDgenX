@@ -45,6 +45,8 @@ export interface PageMeta {
   id?: string;
   slug?: string;
   image?: string;
+  /** Absolute address of a published page cover, used for sharing. */
+  coverUrl?: string;
   noindex?: boolean;
   /** The same page in each language that has it. */
   alternates: Partial<Record<Locale, string>>;
@@ -775,7 +777,7 @@ export function renderHead(meta: PageMeta, lastmod?: string) {
     url = escapeHtml(company.origin + meta.path);
   const ui = catalog(meta.locale).ui;
   // Every page shares a picture; the team at work stands in for pages without their own.
-  const image = `${company.origin}${socialImageUrl(meta.image ?? 'equipe-maxime')}`;
+  const image = meta.coverUrl ?? `${company.origin}${socialImageUrl(meta.image ?? 'equipe-maxime')}`;
   const imageAlt = escapeHtml(meta.label);
   return `<title>${title}</title>
     <meta name="description" content="${description}" />

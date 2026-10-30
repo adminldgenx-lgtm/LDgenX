@@ -183,3 +183,62 @@ await writeFile(
 console.log(
   `Prepared ${entries.length} private working copies and static asset/route allowlists. No public content changed.`,
 );
+
+// Existing page templates are editable through a route allowlist, without replacing their layout.
+const editableKinds = new Set([
+  "home",
+  "services",
+  "service",
+  "applications",
+  "application",
+  "studies",
+  "publications",
+  "resources",
+  "innovations",
+  "innovation",
+  "about",
+  "team",
+  "partners",
+  "person",
+  "faq",
+  "glossary",
+  "contact",
+]);
+const plain = (value) =>
+  String(value)
+    .replace(/<br\s*\/?\s*>/gi, "\n")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+const pageTemplates = source.pages
+  .filter((p) => editableKinds.has(p.kind))
+  .map((p) => {
+    const html = source.render(p.path).html;
+    return {
+      path: p.path,
+      locale: p.locale,
+      label: p.label,
+      kind: p.kind,
+      alternates: p.alternates,
+      title: plain(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || p.label),
+      summary: plain(
+        html.match(
+          /<p class="(?:lead|dna-hero-intro)"[^>]*>([\s\S]*?)<\/p>/i,
+        )?.[1] || p.description,
+      ),
+    };
+  });
+await writeFile(
+  "supabase/functions/_shared/editorial-pages.ts",
+  "// Generated from existing public page templates. No private data.\nexport const editorialPageTemplates = " +
+    JSON.stringify(pageTemplates) +
+    ";\n",
+);
+console.log(
+  "Prepared " + pageTemplates.length + " editable website page templates.",
+);

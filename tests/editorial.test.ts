@@ -9,7 +9,59 @@ import {
   documentMedia,
   contentSlug,
   EditorialError,
+  contentPath,
+  contentKinds,
 } from "../supabase/functions/_shared/editorial.ts";
+import { editorialPageTemplates } from "../supabase/functions/_shared/editorial-pages.ts";
+
+test("new sections and existing-page paths remain bilingual and stable", () => {
+  assert.equal(
+    contentPath("service", "fr", "nouvelle-expertise"),
+    "/services/nouvelle-expertise",
+  );
+  assert.equal(
+    contentPath("application", "en", "new-application"),
+    "/en/applications/new-application",
+  );
+  assert.equal(contentPath("page", "fr", ""), "/");
+  assert.equal(contentPath("page", "en", ""), "/en");
+  assert.equal(
+    contentPath("page", "fr", "a-propos/equipe"),
+    "/a-propos/equipe",
+  );
+  assert.equal(new Set(contentKinds).size, 6);
+});
+test("page edits can preserve existing body sections while requiring review and image rights", () => {
+  const d = emptyDocument();
+  d.title = "Accueil";
+  d.summary = "Une introduction scientifique suffisamment développée.";
+  assert.deepEqual(publicationIssues(d, "page"), ["review"]);
+  d.reviewed = true;
+  assert.deepEqual(publicationIssues(d, "page"), []);
+  d.cover = {
+    mediaId: "17a1a94a-e945-4eb9-8865-2b4dcbeef47a",
+    alt: "",
+    caption: "",
+    credit: "",
+    licenceUrl: "",
+  };
+  assert.deepEqual(publicationIssues(d, "page"), ["alt", "credit"]);
+  assert(publicationIssues(d, "service").includes("body"));
+});
+test("editable page registry contains only unique existing public routes", () => {
+  assert(editorialPageTemplates.length > 20);
+  assert.equal(
+    new Set(editorialPageTemplates.map((p) => p.path)).size,
+    editorialPageTemplates.length,
+  );
+  for (const p of editorialPageTemplates) {
+    assert(p.path.startsWith("/"));
+    assert(!/^\/(?:admin|espace|api)(?:\/|$)/.test(p.path));
+    assert(!p.path.includes(".."));
+    assert(p.title.trim());
+    assert(p.summary.trim());
+  }
+});
 import {
   webpSize,
   videoMime,

@@ -1,7 +1,16 @@
 .cms-admin {
   max-width: 1500px;
-  margin: auto;
+  margin-inline: auto;
   color: #173650;
+}
+.cms-page-preview-frame {
+  width: 100%;
+  height: 75vh;
+  min-height: 450px;
+  border: 0;
+  border-radius: 8px;
+  background: #fafbf8;
+  display: block;
 }
 .cms-admin h1 {
   font-size: clamp(1.7rem, 3vw, 2.4rem);
@@ -145,6 +154,117 @@
 }
 .cms-entry:hover {
   border-color: #6f9a36;
+}
+.cms-entry-main {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.2rem;
+  min-width: 0;
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+  align-items: start;
+}
+.cms-entry-main:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.cms-entry-main:focus-visible {
+  outline: 2px solid #427d29;
+  outline-offset: 6px;
+  border-radius: 5px;
+}
+.cms-entry-image {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #edf3e8;
+  color: #6c8460;
+}
+.cms-entry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cms-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.cms-entry-actions .p-button {
+  font-size: 0.74rem;
+  min-height: 36px;
+  padding: 0.4rem 0.65rem;
+}
+.cms-cover-add {
+  width: 100%;
+  border: 1px dashed #95b280;
+  border-radius: 10px;
+  background: #f7faf3;
+  color: #335827;
+  padding: 1.4rem;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.cms-cover-add:hover {
+  background: #edf4e4;
+  border-color: #427d29;
+}
+.cms-cover-add span {
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 55ch;
+}
+.cms-cover-panel > img {
+  max-height: 280px;
+  object-fit: cover;
+}
+.cms-cover-panel .cms-image-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+@media (max-width: 900px) {
+  .cms-entry {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cms-entry > .cms-entry-meta {
+    max-width: none;
+    text-align: left;
+  }
+  .cms-entry-meta time {
+    display: inline-block;
+    margin: 0 0 0 0.75rem;
+  }
+  .cms-entry-actions {
+    justify-content: flex-start;
+    margin-top: 0.75rem;
+  }
+}
+@media (max-width: 500px) {
+  .cms-entry-main {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+  .cms-entry-main small {
+    overflow-wrap: anywhere;
+  }
+  .cms-cover-panel .cms-image-fields {
+    grid-template-columns: 1fr;
+  }
+  .cms-cover-panel .cms-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 .cms-entry h2 {
   font-size: 1.05rem;

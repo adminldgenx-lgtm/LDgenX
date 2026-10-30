@@ -2,6 +2,57 @@
   padding: 52px 0 110px;
   color: #173d4b;
 }
+.cms-home-cover {
+  position: absolute;
+  inset: 0;
+  z-index: -2; /* Under the hero shade, like the film it replaces. */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cms-home-title {
+  max-width: 16ch;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+/* The hero headline is set for a few short words; a longer title steps down a size. */
+.cms-home-title[data-long] {
+  max-width: 22ch;
+  font-size: clamp(36px, 3.9vw, 64px);
+  line-height: 1.08;
+}
+@media (max-width: 767px) {
+  .cms-home-title {
+    hyphens: auto;
+  }
+}
+.cms-home-cover-credit {
+  display: block;
+  padding-top: 12px;
+  font-size: 0.75rem;
+  color: #5b6c75;
+  line-height: 1.6;
+}
+.cms-home-cover-credit a {
+  text-decoration: underline;
+}
+.cms-hero-credit {
+  display: block;
+  color: inherit;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  margin-top: 0.65rem;
+  opacity: 0.8;
+}
+.cms-hero-credit a {
+  text-decoration: underline;
+}
+.cms-section-cards:has(.cms-card-grid) {
+  padding-bottom: 4rem;
+}
+.cms-page-writing {
+  border-bottom: 1px solid #dde5dc;
+}
 .cms-document-hero {
   max-width: 1100px;
   padding-bottom: 36px;

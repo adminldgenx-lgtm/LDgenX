@@ -1,6 +1,14 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { build, loadEnv } from "vite";
 
+// Read as data: this runs during the Cloudflare build, whose Node may not import TypeScript.
+const registry = await readFile(
+  "supabase/functions/_shared/editorial-pages.ts",
+  "utf8",
+);
+const editablePaths = JSON.parse(
+  registry.slice(registry.indexOf("["), registry.lastIndexOf("]") + 1),
+).map((p) => p.path);
 const env = { ...loadEnv("production", process.cwd(), ""), ...process.env };
 const templates = JSON.parse(
   await readFile(".prerender/editorial-templates.json", "utf8"),
@@ -63,20 +71,27 @@ await writeFile(
     {
       version: 1,
       include: [
-        "/ressources*",
-        "/etudes-de-cas*",
-        "/recherche*",
-        "/en/resources*",
-        "/en/case-studies*",
-        "/en/research*",
-        "/plan-du-site",
-        "/en/site-map",
-        "/sitemap.xml",
-        "/sitemaps/*",
-        "/llms.txt",
-        "/llms-full.txt",
-        "/api/editorial/*",
-        "/api/auth/google/callback",
+        ...new Set([
+          ...editablePaths,
+          "/services*",
+          "/applications*",
+          "/en/services*",
+          "/en/applications*",
+          "/ressources*",
+          "/etudes-de-cas*",
+          "/recherche*",
+          "/en/resources*",
+          "/en/case-studies*",
+          "/en/research*",
+          "/plan-du-site",
+          "/en/site-map",
+          "/sitemap.xml",
+          "/sitemaps/*",
+          "/llms.txt",
+          "/llms-full.txt",
+          "/api/editorial/*",
+          "/api/auth/google/callback",
+        ]),
       ],
       exclude: [],
     },

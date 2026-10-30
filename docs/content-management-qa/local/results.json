@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-30T18:56:04.262Z",
+  "origin": "http://127.0.0.1:4174",
+  "checks": [
+    "Only active administrators can access page templates; non-public target paths are rejected",
+    "Trash checks versions and roles, blocks editing/publication, and restores a private draft requiring review",
+    "Existing-page drafting preserves its template, reopens one working copy, locks its path and remains private",
+    "Cover upload, attribution, saving and real list thumbnail work; referenced media cannot be deleted",
+    "List deletion confirms the title, supports cancellation, moves to trash and restores with its cover",
+    "Content actions and image controls fit mobile in French and English",
+    "Existing-page preview uses its actual page template, the public stylesheet and additional authored sections",
+    "A new expertise previews in the public page model and stylesheet",
+    "No QA draft or image was published; client isolation and public content remain unchanged"
+  ],
+  "browserExceptions": [],
+  "fixturesCleaned": true,
+  "boundaries": "Private disposable drafts and a public-source test image only; no public content, mail, client messages or appointments created."
+}

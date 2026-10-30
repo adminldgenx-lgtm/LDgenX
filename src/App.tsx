@@ -1,13 +1,18 @@
-import { use, useEffect, useRef, useState, type ComponentType } from 'react';
-import { Navigate, useLocation, useNavigationType } from 'react-router-dom';
-import { localeAt, redirects, type PageKind, type PageMeta } from './lib/pages';
-import { catalogs, loadCatalog } from './content/catalog';
-import { Header } from './layouts/Header';
-import { Footer } from './layouts/Footer';
-import { SEO } from './components/SEO';
-import { Button, Eyebrow } from './components/ui';
-import { Home } from './pages/Home';
-import { ServicePage, ServicesPage, ApplicationsPage, ApplicationPage } from './pages/Expertise';
+import { use, useEffect, useRef, useState, type ComponentType } from "react";
+import { Navigate, useLocation, useNavigationType } from "react-router-dom";
+import { localeAt, redirects, type PageKind, type PageMeta } from "./lib/pages";
+import { catalogs, loadCatalog } from "./content/catalog";
+import { Header } from "./layouts/Header";
+import { Footer } from "./layouts/Footer";
+import { SEO } from "./components/SEO";
+import { Button, Eyebrow } from "./components/ui";
+import { Home } from "./pages/Home";
+import {
+  ServicePage,
+  ServicesPage,
+  ApplicationsPage,
+  ApplicationPage,
+} from "./pages/Expertise";
 import {
   StudiesPage,
   StudyPage,
@@ -15,7 +20,7 @@ import {
   InnovationPage,
   ResourcesPage,
   ArticlePage,
-} from './pages/Editorial';
+} from "./pages/Editorial";
 import {
   AboutPage,
   TeamPage,
@@ -24,14 +29,14 @@ import {
   PrivacyPage,
   PersonPage,
   TermsPage,
-} from './pages/Company';
-import { WorkPage } from './pages/Works';
-import { PublicationPage, ResearchPage } from './pages/Research';
-import { FaqPage, GlossaryPage, SiteMapPage } from './pages/Knowledge';
-import { LocaleProvider, useCatalog, useRoutes } from './i18n';
-import { ContactPage } from './pages/Contact';
-import { usePublicMeta } from './editorial/context';
-import { PublishedEditorialPage } from './editorial/PublicDocument';
+} from "./pages/Company";
+import { WorkPage } from "./pages/Works";
+import { PublicationPage, ResearchPage } from "./pages/Research";
+import { FaqPage, GlossaryPage, SiteMapPage } from "./pages/Knowledge";
+import { LocaleProvider, useCatalog, useRoutes } from "./i18n";
+import { ContactPage } from "./pages/Contact";
+import { usePublicMeta } from "./editorial/context";
+import { PublishedEditorialPage } from "./editorial/PublicDocument";
 
 function NotFound() {
   const t = useCatalog().ui.notFound;
@@ -74,8 +79,12 @@ const templates: Record<PageKind, ComponentType<{ meta: PageMeta }>> = {
   contact: ContactPage,
   legal: LegalPage,
   privacy: PrivacyPage,
-  'not-found': NotFound,
+  "not-found": NotFound,
 };
+export function PageContent({ meta }: { meta: PageMeta }) {
+  const Page = templates[meta.kind];
+  return <Page meta={meta} />;
+}
 
 /** A hairline under the header that fills as the page is read. */
 function ReadingProgress() {
@@ -86,7 +95,7 @@ function ReadingProgress() {
       frame = 0;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       bar.current?.style.setProperty(
-        '--read',
+        "--read",
         String(max > 0 ? Math.min(1, window.scrollY / max) : 0),
       );
     };
@@ -94,11 +103,11 @@ function ReadingProgress() {
       if (!frame) frame = requestAnimationFrame(update);
     };
     update();
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
     return () => {
-      window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
       cancelAnimationFrame(frame);
     };
   }, []);
@@ -136,9 +145,9 @@ export function App() {
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(save);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(frame);
     };
   }, []);
@@ -154,35 +163,44 @@ export function App() {
     const here = location.pathname + location.hash;
     if (here === place.current) return;
     place.current = here;
-    const saved = navigationType === 'POP' ? scrollPositions.get(location.key) : undefined;
-    const target = location.hash && document.getElementById(location.hash.slice(1));
+    const saved =
+      navigationType === "POP" ? scrollPositions.get(location.key) : undefined;
+    const target =
+      location.hash && document.getElementById(location.hash.slice(1));
     // The page jumps without the stylesheet's smooth scrolling, which would otherwise carry on
     // from the previous page's height and leave the new one a few pixels down.
     const root = document.documentElement;
-    root.style.scrollBehavior = 'auto';
-    if (saved !== undefined) window.scrollTo({ top: saved, behavior: 'instant' });
-    else if (target) target.scrollIntoView({ behavior: 'instant' });
-    else window.scrollTo({ top: 0, behavior: 'instant' });
-    document.getElementById('main')?.focus({ preventScroll: true });
-    const frame = requestAnimationFrame(() => root.style.removeProperty('scroll-behavior'));
+    root.style.scrollBehavior = "auto";
+    if (saved !== undefined)
+      window.scrollTo({ top: saved, behavior: "instant" });
+    else if (target) target.scrollIntoView({ behavior: "instant" });
+    else window.scrollTo({ top: 0, behavior: "instant" });
+    document.getElementById("main")?.focus({ preventScroll: true });
+    const frame = requestAnimationFrame(() =>
+      root.style.removeProperty("scroll-behavior"),
+    );
     return () => {
       cancelAnimationFrame(frame);
-      root.style.removeProperty('scroll-behavior');
+      root.style.removeProperty("scroll-behavior");
     };
   }, [location.pathname, location.hash, location.key, navigationType]);
-  const normalized = location.pathname.replace(/\/+$/, '') || '/';
+  const normalized = location.pathname.replace(/\/+$/, "") || "/";
   return (
     <LocaleProvider locale={meta.locale}>
       <SEO meta={meta} />
       <Header />
-      {meta.kind !== 'home' && <ReadingProgress />}
+      {meta.kind !== "home" && <ReadingProgress />}
       <main
         id="main"
         tabIndex={-1}
         key={meta.path}
-        className={navigated ? 'page-enter' : undefined}
+        className={navigated ? "page-enter" : undefined}
       >
-        {meta.editorial ? <PublishedEditorialPage row={meta.editorial} /> : <Page meta={meta} />}
+        {meta.editorial ? (
+          <PublishedEditorialPage row={meta.editorial} />
+        ) : (
+          <Page meta={meta} />
+        )}
       </main>
       <Footer />
       {redirects[normalized] && <Navigate to={redirects[normalized]} replace />}

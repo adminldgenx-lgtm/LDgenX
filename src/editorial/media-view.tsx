@@ -46,6 +46,32 @@ export function MediaImage({
     />
   );
 }
+/** As on article covers, a house picture needs no public credit line. */
+export function CoverCredit({
+  image,
+  className,
+}: {
+  image: ContentImage;
+  className: string;
+}) {
+  const credit = image.credit === "LDgenX" ? "" : image.credit;
+  if (!image.caption && !credit) return null;
+  return (
+    <small className={className}>
+      {[image.caption, credit].filter(Boolean).join(" · ")}
+      {image.licenceUrl && (
+        <>
+          {" "}
+          ·{" "}
+          <a href={image.licenceUrl} rel="noreferrer">
+            Source / licence
+          </a>
+        </>
+      )}
+    </small>
+  );
+}
+
 export function ContentVideo({
   node,
   media = [],

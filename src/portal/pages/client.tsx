@@ -180,7 +180,6 @@ function AppointmentRow({
 }) {
   const { t, locale, date, time, dateTime } = useI18n();
   const type = config.types.find((x) => x.id === a.typeId);
-  const host = config.hosts.find((h) => h.id === a.hostId);
   const live =
     (a.status === "requested" || a.status === "confirmed") &&
     Date.parse(a.end) > Date.now();
@@ -200,8 +199,8 @@ function AppointmentRow({
         </div>
         <p className="p-muted">
           {date(a.start)} · {time(a.start)}–{time(a.end)}
-          {a.status === "confirmed" && host && (
-            <> · {fill(t.booking.withHost, { name: host.name })}</>
+          {a.status === "confirmed" && (
+            <> · {fill(t.booking.withHost, { name: "LDgenX" })}</>
           )}
         </p>
         {a.change && (

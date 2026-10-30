@@ -6,6 +6,7 @@ import {
   EDITORIAL_LIMITS as LIMITS,
   contentPath,
   contentSlug,
+  contentKinds,
   documentMedia,
   emptyDocument,
   publicationIssues,
@@ -21,6 +22,7 @@ import {
   type MediaVariant,
 } from "../_shared/editorial.ts";
 import { webpSize, videoMime } from "../_shared/editorial-media.ts";
+import { editorialPageTemplates } from "../_shared/editorial-pages.ts";
 import {
   editorialStaticImages,
   editorialStaticPaths,
@@ -92,6 +94,7 @@ function requestContext() {
       createdAt: iso(row.created_at),
       updatedAt: iso(row.updated_at),
       authorName: String(row.author_name ?? "LDgenX"),
+      deletedAt: row.deleted_at ? iso(row.deleted_at) : null,
     };
   }
   async function media(
@@ -136,6 +139,23 @@ function requestContext() {
     return ids.length
       ? await db`select * from public.cms_media where id in ${db(ids)} and state='ready'`
       : [];
+  }
+  async function signedMedia(rows: Row[]) {
+    const paths = rows
+      .filter((r) => !r.is_public)
+      .flatMap((r) => values(r.variants).map((v) => v.path));
+    const signed = new Map<string, string>();
+    for (let i = 0; i < paths.length; i += 100) {
+      const batch = paths.slice(i, i + 100);
+      const result = await admin.storage
+        .from(PRIVATE)
+        .createSignedUrls(batch, 3600);
+      if (result.error) throw new EditorialError("media_unavailable", 503);
+      result.data?.forEach((item, index) => {
+        if (item.signedUrl) signed.set(batch[index], item.signedUrl);
+      });
+    }
+    return Promise.all(rows.map((r) => media(r, true, signed)));
   }
   async function syncLinks(
     tx: Sql,
@@ -350,12 +370,19 @@ function requestContext() {
       await sql`select * from public.cms_publications where entry_id=${id}`;
     return entry(row, pub);
   }
-  async function current(tx: Sql, id: string, version: unknown) {
+  async function current(
+    tx: Sql,
+    id: string,
+    version: unknown,
+    allowDeleted = false,
+  ) {
     const [row] =
       await tx`select * from public.cms_entries where id=${id} for update`;
     if (!row) throw new EditorialError("not_found", 404);
     if (!Number.isSafeInteger(version) || Number(row.version) !== version)
       throw new EditorialError("conflict", 409);
+    if (row.deleted_at && !allowDeleted)
+      throw new EditorialError("trashed", 409);
     return row;
   }
   async function unused(tx: Sql, id: string) {
@@ -477,9 +504,24 @@ function requestContext() {
         });
         return respond({ removed });
       }
+      if (path === "/page-templates" && req.method === "GET")
+        return respond(editorialPageTemplates);
       if (path === "/entries" && req.method === "GET") {
         const rows =
-          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.draft-'body'-'references' as draft,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
+          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.deleted_at,e.draft-'body'-'references' as draft,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
+        const coverIds = [
+          ...new Set(
+            rows
+              .map((r) => (r.draft as EditorialDocument).cover?.mediaId)
+              .filter(Boolean),
+          ),
+        ] as string[];
+        let covers: EditorialMedia[] = [];
+        try {
+          covers = await signedMedia(await mediaRows(coverIds));
+        } catch {
+          /* A thumbnail failure must not hide the content list. */
+        }
         return respond(
           rows.map((r) => {
             const result = entry(r, r.publication as Row | undefined);
@@ -488,6 +530,9 @@ function requestContext() {
               body: { type: "doc", content: [] },
               references: [],
             };
+            result.coverMedia =
+              covers.find((m) => m.id === result.document.cover?.mediaId) ??
+              null;
             return result;
           }),
         );
@@ -495,19 +540,28 @@ function requestContext() {
       if (path === "/entries" && req.method === "POST") {
         const kind = body.kind as ContentKind,
           locale = body.locale as ContentLocale;
-        if (
-          !["article", "study", "publication"].includes(kind) ||
-          !["fr", "en"].includes(locale)
-        )
+        if (!contentKinds.includes(kind) || !["fr", "en"].includes(locale))
           throw new EditorialError("invalid_input");
         const id = crypto.randomUUID();
         let group: string = crypto.randomUUID(),
-          document = emptyDocument();
+          document = emptyDocument(),
+          targetPath = String(body.pagePath ?? "");
         if (body.translationOf) {
           const original = await getEntry(validId(body.translationOf));
-          if (original.locale === locale || original.kind !== kind)
+          if (
+            original.deletedAt ||
+            original.locale === locale ||
+            original.kind !== kind
+          )
             throw new EditorialError("invalid_input");
           group = original.groupId;
+          if (kind === "page")
+            targetPath =
+              editorialPageTemplates.find(
+                (p) =>
+                  p.path ===
+                  contentPath(original.kind, original.locale, original.slug),
+              )?.alternates[locale] ?? "";
           // Do not auto-translate scientific content. The author writes/reviews each language.
           document = {
             ...document,
@@ -517,36 +571,46 @@ function requestContext() {
             references: original.document.references,
           };
         }
-        const slug = `document-${id.slice(0, 8)}`;
+        let slug = `document-${id.slice(0, 8)}`,
+          legacyId: string | null = null;
+        if (kind === "page") {
+          const template = editorialPageTemplates.find(
+            (p) => p.path === targetPath && p.locale === locale,
+          );
+          if (!template) throw new EditorialError("invalid_input");
+          slug = template.path.replace(
+            locale === "en" ? /^\/en(?:\/|$)/ : /^\//,
+            "",
+          );
+          legacyId = `page:${template.path}`;
+          document = {
+            ...document,
+            title: template.title,
+            summary: template.summary,
+          };
+        }
+        let createdId: string = id;
         await txRun(async (tx) => {
           await lock(tx);
+          if (kind === "page") {
+            const [existing] =
+              await tx`select id from public.cms_entries where kind='page' and locale=${locale} and slug=${slug}`;
+            if (existing) {
+              createdId = String(existing.id);
+              return;
+            }
+          }
           const [count] =
             await tx`select count(*)::int as count from public.cms_entries`;
           if (count.count >= 500) throw new EditorialError("entry_limit", 409);
-          await tx`insert into public.cms_entries(id,kind,locale,slug,group_id,draft,created_by,updated_by) values(${id},${kind},${locale},${slug},${group},${tx.json(document as never)},${user},${user})`;
+          await tx`insert into public.cms_entries(id,kind,locale,slug,group_id,legacy_id,draft,created_by,updated_by) values(${id},${kind},${locale},${slug},${group},${legacyId},${tx.json(document as never)},${user},${user})`;
         });
-        return respond(await getEntry(id), 201);
+        return respond(await getEntry(createdId), createdId === id ? 201 : 200);
       }
       if (path === "/media" && req.method === "GET") {
         const rows =
           await sql`select m.*,(select count(distinct entry_id) from (select entry_id from public.cms_media_links where media_id=m.id union select entry_id from public.cms_revisions where m.id=any(media_ids)) uses)::int as uses from public.cms_media m where state='ready' order by created_at desc`;
-        const paths = rows
-          .filter((r) => !r.is_public)
-          .flatMap((r) => values(r.variants).map((v) => v.path));
-        const signed = new Map<string, string>();
-        for (let i = 0; i < paths.length; i += 100) {
-          const batch = paths.slice(i, i + 100);
-          const result = await admin.storage
-            .from(PRIVATE)
-            .createSignedUrls(batch, 3600);
-          if (result.error) throw new EditorialError("media_unavailable", 503);
-          result.data?.forEach((item, index) => {
-            if (item.signedUrl) signed.set(batch[index], item.signedUrl);
-          });
-        }
-        return respond(
-          await Promise.all(rows.map((r) => media(r, true, signed))),
-        );
+        return respond(await signedMedia(rows));
       }
       let match = path.match(/^\/media\/([^/]+)$/);
       if (match && req.method === "DELETE") {
@@ -568,11 +632,38 @@ function requestContext() {
         return respond({ ok: true });
       }
       match = path.match(
-        /^\/entries\/([^/]+)(?:\/(publish|withdraw|revisions|restore))?$/,
+        /^\/entries\/([^/]+)(?:\/(publish|withdraw|revisions|restore|trash|untrash))?$/,
       );
       if (!match) throw new EditorialError("not_found", 404);
       const id = validId(match[1]),
         action = match[2];
+      if (
+        (action === "trash" || action === "untrash") &&
+        req.method === "POST"
+      ) {
+        await txRun(async (tx) => {
+          await lock(tx);
+          const row = await current(tx, id, body.version, action === "untrash");
+          if (action === "untrash") {
+            if (!row.deleted_at) throw new EditorialError("conflict", 409);
+            await revision(tx, row, name, "untrash");
+            await tx`update public.cms_entries set deleted_at=null,deleted_by=null,draft=jsonb_set(draft,'{reviewed}','false'::jsonb),version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
+          } else {
+            await revision(tx, row, name, "trash");
+            if (row.legacy_id || row.published_version) {
+              const route = contentPath(
+                row.kind as ContentKind,
+                row.locale as ContentLocale,
+                String(row.slug),
+              );
+              await tx`insert into public.cms_publications(entry_id,kind,locale,slug,path,group_id,legacy_id,status,snapshot) values(${id},${String(row.kind)},${String(row.locale)},${String(row.slug)},${route},${String(row.group_id)},${row.legacy_id as string | null},'withdrawn',null) on conflict(entry_id) do update set status='withdrawn',snapshot=null,updated_at=now()`;
+              await tx`delete from public.cms_media_links where entry_id=${id} and stage='published'`;
+            }
+            await tx`update public.cms_entries set deleted_at=now(),deleted_by=${user},version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
+          }
+        });
+        return respond(await getEntry(id));
+      }
       if (!action && req.method === "DELETE") {
         await txRun(async (tx) => {
           await lock(tx);

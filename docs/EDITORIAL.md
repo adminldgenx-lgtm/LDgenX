@@ -35,6 +35,7 @@ These application safeguards reduce storage and bandwidth; they do not make the 
 - `scripts/prepare-editorial.mjs` generates an asset/route allowlist and a bilingual import from the checked catalogues. `scripts/setup-editorial.mjs` applies only this migration and inserts missing imports, without overwriting existing edits or changing Auth/email settings. It never publishes imported material.
 - Cloudflare Pages builds a selective `_worker.js` renderer and `_routes.json`. Editorial paths, discovery files and a public read API use the worker; unrelated public pages, portal routes and static assets bypass it. Only public Supabase configuration is bundled. Drafts and signed preview links never enter the public HTML bootstrap. Public data is cached for 15 seconds per isolate. Backend failures return 503/noindex instead of a false missing-page result.
 - The account menu's browser-only Auth import is excluded from the SSR worker. Each request gets its own editorial context; one visitor's document cannot become another visitor's draft.
+- Pages from the editable registry keep their static CDN delivery until a publication changes them: the worker reads the public index with a 2.5-second budget, then hands untouched pages to the static assets, byte for byte. Only a published page edit, or a section listing with new content, is rendered. If the backend fails or hangs, these pages fall back to their static version.
 - Existing static pages remain the public baseline until explicitly replaced or withdrawn. Existing chart/map values are not rewritten by the CMS migration. Resources and all other public pages remain in the directory.
 - OVH email, DNS, SMTP, Cloudflare email protection, Google login and Calendar are outside this change.
 
@@ -51,6 +52,10 @@ node scripts/check-editorial-api.mjs
 npx wrangler pages dev dist --port 4187 --ip 127.0.0.1 --compatibility-date 2026-10-23
 node scripts/check-editorial-browser.mjs http://127.0.0.1:4174 http://127.0.0.1:4187
 ```
+
+`npm run check:editorial-published` runs the built worker in the real Cloudflare runtime against a local stand-in for the public API, then opens the result in a real browser. It is the only coverage of the published state that writes nothing: edits, withdrawals, new sections, cross-language rows, and a failing or hanging backend. Run it after `npm run build`, whenever public rendering changes.
+
+`node scripts/check-content-management.mjs <origin>` runs the admin journey with disposable accounts and private drafts. Setting `LDGENX_QA_PUBLISH=1` adds one controlled publication of a low-traffic page, withdrawn and removed by the same run; use it only for an explicit release check.
 
 The browser journey uses a Vite production preview on 4174 for admin CORS and workerd on 4187 for public rendering. **Stop workerd before rebuilding `dist`** to avoid its watcher processing an incomplete output directory. Remote tests create isolated, confirmed QA accounts without sending emails, and remove only their own entries/media/accounts afterward. Credentials remain in ignored local configuration; no management/service key is included in public bundles.
 

@@ -6,10 +6,23 @@ import {
   mergeEditorialPages,
 } from "./editorial/meta";
 import { productionOrigin } from "../supabase/functions/_shared/site";
+import { editorialPageTemplates } from "../supabase/functions/_shared/editorial-pages";
+const editablePaths = new Set(editorialPageTemplates.map((p) => p.path));
 import type {
   EditorialSummary,
   PublishedDocument,
 } from "../supabase/functions/_shared/editorial";
+
+// Always built from published data, including their listings and discovery files.
+const renderedPaths =
+  /^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)|^\/(?:api\/editorial\/|sitemap\.xml$|sitemaps\/|plan-du-site$|en\/site-map$|llms(?:-full)?\.txt$)/;
+const cmsSections = /^\/(?:en\/)?(?:services|applications)(?:\/|$)/;
+const sectionListings: Record<string, EditorialSummary["kind"]> = {
+  "/services": "service",
+  "/en/services": "service",
+  "/applications": "application",
+  "/en/applications": "application",
+};
 
 declare const __EDITORIAL_RUNTIME__: {
   templates: Record<"fr" | "en", string>;
@@ -23,33 +36,27 @@ interface WorkerEnvironment {
 }
 const API = `${__EDITORIAL_SUPABASE__.url}/functions/v1/editorial/public`;
 const cache = new Map<string, { until: number; value: unknown }>();
-const pending = new Map<string, Promise<unknown>>();
-async function remote<T>(path: string): Promise<T> {
+// Each request does its own fetch: a promise owned by a visitor who disconnects never settles,
+// which would hang every other request waiting on it.
+async function remote<T>(path: string, timeout = 8000): Promise<T> {
   const old = cache.get(path);
   if (old && old.until > Date.now()) return old.value as T;
-  if (pending.has(path)) return pending.get(path) as Promise<T>;
-  const promise = (async () => {
-    const response = await fetch(API + path, {
-      headers: { apikey: __EDITORIAL_SUPABASE__.key },
-      signal: AbortSignal.timeout(8000),
-    });
-    if (!response.ok) throw new Error(String(response.status));
-    const value = await response.json();
-    cache.set(path, { until: Date.now() + 15000, value });
-    // Bounded per-isolate cache; publication data never includes drafts or signed preview URLs.
-    if (cache.size > 100) cache.delete(cache.keys().next().value!);
-    return value;
-  })();
-  pending.set(path, promise);
-  try {
-    return (await promise) as T;
-  } finally {
-    pending.delete(path);
-  }
+  const response = await fetch(API + path, {
+    headers: { apikey: __EDITORIAL_SUPABASE__.key },
+    signal: AbortSignal.timeout(timeout),
+  });
+  if (!response.ok) throw new Error(String(response.status));
+  const value = await response.json();
+  cache.set(path, { until: Date.now() + 15000, value });
+  // Bounded per-isolate cache; publication data never includes drafts or signed preview URLs.
+  if (cache.size > 100) cache.delete(cache.keys().next().value!);
+  return value as T;
 }
 const xml = (s: string) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
-function discovery(path: string, index: EditorialSummary[]) {
+function discovery(path: string, rows: EditorialSummary[]) {
+  // A withdrawn page edit leaves the original page, with its original entries.
+  const index = rows.filter((r) => r.kind !== "page" || r.status === "published");
   const current = mergeEditorialPages(pages, index);
   const byPath = new Map(index.map((p) => [p.path, p]));
   if (path.endsWith(".xml")) {
@@ -83,19 +90,25 @@ function discovery(path: string, index: EditorialSummary[]) {
         membership.get(p.path) ??
         (p.kind === "article"
           ? "ressources.xml"
-          : p.kind === "study"
-            ? "etudes.xml"
-            : "recherche.xml");
+          : p.kind === "service"
+            ? "expertises.xml"
+            : p.kind === "application"
+              ? "pages.xml"
+              : p.kind === "study"
+                ? "etudes.xml"
+                : "recherche.xml");
       const date =
         row?.updatedAt.slice(0, 10) ??
         __EDITORIAL_RUNTIME__.dates[p.path]?.date ??
         new Date().toISOString().slice(0, 10);
       const image = row?.cover ? editorialCoverUrl(row) : null;
-      const imageTags = row
-        ? image
-          ? `<image:image><image:loc>${xml(image)}</image:loc></image:image>`
-          : ""
-        : (originalImages.get(p.path) ?? "");
+      // A page edit keeps the pictures of its original sections unless it sets a cover.
+      const imageTags =
+        row && (row.kind !== "page" || image)
+          ? image
+            ? `<image:image><image:loc>${xml(image)}</image:loc></image:image>`
+            : ""
+          : (originalImages.get(p.path) ?? "");
       groups[group]?.push(
         `<url><loc>${xml(productionOrigin + p.path)}</loc><lastmod>${date}</lastmod>${Object.entries(
           p.alternates,
@@ -129,7 +142,12 @@ function discovery(path: string, index: EditorialSummary[]) {
   }
   if (path === "/llms.txt" || path === "/llms-full.txt") {
     let text = __EDITORIAL_RUNTIME__.files[path.slice(1)] ?? "";
-    const managed = new Set(index.map((r) => productionOrigin + r.path));
+    // Page edits add to a page, so its long-form entry stays; other content replaces its own.
+    const managed = new Set(
+      index
+        .filter((r) => r.kind !== "page")
+        .map((r) => productionOrigin + r.path),
+    );
     if (path === "/llms-full.txt")
       text = text
         .split(/(?=^#{1,3} )/m)
@@ -142,10 +160,7 @@ function discovery(path: string, index: EditorialSummary[]) {
       text = text
         .split("\n")
         .filter(
-          (line) =>
-            !index.some((r) =>
-              line.includes(`](${productionOrigin + r.path})`),
-            ),
+          (line) => ![...managed].some((url) => line.includes(`](${url})`)),
         )
         .join("\n");
     const published = index.filter((r) => r.status === "published");
@@ -174,7 +189,11 @@ function updateListSchema(
         ? "study"
         : path === "/ressources" || path === "/en/resources"
           ? "article"
-          : null;
+          : path === "/services" || path === "/en/services"
+            ? "service"
+            : path === "/applications" || path === "/en/applications"
+              ? "application"
+              : null;
   if (!kind) return head;
   const locale = path.startsWith("/en") ? "en" : "fr";
   const current = mergeEditorialPages(pages, index).filter(
@@ -270,9 +289,9 @@ export default {
       }
     }
     const eligible =
-      /^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)|^\/(?:api\/editorial\/|sitemap\.xml$|sitemaps\/|plan-du-site$|en\/site-map$|llms(?:-full)?\.txt$)/.test(
-        url.pathname,
-      );
+      editablePaths.has(url.pathname) ||
+      cmsSections.test(url.pathname) ||
+      renderedPaths.test(url.pathname);
     if (!eligible) return env.ASSETS.fetch(request);
     if (!["GET", "HEAD"].includes(request.method))
       return response(
@@ -294,8 +313,14 @@ export default {
         headers: { Location: target.href },
       });
     }
+    // Existing pages stay on the CDN until a publication changes them: identical bytes, no render
+    // cost, and an unreachable backend only costs them this short wait.
+    const cdnFirst =
+      editablePaths.has(url.pathname) && !renderedPaths.test(url.pathname);
     try {
-      const index = [...(await remote<EditorialSummary[]>("/index"))];
+      const index = [
+        ...(await remote<EditorialSummary[]>("/index", cdnFirst ? 2500 : 8000)),
+      ];
       if (url.pathname === "/api/editorial/index")
         return response(
           request,
@@ -328,14 +353,27 @@ export default {
             : "text/plain; charset=utf-8",
         );
       let selected = index.find((r) => r.path === url.pathname);
-      if (selected?.status === "withdrawn")
+      if (selected?.status === "withdrawn" && selected.kind !== "page")
         return response(
           request,
           '<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Contenu retiré · LDgenX</title><h1>Ce contenu a été retiré.</h1><a href="/">LDgenX</a></html>',
           410,
         );
+      if (selected?.kind === "page" && selected.status === "withdrawn")
+        selected = undefined;
       let doc: PublishedDocument | null = null;
       const staticPage = pages.find((p) => p.path === url.pathname);
+      if (
+        cdnFirst &&
+        !selected &&
+        !index.some(
+          (r) =>
+            r.status === "published" &&
+            r.kind === sectionListings[url.pathname] &&
+            r.locale === staticPage?.locale,
+        )
+      )
+        return env.ASSETS.fetch(request);
       if (selected || !staticPage) {
         try {
           doc = await remote<PublishedDocument>(
@@ -356,7 +394,8 @@ export default {
       const output = render(url.pathname, snapshot);
       const locale = selected?.locale ?? staticPage?.locale ?? "fr";
       let head = output.head;
-      if (doc) head = renderHead(editorialMeta(doc, index));
+      if (doc)
+        head = renderHead(editorialMeta(doc, index), doc.updatedAt.slice(0, 10));
       head = updateListSchema(head, url.pathname, index);
       const bootstrap = `<script id="ldgenx-editorial" type="application/json">${JSON.stringify(snapshot).replaceAll("<", "\\u003c")}</script>`;
       const html = __EDITORIAL_RUNTIME__.templates[locale]
@@ -365,6 +404,7 @@ export default {
         .replace("</body>", bootstrap + "</body>");
       return response(request, html);
     } catch (error) {
+      if (editablePaths.has(url.pathname)) return env.ASSETS.fetch(request);
       const status =
         error instanceof Error && error.message === "410"
           ? 410

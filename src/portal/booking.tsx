@@ -284,11 +284,10 @@ export function AddToCalendar({
 }) {
   const { t, locale } = useI18n();
   const type = config.types.find((x) => x.id === appointment.typeId);
-  const host = config.hosts.find((h) => h.id === appointment.hostId);
   const event = {
     id: appointment.id,
     title: fill(t.booking.eventTitle, { type: type?.label[locale] ?? '' }),
-    description: [appointment.topic, host?.name, appointment.meetingUrl].filter(Boolean).join('\n'),
+    description: [appointment.topic, 'LDgenX', appointment.meetingUrl].filter(Boolean).join('\n'),
     location: appointment.meetingUrl || (type ? t.booking.location[type.location] : ''),
     start: appointment.start,
     end: appointment.end,
@@ -331,7 +330,6 @@ export function RequestFlow({
   const { run, busy } = useAction();
   const toast = useToast();
   const [typeId, setTypeId] = useState<string | null>(null);
-  const [hostId, setHostId] = useState('');
   const [slot, setSlot] = useState<Slot | null>(null);
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0);
   const [topic, setTopic] = useState('');
@@ -352,7 +350,6 @@ export function RequestFlow({
     setStep(1);
   }
   const type = types.find((x) => x.id === typeId);
-  const hosts = cfg.hosts.filter((h) => h.bookable);
   const auto = cfg.approval === 'auto';
   const guestErrors = {
     name: !guest.name.trim(),
@@ -368,7 +365,6 @@ export function RequestFlow({
       const appointment = await api.requestAppointment({
         typeId: type.id,
         start: slot.start,
-        hostId: hostId || undefined,
         topic,
         guest: user ? undefined : guest,
       });
@@ -487,30 +483,11 @@ export function RequestFlow({
               {fill(t.booking.minutes, { minutes: type.minutes })} ·{' '}
               {t.booking.location[type.location]}
             </span>
-            {hosts.length > 1 && (
-              <label className="p-inline-field">
-                <span>{t.booking.with}</span>
-                <select
-                  value={hostId}
-                  onChange={(e) => {
-                    setHostId(e.target.value);
-                    setSlot(null);
-                  }}
-                >
-                  <option value="">{t.booking.anyone}</option>
-                  {hosts.map((h) => (
-                    <option key={h.id} value={h.id}>
-                      {h.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
+            <span className="p-muted">{fill(t.booking.withHost, { name: 'LDgenX' })}</span>
           </div>
           <SlotPicker
             key={`${type.id}-${round}`}
             typeId={type.id}
-            hostId={hostId}
             selected={slot}
             onPick={setSlot}
           />

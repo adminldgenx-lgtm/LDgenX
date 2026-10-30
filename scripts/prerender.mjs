@@ -146,7 +146,7 @@ const policy = [
   `img-src 'self' data: blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
   "font-src 'self'",
   `media-src 'self' blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
-  'frame-src https://www.youtube-nocookie.com https://player.vimeo.com',
+  "frame-src 'self' https://www.youtube-nocookie.com https://player.vimeo.com",
   `connect-src 'self'${contactOrigin}${supabaseOrigin}`,
   "object-src 'none'",
   "base-uri 'self'",

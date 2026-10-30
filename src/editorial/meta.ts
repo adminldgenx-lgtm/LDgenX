@@ -1,4 +1,5 @@
 import type { PageMeta } from "../lib/pages";
+import { getPage } from "../lib/pages";
 import { productionOrigin } from "../../supabase/functions/_shared/site";
 import {
   contentBases,
@@ -10,6 +11,14 @@ export function editorialMeta(
   row: EditorialSummary,
   index: EditorialSummary[],
 ): PageMeta {
+  if (row.kind === "page")
+    return {
+      ...getPage(row.path),
+      title: `${row.seoTitle.trim() || row.title} | LDgenX`,
+      description: row.seoDescription.trim() || row.summary,
+      coverUrl: row.cover ? editorialCoverUrl(row) : undefined,
+      editorial: undefined,
+    };
   const alternates: PageMeta["alternates"] = {};
   alternates[row.locale] = row.path;
   if (row.legacyId)
@@ -50,16 +59,25 @@ export function mergeEditorialPages(
 ) {
   const byPath = new Map(index.map((row) => [row.path, row]));
   const result = pages
-    .filter((p) => byPath.get(p.path)?.status !== "withdrawn")
+    .filter(
+      (p) =>
+        byPath.get(p.path)?.kind === "page" ||
+        byPath.get(p.path)?.status !== "withdrawn",
+    )
     .map((p) => {
       const row = byPath.get(p.path);
       return row?.status === "published"
         ? editorialMeta(row, index)
         : filterEditorialAlternates(p, index);
     });
+  // A page edit never adds an address, and its language's catalogue may not be loaded here.
   const known = new Set(result.map((p) => p.path));
   for (const row of index)
-    if (row.status === "published" && !known.has(row.path))
+    if (
+      row.kind !== "page" &&
+      row.status === "published" &&
+      !known.has(row.path)
+    )
       result.push(editorialMeta(row, index));
   return result;
 }
@@ -72,7 +90,10 @@ export function filterEditorialAlternates(
     alternates: Object.fromEntries(
       Object.entries(meta.alternates).filter(
         ([, path]) =>
-          !index.some((r) => r.path === path && r.status === "withdrawn"),
+          !index.some(
+            (r) =>
+              r.kind !== "page" && r.path === path && r.status === "withdrawn",
+          ),
       ),
     ),
   };
@@ -95,12 +116,10 @@ export function editorialHead(meta: PageMeta) {
     image = editorialCoverUrl(row);
   const title = escape(meta.title),
     description = escape(meta.description);
-  const authors = row.author
-    .split(";")
-    .map((name) => ({
-      "@type": name.trim() === "LDgenX" ? "Organization" : "Person",
-      name: name.trim(),
-    }));
+  const authors = row.author.split(";").map((name) => ({
+    "@type": name.trim() === "LDgenX" ? "Organization" : "Person",
+    name: name.trim(),
+  }));
   const article = {
     "@type": "Article",
     "@id": `${canonical}#article`,
@@ -153,7 +172,26 @@ export function editorialHead(meta: PageMeta) {
         inLanguage: row.locale,
         isPartOf: { "@id": `${productionOrigin}/#website` },
       },
-      article,
+      ...(row.kind === "service"
+        ? [
+            {
+              "@type": "Service",
+              "@id": `${canonical}#service`,
+              name: row.title.replace(/\*/g, ""),
+              description: row.summary,
+              url: canonical,
+              provider: {
+                "@type": "Organization",
+                name: "LDgenX",
+                url: productionOrigin,
+              },
+              image,
+              inLanguage: row.locale,
+            },
+          ]
+        : row.kind === "application"
+          ? []
+          : [article]),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -167,17 +205,23 @@ export function editorialHead(meta: PageMeta) {
             "@type": "ListItem",
             position: 2,
             name:
-              row.kind === "study"
+              row.kind === "service"
                 ? row.locale === "fr"
-                  ? "Études de cas"
-                  : "Case studies"
-                : row.kind === "publication"
-                  ? row.locale === "fr"
-                    ? "Recherche"
-                    : "Research"
-                  : row.locale === "fr"
-                    ? "Ressources"
-                    : "Resources",
+                  ? "Expertises"
+                  : "Expertise"
+                : row.kind === "application"
+                  ? "Applications"
+                  : row.kind === "study"
+                    ? row.locale === "fr"
+                      ? "Études de cas"
+                      : "Case studies"
+                    : row.kind === "publication"
+                      ? row.locale === "fr"
+                        ? "Recherche"
+                        : "Research"
+                      : row.locale === "fr"
+                        ? "Ressources"
+                        : "Resources",
             item: productionOrigin + contentBases[row.locale][row.kind],
           },
           {
@@ -202,7 +246,7 @@ ${Object.entries(meta.alternates)
   .join("\n")}
 ${meta.alternates.fr ? `<link rel="alternate" hreflang="x-default" href="${productionOrigin}${escape(meta.alternates.fr)}">` : ""}
 <meta property="og:locale" content="${row.locale === "fr" ? "fr_FR" : "en_GB"}">
-<meta property="og:site_name" content="LDgenX"><meta property="og:type" content="article">
+<meta property="og:site_name" content="LDgenX"><meta property="og:type" content="${row.kind === "service" || row.kind === "application" ? "website" : "article"}">
 <meta property="og:title" content="${title}"><meta property="og:description" content="${description}">
 <meta property="og:url" content="${escape(canonical)}"><meta property="og:image" content="${escape(image)}">
 <meta property="og:image:alt" content="${escape(row.cover?.alt ?? row.title)}">

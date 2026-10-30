@@ -1,6 +1,24 @@
 // The editor, verified API and public renderer share this deliberately small document schema.
 // No HTML, scripts, arbitrary embeds or CSS are accepted from an authoring request.
-export type ContentKind = "article" | "study" | "publication";
+export type ContentKind =
+  "article" | "study" | "publication" | "service" | "application" | "page";
+export const contentKinds: ContentKind[] = [
+  "article",
+  "study",
+  "publication",
+  "service",
+  "application",
+  "page",
+];
+export interface EditorialPageTemplate {
+  path: string;
+  locale: ContentLocale;
+  label: string;
+  title: string;
+  summary: string;
+  kind: string;
+  alternates: Partial<Record<ContentLocale, string>>;
+}
 export type ContentLocale = "fr" | "en";
 export interface TextMark {
   type:
@@ -106,6 +124,8 @@ export interface EditorialEntry {
   createdAt: string;
   updatedAt: string;
   authorName: string;
+  deletedAt?: string | null;
+  coverMedia?: EditorialMedia | null;
 }
 export interface EditorialRevision {
   id: string;
@@ -137,18 +157,27 @@ export const contentBases = {
     article: "/ressources",
     study: "/etudes-de-cas",
     publication: "/recherche",
+    service: "/services",
+    application: "/applications",
+    page: "",
   },
   en: {
     article: "/en/resources",
     study: "/en/case-studies",
     publication: "/en/research",
+    service: "/en/services",
+    application: "/en/applications",
+    page: "/en",
   },
 };
 export const contentPath = (
   kind: ContentKind,
   locale: ContentLocale,
   slug: string,
-) => `${contentBases[locale][kind]}/${slug}`;
+) =>
+  slug
+    ? `${contentBases[locale][kind]}/${slug}`
+    : contentBases[locale][kind] || "/";
 export const emptyDocument = (): EditorialDocument => ({
   title: "",
   summary: "",
@@ -490,9 +519,11 @@ export function publicationIssues(
   kind: ContentKind,
 ): string[] {
   const issues: string[] = [];
-  if (document.title.trim().length < 8) issues.push("title");
+  if (document.title.trim().length < (kind === "page" ? 1 : 8))
+    issues.push("title");
   if (document.summary.trim().length < 30) issues.push("summary");
-  if (documentText(document.body).trim().length < 100) issues.push("body");
+  if (kind !== "page" && documentText(document.body).trim().length < 100)
+    issues.push("body");
   if (!document.author.trim()) issues.push("author");
   if (!document.reviewed) issues.push("review");
   function checkImage(i: ContentImage) {

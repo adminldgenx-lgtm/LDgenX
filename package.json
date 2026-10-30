@@ -41,6 +41,7 @@
     "check:editorial-api": "node scripts/check-editorial-api.mjs",
     "check:editorial-browser": "node scripts/check-editorial-browser.mjs",
     "check:editorial-render": "node scripts/check-editorial-render.mjs",
+    "check:editorial-published": "node scripts/check-editorial-published.mjs",
     "supabase:google-auth": "node scripts/configure-google-auth.mjs",
     "check:google-auth": "node scripts/check-google-provider.mjs",
     "check:google-browser": "node scripts/check-google-browser.mjs",

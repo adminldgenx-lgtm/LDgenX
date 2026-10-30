@@ -8,6 +8,35 @@ import type {
 import { validateDocument } from "../../../supabase/functions/_shared/editorial";
 
 const sections: Record<ContentKind, Record<ContentLocale, string[]>> = {
+  service: {
+    fr: [
+      "Votre besoin",
+      "Notre approche",
+      "Méthodes et livrables",
+      "Applications et limites",
+    ],
+    en: [
+      "Your needs",
+      "Our approach",
+      "Methods and deliverables",
+      "Applications and limitations",
+    ],
+  },
+  application: {
+    fr: [
+      "Le contexte",
+      "Les enjeux",
+      "Notre accompagnement",
+      "Résultats attendus et limites",
+    ],
+    en: [
+      "Context",
+      "Challenges",
+      "Our support",
+      "Expected outcomes and limitations",
+    ],
+  },
+  page: { fr: ["En savoir plus"], en: ["Learn more"] },
   article: {
     fr: ["Contexte", "Approche", "Enseignements", "Limites et sources"],
     en: ["Context", "Approach", "Insights", "Limitations and sources"],

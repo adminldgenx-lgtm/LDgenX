@@ -1,9 +1,9 @@
-import { useRef, type CSSProperties } from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import type { Expertise as ExpertiseData, Sector } from '../content/fr';
-import type { CaseRef, EquipmentItem } from '../content/types';
-import { useCatalog, useRoutes } from '../i18n';
-import { type PageMeta } from '../lib/pages';
+import { useRef, type CSSProperties } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import type { Expertise as ExpertiseData, Sector } from "../content/fr";
+import type { CaseRef, EquipmentItem } from "../content/types";
+import { useCatalog, useRoutes } from "../i18n";
+import { type PageMeta } from "../lib/pages";
 import {
   PageHero,
   Eyebrow,
@@ -14,21 +14,26 @@ import {
   FinalCTA,
   SectionHeading,
   Button,
-} from '../components/ui';
-import { AnimatedHeading, useSeen } from '../components/motion';
-import { RichText } from '../components/Figure';
-import { AmbientField } from '../components/AmbientField';
-import { LiveList, StepRows } from '../components/Steps';
-import { ExpertiseLandscape } from '../sections/ExpertiseLandscape';
-import { ApplicationAtlas } from '../sections/ApplicationAtlas';
-import { ApplicationGrid, StudyFacts } from '../sections/Collections';
-import { Workflow } from '../sections/Workflow';
-import { PublicationLinks, researchLink } from './Research';
-import { CustomAssay, CustomAssayTeaser, SpeciesWall } from '../sections/CustomAssay';
-import { CirBlock } from '../sections/Cir';
-import { SamplingKits } from '../sections/SamplingKits';
-import { ErcModule } from '../sections/Erc';
-import { Faq, ProjectPractice } from '../sections/Practice';
+} from "../components/ui";
+import { AnimatedHeading, useSeen } from "../components/motion";
+import { RichText } from "../components/Figure";
+import { AmbientField } from "../components/AmbientField";
+import { LiveList, StepRows } from "../components/Steps";
+import { ExpertiseLandscape } from "../sections/ExpertiseLandscape";
+import { ApplicationAtlas } from "../sections/ApplicationAtlas";
+import { ApplicationGrid, StudyFacts } from "../sections/Collections";
+import { Workflow } from "../sections/Workflow";
+import { PublicationLinks, researchLink } from "./Research";
+import {
+  CustomAssay,
+  CustomAssayTeaser,
+  SpeciesWall,
+} from "../sections/CustomAssay";
+import { CirBlock } from "../sections/Cir";
+import { SamplingKits } from "../sections/SamplingKits";
+import { ErcModule } from "../sections/Erc";
+import { Faq, ProjectPractice } from "../sections/Practice";
+import { EditorialCards } from "../editorial/PublicDocument";
 
 function RelatedServices({ ids }: { ids: string[] }) {
   const { services } = useCatalog();
@@ -42,7 +47,11 @@ function RelatedServices({ ids }: { ids: string[] }) {
           <Reveal key={s.id} delay={i * 0.1}>
             <TiltLink className="related-link" to={r.service(s.id)}>
               <span className="related-picture">
-                <Photo name={s.image} alt="" sizes="(max-width: 700px) 90vw, 33vw" />
+                <Photo
+                  name={s.image}
+                  alt=""
+                  sizes="(max-width: 700px) 90vw, 33vw"
+                />
               </span>
               <div>
                 <h3>{s.title}</h3>
@@ -56,18 +65,27 @@ function RelatedServices({ ids }: { ids: string[] }) {
 }
 
 /** The team's articles that share this expertise's field: the topics put forward first. */
-function RelatedPublications({ id, applicationId }: { id?: string; applicationId?: string }) {
+function RelatedPublications({
+  id,
+  applicationId,
+}: {
+  id?: string;
+  applicationId?: string;
+}) {
   const { research, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.research;
   const featured = research.featured.map((f) => f.publication);
   const items = research.publications
     .filter((p) =>
-      applicationId ? p.applications?.includes(applicationId) : p.services.includes(id!),
+      applicationId
+        ? p.applications?.includes(applicationId)
+        : p.services.includes(id!),
     )
     .sort(
       (a, b) =>
-        Number(featured.includes(b.id)) - Number(featured.includes(a.id)) || b.year - a.year,
+        Number(featured.includes(b.id)) - Number(featured.includes(a.id)) ||
+        b.year - a.year,
     );
   if (!items.length) return null;
   return (
@@ -79,7 +97,9 @@ function RelatedPublications({ id, applicationId }: { id?: string; applicationId
           link={{
             to: researchLink(
               r.publications,
-              applicationId ? { application: applicationId } : { expertise: id! },
+              applicationId
+                ? { application: applicationId }
+                : { expertise: id! },
             ),
             label: t.relatedAll(items.length),
           }}
@@ -94,7 +114,9 @@ function RelatedPublications({ id, applicationId }: { id?: string; applicationId
 function RelatedStudy({ id, studyId }: { id?: string; studyId?: string }) {
   const { studies, ui } = useCatalog();
   const r = useRoutes();
-  const study = studies.find((s) => (studyId ? s.id === studyId : s.service === id));
+  const study = studies.find((s) =>
+    studyId ? s.id === studyId : s.service === id,
+  );
   if (!study) return null;
   return (
     <section className="section-space studies-section">
@@ -122,6 +144,9 @@ export function ServicesPage({ meta }: { meta: PageMeta }) {
     <>
       <PageHero meta={meta} {...pageCopy.services} />
       <ExpertiseLandscape title={ui.landscape.pageTitle} allLink={false} />
+      <div className="container cms-section-cards">
+        <EditorialCards kind="service" />
+      </div>
       <section className="detail-section">
         <div className="container detail-intro">
           <div>
@@ -148,12 +173,16 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
   const t = ui.expertisePage;
   const s = services.find((s) => s.id === meta.id)!;
   const h = s.headings ?? {};
-  const dark = ['bioinformatique', 'sequencage-dpcr'].includes(s.id);
+  const dark = ["bioinformatique", "sequencage-dpcr"].includes(s.id);
   const related = services
     .filter(
       (x) =>
         x.id !== s.id &&
-        ['bioinformatique', 'sequencage-dpcr', 'adn-environnemental-adne'].includes(x.id),
+        [
+          "bioinformatique",
+          "sequencage-dpcr",
+          "adn-environnemental-adne",
+        ].includes(x.id),
     )
     .slice(0, 3);
   return (
@@ -171,7 +200,9 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           <div>
             <Eyebrow>{t.needEyebrow}</Eyebrow>
             <AnimatedHeading
-              text={h.need ?? (s.id === 'materiel' ? t.needField : t.needQuestion)}
+              text={
+                h.need ?? (s.id === "materiel" ? t.needField : t.needQuestion)
+              }
             />
           </div>
           <Reveal>
@@ -179,9 +210,9 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           </Reveal>
         </div>
       </section>
-      {s.id === 'materiel' && <SamplingKits />}
-      {s.id === 'materiel' && <EquipmentShowcase items={equipment} />}
-      {s.id === 'tests-adn-cibles' && <SpeciesWall />}
+      {s.id === "materiel" && <SamplingKits />}
+      {s.id === "materiel" && <EquipmentShowcase items={equipment} />}
+      {s.id === "tests-adn-cibles" && <SpeciesWall />}
       <section className="approach-section">
         <div className="container approach-layout">
           <div className="approach-heading">
@@ -194,8 +225,8 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           <StepRows items={s.approaches} />
         </div>
       </section>
-      {s.id === 'tests-adn-cibles' && <CustomAssay variant="page" />}
-      {s.id === 'sequencage-dpcr' && <CustomAssayTeaser />}
+      {s.id === "tests-adn-cibles" && <CustomAssay variant="page" />}
+      {s.id === "sequencage-dpcr" && <CustomAssayTeaser />}
       {s.cir && <CirBlock />}
       {s.prestations.length > 0 && (
         <section className="section-space prestation-section">
@@ -230,19 +261,28 @@ export function ServicePage({ meta }: { meta: PageMeta }) {
           </div>
         </section>
       )}
-      {s.id === 'adn-environnemental-adne' && (
-        <section className="section-space sampling-access" aria-label={ui.equipment.title}>
+      {s.id === "adn-environnemental-adne" && (
+        <section
+          className="section-space sampling-access"
+          aria-label={ui.equipment.title}
+        >
           <div className="container">
             <SectionHeading
               eyebrow={ui.equipment.eyebrow}
-              title={services.find((service) => service.id === 'materiel')!.title}
-              body={services.find((service) => service.id === 'materiel')!.scope}
-              link={{ to: r.service('materiel'), label: ui.equipment.explore }}
+              title={
+                services.find((service) => service.id === "materiel")!.title
+              }
+              body={
+                services.find((service) => service.id === "materiel")!.scope
+              }
+              link={{ to: r.service("materiel"), label: ui.equipment.explore }}
             />
           </div>
         </section>
       )}
-      {!s.cases.some((c) => c.link?.kind === 'study') && <RelatedStudy id={s.id} />}
+      {!s.cases.some((c) => c.link?.kind === "study") && (
+        <RelatedStudy id={s.id} />
+      )}
       <RelatedPublications id={s.id} />
       <section className="section-space">
         <div className="container">
@@ -290,22 +330,41 @@ function CaseCards({ cases }: { cases: CaseRef[] }) {
         const body = (
           <>
             <span className="case-card-picture">
-              {c.image && <Photo name={c.image} alt="" sizes="(max-width: 700px) 90vw, 30vw" />}
+              {c.image && (
+                <Photo
+                  name={c.image}
+                  alt=""
+                  sizes="(max-width: 700px) 90vw, 30vw"
+                />
+              )}
             </span>
             <span className="case-card-title">
               <RichText text={c.title} />
             </span>
-            {c.link?.kind === 'external' && (
-              <ArrowUpRight className="case-card-out" size={16} aria-hidden="true" />
+            {c.link?.kind === "external" && (
+              <ArrowUpRight
+                className="case-card-out"
+                size={16}
+                aria-hidden="true"
+              />
             )}
           </>
         );
         return (
-          <Reveal key={c.title} delay={(i % 3) * 0.08} className="case-card-slot">
+          <Reveal
+            key={c.title}
+            delay={(i % 3) * 0.08}
+            className="case-card-slot"
+          >
             {!c.link ? (
               <div className="case-card">{body}</div>
-            ) : c.link.kind === 'external' ? (
-              <a className="case-card tilt" href={c.link.href} target="_blank" rel="noreferrer">
+            ) : c.link.kind === "external" ? (
+              <a
+                className="case-card tilt"
+                href={c.link.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {body}
                 <span className="sr-only">{ui.common.newTab}</span>
               </a>
@@ -359,15 +418,23 @@ function EquipmentCard({ item }: { item: EquipmentItem }) {
   const seen = useSeen(ref);
   return (
     <Reveal className="equipment-card-slot">
-      <article ref={ref} className="equipment-card" data-seen={seen || undefined}>
+      <article
+        ref={ref}
+        className="equipment-card"
+        data-seen={seen || undefined}
+      >
         <div
           className="equipment-pictures"
           data-count={item.images.length}
-          style={{ '--count': item.images.length } as CSSProperties}
+          style={{ "--count": item.images.length } as CSSProperties}
         >
           {item.images.map((image, i) => (
-            <figure key={image.name} style={{ '--i': i } as CSSProperties}>
-              <Photo name={image.name} alt={image.alt} sizes="(max-width: 800px) 90vw, 30vw" />
+            <figure key={image.name} style={{ "--i": i } as CSSProperties}>
+              <Photo
+                name={image.name}
+                alt={image.alt}
+                sizes="(max-width: 800px) 90vw, 30vw"
+              />
             </figure>
           ))}
         </div>
@@ -393,7 +460,10 @@ export function ApplicationsPage({ meta }: { meta: PageMeta }) {
     <>
       <PageHero meta={meta} {...pageCopy.applications} />
       <ApplicationAtlas />
-      <section className="section-space applications-section" aria-labelledby="sectors-title">
+      <section
+        className="section-space applications-section"
+        aria-labelledby="sectors-title"
+      >
         <div className="container">
           <Eyebrow>{t.allSectorsEyebrow}</Eyebrow>
           <AnimatedHeading text={t.allSectorsTitle} />
@@ -401,6 +471,7 @@ export function ApplicationsPage({ meta }: { meta: PageMeta }) {
             {t.sectorsSr}
           </h2>
           <ApplicationGrid />
+          <EditorialCards kind="application" />
         </div>
       </section>
       <FinalCTA />
@@ -416,7 +487,13 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
   const related = s.related && applications.find((a) => a.id === s.related!.id);
   return (
     <>
-      <PageHero meta={meta} eyebrow={s.title} title={s.headline} intro={s.intro} image={s.image} />
+      <PageHero
+        meta={meta}
+        eyebrow={s.title}
+        title={s.headline}
+        intro={s.intro}
+        image={s.image}
+      />
       <section className="detail-section">
         <div className="container approach-layout">
           <div className="approach-heading">
@@ -480,7 +557,10 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
                 <Button to={r.contact}>{t.nextStep}</Button>
               </Reveal>
             </div>
-            <LiveList className="live-list-light sector-deliverable-list" items={s.deliverables} />
+            <LiveList
+              className="live-list-light sector-deliverable-list"
+              items={s.deliverables}
+            />
           </div>
         </section>
       )}
@@ -497,18 +577,31 @@ export function ApplicationPage({ meta }: { meta: PageMeta }) {
       {related && (
         <section className="sector-related">
           <div className="container">
-            <TiltLink className="sector-related-link" to={r.application(related.id)}>
+            <TiltLink
+              className="sector-related-link"
+              to={r.application(related.id)}
+            >
               <span className="sector-related-picture">
-                <Photo name={related.image} alt="" sizes="(max-width: 800px) 92vw, 160px" />
+                <Photo
+                  name={related.image}
+                  alt=""
+                  sizes="(max-width: 800px) 92vw, 160px"
+                />
               </span>
               <span className="sector-related-body">
-                <span className="sector-related-question">{s.related!.text}</span>
+                <span className="sector-related-question">
+                  {s.related!.text}
+                </span>
                 <span className="sector-related-title">
                   {t.seeAlso} · {related.title}
                 </span>
                 <span className="sector-related-scope">{related.scope}</span>
               </span>
-              <ArrowRight className="sector-related-arrow" size={20} aria-hidden="true" />
+              <ArrowRight
+                className="sector-related-arrow"
+                size={20}
+                aria-hidden="true"
+              />
             </TiltLink>
           </div>
         </section>
@@ -528,9 +621,16 @@ function ResearchSupport({ support }: { support: ExpertiseData }) {
   const h = support.headings;
   return (
     <>
-      <section className="section-space research-support-intro" id="recherche-developpement">
+      <section
+        className="section-space research-support-intro"
+        id="recherche-developpement"
+      >
         <div className="container">
-          <SectionHeading eyebrow={support.title} title={support.headline} body={support.intro} />
+          <SectionHeading
+            eyebrow={support.title}
+            title={support.headline}
+            body={support.intro}
+          />
           <Reveal>
             <p className="research-support-need">{support.need}</p>
           </Reveal>
@@ -540,7 +640,9 @@ function ResearchSupport({ support }: { support: ExpertiseData }) {
         <div className="container approach-layout">
           <div className="approach-heading">
             <Eyebrow>{ui.expertisePage.approachesEyebrow}</Eyebrow>
-            <AnimatedHeading text={h?.methods ?? ui.expertisePage.approachesTitle} />
+            <AnimatedHeading
+              text={h?.methods ?? ui.expertisePage.approachesTitle}
+            />
           </div>
           <StepRows items={support.approaches} />
         </div>
@@ -549,7 +651,9 @@ function ResearchSupport({ support }: { support: ExpertiseData }) {
         <div className="container prestation-layout">
           <div>
             <Eyebrow>{ui.expertisePage.prestationsEyebrow}</Eyebrow>
-            <AnimatedHeading text={h?.prestations ?? ui.expertisePage.prestationsTitle} />
+            <AnimatedHeading
+              text={h?.prestations ?? ui.expertisePage.prestationsTitle}
+            />
           </div>
           <LiveList className="prestation-list" items={support.prestations} />
         </div>
@@ -571,9 +675,11 @@ function ResearchSupport({ support }: { support: ExpertiseData }) {
           <CaseCards cases={support.cases} />
           <div className="research-support-sectors">
             {support.sectors
-              .filter((id) => id !== 'recherche-publique-privee')
+              .filter((id) => id !== "recherche-publique-privee")
               .map((id) => {
-                const sector = applications.find((application) => application.id === id)!;
+                const sector = applications.find(
+                  (application) => application.id === id,
+                )!;
                 return (
                   <TextLink key={id} to={r.application(id)}>
                     {sector.title}

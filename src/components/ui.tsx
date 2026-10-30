@@ -1,21 +1,23 @@
-import { useRef, type CSSProperties, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { AnimatedHeading, useEntrance, usePointerVars } from './motion';
-import { AmbientField } from './AmbientField';
-import { DecodeOnce } from './Decode';
-import { breadcrumbs, type PageMeta } from '../lib/pages';
-import { useCatalog, useRoutes, useLocale } from '../i18n';
-import { appointmentLink } from '../lib/appointment-link';
-import { imageUrl, imageWidths } from '../lib/images';
-import { clientPhotos } from '../content/client-photos';
-import { equipmentMedia } from '../content/equipment-media';
-import { licensedPhotos } from '../content/licensed-photos';
-import { useEditorial } from '../editorial/context';
-import { MediaImage } from '../editorial/media-view';
+import { useRef, type CSSProperties, type ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { AnimatedHeading, useEntrance, usePointerVars } from "./motion";
+import { AmbientField } from "./AmbientField";
+import { DecodeOnce } from "./Decode";
+import { breadcrumbs, type PageMeta } from "../lib/pages";
+import { useCatalog, useRoutes, useLocale } from "../i18n";
+import { appointmentLink } from "../lib/appointment-link";
+import { imageUrl, imageWidths } from "../lib/images";
+import { clientPhotos } from "../content/client-photos";
+import { equipmentMedia } from "../content/equipment-media";
+import { licensedPhotos } from "../content/licensed-photos";
+import { useEditorial, usePageDocument } from "../editorial/context";
+import { CoverCredit, MediaImage } from "../editorial/media-view";
+import { PageWriting } from "../editorial/PageWriting";
+import type { PublishedDocument } from "../../supabase/functions/_shared/editorial";
 
 export function Reveal({
   children,
-  className = '',
+  className = "",
   delay = 0,
 }: {
   children: ReactNode;
@@ -29,7 +31,7 @@ export function Reveal({
       ref={ref}
       className={className}
       data-reveal={phase}
-      style={{ '--reveal-delay': `${delay}s` } as CSSProperties}
+      style={{ "--reveal-delay": `${delay}s` } as CSSProperties}
     >
       {children}
     </div>
@@ -39,9 +41,9 @@ export function Reveal({
 export function Photo({
   name,
   alt,
-  className = '',
+  className = "",
   eager = false,
-  sizes = '(max-width: 700px) 100vw, 55vw',
+  sizes = "(max-width: 700px) 100vw, 55vw",
 }: {
   name: string;
   alt: string;
@@ -53,10 +55,22 @@ export function Photo({
   const phase = useEntrance(ref);
   const widths = imageWidths(name);
   const { ui } = useCatalog();
-  const editorial = useEditorial().index.find((r) => name === `cms-entry:${r.id}`);
-  if (editorial?.cover) return <MediaImage image={editorial.cover} media={editorial.coverMedia} className={`photo ${className}`} eager={eager} sizes={sizes} />;
+  const editorial = useEditorial().index.find(
+    (r) => name === `cms-entry:${r.id}`,
+  );
+  if (editorial?.cover)
+    return (
+      <MediaImage
+        image={editorial.cover}
+        media={editorial.coverMedia}
+        className={`photo ${className}`}
+        eager={eager}
+        sizes={sizes}
+      />
+    );
   // Credits are listed in the legal notice, not printed on the pictures.
-  const metadata = clientPhotos[name] ?? equipmentMedia[name] ?? licensedPhotos[name];
+  const metadata =
+    clientPhotos[name] ?? equipmentMedia[name] ?? licensedPhotos[name];
   const picture = (
     <img
       ref={ref}
@@ -65,16 +79,22 @@ export function Photo({
       data-image={name}
       data-media-kind={equipmentMedia[name]?.kind}
       src={imageUrl(name, widths[Math.min(1, widths.length - 1)])}
-      srcSet={widths.map((w) => `${imageUrl(name, w)} ${w}w`).join(', ')}
+      srcSet={widths.map((w) => `${imageUrl(name, w)} ${w}w`).join(", ")}
       sizes={sizes}
-      alt={alt && metadata ? (ui.htmlLang === 'fr' ? metadata.altFr : metadata.altEn) : alt}
-      loading={eager ? 'eager' : 'lazy'}
-      fetchPriority={eager ? 'high' : 'auto'}
+      alt={
+        alt && metadata
+          ? ui.htmlLang === "fr"
+            ? metadata.altFr
+            : metadata.altEn
+          : alt
+      }
+      loading={eager ? "eager" : "lazy"}
+      fetchPriority={eager ? "high" : "auto"}
       width={metadata?.width ?? 1536}
       height={metadata?.height ?? 1024}
       decoding="async"
       // An image that cannot load leaves its frame's background, never a broken-image icon.
-      onError={(event) => event.currentTarget.setAttribute('data-failed', '')}
+      onError={(event) => event.currentTarget.setAttribute("data-failed", "")}
     />
   );
   return picture;
@@ -86,7 +106,7 @@ export function PhotoStack({
   items,
   active,
   sizes,
-  className = '',
+  className = "",
 }: {
   items: { image: string; alt: string }[];
   active: number;
@@ -113,14 +133,14 @@ export function Button({
   to,
   href,
   children,
-  variant = 'primary',
-  className = '',
+  variant = "primary",
+  className = "",
 }: {
   to?: string;
   /** External destination, opened in a new tab. */
   href?: string;
   children: ReactNode;
-  variant?: 'primary' | 'outline' | 'light' | 'ghost';
+  variant?: "primary" | "outline" | "light" | "ghost";
   className?: string;
 }) {
   const classes = `button button-${variant} ${className}`;
@@ -144,8 +164,11 @@ export function ProjectActions({ light = false }: { light?: boolean }) {
   const locale = useLocale();
   return (
     <div className="project-actions">
-      <Button variant={light ? 'light' : 'primary'}>{copy.labels.quote}</Button>
-      <Button href={appointmentLink(locale)} variant={light ? 'ghost' : 'outline'}>
+      <Button variant={light ? "light" : "primary"}>{copy.labels.quote}</Button>
+      <Button
+        href={appointmentLink(locale)}
+        variant={light ? "ghost" : "outline"}
+      >
         {copy.labels.appointment}
       </Button>
     </div>
@@ -155,7 +178,7 @@ export function ProjectActions({ light = false }: { light?: boolean }) {
 /** A card that leans towards the pointer under a soft light, its picture settling in. */
 export function TiltLink({
   to,
-  className = '',
+  className = "",
   children,
 }: {
   to: string;
@@ -175,7 +198,7 @@ export function TiltLink({
 export function TextLink({
   to,
   children,
-  className = '',
+  className = "",
 }: {
   to: string;
   children: ReactNode;
@@ -188,8 +211,16 @@ export function TextLink({
   );
 }
 
-export function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
-  return <p className={`eyebrow ${light ? 'eyebrow-light' : ''}`}>{children}</p>;
+export function Eyebrow({
+  children,
+  light = false,
+}: {
+  children: ReactNode;
+  light?: boolean;
+}) {
+  return (
+    <p className={`eyebrow ${light ? "eyebrow-light" : ""}`}>{children}</p>
+  );
 }
 
 export function SectionHeading({
@@ -246,6 +277,7 @@ export function PageHero({
   intro,
   image,
   dark = false,
+  editorial,
 }: {
   meta: PageMeta;
   eyebrow: string;
@@ -253,42 +285,73 @@ export function PageHero({
   intro?: string;
   image?: string;
   dark?: boolean;
+  editorial?: PublishedDocument;
 }) {
+  const page = usePageDocument(meta.path),
+    content = editorial ?? page;
+  title = content ? content.document.title.replace(/\*/g, "") : title;
+  intro = content?.document.summary ?? intro;
+  eyebrow = content?.document.category || eyebrow;
+  const cover = content?.document.cover;
+  const hasImage = !!(cover || image);
   return (
-    <section
-      className={`page-hero ${image ? 'page-hero-split' : ''} ${dark ? 'page-hero-dark' : ''}`}
-    >
-      {/* A page without a picture gets the slow helix of the site behind its title. */}
-      {!image && <AmbientField tone={dark ? 'dark' : 'light'} className="page-hero-field" />}
-      <div className="container">
-        <Breadcrumbs meta={meta} />
-        <div className="page-hero-grid">
-          <div className="page-hero-copy intro-copy">
-            <Eyebrow light={dark}>
-              <DecodeOnce text={eyebrow} play delay={350} />
-            </Eyebrow>
-            <AnimatedHeading as="h1" text={title} intro />
-            {intro && <p className="lead">{intro}</p>}
-            {image && <ProjectActions light={dark} />}
-          </div>
-          {image && (
-            <div className="page-hero-image intro-image">
-              <Photo
-                name={image}
-                alt={meta.label}
-                eager
-                sizes={
-                  ['bioinformatique-client', 'terrain-kayak', 'dpcr-operateur'].includes(image)
-                    ? '(max-width: 700px) 90vw, 380px'
-                    : undefined
-                }
-              />
-              <span className="page-hero-sheen" aria-hidden="true" />
+    <>
+      <section
+        className={`page-hero ${hasImage ? "page-hero-split" : ""} ${dark ? "page-hero-dark" : ""}`}
+      >
+        {/* A page without a picture gets the slow helix of the site behind its title. */}
+        {!hasImage && (
+          <AmbientField
+            tone={dark ? "dark" : "light"}
+            className="page-hero-field"
+          />
+        )}
+        <div className="container">
+          <Breadcrumbs meta={meta} />
+          <div className="page-hero-grid">
+            <div className="page-hero-copy intro-copy">
+              <Eyebrow light={dark}>
+                <DecodeOnce text={eyebrow} play delay={350} />
+              </Eyebrow>
+              <AnimatedHeading as="h1" text={title} intro />
+              {intro && <p className="lead">{intro}</p>}
+              {hasImage && <ProjectActions light={dark} />}
             </div>
-          )}
+            {hasImage && (
+              <div className="page-hero-image intro-image">
+                {cover ? (
+                  <MediaImage
+                    image={cover}
+                    media={content?.media.find((m) => m.id === cover.mediaId)}
+                    eager
+                  />
+                ) : (
+                  <Photo
+                    name={image!}
+                    alt={meta.label}
+                    eager
+                    sizes={
+                      [
+                        "bioinformatique-client",
+                        "terrain-kayak",
+                        "dpcr-operateur",
+                      ].includes(image!)
+                        ? "(max-width: 700px) 90vw, 380px"
+                        : undefined
+                    }
+                  />
+                )}
+                {cover && (
+                  <CoverCredit image={cover} className="cms-hero-credit" />
+                )}
+                <span className="page-hero-sheen" aria-hidden="true" />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {!editorial && <PageWriting path={meta.path} />}
+    </>
   );
 }
 
@@ -307,7 +370,8 @@ export function FinalCTA() {
             <p>{copy.cta.body}</p>
             <ProjectActions />
             <p className="cta-email">
-              {ui.common.orWrite} <a href={`mailto:${company.email}`}>{company.email}</a>
+              {ui.common.orWrite}{" "}
+              <a href={`mailto:${company.email}`}>{company.email}</a>
             </p>
           </Reveal>
         </div>

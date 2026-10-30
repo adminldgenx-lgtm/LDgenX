@@ -8,14 +8,24 @@ export const kindNames = {
     article: "Article / guide",
     study: "Étude de cas",
     publication: "Publication scientifique",
+    service: "Expertise",
+    application: "Application",
+    page: "Page du site",
   },
   en: {
     article: "Article / guide",
     study: "Case study",
     publication: "Scientific publication",
+    service: "Expertise",
+    application: "Application",
+    page: "Website page",
   },
 };
 const errors: Record<string, [string, string]> = {
+  trashed: [
+    "Ce contenu est dans la corbeille. Restaurez-le pour le modifier.",
+    "This content is in trash. Restore it before editing.",
+  ],
   conflict: [
     "Ce document a été modifié ailleurs. Votre texte est conservé ici. Exportez votre brouillon, puis rechargez la version actuelle pour comparer.",
     "This document was edited elsewhere. Your text is preserved here. Export your draft, then reload the current version to compare.",
