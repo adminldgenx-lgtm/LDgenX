@@ -141,7 +141,7 @@
   },
   "/recherche": {
     "hash": "21e71529179cf3d3",
-    "date": "2026-10-27"
+    "date": "2026-10-29"
   },
   "/recherche/levure-replication-adn-polymerase-alpha-2026": {
     "hash": "113948a254d0e311",
@@ -296,8 +296,8 @@
     "date": "2026-10-28"
   },
   "/politique-confidentialite": {
-    "hash": "188ef1341df1f9eb",
-    "date": "2026-10-26"
+    "hash": "68c2eb4a967afd6e",
+    "date": "2026-10-29"
   },
   "/cgvs/cgvs": {
     "hash": "1da254ae369919d7",
@@ -445,7 +445,7 @@
   },
   "/en/research": {
     "hash": "f13004085a100c16",
-    "date": "2026-10-27"
+    "date": "2026-10-29"
   },
   "/en/research/yeast-dna-replication-polymerase-alpha-2026": {
     "hash": "dc5918965414e10c",
@@ -600,7 +600,7 @@
     "date": "2026-10-28"
   },
   "/en/privacy-policy": {
-    "hash": "d824870b4dbda093",
-    "date": "2026-10-26"
+    "hash": "8552d863b525b975",
+    "date": "2026-10-29"
   }
 }

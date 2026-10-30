@@ -18,7 +18,8 @@ import {
 } from './types.ts';
 import { computeSlots, heldSpans } from './availability.ts';
 import { fileExpiry } from './retention.ts';
-import { DAY, MINUTE } from './time.ts';
+import { DAY, MINUTE, atMinutes, teamDay } from './time.ts';
+import { productionOrigin } from './site.ts';
 
 export interface Records {
   profiles: User;
@@ -29,6 +30,7 @@ export interface Records {
   activity: Activity;
 }
 export interface Repository {
+  externalBusy?(from: string, to: string): Promise<TimeBlock[]>;
   get<K extends keyof Records>(kind: K, id: string): Promise<Records[K] | null>;
   list<K extends keyof Records>(
     kind: K,
@@ -168,6 +170,15 @@ function validateBlock(b: Omit<TimeBlock, 'id'>, c: BookingConfig) {
     (b.hostId !== null && !c.hosts.some((h) => h.id === b.hostId))
   )
     throw new PortalError('invalid_input');
+  if (b.allDay !== undefined && typeof b.allDay !== 'boolean')
+    throw new PortalError('invalid_input');
+  if (
+    b.allDay &&
+    (date(b.start) !==
+      atMinutes(teamDay(Date.parse(b.start)), 0).toISOString() ||
+      date(b.end) !== atMinutes(teamDay(Date.parse(b.end)), 0).toISOString())
+  )
+    throw new PortalError('invalid_input');
   text(b.reason, 500);
 }
 
@@ -248,7 +259,7 @@ export class PortalService {
           fr
             ? 'LDgenX — Nouvelle activité dans votre espace'
             : 'LDgenX — New activity in your account',
-          `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\nhttps://www.ldgenx.fr/${person.role === 'admin' ? 'admin' : 'espace'}`,
+          `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\n${productionOrigin}/${person.role === 'admin' ? 'admin' : 'espace'}`,
           eventId,
         );
       }
@@ -256,6 +267,29 @@ export class PortalService {
   }
   private async config() {
     return this.db.setting<BookingConfig>('booking');
+  }
+  private async withGoogleBusy(
+    config: BookingConfig,
+    from: number,
+    to: number,
+  ) {
+    if (!this.db.externalBusy) return config;
+    const buffer = config.bufferMinutes * MINUTE;
+    const blocks = await this.db.externalBusy(
+      new Date(from - buffer).toISOString(),
+      new Date(to + buffer).toISOString(),
+    );
+    return {
+      ...config,
+      blocks: [
+        ...config.blocks,
+        ...blocks.map((b) => ({
+          ...b,
+          start: new Date(Date.parse(b.start) - buffer).toISOString(),
+          end: new Date(Date.parse(b.end) + buffer).toISOString(),
+        })),
+      ],
+    };
   }
   private async freeSlot(
     typeId: string,
@@ -266,7 +300,7 @@ export class PortalService {
     const config = await this.config();
     const at = Date.parse(date(start));
     const slot = computeSlots(
-      config,
+      await this.withGoogleBusy(config, at, at + DAY),
       await this.db.list('appointments'),
       typeId,
       at,
@@ -290,7 +324,16 @@ export class PortalService {
       date(start) >= date(end)
     )
       throw new PortalError('invalid_input');
-    // Team scheduling may go outside opening hours, but it still respects held appointments.
+    // Team scheduling may go outside opening hours, but must respect blocked time.
+    if (
+      c.blocks.some(
+        (b) =>
+          (!b.hostId || b.hostId === hostId) &&
+          Date.parse(start) < Date.parse(b.end) &&
+          Date.parse(end) > Date.parse(b.start),
+      )
+    )
+      throw new PortalError('slot_taken');
     if (
       (await this.db.list('appointments')).some(
         (a) =>
@@ -301,6 +344,22 @@ export class PortalService {
               Date.parse(start) < h.span.end &&
               Date.parse(end) > h.span.start,
           ),
+      )
+    )
+      throw new PortalError('slot_taken');
+    const buffer = c.bufferMinutes * MINUTE;
+    const google = this.db.externalBusy
+      ? await this.db.externalBusy(
+          new Date(Date.parse(start) - buffer).toISOString(),
+          new Date(Date.parse(end) + buffer).toISOString(),
+        )
+      : [];
+    if (
+      google.some(
+        (b) =>
+          (!b.hostId || b.hostId === hostId) &&
+          Date.parse(start) < Date.parse(b.end) + buffer &&
+          Date.parse(end) > Date.parse(b.start) - buffer,
       )
     )
       throw new PortalError('slot_taken');
@@ -685,7 +744,7 @@ export class PortalService {
     if (end <= begin || end - begin > 93 * DAY)
       throw new PortalError('invalid_input');
     return computeSlots(
-      c,
+      await this.withGoogleBusy(c, begin, end),
       await this.db.list('appointments'),
       typeId,
       begin,
@@ -704,7 +763,16 @@ export class PortalService {
     return (
       await this.db.list('appointments', u.role === 'admin' ? undefined : u.id)
     )
-      .filter((a) => !range || (a.end > range.from && a.start < range.to))
+      .filter(
+        (a) =>
+          !range ||
+          (a.end > range.from && a.start < range.to) ||
+          !!(
+            a.change &&
+            a.change.end > range.from &&
+            a.change.start < range.to
+          ),
+      )
       .sort((a, b) => a.start.localeCompare(b.start));
   }
   async requestAppointment(input: RequestInput) {
@@ -898,6 +966,11 @@ export class PortalService {
       reason: text(block.reason, 500),
     };
     c.blocks.push(b);
+    Object.assign(b, {
+      allDay: block.allDay === true,
+      version: 1,
+      updatedAt: now(),
+    });
     await this.db.setSetting('booking', c);
     return b;
   }
@@ -906,6 +979,35 @@ export class PortalService {
     const c = await this.config();
     c.blocks = c.blocks.filter((b) => b.id !== id);
     await this.db.setSetting('booking', c);
+  }
+  async updateBlock(
+    id: string,
+    patch: Pick<TimeBlock, 'hostId' | 'start' | 'end' | 'reason'> & {
+      allDay?: boolean;
+      version: number;
+    },
+  ) {
+    this.need(true);
+    const c = await this.config(),
+      b = c.blocks.find((b) => b.id === id);
+    if (!b) throw new PortalError('not_found');
+    integer(patch.version, 1, 2147483647);
+    if (patch.version !== (b.version ?? 1))
+      throw new PortalError('stale_record');
+    validateBlock(patch, c);
+    const updated = {
+      ...b,
+      hostId: patch.hostId,
+      start: date(patch.start),
+      end: date(patch.end),
+      reason: text(patch.reason, 500),
+      allDay: patch.allDay === true,
+      version: (b.version ?? 1) + 1,
+      updatedAt: now(),
+    };
+    c.blocks = c.blocks.map((item) => (item.id === id ? updated : item));
+    await this.db.setSetting('booking', c);
+    return updated;
   }
   async listActivity(limit = 50) {
     const u = this.need();

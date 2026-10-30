@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-29T16:05:36.791Z",
+  "checks": [
+    "Admin lists all 74 existing scientific working copies",
+    "Rich editor saves text, table, figure metadata and trusted video",
+    "PNG converted to 3 responsive WebP variants, max 2400px; reused without duplication",
+    "Live production draft and private media stay out of the public API; no test content published"
+  ],
+  "errors": []
+}

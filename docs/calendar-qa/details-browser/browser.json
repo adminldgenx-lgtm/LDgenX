@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-29T22:49:49.087Z",
+  "checks": [
+    "Logged-out admin link preserves the Calendar tab after sign-in",
+    "Actual admin status accurately reflects the current Google connection",
+    "Per-person calendar configuration and save feedback work",
+    "Sync action displays success and actionable failure states",
+    "Sharing and team-calendar preferences are explicit, editable and private by default",
+    "English Calendar controls are fully translated",
+    "Mobile settings fit without horizontal overflow",
+    "Shared Google availability displays once and opens a protected read-only detail view",
+    "Blocked-time editing preserves identity, saves all-day dates and follows the new date",
+    "Google record links reopen the correct detail panel and viewed date",
+    "Deletion requires confirmation and removes the portal block",
+    "New all-day blocks open their synchronized record on the selected date",
+    "Month and list views include Google busy periods",
+    "Agenda reports unavailable Google data rather than presenting it as current"
+  ],
+  "browserExceptions": [],
+  "realConsentPerformed": false,
+  "connectedStates": "mocked"
+}

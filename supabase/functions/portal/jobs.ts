@@ -1,6 +1,7 @@
 import type { Sql } from 'npm:postgres@3.4.7';
 import type { SupabaseClient } from 'npm:@supabase/supabase-js@2.118.0';
 import type { RetentionSettings } from '../_shared/types.ts';
+import { portalSiteOrigin } from '../_shared/site.ts';
 
 /** Runs every 15 minutes via pg_cron. The job key is never exposed to the browser. */
 export async function runJobs(sql: Sql, admin: SupabaseClient) {
@@ -9,7 +10,7 @@ export async function runJobs(sql: Sql, admin: SupabaseClient) {
       await tx`select pg_try_advisory_xact_lock(hashtextextended('portal-jobs',0)) as acquired`;
     if (!lock[0].acquired) return { busy: true };
     const stamp = new Date().toISOString();
-    const filesUrl = `${(Deno.env.get('PORTAL_SITE_URL') ?? 'https://www.ldgenx.fr').replace(/\/+$/, '')}/espace/fichiers`;
+    const filesUrl = `${portalSiteOrigin(Deno.env.get('PORTAL_SITE_URL'))}/espace/fichiers`;
     const due =
       await tx`select id,object_path from public.portal_files where data->>'expiresAt' is not null and data->>'expiresAt' <= ${stamp} and not (data->>'kept')::boolean for update`;
     for (const f of due) {

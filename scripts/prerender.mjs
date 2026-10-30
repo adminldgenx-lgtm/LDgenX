@@ -56,6 +56,7 @@ const withLang = (html, locale) =>
   html
     .replace('<html lang="fr">', `<html lang="${catalogs[locale].ui.htmlLang}">`)
     .replace('</head>', `${preloads[locale]}</head>`);
+await writeFile('.prerender/editorial-templates.json', JSON.stringify({ fr: withLang(template, 'fr'), en: withLang(template, 'en') }));
 // Each page's date of last change: kept from one build to the next while its content stays the
 // same (data/lastmod.json), so sitemaps and structured data date real changes only.
 const lastmodFile = path.resolve('data/lastmod.json');
@@ -77,7 +78,8 @@ for (const page of pages) {
     file,
     withLang(template, page.locale)
       .replace('<!--app-html-->', output.html)
-      .replace('<!--seo-head-->', head),
+      .replace('<!--seo-head-->', head)
+      .replace('</body>', '<script id="ldgenx-editorial" type="application/json">{"index":[],"document":null}</script></body>'),
   );
 }
 await writeFile(lastmodFile, `${JSON.stringify(dates, null, 2)}\n`);
@@ -122,7 +124,9 @@ await writeFile(
     '\n' +
     // The client area and the administration: one application for every address below them.
     (portal
-      ? '/espace /portal.html 200\n/espace/* /portal.html 200\n/admin /portal.html 200\n/admin/* /portal.html 200\n'
+      // An .html rewrite target is normalized by Pages into a visible 308 to /portal,
+      // losing the requested route. The extensionless target keeps the rewrite internal.
+      ? '/espace /portal 200\n/espace/* /portal 200\n/admin /portal 200\n/admin/* /portal 200\n'
       : ''),
 );
 await writeFile(path.join(root, 'redirects.json'), JSON.stringify(redirects, null, 2));
@@ -139,9 +143,10 @@ const policy = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  `img-src 'self' data: blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
   "font-src 'self'",
-  "media-src 'self'",
+  `media-src 'self' blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
+  'frame-src https://www.youtube-nocookie.com https://player.vimeo.com',
   `connect-src 'self'${contactOrigin}${supabaseOrigin}`,
   "object-src 'none'",
   "base-uri 'self'",
@@ -160,6 +165,9 @@ const security = [
 ];
 const rules = [
   ['/*', security],
+  // The public production domain is indexable; Pages addresses are previews/aliases.
+  ['https://:project.pages.dev/*', ['X-Robots-Tag: noindex']],
+  ['https://:version.:project.pages.dev/*', ['X-Robots-Tag: noindex']],
   ['/assets/*', ['Cache-Control: public, max-age=31536000, immutable']],
   ['/images/*', ['Cache-Control: public, max-age=2592000']],
   ['/llms.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
@@ -167,7 +175,10 @@ const rules = [
   ...(portal
     ? [
         ['/portal.html', ['X-Robots-Tag: noindex, nofollow', 'Cache-Control: no-cache']],
+        ['/portal', ['X-Robots-Tag: noindex, nofollow', 'Cache-Control: no-cache']],
+        ['/espace', ['X-Robots-Tag: noindex, nofollow']],
         ['/espace/*', ['X-Robots-Tag: noindex, nofollow']],
+        ['/admin', ['X-Robots-Tag: noindex, nofollow']],
         ['/admin/*', ['X-Robots-Tag: noindex, nofollow']],
       ]
     : []),

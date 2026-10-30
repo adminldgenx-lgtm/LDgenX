@@ -3,19 +3,20 @@
 // index keeps routes, language alternates and redirects available without them. The server
 // build checks that it matches the catalogues (see allPages in lib/pages.ts).
 import type { Locale, RouteSource } from '../lib/routes';
+import { productionOrigin } from '../../supabase/functions/_shared/site';
 
 export const portalEnabled = import.meta.env?.VITE_PORTAL_ENABLED !== '0';
 
 export const company = {
   name: 'LDgenX',
-  origin: 'https://www.ldgenx.fr',
+  origin: productionOrigin,
   email: 'info@ldgenx.fr',
   address: 'Station Ifremer · 51 route de Maguelone',
   city: '34250 Palavas-les-Flots, France',
   appointment: portalEnabled
     ? '/espace/reserver'
     : 'https://cal.com/ldgenx-echange/decouverte',
-  english: 'https://www.ldgenx.com/',
+  english: `${productionOrigin}/en`,
   linkedin: 'https://www.linkedin.com/company/ldgenx/',
   // Public registry (recherche-entreprises.api.gouv.fr, October 2026) and OpenStreetMap.
   legalName: 'LDgenX SAS',

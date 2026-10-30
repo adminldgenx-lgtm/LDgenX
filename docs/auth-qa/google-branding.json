@@ -1,0 +1,13 @@
+{
+  "project": "ldgenx-platform",
+  "app_name": "LDgenX",
+  "audience": "production",
+  "app_name_saved": true,
+  "branding_verification": "not approved: homepage ownership verification required",
+  "live_release_commit": "434b144608df5d0617bfccc1a4eea843c9c6d72f",
+  "cloudflare_deployment": "4be35e22-6932-4554-97b2-0ffb89848335",
+  "source": "Connected Google Cloud UI and Cloudflare GitHub check",
+  "issue": "https://www.ldgenx.fr/ is not registered as owned by the Google account performing verification",
+  "next_step": "Verify homepage ownership in Google Search Console as admin.ldgenx@gmail.com; wait 24 hours, then request brand validation again",
+  "account_action_required": true
+}

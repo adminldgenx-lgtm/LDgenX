@@ -1,0 +1,82 @@
+[
+  {
+    "url": "https://ldgenx.fr/",
+    "status": 200,
+    "location": null,
+    "server": "cloudflare",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self' https://rkkvvqwgxbtnvewyrylj.supabase.co wss://rkkvvqwgxbtnvewyrylj.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "robots": null
+  },
+  {
+    "url": "http://ldgenx.fr/",
+    "status": 301,
+    "location": "https://ldgenx.fr/",
+    "server": "cloudflare",
+    "csp": null,
+    "robots": null
+  },
+  {
+    "url": "https://www.ldgenx.fr/",
+    "status": 200,
+    "location": null,
+    "server": "nginx/1.18.0 (Ubuntu)",
+    "csp": null,
+    "robots": null
+  },
+  {
+    "url": "http://www.ldgenx.fr/",
+    "status": 301,
+    "location": "https://www.ldgenx.fr/",
+    "server": "nginx/1.18.0 (Ubuntu)",
+    "csp": null,
+    "robots": null
+  },
+  {
+    "url": "https://ldgenx.com/",
+    "status": 200,
+    "location": null,
+    "server": "cloudflare",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self' https://rkkvvqwgxbtnvewyrylj.supabase.co wss://rkkvvqwgxbtnvewyrylj.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "robots": null
+  },
+  {
+    "url": "http://ldgenx.com/",
+    "status": 301,
+    "location": "https://ldgenx.com/",
+    "server": "cloudflare",
+    "csp": null,
+    "robots": null
+  },
+  {
+    "url": "https://www.ldgenx.com/",
+    "status": 200,
+    "location": null,
+    "server": "cloudflare",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self' https://rkkvvqwgxbtnvewyrylj.supabase.co wss://rkkvvqwgxbtnvewyrylj.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "robots": null
+  },
+  {
+    "url": "http://www.ldgenx.com/",
+    "status": 301,
+    "location": "https://www.ldgenx.com/",
+    "server": "cloudflare",
+    "csp": null,
+    "robots": null
+  },
+  {
+    "url": "https://ldgenx-12k.pages.dev/",
+    "status": 200,
+    "location": null,
+    "server": "cloudflare",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self' https://rkkvvqwgxbtnvewyrylj.supabase.co wss://rkkvvqwgxbtnvewyrylj.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "robots": null
+  },
+  {
+    "url": "http://ldgenx-12k.pages.dev/",
+    "status": 301,
+    "location": "https://ldgenx-12k.pages.dev/",
+    "server": "cloudflare",
+    "csp": null,
+    "robots": null
+  }
+]

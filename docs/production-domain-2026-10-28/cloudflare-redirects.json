@@ -1,0 +1,27 @@
+{
+  "configuredAt": "2026-10-28",
+  "canonical": "https://www.ldgenx.fr",
+  "rules": [
+    {
+      "zone": "ldgenx.fr",
+      "name": "LDgenX — canonical HTTPS www.ldgenx.fr",
+      "expression": "(http.host eq \"ldgenx.fr\") or (http.host eq \"www.ldgenx.fr\" and not ssl)",
+      "target": "concat(\"https://www.ldgenx.fr\", http.request.uri.path)",
+      "status": 301,
+      "preserveQueryString": true,
+      "enabled": true
+    },
+    {
+      "zone": "ldgenx.com",
+      "name": "LDgenX — .com to www.ldgenx.fr",
+      "expression": "http.host in {\"ldgenx.com\" \"www.ldgenx.com\"}",
+      "target": "concat(\"https://www.ldgenx.fr\", http.request.uri.path)",
+      "status": 301,
+      "preserveQueryString": true,
+      "enabled": true
+    }
+  ],
+  "emailDnsOrOvhChanges": false,
+  "emailObfuscationChanged": false,
+  "webAnalyticsChanged": false
+}

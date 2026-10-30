@@ -10,7 +10,10 @@ await mkdir(output, { recursive: true });
 const run = randomUUID().slice(0, 8),
   users = [],
   errors = [],
-  failures = [];
+  failures = [],
+  traffic = [];
+const started = new WeakMap();
+const testStarted = Date.now();
 const publicEnv = parseEnv(await readFile('.env.production', 'utf8'));
 const service = createClient(`https://${ref}.supabase.co`, await serviceKey(), {
   auth: { persistSession: false, autoRefreshToken: false },
@@ -41,7 +44,26 @@ async function account(name, isAdmin = false) {
 }
 function track(page) {
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('response', (r) => {
+  page.on('request', (r) => started.set(r, Date.now()));
+  page.on('websocket', (ws) => {
+    ws.on('framereceived', ({ payload }) => {
+      try {
+        const message = JSON.parse(String(payload));
+        const event = Array.isArray(message) ? message[3] : message.event;
+        const content = Array.isArray(message) ? message[4] : message.payload;
+        traffic.push({ at: Date.now() - testStarted, transport: 'websocket', event, status: content?.status, table: content?.data?.table });
+      } catch { /* A binary/heartbeat frame is not a diagnostic payload. */ }
+    });
+  });
+  page.on('response', async (r) => {
+    if (r.url().includes('/functions/v1/portal')) {
+      const row = { at: Date.now() - testStarted, method: r.request().method(), path: new URL(r.url()).pathname, status: r.status(), elapsed: Date.now() - (started.get(r.request()) ?? Date.now()) };
+      if (row.path.endsWith('/messages') && row.method === 'GET') {
+        const payload = await r.json().catch(() => null);
+        row.count = Array.isArray(payload) ? payload.length : null;
+      }
+      traffic.push(row);
+    }
     if (r.url().includes('/functions/v1/portal') && r.status() >= 400)
       failures.push({ path: new URL(r.url()).pathname, status: r.status() });
   });
@@ -241,6 +263,8 @@ try {
     JSON.stringify(
       {
         passed: true,
+        origin,
+        checkedAt: new Date().toISOString(),
         checked: [
           'client/admin login',
           'pending-account messaging',
@@ -287,6 +311,7 @@ try {
     ),
   );
 } finally {
+  await writeFile(`${output}/request-timing.json`, JSON.stringify(traffic, null, 2) + '\n');
   await browser.close();
   const files = users.length
     ? await query(

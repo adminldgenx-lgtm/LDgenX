@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "stage": "admin Realtime message update",
+  "timeoutMs": 15000,
+  "apiErrors": [],
+  "runtimeErrors": [],
+  "sameAssertionsPassedOnDiagnosticRerun": true,
+  "productCodeChangedBetweenRuns": false
+}

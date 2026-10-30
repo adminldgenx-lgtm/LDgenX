@@ -1,6 +1,6 @@
 import { use, useEffect, useRef, useState, type ComponentType } from 'react';
 import { Navigate, useLocation, useNavigationType } from 'react-router-dom';
-import { getPage, localeAt, redirects, type PageKind, type PageMeta } from './lib/pages';
+import { localeAt, redirects, type PageKind, type PageMeta } from './lib/pages';
 import { catalogs, loadCatalog } from './content/catalog';
 import { Header } from './layouts/Header';
 import { Footer } from './layouts/Footer';
@@ -30,6 +30,8 @@ import { PublicationPage, ResearchPage } from './pages/Research';
 import { FaqPage, GlossaryPage, SiteMapPage } from './pages/Knowledge';
 import { LocaleProvider, useCatalog, useRoutes } from './i18n';
 import { ContactPage } from './pages/Contact';
+import { usePublicMeta } from './editorial/context';
+import { PublishedEditorialPage } from './editorial/PublicDocument';
 
 function NotFound() {
   const t = useCatalog().ui.notFound;
@@ -117,7 +119,7 @@ export function App() {
   // the current page stays on screen meanwhile.
   const locale = localeAt(location.pathname);
   if (!catalogs[locale]) use(loadCatalog(locale));
-  const meta = getPage(location.pathname);
+  const meta = usePublicMeta(location.pathname);
   const Page = templates[meta.kind];
   const initial = useRef(true);
   const entryKey = useRef(location.key);
@@ -180,7 +182,7 @@ export function App() {
         key={meta.path}
         className={navigated ? 'page-enter' : undefined}
       >
-        <Page meta={meta} />
+        {meta.editorial ? <PublishedEditorialPage row={meta.editorial} /> : <Page meta={meta} />}
       </main>
       <Footer />
       {redirects[normalized] && <Navigate to={redirects[normalized]} replace />}

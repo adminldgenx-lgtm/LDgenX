@@ -267,3 +267,9 @@ E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
 - Source : [« Ambleteuse slack »](https://commons.wikimedia.org/wiki/File:Ambleteuse_slack.jpg), Velvet, 10 mars 2014, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Cette nouvelle photographie fait exception au choix antérieur d’images sans attribution : crédit discret dans les mentions légales FR/EN et sous la photographie de la carte de partage. Source et licence conservées dans `data/licensed-photos.json`.
 - Aucune retouche de la scène ou des couleurs ; redimensionnement, encodage et cadrage d’affichage uniquement. Photographie d’illustration du milieu, sans attribution à la campagne de prélèvements. Versions photographiques conservées sous la même licence.
 - Remplacement cohérent dans les vignettes, suggestions et aperçus de partage FR/EN ; photographie de l’étude en eau turbide, cartes et contenus scientifiques inchangés. Vérifications et preuves : [photo-artois-2026-10-28/README.md](photo-artois-2026-10-28/README.md). Aucun déploiement frontend pendant cette passe.
+
+## Domaine de production — 28 et 29 octobre 2026
+
+- Domaine principal `https://www.ldgenx.fr` conservé ; variantes .fr/.com redirigées côté Cloudflare avec conservation des chemins/paramètres. Supabase Auth et les liens Edge utilisent le même domaine. Réécritures privées corrigées et exclusion d’indexation des previews vérifiée sur le site réellement publié.
+- Aucun contenu scientifique ni donnée de rapport modifié. Messagerie OVH, DNS de messagerie et protection Cloudflare des e-mails conservés à la demande du propriétaire ; e-mails automatiques du portail et intégrations Google toujours différés.
+- Déploiement et recette complète, incluant les quatre domaines, 151 pages publiques, 147 entrées de sitemap, accès privés et parcours navigateur réels : [PRODUCTION-DOMAIN-2026-10-29.md](PRODUCTION-DOMAIN-2026-10-29.md).

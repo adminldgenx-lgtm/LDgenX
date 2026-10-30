@@ -1,6 +1,6 @@
 // The client area (/espace) and the administration (/admin): one application, kept apart from
 // the public site and from search engines.
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { I18nProvider, useI18n } from './i18n';
 import { SessionProvider, ToastProvider, useSession } from './state';
@@ -18,6 +18,10 @@ import { RequestsPage } from './pages/requests';
 import { AgendaPage } from './pages/agenda';
 import { ClientPage, ClientsPage } from './pages/clients';
 import { SettingsPage } from './pages/settings';
+const ContentListPage = lazy(() => import('./editorial/pages').then((m) => ({ default: m.ContentListPage })));
+const ContentEditorPage = lazy(() => import('./editorial/pages').then((m) => ({ default: m.ContentEditorPage })));
+const MediaPage = lazy(() => import('./editorial/MediaLibrary').then((m) => ({ default: m.MediaPage })));
+function EditorialScreen({ children }: { children: React.ReactNode }) { return <Suspense fallback={<p role="status">Chargement / Loading…</p>}>{children}</Suspense>; }
 
 function Entry() {
   const { user } = useSession();
@@ -61,6 +65,9 @@ export function PortalApp() {
               <Route path="/admin" element={<Navigate to="/admin/messages" replace />} />
               <Route path="/admin/connexion" element={<LoginPage admin />} />
               <Route element={<AdminShell />}>
+                <Route path="/admin/contenus" element={<EditorialScreen><ContentListPage /></EditorialScreen>} />
+                <Route path="/admin/contenus/:id" element={<EditorialScreen><ContentEditorPage /></EditorialScreen>} />
+                <Route path="/admin/medias" element={<EditorialScreen><MediaPage /></EditorialScreen>} />
                 <Route path="/admin/messages" element={<InboxPage />} />
                 <Route path="/admin/demandes" element={<RequestsPage />} />
                 <Route path="/admin/agenda" element={<AgendaPage />} />

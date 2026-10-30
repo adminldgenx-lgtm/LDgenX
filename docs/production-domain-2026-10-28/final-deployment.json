@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-29T10:35:41.555Z",
+  "commit": "bf84e159154f53f07226f6eddee782b00569c55d",
+  "cloudflare": {
+    "status": "completed",
+    "conclusion": "success",
+    "detailsUrl": "https://dash.cloudflare.com/?to=/f87bdf029aade979cc36f3acd85eb5f1/pages/view/ldgenx/9e8cd9ea-ec0d-4f90-8e06-a9c0d346ab22"
+  },
+  "routes": [
+    {
+      "url": "https://www.ldgenx.fr/admin/connexion",
+      "status": 200,
+      "location": null,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "url": "https://www.ldgenx.fr/espace/reserver?lang=en",
+      "status": 200,
+      "location": null,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "url": "https://ldgenx-12k.pages.dev/",
+      "status": 200,
+      "location": null,
+      "robots": "noindex"
+    }
+  ],
+  "ovhEmailUnchanged": true,
+  "cloudflareEmailProtectionUnchanged": true
+}

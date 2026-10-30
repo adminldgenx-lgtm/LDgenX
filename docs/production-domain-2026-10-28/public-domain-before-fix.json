@@ -1,0 +1,4081 @@
+{
+  "checkedAt": "2026-10-28T15:43:07.532Z",
+  "dnsServer": "1.1.1.1",
+  "productionOrigin": "https://www.ldgenx.fr",
+  "passed": false,
+  "counts": {
+    "pages": 151,
+    "indexable": 147,
+    "subSitemaps": 5,
+    "internalLinks": 226,
+    "assets": 147,
+    "legacyRedirects": 97
+  },
+  "domains": [
+    {
+      "start": "https://www.ldgenx.fr/",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.fr/",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.fr/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.fr/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.fr/",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.fr/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "https://ldgenx.fr/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.fr/",
+      "steps": [
+        {
+          "url": "http://ldgenx.fr/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "http://ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.fr/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "http://ldgenx.fr/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://ldgenx.com/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "https://ldgenx.com/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.com/",
+      "steps": [
+        {
+          "url": "http://ldgenx.com/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "http://ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://ldgenx.com/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "http://ldgenx.com/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "https://www.ldgenx.com/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "https://www.ldgenx.com/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.com/",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.com/",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/"
+        },
+        {
+          "url": "https://www.ldgenx.fr/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.com/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en"
+        },
+        {
+          "url": "https://www.ldgenx.fr/en/services/environmental-dna-edna?qa=domain%20check&lang=en",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "start": "http://www.ldgenx.com/espace/connexion?lang=fr",
+      "steps": [
+        {
+          "url": "http://www.ldgenx.com/espace/connexion?lang=fr",
+          "status": 301,
+          "location": "https://www.ldgenx.fr/espace/connexion?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/espace/connexion?lang=fr",
+          "status": 308,
+          "location": "/portal?lang=fr"
+        },
+        {
+          "url": "https://www.ldgenx.fr/portal?lang=fr",
+          "status": 200,
+          "location": null
+        }
+      ]
+    }
+  ],
+  "xml": {
+    "sitemap.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}sitemapindex",
+      "urls": []
+    },
+    "sitemaps/pages.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "urls": [
+        "https://www.ldgenx.fr/",
+        "https://www.ldgenx.fr/services",
+        "https://www.ldgenx.fr/applications",
+        "https://www.ldgenx.fr/etudes-de-cas",
+        "https://www.ldgenx.fr/innovation",
+        "https://www.ldgenx.fr/a-propos",
+        "https://www.ldgenx.fr/a-propos/equipe",
+        "https://www.ldgenx.fr/recherche",
+        "https://www.ldgenx.fr/faq",
+        "https://www.ldgenx.fr/glossaire",
+        "https://www.ldgenx.fr/plan-du-site",
+        "https://www.ldgenx.fr/a-propos/partenaires",
+        "https://www.ldgenx.fr/ressources",
+        "https://www.ldgenx.fr/contact",
+        "https://www.ldgenx.fr/cgvs/cgvs",
+        "https://www.ldgenx.fr/en",
+        "https://www.ldgenx.fr/en/services",
+        "https://www.ldgenx.fr/en/applications",
+        "https://www.ldgenx.fr/en/case-studies",
+        "https://www.ldgenx.fr/en/innovation",
+        "https://www.ldgenx.fr/en/about-us",
+        "https://www.ldgenx.fr/en/about-us/team",
+        "https://www.ldgenx.fr/en/research",
+        "https://www.ldgenx.fr/en/faq",
+        "https://www.ldgenx.fr/en/glossary",
+        "https://www.ldgenx.fr/en/site-map",
+        "https://www.ldgenx.fr/en/about-us/partners",
+        "https://www.ldgenx.fr/en/resources",
+        "https://www.ldgenx.fr/en/contact"
+      ]
+    },
+    "sitemaps/expertises.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "urls": [
+        "https://www.ldgenx.fr/services/adn-environnemental-adne",
+        "https://www.ldgenx.fr/services/genomique-des-populations",
+        "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+        "https://www.ldgenx.fr/services/selection",
+        "https://www.ldgenx.fr/services/bioinformatique",
+        "https://www.ldgenx.fr/services/sequencage-dpcr",
+        "https://www.ldgenx.fr/services/tests-adn-cibles",
+        "https://www.ldgenx.fr/services/materiel",
+        "https://www.ldgenx.fr/applications/biodiversite-conservation",
+        "https://www.ldgenx.fr/applications/aquaculture-peche",
+        "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+        "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+        "https://www.ldgenx.fr/applications/recherche-publique-privee",
+        "https://www.ldgenx.fr/applications/energies-renouvelables",
+        "https://www.ldgenx.fr/en/services/environmental-dna-edna",
+        "https://www.ldgenx.fr/en/services/population-genomics",
+        "https://www.ldgenx.fr/en/services/microbial-community-analysis",
+        "https://www.ldgenx.fr/en/services/genomic-selection",
+        "https://www.ldgenx.fr/en/services/bioinformatics",
+        "https://www.ldgenx.fr/en/services/sequencing-dpcr",
+        "https://www.ldgenx.fr/en/services/targeted-dna-tests-dpcr",
+        "https://www.ldgenx.fr/en/services/equipment",
+        "https://www.ldgenx.fr/en/applications/biodiversity-conservation",
+        "https://www.ldgenx.fr/en/applications/aquaculture-fisheries",
+        "https://www.ldgenx.fr/en/applications/agriculture-agroecology",
+        "https://www.ldgenx.fr/en/applications/environment-consultancies",
+        "https://www.ldgenx.fr/en/applications/public-private-research",
+        "https://www.ldgenx.fr/en/applications/renewable-energy"
+      ]
+    },
+    "sitemaps/etudes.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "urls": [
+        "https://www.ldgenx.fr/services/conservation",
+        "https://www.ldgenx.fr/services/tracabilite",
+        "https://www.ldgenx.fr/services/selection-genomique",
+        "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie",
+        "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe",
+        "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees",
+        "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide",
+        "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore",
+        "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques",
+        "https://www.ldgenx.fr/innovation/dna-ecotrace",
+        "https://www.ldgenx.fr/innovation/edna-clock",
+        "https://www.ldgenx.fr/en/services/conservation",
+        "https://www.ldgenx.fr/en/services/traceability",
+        "https://www.ldgenx.fr/en/services/genomic-selection-page",
+        "https://www.ldgenx.fr/en/case-studies/artois-picardie-fish-survey",
+        "https://www.ldgenx.fr/en/case-studies/northern-lapwing-genomics",
+        "https://www.ldgenx.fr/en/case-studies/pyrenean-brown-bear-demogenetics",
+        "https://www.ldgenx.fr/en/case-studies/estuary-edna-turbid-water",
+        "https://www.ldgenx.fr/en/case-studies/offshore-wind-biodiversity",
+        "https://www.ldgenx.fr/en/case-studies/microplastic-microbial-communities",
+        "https://www.ldgenx.fr/en/innovation/dna-ecotrace",
+        "https://www.ldgenx.fr/en/innovation/ednaclock"
+      ]
+    },
+    "sitemaps/recherche.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "urls": [
+        "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/equipe/dr-damien-crestel",
+        "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026",
+        "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026",
+        "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026",
+        "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026",
+        "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025",
+        "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025",
+        "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025",
+        "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025",
+        "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025",
+        "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024",
+        "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024",
+        "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024",
+        "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023",
+        "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023",
+        "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023",
+        "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022",
+        "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021",
+        "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021",
+        "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021",
+        "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020",
+        "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020",
+        "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020",
+        "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019",
+        "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019",
+        "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018",
+        "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017",
+        "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017",
+        "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016",
+        "https://www.ldgenx.fr/en/team/dr-maeva-leitwein",
+        "https://www.ldgenx.fr/en/team/dr-emilie-delpuech",
+        "https://www.ldgenx.fr/en/team/dr-damien-crestel",
+        "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026",
+        "https://www.ldgenx.fr/en/research/sea-bass-cortisol-temperature-2026",
+        "https://www.ldgenx.fr/en/research/sea-bass-sex-ratio-gwas-2026",
+        "https://www.ldgenx.fr/en/research/sea-bass-larval-survival-introgression-2026",
+        "https://www.ldgenx.fr/en/research/fish-warming-tolerance-body-mass-2025",
+        "https://www.ldgenx.fr/en/research/woodcock-jack-snipe-genomes-2025",
+        "https://www.ldgenx.fr/en/research/sea-bass-introgression-fitness-2025",
+        "https://www.ldgenx.fr/en/research/sea-bass-larval-growth-temperature-2025",
+        "https://www.ldgenx.fr/en/research/sea-bass-feed-efficiency-selection-2025",
+        "https://www.ldgenx.fr/en/research/sea-bass-introgression-muscle-fat-2024",
+        "https://www.ldgenx.fr/en/research/sea-bass-sex-determination-energy-2024",
+        "https://www.ldgenx.fr/en/research/sea-bass-temperature-female-ratio-2024",
+        "https://www.ldgenx.fr/en/research/sea-bass-vnn-resistance-2023",
+        "https://www.ldgenx.fr/en/research/capelin-dna-methylation-2023",
+        "https://www.ldgenx.fr/en/research/brown-trout-pigmentation-gwas-2023",
+        "https://www.ldgenx.fr/en/research/coho-salmon-hatchery-expression-2022",
+        "https://www.ldgenx.fr/en/research/stocking-ancestry-landscape-2021",
+        "https://www.ldgenx.fr/en/research/pig-feed-efficiency-gwas-2021",
+        "https://www.ldgenx.fr/en/research/salmon-germline-epigenome-2021",
+        "https://www.ldgenx.fr/en/research/haplotypes-conservation-genomics-2020",
+        "https://www.ldgenx.fr/en/research/brook-charr-small-populations-2020",
+        "https://www.ldgenx.fr/en/research/pig-genomic-prediction-2020",
+        "https://www.ldgenx.fr/en/research/brook-charr-recombination-ancestry-2019",
+        "https://www.ldgenx.fr/en/research/brown-trout-snp-array-2019",
+        "https://www.ldgenx.fr/en/research/brown-trout-three-way-admixture-2018",
+        "https://www.ldgenx.fr/en/research/rainbow-trout-san-francisco-2017",
+        "https://www.ldgenx.fr/en/research/brown-trout-linkage-map-2017",
+        "https://www.ldgenx.fr/en/research/brown-trout-orb-diversity-2016"
+      ]
+    },
+    "sitemaps/ressources.xml": {
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "urls": [
+        "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental",
+        "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique",
+        "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole",
+        "https://www.ldgenx.fr/en/resources/understanding-environmental-dna",
+        "https://www.ldgenx.fr/en/resources/bioinformatics-biological-question",
+        "https://www.ldgenx.fr/en/resources/genomics-aquaculture"
+      ]
+    }
+  },
+  "documents": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/adn-environnemental-adne",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/adn-environnemental-adne",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/adn-environnemental-adne"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/environmental-dna-edna"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/adn-environnemental-adne"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/genomique-des-populations",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/genomique-des-populations",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/genomique-des-populations"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/population-genomics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/genomique-des-populations"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/analyse-des-communautes-microbiennes",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/microbial-community-analysis"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/bioinformatique",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/bioinformatique",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/bioinformatique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/bioinformatics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/bioinformatique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/selection",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/selection",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/selection"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/genomic-selection"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/selection"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/sequencage-dpcr",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/sequencage-dpcr",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/sequencage-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/sequencing-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/sequencage-dpcr"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/tracabilite",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/tracabilite",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/tracabilite"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/traceability"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/tracabilite"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/materiel",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/materiel",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/materiel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/equipment"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/materiel"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/conservation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/conservation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/conservation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/selection-genomique",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/selection-genomique",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/selection-genomique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/genomic-selection-page"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/selection-genomique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/services/tests-adn-cibles",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/services/tests-adn-cibles",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/tests-adn-cibles"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/targeted-dna-tests-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/tests-adn-cibles"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/environnement-bureaux-d-etudes",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/environment-consultancies"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/agriculture-agroecologie",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/agriculture-agroecologie",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/agriculture-agroecologie"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/agriculture-agroecology"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/agriculture-agroecologie"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/aquaculture-peche",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/aquaculture-peche",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/aquaculture-peche"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/aquaculture-fisheries"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/aquaculture-peche"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/biodiversite-conservation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/biodiversite-conservation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/biodiversite-conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/biodiversity-conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/biodiversite-conservation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/recherche-publique-privee",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/recherche-publique-privee",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/recherche-publique-privee"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/public-private-research"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/recherche-publique-privee"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/applications/energies-renouvelables",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/applications/energies-renouvelables",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/energies-renouvelables"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/renewable-energy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/energies-renouvelables"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/genomique-vanneau-huppe",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/northern-lapwing-genomics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/demogenetique-ours-pyrenees",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/pyrenean-brown-bear-demogenetics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/ichtyofaune-artois-picardie",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/artois-picardie-fish-survey"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/adne-estuaire-milieu-turbide",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/estuary-edna-turbid-water"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/a-propos",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/a-propos",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/communautes-microplastiques",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/microplastic-microbial-communities"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/etudes-de-cas/biodiversite-eolien-offshore",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/offshore-wind-biodiversity"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/innovation/dna-ecotrace",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/innovation/dna-ecotrace",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation/dna-ecotrace"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation/dna-ecotrace"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation/dna-ecotrace"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/innovation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/innovation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/innovation/edna-clock",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/innovation/edna-clock",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation/edna-clock"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation/ednaclock"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation/edna-clock"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/equipe/dr-maeva-leitwein",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-maeva-leitwein"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/equipe/dr-damien-crestel",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/equipe/dr-damien-crestel",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-damien-crestel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-damien-crestel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-damien-crestel"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/a-propos/equipe",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/a-propos/equipe",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos/equipe"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us/team"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos/equipe"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/equipe/dr-emilie-delpuech",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-emilie-delpuech"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/levure-replication-adn-polymerase-alpha-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-cortisol-temperature-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-cortisol-temperature-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-sex-ratio-temperature-gwas-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-sex-ratio-gwas-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-survie-larvaire-introgression-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-larval-survival-introgression-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/genomes-becasse-becassine-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/woodcock-jack-snipe-genomes-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/poissons-tolerance-rechauffement-taille-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/fish-warming-tolerance-body-mass-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-introgression-fitness-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-introgression-fitness-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-determinisme-sexe-energie-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-sex-determination-energy-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-selection-efficacite-alimentaire-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-feed-efficiency-selection-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-introgression-teneur-gras-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-introgression-muscle-fat-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-croissance-larvaire-temperature-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-larval-growth-temperature-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-temperature-femelles-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-temperature-female-ratio-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/bar-resistance-vnn-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-vnn-resistance-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/capelan-methylation-reproduction-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/capelin-dna-methylation-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-pigmentation-gwas-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-pigmentation-gwas-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/saumon-coho-elevage-expression-2022",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/coho-salmon-hatchery-expression-2022"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/omble-ascendance-repeuplement-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/stocking-ancestry-landscape-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/haplotypes-genomique-conservation-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/haplotypes-conservation-genomics-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/pig-feed-efficiency-gwas-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/omble-diversite-petites-populations-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brook-charr-small-populations-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/saumon-coho-epigenome-germinal-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/salmon-germline-epigenome-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/porc-prediction-genomique-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/pig-genomic-prediction-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/omble-recombinaison-ascendance-2019",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brook-charr-recombination-ancestry-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-ressource-snp-2019",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-snp-array-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-carte-liaison-2017",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-linkage-map-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/rainbow-trout-san-francisco-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-trois-ascendances-2018",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-three-way-admixture-2018"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/recherche/truite-orb-diversite-2016",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-orb-diversity-2016"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/faq",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/faq"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/ressources",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/ressources",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/glossaire",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/glossaire",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/glossaire"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/glossary"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/glossaire"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/a-propos/partenaires",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/a-propos/partenaires",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos/partenaires"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us/partners"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos/partenaires"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/plan-du-site",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/plan-du-site",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/plan-du-site"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/site-map"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/plan-du-site"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/ressources/comprendre-adn-environnemental",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/understanding-environmental-dna"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/contact",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/contact"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/contact"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/contact"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/cgvs/cgvs",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/cgvs/cgvs",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/cgvs/cgvs"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/cgvs/cgvs"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/politique-confidentialite",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/politique-confidentialite",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/politique-confidentialite"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/privacy-policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/politique-confidentialite"
+        }
+      ],
+      "noindex": true
+    },
+    {
+      "path": "/ressources/genomique-filiere-aquacole",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/genomics-aquaculture"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/environmental-dna-edna",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/environmental-dna-edna",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/adn-environnemental-adne"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/environmental-dna-edna"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/adn-environnemental-adne"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/mentions-legales",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/mentions-legales",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/mentions-legales"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/legal-notice"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/mentions-legales"
+        }
+      ],
+      "noindex": true
+    },
+    {
+      "path": "/en/services/population-genomics",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/population-genomics",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/genomique-des-populations"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/population-genomics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/genomique-des-populations"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/ressources/bioinformatique-question-biologique",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/bioinformatics-biological-question"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/genomic-selection",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/genomic-selection",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/selection"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/genomic-selection"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/selection"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/microbial-community-analysis",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/microbial-community-analysis",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/microbial-community-analysis"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/analyse-des-communautes-microbiennes"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/sequencing-dpcr",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/sequencing-dpcr",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/sequencage-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/sequencing-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/sequencage-dpcr"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/bioinformatics",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/bioinformatics",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/bioinformatique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/bioinformatics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/bioinformatique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/equipment",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/equipment",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/materiel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/equipment"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/materiel"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/conservation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/conservation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/conservation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/targeted-dna-tests-dpcr",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/targeted-dna-tests-dpcr",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/tests-adn-cibles"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/targeted-dna-tests-dpcr"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/tests-adn-cibles"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/traceability",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/traceability",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/tracabilite"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/traceability"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/tracabilite"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/services/genomic-selection-page",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/services/genomic-selection-page",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/services/selection-genomique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/services/genomic-selection-page"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/services/selection-genomique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/biodiversity-conservation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/biodiversity-conservation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/biodiversite-conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/biodiversity-conservation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/biodiversite-conservation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/aquaculture-fisheries",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/aquaculture-fisheries",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/aquaculture-peche"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/aquaculture-fisheries"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/aquaculture-peche"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/agriculture-agroecology",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/agriculture-agroecology",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/agriculture-agroecologie"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/agriculture-agroecology"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/agriculture-agroecologie"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/environment-consultancies",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/environment-consultancies",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/environment-consultancies"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/environnement-bureaux-d-etudes"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/public-private-research",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/public-private-research",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/recherche-publique-privee"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/public-private-research"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/recherche-publique-privee"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/applications/renewable-energy",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/applications/renewable-energy",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/applications/energies-renouvelables"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/applications/renewable-energy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/applications/energies-renouvelables"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/artois-picardie-fish-survey",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/artois-picardie-fish-survey",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/artois-picardie-fish-survey"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/ichtyofaune-artois-picardie"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/pyrenean-brown-bear-demogenetics",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/pyrenean-brown-bear-demogenetics",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/pyrenean-brown-bear-demogenetics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/demogenetique-ours-pyrenees"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/northern-lapwing-genomics",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/northern-lapwing-genomics",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/northern-lapwing-genomics"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/genomique-vanneau-huppe"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/offshore-wind-biodiversity",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/offshore-wind-biodiversity",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/offshore-wind-biodiversity"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/biodiversite-eolien-offshore"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/estuary-edna-turbid-water",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/estuary-edna-turbid-water",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/estuary-edna-turbid-water"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/adne-estuaire-milieu-turbide"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/case-studies/microplastic-microbial-communities",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/case-studies/microplastic-microbial-communities",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/case-studies/microplastic-microbial-communities"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/etudes-de-cas/communautes-microplastiques"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/about-us",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/about-us",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/about-us/team",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/about-us/team",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos/equipe"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us/team"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos/equipe"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/innovation/dna-ecotrace",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/innovation/dna-ecotrace",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation/dna-ecotrace"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation/dna-ecotrace"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation/dna-ecotrace"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/team/dr-maeva-leitwein",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/team/dr-maeva-leitwein",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-maeva-leitwein"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-maeva-leitwein"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/innovation/ednaclock",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/innovation/ednaclock",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation/edna-clock"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation/ednaclock"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation/edna-clock"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/team/dr-emilie-delpuech",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/team/dr-emilie-delpuech",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-emilie-delpuech"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-emilie-delpuech"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/innovation",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/innovation",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/innovation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/innovation"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/innovation"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/team/dr-damien-crestel",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/team/dr-damien-crestel",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/equipe/dr-damien-crestel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/team/dr-damien-crestel"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/equipe/dr-damien-crestel"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/yeast-dna-replication-polymerase-alpha-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/yeast-dna-replication-polymerase-alpha-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/levure-replication-adn-polymerase-alpha-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-cortisol-temperature-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-cortisol-temperature-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-cortisol-temperature-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-cortisol-temperature-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-sex-ratio-gwas-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-sex-ratio-gwas-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-sex-ratio-gwas-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-sex-ratio-temperature-gwas-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-larval-survival-introgression-2026",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-larval-survival-introgression-2026",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-larval-survival-introgression-2026"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-survie-larvaire-introgression-2026"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/fish-warming-tolerance-body-mass-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/fish-warming-tolerance-body-mass-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/fish-warming-tolerance-body-mass-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/poissons-tolerance-rechauffement-taille-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/woodcock-jack-snipe-genomes-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/woodcock-jack-snipe-genomes-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/woodcock-jack-snipe-genomes-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/genomes-becasse-becassine-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-introgression-fitness-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-introgression-fitness-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-introgression-fitness-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-fitness-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-feed-efficiency-selection-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-feed-efficiency-selection-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-feed-efficiency-selection-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-selection-efficacite-alimentaire-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-larval-growth-temperature-2025",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-larval-growth-temperature-2025",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-larval-growth-temperature-2025"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-croissance-larvaire-temperature-2025"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-temperature-female-ratio-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-temperature-female-ratio-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-temperature-female-ratio-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-temperature-femelles-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-introgression-muscle-fat-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-introgression-muscle-fat-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-introgression-muscle-fat-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-introgression-teneur-gras-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-sex-determination-energy-2024",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-sex-determination-energy-2024",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-sex-determination-energy-2024"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-determinisme-sexe-energie-2024"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/capelin-dna-methylation-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/capelin-dna-methylation-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/capelin-dna-methylation-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/capelan-methylation-reproduction-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/stocking-ancestry-landscape-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/stocking-ancestry-landscape-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/stocking-ancestry-landscape-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-ascendance-repeuplement-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/sea-bass-vnn-resistance-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/sea-bass-vnn-resistance-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/sea-bass-vnn-resistance-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/bar-resistance-vnn-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/pig-feed-efficiency-gwas-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/pig-feed-efficiency-gwas-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/pig-feed-efficiency-gwas-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/porc-efficacite-alimentaire-gwas-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/salmon-germline-epigenome-2021",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/salmon-germline-epigenome-2021",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/salmon-germline-epigenome-2021"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-epigenome-germinal-2021"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/coho-salmon-hatchery-expression-2022",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/coho-salmon-hatchery-expression-2022",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/coho-salmon-hatchery-expression-2022"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/saumon-coho-elevage-expression-2022"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brown-trout-pigmentation-gwas-2023",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brown-trout-pigmentation-gwas-2023",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-pigmentation-gwas-2023"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-pigmentation-gwas-2023"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/haplotypes-conservation-genomics-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/haplotypes-conservation-genomics-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/haplotypes-conservation-genomics-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/haplotypes-genomique-conservation-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/pig-genomic-prediction-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/pig-genomic-prediction-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/pig-genomic-prediction-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/porc-prediction-genomique-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brook-charr-recombination-ancestry-2019",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brook-charr-recombination-ancestry-2019",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brook-charr-recombination-ancestry-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-recombinaison-ascendance-2019"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brook-charr-small-populations-2020",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brook-charr-small-populations-2020",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brook-charr-small-populations-2020"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/omble-diversite-petites-populations-2020"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brown-trout-three-way-admixture-2018",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brown-trout-three-way-admixture-2018",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-three-way-admixture-2018"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-trois-ascendances-2018"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/rainbow-trout-san-francisco-2017",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/rainbow-trout-san-francisco-2017",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/rainbow-trout-san-francisco-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-arc-en-ciel-san-francisco-2017"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brown-trout-linkage-map-2017",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brown-trout-linkage-map-2017",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-linkage-map-2017"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-carte-liaison-2017"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brown-trout-orb-diversity-2016",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brown-trout-orb-diversity-2016",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-orb-diversity-2016"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-orb-diversite-2016"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/about-us/partners",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/about-us/partners",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/a-propos/partenaires"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/about-us/partners"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/a-propos/partenaires"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/faq",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/faq",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/faq"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/faq"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/research/brown-trout-snp-array-2019",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/research/brown-trout-snp-array-2019",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/research/brown-trout-snp-array-2019"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/recherche/truite-ressource-snp-2019"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/glossary",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/glossary",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/glossaire"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/glossary"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/glossaire"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/site-map",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/site-map",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/plan-du-site"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/site-map"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/plan-du-site"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/contact",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/contact",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/contact"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/contact"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/contact"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/resources",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/resources",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/resources/understanding-environmental-dna",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/resources/understanding-environmental-dna",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/understanding-environmental-dna"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/comprendre-adn-environnemental"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/resources/bioinformatics-biological-question",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/resources/bioinformatics-biological-question",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/bioinformatics-biological-question"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/bioinformatique-question-biologique"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/resources/genomics-aquaculture",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/resources/genomics-aquaculture",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/resources/genomics-aquaculture"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/ressources/genomique-filiere-aquacole"
+        }
+      ],
+      "noindex": false
+    },
+    {
+      "path": "/en/privacy-policy",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/privacy-policy",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/politique-confidentialite"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/privacy-policy"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/politique-confidentialite"
+        }
+      ],
+      "noindex": true
+    },
+    {
+      "path": "/en/legal-notice",
+      "status": 200,
+      "canonical": "https://www.ldgenx.fr/en/legal-notice",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "fr",
+          "href": "https://www.ldgenx.fr/mentions-legales"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://www.ldgenx.fr/en/legal-notice"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://www.ldgenx.fr/mentions-legales"
+        }
+      ],
+      "noindex": true
+    }
+  ],
+  "preview": {
+    "status": 200,
+    "robots": null
+  },
+  "errors": [
+    "https://www.ldgenx.fr/espace/connexion?lang=fr: wrong final URL/status",
+    "https://www.ldgenx.fr/espace/connexion?lang=fr: unnecessary redirect chain",
+    "http://www.ldgenx.fr/espace/connexion?lang=fr: wrong final URL/status",
+    "http://www.ldgenx.fr/espace/connexion?lang=fr: unnecessary redirect chain",
+    "https://ldgenx.fr/espace/connexion?lang=fr: wrong final URL/status",
+    "https://ldgenx.fr/espace/connexion?lang=fr: unnecessary redirect chain",
+    "http://ldgenx.fr/espace/connexion?lang=fr: wrong final URL/status",
+    "http://ldgenx.fr/espace/connexion?lang=fr: unnecessary redirect chain",
+    "https://ldgenx.com/espace/connexion?lang=fr: wrong final URL/status",
+    "https://ldgenx.com/espace/connexion?lang=fr: unnecessary redirect chain",
+    "http://ldgenx.com/espace/connexion?lang=fr: wrong final URL/status",
+    "http://ldgenx.com/espace/connexion?lang=fr: unnecessary redirect chain",
+    "https://www.ldgenx.com/espace/connexion?lang=fr: wrong final URL/status",
+    "https://www.ldgenx.com/espace/connexion?lang=fr: unnecessary redirect chain",
+    "http://www.ldgenx.com/espace/connexion?lang=fr: wrong final URL/status",
+    "http://www.ldgenx.com/espace/connexion?lang=fr: unnecessary redirect chain",
+    "https://www.ldgenx.fr/cdn-cgi/l/email-protection: internal link HTTP 404",
+    "/en/sitemap: HTTP 404",
+    "/espace: portal response/indexing",
+    "/admin: portal response/indexing",
+    "/espace/connexion: portal response/indexing",
+    "/admin/connexion: portal response/indexing",
+    "/espace/nouveau-mot-de-passe: portal response/indexing"
+  ],
+  "warnings": [
+    "Main pages.dev alias still serves indexable content; deploy the new host-specific noindex headers or configure its Bulk Redirect."
+  ]
+}

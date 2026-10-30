@@ -364,6 +364,9 @@ export function PrivacyPage({ meta }: { meta: PageMeta }) {
           <p>{t.message}</p>
           <h2>{t.portalTitle}</h2>
           <p>{t.portal}</p>
+          <h2>{t.googleTitle}</h2>
+          <p>{t.google}</p>
+          <p>{t.googlePolicy} <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>.</p>
           <h2>{t.linksTitle}</h2>
           <p>{t.links}</p>
           <h2>{t.dataTitle}</h2>

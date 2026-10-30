@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-30T09:25:05.140Z",
+  "origin": "http://127.0.0.1:4175",
+  "checks": [
+    "fr: login has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "fr: admin has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "fr: register has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "fr: forgot has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "fr: password reveal preserves value; failed sign-in restores usable controls",
+    "fr: required registration fields, consent, submission locking and confirmation work without sending mail",
+    "en: login has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "en: admin has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "en: register has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "en: forgot has concise controls, localized navigation and no overflow at 320/390/768/1440px",
+    "en: password reveal preserves value; failed sign-in restores usable controls",
+    "en: required registration fields, consent, submission locking and confirmation work without sending mail"
+  ],
+  "browserExceptions": [],
+  "boundaries": "Auth errors and signup responses intercepted; no account, email, session or appointment created."
+}

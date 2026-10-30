@@ -8,6 +8,12 @@ import {
   type User,
 } from '../_shared/types.ts';
 import { heldSpans } from '../_shared/availability.ts';
+import { portalSiteOrigin } from '../_shared/site.ts';
+import {
+  enqueueCalendarAppointment,
+  enqueueCalendarBlocks,
+  externalCalendarBusy,
+} from '../_shared/google-calendar.ts';
 
 export function repository(
   sql: Sql,
@@ -15,6 +21,13 @@ export function repository(
   uploaded: string[],
 ): Repository {
   return {
+    async externalBusy(from, to) {
+      try {
+        return await externalCalendarBusy(sql, from, to);
+      } catch {
+        throw new PortalError('calendar_unavailable');
+      }
+    },
     async get(kind, id) {
       // IDs are validated before use so malformed client input never becomes a SQL cast error.
       if (
@@ -54,6 +67,7 @@ export function repository(
         await sql`update public.portal_appointments set client_id=${a.clientId} where id=${a.id}`;
         for (const h of heldSpans(a))
           await sql`insert into public.portal_reservations(appointment_id,host_id,slot) values (${a.id},${h.hostId},tstzrange(${new Date(h.span.start).toISOString()}::timestamptz,${new Date(h.span.end).toISOString()}::timestamptz,'[)'))`;
+        await enqueueCalendarAppointment(sql, a.id);
       }
     },
     async remove(kind, id) {
@@ -68,7 +82,19 @@ export function repository(
       return rows[0].data;
     },
     async setSetting(key, value) {
+      const previous =
+        key === 'booking'
+          ? (
+              await sql`select data from public.portal_settings where id='booking'`
+            )[0]?.data
+          : undefined;
       await sql`insert into public.portal_settings(id,data) values (${key},${sql.json(value as never)}) on conflict(id) do update set data=excluded.data`;
+      if (key === 'booking')
+        await enqueueCalendarBlocks(
+          sql,
+          value as import('../_shared/types.ts').BookingConfig,
+          previous,
+        );
     },
     async upload(file, path) {
       const { error } = await storage.storage
@@ -95,7 +121,7 @@ export function repository(
         input.email,
         {
           data: { ...input, phone: '' },
-          redirectTo: `${Deno.env.get('PORTAL_SITE_URL') ?? 'https://www.ldgenx.fr'}/espace/nouveau-mot-de-passe`,
+          redirectTo: `${portalSiteOrigin(Deno.env.get('PORTAL_SITE_URL'))}/espace/nouveau-mot-de-passe`,
         },
       );
       if (error || !data.user)

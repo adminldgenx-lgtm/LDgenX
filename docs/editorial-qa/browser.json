@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29T15:46:08.275Z",
+  "checks": [
+    "Admin lists all 74 existing scientific working copies",
+    "Rich editor saves text, table, figure metadata and trusted video",
+    "PNG converted to 3 responsive WebP variants, max 2400px; reused without duplication",
+    "Explicit scientific review and publication",
+    "Cloudflare workerd serves new slug with real HTML and canonical metadata",
+    "Short MP4 validates, uploads privately and plays through the published native player",
+    "Public desktop/mobile render; external video stays unloaded until clicked",
+    "New document appears in resources search and dynamic sitemap",
+    "Later saved draft stays private while public snapshot remains unchanged",
+    "Withdrawal returns HTTP 410 without revealing private draft"
+  ],
+  "errors": []
+}

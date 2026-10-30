@@ -122,7 +122,7 @@ export function crawlerFiles({
   // The client area and the administration, when built, are private: kept out by every group,
   // since a crawler follows only the group that names it.
   const rules = portal
-    ? 'Allow: /\nDisallow: /espace/\nDisallow: /admin/\nDisallow: /portal.html'
+    ? 'Allow: /\nDisallow: /espace\nDisallow: /admin\nDisallow: /portal'
     : 'Allow: /';
   files['robots.txt'] =
     `# LDgenX: every public page is open to search engines and AI assistants.\nUser-agent: *\n${rules}\n\n${crawlers

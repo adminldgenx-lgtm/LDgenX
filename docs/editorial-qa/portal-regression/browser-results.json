@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "origin": "http://127.0.0.1:4174",
+  "checkedAt": "2026-10-29T15:49:23.825Z",
+  "checked": [
+    "client/admin login",
+    "pending-account messaging",
+    "private attachment",
+    "Realtime in both directions",
+    "persistent session and messages",
+    "desktop and mobile layout",
+    "all client and admin routes",
+    "real recovery link and password update",
+    "public guest booking submitted and persisted",
+    "contact form to database"
+  ],
+  "pageErrors": [],
+  "apiErrors": []
+}

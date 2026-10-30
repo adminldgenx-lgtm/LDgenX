@@ -1,0 +1,144 @@
+.p-auth-card.p-auth-access {
+  width: min(440px, 100%);
+  padding: clamp(24px, 4vw, 34px);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px -35px rgb(3 37 75 / 0.3);
+}
+.p-auth-heading h1 {
+  margin: 0;
+  font-size: clamp(25px, 3vw, 29px);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+.p-auth-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+.p-auth-label {
+  display: inline-block;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.p-auth-access .p-google-auth {
+  margin: 24px 0 0;
+}
+.p-auth-access .p-google {
+  min-height: 46px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+.p-auth-access .p-auth-divider {
+  margin: 18px 0;
+  font-size: 12px;
+}
+.p-auth-fields {
+  display: grid;
+  gap: 16px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.p-auth-fields .p-field > label {
+  font-size: 13px;
+}
+.p-auth-fields .p-field input:not([type="checkbox"]) {
+  min-height: 46px;
+  font-size: 16px;
+  border-radius: 9px;
+}
+.p-auth-fields .p-wide {
+  min-height: 46px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+.p-auth-names {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.p-auth-password {
+  position: relative;
+  min-width: 0;
+}
+.p-auth-password input {
+  padding-right: 48px !important;
+  width: 100%;
+  min-height: 46px;
+}
+.p-password-toggle {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #526675;
+  cursor: pointer;
+}
+.p-password-toggle:hover {
+  color: var(--navy);
+  background: #f1f5f2;
+}
+.p-password-toggle:focus-visible {
+  outline: 2px solid #2a7416;
+  outline-offset: -4px;
+}
+.p-password-toggle:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.p-auth-fields .p-auth-forgot {
+  margin: -4px 0 0;
+  text-align: right;
+  font-size: 12px;
+}
+.p-auth-card.p-auth-access > .p-auth-switch {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.p-auth-switch a {
+  font-weight: 600;
+  margin-left: 3px;
+}
+.p-auth-card.p-auth-access > .p-auth-privacy,
+.p-auth-card.p-auth-access > .p-auth-approval {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.p-auth-privacy a {
+  color: var(--muted);
+}
+.p-auth-fields .p-auth-consent {
+  align-items: flex-start;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.p-auth-consent input {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.p-auth-error {
+  margin: 0;
+  border-radius: 8px;
+  background: #fff3f1;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+@media (max-width: 359px) {
+  .p-auth-names {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

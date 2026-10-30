@@ -76,8 +76,8 @@ export function StudyPanels({
   const stacked = useMediaQuery('(max-width: 800px)');
   const [open, setOpen] = useState(0);
   const [held, setHeld] = useState(false);
-  const cycling = live && !held && !stacked;
-  const perRow = Math.ceil(items.length / Math.ceil(items.length / PER_ROW));
+  const cycling = live && !held && !stacked && items.length > 1;
+  const perRow = items.length ? Math.ceil(items.length / Math.ceil(items.length / PER_ROW)) : 1;
   const rows = Array.from({ length: Math.ceil(items.length / perRow) }, (_, row) =>
     items.slice(row * perRow, (row + 1) * perRow),
   );

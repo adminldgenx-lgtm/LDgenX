@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "emailLinks": [
+    {
+      "href": "mailto:info@ldgenx.fr",
+      "text": "info@ldgenx.fr"
+    },
+    {
+      "href": "mailto:info@ldgenx.fr",
+      "text": "info@ldgenx.fr"
+    },
+    {
+      "href": "mailto:info@ldgenx.fr",
+      "text": "info@ldgenx.fr"
+    }
+  ],
+  "scripts": [
+    "https://www.ldgenx.fr/motion.js",
+    "https://www.ldgenx.fr/assets/main-BLike1RJ.js"
+  ],
+  "errors": []
+}

@@ -14,6 +14,7 @@ import {
   UserRound,
   Users,
   X,
+  BookOpen,
 } from 'lucide-react';
 import { api } from './api';
 import { useI18n } from './i18n';
@@ -260,7 +261,7 @@ export function ClientShell() {
   if (!user)
     return (
       <Navigate
-        to={`/espace/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        to={`/espace/connexion?suite=${encodeURIComponent(location.pathname + location.search)}`}
         replace
       />
     );
@@ -303,7 +304,7 @@ export function ClientShell() {
 }
 
 export function AdminShell() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { user } = useSession();
   const location = useLocation();
   const admin = user?.role === 'admin';
@@ -326,7 +327,7 @@ export function AdminShell() {
   if (!user)
     return (
       <Navigate
-        to={`/admin/connexion?suite=${encodeURIComponent(location.pathname)}`}
+        to={`/admin/connexion?suite=${encodeURIComponent(location.pathname + location.search)}`}
         replace
       />
     );
@@ -340,6 +341,11 @@ export function AdminShell() {
       home="/admin/messages"
       account="/admin/compte"
       items={[
+        {
+          to: '/admin/contenus',
+          label: locale === 'fr' ? 'Contenus' : 'Content',
+          icon: <BookOpen size={19} aria-hidden="true" />,
+        },
         {
           to: '/admin/messages',
           label: t.nav.messages,
@@ -403,11 +409,12 @@ function AdminOnly() {
 
 /** Pages outside the signed-in frame: sign-in, sign-up, public booking. */
 export function OpenLayout({ children }: { children: ReactNode }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const site = locale === 'fr' ? '/' : '/en';
   return (
     <div className="p-auth">
       <header className="p-auth-top">
-        <a href="/" className="p-brand">
+        <a href={site} className="p-brand">
           <img
             src="/brand/lockup-navy-160.webp"
             alt="LDgenX"
@@ -416,7 +423,7 @@ export function OpenLayout({ children }: { children: ReactNode }) {
           />
         </a>
         <div className="p-top-actions">
-          <a className="p-link" href="/">
+          <a className="p-link" href={site}>
             {t.common.backToSite}
           </a>
           <LanguageSwitch />

@@ -3,7 +3,9 @@ import { useMotionLevel } from '../components/motion';
 import { setMotionLevel } from '../lib/motion-preference';
 import { useCatalog, useRoutes, type Locale } from '../i18n';
 import { bases } from '../lib/routes';
-import { getPage } from '../lib/pages';
+import { getPage, pagePaths, localeAt } from '../lib/pages';
+import { useEditorial, usePublicMeta } from '../editorial/context';
+import { mergeEditorialPages } from '../editorial/meta';
 import { listedExpertises } from '../lib/expertises';
 import { footerDirectory } from '../lib/footer';
 import { appointmentLink } from '../lib/appointment-link';
@@ -14,7 +16,9 @@ export function Footer() {
   const r = useRoutes();
   const t = ui.footer;
   const reduced = useMotionLevel() === 'reduced';
-  const meta = getPage(useLocation().pathname);
+  const meta = usePublicMeta(useLocation().pathname);
+  const editorial = useEditorial();
+  const currentPages = mergeEditorialPages(pagePaths.filter((path) => localeAt(path) === meta.locale).map(getPage), editorial.index);
   const other: Locale = meta.locale === 'fr' ? 'en' : 'fr';
   return (
     <footer className="site-footer">
@@ -81,7 +85,7 @@ export function Footer() {
       <nav className="container footer-directory" aria-label={t.directoryTitle}>
         <h2>{t.directoryTitle}</h2>
         <div className="footer-directory-grid">
-          {footerDirectory(meta.locale).map((group) => (
+          {footerDirectory(meta.locale, currentPages).map((group) => (
             <details key={group.key} data-footer-group={group.key}>
               <summary>
                 <span>{t.directoryGroups[group.key]}</span>

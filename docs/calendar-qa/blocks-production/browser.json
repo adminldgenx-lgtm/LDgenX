@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29T21:17:07.008Z",
+  "checks": [
+    "Logged-out admin link preserves the Calendar tab after sign-in",
+    "Actual admin status accurately reflects the current Google connection",
+    "Per-person calendar configuration and save feedback work",
+    "Sync action displays success and actionable failure states",
+    "English Calendar controls are fully translated",
+    "Mobile settings fit without horizontal overflow",
+    "Simultaneous Google busy intervals remain visible in separate read-only lanes",
+    "Month and list views include Google busy periods",
+    "Agenda reports unavailable Google data rather than presenting it as current"
+  ],
+  "browserExceptions": [],
+  "realConsentPerformed": false,
+  "connectedStates": "mocked"
+}

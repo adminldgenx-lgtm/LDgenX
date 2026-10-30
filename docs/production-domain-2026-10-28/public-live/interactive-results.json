@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "origin": "https://www.ldgenx.fr",
+  "rows": [
+    {
+      "locale": "fr",
+      "width": 390,
+      "passed": true,
+      "footerPages": 76,
+      "publicBookingWithoutLogin": true
+    },
+    {
+      "locale": "fr",
+      "width": 1440,
+      "passed": true,
+      "footerPages": 76,
+      "publicBookingWithoutLogin": true
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "passed": true,
+      "footerPages": 75,
+      "publicBookingWithoutLogin": true
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "passed": true,
+      "footerPages": 75,
+      "publicBookingWithoutLogin": true
+    }
+  ],
+  "errors": []
+}

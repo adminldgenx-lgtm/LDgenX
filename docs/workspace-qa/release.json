@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-10-30T05:34:13.630050+00:00",
+  "site": "https://www.ldgenx.fr",
+  "frontendCommit": "5d5bed5",
+  "deploymentId": "95a7b40e-c905-4e84-83cc-3db7d8c682f3",
+  "deploymentStatus": "success",
+  "unitTestsPassed": 38,
+  "workspaceJourneysLocal": 9,
+  "workspaceJourneysLive": 9,
+  "browserExceptions": 0,
+  "htmlPagesChecked": 151,
+  "indexablePagesChecked": 147,
+  "seoErrors": 0,
+  "seoWarnings": 0
+}

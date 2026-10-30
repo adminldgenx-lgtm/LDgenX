@@ -1,54 +1,87 @@
-import { useState } from 'react';
-import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
-import { api, PortalError } from '../api';
-import { useI18n } from '../i18n';
-import { useSession } from '../state';
-import { Button, Field, Fill } from '../ui';
-import { OpenLayout } from '../layout';
+import { useState, type InputHTMLAttributes } from "react";
+import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
+import { api, PortalError } from "../api";
+import { useI18n } from "../i18n";
+import { useSession } from "../state";
+import { Button, Field, Fill } from "../ui";
+import { OpenLayout } from "../layout";
+import { GoogleSignIn } from "../GoogleSignIn";
+import "../auth.css";
 
-const home = (role: 'admin' | 'client') =>
-  role === 'admin' ? '/admin/messages' : '/espace/messages';
+const home = (role: "admin" | "client") =>
+  role === "admin" ? "/admin/messages" : "/espace/messages";
+
+function PasswordInput(
+  props: Omit<InputHTMLAttributes<HTMLInputElement>, "type">,
+) {
+  const { t } = useI18n();
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="p-auth-password">
+      <input {...props} type={visible ? "text" : "password"} />
+      <button
+        type="button"
+        className="p-password-toggle"
+        aria-label={visible ? t.auth.hidePassword : t.auth.showPassword}
+        aria-controls={props.id}
+        aria-pressed={visible}
+        disabled={props.disabled}
+        onClick={() => setVisible((value) => !value)}
+      >
+        {visible ? (
+          <EyeOff size={19} aria-hidden="true" />
+        ) : (
+          <Eye size={19} aria-hidden="true" />
+        )}
+      </button>
+    </div>
+  );
+}
+
+function PrivacyLink() {
+  const { locale } = useI18n();
+  return (
+    <p className="p-auth-privacy">
+      <a
+        href={
+          locale === "fr" ? "/politique-confidentialite" : "/en/privacy-policy"
+        }
+      >
+        {locale === "fr" ? "Confidentialité" : "Privacy"}
+      </a>
+    </p>
+  );
+}
 
 export function LoginPage({ admin = false }: { admin?: boolean }) {
   const { t } = useI18n();
   const { user, setUser } = useSession();
-  const navigate = useNavigate();
   const [params] = useSearchParams();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const requested = params.get('suite');
+  const [googleBusy, setGoogleBusy] = useState(false);
+  const requested = params.get("suite");
   const destination =
     requested &&
-    new RegExp(`^/${user?.role === 'admin' ? 'admin' : 'espace'}(?:/|$)`).test(
+    new RegExp(`^/${user?.role === "admin" ? "admin" : "espace"}(?:/|$)`).test(
       requested,
     )
       ? requested
       : user
         ? home(user.role)
-        : '/espace';
+        : "/espace";
   if (user) return <Navigate to={destination} replace />;
-  const signIn = async (address: string, secret: string) => {
+  const signIn = async () => {
+    if (busy || googleBusy) return;
     setBusy(true);
     setError(null);
     try {
-      const signed = await api.signIn(address, secret);
-      setUser(signed);
-      const next = params.get('suite');
-      navigate(
-        next &&
-          new RegExp(
-            `^/${signed.role === 'admin' ? 'admin' : 'espace'}(?:/|$)`,
-          ).test(next)
-          ? next
-          : home(signed.role),
-        {
-          replace: true,
-        },
-      );
+      setUser(await api.signIn(email, password));
     } catch (e) {
-      const code = e instanceof PortalError ? e.code : 'network';
+      const code = e instanceof PortalError ? e.code : "network";
       setError(t.errors[code as keyof typeof t.errors] ?? t.errors.generic);
     } finally {
       setBusy(false);
@@ -56,61 +89,71 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
   };
   return (
     <OpenLayout>
-      <div className="p-auth-card">
-        <p className="p-eyebrow">
-          {admin ? t.common.admin : t.common.clientArea}
-        </p>
-        <h1>{t.auth.loginTitle}</h1>
-        <p className="p-lead">{t.auth.loginLead}</p>
+      <div className="p-auth-card p-auth-access">
+        <header className="p-auth-heading">
+          {admin && <span className="p-auth-label">{t.common.admin}</span>}
+          <h1>{t.auth.loginTitle}</h1>
+          <p>{t.auth.loginLead}</p>
+        </header>
+        <GoogleSignIn
+          admin={admin}
+          disabled={busy}
+          onBusyChange={setGoogleBusy}
+        />
         <form
           className="p-form"
+          aria-busy={busy || googleBusy}
           onSubmit={(event) => {
             event.preventDefault();
-            signIn(email, password);
+            void signIn();
           }}
         >
-          <Field label={t.auth.email}>
-            {(id) => (
-              <input
-                id={id}
-                type="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            )}
-          </Field>
-          <Field label={t.auth.password}>
-            {(id) => (
-              <input
-                id={id}
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            )}
-          </Field>
-          {error && (
-            <p className="p-error" role="alert">
-              {error}
+          <fieldset className="p-auth-fields" disabled={busy || googleBusy}>
+            <Field label={t.auth.email}>
+              {(id) => (
+                <input
+                  id={id}
+                  type="email"
+                  autoComplete="username"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              )}
+            </Field>
+            <Field label={t.auth.password}>
+              {(id) => (
+                <PasswordInput
+                  id={id}
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              )}
+            </Field>
+            <p className="p-auth-forgot">
+              <Link to="/espace/mot-de-passe">{t.auth.forgot}</Link>
             </p>
-          )}
-          <Button type="submit" busy={busy} className="p-wide">
-            {t.auth.signIn}
-          </Button>
-          <div className="p-auth-links">
-            <Link to="/espace/mot-de-passe">{t.auth.forgot}</Link>
-            {!admin && (
-              <span>
-                {t.auth.noAccount}{' '}
-                <Link to="/espace/inscription">{t.auth.createAccount}</Link>
-              </span>
+            {error && (
+              <p className="p-error p-auth-error" role="alert">
+                {error}
+              </p>
             )}
-          </div>
+            <Button type="submit" busy={busy} className="p-wide">
+              {t.auth.signIn}
+            </Button>
+          </fieldset>
         </form>
+        {!admin && (
+          <p className="p-auth-switch">
+            {t.auth.noAccount}{" "}
+            <Link to="/espace/inscription">{t.auth.createAccount}</Link>
+          </p>
+        )}
+        <PrivacyLink />
       </div>
     </OpenLayout>
   );
@@ -119,20 +162,20 @@ export function LoginPage({ admin = false }: { admin?: boolean }) {
 export function RegisterPage() {
   const { t, locale } = useI18n();
   const { user, setUser } = useSession();
-  const navigate = useNavigate();
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    organisation: '',
-    phone: '',
-    password: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    organisation: "",
+    phone: "",
+    password: "",
+    message: "",
   });
   const [consent, setConsent] = useState(false);
   const [tried, setTried] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [googleBusy, setGoogleBusy] = useState(false);
   const [verificationSent, setVerificationSent] = useState(false);
   if (user) return <Navigate to={home(user.role)} replace />;
   const set =
@@ -148,18 +191,17 @@ export function RegisterPage() {
   };
   const show = (key: keyof typeof errors) => (tried && errors[key]) || null;
   const submit = async () => {
+    if (busy || googleBusy) return;
     setTried(true);
     if (Object.values(errors).some(Boolean)) return;
     setBusy(true);
     setError(null);
     try {
       const created = await api.signUp({ ...form, locale });
-      if (created) {
-        setUser(created);
-        navigate('/espace/messages', { replace: true });
-      } else setVerificationSent(true);
+      if (created) setUser(created);
+      else setVerificationSent(true);
     } catch (e) {
-      const code = e instanceof PortalError ? e.code : 'network';
+      const code = e instanceof PortalError ? e.code : "network";
       setError(t.errors[code as keyof typeof t.errors] ?? t.errors.generic);
     } finally {
       setBusy(false);
@@ -168,7 +210,7 @@ export function RegisterPage() {
   if (verificationSent)
     return (
       <OpenLayout>
-        <div className="p-auth-card">
+        <div className="p-auth-card p-auth-access">
           <h1>{t.auth.verifyTitle}</h1>
           <p className="p-lead" role="status">
             {t.auth.verifySent}
@@ -179,148 +221,153 @@ export function RegisterPage() {
     );
   return (
     <OpenLayout>
-      <div className="p-auth-card" data-wide>
-        <p className="p-eyebrow">{t.common.clientArea}</p>
-        <h1>{t.auth.registerTitle}</h1>
-        <p className="p-lead">{t.auth.registerLead}</p>
+      <div className="p-auth-card p-auth-access" data-register>
+        <header className="p-auth-heading">
+          <h1>{t.auth.registerTitle}</h1>
+        </header>
+        <GoogleSignIn disabled={busy} onBusyChange={setGoogleBusy} />
         <form
           className="p-form"
           noValidate
+          aria-busy={busy || googleBusy}
           onSubmit={(event) => {
             event.preventDefault();
-            submit();
+            void submit();
           }}
         >
-          <div className="p-grid-2">
-            <Field label={t.auth.firstName} error={show('firstName')}>
+          <fieldset className="p-auth-fields" disabled={busy || googleBusy}>
+            <div className="p-auth-names">
+              <Field label={t.auth.firstName} error={show("firstName")}>
+                {(id, d) => (
+                  <input
+                    id={id}
+                    aria-describedby={d}
+                    aria-invalid={!!show("firstName")}
+                    autoComplete="given-name"
+                    required
+                    value={form.firstName}
+                    onChange={set("firstName")}
+                  />
+                )}
+              </Field>
+              <Field label={t.auth.lastName} error={show("lastName")}>
+                {(id, d) => (
+                  <input
+                    id={id}
+                    aria-describedby={d}
+                    aria-invalid={!!show("lastName")}
+                    autoComplete="family-name"
+                    required
+                    value={form.lastName}
+                    onChange={set("lastName")}
+                  />
+                )}
+              </Field>
+            </div>
+            <Field label={t.auth.organisation} error={show("organisation")}>
               {(id, d) => (
                 <input
                   id={id}
                   aria-describedby={d}
-                  autoComplete="given-name"
-                  value={form.firstName}
-                  onChange={set('firstName')}
-                />
-              )}
-            </Field>
-            <Field label={t.auth.lastName} error={show('lastName')}>
-              {(id, d) => (
-                <input
-                  id={id}
-                  aria-describedby={d}
-                  autoComplete="family-name"
-                  value={form.lastName}
-                  onChange={set('lastName')}
-                />
-              )}
-            </Field>
-            <Field label={t.auth.organisation} error={show('organisation')}>
-              {(id, d) => (
-                <input
-                  id={id}
-                  aria-describedby={d}
+                  aria-invalid={!!show("organisation")}
                   autoComplete="organization"
+                  required
                   value={form.organisation}
-                  onChange={set('organisation')}
+                  onChange={set("organisation")}
                 />
               )}
             </Field>
-            <Field label={t.auth.phone} optional>
-              {(id) => (
-                <input
-                  id={id}
-                  type="tel"
-                  autoComplete="tel"
-                  value={form.phone}
-                  onChange={set('phone')}
-                />
-              )}
-            </Field>
-            <Field label={t.auth.email} error={show('email')}>
+            <Field label={t.auth.email} error={show("email")}>
               {(id, d) => (
                 <input
                   id={id}
                   aria-describedby={d}
+                  aria-invalid={!!show("email")}
                   type="email"
                   autoComplete="email"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  required
                   value={form.email}
-                  onChange={set('email')}
+                  onChange={set("email")}
                 />
               )}
             </Field>
             <Field
               label={t.auth.password}
               help={t.auth.passwordHint}
-              error={show('password')}
+              error={show("password")}
             >
               {(id, d) => (
-                <input
+                <PasswordInput
                   id={id}
                   aria-describedby={d}
-                  type="password"
+                  aria-invalid={!!show("password")}
                   autoComplete="new-password"
+                  required
+                  minLength={8}
                   value={form.password}
-                  onChange={set('password')}
+                  onChange={set("password")}
                 />
               )}
             </Field>
-          </div>
-          <Field label={t.auth.message} help={t.auth.messageHelp} optional>
-            {(id, d) => (
-              <textarea
-                id={id}
-                aria-describedby={d}
-                rows={3}
-                value={form.message}
-                onChange={set('message')}
-              />
+            <div>
+              <label
+                className="p-check p-auth-consent"
+                data-invalid={show("consent") ? "" : undefined}
+              >
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  required
+                  aria-invalid={!!show("consent")}
+                  aria-describedby={
+                    show("consent") ? "signup-consent-error" : undefined
+                  }
+                  onChange={(e) => setConsent(e.target.checked)}
+                />
+                <span>
+                  <Fill
+                    text={t.auth.consent}
+                    values={{
+                      link: (
+                        <a
+                          href={
+                            locale === "fr"
+                              ? "/politique-confidentialite"
+                              : "/en/privacy-policy"
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {t.auth.privacy}
+                        </a>
+                      ),
+                    }}
+                  />
+                </span>
+              </label>
+              {show("consent") && (
+                <p id="signup-consent-error" className="p-error" role="alert">
+                  {t.auth.consentRequired}
+                </p>
+              )}
+            </div>
+            {error && (
+              <p className="p-error p-auth-error" role="alert">
+                {error}
+              </p>
             )}
-          </Field>
-          <label
-            className="p-check"
-            data-invalid={show('consent') ? '' : undefined}
-          >
-            <input
-              type="checkbox"
-              checked={consent}
-              onChange={(e) => setConsent(e.target.checked)}
-            />
-            <span>
-              <Fill
-                text={t.auth.consent}
-                values={{
-                  link: (
-                    <a
-                      href="/politique-confidentialite"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t.auth.privacy}
-                    </a>
-                  ),
-                }}
-              />
-            </span>
-          </label>
-          {show('consent') && (
-            <p className="p-error">{t.auth.consentRequired}</p>
-          )}
-          {error && (
-            <p className="p-error" role="alert">
-              {error}
-            </p>
-          )}
-          <p className="p-help">{t.auth.registerNote}</p>
-          <Button type="submit" busy={busy} className="p-wide">
-            {t.auth.register}
-          </Button>
-          <p className="p-auth-links">
-            <span>
-              {t.auth.haveAccount}{' '}
-              <Link to="/espace/connexion">{t.auth.signIn}</Link>
-            </span>
-          </p>
+            <Button type="submit" busy={busy} className="p-wide">
+              {t.auth.register}
+            </Button>
+          </fieldset>
         </form>
+        <p className="p-auth-approval">{t.auth.registerNote}</p>
+        <p className="p-auth-switch">
+          {t.auth.haveAccount}{" "}
+          <Link to="/espace/connexion">{t.auth.signIn}</Link>
+        </p>
       </div>
     </OpenLayout>
   );
@@ -328,13 +375,13 @@ export function RegisterPage() {
 
 export function ForgotPage() {
   const { t } = useI18n();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   return (
     <OpenLayout>
-      <div className="p-auth-card">
+      <div className="p-auth-card p-auth-access">
         <h1>{t.auth.forgotTitle}</h1>
         {sent ? (
           <p className="p-lead" role="status">
@@ -353,7 +400,7 @@ export function ForgotPage() {
                   await api.requestPasswordReset(email);
                   setSent(true);
                 } catch (e) {
-                  const code = e instanceof PortalError ? e.code : 'network';
+                  const code = e instanceof PortalError ? e.code : "network";
                   setError(t.errors[code] ?? t.errors.generic);
                 } finally {
                   setBusy(false);
@@ -395,8 +442,8 @@ export function ForgotPage() {
 export function ResetPasswordPage() {
   const { t } = useI18n();
   const { user } = useSession();
-  const [password, setPassword] = useState('');
-  const [confirm, setConfirm] = useState('');
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -415,7 +462,7 @@ export function ResetPasswordPage() {
       await api.setPassword(password);
       setSaved(true);
     } catch (e) {
-      const code = e instanceof PortalError ? e.code : 'network';
+      const code = e instanceof PortalError ? e.code : "network";
       setError(t.errors[code] ?? t.errors.generic);
     } finally {
       setBusy(false);
@@ -423,12 +470,12 @@ export function ResetPasswordPage() {
   };
   return (
     <OpenLayout>
-      <div className="p-auth-card">
+      <div className="p-auth-card p-auth-access">
         <h1>{t.auth.resetTitle}</h1>
         {saved ? (
           <>
             <p role="status">{t.auth.passwordSaved}</p>
-            <Link to={user ? home(user.role) : '/espace/connexion'}>
+            <Link to={user ? home(user.role) : "/espace/connexion"}>
               {t.common.clientArea}
             </Link>
           </>
@@ -449,9 +496,8 @@ export function ResetPasswordPage() {
           >
             <Field label={t.auth.password} help={t.auth.passwordHint}>
               {(id) => (
-                <input
+                <PasswordInput
                   id={id}
-                  type="password"
                   autoComplete="new-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -462,9 +508,8 @@ export function ResetPasswordPage() {
             </Field>
             <Field label={t.auth.confirmPassword}>
               {(id) => (
-                <input
+                <PasswordInput
                   id={id}
-                  type="password"
                   autoComplete="new-password"
                   value={confirm}
                   onChange={(e) => setConfirm(e.target.value)}
