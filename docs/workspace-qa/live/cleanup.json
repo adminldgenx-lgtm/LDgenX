@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-30T05:32:56.578Z",
+  "deleted_orphan_qa_drafts": 1,
+  "remaining_workspace_profiles": 0,
+  "remaining_private_workspace_drafts": 0,
+  "preserved_imported_working_copies": 74,
+  "note": "One orphaned private QA draft required cleanup after the HTTP teardown failed. Only strictly identified, unpublished, unlinked QA data were removed."
+}

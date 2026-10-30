@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-30T05:30:47.241Z",
+  "enabled": true,
+  "connected": true,
+  "last_error": null,
+  "last_busy_error": null,
+  "pending_appointments": 0,
+  "pending_blocks": 0,
+  "active_minutely_sync_jobs": 1
+}

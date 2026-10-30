@@ -44,3 +44,5 @@ Les téléchargements passent par une autorisation serveur et des liens temporai
 - **Agendas de l’équipe :** partager les agendas professionnels réels avec le compte connecté et renseigner leurs identifiants pour chaque personne. `primary` désigne l’agenda principal du compte connecté ; il ne représente pas automatiquement l’agenda personnel de chaque membre. Un agenda non partagé ou non renseigné ne peut pas bloquer les réservations.
 
 Ces actions sont notées pour la suite ; aucune nouvelle boîte mail, aucun abonnement payant et aucune modification du DNS de messagerie n’ont été engagés.
+
+Pour compléter **Google Auth Platform → Branding** dans le projet `ldgenx-platform`, utilisez le nom **LDgenX**, une adresse d’assistance contrôlée par le laboratoire, la page d’accueil **https://www.ldgenx.fr/** et la politique de confidentialité **https://www.ldgenx.fr/politique-confidentialite**. Enregistrez, puis vérifiez **Audience → Publier l’application**. La publication du statut et une éventuelle vérification demandée par Google sont deux étapes distinctes ; suivez les indications de la console sans changer les identifiants OAuth ni les URI de redirection existants.

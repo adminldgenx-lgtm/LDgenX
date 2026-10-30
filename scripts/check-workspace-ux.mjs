@@ -95,9 +95,15 @@ async function account(role, firstName) {
     auth: { persistSession: false, autoRefreshToken: false },
   });
   let signed = await client.auth.signInWithPassword({ email, password });
-  if (signed.error?.status === 0)
+  if (
+    signed.error &&
+    (signed.error.status === 0 || signed.error.status >= 500)
+  )
     signed = await client.auth.signInWithPassword({ email, password });
-  assert(!signed.error, "Disposable sign-in failed");
+  assert(
+    !signed.error,
+    `Disposable sign-in failed: HTTP ${signed.error?.status ?? ""}, code ${signed.error?.code ?? ""}`,
+  );
   return {
     id,
     email,
@@ -483,15 +489,19 @@ try {
   await browser?.close().catch(() => {});
   if (admin) {
     try {
-      const drafts = await service
-        .from("cms_entries")
-        .select("id")
-        .eq("created_by", admin.id)
-        .is("legacy_id", null)
-        .is("published_version", null);
-      assert(!drafts.error, "Disposable draft lookup failed");
-      for (const draft of drafts.data)
-        await api(admin, `/entries/${draft.id}`, 200, "editorial", "DELETE");
+      // Teardown must not depend on the disposable actor JWT remaining valid.
+      // Only this run's private, never-published drafts can match; no media are uploaded.
+      const removeDrafts = () =>
+        service
+          .from("cms_entries")
+          .delete()
+          .eq("created_by", admin.id)
+          .is("legacy_id", null)
+          .is("published_version", null);
+      let removed = await removeDrafts();
+      if (removed.error && (removed.status === 0 || removed.status >= 500))
+        removed = await removeDrafts();
+      assert(!removed.error, "Disposable private draft cleanup failed");
     } catch {
       cleanupErrors.push("private draft cleanup");
     }
@@ -507,7 +517,10 @@ try {
   for (const id of users) {
     try {
       let removed = await service.auth.admin.deleteUser(id);
-      if (removed.error?.status === 0)
+      if (
+        removed.error &&
+        (removed.error.status === 0 || removed.error.status >= 500)
+      )
         removed = await service.auth.admin.deleteUser(id);
       if (removed.error && removed.error.status !== 404)
         cleanupErrors.push("account cleanup");
@@ -518,6 +531,6 @@ try {
   assert.equal(
     cleanupErrors.length,
     0,
-    "Disposable fixture cleanup incomplete",
+    `Disposable fixture cleanup incomplete: ${cleanupErrors.join(", ")}`,
   );
 }

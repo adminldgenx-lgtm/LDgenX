@@ -46,6 +46,9 @@ export function installQaJsonTransport() {
           "8",
           "--max-time",
           "60",
+          ...(request.method === "HEAD"
+            ? ["--head", "--output", "/dev/null"]
+            : []),
           ...(["GET", "HEAD"].includes(request.method)
             ? ["--retry", "2", "--retry-all-errors", "--retry-delay", "1"]
             : []),
@@ -104,7 +107,9 @@ export function installQaJsonTransport() {
         }
         resolve(
           new Response(
-            [204, 205, 304].includes(status) ? null : output.slice(0, split),
+            request.method === "HEAD" || [204, 205, 304].includes(status)
+              ? null
+              : output.slice(0, split),
             { status, headers },
           ),
         );
