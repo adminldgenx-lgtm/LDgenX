@@ -514,8 +514,18 @@ try {
   if (process.env.LDGENX_QA_PUBLISH === "1") {
     // Explicit, disposable publication for a live release check. The page keeps its text, gains a
     // cover for a few seconds, then returns to its original version and the fixture is removed.
+    // Cloudflare's email protection changes the markup of each response on the real domain.
     const livePath = "/en/about-us/partners",
-      original = await fetch(origin + livePath).then((r) => r.text());
+      publicHtml = () =>
+        fetch(`${origin}${livePath}?qa=${Date.now()}`)
+          .then((r) => r.text())
+          .then((html) =>
+            html
+              .replace(/<script data-cfasync[^>]*><\/script>/g, "")
+              .replace(/\/cdn-cgi\/[^"]*/g, "")
+              .replace(/data-cfemail="[^"]*"/g, ""),
+          ),
+      original = await publicHtml();
     assert(
       !before.some((e) => e.kind === "page" && "/en/" + e.slug === livePath),
       "That page already has a working copy: never publish it for a test",
@@ -531,13 +541,10 @@ try {
     });
     assert.equal(live.publication.status, "published");
     await expect
-      .poll(
-        async () =>
-          (await fetch(`${origin}${livePath}?qa=${Date.now()}`).then((r) =>
-            r.text(),
-          )) !== original,
-        { timeout: 60000, intervals: [2000] },
-      )
+      .poll(async () => (await publicHtml()).includes('"document":{'), {
+        timeout: 60000,
+        intervals: [2000],
+      })
       .toBe(true);
     const visitor = await browser.newContext({
       viewport: { width: 1280, height: 800 },
@@ -562,11 +569,7 @@ try {
       version: live.version,
     });
     await expect
-      .poll(
-        () =>
-          fetch(`${origin}${livePath}?qa=${Date.now()}`).then((r) => r.text()),
-        { timeout: 60000, intervals: [2000] },
-      )
+      .poll(publicHtml, { timeout: 60000, intervals: [2000] })
       .toBe(original);
     assert.deepEqual(exceptions, []);
     ok(

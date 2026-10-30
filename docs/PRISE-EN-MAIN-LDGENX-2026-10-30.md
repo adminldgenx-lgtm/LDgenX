@@ -2,20 +2,40 @@
 
 ## Agenda
 
+Les visiteurs et les clients prennent rendez-vous avec **LDgenX**, sans choisir de personne. Ils voient les créneaux libres de l’équipe ; la répartition entre les membres reste interne, dans l’agenda et les demandes.
+
 Les rendez-vous et indisponibilités LDgenX sont transmis à Google avec un intitulé lisible, la personne concernée et un lien vers leur fiche. Cliquez sur un créneau dans LDgenX pour consulter ses détails, son état de synchronisation et le modifier. Les journées entières et périodes de plusieurs jours sont possibles. Un blocage commun utilise un seul événement dans **LDgenX · Équipe** ; cochez cet agenda dans Google pour l’afficher.
 
 Les modifications des événements gérés par LDgenX se font depuis leur fiche LDgenX. Les événements privés Google servent à vérifier les disponibilités ; leurs titres et descriptions ne sont pas importés. Les événements ajoutés dans les agendas de travail dédiés peuvent afficher leur titre dans l’administration. Les préférences de partage se règlent dans **Paramètres → Google Agenda**. Les noms et sujets des clients restent privés par défaut.
 
-## Articles, études de cas et résumés de publications
+## Contenus du site
 
 L’adresse de travail est [www.ldgenx.fr/admin/contenus](https://www.ldgenx.fr/admin/contenus).
 
-1. **Ouvrir un contenu existant ou créer un nouveau contenu.** Trois types sont disponibles : article/guide, étude de cas, résumé de publication scientifique. Les pages existantes disposent de copies de travail ; ouvrez la copie correspondante pour les corriger, afin de conserver leur adresse. La page actuelle reste visible jusqu’à la publication de la nouvelle version.
+1. **Ouvrir un contenu existant ou créer un nouveau contenu.** **Nouveau contenu** enrichit une rubrique : article/guide, étude de cas, résumé de publication scientifique, expertise ou application. Chaque type reprend la présentation de sa rubrique. Les pages existantes disposent de copies de travail ; ouvrez la copie correspondante pour les corriger, afin de conserver leur adresse. La page actuelle reste visible jusqu’à la publication de la nouvelle version.
 2. **Rédiger.** Remplissez le titre, le résumé, le thème et les auteurs. Une trame facultative ajoute uniquement des titres de sections dans un document vide. Elle n’invente aucun résultat et ne remplace pas un document contenant déjà du texte ou des médias. Les outils permettent les titres, l’italique des noms latins, indices, exposants, listes, tableaux, figures et vidéos.
 3. **Documenter la science.** Distinguez méthodes, résultats, interprétation et limites. Ajoutez les références utilisées. Pour une publication, renseignez les auteurs de l’article original, son DOI, sa revue et son année ; l’année du papier reste distincte de la date de mise à jour du résumé sur le site.
 4. **Ajouter les médias.** La médiathèque réutilise les fichiers existants et optimise les nouvelles images en WebP, avec plusieurs tailles pour l’affichage. Renseignez le texte alternatif, la légende scientifique, le crédit et la source/licence. Vérifiez la lisibilité des axes, échelles et annotations ; conservez les originaux scientifiques séparément. Une vidéo courte peut être importée (20 Mo, trois minutes au maximum dans l’interface), ou intégrée depuis YouTube/Vimeo par lien pour éviter de stocker une vidéo longue sur Supabase.
 5. **Enregistrer et vérifier l’aperçu.** Enregistrer, ou **⌘/Ctrl+S**, conserve le brouillon privé. La barre de navigation reste accessible dans un long document. Une copie locale de secours peut récupérer une saisie non enregistrée dans le même navigateur ; elle ne remplace pas l’enregistrement sur le serveur.
 6. **Relire puis publier.** La liste de préparation indique les champs manquants. Confirmez la relecture scientifique et les droits, vérifiez l’aperçu, puis cliquez sur **Publier**. Le site, ses listes et ses métadonnées se mettent à jour sans reconstruction manuelle, avec un délai de cache pouvant atteindre une trentaine de secondes. Une modification ultérieure reste en brouillon tant qu’elle n’est pas publiée.
+
+### Modifier une page du site
+
+**Modifier une page du site** donne accès à 64 pages en français et en anglais : accueil, expertises, applications, études de cas, publications, ressources, à propos, équipe, partenaires, FAQ, glossaire, contact. Choisissez la langue puis la page.
+
+Vous pouvez changer le **titre**, l’**introduction** et l’**image**, et **ajouter des blocs** de texte, figures ou vidéos, qui s’affichent après l’introduction. Les sections d’origine, leurs animations et leurs cartes restent en place : leurs textes ne se modifient pas depuis cet écran. **Aperçu** montre la vraie page avant publication. **Retirer les modifications** rend à la page sa présentation d’origine, sans la supprimer du site.
+
+### Ajouter une image
+
+Depuis la liste, **Ajouter une image** (ou **Changer l’image**) ouvre directement la médiathèque ; dans l’éditeur, l’image de couverture est tout en haut. Importez une photo ou choisissez-en une, puis renseignez ce qu’elle montre et son crédit. L’image apparaît sur la page et sur sa carte, et la liste des contenus affiche sa miniature. Sur l’accueil, elle remplace la vidéo tant que la modification est publiée. Une image LDgenX sans légende n’affiche aucune mention sous la photo.
+
+### Supprimer et restaurer
+
+**Supprimer**, depuis la liste ou l’éditeur, demande confirmation puis place le contenu dans la **Corbeille** : il quitte le site, mais son texte, ses images et son historique sont conservés. Pour une page du site, seules vos modifications partent à la corbeille ; la page d’origine reste en ligne. **Restaurer** ramène un brouillon à relire : rien n’est remis en ligne automatiquement. Il faut ensuite cliquer sur **Publier**.
+
+### Publier
+
+**Enregistrer** garde un brouillon privé. **Publier** diffuse cette version. Une correction enregistrée ne change pas la version en ligne tant qu’elle n’est pas publiée. Le français et l’anglais se gèrent séparément.
 
 L’historique permet de restaurer une version dans le brouillon, sans la publier automatiquement. **Retirer du site** retire la page publique et conserve la copie de travail. Les versions française et anglaise sont rédigées et validées séparément.
 
