@@ -1,3 +1,4 @@
+import type { CalendarPreferences } from "../../supabase/functions/_shared/calendar";
 import { supabase, supabaseUrl, supabasePublishableKey } from "../lib/supabase";
 import type { TimeBlock } from "./api";
 export interface CalendarStatus {
@@ -14,6 +15,16 @@ export interface CalendarStatus {
   refreshExpires: string | null;
   pending: number;
   hosts: { id: string; name: string }[];
+  preferences: CalendarPreferences;
+  teamCalendar: string | null;
+  teamNeedsAttention: boolean;
+}
+export interface CalendarItemState {
+  state:
+    "synced" | "pending" | "error" | "disabled" | "not_exported" | "removed";
+  error: string | null;
+  syncedAt: string | null;
+  links: { url: string; calendar: string }[];
 }
 export class CalendarApiError extends Error {
   constructor(public code: string) {
@@ -51,6 +62,10 @@ export async function calendarRequest<T>(
   return value;
 }
 export const calendarApi = {
+  item: (kind: "appointment" | "block", id: string) =>
+    calendarRequest<CalendarItemState>(
+      `/item/${kind}/${encodeURIComponent(id)}`,
+    ),
   status: () => calendarRequest<CalendarStatus>("/status"),
   busy: (from: string, to: string) =>
     calendarRequest<TimeBlock[]>(`/busy?${new URLSearchParams({ from, to })}`),

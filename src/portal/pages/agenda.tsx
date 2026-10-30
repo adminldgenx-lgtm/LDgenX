@@ -1,3 +1,6 @@
+import { Link, useSearchParams } from "react-router-dom";
+import { BlockPanel } from "../BlockPanel";
+import { agendaBlocks } from "../calendar-view";
 // The team's calendar, live: a week grid (appointments, requests waiting for an answer, changes
 // asked for, blocked times and openings), a month view and a list. Everything is in Paris time,
 // where the team works. A free time is clicked to create an appointment; a confirmed appointment
@@ -10,16 +13,16 @@ import {
   useState,
   type CSSProperties,
   type PointerEvent,
-} from 'react';
-import { ChevronLeft, ChevronRight, Lock, Plus } from 'lucide-react';
+} from "react";
+import { ChevronLeft, ChevronRight, Lock, Plus, RefreshCw } from "lucide-react";
 import {
   api,
   type Appointment,
   type BookingConfig,
   type TimeBlock,
-} from '../api';
-import { fill, useI18n } from '../i18n';
-import { useAction, useData, useMediaQuery } from '../state';
+} from "../api";
+import { fill, useI18n } from "../i18n";
+import { useAction, useData, useMediaQuery } from "../state";
 import {
   Button,
   Card,
@@ -28,9 +31,8 @@ import {
   PageHeader,
   Segmented,
   StatusPill,
-  useConfirm,
-} from '../ui';
-import { AppointmentPanel, NewDialog, useWho, type NewDraft } from '../team';
+} from "../ui";
+import { AppointmentPanel, NewDialog, useWho, type NewDraft } from "../team";
 import {
   addDays,
   atMinutes,
@@ -41,16 +43,16 @@ import {
   wallTime,
   weekdayOf,
   type DayKey,
-} from '../lib/time';
-import { nextOpening } from '../lib/availability';
-import { calendarApi } from '../calendar-api';
+} from "../lib/time";
+import { nextOpening } from "../lib/availability";
+import { calendarApi, calendarRequest } from "../calendar-api";
 
 const FIRST_HOUR = 8;
 const LAST_HOUR = 19;
 const HOUR_HEIGHT = 64;
 const SNAP = 15;
 
-type View = 'week' | 'month' | 'list';
+type View = "week" | "month" | "list";
 
 interface Placed<T> {
   item: T;
@@ -105,24 +107,35 @@ interface GridItem {
 
 export function AgendaPage() {
   const { t, locale, date, time } = useI18n();
-  const phone = useMediaQuery('(max-width: 760px)');
-  const [view, setView] = useState<View>(phone ? 'list' : 'week');
-  const [anchor, setAnchor] = useState<DayKey>(() => teamDay(Date.now()));
-  const [hostId, setHostId] = useState('');
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [params, setParams] = useSearchParams();
+  const requestedDay = params.get("date");
+  const dayFromLink =
+    requestedDay &&
+    /^\d{4}-\d{2}-\d{2}$/.test(requestedDay) &&
+    Number.isFinite(Date.parse(requestedDay))
+      ? (requestedDay as DayKey)
+      : null;
+  const phone = useMediaQuery("(max-width: 760px)");
+  const [view, setView] = useState<View>(phone ? "list" : "week");
+  const [anchor, setAnchor] = useState<DayKey>(
+    () => dayFromLink ?? teamDay(Date.now()),
+  );
+  const [hostId, setHostId] = useState("");
+  const [openId, setOpenId] = useState<string | null>(params.get("rdv"));
+  const [blockId, setBlockId] = useState<string | null>(params.get("creneau"));
   const [draft, setDraft] = useState<NewDraft | null>(null);
   const config = useData(() => api.getBookingConfig(), []);
   const range = useMemo(() => {
-    if (view === 'week') {
+    if (view === "week") {
       const from = startOfWeek(anchor);
       return { from, to: addDays(from, 7) };
     }
-    if (view === 'month') {
+    if (view === "month") {
       const { year, month } = parseDay(anchor);
-      const from = startOfWeek(`${year}-${String(month).padStart(2, '0')}-01`);
+      const from = startOfWeek(`${year}-${String(month).padStart(2, "0")}-01`);
       return { from, to: addDays(from, 42) };
     }
-    return { from: teamDay(Date.now()), to: addDays(teamDay(Date.now()), 90) };
+    return { from: anchor, to: addDays(anchor, 90) };
   }, [view, anchor]);
   const appointments = useData(
     () =>
@@ -145,35 +158,73 @@ export function AgendaPage() {
     return () => window.clearInterval(timer);
   }, [google.reload]);
   const who = useWho();
-  const { run } = useAction();
+  const { run, busy } = useAction();
   const cfg = config.data;
   const visible = (appointments.data ?? []).filter(
     (a) =>
-      (a.status === 'confirmed' || a.status === 'requested') &&
+      (a.status === "confirmed" || a.status === "requested") &&
       (!hostId || a.hostId === hostId || a.change?.hostId === hostId),
   );
-  const blocks = [
-    ...(cfg?.blocks ?? []),
-    ...(google.error ? [] : (google.data ?? [])),
-  ].filter((b) => !hostId || !b.hostId || b.hostId === hostId);
+  const blocks = agendaBlocks(
+    cfg?.blocks ?? [],
+    google.error ? [] : (google.data ?? []),
+    cfg,
+    hostId,
+    locale === "fr",
+  ).filter(
+    (b) =>
+      Date.parse(b.end) > atMinutes(range.from, 0).getTime() &&
+      Date.parse(b.start) < atMinutes(range.to, 0).getTime(),
+  );
+  const selectedBlock =
+    cfg?.blocks.find((b) => b.id === blockId) ??
+    blocks.find((b) => b.id === blockId);
+  useEffect(() => {
+    setOpenId(params.get("rdv"));
+    setBlockId(params.get("creneau"));
+    if (dayFromLink) setAnchor(dayFromLink);
+  }, [params.get("rdv"), params.get("creneau"), dayFromLink]);
+  const closeDetail = () => {
+    setOpenId(null);
+    setBlockId(null);
+    const next = new URLSearchParams(params);
+    next.delete("rdv");
+    next.delete("creneau");
+    setParams(next, { replace: true });
+  };
+  const openBlock = (block: TimeBlock) => {
+    const next = new URLSearchParams(params);
+    next.delete("rdv");
+    next.set("creneau", block.id);
+    next.set("date", teamDay(Date.parse(block.start)));
+    setParams(next, { replace: true });
+    setBlockId(block.id);
+  };
+  const openAppointment = (id: string) => {
+    const next = new URLSearchParams(params);
+    next.delete("creneau");
+    next.set("rdv", id);
+    setParams(next, { replace: true });
+    setOpenId(id);
+  };
   const open = appointments.data?.find((a) => a.id === openId) ?? null;
   const move = (direction: 1 | -1) => {
-    if (view === 'week') setAnchor(addDays(anchor, 7 * direction));
+    if (view === "week") setAnchor(addDays(anchor, 7 * direction));
     else {
       const { year, month } = parseDay(anchor);
       const d = new Date(Date.UTC(year, month - 1 + direction, 1));
       setAnchor(
-        `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-01`,
+        `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-01`,
       );
     }
   };
-  const tag = locale === 'fr' ? 'fr-FR' : 'en-GB';
+  const tag = locale === "fr" ? "fr-FR" : "en-GB";
   const label =
-    view === 'month'
+    view === "month"
       ? new Intl.DateTimeFormat(tag, {
-          month: 'long',
-          year: 'numeric',
-          timeZone: 'UTC',
+          month: "long",
+          year: "numeric",
+          timeZone: "UTC",
         }).format(
           new Date(
             Date.UTC(parseDay(anchor).year, parseDay(anchor).month - 1, 1),
@@ -181,12 +232,12 @@ export function AgendaPage() {
         )
       : `${date(atMinutes(range.from, 720).toISOString(), { weekday: false })} – ${date(atMinutes(addDays(range.to, -1), 720).toISOString(), { weekday: false, year: true })}`;
   // The form opens on the person's next free opening, in the period shown (never in the past).
-  const startDraft = (kind?: 'block') => {
+  const startDraft = (kind?: "block") => {
     const today = teamDay(Date.now());
     const base =
-      view === 'week' ? range.from : view === 'month' ? anchor : today;
+      view === "week" ? range.from : view === "month" ? anchor : today;
     const from = base > today ? base : today;
-    const person = hostId || cfg?.hosts.find((h) => h.bookable)?.id || '';
+    const person = hostId || cfg?.hosts.find((h) => h.bookable)?.id || "";
     const found =
       cfg &&
       nextOpening(cfg, appointments.data ?? [], person, from, Date.now());
@@ -215,7 +266,7 @@ export function AgendaPage() {
         lead={t.agenda.lead}
         actions={
           <>
-            <Button variant="secondary" onClick={() => startDraft('block')}>
+            <Button variant="secondary" onClick={() => startDraft("block")}>
               <Lock size={16} aria-hidden="true" /> {t.agenda.block}
             </Button>
             <Button onClick={() => startDraft()}>
@@ -226,14 +277,44 @@ export function AgendaPage() {
       />
       {google.error && (
         <p className="p-notice" data-tone="amber" role="alert">
-          {t.errors.calendar_unavailable}{' '}
+          {t.errors.calendar_unavailable}{" "}
           <Button variant="ghost" size="small" onClick={google.reload}>
             {t.common.retry}
           </Button>
         </p>
       )}
+      <div className="p-toolbar">
+        <Link to="/admin/parametres?onglet=google" className="p-link">
+          {locale === "fr"
+            ? "Paramètres Google Agenda"
+            : "Google Calendar settings"}
+        </Link>
+        <Button
+          variant="secondary"
+          size="small"
+          busy={busy}
+          onClick={() =>
+            run(
+              async () => {
+                await calendarRequest("/sync", "POST");
+                config.reload();
+                appointments.reload();
+                google.reload();
+              },
+              locale === "fr"
+                ? "Synchronisation vérifiée."
+                : "Synchronization checked.",
+            )
+          }
+        >
+          <RefreshCw size={14} />
+          {locale === "fr"
+            ? "Actualiser et synchroniser"
+            : "Refresh and synchronize"}
+        </Button>
+      </div>
       <div className="p-toolbar p-agenda-toolbar">
-        {view !== 'list' ? (
+        {view !== "list" ? (
           <div className="p-row">
             <button
               type="button"
@@ -281,41 +362,43 @@ export function AgendaPage() {
             value={view}
             onChange={setView}
             options={[
-              ['week', t.agenda.week],
-              ['month', t.agenda.month],
-              ['list', t.agenda.list],
+              ["week", t.agenda.week],
+              ["month", t.agenda.month],
+              ["list", t.agenda.list],
             ]}
           />
         </div>
       </div>
       {!cfg || !appointments.data ? (
         <Loading lines={8} />
-      ) : view === 'week' ? (
+      ) : view === "week" ? (
         <WeekGrid
           from={range.from}
           config={cfg}
           hostId={hostId}
           appointments={visible}
           blocks={blocks}
+          onBlock={openBlock}
           name={(a) => who(a).name}
-          onOpen={setOpenId}
+          onOpen={openAppointment}
           onEmpty={(day, minutes) =>
             setDraft({ day, minutes, hostId: hostId || undefined })
           }
           onMove={moveTo}
         />
-      ) : view === 'month' ? (
+      ) : view === "month" ? (
         <MonthGrid
           from={range.from}
           month={parseDay(anchor).month}
           appointments={visible}
           config={cfg}
           blocks={blocks}
+          onBlock={openBlock}
           name={(a) => who(a).name}
-          onOpen={setOpenId}
+          onOpen={openAppointment}
           onDay={(d) => {
             setAnchor(d);
-            setView('week');
+            setView("week");
           }}
         />
       ) : (
@@ -339,20 +422,20 @@ export function AgendaPage() {
                             data-past={
                               Date.parse(a.end) < Date.now() || undefined
                             }
-                            onClick={() => setOpenId(a.id)}
-                            style={{ '--type': type?.colour } as CSSProperties}
+                            onClick={() => openAppointment(a.id)}
+                            style={{ "--type": type?.colour } as CSSProperties}
                           >
                             <span className="p-agenda-time">
                               {time(a.start)}–{time(a.end)}
                             </span>
                             <span>
-                              <strong>{who(a).name}</strong> ·{' '}
+                              <strong>{who(a).name}</strong> ·{" "}
                               {type?.label[locale]}
                               <span className="p-muted p-block">
                                 {cfg.hosts.find((h) => h.id === a.hostId)?.name}
                               </span>
                             </span>
-                            {a.status === 'requested' ? (
+                            {a.status === "requested" ? (
                               <StatusPill status="requested" />
                             ) : a.change ? (
                               <span className="p-pill" data-tone="amber">
@@ -370,29 +453,119 @@ export function AgendaPage() {
           )}
         </Card>
       )}
-      {view === 'list' && blocks.some((b) => b.id.startsWith('google:')) && (
-        <Card title={locale === 'fr' ? 'Google Agenda' : 'Google Calendar'}>
-          <ul className="p-stack">
+      {view === "list" && blocks.length > 0 && (
+        <Card
+          title={
+            locale === "fr"
+              ? "Créneaux et indisponibilités"
+              : "Blocked times and availability"
+          }
+        >
+          <ul className="p-agenda-list">
             {blocks
-              .filter((b) => b.id.startsWith('google:'))
               .sort((a, b) => a.start.localeCompare(b.start))
               .map((b) => (
                 <li key={b.id}>
-                  <Lock size={12} aria-hidden="true" /> {date(b.start)}{' '}
-                  {time(b.start)} – {date(b.end)} {time(b.end)} ·{' '}
-                  {cfg?.hosts.find((h) => h.id === b.hostId)?.name}
+                  <button
+                    type="button"
+                    className="p-agenda-item"
+                    onClick={() => openBlock(b)}
+                  >
+                    <Lock size={14} />
+                    <span>
+                      <strong>
+                        {b.reason ||
+                          (locale === "fr" ? "Indisponibilité" : "Unavailable")}
+                      </strong>
+                      <span className="p-muted p-block">
+                        {b.allDay ? (
+                          <>
+                            {date(b.start)} –{" "}
+                            {date(
+                              atMinutes(
+                                addDays(teamDay(Date.parse(b.end)), -1),
+                                720,
+                              ).toISOString(),
+                            )}
+                            {" · "}
+                            {locale === "fr" ? "Journée entière" : "All day"}
+                          </>
+                        ) : (
+                          <>
+                            {date(b.start)} {time(b.start)} – {date(b.end)}{" "}
+                            {time(b.end)}
+                          </>
+                        )}
+                        {" · "}
+                        {b.hostId
+                          ? cfg?.hosts.find((h) => h.id === b.hostId)?.name
+                          : t.agenda.allHosts}
+                      </span>
+                    </span>
+                  </button>
                 </li>
               ))}
           </ul>
         </Card>
       )}
+      {selectedBlock && cfg && (
+        <BlockPanel
+          key={selectedBlock.id}
+          block={selectedBlock}
+          config={cfg}
+          onClose={closeDetail}
+          onUpdated={(block) => {
+            setHostId(block.hostId ?? "");
+            openBlock(block);
+          }}
+        />
+      )}
+      {blockId && cfg && !selectedBlock && !google.loading && (
+        <p className="p-notice" role="status">
+          {locale === "fr"
+            ? "Ce créneau a été supprimé ou n’est plus disponible dans cette période."
+            : "This blocked time was removed or is no longer available in this period."}{" "}
+          <Button variant="ghost" onClick={closeDetail}>
+            {t.common.close}
+          </Button>
+        </p>
+      )}
+      {openId && appointments.data && !open && !appointments.loading && (
+        <p className="p-notice" role="status">
+          {locale === "fr"
+            ? "Ce rendez-vous n’est plus présent dans cette période."
+            : "This appointment is no longer present in this period."}{" "}
+          <Button variant="ghost" onClick={closeDetail}>
+            {t.common.close}
+          </Button>
+        </p>
+      )}
       <AppointmentPanel
         appointment={open}
         config={cfg ?? emptyConfig}
-        onClose={() => setOpenId(null)}
+        onClose={closeDetail}
       />
       {cfg && (
-        <NewDialog draft={draft} config={cfg} onClose={() => setDraft(null)} />
+        <NewDialog
+          draft={draft}
+          config={cfg}
+          onClose={() => setDraft(null)}
+          onCreated={(item) => {
+            const next = new URLSearchParams(params);
+            next.set("date", teamDay(Date.parse(item.start)));
+            if ("status" in item) {
+              next.delete("creneau");
+              next.set("rdv", item.id);
+              setOpenId(item.id);
+            } else {
+              next.delete("rdv");
+              next.set("creneau", item.id);
+              setBlockId(item.id);
+              setHostId(item.hostId ?? "");
+            }
+            setParams(next, { replace: true });
+          }}
+        />
       )}
     </>
   );
@@ -408,7 +581,7 @@ const emptyConfig: BookingConfig = {
   horizonDays: 0,
   stepMinutes: 15,
   closedDays: [],
-  approval: 'manual',
+  approval: "manual",
 };
 
 function groupByDay(items: Appointment[]) {
@@ -426,6 +599,7 @@ function WeekGrid({
   hostId,
   appointments,
   blocks,
+  onBlock,
   name,
   onOpen,
   onEmpty,
@@ -436,14 +610,13 @@ function WeekGrid({
   hostId: string;
   appointments: Appointment[];
   blocks: TimeBlock[];
+  onBlock: (block: TimeBlock) => void;
   name: (a: Appointment) => string;
   onOpen: (id: string) => void;
   onEmpty: (day: DayKey, minutes: number) => void;
   onMove: (a: Appointment, start: number) => void;
 }) {
-  const { t, locale, time } = useI18n();
-  const { run } = useAction();
-  const confirm = useConfirm();
+  const { t, locale, time, dateTime } = useI18n();
   const days = Array.from({ length: 7 }, (_, i) => addDays(from, i));
   const today = teamDay(Date.now());
   const now = wallTime(Date.now());
@@ -502,9 +675,9 @@ function WeekGrid({
     a: Appointment,
   ) => {
     if (
-      a.status !== 'confirmed' ||
+      a.status !== "confirmed" ||
       event.button !== 0 ||
-      event.pointerType === 'touch'
+      event.pointerType === "touch"
     )
       return;
     const box = event.currentTarget.getBoundingClientRect();
@@ -557,7 +730,7 @@ function WeekGrid({
     <div className="p-week-wrap" ref={wrap}>
       <div
         className="p-week"
-        style={{ '--hour': `${HOUR_HEIGHT}px` } as CSSProperties}
+        style={{ "--hour": `${HOUR_HEIGHT}px` } as CSSProperties}
       >
         <div className="p-week-head">
           <span />
@@ -571,7 +744,7 @@ function WeekGrid({
           <div className="p-week-hours" aria-hidden="true">
             {hours.map((h) => (
               <span key={h} style={{ top: (h - FIRST_HOUR) * HOUR_HEIGHT }}>
-                {String(h).padStart(2, '0')}:00
+                {String(h).padStart(2, "0")}:00
               </span>
             ))}
           </div>
@@ -594,6 +767,8 @@ function WeekGrid({
               )
               .map((b) => ({
                 ...b,
+                rawStart: b.start,
+                rawEnd: b.end,
                 start: new Date(
                   Math.max(
                     Date.parse(b.start),
@@ -651,40 +826,34 @@ function WeekGrid({
                       key={item.id}
                       type="button"
                       className="p-week-block"
-                      disabled={item.id.startsWith('google:')}
                       style={{
                         top,
                         height: h,
                         left: `calc(${(lane / lanes) * 100}% + 2px)`,
                         width: `calc(${100 / lanes}% - 4px)`,
-                        right: 'auto',
+                        right: "auto",
                       }}
-                      title={item.reason}
-                      onClick={async () => {
-                        if (item.id.startsWith('google:')) return;
-                        if (
-                          await confirm.ask(
-                            `${t.agenda.removeBlock} · ${item.reason || t.agenda.blocked}`,
-                            t.agenda.removeBlock,
-                          )
-                        )
-                          run(
-                            () => api.removeBlock(item.id),
-                            t.agenda.blockRemoved,
-                          );
-                      }}
+                      data-short={h < 48 || undefined}
+                      title={`${item.reason}\n${dateTime(item.rawStart)} – ${dateTime(item.rawEnd)}`}
+                      onClick={() => onBlock(item)}
                     >
-                      <Lock size={12} aria-hidden="true" />{' '}
-                      {item.reason || t.agenda.blocked}
-                      {item.hostId && (
-                        <>
-                          {' '}
-                          ·{' '}
-                          {config.hosts
-                            .find((x) => x.id === item.hostId)
-                            ?.name.replace(/^Dr /, '')}
-                        </>
-                      )}
+                      <Lock size={12} aria-hidden="true" />
+                      <span className="p-week-block-copy">
+                        <strong>{item.reason || t.agenda.blocked}</strong>
+                        <small>
+                          {item.allDay
+                            ? locale === "fr"
+                              ? "Journée entière"
+                              : "All day"
+                            : `${time(item.start)}–${time(item.end)}`}
+                        </small>
+                        <small className="p-week-block-who">
+                          {item.hostId
+                            ? config.hosts.find((h) => h.id === item.hostId)
+                                ?.name
+                            : t.agenda.wholeTeam}
+                        </small>
+                      </span>
                     </button>
                   ),
                 )}
@@ -716,10 +885,10 @@ function WeekGrid({
                             height: h,
                             left: `calc(${(lane / lanes) * 100}% + 2px)`,
                             width: `calc(${100 / lanes}% - 4px)`,
-                            '--type': type?.colour,
+                            "--type": type?.colour,
                           } as CSSProperties
                         }
-                        title={`${time(item.start)}–${time(item.end)} · ${type?.label[locale] ?? ''} · ${name(a)}`}
+                        title={`${time(item.start)}–${time(item.end)} · ${type?.label[locale] ?? ""} · ${name(a)}`}
                         onPointerDown={(e) => !item.ghost && startDrag(e, a)}
                         onPointerMove={moveDrag}
                         onPointerUp={endDrag}
@@ -749,7 +918,7 @@ function WeekGrid({
                               {time(item.start)} {type?.label[locale]}
                             </strong>
                             <span>{name(a)}</span>
-                            {a.status === 'requested' ? (
+                            {a.status === "requested" ? (
                               <span className="p-week-host">
                                 {t.agenda.requested}
                               </span>
@@ -783,8 +952,8 @@ function WeekGrid({
                     }}
                     aria-hidden="true"
                   >
-                    {String(Math.floor(preview.minutes / 60)).padStart(2, '0')}:
-                    {String(preview.minutes % 60).padStart(2, '0')} ·{' '}
+                    {String(Math.floor(preview.minutes / 60)).padStart(2, "0")}:
+                    {String(preview.minutes % 60).padStart(2, "0")} ·{" "}
                     {name(ghostHere)}
                   </span>
                 )}
@@ -799,7 +968,6 @@ function WeekGrid({
       <p className="p-help">
         <Plus size={14} aria-hidden="true" /> {t.agenda.hint} · {t.booking.zone}
       </p>
-      {confirm.element}
     </div>
   );
 }
@@ -810,6 +978,7 @@ function MonthGrid({
   appointments,
   config,
   blocks,
+  onBlock,
   name,
   onOpen,
   onDay,
@@ -819,6 +988,7 @@ function MonthGrid({
   appointments: Appointment[];
   config: BookingConfig;
   blocks: TimeBlock[];
+  onBlock: (block: TimeBlock) => void;
   name: (a: Appointment) => string;
   onOpen: (id: string) => void;
   onDay: (day: DayKey) => void;
@@ -838,7 +1008,7 @@ function MonthGrid({
         const items = byDay.get(d) ?? [];
         const googleBusy = blocks.filter(
           (b) =>
-            b.id.startsWith('google:') &&
+            b.id.startsWith("google:") &&
             Date.parse(b.start) < atMinutes(addDays(d, 1), 0).getTime() &&
             Date.parse(b.end) > atMinutes(d, 0).getTime(),
         ).length;
@@ -865,13 +1035,31 @@ function MonthGrid({
                   className="p-month-event"
                   data-status={a.status}
                   data-past={Date.parse(a.end) < Date.now() || undefined}
-                  style={{ '--type': type?.colour } as CSSProperties}
+                  style={{ "--type": type?.colour } as CSSProperties}
                   onClick={() => onOpen(a.id)}
                 >
                   {time(a.start)} {name(a)}
                 </button>
               );
             })}
+            {blocks
+              .filter(
+                (b) =>
+                  !b.id.startsWith("google:") &&
+                  Date.parse(b.start) < atMinutes(addDays(d, 1), 0).getTime() &&
+                  Date.parse(b.end) > atMinutes(d, 0).getTime(),
+              )
+              .slice(0, 2)
+              .map((b) => (
+                <button
+                  type="button"
+                  key={b.id}
+                  className="p-month-event"
+                  onClick={() => onBlock(b)}
+                >
+                  <Lock size={10} /> {b.reason || t.agenda.blocked}
+                </button>
+              ))}
             {items.length > 3 && (
               <button
                 type="button"

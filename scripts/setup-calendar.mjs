@@ -20,6 +20,8 @@ if (Object.keys(generated).length) await saveCredentials(generated);
 for (const [version, name] of [
   ["20261029140000", "google_calendar"],
   ["20261029210000", "google_calendar_blocks"],
+  ["20261029223000", "calendar_details"],
+  ["20261029224500", "calendar_retry_frequency"],
 ]) {
   if (
     !(
@@ -49,7 +51,7 @@ await management(
 await query(
   `insert into private.portal_jobs(id,secret) values('google-calendar',${literal(credentials.GOOGLE_CALENDAR_JOB_SECRET)}) on conflict(id) do update set secret=excluded.secret`,
 );
-await query(`select cron.schedule('ldgenx-google-calendar','*/5 * * * *',$job$
+await query(`select cron.schedule('ldgenx-google-calendar','* * * * *',$job$
  select net.http_post(
  url := 'https://rkkvvqwgxbtnvewyrylj.supabase.co/functions/v1/calendar/jobs',
  headers := jsonb_build_object('Content-Type','application/json','x-calendar-job-key',(select secret from private.portal_jobs where id='google-calendar')),
@@ -57,5 +59,5 @@ await query(`select cron.schedule('ldgenx-google-calendar','*/5 * * * *',$job$
  ) where exists(select 1 from private.google_calendar_connection where enabled);
 $job$)`);
 console.log(
-  "Private Calendar tables, encrypted credential storage and conditional five-minute retries configured. Connection still requires owner consent.",
+  "Private Calendar tables, encrypted credential storage and conditional one-minute retries configured (full reconciliation at most every five minutes). Connection still requires owner consent.",
 );

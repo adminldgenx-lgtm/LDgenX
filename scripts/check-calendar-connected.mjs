@@ -1,3 +1,8 @@
+import {
+  atMinutes,
+  teamDay,
+  addDays,
+} from "../supabase/functions/_shared/time.ts";
 // Real connected-calendar round trip, confined to QA appointments and QA blocks.
 // The QA client has notifications disabled; the admin actor never notifies other admins.
 import assert from "node:assert/strict";
@@ -18,7 +23,7 @@ const users = [],
   blocks = [],
   checks = [],
   run = randomUUID().slice(0, 8);
-let token, google;
+let token, google, clientToken;
 const ok = (condition, label) => {
   assert(condition, label);
   checks.push(label);
@@ -51,9 +56,17 @@ async function account(admin) {
     assert(!signed.error);
     token = signed.data.session.access_token;
   }
+  if (!admin) {
+    const client = createClient(project, key, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const signed = await client.auth.signInWithPassword({ email, password });
+    assert(!signed.error);
+    clientToken = signed.data.session.access_token;
+  }
   return made.data.user.id;
 }
-async function call(path, method = "GET", body, api = "portal") {
+async function call(path, method = "GET", body, api = "portal", expected) {
   const r = await fetch(`${project}/functions/v1/${api}${path}`, {
     method,
     headers: {
@@ -65,7 +78,8 @@ async function call(path, method = "GET", body, api = "portal") {
     signal: AbortSignal.timeout(90000),
   });
   const value = await r.json().catch(() => null);
-  assert(r.ok, `${method} ${path} HTTP ${r.status} ${value?.code ?? ""}`);
+  if (expected !== undefined) assert.equal(r.status, expected);
+  else assert(r.ok, `${method} ${path} HTTP ${r.status} ${value?.code ?? ""}`);
   return value;
 }
 async function exportsFor(id, block = false) {
@@ -75,7 +89,7 @@ async function exportsFor(id, block = false) {
 }
 async function readEvent(mapping) {
   return google.request(
-    `/calendars/${encodeURIComponent(mapping.calendar_id)}/events/${encodeURIComponent(mapping.event_id)}?fields=id,status,start,end,extendedProperties`,
+    `/calendars/${encodeURIComponent(mapping.calendar_id)}/events/${encodeURIComponent(mapping.event_id)}?fields=id,status,start,end,extendedProperties,summary,description,location,source,reminders,htmlLink`,
   );
 }
 try {
@@ -100,6 +114,7 @@ try {
       assert(!deleted.error);
     }
   const client = await account(false);
+  const connectionStatus = await call("/status", "GET", undefined, "calendar");
   const config = await call("/booking/config"),
     host = config.hosts.find((h) => h.bookable),
     type = config.types.find((t) => t.active);
@@ -125,6 +140,33 @@ try {
     remote.status === 200 &&
       Date.parse(remote.value.start.dateTime) === Date.parse(booking.start),
     "Real Google event time matches the portal appointment",
+  );
+  ok(
+    remote.value.source?.url.includes("rdv=" + booking.id) &&
+      !!remote.value.summary &&
+      !!remote.value.htmlLink,
+    "Real Google appointment contains a useful title, source link and view URL",
+  );
+  const item = await call(
+    `/item/appointment/${booking.id}`,
+    "GET",
+    undefined,
+    "calendar",
+  );
+  ok(
+    item.state === "synced" && item.links.length === 1 && item.syncedAt,
+    "Per-appointment synchronization state reports the acknowledged Google export",
+  );
+  for (const path of [`/item/appointment/${booking.id}`, "/preferences"]) {
+    const r = await fetch(`${project}/functions/v1/calendar${path}`, {
+      method: path === "/preferences" ? "PUT" : "GET",
+      headers: { apikey: key, Authorization: `Bearer ${clientToken}` },
+    });
+    assert.equal(r.status, 403);
+  }
+  ok(
+    true,
+    "Clients cannot read team Google export metadata or change sharing preferences",
   );
   const moved = new Date(start.getTime() + 3600000).toISOString();
   await call(`/appointments/${booking.id}/move`, "POST", { start: moved });
@@ -153,8 +195,12 @@ try {
     blocks.push(block.id);
     maps = await exportsFor(block.id, true);
     ok(
-      maps.length === config.hosts.filter((h) => h.bookable).length,
-      "Whole-team block exports to every bookable person’s Google calendar",
+      maps.length ===
+        (connectionStatus.preferences?.teamBlocks === "shared" &&
+        connectionStatus.teamCalendar
+          ? 1
+          : config.hosts.filter((h) => h.bookable).length),
+      "Whole-team block uses the configured shared or individual Google calendars",
     );
     for (const mapping of maps) {
       const event = await readEvent(mapping);
@@ -179,8 +225,79 @@ try {
       !busy.some((b) => maps.some((m) => b.id.endsWith(m.event_id))),
       "Managed block copies are not imported as duplicate Google busy entries",
     );
+    const firstMaps = [...maps];
+    const renamed = await call(`/booking/blocks/${block.id}`, "PATCH", {
+      hostId: host.id,
+      start: block.start,
+      end: block.end,
+      reason: "QA disponibilité renommée",
+      version: block.version ?? 1,
+    });
+    maps = await exportsFor(block.id, true);
+    assert.equal(maps.length, 1);
+    const personal = await readEvent(maps[0]);
+    assert.equal(personal.status, 200);
+    if (connectionStatus.preferences?.shareBlockTitles !== false)
+      assert(personal.value.summary.includes("renommée"));
+    ok(
+      true,
+      "Editing a blocked time changes its Google title and scope without leaving old copies",
+    );
+    const stale = await call(
+      `/booking/blocks/${block.id}`,
+      "PATCH",
+      {
+        hostId: null,
+        start: block.start,
+        end: block.end,
+        reason: "Stale edit",
+        version: block.version ?? 1,
+      },
+      "portal",
+      409,
+    );
+    assert.equal(stale.code, "stale_record");
+    ok(
+      true,
+      "Concurrent stale block edits are rejected without overwriting newer data",
+    );
+    const firstDay = addDays(teamDay(start), 2),
+      lastExclusive = addDays(firstDay, 2);
+    await call(`/booking/blocks/${block.id}`, "PATCH", {
+      hostId: null,
+      start: atMinutes(firstDay, 0).toISOString(),
+      end: atMinutes(lastExclusive, 0).toISOString(),
+      reason: "QA journées entières",
+      allDay: true,
+      version: renamed.version,
+    });
+    const personalMaps = maps;
+    maps = await exportsFor(block.id, true);
+    const allDay = await readEvent(maps[0]);
+    assert.equal(allDay.value.start.date, firstDay);
+    assert.equal(allDay.value.end.date, lastExclusive);
+    assert.equal(
+      new URL(allDay.value.source.url).searchParams.get("date"),
+      firstDay,
+    );
+    ok(
+      true,
+      "All-day edits preserve calendar-day boundaries and direct record links in real Google",
+    );
+    const blockInfo = await call(
+      `/item/block/${block.id}`,
+      "GET",
+      undefined,
+      "calendar",
+    );
+    assert.equal(blockInfo.state, "synced");
+    assert(blockInfo.links.length > 0);
+    ok(
+      true,
+      "Blocked-time details expose current Google links and a synchronized acknowledgement",
+    );
     await call(`/booking/blocks/${block.id}`, "DELETE");
-    for (const mapping of maps) {
+    for (const mapping of [...maps, ...firstMaps, ...personalMaps]) {
       const event = await readEvent(mapping);
       assert(
         [404, 410].includes(event.status) ||

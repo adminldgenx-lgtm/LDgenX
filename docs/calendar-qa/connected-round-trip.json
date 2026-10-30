@@ -1,13 +1,20 @@
 {
-  "date": "2026-10-29T21:09:36.989Z",
+  "date": "2026-10-29T22:07:25.602Z",
   "checks": [
     "Website API appointment creates a mapped Google event",
     "Real Google event time matches the portal appointment",
+    "Real Google appointment contains a useful title, source link and view URL",
+    "Per-appointment synchronization state reports the acknowledged Google export",
+    "Clients cannot read team Google export metadata or change sharing preferences",
     "Website move updates the same Google event",
     "Website cancellation removes the Google event",
-    "Whole-team block exports to every bookable person’s Google calendar",
+    "Whole-team block uses the configured shared or individual Google calendars",
     "Real Google block events preserve times and their managed identity",
     "Managed block copies are not imported as duplicate Google busy entries",
+    "Editing a blocked time changes its Google title and scope without leaving old copies",
+    "Concurrent stale block edits are rejected without overwriting newer data",
+    "All-day edits preserve calendar-day boundaries and direct record links in real Google",
+    "Blocked-time details expose current Google links and a synchronized acknowledgement",
     "Deleting the website block removes every managed Google copy",
     "Connected status reports successful export with no pending work or error"
   ],

@@ -54,6 +54,7 @@ export const fr = {
     account_disabled: 'Ce compte est désactivé. Contactez LDgenX.',
     invalid_input: 'Vérifiez les informations saisies.',
     network: 'Le service ne répond pas. Réessayez dans un instant.',
+    stale_record: 'Ce créneau a été modifié depuis son ouverture. Rechargez sa fiche avant de l’enregistrer.',
     calendar_unavailable: 'La disponibilité Google ne peut pas être vérifiée. Aucun créneau ne peut être réservé ou déplacé pour le moment. Contactez LDgenX ou réessayez plus tard.',
     generic: 'Une erreur est survenue.',
   },

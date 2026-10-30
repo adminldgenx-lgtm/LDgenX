@@ -55,6 +55,7 @@ export const en: Dictionary = {
     account_disabled: 'This account is disabled. Please contact LDgenX.',
     invalid_input: 'Please check the information entered.',
     network: 'The service is not responding. Please try again in a moment.',
+    stale_record: 'This blocked time changed after you opened it. Reload its details before saving.',
     calendar_unavailable: 'Google availability cannot be checked. Appointments cannot be booked or moved for now. Contact LDgenX or try again later.',
     generic: 'Something went wrong.',
   },

@@ -138,6 +138,10 @@ export interface TimeBlock {
   start: string;
   end: string;
   reason: string;
+  allDay?: boolean;
+  version?: number;
+  updatedAt?: string;
+  sourceUrl?: string;
 }
 
 export interface BookingConfig {
@@ -290,6 +294,7 @@ export class PortalError extends Error {
       | 'invalid_input'
       | 'network'
       | 'calendar_unavailable'
+      | 'stale_record'
       | 'email_unavailable'
       | 'email_not_confirmed'
       | 'rate_limited',
@@ -411,6 +416,13 @@ export interface PortalApi {
   ): Promise<Appointment>;
   /** Team only. */
   addBlock(block: Omit<TimeBlock, 'id'>): Promise<TimeBlock>;
+  updateBlock(
+    id: string,
+    patch: Pick<TimeBlock, 'hostId' | 'start' | 'end' | 'reason'> & {
+      allDay?: boolean;
+      version: number;
+    },
+  ): Promise<TimeBlock>;
   /** Team only. */
   removeBlock(id: string): Promise<void>;
 

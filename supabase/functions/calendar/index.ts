@@ -7,6 +7,8 @@ import {
   CALENDAR_SCOPES,
   CalendarError,
   validateCalendarMap,
+  calendarPreferences,
+  validateCalendarPreferences,
 } from "../_shared/calendar.ts";
 import {
   calendarConnection,
@@ -15,6 +17,9 @@ import {
   externalCalendarBusy,
   enqueueCalendarBlocks,
   runCalendarSync,
+  enqueueCalendarRefresh,
+  calendarItemState,
+  configureTeamCalendar,
 } from "../_shared/google-calendar.ts";
 import type { BookingConfig } from "../_shared/types.ts";
 const project = Deno.env.get("SUPABASE_URL")!,
@@ -67,6 +72,39 @@ async function booking(sql: Sql) {
 }
 const recordedBusy = (sql: Sql, from: string, to: string) =>
   externalCalendarBusy(sql, from, to, true);
+async function readJson(req: Request) {
+  const reader = req.body?.getReader();
+  let raw = "",
+    size = 0;
+  if (reader) {
+    const decoder = new TextDecoder();
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        size += value.byteLength;
+        if (size > 20000) {
+          await reader.cancel();
+          throw new CalendarError("invalid_input", 400);
+        }
+        raw += decoder.decode(value, { stream: true });
+      }
+      raw += decoder.decode();
+    } finally {
+      reader.releaseLock();
+    }
+  }
+  let body;
+  try {
+    body = JSON.parse(raw);
+  } catch {
+    throw new CalendarError("invalid_input", 400);
+  }
+  if (!body || typeof body !== "object" || Array.isArray(body))
+    throw new CalendarError("invalid_input", 400);
+
+  return body;
+}
 async function consumeCallback(url: URL, sql: Sql) {
   const state = url.searchParams.get("state") ?? "";
   if (!/^[a-f0-9]{64}$/.test(state))
@@ -247,24 +285,30 @@ Deno.serve(async (req) => {
         throw new CalendarError("forbidden", 403);
       const connection = await calendarConnection(sql);
       if (!connection?.enabled) return respond({ synced: 0, pending: 0 });
-      try {
-        const config = await booking(sql);
-        await recordedBusy(
-          sql,
-          new Date().toISOString(),
-          new Date(
-            Date.now() + Math.min(config.horizonDays, 93) * 86400000,
-          ).toISOString(),
-        );
-      } catch {
-        /* Busy failure remains recorded and booking checks fail closed; exports still retry. */
+      if (
+        !connection.last_reconcile_at ||
+        Date.now() - new Date(connection.last_reconcile_at).getTime() > 300000
+      ) {
+        try {
+          const config = await booking(sql);
+          await recordedBusy(
+            sql,
+            new Date().toISOString(),
+            new Date(
+              Date.now() + Math.min(config.horizonDays, 93) * 86400000,
+            ).toISOString(),
+          );
+        } catch {
+          /* Busy failure remains recorded and booking checks fail closed; exports still retry. */
+        }
+        await sql`update private.google_calendar_connection set last_reconcile_at=now() where id=true`;
       }
       return respond(await runCalendarSync(sql));
     }
     const actor = await authenticate(req, sql);
     if (path === "/status" && req.method === "GET") {
       const [row] =
-        await sql`select enabled,owner_email,credentials is not null as connected,managed,busy,last_sync_at,coalesce(last_busy_error,last_error) as last_error,last_busy_checked_at,refresh_expires_at from private.google_calendar_connection where id=true`;
+        await sql`select enabled,owner_email,credentials is not null as connected,managed,busy,last_sync_at,coalesce(last_busy_error,last_error) as last_error,last_busy_checked_at,refresh_expires_at,preferences,team_creation_token from private.google_calendar_connection where id=true`;
       const [pending] =
         await sql`select ((select count(*) from private.google_calendar_outbox)+(select count(*) from private.google_calendar_block_outbox))::int as count`;
       return respond({
@@ -280,10 +324,35 @@ Deno.serve(async (req) => {
         lastBusyCheck: row.last_busy_checked_at,
         refreshExpires: row.refresh_expires_at,
         pending: pending.count,
+        preferences: calendarPreferences(row.preferences),
+        teamCalendar: row.managed._team ?? null,
+        teamNeedsAttention: !!row.team_creation_token && !row.managed._team,
         hosts: (await booking(sql)).hosts
           .filter((h) => h.bookable)
           .map(({ id, name }) => ({ id, name })),
       });
+    }
+    const item = path.match(/^\/item\/(appointment|block)\/([^/]+)$/);
+    if (item && req.method === "GET")
+      return respond(
+        await calendarItemState(
+          sql,
+          item[1] as "appointment" | "block",
+          decodeURIComponent(item[2]),
+        ),
+      );
+    if (path === "/preferences" && req.method === "PUT") {
+      const body = await readJson(req),
+        prefs = validateCalendarPreferences(body.preferences);
+      if (body.teamCalendarId)
+        await configureTeamCalendar(sql, String(body.teamCalendarId).trim());
+      await sql.begin(async (transaction) => {
+        const tx = transaction as unknown as Sql;
+        await tx`select pg_advisory_xact_lock(hashtextextended('booking',0))`;
+        await tx`update private.google_calendar_connection set preferences=${tx.json(prefs as never)},updated_at=now() where id=true`;
+        await enqueueCalendarRefresh(tx);
+      });
+      return respond(await runCalendarSync(sql));
     }
     if (path === "/connect" && req.method === "POST") {
       if (!ready()) throw new CalendarError("not_configured");
@@ -327,35 +396,7 @@ Deno.serve(async (req) => {
       );
     }
     if (path === "/config" && req.method === "PUT") {
-      const reader = req.body?.getReader();
-      let raw = "",
-        size = 0;
-      if (reader) {
-        const decoder = new TextDecoder();
-        try {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            size += value.byteLength;
-            if (size > 20000) {
-              await reader.cancel();
-              throw new CalendarError("invalid_input", 400);
-            }
-            raw += decoder.decode(value, { stream: true });
-          }
-          raw += decoder.decode();
-        } finally {
-          reader.releaseLock();
-        }
-      }
-      let body;
-      try {
-        body = JSON.parse(raw);
-      } catch {
-        throw new CalendarError("invalid_input", 400);
-      }
-      if (!body || typeof body !== "object" || Array.isArray(body))
-        throw new CalendarError("invalid_input", 400);
+      const body = await readJson(req);
       const config = await booking(sql),
         busy = validateCalendarMap(body.busy, config),
         connection = await calendarConnection(sql);
@@ -381,6 +422,9 @@ Deno.serve(async (req) => {
       return respond({ ok: true });
     }
     if (path === "/sync" && req.method === "POST") {
+      await enqueueCalendarRefresh(sql, false);
+      await sql`update private.google_calendar_outbox set next_attempt_at=now()`;
+      await sql`update private.google_calendar_block_outbox set next_attempt_at=now()`;
       const config = await booking(sql);
       await recordedBusy(
         sql,

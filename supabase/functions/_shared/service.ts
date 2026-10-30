@@ -18,7 +18,7 @@ import {
 } from './types.ts';
 import { computeSlots, heldSpans } from './availability.ts';
 import { fileExpiry } from './retention.ts';
-import { DAY, MINUTE } from './time.ts';
+import { DAY, MINUTE, atMinutes, teamDay } from './time.ts';
 import { productionOrigin } from './site.ts';
 
 export interface Records {
@@ -168,6 +168,15 @@ function validateBlock(b: Omit<TimeBlock, 'id'>, c: BookingConfig) {
   if (
     date(b.start) >= date(b.end) ||
     (b.hostId !== null && !c.hosts.some((h) => h.id === b.hostId))
+  )
+    throw new PortalError('invalid_input');
+  if (b.allDay !== undefined && typeof b.allDay !== 'boolean')
+    throw new PortalError('invalid_input');
+  if (
+    b.allDay &&
+    (date(b.start) !==
+      atMinutes(teamDay(Date.parse(b.start)), 0).toISOString() ||
+      date(b.end) !== atMinutes(teamDay(Date.parse(b.end)), 0).toISOString())
   )
     throw new PortalError('invalid_input');
   text(b.reason, 500);
@@ -754,7 +763,16 @@ export class PortalService {
     return (
       await this.db.list('appointments', u.role === 'admin' ? undefined : u.id)
     )
-      .filter((a) => !range || (a.end > range.from && a.start < range.to))
+      .filter(
+        (a) =>
+          !range ||
+          (a.end > range.from && a.start < range.to) ||
+          !!(
+            a.change &&
+            a.change.end > range.from &&
+            a.change.start < range.to
+          ),
+      )
       .sort((a, b) => a.start.localeCompare(b.start));
   }
   async requestAppointment(input: RequestInput) {
@@ -948,6 +966,11 @@ export class PortalService {
       reason: text(block.reason, 500),
     };
     c.blocks.push(b);
+    Object.assign(b, {
+      allDay: block.allDay === true,
+      version: 1,
+      updatedAt: now(),
+    });
     await this.db.setSetting('booking', c);
     return b;
   }
@@ -956,6 +979,35 @@ export class PortalService {
     const c = await this.config();
     c.blocks = c.blocks.filter((b) => b.id !== id);
     await this.db.setSetting('booking', c);
+  }
+  async updateBlock(
+    id: string,
+    patch: Pick<TimeBlock, 'hostId' | 'start' | 'end' | 'reason'> & {
+      allDay?: boolean;
+      version: number;
+    },
+  ) {
+    this.need(true);
+    const c = await this.config(),
+      b = c.blocks.find((b) => b.id === id);
+    if (!b) throw new PortalError('not_found');
+    integer(patch.version, 1, 2147483647);
+    if (patch.version !== (b.version ?? 1))
+      throw new PortalError('stale_record');
+    validateBlock(patch, c);
+    const updated = {
+      ...b,
+      hostId: patch.hostId,
+      start: date(patch.start),
+      end: date(patch.end),
+      reason: text(patch.reason, 500),
+      allDay: patch.allDay === true,
+      version: (b.version ?? 1) + 1,
+      updatedAt: now(),
+    };
+    c.blocks = c.blocks.map((item) => (item.id === id ? updated : item));
+    await this.db.setSetting('booking', c);
+    return updated;
   }
   async listActivity(limit = 50) {
     const u = this.need();

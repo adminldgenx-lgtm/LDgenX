@@ -1,3 +1,5 @@
+import { calendarPreferences } from "../../../supabase/functions/_shared/calendar";
+import { CalendarPreferencesForm } from "../CalendarPreferencesForm";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ExternalLink, RefreshCw } from "lucide-react";
@@ -47,6 +49,10 @@ export function GoogleCalendarPanel() {
       return fr
         ? "Vérifiez les identifiants : un agenda externe par ligne, 15 maximum par personne. Les agendas créés par LDgenX sont déjà inclus automatiquement."
         : "Check the IDs: one external calendar per line, up to 15 per person. LDgenX-created calendars are already included automatically.";
+    if (code === "team_calendar_attention")
+      return fr
+        ? "Google n’a pas confirmé la création de l’agenda équipe. Pour éviter les doublons, aucune autre création automatique ne sera tentée. Vérifiez Google Agenda puis renseignez l’identifiant dans les options avancées, ou choisissez une copie par personne."
+        : "Google did not confirm team calendar creation. Automatic retries will not create more calendars. Check Google Calendar, then enter its ID in advanced options or choose one copy per person.";
     if (code === "not_configured")
       return fr
         ? "La connexion Google n’est pas encore configurée sur le serveur."
@@ -196,8 +202,8 @@ export function GoogleCalendarPanel() {
         </p>
         <p className="p-help">
           {fr
-            ? "Les titres et descriptions de vos événements privés ne sont pas copiés. Les rendez-vous exportés ne contiennent ni nom de client, ni adresse e-mail, ni sujet. Aucune invitation Google n’est envoyée."
-            : "Private event titles and descriptions are not copied. Exported appointments contain no client name, email address or subject. No Google invitations are sent."}
+            ? "Les titres et descriptions de vos événements privés ne sont pas copiés. Les noms et sujets des clients restent privés par défaut. Le partage est réglable ci-dessous. Les champs d’e-mail et de téléphone des clients ne sont pas exportés. Aucune invitation Google n’est envoyée."
+            : "Private event titles and descriptions are not copied. Client names and subjects remain private by default; sharing is configurable below. Client email and phone fields are not exported. No Google invitations are sent."}
         </p>
         <p className="p-help">
           {fr
@@ -216,6 +222,27 @@ export function GoogleCalendarPanel() {
               fr
                 ? "Agendas vérifiés et enregistrés."
                 : "Calendars checked and saved.",
+            )
+          }
+        />
+      )}
+      {s.connected && (
+        <CalendarPreferencesForm
+          key={JSON.stringify(s.preferences)}
+          settings={calendarPreferences(s.preferences)}
+          teamId={s.teamCalendar}
+          attention={s.teamNeedsAttention}
+          disabled={busy}
+          save={(preferences, teamCalendarId) =>
+            act(
+              () =>
+                calendarRequest("/preferences", "PUT", {
+                  preferences,
+                  ...(teamCalendarId ? { teamCalendarId } : {}),
+                }),
+              fr
+                ? "Paramètres enregistrés. Les événements concernés sont mis à jour."
+                : "Settings saved. Relevant events are being updated.",
             )
           }
         />

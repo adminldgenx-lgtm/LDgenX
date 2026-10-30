@@ -24,6 +24,9 @@ import {
   googleEventSpans,
   validateCalendarMap,
   CalendarError,
+  calendarEventMatches,
+  calendarEventRange,
+  validateCalendarPreferences,
 } from "../supabase/functions/_shared/calendar.ts";
 import {
   encryptCalendarCredentials,
@@ -109,6 +112,8 @@ test("busy intervals handle Paris all-day DST boundaries, transparency, recurren
     "maeva",
   );
   assert.equal(spans.length, 2);
+  assert.equal(spans[0].allDay, true);
+  assert.equal(spans[1].allDay, false);
   assert.equal(
     Date.parse(spans[0].end) - Date.parse(spans[0].start),
     25 * 3600000,
@@ -353,7 +358,11 @@ test("live-busy bridge ignores only matching managed events; moved events block 
       });
     }
     assert(url.includes("fields="));
-    assert(!url.includes("summary"));
+    assert(
+      Object.values(calendars).some((id) =>
+        url.includes(encodeURIComponent(id)),
+      ),
+    );
     assert(!url.includes("description"));
     const isHost = url.includes(encodeURIComponent(calendars.maeva));
     return Response.json({
@@ -405,7 +414,10 @@ test("whole-team blocked times export to every bookable calendar without copying
       hostId: null,
       reason: "PRIVATE INTERNAL REASON",
     };
-  const events = blockGoogleEvents(block, c, managed);
+  const events = blockGoogleEvents(block, c, managed, {
+    shareBlockTitles: false,
+    teamBlocks: "per_host",
+  });
   assert.equal(events.length, c.hosts.filter((h) => h.bookable).length);
   assert.deepEqual(events.map((e) => e.hostId).sort(), [
     "damien",
@@ -485,7 +497,8 @@ test("outbox acknowledgement preserves PostgreSQL microseconds instead of leavin
     if (text.includes("insert into private.google_calendar_events")) return [];
     if (text.includes("delete from private.google_calendar_outbox")) {
       observed.push(values[1]);
-      if (text.includes("revision::text") && values[1] === revision) pending = false;
+      if (text.includes("revision::text") && values[1] === revision)
+        pending = false;
       return [];
     }
     if (text.includes("select data from public.portal_settings"))
@@ -510,4 +523,175 @@ test("outbox acknowledgement preserves PostgreSQL microseconds instead of leavin
   } finally {
     globalThis.fetch = original;
   }
+});
+
+test("shared team blocks have one useful Google event with a direct editable-record link", () => {
+  const config = structuredClone(defaultBooking),
+    b = {
+      id: "team-block",
+      hostId: null,
+      start: iso(10),
+      end: iso(11),
+      reason: "Réunion de laboratoire",
+    };
+  const events = blockGoogleEvents(b, config, {
+    ...managed,
+    _team: "team@group.calendar.google.com",
+  });
+  assert.equal(events.length, 1);
+  assert.equal(events[0].hostId, "_team");
+  assert.equal(
+    events[0].body.summary,
+    "Réunion de laboratoire · Toute l’équipe",
+  );
+  const link = new URL(events[0].body.source.url);
+  assert.equal(link.searchParams.get("creneau"), b.id);
+  assert.equal(link.searchParams.get("date"), day);
+  assert(events[0].body.description.includes("Personnes concernées"));
+  assert.equal(events[0].body.reminders.useDefault, false);
+  assert.equal(
+    blockGoogleEvents(
+      b,
+      config,
+      { ...managed, _team: "team@group.calendar.google.com" },
+      { teamBlocks: "per_host" },
+    ).length,
+    3,
+  );
+});
+test("all-day blocks keep exclusive Google end dates across the Paris clock change", () => {
+  const b = {
+    id: "dst-day",
+    hostId: "maeva",
+    reason: "Congés",
+    allDay: true,
+    start: atMinutes("2026-03-29", 0).toISOString(),
+    end: atMinutes("2026-03-31", 0).toISOString(),
+  };
+  const [event] = blockGoogleEvents(
+    b,
+    structuredClone(defaultBooking),
+    managed,
+  );
+  assert.equal(event.body.start.date, "2026-03-29");
+  assert.equal(event.body.end.date, "2026-03-31");
+  const span = calendarEventRange(event.body);
+  assert.equal(span.end - span.start, 47 * 3600000);
+  assert(
+    calendarEventMatches({ ...event.body, id: "different-id" }, event.body),
+  );
+});
+test("rich appointment exports withhold private details by default and escape explicitly shared text", () => {
+  const config = structuredClone(defaultBooking),
+    a = {
+      ...fixture,
+      meetingUrl: "https://meet.example.invalid/session",
+      topic: "<script>alert(1)</script>",
+    };
+  const [safe] = appointmentGoogleEvents(a, managed, config);
+  assert(safe.body.summary.includes(config.types[0].label.fr));
+  assert(!safe.body.description.includes("PRIVATE"));
+  assert(!safe.body.description.includes("<script>"));
+  assert(safe.body.location.includes("meet.example.invalid"));
+  assert.equal(safe.body.reminders.overrides[0].method, "popup");
+  const [shared] = appointmentGoogleEvents(
+    a,
+    managed,
+    config,
+    {
+      shareClientDetails: true,
+      shareAppointmentNotes: true,
+      shareMeetingLink: false,
+      reminderMinutes: null,
+    },
+    { name: "<img src=x>", organisation: "A & B" },
+  );
+  assert(shared.body.description.includes("&lt;img"));
+  assert(shared.body.description.includes("&lt;script&gt;"));
+  assert(!shared.body.description.includes("<script>"));
+  assert(!shared.body.description.includes("meet.example.invalid"));
+  assert.equal(shared.body.reminders.overrides.length, 0);
+  assert.throws(
+    () => validateCalendarPreferences({ shareClientDetails: "yes" }),
+    CalendarError,
+  );
+  assert.throws(
+    () => validateCalendarPreferences({ reminderMinutes: 999 }),
+    CalendarError,
+  );
+});
+test("blocked-time editing preserves other records, checks versions and restricts access", async () => {
+  const c = structuredClone(defaultBooking);
+  c.blocks = [
+    { ...block, version: 1 },
+    { ...block, id: "another" },
+  ];
+  const r = {
+    setting: async () => structuredClone(c),
+    setSetting: async (_key: string, value: unknown) => Object.assign(c, value),
+  } as unknown as Repository;
+  const svc = new PortalService(r, {
+    id: "admin",
+    role: "admin",
+    status: "active",
+  } as User);
+  const changed = await svc.updateBlock(block.id, {
+    ...block,
+    reason: "Nouveau titre",
+    version: 1,
+  });
+  assert.equal(changed.version, 2);
+  assert.equal(c.blocks.length, 2);
+  assert.equal(c.blocks[1].id, "another");
+  await assert.rejects(svc.updateBlock(block.id, { ...block, version: 1 }), {
+    code: "stale_record",
+  });
+  await assert.rejects(
+    new PortalService(r, {
+      id: "client",
+      role: "client",
+      status: "active",
+    } as User).updateBlock(block.id, { ...block, version: 2 }),
+    { code: "forbidden" },
+  );
+  await assert.rejects(
+    svc.updateBlock(block.id, { ...block, allDay: true, version: 2 }),
+    { code: "invalid_input" },
+  );
+});
+
+test("shared Google availability is displayed once for the whole team and still filters per person", async () => {
+  const { agendaBlocks } = await import("../src/portal/calendar-view.ts");
+  const c = structuredClone(defaultBooking),
+    busy = c.hosts
+      .filter((h) => h.bookable)
+      .map((h) => ({
+        ...block,
+        reason: "Réunion laboratoire",
+        id: "google:" + h.id,
+        hostId: h.id,
+      }));
+  const whole = agendaBlocks([], busy, c, "", true);
+  assert.equal(whole.length, 1);
+  assert.equal(whole[0].hostId, null);
+  assert(whole[0].reason.includes("Toute l’équipe"));
+  assert(whole[0].reason.includes("Réunion laboratoire"));
+  const individual = agendaBlocks([], busy, c, "maeva", true);
+  assert.equal(individual.length, 1);
+  assert.equal(individual[0].hostId, "maeva");
+});
+test("pending appointment changes stay visible when their original date is outside the viewed period", async () => {
+  const a = {
+    ...fixture,
+    start: iso(9),
+    end: iso(9, 15),
+    change: { hostId: "maeva", start: iso(15), end: iso(15, 15), at: iso(8) },
+  };
+  const r = { list: async () => [a] } as unknown as Repository;
+  const list = await new PortalService(r, {
+    id: "admin",
+    role: "admin",
+    status: "active",
+  } as User).listAppointments({ from: iso(14), to: iso(16) });
+  assert.equal(list.length, 1);
 });

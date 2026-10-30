@@ -46,6 +46,7 @@ function requestContext() {
     email_unavailable: 503,
     network: 503,
     calendar_unavailable: 503,
+    stale_record: 409,
   };
 
   async function handle(req: Request) {
@@ -288,6 +289,8 @@ function requestContext() {
             return svc.addBlock(body as never);
           match = path.match(/^\/booking\/blocks\/([^/]+)$/);
           if (match && verb === "DELETE") return svc.removeBlock(match[1]);
+          if (match && verb === "PATCH")
+            return svc.updateBlock(match[1], body as never);
           if (path === "/activity" && verb === "GET")
             return svc.listActivity(Number(params.get("limit") ?? 50));
           if (path === "/activity/read" && verb === "POST")

@@ -3135,3 +3135,13 @@ button.p-attachment:hover {
 
 /* Google sign-in keeps identity consent separate from calendar access. */
 .p-google-auth{margin:24px 0 8px}.p-google{background:#fff!important;color:#1f1f1f!important;border:1px solid #c5cbd1!important;font-family:Arial,sans-serif;min-height:44px;gap:12px}.p-google:hover{background:#f7f9fc!important}.p-google svg{flex-shrink:0}.p-auth-divider{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;margin:22px 0}.p-auth-divider:before,.p-auth-divider:after{content:'';height:1px;background:var(--line-soft);flex:1}.p-google-auth .p-help{font-size:11px;margin-top:10px;line-height:1.6}
+
+.p-calendar-sync {display:grid;gap:8px;padding:16px;border:1px solid #dce3dc;border-radius:12px;background:#f5f8f2;overflow-wrap:anywhere;}
+.p-calendar-sync p {margin:0;}
+.p-calendar-sync .p-link {display:flex;gap:7px;align-items:center;}
+.p-calendar-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.p-calendar-facts {display:grid;grid-template-columns:minmax(90px,.65fr) minmax(0,1fr);gap:12px 16px;margin:0;}
+.p-calendar-facts dt {color:var(--muted);}.p-calendar-facts dd {margin:0;overflow-wrap:anywhere;}
+@media(max-width:540px){.p-calendar-fields {grid-template-columns:1fr;}.p-calendar-facts {grid-template-columns:1fr;gap:4px;}.p-calendar-facts dd {margin-bottom:10px;}}
+
+.p-week-block>svg {flex-shrink:0;}.p-week-block-copy {display:block;min-width:0;line-height:1.25;}.p-week-block-copy strong {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:600;overflow-wrap:anywhere;}.p-week-block-copy small {display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;line-height:1.3;}.p-week-block[data-short] .p-week-block-who {display:none;}.p-week-block[data-short] strong {-webkit-line-clamp:1;}
