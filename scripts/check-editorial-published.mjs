@@ -163,11 +163,14 @@ const api = createServer((request, response) => {
   response.end("{}");
 });
 
+const wait = (ms) => new Promise((done) => setTimeout(done, ms));
 const use = async (name) => {
   scenario = name;
   console.log(`\n${name}`);
-  // Each worker instance keeps the public index for 15 seconds.
-  await new Promise((done) => setTimeout(done, 16000));
+  // The index is kept for 15 seconds, then the first request refreshes the edge copy behind it.
+  await wait(16000);
+  await fetch(site + "/faq");
+  await wait(1500);
 };
 const passed = [];
 const ok = (label) => {
@@ -193,6 +196,27 @@ const secure = (response) => {
   ])
     assert(response.headers.get(header), "Missing " + header);
 };
+
+async function outageChecks() {
+  // Before anything is saved at the edge: nothing to serve but the static pages.
+  await use("hanging");
+  for (const path of ["/", "/en", "/services", "/contact"]) {
+    const page = await get(path);
+    assert.equal(page.body, await staticHtml(path), path);
+    assert(page.time < 3500, `${path} took ${Math.round(page.time)} ms`);
+  }
+  ok("Backend hanging, nothing saved yet: pages stay static within 3.5 s");
+  await use("failing");
+  for (const { path } of templates) {
+    const { response, body } = await get(path);
+    assert.equal(response.status, 200, path);
+    assert.equal(body, await staticHtml(path), path);
+  }
+  const page = await get("/ressources/controle");
+  assert.equal(page.response.status, 503);
+  assert(page.response.headers.get("x-robots-tag")?.includes("noindex"));
+  ok(`Backend failing, nothing saved yet: all ${templates.length} pages stay online; CMS-only content is 503/noindex`);
+}
 
 async function workerChecks() {
   await use("untouched");
@@ -297,24 +321,25 @@ async function workerChecks() {
   assert(short.includes("Nouvelle expertise de contrôle"));
   ok("Sitemaps and llms files gain new content and keep edited pages whole");
 
-  await use("failing");
-  for (const { path } of templates) {
-    const { response, body } = await get(path);
-    assert.equal(response.status, 200, path);
-    assert.equal(body, await staticHtml(path), path);
-  }
-  page = await get("/ressources/controle");
-  assert.equal(page.response.status, 503);
-  assert(page.response.headers.get("x-robots-tag")?.includes("noindex"));
-  ok(`Backend failing: all ${templates.length} pages stay online; CMS-only content is 503/noindex`);
-
+  // The edge copy keeps published edits online, and answers at once.
+  await get("/");
   await use("hanging");
-  for (const path of ["/", "/en", "/services", "/contact"]) {
-    page = await get(path);
-    assert.equal(page.body, await staticHtml(path), path);
-    assert(page.time < 3500, `${path} took ${Math.round(page.time)} ms`);
-  }
-  ok("Backend hanging: pages fall back to their static version within 3.5 s");
+  page = await get("/");
+  assert.equal(heading(page.body), "Accueil modifié de contrôle");
+  assert(page.time < 1500, `The homepage took ${Math.round(page.time)} ms`);
+  page = await get("/faq");
+  assert.equal(page.body, await staticHtml("/faq"));
+  assert(page.time < 1500, `An untouched page took ${Math.round(page.time)} ms`);
+  await use("failing");
+  assert.equal(heading((await get("/")).body), "Accueil modifié de contrôle");
+  ok("Backend down after a publication: edits stay online and pages answer at once");
+
+  // A withdrawal or a new edit reaches the HTML on the request after the first.
+  await use("untouched");
+  await get("/");
+  await wait(1500);
+  assert.equal((await get("/")).body, await staticHtml("/"));
+  ok("A withdrawn edit leaves the page once the edge copy has refreshed");
 }
 
 async function browserChecks() {
@@ -440,6 +465,7 @@ try {
     assert(i < 59, "The local Cloudflare runtime did not start");
     await new Promise((done) => setTimeout(done, 1000));
   }
+  await outageChecks();
   await workerChecks();
   await browserChecks();
   console.log(`\n${passed.length} published-state checks passed.`);

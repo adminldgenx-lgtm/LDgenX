@@ -34,6 +34,9 @@ declare const __EDITORIAL_SUPABASE__: { url: string; key: string };
 interface WorkerEnvironment {
   ASSETS: { fetch: (request: Request) => Promise<Response> };
 }
+interface WorkerContext {
+  waitUntil: (task: Promise<unknown>) => void;
+}
 const API = `${__EDITORIAL_SUPABASE__.url}/functions/v1/editorial/public`;
 const cache = new Map<string, { until: number; value: unknown }>();
 // Each request does its own fetch: a promise owned by a visitor who disconnects never settles,
@@ -51,6 +54,46 @@ async function remote<T>(path: string, timeout = 8000): Promise<T> {
   // Bounded per-isolate cache; publication data never includes drafts or signed preview URLs.
   if (cache.size > 100) cache.delete(cache.keys().next().value!);
   return value as T;
+}
+// Existing pages must not make a visitor wait for the backend. The last answer is kept at the edge
+// and served at once while the next one is fetched, so an edit reaches the HTML within a request.
+const refreshing = new Set<string>();
+async function recent<T>(
+  path: string,
+  origin: string,
+  context: WorkerContext,
+): Promise<T> {
+  const edge = (caches as unknown as { default: Cache }).default;
+  const key = new Request(`${origin}/api/editorial/recent${path}`);
+  const refresh = async () => {
+    const value = await remote<T>(path, 2500);
+    await edge
+      .put(
+        key,
+        new Response(JSON.stringify(value), {
+          headers: {
+            "Cache-Control": "public, max-age=2592000",
+            "X-Saved": String(Date.now()),
+          },
+        }),
+      )
+      .catch(() => {});
+    return value;
+  };
+  const saved = await edge.match(key).catch(() => undefined);
+  if (!saved) return refresh();
+  if (
+    Date.now() - Number(saved.headers.get("X-Saved")) > 15000 &&
+    !refreshing.has(path)
+  ) {
+    refreshing.add(path);
+    context.waitUntil(
+      refresh()
+        .catch(() => {})
+        .finally(() => refreshing.delete(path)),
+    );
+  }
+  return (await saved.json()) as T;
 }
 const xml = (s: string) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
@@ -243,7 +286,7 @@ function response(
   });
 }
 export default {
-  async fetch(request: Request, env: WorkerEnvironment) {
+  async fetch(request: Request, env: WorkerEnvironment, context: WorkerContext) {
     const url = new URL(request.url);
     if (url.pathname === "/api/auth/google/callback") {
       if (request.method !== "GET")
@@ -314,12 +357,14 @@ export default {
       });
     }
     // Existing pages stay on the CDN until a publication changes them: identical bytes, no render
-    // cost, and an unreachable backend only costs them this short wait.
+    // cost, and no wait for the backend.
     const cdnFirst =
       editablePaths.has(url.pathname) && !renderedPaths.test(url.pathname);
     try {
       const index = [
-        ...(await remote<EditorialSummary[]>("/index", cdnFirst ? 2500 : 8000)),
+        ...(await (cdnFirst
+          ? recent<EditorialSummary[]>("/index", url.origin, context)
+          : remote<EditorialSummary[]>("/index"))),
       ];
       if (url.pathname === "/api/editorial/index")
         return response(
@@ -375,10 +420,11 @@ export default {
       )
         return env.ASSETS.fetch(request);
       if (selected || !staticPage) {
+        const documentPath = `/document?path=${encodeURIComponent(url.pathname)}`;
         try {
-          doc = await remote<PublishedDocument>(
-            `/document?path=${encodeURIComponent(url.pathname)}`,
-          );
+          doc = await (cdnFirst
+            ? recent<PublishedDocument>(documentPath, url.origin, context)
+            : remote<PublishedDocument>(documentPath));
         } catch (e) {
           if (e instanceof Error && e.message === "404" && !selected)
             return env.ASSETS.fetch(request);

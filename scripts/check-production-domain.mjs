@@ -126,9 +126,22 @@ print(json.dumps(out))
 );
 const listed = Object.values(xmlResult).flatMap((x) => x.urls);
 check(listed.length === new Set(listed).size, "Duplicate sitemap URL");
-const expected = pages
-  .filter((p) => !p.noindex)
-  .map((p) => productionOrigin + p.path)
+// The built catalogue, plus what has been published since and minus what has been withdrawn.
+const editorial = JSON.parse(
+  (await get(productionOrigin + "/api/editorial/index")).body,
+).filter((row) => row.kind !== "page");
+const withdrawn = editorial
+  .filter((row) => row.status === "withdrawn")
+  .map((row) => productionOrigin + row.path);
+const expected = [
+  ...new Set([
+    ...pages.filter((p) => !p.noindex).map((p) => productionOrigin + p.path),
+    ...editorial
+      .filter((row) => row.status === "published")
+      .map((row) => productionOrigin + row.path),
+  ]),
+]
+  .filter((url) => !withdrawn.includes(url))
   .sort();
 check(
   JSON.stringify([...listed].sort()) === JSON.stringify(expected),
