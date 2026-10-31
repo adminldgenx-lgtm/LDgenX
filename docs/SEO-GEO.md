@@ -59,11 +59,18 @@ What is built into the site so that search engines (Google, Bing, Qwant, DuckDuc
 - **Citations.** DOIs, the HAL report, ENA accessions, the Water Agency documents: assistants favour sources that cite sources.
 - **Freshness.** Real `lastmod` and `dateModified`, IndexNow pings, and the publication watcher.
 
+**Added on 31 October 2026:**
+
+- **Favicon for Google.** Search results showed a generic "G": `/favicon.ico` answered 404 and the only icon declared was 32 px, while Google wants a square multiple of 48 px. The same artwork now also exists at 48, 96 and 192 px.
+- **Wording.** Titles and descriptions of the home, about and contact pages, `knowsAbout` and one FAQ answer now say what was only implicit: "génétique environnementale", "près de Montpellier". Facts only; the FAQ and contact page already stated the location.
+- **New content.** Every publication gets its address, canonical, `hreflang`, structured data with dates, share picture, sitemap entry with its real date, a line in `llms.txt`, and an IndexNow ping.
+- **`ldgenx.com`.** It redirects to `.fr`, so its Search Console property can never read a sitemap of its own: that error is expected. Old English addresses must land on English pages: the zone's redirect rule has to target `/en` (see the release note).
+
 ## 2. Keyword map (French first)
 
 | Page | Main queries |
 |---|---|
-| Home | génomique appliquée, analyses ADN environnement, LDgenX |
+| Home | génomique appliquée, génétique environnementale, ADN environnemental Montpellier, LDgenX |
 | ADN environnemental | ADN environnemental, analyse ADNe, laboratoire ADNe, métabarcoding, inventaire biodiversité ADN |
 | Tests ADN ciblés | test ADN espèce, détection espèce ADN eau, dPCR ADNe, PCR digitale espèce, ADNe vison d'Europe, ADN thon rouge, requins ADNe, tortue caouanne ADN |
 | Génomique des populations | génomique des populations, génétique de la conservation, diversité génétique population, panel SNP, 3D-GBS |

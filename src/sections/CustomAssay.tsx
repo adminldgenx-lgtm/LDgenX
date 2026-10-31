@@ -481,9 +481,10 @@ export function SpeciesWall() {
 /** The homepage's way to the targeted DNA tests: a species photograph, the number of species
  *  held in house and their names passing by. */
 export function CustomAssayTeaser() {
-  const { customAssay: t } = useCatalog();
+  const { customAssay: t, services } = useCatalog();
   const r = useRoutes();
   const names = t.targets.map((x) => x.name);
+  if (!services.some((s) => s.id === 'tests-adn-cibles')) return null;
   return (
     <section className="assay-teaser">
       <div className="container">

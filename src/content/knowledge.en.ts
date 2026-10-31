@@ -110,6 +110,11 @@ export const knowledge = {
         title: 'The company',
         items: [
           {
+            question: 'What does LDgenX do?',
+            answer:
+              'LDgenX is a French applied genomics and environmental genetics company. It designs studies, analyses samples (environmental DNA, population genomics, microbial communities, sequencing, dPCR) and interprets the results for public and private organisations in biodiversity, aquaculture, agriculture, the environment and research.',
+          },
+          {
             question: 'Where is LDgenX based?',
             answer:
               'The team works at the Ifremer station in Palavas-les-Flots, near Montpellier (Hérault, Occitanie, France). Its studies also cover other regions, such as the ports and estuaries of Artois-Picardie.',

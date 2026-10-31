@@ -563,6 +563,7 @@ export const ui = {
       award: ['Label Deep Tech (Bpifrance)'],
       knowsAbout: [
         'ADN environnemental',
+        'Génétique environnementale',
         'Métabarcoding',
         'PCR digitale (dPCR)',
         'Génomique des populations',
@@ -579,9 +580,9 @@ export const ui = {
     },
     home: {
       label: 'Accueil',
-      title: 'Génomique appliquée & ADN environnemental | LDgenX',
+      title: 'Génomique & ADN environnemental près de Montpellier | LDgenX',
       description:
-        'ADN environnemental, tests d’espèces par dPCR, génomique des populations et bioinformatique : LDgenX vous accompagne de l’échantillon à la décision.',
+        'Génétique environnementale et génomique près de Montpellier : ADN environnemental, dPCR, génomique des populations et bioinformatique, de l’échantillon à la décision.',
     },
     services: {
       label: 'Expertises',
@@ -625,7 +626,7 @@ export const ui = {
       label: 'À propos',
       title: 'Une équipe Deep Tech au service du vivant | LDgenX',
       description:
-        'Découvrez LDgenX, entreprise française de génomique appliquée, son équipe scientifique, sa mission et son écosystème.',
+        'LDgenX, entreprise française de génomique appliquée, station Ifremer de Palavas-les-Flots, près de Montpellier : son équipe scientifique, sa mission et son écosystème.',
     },
     team: {
       label: 'Équipe',
@@ -685,7 +686,7 @@ export const ui = {
       label: 'Contact',
       title: 'Parlons de votre projet scientifique | LDgenX',
       description:
-        'Contactez LDgenX à Palavas-les-Flots pour votre projet en ADN environnemental, génomique ou bioinformatique. Échangez avec l’équipe scientifique.',
+        'Contactez LDgenX à Palavas-les-Flots, près de Montpellier, pour votre projet en ADN environnemental, génétique, génomique ou bioinformatique.',
     },
     legal: {
       label: 'Mentions légales',

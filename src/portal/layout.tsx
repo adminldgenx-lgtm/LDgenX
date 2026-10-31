@@ -47,7 +47,7 @@ function Brand({ area, to }: { area: string; to: string }) {
   return (
     <Link to={to} className="p-brand">
       <img
-        src="/brand/lockup-navy-160.webp"
+        src="/brand/lockup-navy.svg"
         alt="LDgenX"
         width={570}
         height={160}
@@ -416,7 +416,7 @@ export function OpenLayout({ children }: { children: ReactNode }) {
       <header className="p-auth-top">
         <a href={site} className="p-brand">
           <img
-            src="/brand/lockup-navy-160.webp"
+            src="/brand/lockup-navy.svg"
             alt="LDgenX"
             width={570}
             height={160}

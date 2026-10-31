@@ -500,7 +500,7 @@ export const ui = {
   legal: {
     publisher: 'Publisher',
     identity: [
-      'LDgenX SAS · SIREN 952 193 837',
+      'LDgenX SAS · SIREN 952 193 837',
       'RCS Montpellier · NAF code 72.11Z',
       'Share capital: €50,000',
       'Registered office: 6 place du 8 mai 1945, 34690 Fabrègues, France',
@@ -567,6 +567,7 @@ export const ui = {
       award: ['Deep Tech label (Bpifrance)'],
       knowsAbout: [
         'Environmental DNA',
+        'Environmental genetics',
         'Metabarcoding',
         'Digital PCR (dPCR)',
         'Population genomics',
@@ -583,9 +584,9 @@ export const ui = {
     },
     home: {
       label: 'Home',
-      title: 'Applied genomics & environmental DNA | LDgenX',
+      title: 'Environmental DNA & genomics near Montpellier | LDgenX',
       description:
-        'Environmental DNA, species detection by dPCR, population genomics and bioinformatics: LDgenX takes your project from sample to decision.',
+        'Environmental genetics and genomics near Montpellier, France: environmental DNA, dPCR, population genomics and bioinformatics, from sample to decision.',
     },
     services: {
       label: 'Services',
@@ -629,7 +630,7 @@ export const ui = {
       label: 'About us',
       title: 'A Deep Tech team for life sciences | LDgenX',
       description:
-        'Discover LDgenX, a French applied genomics company, its scientific team, its mission and its ecosystem.',
+        'LDgenX, a French applied genomics company at the Ifremer station in Palavas-les-Flots, near Montpellier: its scientific team, its mission and its ecosystem.',
     },
     team: {
       label: 'Team',
@@ -689,7 +690,7 @@ export const ui = {
       label: 'Contact',
       title: 'Let’s discuss your scientific project | LDgenX',
       description:
-        'Contact LDgenX in Palavas-les-Flots, France, about your environmental DNA, genomics or bioinformatics project. Talk to the scientific team.',
+        'Contact LDgenX in Palavas-les-Flots, near Montpellier, France, about your environmental DNA, genetics, genomics or bioinformatics project.',
     },
     legal: {
       label: 'Legal notice',

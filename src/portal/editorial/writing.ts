@@ -94,14 +94,15 @@ export function readWritingRecovery(
   raw: string | null,
   saved: EditorialDocument,
   slug: string,
+  kind: ContentKind,
 ) {
   try {
     const value = JSON.parse(raw ?? "null");
     if (!value || typeof value.slug !== "string" || value.slug.length > 200)
       return null;
-    const document = validateDocument(value.document);
+    const document = validateDocument(value.document, kind);
     if (
-      JSON.stringify(document) === JSON.stringify(validateDocument(saved)) &&
+      JSON.stringify(document) === JSON.stringify(validateDocument(saved, kind)) &&
       value.slug === slug
     )
       return null;

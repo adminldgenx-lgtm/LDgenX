@@ -3,7 +3,6 @@ export const socialImages = new Set([
   'biofilm-microbien',
   'bioinformatique-alignement',
   'bioinformatique-client',
-  'carte-artois-picardie',
   'cas-bar',
   'cas-eolien-offshore',
   'cas-microplastiques',
@@ -37,7 +36,6 @@ export const socialImages = new Set([
   'schema-recherche',
   'schema-sequencage',
   'selection-unima',
-  'terrain-kayak',
   'terrain-palavas',
   'terrain-prelevement',
 ]);

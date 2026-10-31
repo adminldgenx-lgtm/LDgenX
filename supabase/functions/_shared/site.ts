@@ -6,6 +6,8 @@ export const productionAliases = [
   "https://ldgenx.com",
   "https://www.ldgenx.com",
 ];
+// IndexNow key (Bing, Yandex, Seznam, Naver): public by design, served at /<key>.txt.
+export const indexNowKey = "86cc2638fcd11cbeedcfed21379e0459";
 export const previewOrigin = "https://ldgenx-12k.pages.dev";
 export const localOrigins = ["localhost", "127.0.0.1"].flatMap((host) =>
   [5173, 5174, 4173, 4174].map((port) => `http://${host}:${port}`),

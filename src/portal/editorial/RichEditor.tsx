@@ -60,28 +60,19 @@ export function ImageFields({
     disabled = useContext(DisabledContext);
   return (
     <div className="cms-image-fields">
-      {(["alt", "caption", "credit", "licenceUrl"] as const).map((key) => (
+      {(["alt", "caption"] as const).map((key) => (
         <label key={key}>
           {key === "alt"
             ? l(
-                "Texte alternatif · ce que montre l’image",
-                "Alternative text · what the image shows",
+                "Description de l’image · lue par Google et les lecteurs d’écran",
+                "Image description · read by Google and screen readers",
               )
-            : key === "caption"
-              ? l("Légende scientifique", "Scientific caption")
-              : key === "credit"
-                ? l("Crédit / titulaire des droits", "Credit / rights holder")
-                : l(
-                    "Lien de licence ou source (HTTPS)",
-                    "Licence or source link (HTTPS)",
-                  )}
+            : l("Légende (facultative)", "Caption (optional)")}
           <input
             disabled={disabled}
             className="p-input"
             value={image[key]}
-            maxLength={
-              key === "caption" ? 2000 : key === "licenceUrl" ? 2000 : 500
-            }
+            maxLength={key === "caption" ? 2000 : 500}
             onChange={(e) => onChange({ ...image, [key]: e.target.value })}
           />
         </label>
@@ -115,10 +106,7 @@ function FigureNode({
       />
       <details>
         <summary>
-          {l(
-            "Légende, accessibilité et droits",
-            "Caption, accessibility and rights",
-          )}
+          {l("Description et légende", "Description and caption")}
         </summary>
         <ImageFields image={image} onChange={updateAttributes} />
       </details>
@@ -160,17 +148,6 @@ function VideoNode({ node, updateAttributes, deleteNode }: NodeViewProps) {
       <button type="button" disabled={disabled} onClick={deleteNode}>
         {l("Retirer cette vidéo", "Remove this video")}
       </button>
-    </NodeViewWrapper>
-  );
-}
-function EvidenceNode() {
-  const l = useWords();
-  return (
-    <NodeViewWrapper contentEditable={false} className="cms-editor-evidence">
-      {l(
-        "Données, carte et figures du dossier validé · conservées sur la page publiée.",
-        "Validated case data, map and figures · preserved on the published page.",
-      )}
     </NodeViewWrapper>
   );
 }
@@ -230,20 +207,6 @@ const VideoExtension = Node.create({
     return ReactNodeViewRenderer(VideoNode);
   },
 });
-const EvidenceExtension = Node.create({
-  name: "studyEvidence",
-  group: "block",
-  atom: true,
-  addAttributes() {
-    return { id: { default: "" } };
-  },
-  renderHTML() {
-    return ["div", { "data-cms-evidence": "" }];
-  },
-  addNodeView() {
-    return ReactNodeViewRenderer(EvidenceNode);
-  },
-});
 export interface RichHandle {
   insert: (node: ContentNode) => void;
   set: (node: ContentNode) => void;
@@ -292,7 +255,6 @@ export function RichEditor({
       }),
       FigureExtension.configure({ resolveStore: () => mediaStore.current }),
       VideoExtension,
-      EvidenceExtension,
     ],
     content: body,
     immediatelyRender: false,

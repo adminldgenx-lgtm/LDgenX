@@ -54,12 +54,15 @@ function tracePath(heights: number[], t: number) {
 export function ExpertiseTrace() {
   const { copy, services, ui } = useCatalog();
   const r = useRoutes();
-  const items = IDS.map((id) => services.find((s) => s.id === id)!);
+  // The trace is drawn for these expertises: one taken off the site only loses its tab.
+  const items = IDS.map((id) => services.find((s) => s.id === id));
+  const present = items.flatMap((s, i) => (s ? [i] : []));
   const others = listedExpertises(services).filter((s) => !IDS.includes(s.id));
   const section = useRef<HTMLElement>(null);
   const live = useNearViewport(section, '0px');
   const seen = useSeen(section);
-  const [active, setActive] = useState(0);
+  const [chosen, setActive] = useState(0);
+  const active = items[chosen] ? chosen : (present[0] ?? 0);
   const [held, setHeld] = useState(false);
   const cycling = live && !held;
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -102,29 +105,34 @@ export function ExpertiseTrace() {
 
   useEffect(() => {
     if (!cycling) return;
-    const timer = window.setTimeout(() => setActive((a) => (a + 1) % IDS.length), CYCLE_MS);
+    const timer = window.setTimeout(() => setActive(after(active, 1)), CYCLE_MS);
     return () => window.clearTimeout(timer);
-  }, [cycling, active]);
+  }, [cycling, active, present.length]);
 
   const choose = (i: number) => {
     setActive(i);
     setHeld(true);
   };
+  function after(from: number, step: number) {
+    const at = present.indexOf(from);
+    return present[(at + step + present.length) % present.length];
+  }
   const onKey = (event: KeyboardEvent) => {
     const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
     if (!step && event.key !== 'Home' && event.key !== 'End') return;
     event.preventDefault();
     const next =
       event.key === 'Home'
-        ? 0
+        ? present[0]
         : event.key === 'End'
-          ? IDS.length - 1
-          : (active + step + IDS.length) % IDS.length;
+          ? present.at(-1)!
+          : after(active, step);
     choose(next);
     tabs.current[next]?.focus();
   };
 
   const service = items[active];
+  if (!service) return null;
   const initialPath = tracePath(
     REST.map((h, i) => (i === 0 ? PEAK : h)),
     0,
@@ -217,7 +225,7 @@ export function ExpertiseTrace() {
           ))}
         </div>
         <div className="trace-tabs" role="tablist" aria-label={ui.landscape.choose}>
-          {items.map((s, i) => (
+          {items.map((s, i) => s && (
             <button
               key={s.id}
               ref={(el) => {

@@ -1,4 +1,4 @@
-import type { CaseRef } from './types';
+import type { CaseRef, Resource } from './types';
 import { people } from './extra.fr';
 
 export { company } from './site';
@@ -1602,7 +1602,7 @@ export const partners = [
   },
 ];
 
-export const resources = [
+export const resources: Resource[] = [
   {
     id: 'comprendre-adn-environnemental',
     slug: 'comprendre-adn-environnemental',

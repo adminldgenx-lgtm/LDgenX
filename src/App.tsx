@@ -36,7 +36,7 @@ import { FaqPage, GlossaryPage, SiteMapPage } from "./pages/Knowledge";
 import { LocaleProvider, useCatalog, useRoutes } from "./i18n";
 import { ContactPage } from "./pages/Contact";
 import { usePublicMeta } from "./editorial/context";
-import { PublishedEditorialPage } from "./editorial/PublicDocument";
+import { PublishedPage } from "./editorial/PublicDocument";
 
 function NotFound() {
   const t = useCatalog().ui.notFound;
@@ -197,7 +197,9 @@ export function App() {
         className={navigated ? "page-enter" : undefined}
       >
         {meta.editorial ? (
-          <PublishedEditorialPage row={meta.editorial} />
+          <PublishedPage row={meta.editorial}>
+            <Page meta={meta} />
+          </PublishedPage>
         ) : (
           <Page meta={meta} />
         )}

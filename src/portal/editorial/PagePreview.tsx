@@ -3,10 +3,10 @@ import { createPortal } from "react-dom";
 import { PageContent } from "../../App";
 import { getPage } from "../../lib/pages";
 import { EditorialProvider } from "../../editorial/context";
-import { EditorialDocumentView } from "../../editorial/PublicDocument";
+import { editorialMeta } from "../../editorial/meta";
 import type { PublishedDocument } from "../../../supabase/functions/_shared/editorial";
 
-/** Isolate the public stylesheet so a real page preview cannot restyle the administration. */
+/** The real page template, in a frame so the public stylesheet cannot restyle the administration. */
 export default function PagePreview({
   content,
 }: {
@@ -113,11 +113,13 @@ export default function PagePreview({
                 e.stopPropagation();
               }}
             >
-              {content.kind === "page" ? (
-                <PageContent meta={getPage(content.path)} />
-              ) : (
-                <EditorialDocumentView content={content} preview />
-              )}
+              <PageContent
+                meta={
+                  content.kind === "page"
+                    ? getPage(content.path)
+                    : editorialMeta(content, [content])
+                }
+              />
             </div>
           </EditorialProvider>,
           root,

@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react';
 import { Search } from 'lucide-react';
-import { useCatalog, useRoutes, useLocale } from '../i18n';
-import { catalog as originalCatalog } from '../content/catalog';
-import { useEditorial } from '../editorial/context';
+import { useCatalog, useRoutes } from '../i18n';
+import { useItemDocument } from '../editorial/context';
+import { PageWriting } from '../editorial/PageWriting';
+import { RichNodes } from '../editorial/PublicDocument';
 import { type PageMeta } from '../lib/pages';
 import {
   PageHero,
@@ -24,7 +25,6 @@ import { StudyJourney } from '../sections/StudyJourney';
 import { Lab } from '../sections/Innovation';
 import { StudyResults } from '../sections/StudyResults';
 import { WorkCards } from './Works';
-import { EditorialCards } from '../editorial/PublicDocument';
 
 export function StudiesPage({ meta }: { meta: PageMeta }) {
   const { pageCopy, ui } = useCatalog();
@@ -39,7 +39,6 @@ export function StudiesPage({ meta }: { meta: PageMeta }) {
             {t.studiesSr}
           </h2>
           <StudyPanels all label={ui.panels.allLabel} />
-          <EditorialCards kind="study" />
         </div>
       </section>
       <section className="section-space delivery-section" aria-label={t.worksEyebrow}>
@@ -65,8 +64,9 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
   const { studies, services, featuredStudy, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.studyPage;
-  const s = studies.find((s) => s.id === meta.id)!;
-  const service = services.find((x) => x.id === s.service)!;
+  const s = studies.find((s) => s.id === meta.id);
+  if (!s) return null;
+  const service = services.find((x) => x.id === s.service);
   const rows = [
     { title: t.context, text: s.context },
     { title: t.question, text: s.question },
@@ -112,18 +112,21 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
         </section>
       )}
       {s.details && <StudyDetails details={s.details} />}
-      <section className="section-space">
-        <div className="container detail-intro">
-          <div>
-            <Eyebrow>{t.expertiseEyebrow}</Eyebrow>
-            <AnimatedHeading text={service.title} />
+      <PageWriting path={meta.path} />
+      {service && (
+        <section className="section-space">
+          <div className="container detail-intro">
+            <div>
+              <Eyebrow>{t.expertiseEyebrow}</Eyebrow>
+              <AnimatedHeading text={service.title} />
+            </div>
+            <Reveal>
+              <p>{service.short}</p>
+              <TextLink to={r.service(service.id)}>{t.exploreExpertise}</TextLink>
+            </Reveal>
           </div>
-          <Reveal>
-            <p>{service.short}</p>
-            <TextLink to={r.service(service.id)}>{t.exploreExpertise}</TextLink>
-          </Reveal>
-        </div>
-      </section>
+        </section>
+      )}
       <section className="section-space studies-more">
         <div className="container">
           <StudyPanels all exclude={s.id} label={ui.panels.otherLabel} />
@@ -133,18 +136,11 @@ export function StudyPage({ meta }: { meta: PageMeta }) {
     </>
   );
 }
-/** Existing validated scientific visualizations stay intact when the surrounding text is edited. */
-export function LegacyStudyEvidence({ id }: { id: string }) {
-  const { studies, featuredStudy } = originalCatalog(useLocale());
-  const study = studies.find((s) => s.id === id);
-  if (!study) return null;
-  return <>{id === featuredStudy.slug && <><StudyJourney /><StudyResults /></>}{study.details && <StudyDetails details={study.details} />}</>;
-}
-
 export function InnovationsPage({ meta }: { meta: PageMeta }) {
-  const { pageCopy, companyStory, ui } = useCatalog();
+  const { pageCopy, companyStory, applications, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.innovationPage;
+  const research = applications.find((a) => a.id === 'recherche-publique-privee');
   return (
     <>
       <PageHero meta={meta} {...pageCopy.innovations} image="equipe-maxime" dark />
@@ -162,9 +158,11 @@ export function InnovationsPage({ meta }: { meta: PageMeta }) {
           </div>
           <Reveal>
             <p>{t.collaborationText}</p>
-            <Button variant="light" to={r.application('recherche-publique-privee')}>
-              {t.collaborationAction}
-            </Button>
+            {research && (
+              <Button variant="light" to={r.application(research.id)}>
+                {t.collaborationAction}
+              </Button>
+            )}
           </Reveal>
         </div>
       </section>
@@ -259,10 +257,7 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
   const t = ui.resourcesPage;
   const [category, setCategory] = useState(t.all);
   const [query, setQuery] = useState('');
-  const { index } = useEditorial(), locale = useLocale();
-  const extra = index.filter((r) => r.kind === 'article' && r.locale === locale && r.status === 'published' && !r.legacyId);
-  const categories = [t.all, ...new Set([...resources, ...extra].map((r) => r.category))];
-  const extraFiltered = extra.filter((r) => (category === t.all || r.category === category) && `${r.title} ${r.summary} ${r.category}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(query.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()));
+  const categories = [t.all, ...new Set(resources.map((r) => r.category))];
   const filtered = resources.filter(
     (r) =>
       (category === t.all || r.category === category) &&
@@ -304,11 +299,10 @@ export function ResourcesPage({ meta }: { meta: PageMeta }) {
             </label>
           </div>
           <div aria-live="polite">
-            <span className="sr-only">{t.count(filtered.length + extraFiltered.length)}</span>
-            {filtered.length + extraFiltered.length ? (
+            <span className="sr-only">{t.count(filtered.length)}</span>
+            {filtered.length ? (
               <div className="filter-results" key={`${category}|${query.trim()}`}>
                 <ResourceGrid items={filtered} />
-                <EditorialCards kind="article" entries={extraFiltered} />
               </div>
             ) : (
               <p className="no-results">{t.empty}</p>
@@ -325,10 +319,13 @@ export function ArticlePage({ meta }: { meta: PageMeta }) {
   const { resources, ui } = useCatalog();
   const routes = useRoutes();
   const t = ui.resourcesPage;
-  const r = resources.find((r) => r.id === meta.id)!;
+  const r = resources.find((r) => r.id === meta.id);
+  const content = useItemDocument(meta.path);
   const body = useRef<HTMLDivElement>(null);
   const parts = useRef<(HTMLElement | null)[]>([]);
   const reading = useActiveRow(body, parts);
+  if (!r) return null;
+  const references = content?.document.references ?? [];
   return (
     <>
       <PageHero meta={meta} eyebrow={r.category} title={r.title} intro={r.intro} />
@@ -340,19 +337,22 @@ export function ArticlePage({ meta }: { meta: PageMeta }) {
           <div className="article-layout">
             <nav className="article-aside" aria-label={t.contents}>
               <p>{t.contentsTitle}</p>
-              {r.sections.map((s, i) => (
-                <a
-                  key={s.title}
-                  href={`#partie-${i + 1}`}
-                  aria-current={i === reading ? 'location' : undefined}
-                >
-                  {s.title}
-                </a>
-              ))}
+              {r.sections.map(
+                (s, i) =>
+                  s.title && (
+                    <a
+                      key={s.title}
+                      href={`#partie-${i + 1}`}
+                      aria-current={i === reading ? 'location' : undefined}
+                    >
+                      {s.title}
+                    </a>
+                  ),
+              )}
             </nav>
             <div ref={body} className="article-content">
               {r.sections.map((s, i) => (
-                <Reveal key={s.title}>
+                <Reveal key={`${i}-${s.title}`}>
                   <section
                     id={`partie-${i + 1}`}
                     ref={(el) => {
@@ -360,14 +360,38 @@ export function ArticlePage({ meta }: { meta: PageMeta }) {
                     }}
                     data-reading={i === reading || undefined}
                   >
-                    <h2>{s.title}</h2>
-                    <p>{s.text}</p>
+                    {s.title && <h2>{s.title}</h2>}
+                    {s.nodes ? (
+                      <RichNodes nodes={s.nodes} media={content?.media} locale={meta.locale} />
+                    ) : (
+                      <p>{s.text}</p>
+                    )}
                   </section>
                 </Reveal>
               ))}
-              <div className="article-service">
-                <TextLink to={routes.service(r.service)}>{t.expertise}</TextLink>
-              </div>
+              {references.length > 0 && (
+                <section className="cms-references">
+                  <h2>{ui.lang === 'fr' ? 'Sources & références' : 'Sources & references'}</h2>
+                  <ol>
+                    {references.map((item, i) => (
+                      <li key={i}>
+                        {item.url ? (
+                          <a href={item.url} rel="noreferrer">
+                            {item.label}
+                          </a>
+                        ) : (
+                          item.label
+                        )}
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+              {r.service && (
+                <div className="article-service">
+                  <TextLink to={routes.service(r.service)}>{t.expertise}</TextLink>
+                </div>
+              )}
             </div>
           </div>
         </div>

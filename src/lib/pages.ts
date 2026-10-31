@@ -4,7 +4,6 @@ import { imageUrl, socialImageUrl } from './images';
 import { heroPosterPreload } from './hero';
 import { bases, localeOf, locales, routesFor, type Locale } from './routes';
 import { listedExpertises } from './expertises';
-import { editorialHead } from '../editorial/meta';
 
 export type PageKind =
   | 'home'
@@ -330,6 +329,7 @@ export const redirects: Record<string, string> = {
   '/equipe/Services': bases.fr.services,
   '/services/Services': bases.fr.services,
   '/en/team': bases.en.team,
+  '/team': bases.en.team,
   '/en/a-propos': bases.en.about,
   '/en/partners': bases.en.partners,
   '/en/partenaires-2': bases.en.partners,
@@ -408,8 +408,7 @@ const SITE = `${company.origin}/#website`;
 const personId = (id: string) => `${company.origin}/#person-${id}`;
 const plain = (text: string) => text.replace(/\*/g, '').replace(/\n/g, ' ');
 
-function organization(locale: Locale) {
-  const c = catalog(locale);
+function organization(locale: Locale, c: Catalog) {
   const r = routesFor(locale, c);
   return {
     '@type': ['Organization', 'ProfessionalService'],
@@ -474,8 +473,7 @@ function organization(locale: Locale) {
   };
 }
 
-function person(locale: Locale, id: string) {
-  const c = catalog(locale);
+function person(locale: Locale, id: string, c: Catalog) {
   const r = routesFor(locale, c);
   const p = c.people.find((x) => x.id === id)!;
   const service = c.services.find((s) => s.id === p.service);
@@ -497,10 +495,8 @@ function person(locale: Locale, id: string) {
   };
 }
 
-function article(locale: Locale, id: string) {
-  const c = catalog(locale);
+function article(locale: Locale, p: Catalog['research']['publications'][number], c: Catalog) {
   const r = routesFor(locale, c);
-  const p = c.research.publications.find((x) => x.id === id)!;
   const url = company.origin + r.publication(p.id);
   return {
     '@type': 'ScholarlyArticle',
@@ -512,7 +508,7 @@ function article(locale: Locale, id: string) {
     url,
     sameAs: `https://doi.org/${p.doi}`,
     identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi },
-    datePublished: p.online ?? String(p.year),
+    datePublished: p.online || String(p.year),
     inLanguage: 'en',
     isPartOf: { '@type': 'Periodical', name: p.journal },
     author: p.authors.map((name) => {
@@ -557,13 +553,20 @@ const pageType: Partial<Record<PageKind, string>> = {
   faq: 'FAQPage',
 };
 
-export function structuredData(meta: PageMeta, lastmod?: string) {
-  const c = catalog(meta.locale);
+export function structuredData(meta: PageMeta, lastmod?: string, c = catalog(meta.locale)) {
   const r = routesFor(meta.locale, c);
   const url = company.origin + meta.path;
   const inLanguage = lang(meta.locale);
+  // Published items carry their own picture, dates and authors.
+  const picture = (name?: string) =>
+    name?.startsWith('cms-media:') ? meta.coverUrl : name && `${company.origin}${imageUrl(name)}`;
+  const row = meta.editorial;
+  const dated = row && { datePublished: row.publishedAt, dateModified: row.updatedAt };
+  const written = row?.author.trim() && row.author.trim() !== company.name
+    ? row.author.split(';').map((name) => ({ '@type': 'Person', name: name.trim() }))
+    : node(ORG);
   const graph: Record<string, unknown>[] = [
-    organization(meta.locale),
+    organization(meta.locale, c),
     {
       '@type': 'WebSite',
       '@id': SITE,
@@ -583,10 +586,10 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
     inLanguage,
     isPartOf: node(SITE),
     publisher: node(ORG),
-    ...(meta.image && {
+    ...((meta.coverUrl || meta.image) && {
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: `${company.origin}${imageUrl(meta.image)}`,
+        url: meta.coverUrl ?? picture(meta.image),
       },
     }),
     ...(meta.path !== bases[meta.locale].home && { breadcrumb: node(`${url}#breadcrumb`) }),
@@ -614,7 +617,7 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
       serviceType: service.title,
       description: service.intro,
       url,
-      image: `${company.origin}${imageUrl(service.image)}`,
+      image: picture(service.image),
       provider: node(ORG),
       areaServed: { '@type': 'Country', name: 'France' },
       hasOfferCatalog: {
@@ -660,11 +663,12 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
       headline: plain(study.title),
       description: study.subtitle,
       inLanguage,
-      image: `${company.origin}${imageUrl(study.image)}`,
-      author: node(ORG),
+      image: picture(study.image),
+      author: written,
       publisher: node(ORG),
       mainEntityOfPage: node(`${url}#webpage`),
-      about: node(`${company.origin}${r.service(study.service)}#service`),
+      ...dated,
+      ...(study.service && { about: node(`${company.origin}${r.service(study.service)}#service`) }),
       ...(client && { funder: { '@type': 'Organization', name: client } }),
       ...(study.source &&
         !/ldgenx\.(fr|com)/.test(study.source) && {
@@ -695,24 +699,26 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
       url,
       parentOrganization: node(ORG),
     });
-  if (meta.kind === 'article') {
-    const resource = c.resources.find((x) => x.id === meta.id)!;
+  const resource = meta.kind === 'article' && c.resources.find((x) => x.id === meta.id);
+  if (resource)
     graph.push({
       '@type': 'Article',
       '@id': `${url}#article`,
       headline: plain(resource.title),
       description: resource.intro,
       inLanguage,
-      author: node(ORG),
+      author: written,
       publisher: node(ORG),
       mainEntityOfPage: node(`${url}#webpage`),
-      ...(meta.image && { image: `${company.origin}${socialImageUrl(meta.image)}` }),
+      ...dated,
+      ...(meta.coverUrl
+        ? { image: meta.coverUrl }
+        : meta.image && { image: `${company.origin}${socialImageUrl(meta.image)}` }),
     });
-  }
   if (meta.kind === 'team' || meta.kind === 'about')
-    for (const p of c.people) graph.push(person(meta.locale, p.id));
+    for (const p of c.people) graph.push(person(meta.locale, p.id, c));
   if (meta.kind === 'person' && meta.id) {
-    graph.push(person(meta.locale, meta.id));
+    graph.push(person(meta.locale, meta.id, c));
     page.mainEntity = node(personId(meta.id));
   }
   if (meta.kind === 'publications') {
@@ -727,10 +733,10 @@ export function structuredData(meta: PageMeta, lastmod?: string) {
       })),
     };
   }
-  if (meta.kind === 'publication' && meta.id) {
-    const p = c.research.publications.find((x) => x.id === meta.id)!;
-    graph.push(article(meta.locale, meta.id));
-    for (const id of p.members) graph.push(person(meta.locale, id));
+  const paper = meta.kind === 'publication' && c.research.publications.find((x) => x.id === meta.id);
+  if (paper) {
+    graph.push(article(meta.locale, paper, c));
+    for (const id of paper.members) graph.push(person(meta.locale, id, c));
     page.mainEntity = node(`${url}#article`);
   }
   if (meta.kind === 'faq')
@@ -769,13 +775,13 @@ export const escapeHtml = (value: string) =>
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!,
   );
 /** The page's head: title, description, robots, canonical, language versions, social cards and
- *  structured data. `lastmod` (server only) dates the page's last change. */
-export function renderHead(meta: PageMeta, lastmod?: string) {
-  if (meta.editorial) return editorialHead(meta);
+ *  structured data. `lastmod` (server only) dates the page's last change; `c` is the catalogue
+ *  with published content applied. */
+export function renderHead(meta: PageMeta, lastmod?: string, c = catalog(meta.locale)) {
   const title = escapeHtml(meta.title),
     description = escapeHtml(meta.description),
     url = escapeHtml(company.origin + meta.path);
-  const ui = catalog(meta.locale).ui;
+  const ui = c.ui;
   // Every page shares a picture; the team at work stands in for pages without their own.
   const image = meta.coverUrl ?? `${company.origin}${socialImageUrl(meta.image ?? 'equipe-maxime')}`;
   const imageAlt = escapeHtml(meta.label);
@@ -803,11 +809,17 @@ export function renderHead(meta: PageMeta, lastmod?: string) {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${description}" />
     <meta property="og:url" content="${url}" />
-    <meta property="og:image" content="${image}" />
+    ${
+      meta.editorial && meta.kind !== 'service' && meta.kind !== 'application'
+        ? `<meta property="article:published_time" content="${escapeHtml(meta.editorial.publishedAt)}" />
+    <meta property="article:modified_time" content="${escapeHtml(meta.editorial.updatedAt)}" />`
+        : ''
+    }
+    <meta property="og:image" content="${escapeHtml(image)}" />
     <meta property="og:image:alt" content="${imageAlt}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${image}" />
-    <script id="ldgenx-schema" type="application/ld+json">${JSON.stringify(structuredData(meta, lastmod)).replace(/</g, '\\u003c')}</script>`;
+    <meta name="twitter:image" content="${escapeHtml(image)}" />
+    <script id="ldgenx-schema" type="application/ld+json">${JSON.stringify(structuredData(meta, lastmod, c)).replace(/</g, '\\u003c')}</script>`;
 }

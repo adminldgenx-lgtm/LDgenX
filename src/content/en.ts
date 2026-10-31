@@ -1,6 +1,7 @@
 // English catalogue: same shape as fr.ts. Wording follows ldgenx.com where the page exists
 // (services, applications, about, innovation, equipment, contact); the rest is translated
 // from ldgenx.fr. Ids stay French so every page pairs with its French counterpart.
+import type { Resource } from './types';
 import type { Expertise, Sector, Study } from './fr';
 import { people } from './extra.en';
 
@@ -1489,7 +1490,7 @@ export const partners = [
   },
 ];
 
-export const resources = [
+export const resources: Resource[] = [
   {
     id: 'comprendre-adn-environnemental',
     slug: 'understanding-environmental-dna',

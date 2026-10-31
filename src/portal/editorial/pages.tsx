@@ -1,10 +1,5 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import {
-  Link,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   ArrowLeft,
   ExternalLink,
@@ -17,36 +12,37 @@ import {
   ImagePlus,
   Trash2,
   RotateCcw,
-  Pencil,
 } from "lucide-react";
 import { Button, Dialog } from "../ui";
 import { useI18n } from "../i18n";
 import { cms, cmsRequest } from "./api";
-import { cmsError, issueLabels, kindNames, useWords } from "./labels";
-import { MediaLibrary, StorageMeter } from "./MediaLibrary";
+import { cmsError, kindNames, useWords } from "./labels";
+import { MediaLibrary } from "./MediaLibrary";
 import { ImageFields, RichEditor, type RichHandle } from "./RichEditor";
 import { MediaImage } from "../../editorial/media-view";
-import { EditorialDocumentView } from "../../editorial/PublicDocument";
+import { catalogItems, legacyDocument } from "../../editorial/legacy";
 import { LocaleProvider } from "../../i18n";
-import { loadCatalog } from "../../content/catalog";
+import { loadCatalog, type Catalog } from "../../content/catalog";
 import {
   contentPath,
   documentText,
   publicationIssues,
+  summarize,
   validateDocument,
   videoEmbed,
   type ContentImage,
-  type ContentKind,
   type EditorialDocument,
   type EditorialEntry,
   type EditorialMedia,
   type EditorialRevision,
   type PublishedDocument,
-  type EditorialPageTemplate,
 } from "../../../supabase/functions/_shared/editorial";
 import "../../editorial/editorial.css";
 import "./admin.css";
-import { searchText } from "../../lib/search";
+import { entryState, issueText, stateWords } from "./ContentHub";
+import { sectionOfKind } from "./sections";
+import { fieldOptions, TemplateFields, tidyFields } from "./TemplateFields";
+import { FieldsDisabled } from "./fields-context";
 import {
   scientificOutline,
   outlineLabels,
@@ -55,542 +51,39 @@ import {
 } from "./writing";
 const SitePagePreview = lazy(() => import("./PagePreview"));
 
-function useEntries() {
-  const l = useWords();
-  const [entries, setEntries] = useState<EditorialEntry[]>([]),
-    [error, setError] = useState(""),
-    [loading, setLoading] = useState(true);
-  const reload = async () => {
-    setLoading(true);
-    try {
-      setEntries(await cms.list());
-      setError("");
-    } catch (e) {
-      setError(cmsError(e, l));
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    void reload();
-  }, []);
-  return { entries, error, loading, reload };
-}
-function status(entry: EditorialEntry, l: (fr: string, en: string) => string) {
-  return entry.deletedAt
-    ? l("Corbeille", "Trash")
-    : entry.publication?.status === "withdrawn"
-      ? l("Retiré", "Withdrawn")
-      : entry.publication
-        ? entry.version === entry.publishedVersion
-          ? l("Publié", "Published")
-          : l(
-              "Publié · modifications en brouillon",
-              "Published · draft changes",
-            )
-        : entry.legacyId
-          ? l("Site actuel · copie de travail", "Existing site · working copy")
-          : l("Brouillon privé", "Private draft");
-}
-export function ContentListPage() {
-  const l = useWords(),
-    { locale } = useI18n(),
-    navigate = useNavigate(),
-    { entries, error, loading, reload } = useEntries();
-  const [query, setQuery] = useState(""),
-    [kind, setKind] = useState("all"),
-    [language, setLanguage] = useState("all"),
-    [state, setState] = useState("all"),
-    [create, setCreate] = useState(false),
-    [newKind, setNewKind] = useState<ContentKind>("article"),
-    [newLocale, setNewLocale] = useState<"fr" | "en">(locale),
-    [busy, setBusy] = useState(false),
-    [actionError, setActionError] = useState(""),
-    [deletion, setDeletion] = useState<EditorialEntry | null>(null),
-    [notice, setNotice] = useState("");
-  const [pageTemplates, setPageTemplates] = useState<EditorialPageTemplate[]>(
-      [],
-    ),
-    [pagePath, setPagePath] = useState(""),
-    [templateError, setTemplateError] = useState(false);
-  const loadTemplates = () => {
-    setTemplateError(false);
-    void cmsRequest<EditorialPageTemplate[]>("/page-templates")
-      .then(setPageTemplates)
-      .catch(() => setTemplateError(true));
-  };
-  useEffect(loadTemplates, []);
-  const availablePages = pageTemplates.filter((p) => p.locale === newLocale);
-  const selectedPage = availablePages.some((p) => p.path === pagePath)
-    ? pagePath
-    : availablePages[0]?.path;
-  const trashCount = entries.filter((e) => e.deletedAt).length;
-  const restoreEntry = async (e: EditorialEntry) => {
-    setBusy(true);
-    setActionError("");
-    try {
-      await cmsRequest(`/entries/${e.id}/untrash`, "POST", {
-        version: e.version,
-      });
-      setNotice(
-        l(
-          "Contenu restauré en brouillon. Relisez-le avant de le republier.",
-          "Content restored as a draft. Review it before publishing again.",
-        ),
-      );
-      reload();
-    } catch (error) {
-      setActionError(cmsError(error, l));
-    } finally {
-      setBusy(false);
-    }
-  };
-  const filtered = entries.filter(
-    (e) =>
-      (state === "trash" ? !!e.deletedAt : !e.deletedAt) &&
-      (kind === "all" || e.kind === kind) &&
-      (language === "all" || e.locale === language) &&
-      (state === "all" ||
-        state === "trash" ||
-        (state === "draft" && !e.publication && !e.legacyId) ||
-        (state === "published" && e.publication?.status === "published") ||
-        (state === "existing" && !!e.legacyId && !e.publication) ||
-        (state === "withdrawn" && e.publication?.status === "withdrawn")) &&
-      searchText(
-        `${e.document.title} ${e.document.summary} ${e.slug}`,
-      ).includes(searchText(query)),
-  );
-  return (
-    <div className="cms-admin">
-      <header className="cms-page-head">
-        <div>
-          <p className="cms-eyebrow">
-            LDgenX · {l("Édition scientifique", "Scientific publishing")}
-          </p>
-          <h1>{l("Contenus", "Content")}</h1>
-          <p>
-            {l(
-              "Rédiger, relire et publier. Les brouillons restent privés.",
-              "Write, review and publish. Drafts remain private.",
-            )}
-          </p>
-        </div>
-        <div className="cms-actions">
-          <Button
-            variant="secondary"
-            onClick={() => {
-              setNewKind("page");
-              setCreate(true);
-            }}
-          >
-            {l("Modifier une page du site", "Edit a website page")}
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => setState(state === "trash" ? "all" : "trash")}
-          >
-            <Trash2 size={16} />
-            {state === "trash"
-              ? l("Tous les contenus", "All content")
-              : `${l("Corbeille", "Trash")} (${trashCount})`}
-          </Button>
-          <Link
-            className="p-button"
-            data-variant="secondary"
-            to="/admin/medias"
-          >
-            {l("Médiathèque", "Media library")}
-          </Link>
-          <Button
-            onClick={() => {
-              setNewKind("article");
-              setCreate(true);
-            }}
-          >
-            <Plus size={17} />
-            {l("Nouveau contenu", "New content")}
-          </Button>
-        </div>
-      </header>
-      <StorageMeter />
-      <div className="cms-filters">
-        <input
-          className="p-input"
-          type="search"
-          placeholder={l(
-            "Titre, sujet ou adresse…",
-            "Title, topic or address…",
-          )}
-          aria-label={l("Rechercher les contenus", "Search content")}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <select
-          aria-label={l("Type de contenu", "Content type")}
-          value={kind}
-          onChange={(e) => setKind(e.target.value)}
-        >
-          <option value="all">{l("Tous les types", "All types")}</option>
-          {Object.entries(kindNames[locale]).map(([k, v]) => (
-            <option value={k} key={k}>
-              {v}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label={l("Langue", "Language")}
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-        >
-          <option value="all">FR + EN</option>
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-        </select>
-        <select
-          aria-label={l("État", "Status")}
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-        >
-          {[
-            ["all", l("Tous les états", "All statuses")],
-            ["draft", l("Brouillons", "Drafts")],
-            ["published", l("Publiés", "Published")],
-            ["existing", l("Site actuel", "Existing site")],
-            ["withdrawn", l("Retirés", "Withdrawn")],
-            ["trash", l("Corbeille", "Trash")],
-          ].map(([k, v]) => (
-            <option key={k} value={k}>
-              {v}
-            </option>
-          ))}
-        </select>
-      </div>
-      {notice && (
-        <p className="cms-notice" role="status">
-          {notice}
-        </p>
-      )}
-      {actionError && !create && !deletion && (
-        <p className="p-error" role="alert">
-          {actionError}
-        </p>
-      )}
-      {error && (
-        <div role="alert" className="p-error">
-          {error}{" "}
-          <Button variant="secondary" onClick={reload}>
-            {l("Réessayer", "Retry")}
-          </Button>
-        </div>
-      )}
-      {loading ? (
-        <p role="status">{l("Chargement des contenus…", "Loading content…")}</p>
-      ) : (
-        <>
-          <p className="p-help">
-            {filtered.length} {l("document(s)", "document(s)")}
-          </p>
-          <div className="cms-entry-list">
-            {filtered.map((e) => (
-              <article key={e.id} className="cms-entry">
-                <Link className="cms-entry-main" to={`/admin/contenus/${e.id}`}>
-                  <span className="cms-entry-image">
-                    {e.document.cover &&
-                    (e.document.cover.staticSrc || e.coverMedia) ? (
-                      <MediaImage
-                        image={e.document.cover}
-                        media={e.coverMedia ?? undefined}
-                        sizes="160px"
-                      />
-                    ) : (
-                      <ImagePlus size={28} aria-hidden="true" />
-                    )}
-                  </span>
-                  <div>
-                    <span className="cms-eyebrow">
-                      {e.locale.toUpperCase()} · {kindNames[locale][e.kind]}
-                    </span>
-                    <h2>{e.document.title || l("Sans titre", "Untitled")}</h2>
-                    <p>{e.document.summary}</p>
-                    <small>{contentPath(e.kind, e.locale, e.slug)}</small>
-                  </div>
-                </Link>
-                <div className="cms-entry-meta">
-                  <span
-                    className="cms-status"
-                    data-state={e.publication?.status ?? "draft"}
-                  >
-                    {status(e, l)}
-                  </span>
-                  <time dateTime={e.updatedAt}>
-                    {new Date(e.updatedAt).toLocaleDateString(
-                      locale === "fr" ? "fr-FR" : "en-GB",
-                    )}
-                  </time>
-                  <div className="cms-entry-actions">
-                    {e.deletedAt ? (
-                      <Button
-                        variant="secondary"
-                        size="small"
-                        disabled={busy}
-                        onClick={() => void restoreEntry(e)}
-                      >
-                        <RotateCcw size={15} />
-                        {l("Restaurer", "Restore")}
-                      </Button>
-                    ) : (
-                      <>
-                        <Link
-                          className="p-button"
-                          data-variant="secondary"
-                          to={`/admin/contenus/${e.id}`}
-                        >
-                          <Pencil size={15} />
-                          {l("Modifier", "Edit")}
-                        </Link>
-                        <Link
-                          className="p-button"
-                          data-variant="ghost"
-                          to={`/admin/contenus/${e.id}?couverture=1`}
-                        >
-                          <ImagePlus size={15} />
-                          {e.document.cover
-                            ? l("Changer l’image", "Change image")
-                            : l("Ajouter une image", "Add image")}
-                        </Link>
-                        <Button
-                          variant="danger"
-                          size="small"
-                          disabled={busy}
-                          aria-label={`${l("Supprimer", "Delete")} ${e.document.title || l("Sans titre", "Untitled")}`}
-                          onClick={() => {
-                            setActionError("");
-                            setDeletion(e);
-                          }}
-                        >
-                          <Trash2 size={15} />
-                          {l("Supprimer", "Delete")}
-                        </Button>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          {!filtered.length && (
-            <p>
-              {l("Aucun document ne correspond.", "No matching documents.")}
-            </p>
-          )}
-        </>
-      )}
-      <Dialog
-        open={!!deletion}
-        onClose={() => !busy && setDeletion(null)}
-        title={l("Supprimer ce contenu ?", "Delete this content?")}
-        footer={
-          <>
-            <Button
-              variant="secondary"
-              disabled={busy}
-              onClick={() => setDeletion(null)}
-            >
-              {l("Annuler", "Cancel")}
-            </Button>
-            <Button
-              variant="danger"
-              busy={busy}
-              onClick={async () => {
-                if (!deletion) return;
-                setBusy(true);
-                setActionError("");
-                try {
-                  await cmsRequest(`/entries/${deletion.id}/trash`, "POST", {
-                    version: deletion.version,
-                  });
-                  setDeletion(null);
-                  setNotice(
-                    l(
-                      "Contenu déplacé dans la corbeille. Il peut être restauré.",
-                      "Content moved to trash. It can be restored.",
-                    ),
-                  );
-                  reload();
-                } catch (error) {
-                  setActionError(cmsError(error, l));
-                } finally {
-                  setBusy(false);
-                }
-              }}
-            >
-              {l("Déplacer dans la corbeille", "Move to trash")}
-            </Button>
-          </>
-        }
-      >
-        <p>
-          <strong>
-            {deletion?.document.title || l("Sans titre", "Untitled")}
-          </strong>
-        </p>
-        <p>
-          {deletion?.kind === "page"
-            ? l(
-                "Les modifications seront placées dans la corbeille. La page d’origine restera accessible.",
-                "The changes will be moved to trash. The original page remains accessible.",
-              )
-            : l(
-                "Le contenu sera retiré du site et déplacé dans la corbeille. Son texte, ses images et son historique seront conservés pour une restauration.",
-                "The content will be removed from the website and moved to trash. Text, images and history are retained for recovery.",
-              )}
-        </p>
-        {actionError && (
-          <p className="p-error" role="alert">
-            {actionError}
-          </p>
-        )}
-      </Dialog>
-      <Dialog
-        open={create}
-        onClose={() => !busy && setCreate(false)}
-        title={l("Nouveau contenu", "New content")}
-        footer={
-          <>
-            <Button
-              variant="secondary"
-              disabled={busy}
-              onClick={() => setCreate(false)}
-            >
-              {l("Annuler", "Cancel")}
-            </Button>
-            <Button
-              busy={busy}
-              disabled={newKind === "page" && !selectedPage}
-              onClick={async () => {
-                setBusy(true);
-                setActionError("");
-                try {
-                  const e = await cmsRequest<EditorialEntry>(
-                    "/entries",
-                    "POST",
-                    {
-                      kind: newKind,
-                      locale: newLocale,
-                      ...(newKind === "page" ? { pagePath: selectedPage } : {}),
-                    },
-                  );
-                  navigate(`/admin/contenus/${e.id}`);
-                } catch (e) {
-                  setActionError(cmsError(e, l));
-                } finally {
-                  setBusy(false);
-                }
-              }}
-            >
-              {l("Créer le brouillon", "Create draft")}
-            </Button>
-          </>
-        }
-      >
-        <div className="cms-form-grid">
-          <label>
-            {l("Type", "Type")}
-            <select
-              aria-label={l("Type", "Type")}
-              value={newKind}
-              onChange={(e) => setNewKind(e.target.value as ContentKind)}
-            >
-              {Object.entries(kindNames[locale]).map(([k, v]) => (
-                <option key={k} value={k}>
-                  {v}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            {l("Langue du texte", "Text language")}
-            <select
-              aria-label={l("Langue du texte", "Text language")}
-              value={newLocale}
-              onChange={(e) => setNewLocale(e.target.value as "fr" | "en")}
-            >
-              <option value="fr">Français</option>
-              <option value="en">English</option>
-            </select>
-          </label>
-        </div>
-        {newKind === "page" && (
-          <>
-            <label>
-              {l("Page à modifier", "Page to edit")}
-              <select
-                aria-label={l("Page à modifier", "Page to edit")}
-                value={selectedPage ?? ""}
-                onChange={(e) => setPagePath(e.target.value)}
-                disabled={!availablePages.length}
-              >
-                <option value="" disabled>
-                  {l("Choisir une page", "Choose a page")}
-                </option>
-                {availablePages.map((p) => (
-                  <option key={p.path} value={p.path}>
-                    {p.label} · {p.path}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <p>
-              {l(
-                "Le modèle, les animations et les sections existantes sont conservés. Vous pouvez modifier le titre, l’introduction, l’image et ajouter du texte, des figures et des vidéos.",
-                "The template, animations and existing sections are preserved. Edit the title, introduction and image, and add text, figures and videos.",
-              )}
-            </p>
-            {templateError && (
-              <p role="alert" className="p-error">
-                {l(
-                  "Les pages n’ont pas pu être chargées.",
-                  "Pages could not be loaded.",
-                )}{" "}
-                <Button onClick={loadTemplates}>
-                  {l("Réessayer", "Retry")}
-                </Button>
-              </p>
-            )}
-          </>
-        )}
-        <p>
-          {l(
-            "Chaque langue est rédigée et validée séparément. Vous pourrez lier une traduction depuis l’éditeur.",
-            "Each language is written and reviewed separately. You can link a translation from the editor.",
-          )}
-        </p>
-        {actionError && (
-          <p className="p-error" role="alert">
-            {actionError}
-          </p>
-        )}
-      </Dialog>
-    </div>
-  );
-}
 export function ContentEditorPage() {
   const { id } = useParams();
   const l = useWords();
   const [entry, setEntry] = useState<EditorialEntry | null>(null),
+    [catalog, setCatalog] = useState<Catalog | null>(null),
     [error, setError] = useState("");
   useEffect(() => {
     setEntry(null);
     setError("");
     let current = true;
-    void cms
-      .get(id!)
-      .then((value) => {
-        if (current) setEntry(value);
-      })
-      .catch((e) => {
-        if (current) setError(cmsError(e, l));
-      });
+    void (async () => {
+      const value = await cms.get(id!);
+      const content = await loadCatalog(value.locale);
+      // A built-in item opens on what the site shows until it has saved fields of its own.
+      const original =
+        value.legacyId &&
+        value.kind !== "page" &&
+        !Object.keys(value.document.fields ?? {}).length
+          ? legacyDocument(value.kind, value.legacyId, content)
+          : null;
+      if (!current) return;
+      setCatalog(content);
+      setEntry(
+        original
+          ? { ...value, document: { ...original, reviewed: false } }
+          : {
+              ...value,
+              document: { ...value.document, fields: value.document.fields ?? {} },
+            },
+      );
+    })().catch((e) => {
+      if (current) setError(cmsError(e, l));
+    });
     return () => {
       current = false;
     };
@@ -606,13 +99,13 @@ export function ContentEditorPage() {
         </Button>
       </div>
     );
-  if (!entry)
+  if (!entry || !catalog)
     return (
       <p role="status">{l("Chargement du document…", "Loading document…")}</p>
     );
   if (entry.deletedAt)
     return <TrashedContent entry={entry} onRestored={setEntry} />;
-  return <DocumentEditor key={entry.id} initial={entry} />;
+  return <DocumentEditor key={entry.id} initial={entry} catalog={catalog} />;
 }
 function TrashedContent({
   entry,
@@ -626,9 +119,7 @@ function TrashedContent({
     [error, setError] = useState("");
   return (
     <div className="cms-admin">
-      <Link to="/admin/contenus">
-        ← {l("Tous les contenus", "All content")}
-      </Link>
+      <Link to="/admin/contenus/corbeille">← {l("Corbeille", "Trash")}</Link>
       <h1>
         {entry.document.title || l("Contenu supprimé", "Deleted content")}
       </h1>
@@ -669,11 +160,16 @@ function TrashedContent({
     </div>
   );
 }
-function DocumentEditor({ initial }: { initial: EditorialEntry }) {
+function DocumentEditor({
+  initial,
+  catalog,
+}: {
+  initial: EditorialEntry;
+  catalog: Catalog;
+}) {
   const l = useWords(),
     { locale } = useI18n(),
-    navigate = useNavigate(),
-    [params] = useSearchParams();
+    navigate = useNavigate();
   const [entry, setEntry] = useState(initial),
     [doc, setDoc] = useState(initial.document),
     [slug, setSlug] = useState(initial.slug),
@@ -688,15 +184,25 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     [history, setHistory] = useState<EditorialRevision[] | null>(null),
     [withdraw, setWithdraw] = useState(false),
     [deleting, setDeleting] = useState(false),
-    [picker, setPicker] = useState<"cover" | "figure" | "video" | null>(
-      params.get("couverture") === "1" ? "cover" : null,
-    ),
+    [picker, setPicker] = useState<
+      "cover" | "figure" | "video" | "field" | null
+    >(null),
     [videoOpen, setVideoOpen] = useState(false),
     [videoUrl, setVideoUrl] = useState(""),
     [videoFile, setVideoFile] = useState<EditorialMedia | null>(null),
     [videoTitle, setVideoTitle] = useState("");
   const editor = useRef<RichHandle | null>(null),
+    pictureTarget = useRef<
+      ((name: string, media: EditorialMedia) => void) | null
+    >(null),
     backupKey = `ldgenx-editorial-${entry.id}`;
+  const section = sectionOfKind(entry.kind),
+    back = section
+      ? `/admin/contenus/rubrique/${section.id}`
+      : "/admin/contenus/pages",
+    backLabel = section ? l(...section.name) : l("Autres pages", "Other pages"),
+    options = useMemo(() => fieldOptions(catalog), [catalog]),
+    freshDraft = !entry.legacyId && !entry.publishedVersion;
   const [recovery, setRecovery] = useState<{
     document: EditorialDocument;
     slug: string;
@@ -706,6 +212,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         localStorage.getItem(backupKey),
         initial.document,
         initial.slug,
+        initial.kind,
       );
     } catch {
       return null;
@@ -823,7 +330,18 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     window.dispatchEvent(new Event("cms-media-changed"));
   };
   const save = async () => {
-    const checked = validateDocument(doc);
+    const fields = tidyFields(entry.kind, doc.fields);
+    const checked = validateDocument(
+      {
+        ...doc,
+        fields,
+        author:
+          entry.kind === "publication"
+            ? ((fields.authors as string[] | undefined) ?? []).join("; ")
+            : doc.author,
+      },
+      entry.kind,
+    );
     const result = await cmsRequest<EditorialEntry>(
       `/entries/${entry.id}`,
       "PATCH",
@@ -927,29 +445,32 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
       setVideoUrl("");
       setVideoOpen(true);
     }
+    if (picker === "field") {
+      pictureTarget.current?.(`cms-media:${m.id}`, m);
+      pictureTarget.current = null;
+    }
     setPicker(null);
   };
   const publishIssues = publicationIssues(doc, entry.kind);
   const path = contentPath(entry.kind, entry.locale, slug),
     words = documentText(doc.body).trim().split(/\s+/).filter(Boolean).length;
   const previewContent: PublishedDocument = {
-    id: entry.id,
-    kind: entry.kind,
-    locale: entry.locale,
-    slug,
-    groupId: entry.groupId,
-    legacyId: entry.legacyId,
-    path,
-    status: "published",
-    publishedAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    title: doc.title,
-    summary: doc.summary,
-    category: doc.category,
-    author: doc.author,
-    cover: doc.cover,
-    seoTitle: doc.seoTitle,
-    seoDescription: doc.seoDescription,
+    ...summarize(
+      {
+        id: entry.id,
+        kind: entry.kind,
+        locale: entry.locale,
+        slug,
+        groupId: entry.groupId,
+        legacyId: entry.legacyId,
+        path,
+        status: "published",
+        publishedAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
+      doc,
+    ),
+    coverMedia: media.find((m) => m.id === doc.cover?.mediaId) ?? null,
     document: doc,
     media,
   };
@@ -957,42 +478,41 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     <div className="cms-admin cms-editor-page">
       <header className="cms-page-head">
         <div>
-          <Link className="p-link" to="/admin/contenus">
+          <Link className="p-link" to={back}>
             <ArrowLeft size={15} />
-            {l("Tous les contenus", "All content")}
+            {backLabel}
           </Link>
           <p className="cms-eyebrow">
-            {kindNames[locale][entry.kind]} · {entry.locale.toUpperCase()}
+            {kindNames[locale][entry.kind]} ·{" "}
+            {entry.locale === "fr" ? "Français" : "English"}
           </p>
-          <h1>{l("Éditer le document", "Edit document")}</h1>
+          <h1>
+            {doc.title.replace(/\*/g, "") ||
+              l("Nouveau contenu", "New content")}
+          </h1>
           <span
             className="cms-status"
-            data-state={dirty ? "draft" : entry.publication?.status}
+            data-state={dirty ? "draft" : entryState(entry)}
           >
             {dirty
               ? l("Modifications non enregistrées", "Unsaved changes")
-              : status(entry, l)}
+              : l(...stateWords[entryState(entry)])}
           </span>
         </div>
         <div className="cms-actions">
           <Button
             variant="secondary"
             disabled={busy}
-            onClick={exportDraft}
-            title={l("Exporter une copie JSON", "Export a JSON copy")}
-          >
-            <Download size={17} />
-            {l("Exporter", "Export")}
-          </Button>
-          <Button
-            variant="secondary"
-            disabled={busy}
             onClick={() => setPreview(true)}
           >
             <Eye size={17} />
-            {l("Aperçu", "Preview")}
+            {l("Aperçu de la page", "Page preview")}
           </Button>
-          <Button busy={busy} onClick={() => void persistDraft()}>
+          <Button
+            variant="secondary"
+            busy={busy}
+            onClick={() => void persistDraft()}
+          >
             <Save size={17} />
             {l("Enregistrer", "Save draft")}
           </Button>
@@ -1003,17 +523,20 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
         aria-label={l("Navigation et enregistrement", "Navigation and saving")}
       >
         <nav aria-label={l("Sections du document", "Document sections")}>
-          <a href="#cms-writing">{l("Rédaction", "Writing")}</a>
-          <a href="#cms-sources">{l("Sources", "Sources")}</a>
+          <a href="#cms-writing">{l("Contenu", "Content")}</a>
           <a href="#cms-publishing">{l("Publication", "Publishing")}</a>
         </nav>
         <span className="cms-save-state">
-          {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
-          {words > 0 && (
+          {entry.kind === "article" && (
             <>
-              {" "}
-              · {l("lecture", "reading")} ≈{" "}
-              {Math.max(1, Math.ceil(words / 200))} min
+              {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
+              {words > 0 && (
+                <>
+                  {" "}
+                  · {l("lecture", "reading")} ≈{" "}
+                  {Math.max(1, Math.ceil(words / 200))} min
+                </>
+              )}
             </>
           )}
           <small>
@@ -1108,30 +631,32 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
           </strong>
           <ul>
             {issues.map((key) => (
-              <li key={key}>
-                {issueLabels[key] ? l(...issueLabels[key]) : key}
-              </li>
+              <li key={key}>{issueText(key, entry.kind, l)}</li>
             ))}
           </ul>
         </div>
       )}
       <div className="cms-editor-layout">
         <div className="cms-editor-main" id="cms-writing">
-          {entry.kind === "page" && (
-            <p className="cms-notice">
-              {l(
-                "Vous modifiez une page existante. Son modèle et ses sections restent en place. Les blocs rédigés ci-dessous s’ajoutent après son introduction.",
-                "You are editing an existing page. Its template and sections remain in place. Blocks written below appear after its introduction.",
-              )}
-            </p>
-          )}
+          <p className="cms-notice">
+            {entry.kind === "page"
+              ? l(
+                  "Le modèle de cette page et ses sections restent en place. Les blocs rédigés plus bas s’ajoutent après son introduction.",
+                  "This page’s template and sections stay in place. Blocks written below appear after its introduction.",
+                )
+              : l(
+                  "Remplissez les champs : la page reprend automatiquement le design et les animations du site. « Aperçu de la page » vous la montre avant de publier.",
+                  "Fill in the fields: the page automatically takes the website’s design and animations. “Page preview” shows it to you before publishing.",
+                )}
+          </p>
+          {entry.kind !== "publication" && (
           <fieldset
             disabled={busy}
             className="cms-panel cms-cover-panel"
             id="cms-cover"
           >
             <div className="cms-section-head">
-              <h2>{l("Image de couverture", "Cover image")}</h2>
+              <h2>{l("Image principale", "Main image")}</h2>
               <Button
                 variant="secondary"
                 size="small"
@@ -1154,7 +679,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                   onChange={(value: ContentImage) => change("cover", value)}
                 />
                 <Button variant="ghost" onClick={() => change("cover", null)}>
-                  {l("Retirer la couverture", "Remove cover")}
+                  {l("Retirer l’image", "Remove image")}
                 </Button>
               </>
             ) : (
@@ -1164,19 +689,19 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 onClick={() => setPicker("cover")}
               >
                 <ImagePlus size={30} />
-                <strong>
-                  {l("Ajouter une image de couverture", "Add a cover image")}
-                </strong>
+                <strong>{l("Ajouter une image", "Add an image")}</strong>
                 <span>
                   {l(
-                    "Importer une photo ou choisir dans la médiathèque. Elle apparaîtra sur la page et sa carte.",
-                    "Upload a photo or choose from the media library. It will appear on the page and its card.",
+                    "Elle est convertie et allégée automatiquement, puis apparaît sur la page, sur sa carte et dans les partages.",
+                    "It is converted and lightened automatically, then appears on the page, its card and when shared.",
                   )}
                 </span>
               </button>
             )}
           </fieldset>
-          <fieldset disabled={busy}>
+          )}
+          <fieldset disabled={busy} className="cms-panel">
+            <h2>{l("Présentation", "Presentation")}</h2>
             <label>
               {l("Titre", "Title")}
               <textarea
@@ -1189,19 +714,16 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               />
               <small>
                 {l(
-                  "Pour un nom latin dans le titre, entourez-le d’astérisques : *Dicentrarchus labrax*.",
-                  "For a Latin name in the title, surround it with asterisks: *Dicentrarchus labrax*.",
+                  "Pour un nom latin, entourez-le d’astérisques : *Dicentrarchus labrax*.",
+                  "For a Latin name, surround it with asterisks: *Dicentrarchus labrax*.",
                 )}
               </small>
             </label>
             <label>
-              {l("Résumé / introduction", "Summary / introduction")}
+              {l("Introduction", "Introduction")}
               <textarea
                 className="p-input"
-                aria-label={l(
-                  "Résumé / introduction",
-                  "Summary / introduction",
-                )}
+                aria-label={l("Introduction", "Introduction")}
                 maxLength={600}
                 rows={3}
                 value={doc.summary}
@@ -1209,81 +731,110 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               />
               <small>{doc.summary.length}/600</small>
             </label>
-            <div className="cms-form-grid">
-              <label>
-                {l("Catégorie / thème", "Category / topic")}
-                <input
-                  className="p-input"
-                  maxLength={100}
-                  value={doc.category}
-                  onChange={(e) => change("category", e.target.value)}
-                />
-              </label>
-              <label>
-                {entry.kind === "publication"
-                  ? l("Auteurs de l’article", "Paper authors")
-                  : l("Auteur(s) / équipe", "Author(s) / team")}
-                <input
-                  className="p-input"
-                  maxLength={1000}
-                  value={doc.author}
-                  onChange={(e) => change("author", e.target.value)}
-                />
-              </label>
-            </div>
+            {(entry.kind === "article" ||
+              entry.kind === "study" ||
+              entry.kind === "page") && (
+              <div className="cms-form-grid">
+                <label>
+                  {l("Catégorie", "Category")}
+                  <input
+                    className="p-input"
+                    maxLength={100}
+                    value={doc.category}
+                    onChange={(e) => change("category", e.target.value)}
+                  />
+                </label>
+                {entry.kind === "article" && (
+                  <label>
+                    {l("Auteur(s)", "Author(s)")}
+                    <input
+                      className="p-input"
+                      maxLength={1000}
+                      value={doc.author}
+                      onChange={(e) => change("author", e.target.value)}
+                    />
+                  </label>
+                )}
+              </div>
+            )}
             {entry.kind === "publication" && (
-              <section className="cms-panel">
-                <h2>
-                  {l("Référence de la publication", "Publication reference")}
-                </h2>
-                <div className="cms-form-grid">
-                  <label>
-                    DOI
-                    <input
-                      className="p-input"
-                      value={doc.doi}
-                      maxLength={300}
-                      placeholder="10.xxxx/…"
-                      onChange={(e) => change("doi", e.target.value)}
-                    />
-                  </label>
-                  <label>
-                    {l("Revue", "Journal")}
-                    <input
-                      className="p-input"
-                      value={doc.journal}
-                      maxLength={240}
-                      onChange={(e) => change("journal", e.target.value)}
-                    />
-                  </label>
-                  <label>
-                    {l("Année de publication", "Publication year")}
-                    <input
-                      className="p-input"
-                      value={doc.year}
-                      maxLength={4}
-                      inputMode="numeric"
-                      onChange={(e) => change("year", e.target.value)}
-                    />
-                  </label>
-                </div>
-              </section>
+              <div className="cms-form-grid">
+                <label>
+                  DOI
+                  <input
+                    className="p-input"
+                    value={doc.doi}
+                    maxLength={300}
+                    placeholder="10.xxxx/…"
+                    onChange={(e) => change("doi", e.target.value)}
+                  />
+                </label>
+                <label>
+                  {l("Revue", "Journal")}
+                  <input
+                    className="p-input"
+                    value={doc.journal}
+                    maxLength={240}
+                    onChange={(e) => change("journal", e.target.value)}
+                  />
+                </label>
+                <label>
+                  {l("Année de publication", "Publication year")}
+                  <input
+                    className="p-input"
+                    value={doc.year}
+                    maxLength={4}
+                    inputMode="numeric"
+                    onChange={(e) => change("year", e.target.value)}
+                  />
+                </label>
+              </div>
             )}
           </fieldset>
+          {entry.kind !== "page" && entry.kind !== "article" && (
+            <FieldsDisabled.Provider value={busy}>
+              <section className="cms-panel">
+                <h2>{l("Contenu de la page", "Page content")}</h2>
+                <TemplateFields
+                  kind={entry.kind}
+                  values={doc.fields}
+                  options={options}
+                  media={media}
+                  pickPicture={(use) => {
+                    pictureTarget.current = use;
+                    setPicker("field");
+                  }}
+                  onChange={(value) => change("fields", value)}
+                />
+              </section>
+            </FieldsDisabled.Provider>
+          )}
           <div className="cms-section-head">
             <h2>
-              {entry.kind === "page"
-                ? l(
-                    "Contenu complémentaire de la page",
-                    "Additional page content",
-                  )
-                : l("Texte & figures", "Body & figures")}
+              {entry.kind === "article"
+                ? l("Texte de l’article", "Article text")
+                : l(
+                    "Contenu supplémentaire (facultatif)",
+                    "Additional content (optional)",
+                  )}
             </h2>
-            <span>
-              {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
-            </span>
+            {entry.kind === "article" && (
+              <span>
+                {words} {words === 1 ? l("mot", "word") : l("mots", "words")}
+              </span>
+            )}
           </div>
-          {canStartStructure(doc.body) && !entry.legacyId && (
+          {entry.kind === "article" && (
+            <p className="p-help">
+              {l(
+                "Chaque titre de niveau 2 devient une partie, avec son lien dans le sommaire de la page.",
+                "Each level-2 heading becomes a part, with its link in the page’s table of contents.",
+              )}
+            </p>
+          )}
+          {canStartStructure(doc.body) &&
+            entry.kind === "article" &&
+            !entry.legacyId && (
             <div className="cms-writing-start">
               <div>
                 <strong>
@@ -1329,6 +880,21 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             handle={editor}
             onReady={setEditorReady}
           />
+          {entry.kind === "article" && (
+            <fieldset disabled={busy} className="cms-panel">
+              <h2>{l("Expertise liée", "Related expertise")}</h2>
+              <FieldsDisabled.Provider value={busy}>
+                <TemplateFields
+                  kind="article"
+                  values={doc.fields}
+                  options={options}
+                  media={media}
+                  pickPicture={() => {}}
+                  onChange={(value) => change("fields", value)}
+                />
+              </FieldsDisabled.Provider>
+            </fieldset>
+          )}
           <fieldset disabled={busy} className="cms-panel" id="cms-sources">
             <div className="cms-section-head">
               <h2>{l("Sources & références", "Sources & references")}</h2>
@@ -1408,8 +974,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             <h2>{l("Publication", "Publishing")}</h2>
             <p className="p-help">
               {l(
-                "Les enregistrements et restaurations modifient le brouillon uniquement. « Publier » diffuse explicitement cette version.",
-                "Saving and restoring affect the draft only. “Publish” explicitly releases this version.",
+                "« Enregistrer » garde votre travail en privé. Le site ne change que lorsque vous cliquez sur « Publier ».",
+                "“Save draft” keeps your work private. The website changes only when you click “Publish”.",
               )}
             </p>
             <details
@@ -1419,24 +985,19 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               <summary>
                 {publishIssues.length
                   ? `${publishIssues.length} ${l(publishIssues.length === 1 ? "élément à compléter" : "éléments à compléter", publishIssues.length === 1 ? "item to complete" : "items to complete")}`
-                  : l(
-                      "Éléments obligatoires complétés",
-                      "Required items complete",
-                    )}
+                  : l("Tout est complet", "Everything is complete")}
               </summary>
               {publishIssues.length > 0 ? (
                 <ul>
                   {publishIssues.map((key) => (
-                    <li key={key}>
-                      {issueLabels[key] ? l(...issueLabels[key]) : key}
-                    </li>
+                    <li key={key}>{issueText(key, entry.kind, l)}</li>
                   ))}
                 </ul>
               ) : (
                 <p className="p-help">
                   {l(
-                    "La validation scientifique reste sous votre responsabilité. Vérifiez l’aperçu avant de publier.",
-                    "Scientific validation remains your responsibility. Check the preview before publishing.",
+                    "Vérifiez l’aperçu de la page avant de publier.",
+                    "Check the page preview before publishing.",
                   )}
                 </p>
               )}
@@ -1449,8 +1010,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
               />
               <span>
                 {l(
-                  "J’ai relu les informations scientifiques, les sources, les limites et les droits de diffusion des textes et médias.",
-                  "I have reviewed the science, references, limitations and publishing rights for the text and media.",
+                  "J’ai relu ce contenu et il peut être publié.",
+                  "I have reviewed this content and it can be published.",
                 )}
               </span>
             </label>
@@ -1472,8 +1033,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                   apply(result);
                   setNotice(
                     l(
-                      "Contenu publié. La mise à jour du site peut prendre jusqu’à 30 secondes.",
-                      "Content published. The website may take up to 30 seconds to update.",
+                      "Publié. Le site est à jour dans quelques secondes et les moteurs de recherche sont prévenus.",
+                      "Published. The website updates within seconds and search engines are notified.",
                     ),
                   );
                 });
@@ -1484,7 +1045,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 ? l("Publier les modifications", "Publish changes")
                 : l("Publier", "Publish")}
             </Button>
-            {(entry.legacyId || entry.publication?.status === "published") && (
+            {(entryState(entry) === "live" ||
+              entryState(entry) === "pending") && (
               <>
                 <a
                   className="p-link"
@@ -1502,7 +1064,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 >
                   {entry.kind === "page"
                     ? l("Retirer les modifications", "Withdraw page changes")
-                    : l("Retirer du site", "Withdraw from site")}
+                    : l("Retirer du site", "Take offline")}
                 </Button>
               </>
             )}
@@ -1542,12 +1104,27 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                       kind: entry.kind,
                       locale: entry.locale === "fr" ? "en" : "fr",
                       translationOf: entry.id,
+                      ...(entry.legacyId && entry.kind !== "page"
+                        ? await translationAddress(entry)
+                        : {}),
                     }));
                   navigate(`/admin/contenus/${next.id}`);
                 })
               }
             >
-              {l("Version", "Version")} {entry.locale === "fr" ? "EN" : "FR"} →
+              {entry.locale === "fr"
+                ? l("Version anglaise", "English version")
+                : l("Version française", "French version")}{" "}
+              →
+            </Button>
+            <Button
+              variant="ghost"
+              disabled={busy}
+              onClick={exportDraft}
+              title={l("Exporter une copie JSON", "Export a JSON copy")}
+            >
+              <Download size={16} />
+              {l("Exporter une copie", "Export a copy")}
             </Button>
             <Button variant="danger" onClick={() => setDeleting(true)}>
               <Trash2 size={16} />
@@ -1557,7 +1134,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             </Button>
           </fieldset>
           <fieldset disabled={busy} className="cms-panel">
-            <h2>{l("Adresse & référencement", "Address & search engines")}</h2>
+            <h2>{l("Adresse & Google", "Address & Google")}</h2>
             <label>
               {l("Adresse courte", "URL slug")}
               <input
@@ -1565,13 +1142,13 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 aria-label={l("Adresse courte", "URL slug")}
                 value={slug}
                 maxLength={100}
-                disabled={!!entry.legacyId || !!entry.publishedVersion}
+                disabled={!freshDraft}
                 onChange={(e) => setSlug(e.target.value)}
               />
               <small>
                 {l(
-                  "Stable après la première publication. Pour un nouveau document, le titre sert d’adresse par défaut.",
-                  "Fixed after first publication. For a new document, the title is used by default.",
+                  "Créée à partir du titre. Elle ne change plus après la première publication, pour ne pas casser les liens.",
+                  "Made from the title. It no longer changes after first publication, so links never break.",
                 )}
               </small>
             </label>
@@ -1613,8 +1190,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
             </label>
             <p className="p-help">
               {l(
-                "Sans saisie, le titre et le résumé sont utilisés. La page, les listes, le pied de page et les sitemaps sont mis à jour ensemble.",
-                "If left empty, the title and summary are used. The page, listings, footer and sitemaps update together.",
+                "Sans saisie, le titre et l’introduction sont utilisés. À la publication, la page rejoint sa rubrique, le plan du site et les sitemaps, et les moteurs de recherche sont prévenus.",
+                "If left empty, the title and introduction are used. On publication, the page joins its section, the site map and sitemaps, and search engines are notified.",
               )}
             </p>
           </fieldset>
@@ -1842,8 +1419,8 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                 "Published changes will be withdrawn. The page returns to its original presentation; your draft remains available.",
               )
             : l(
-                "La page publique affichera « contenu retiré » et disparaîtra des listes, du pied de page et des sitemaps. Le brouillon et son historique restent disponibles.",
-                "The public page will show “content withdrawn” and disappear from listings, the footer and sitemaps. The draft and history remain available.",
+                "La page disparaît du site, des listes et des résultats de recherche. Le contenu reste disponible pour être remis en ligne.",
+                "The page leaves the website, its lists and search results. The content stays available to go back online.",
               )}
         </p>
       </Dialog>
@@ -1868,7 +1445,7 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
                   localStorage.removeItem(backupKey);
                   setDoc(entry.document);
                   setSlug(entry.slug);
-                  navigate("/admin/contenus");
+                  navigate(back);
                 })
               }
             >
@@ -1892,6 +1469,14 @@ function DocumentEditor({ initial }: { initial: EditorialEntry }) {
     </div>
   );
 }
+/** The other language of a built-in item, at its own address in the site's routes. */
+async function translationAddress(entry: EditorialEntry) {
+  const other = await loadCatalog(entry.locale === "fr" ? "en" : "fr");
+  const item = catalogItems(entry.kind, other).find(
+    (candidate) => candidate.id === entry.legacyId,
+  );
+  return { legacyId: entry.legacyId, slug: item?.slug };
+}
 function DraftPreview({ content }: { content: PublishedDocument }) {
   const l = useWords(),
     [ready, setReady] = useState(false);
@@ -1902,15 +1487,11 @@ function DraftPreview({ content }: { content: PublishedDocument }) {
   return (
     <div className="cms-preview">
       <LocaleProvider locale={content.locale}>
-        {["page", "service", "application"].includes(content.kind) ? (
-          <Suspense
-            fallback={<p>{l("Chargement de la page…", "Loading page…")}</p>}
-          >
-            <SitePagePreview content={content} />
-          </Suspense>
-        ) : (
-          <EditorialDocumentView content={content} preview />
-        )}
+        <Suspense
+          fallback={<p>{l("Chargement de la page…", "Loading page…")}</p>}
+        >
+          <SitePagePreview content={content} />
+        </Suspense>
       </LocaleProvider>
     </div>
   );

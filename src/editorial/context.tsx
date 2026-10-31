@@ -8,7 +8,9 @@ import {
 } from "react";
 import { getPage, type PageMeta } from "../lib/pages";
 import { editorialMeta, filterEditorialAlternates } from "./meta";
+import type { Catalog } from "../content/catalog";
 import type {
+  EditorialMedia,
   EditorialSummary,
   PublishedDocument,
 } from "../../supabase/functions/_shared/editorial";
@@ -22,12 +24,18 @@ interface EditorialState {
   index: EditorialSummary[];
   documents: Record<string, PublishedDocument>;
   failures: Record<string, string>;
+  /** Every picture known to the page, by id. */
+  media: Map<string, EditorialMedia>;
+  /** The catalogues with this state applied, filled by `useCatalog`. */
+  catalogues: Map<string, Catalog>;
   load: (path: string) => void;
 }
 const EditorialContext = createContext<EditorialState>({
   index: [],
   documents: {},
   failures: {},
+  media: new Map(),
+  catalogues: new Map(),
   load: () => {},
 });
 const publicBase = import.meta.env?.DEV
@@ -72,6 +80,15 @@ export function EditorialProvider({
   );
   const [failures, setFailures] = useState<Record<string, string>>({});
   const pending = useMemo(() => new Set<string>(), []);
+  const catalogues = useMemo(() => new Map<string, Catalog>(), [index, documents]);
+  const media = useMemo(() => {
+    const known = new Map<string, EditorialMedia>();
+    for (const row of index)
+      if (row.coverMedia) known.set(row.coverMedia.id, row.coverMedia);
+    for (const doc of Object.values(documents))
+      for (const item of doc.media) known.set(item.id, item);
+    return known;
+  }, [index, documents]);
   useEffect(() => {
     if (preview) return;
     let alive = true;
@@ -109,6 +126,8 @@ export function EditorialProvider({
     index,
     documents,
     failures,
+    media,
+    catalogues,
     load(path) {
       if (pending.has(path) || documents[path]) return;
       pending.add(path);
@@ -158,14 +177,20 @@ export function resolveEditorialMeta(
 export function usePublicMeta(path: string) {
   return resolveEditorialMeta(path, useEditorial().index);
 }
-export function usePageDocument(path: string) {
+/** The published document at this address, loaded on demand. */
+export function useItemDocument(path: string) {
   const state = useEditorial();
   const row = state.index.find(
-    (r) => r.kind === "page" && r.path === path && r.status === "published",
+    (r) => r.path === path && r.status === "published",
   );
   const content = state.documents[path];
   useEffect(() => {
     if (row && !content) state.load(path);
   }, [row?.id, row?.updatedAt, content]);
-  return row && content?.kind === "page" ? content : undefined;
+  return row ? content : undefined;
+}
+/** The edits of a page of the site, which keeps its own template and sections. */
+export function usePageDocument(path: string) {
+  const content = useItemDocument(path);
+  return content?.kind === "page" ? content : undefined;
 }

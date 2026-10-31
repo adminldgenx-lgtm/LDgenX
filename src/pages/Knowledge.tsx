@@ -201,10 +201,9 @@ export function SiteMapPage({ meta }: { meta: PageMeta }) {
         { to: r.innovations, label: seo.innovations.label },
         { to: r.publications, label: seo.publications.label },
         { to: r.resources, label: seo.resources.label },
-        {
-          to: r.service("materiel"),
-          label: catalog.services.find((s) => s.id === "materiel")!.title,
-        },
+        ...catalog.services
+          .filter((s) => s.id === "materiel")
+          .map((s) => ({ to: r.service(s.id), label: s.title })),
         { to: r.contact, label: copy.labels.quote },
       ],
     },

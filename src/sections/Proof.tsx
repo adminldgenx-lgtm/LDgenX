@@ -185,7 +185,7 @@ export function Ecosystem() {
           ))}
         </svg>
         <div className="eco-core">
-          <img src="/brand/lockup-navy-160.webp" alt="" width="570" height="160" />
+          <img src="/brand/lockup-navy.svg" alt="" width="570" height="160" />
         </div>
         {orbit.map((item, i) => (
           <span

@@ -45,7 +45,7 @@ const largest = (name) =>
     .map((m) => Number(m[1]))
     .sort((a, b) => b - a)[0];
 
-const logo = `data:image/webp;base64,${readFileSync(path.join(root, 'public/brand/lockup-light-160.webp')).toString('base64')}`;
+const logo = `data:image/svg+xml;base64,${readFileSync(path.join(root, 'public/brand/lockup-light.svg')).toString('base64')}`;
 const browser = await chromium.launch({ channel: process.env.LDGENX_BROWSER_CHANNEL || undefined });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 const made = [...kept];

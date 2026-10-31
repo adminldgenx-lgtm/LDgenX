@@ -21,8 +21,8 @@ const registry = await readFile(
 const templates = JSON.parse(
   registry.slice(registry.indexOf("["), registry.lastIndexOf("]") + 1),
 );
-const rendered =
-  /^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)/;
+// The only pages a published article reaches: its section and the site map.
+const listing = /^\/(?:ressources|plan-du-site)$/;
 const file = (path) => `dist/${path === "/" ? "index" : path.slice(1)}.html`;
 const staticHtml = (path) => readFile(file(path), "utf8");
 const heading = (html) =>
@@ -68,6 +68,7 @@ function row(kind, path, locale, status, changes = {}) {
     doi: "",
     journal: "",
     year: "",
+    fields: {},
     reviewed: true,
     ...changes,
   };
@@ -81,7 +82,7 @@ function row(kind, path, locale, status, changes = {}) {
         ? path.replace(locale === "en" ? /^\/en(?:\/|$)/ : /^\//, "")
         : path.split("/").pop(),
     groupId: randomUUID(),
-    legacyId: kind === "page" ? "page:" + path : null,
+    legacyId: changes.legacyId ?? (kind === "page" ? "page:" + path : null),
     status,
     title: document.title,
     summary: document.summary,
@@ -90,6 +91,7 @@ function row(kind, path, locale, status, changes = {}) {
     cover: document.cover,
     seoTitle: "",
     seoDescription: "",
+    card: document.fields,
     publishedAt: "2026-10-30T10:00:00.000Z",
     updatedAt: "2026-10-30T10:00:00.000Z",
     coverMedia: null,
@@ -100,7 +102,19 @@ function row(kind, path, locale, status, changes = {}) {
     media: [],
   };
 }
-const article = row("article", "/ressources/controle", "fr", "published");
+const article = row("article", "/ressources/controle", "fr", "published", {
+  cover,
+});
+const expertiseFields = {
+  headline: "Une expertise de contrôle",
+  short: "Une description de contrôle.",
+  scope: "Une ligne de contrôle.",
+  need: "Un besoin de contrôle.",
+  approaches: [{ title: "Une méthode", text: "Son texte." }],
+  prestations: ["Une prestation"],
+  uses: ["Un usage"],
+  sectors: ["aquaculture-peche"],
+};
 const scenarios = {
   untouched: [article],
   edited: [
@@ -113,8 +127,11 @@ const scenarios = {
     row("page", "/en", "en", "published", { title: "Edited home control" }),
     row("page", "/a-propos", "fr", "published", { cover }),
     row("page", "/contact", "fr", "withdrawn"),
-    row("page", "/services/adn-environnemental-adne", "fr", "published", {
+    row("service", "/services/adn-environnemental-adne", "fr", "published", {
       title: "ADN environnemental modifié",
+      legacyId: "adn-environnemental-adne",
+      cover,
+      fields: { headline: "Un grand titre modifié de contrôle" },
     }),
     row("page", "/applications/biodiversite-conservation", "fr", "withdrawn"),
     row("page", "/etudes-de-cas", "fr", "published", {
@@ -122,18 +139,30 @@ const scenarios = {
     }),
     row("service", "/services/nouvelle-expertise", "fr", "published", {
       title: "Nouvelle expertise de contrôle",
+      cover,
+      fields: expertiseFields,
     }),
     row("application", "/applications/nouvelle-application", "fr", "published", {
       title: "Nouvelle application de contrôle",
+      cover,
+      fields: {
+        headline: "Une application de contrôle",
+        scope: "Une ligne de contrôle.",
+        needs: [{ title: "Un besoin", text: "Son texte." }],
+        services: ["bioinformatique"],
+      },
     }),
     row("service", "/en/services/new-expertise", "en", "published", {
       title: "New expertise control",
+      cover,
+      fields: expertiseFields,
     }),
     row("service", "/services/expertise-retiree", "fr", "withdrawn"),
   ],
 };
 
-let scenario = "untouched";
+let scenario = "untouched",
+  pictureRequests = 0;
 const api = createServer((request, response) => {
   if (scenario === "hanging") return;
   if (scenario === "failing") {
@@ -154,6 +183,11 @@ const api = createServer((request, response) => {
         }),
       ),
     );
+  if (url.pathname.includes("/storage/v1/object/public/editorial-public/")) {
+    pictureRequests++;
+    response.setHeader("Content-Type", "image/webp");
+    return response.end(Buffer.from("RIFF0000WEBPVP8 "));
+  }
   if (url.pathname.endsWith("/public/document")) {
     const found = rows.find((r) => r.path === url.searchParams.get("path"));
     response.statusCode = !found ? 404 : found.status === "withdrawn" ? 410 : 200;
@@ -200,7 +234,14 @@ const secure = (response) => {
 async function outageChecks() {
   // Before anything is saved at the edge: nothing to serve but the static pages.
   await use("hanging");
-  for (const path of ["/", "/en", "/services", "/contact"]) {
+  for (const path of [
+    "/",
+    "/en",
+    "/services",
+    "/contact",
+    "/recherche",
+    "/etudes-de-cas/ichtyofaune-artois-picardie",
+  ]) {
     const page = await get(path);
     assert.equal(page.body, await staticHtml(path), path);
     assert(page.time < 3500, `${path} took ${Math.round(page.time)} ms`);
@@ -212,6 +253,14 @@ async function outageChecks() {
     assert.equal(response.status, 200, path);
     assert.equal(body, await staticHtml(path), path);
   }
+  for (const path of [
+    "/recherche/truite-orb-diversite-2016",
+    "/ressources/comprendre-adn-environnemental",
+    "/plan-du-site",
+  ])
+    assert.equal((await get(path)).response.status, 200, path);
+  const sitemap = await get("/sitemap.xml");
+  assert.equal(sitemap.response.status, 200);
   const page = await get("/ressources/controle");
   assert.equal(page.response.status, 503);
   assert(page.response.headers.get("x-robots-tag")?.includes("noindex"));
@@ -225,7 +274,7 @@ async function workerChecks() {
     const { response, body } = await get(path);
     assert.equal(response.status, 200, path);
     secure(response);
-    if (rendered.test(path))
+    if (listing.test(path))
       assert.equal(heading(body), heading(await staticHtml(path)), path);
     else {
       assert.equal(body, await staticHtml(path), "Changed bytes on " + path);
@@ -249,6 +298,21 @@ async function workerChecks() {
   assert.equal((await get("/", { method: "POST" })).response.status, 405);
   assert.equal((await get("/", { method: "HEAD" })).response.status, 200);
   ok("Redirects, unknown addresses, private routes and methods answer as before");
+  const file = "/media/17a1a94a-e945-4eb9-8865-2b4dcbeef47a/960.webp";
+  let picture = await get(file);
+  assert.equal(picture.response.status, 200);
+  assert.equal(picture.response.headers.get("content-type"), "image/webp");
+  assert.match(picture.response.headers.get("cache-control"), /max-age=31536000/);
+  await wait(500);
+  const fetched = pictureRequests;
+  picture = await get(file);
+  assert.equal(picture.response.status, 200);
+  assert.equal(pictureRequests, fetched, "The picture went back to storage");
+  assert.equal(
+    (await get("/media/17a1a94a-e945-4eb9-8865-2b4dcbeef47a/../../secret")).response.status,
+    404,
+  );
+  ok("Published pictures come from this domain, then from its edge cache");
   const before = {
     pages: (await get("/sitemaps/pages.xml")).body,
     full: (await get("/llms-full.txt")).body,
@@ -284,14 +348,26 @@ async function workerChecks() {
   ])
     assert.equal((await get(path)).body, await staticHtml(path), path);
   ok("Withdrawn edits restore the exact original; other pages stay static");
-  assert((await get("/services")).body.includes("Nouvelle expertise de contrôle"));
-  assert((await get("/en/services")).body.includes("New expertise control"));
-  assert((await get("/applications")).body.includes("Nouvelle application de contrôle"));
+  assert((await get("/services")).body.includes("/services/nouvelle-expertise"));
+  assert((await get("/en/services")).body.includes("/en/services/new-expertise"));
+  assert((await get("/applications")).body.includes("/applications/nouvelle-application"));
+  assert(
+    !(await get("/services")).body
+      .split('id="ldgenx-editorial"')[0]
+      .includes("/en/services/new-expertise"),
+    "An English item was linked from the French page",
+  );
   page = await get("/services/nouvelle-expertise");
-  assert(page.body.includes("page-hero") && page.body.includes(marker));
-  assert.equal(heading(page.body), "Nouvelle expertise de contrôle");
+  assert(page.body.includes("approach-layout") && page.body.includes(marker));
+  assert.equal(heading(page.body), "Une expertise de contrôle");
+  page = await get("/services/adn-environnemental-adne");
+  assert.equal(heading(page.body), "Un grand titre modifié de contrôle");
+  assert(page.body.includes("sampling-access"), "The page lost its own sections");
   assert.equal((await get("/services/expertise-retiree")).response.status, 410);
-  ok("New expertises and applications appear in their section and language only");
+  ok("Edited and new items keep the site's templates, in their section and language only");
+  const again = await get("/services/nouvelle-expertise");
+  assert.equal(again.body, (await get("/services/nouvelle-expertise")).body);
+  ok("A rendered page is kept at the edge until the published content changes");
   const pagesMap = (await get("/sitemaps/pages.xml")).body,
     expertises = (await get("/sitemaps/expertises.xml")).body,
     full = (await get("/llms-full.txt")).body,
@@ -308,12 +384,9 @@ async function workerChecks() {
       .find((part) => part.includes(`\nhttps://www.ldgenx.fr${path}\n`));
   assert(expertises.includes("/services/nouvelle-expertise"));
   assert(!expertises.includes("expertise-retiree"));
-  assert(pagesMap.includes("/applications/nouvelle-application"));
+  assert(expertises.includes("/applications/nouvelle-application"));
   assert.equal(urlEntry(pagesMap, "/contact"), urlEntry(before.pages, "/contact"));
-  for (const path of [
-    "/services/adn-environnemental-adne",
-    "/applications/biodiversite-conservation",
-  ]) {
+  for (const path of ["/applications/biodiversite-conservation"]) {
     assert(llmsEntry(before.full, path), path);
     assert.equal(llmsEntry(full, path), llmsEntry(before.full, path), path);
   }
@@ -379,8 +452,8 @@ async function browserChecks() {
         ["/en", "Edited home control"],
         ["/a-propos", "Titre modifié de contrôle"],
         ["/services", null],
-        ["/services/nouvelle-expertise", "Nouvelle expertise de contrôle"],
-        ["/services/adn-environnemental-adne", "ADN environnemental modifié"],
+        ["/services/nouvelle-expertise", "Une expertise de contrôle"],
+        ["/services/adn-environnemental-adne", "Un grand titre modifié de contrôle"],
         ["/etudes-de-cas", "Études modifiées de contrôle"],
         ["/contact", null],
       ]) {

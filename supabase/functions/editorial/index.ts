@@ -1,9 +1,11 @@
 import { createClient } from "npm:@supabase/supabase-js@2.118.0";
 import postgres, { type Sql } from "npm:postgres@3.4.7";
 import { portalOrigins } from "../_shared/origins.ts";
+import { indexNowKey, productionOrigin } from "../_shared/site.ts";
 import {
   EditorialError,
   EDITORIAL_LIMITS as LIMITS,
+  contentBases,
   contentPath,
   contentSlug,
   contentKinds,
@@ -21,12 +23,14 @@ import {
   type EditorialSummary,
   type MediaVariant,
 } from "../_shared/editorial.ts";
-import { webpSize, videoMime } from "../_shared/editorial-media.ts";
+import { jpegSize, webpSize, videoMime } from "../_shared/editorial-media.ts";
 import { editorialPageTemplates } from "../_shared/editorial-pages.ts";
 import {
   editorialStaticImages,
   editorialStaticPaths,
 } from "../_shared/editorial-static.ts";
+
+declare const EdgeRuntime: { waitUntil(task: Promise<unknown>): void };
 
 const project = Deno.env.get("SUPABASE_URL")!;
 const admin = createClient(
@@ -39,6 +43,36 @@ if (Deno.env.get("PORTAL_POOLER_HOST")) {
   connection.hostname = Deno.env.get("PORTAL_POOLER_HOST")!;
   connection.port = "6543";
   connection.username = Deno.env.get("PORTAL_POOLER_USER")!;
+}
+/** Same identifier as the imported working copies, so both languages of an item stay paired. */
+async function seededId(key: string) {
+  const hash = new Uint8Array(
+    await crypto.subtle.digest(
+      "SHA-256",
+      new TextEncoder().encode("ldgenx-editorial:" + key),
+    ),
+  );
+  const h = [...hash].map((x) => x.toString(16).padStart(2, "0")).join("");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-4${h.slice(13, 16)}-8${h.slice(17, 20)}-${h.slice(20, 32)}`;
+}
+/** Bing and the engines fed by IndexNow hear of a change at once. Google reads the sitemap. */
+function announce(entry: EditorialEntry, email: string | undefined) {
+  if (email?.endsWith("@example.invalid")) return;
+  const paths = [contentPath(entry.kind, entry.locale, entry.slug)];
+  if (entry.kind !== "page") paths.push(contentBases[entry.locale][entry.kind]);
+  EdgeRuntime.waitUntil(
+    fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        host: new URL(productionOrigin).host,
+        key: indexNowKey,
+        keyLocation: `${productionOrigin}/${indexNowKey}.txt`,
+        urlList: paths.map((path) => productionOrigin + path),
+      }),
+      signal: AbortSignal.timeout(8000),
+    }).catch(() => {}),
+  );
 }
 function requestContext() {
   const sql = postgres(connection.toString(), {
@@ -104,11 +138,16 @@ function requestContext() {
   ): Promise<EditorialMedia> {
     const variants = values(row.variants),
       urls: Record<string, string> = {};
+    let social: string | undefined;
+    const place = (variant: MediaVariant, url: string) => {
+      if (variant.mime === "image/jpeg") social = url;
+      else urls[String(variant.width)] = url;
+    };
     if (privateUrls && !row.is_public && signedUrls) {
       for (const variant of variants) {
         const url = signedUrls.get(variant.path);
         if (!url) throw new EditorialError("media_unavailable", 503);
-        urls[String(variant.width)] = url;
+        place(variant, url);
       }
     } else if (privateUrls && !row.is_public) {
       const signed = await admin.storage.from(PRIVATE).createSignedUrls(
@@ -117,12 +156,17 @@ function requestContext() {
       );
       if (signed.error) throw new EditorialError("media_unavailable", 503);
       signed.data?.forEach((v, i) => {
-        if (v.signedUrl) urls[String(variants[i].width)] = v.signedUrl;
+        if (v.signedUrl) place(variants[i], v.signedUrl);
       });
     } else
       for (const v of variants)
-        urls[String(v.width)] =
-          `${project}/storage/v1/object/public/${PUBLIC}/${v.path}`;
+        // Published pictures come from the site's own edge cache, not from storage each time.
+        place(
+          v,
+          v.mime.startsWith("image/")
+            ? `${productionOrigin}/media/${v.path}`
+            : `${project}/storage/v1/object/public/${PUBLIC}/${v.path}`,
+        );
     return {
       id: String(row.id),
       name: String(row.name),
@@ -133,6 +177,7 @@ function requestContext() {
       createdAt: iso(row.created_at),
       uses: Number(row.uses ?? 0),
       urls,
+      social,
     };
   }
   async function mediaRows(ids: string[], db = sql) {
@@ -168,16 +213,9 @@ function requestContext() {
     if (rows.length !== ids.length)
       throw new EditorialError("media_missing", 400);
     const byId = new Map(rows.map((r) => [String(r.id), r.kind]));
-    const [owner] =
-      await tx`select kind,legacy_id from public.cms_entries where id=${id}`;
     if (doc.cover?.mediaId && byId.get(doc.cover.mediaId) !== "image")
       throw new EditorialError("image_format");
     function check(n: import("../_shared/editorial.ts").ContentNode) {
-      if (
-        n.type === "studyEvidence" &&
-        (owner?.kind !== "study" || owner?.legacy_id !== n.attrs?.id)
-      )
-        throw new EditorialError("invalid_evidence");
       if (
         n.attrs?.staticSrc &&
         !editorialStaticImages.includes(String(n.attrs.staticSrc))
@@ -271,7 +309,7 @@ function requestContext() {
     const files = form.getAll("files");
     if (
       !files.length ||
-      files.length > 3 ||
+      files.length > (kind === "image" ? LIMITS.imageFiles : 1) ||
       files.some((f) => !(f instanceof File))
     )
       throw new EditorialError("invalid_input");
@@ -282,34 +320,35 @@ function requestContext() {
       throw new EditorialError("file_too_large", 413);
     const id = crypto.randomUUID(),
       parts: { file: File; bytes: Uint8Array; variant: MediaVariant }[] = [];
-    const seen = new Set<number>();
+    const seen = new Set<string>();
     let digest = "";
     for (const raw of files) {
       const file = raw as File,
         data = new Uint8Array(await file.arrayBuffer());
       let width = 0,
         height = 0,
+        name = "0",
         mime: string;
       if (kind === "image") {
         if (file.size > LIMITS.imageVariantBytes)
           throw new EditorialError("file_too_large", 413);
-        ({ width, height } = webpSize(data));
-        mime = "image/webp";
-        if (seen.has(width)) throw new EditorialError("invalid_input");
-        seen.add(width);
+        const jpeg = data[0] === 0xff && data[1] === 0xd8;
+        ({ width, height } = jpeg ? jpegSize(data) : webpSize(data));
+        mime = jpeg ? "image/jpeg" : "image/webp";
+        name = jpeg ? "social" : String(width);
+        if (seen.has(name)) throw new EditorialError("invalid_input");
+        seen.add(name);
       } else {
-        if (files.length !== 1) throw new EditorialError("invalid_input");
         mime = videoMime(data);
       }
       const hash = new Uint8Array(await crypto.subtle.digest("SHA-256", data));
       digest += [...hash].map((x) => x.toString(16).padStart(2, "0")).join("");
-      const extension =
-        mime === "image/webp" ? "webp" : mime === "video/mp4" ? "mp4" : "webm";
+      const extension = { "image/webp": "webp", "image/jpeg": "jpg", "video/mp4": "mp4" }[mime] ?? "webm";
       parts.push({
         file,
         bytes: data,
         variant: {
-          path: `${id}/${width}.${extension}`,
+          path: `${id}/${name}.${extension}`,
           width,
           height,
           bytes: file.size,
@@ -317,6 +356,8 @@ function requestContext() {
         },
       });
     }
+    if (kind === "image" && ![...seen].some((name) => name !== "social"))
+      throw new EditorialError("image_format");
     const hash = [
       ...new Uint8Array(
         await crypto.subtle.digest(
@@ -384,6 +425,23 @@ function requestContext() {
     if (row.deleted_at && !allowDeleted)
       throw new EditorialError("trashed", 409);
     return row;
+  }
+  /** The address a title gives, numbered when it is already taken or was used before. */
+  async function freeSlug(
+    tx: Sql,
+    id: string,
+    kind: ContentKind,
+    locale: ContentLocale,
+    wanted: string,
+  ) {
+    for (let n = 1; n < 100; n++) {
+      const slug = n === 1 ? wanted : `${wanted.slice(0, 96)}-${n}`;
+      const route = contentPath(kind, locale, slug);
+      const [taken] =
+        await tx`select 1 from public.cms_entries where kind=${kind} and locale=${locale} and slug=${slug} and id<>${id} union select 1 from public.cms_publications where path=${route} and entry_id<>${id}`;
+      if (!taken && !editorialStaticPaths.includes(route)) return slug;
+    }
+    throw new EditorialError("slug_taken", 409);
   }
   async function unused(tx: Sql, id: string) {
     const [row] =
@@ -464,6 +522,7 @@ function requestContext() {
         await sql`select data from public.portal_profiles where id=${data.user.id} and role='admin' and status='active'`;
       if (!profile) throw new EditorialError("forbidden", 403);
       const user = data.user.id,
+        email = data.user.email,
         name =
           `${profile.data.firstName} ${profile.data.lastName}`.trim() ||
           "LDgenX";
@@ -508,7 +567,7 @@ function requestContext() {
         return respond(editorialPageTemplates);
       if (path === "/entries" && req.method === "GET") {
         const rows =
-          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.deleted_at,e.draft-'body'-'references' as draft,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
+          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.deleted_at,e.draft-'body'-'references'-'fields' as draft,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references'-'fields') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
         const coverIds = [
           ...new Set(
             rows
@@ -529,6 +588,7 @@ function requestContext() {
               ...result.document,
               body: { type: "doc", content: [] },
               references: [],
+              fields: {},
             };
             result.coverMedia =
               covers.find((m) => m.id === result.document.cover?.mediaId) ??
@@ -573,6 +633,18 @@ function requestContext() {
         }
         let slug = `document-${id.slice(0, 8)}`,
           legacyId: string | null = null;
+        // A built-in item gets its working copy when it is first opened.
+        if (body.legacyId && kind !== "page") {
+          legacyId = String(body.legacyId);
+          slug = String(body.slug ?? "");
+          if (
+            !/^[a-z0-9-]{1,120}$/.test(legacyId) ||
+            contentSlug(slug) !== slug ||
+            !editorialStaticPaths.includes(contentPath(kind, locale, slug))
+          )
+            throw new EditorialError("invalid_input");
+          group = await seededId(`${kind}:${legacyId}`);
+        }
         if (kind === "page") {
           const template = editorialPageTemplates.find(
             (p) => p.path === targetPath && p.locale === locale,
@@ -595,6 +667,13 @@ function requestContext() {
           if (kind === "page") {
             const [existing] =
               await tx`select id from public.cms_entries where kind='page' and locale=${locale} and slug=${slug}`;
+            if (existing) {
+              createdId = String(existing.id);
+              return;
+            }
+          } else if (legacyId) {
+            const [existing] =
+              await tx`select id from public.cms_entries where kind=${kind} and locale=${locale} and legacy_id=${legacyId}`;
             if (existing) {
               createdId = String(existing.id);
               return;
@@ -632,7 +711,7 @@ function requestContext() {
         return respond({ ok: true });
       }
       match = path.match(
-        /^\/entries\/([^/]+)(?:\/(publish|withdraw|revisions|restore|trash|untrash))?$/,
+        /^\/entries\/([^/]+)(?:\/(publish|withdraw|reinstate|revisions|restore|trash|untrash))?$/,
       );
       if (!match) throw new EditorialError("not_found", 404);
       const id = validId(match[1]),
@@ -662,7 +741,9 @@ function requestContext() {
             await tx`update public.cms_entries set deleted_at=now(),deleted_by=${user},version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
           }
         });
-        return respond(await getEntry(id));
+        const changed = await getEntry(id);
+        if (action === "trash") announce(changed, email);
+        return respond(changed);
       }
       if (!action && req.method === "DELETE") {
         await txRun(async (tx) => {
@@ -679,10 +760,12 @@ function requestContext() {
       }
       if (!action && req.method === "GET") return respond(await getEntry(id));
       if (!action && req.method === "PATCH") {
-        const doc = validateDocument(body.document);
         await txRun(async (tx) => {
           await lock(tx);
           const row = await current(tx, id, body.version);
+          const kind = row.kind as ContentKind,
+            locale = row.locale as ContentLocale;
+          const doc = validateDocument(body.document, kind);
           let slug = String(row.slug);
           if (!row.legacy_id && !row.published_version) {
             const next = contentSlug(
@@ -690,16 +773,10 @@ function requestContext() {
                 body.slug ?? (slug.startsWith("document-") ? doc.title : slug),
               ),
             );
-            if (next) slug = next;
-            if (
-              editorialStaticPaths.includes(
-                contentPath(
-                  row.kind as ContentKind,
-                  row.locale as ContentLocale,
-                  slug,
-                ),
-              )
-            )
+            if (next && body.slug === undefined)
+              slug = await freeSlug(tx, id, kind, locale, next);
+            else if (next) slug = next;
+            if (editorialStaticPaths.includes(contentPath(kind, locale, slug)))
               throw new EditorialError("slug_taken", 409);
           }
           await syncLinks(tx, id, doc, "draft");
@@ -731,7 +808,7 @@ function requestContext() {
           const [old] =
             await tx`select * from public.cms_revisions where id=${String(body.revision)}::bigint and entry_id=${id}`;
           if (!old) throw new EditorialError("not_found", 404);
-          const doc = validateDocument(old.document);
+          const doc = validateDocument(old.document, row.kind as ContentKind);
           doc.reviewed = false;
           await syncLinks(tx, id, doc, "draft");
           await revision(tx, row, name, "restore");
@@ -743,7 +820,9 @@ function requestContext() {
         await txRun(async (tx) => {
           await lock(tx);
           const row = await current(tx, id, body.version),
-            doc = validateDocument(row.draft);
+            doc = validateDocument(row.draft, row.kind as ContentKind);
+          // Confirmed in the publish dialog of a section page.
+          if (body.reviewed === true) doc.reviewed = true;
           const issues = publicationIssues(doc, row.kind as ContentKind);
           if (issues.length)
             throw new EditorialError("publication_incomplete", 400, issues);
@@ -777,13 +856,15 @@ function requestContext() {
             );
             await revision(tx, row, name, "publish");
             await tx`insert into public.cms_publications(entry_id,kind,locale,slug,path,group_id,legacy_id,status,snapshot) values(${id},${String(row.kind)},${String(row.locale)},${String(row.slug)},${route},${String(row.group_id)},${row.legacy_id as string | null},'published',${tx.json(doc as never)}) on conflict(entry_id) do update set snapshot=excluded.snapshot,status='published',updated_at=now()`;
-            await tx`update public.cms_entries set published_version=version+1,version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
+            await tx`update public.cms_entries set draft=${tx.json(doc as never)},published_version=version+1,version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
           } catch (e) {
             if (copied.length) await admin.storage.from(PUBLIC).remove(copied);
             throw e;
           }
         });
-        return respond(await getEntry(id));
+        const published = await getEntry(id);
+        announce(published, email);
+        return respond(published);
       }
       if (action === "withdraw" && req.method === "POST") {
         await txRun(async (tx) => {
@@ -801,7 +882,24 @@ function requestContext() {
           await tx`delete from public.cms_media_links where entry_id=${id} and stage='published'`;
           await tx`update public.cms_entries set version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
         });
-        return respond(await getEntry(id));
+        const withdrawn = await getEntry(id);
+        announce(withdrawn, email);
+        return respond(withdrawn);
+      }
+      // A built-in page goes back to its original version; the edits stay as a draft.
+      if (action === "reinstate" && req.method === "POST") {
+        await txRun(async (tx) => {
+          await lock(tx);
+          const row = await current(tx, id, body.version);
+          if (!row.legacy_id) throw new EditorialError("not_published", 409);
+          await revision(tx, row, name, "reinstate");
+          await tx`delete from public.cms_publications where entry_id=${id}`;
+          await tx`delete from public.cms_media_links where entry_id=${id} and stage='published'`;
+          await tx`update public.cms_entries set published_version=null,version=version+1,updated_at=now(),updated_by=${user} where id=${id}`;
+        });
+        const reinstated = await getEntry(id);
+        announce(reinstated, email);
+        return respond(reinstated);
       }
       throw new EditorialError("not_found", 404);
     } catch (error) {

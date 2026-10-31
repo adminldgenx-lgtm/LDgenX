@@ -41,19 +41,29 @@ export function MediaLibrary({
   useEffect(() => {
     void refresh();
   }, []);
-  const upload = async (file: File) => {
+  const upload = async (files: File[]) => {
     setBusy(true);
     setError("");
-    setReport(l("Préparation et import en cours…", "Preparing and uploading…"));
     try {
-      const type = kind ?? (file.type.startsWith("video/") ? "video" : "image");
-      const result = await uploadMedia(file, type);
-      setItems((old) => [result, ...old.filter((m) => m.id !== result.id)]);
-      onChange?.();
-      window.dispatchEvent(new Event("cms-media-changed"));
-      setReport(
-        `${l("Import terminé", "Upload complete")} · ${megabytes(file.size)} → ${megabytes(result.bytes)} ${type === "image" ? "WebP" : ""}`,
-      );
+      let last: EditorialMedia | undefined;
+      for (const [index, file] of files.entries()) {
+        setReport(
+          `${l("Optimisation et import", "Optimising and uploading")}${files.length > 1 ? ` (${index + 1}/${files.length})` : ""}…`,
+        );
+        const type =
+          kind ?? (file.type.startsWith("video/") ? "video" : "image");
+        const { media, delivered } = await uploadMedia(file, type);
+        last = media;
+        setItems((old) => [media, ...old.filter((m) => m.id !== media.id)]);
+        onChange?.();
+        window.dispatchEvent(new Event("cms-media-changed"));
+        setReport(
+          type === "image"
+            ? `${l("Image optimisée", "Image optimised")} · ${megabytes(file.size)} → ${megabytes(delivered)} ${l("en WebP, sans perte visible", "as WebP, with no visible loss")}`
+            : l("Vidéo importée", "Video uploaded"),
+        );
+      }
+      if (last && pick && files.length === 1) pick(last);
     } catch (e) {
       setError(cmsError(e, l));
       setReport("");
@@ -66,8 +76,8 @@ export function MediaLibrary({
     <div className="cms-library">
       <p className="p-help">
         {l(
-          "Les images sont converties en WebP dans votre navigateur, redimensionnées sans agrandissement et proposées en trois tailles au maximum. Vérifiez la lisibilité des figures après l’import.",
-          "Images are converted to WebP in your browser, resized without upscaling and stored in up to three sizes. Check scientific figures remain readable after uploading.",
+          "Chaque image est automatiquement convertie en WebP et allégée avant l’envoi, en quatre tailles, sans perte de qualité visible. Les pages chargent ainsi la bonne taille pour chaque écran.",
+          "Every image is automatically converted to WebP and lightened before upload, in four sizes, with no visible loss of quality. Pages then load the right size for each screen.",
         )}
       </p>
       <p className="p-help">
@@ -105,6 +115,7 @@ export function MediaLibrary({
         <input
           ref={input}
           type="file"
+          multiple={!pick}
           className="cms-file-input"
           aria-label={l("Importer un média", "Upload media")}
           accept={
@@ -116,8 +127,8 @@ export function MediaLibrary({
           }
           disabled={busy}
           onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (file) void upload(file);
+            const files = [...(e.target.files ?? [])];
+            if (files.length) void upload(files);
           }}
         />
         <Button busy={busy} onClick={() => input.current?.click()}>
@@ -176,9 +187,7 @@ export function MediaLibrary({
               <strong title={m.name}>{m.name}</strong>
               <span>
                 {megabytes(m.bytes)} ·{" "}
-                {m.kind === "image"
-                  ? `${m.variants.length} WebP`
-                  : l("Vidéo", "Video")}
+                {m.kind === "image" ? "WebP" : l("Vidéo", "Video")}
               </span>
               <small>
                 {m.isPublic

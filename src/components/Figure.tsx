@@ -2,6 +2,8 @@ import { Fragment, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useCatalog } from '../i18n';
 import { imageUrl } from '../lib/images';
+import { useEditorial } from '../editorial/context';
+import { largestUrl } from '../editorial/meta';
 import { Photo } from './ui';
 
 /** A published scientific figure with its caption. The picture opens at full size in a new tab,
@@ -22,9 +24,13 @@ export function Figure({
   sizes?: string;
 }) {
   const { ui } = useCatalog();
+  const { media } = useEditorial();
+  const full = image.startsWith('cms-media:')
+    ? largestUrl(media.get(image.slice('cms-media:'.length)))
+    : imageUrl(image);
   return (
     <figure className={`sci-figure ${className}`}>
-      <a className="sci-figure-frame" href={imageUrl(image)} target="_blank" rel="noreferrer">
+      <a className="sci-figure-frame" href={full} target="_blank" rel="noreferrer">
         <Photo name={image} alt={alt} sizes={sizes} />
         <span className="sr-only">
           {ui.common.figure}

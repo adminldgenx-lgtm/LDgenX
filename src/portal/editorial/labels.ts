@@ -5,17 +5,17 @@ export function useWords() {
 }
 export const kindNames = {
   fr: {
-    article: "Article / guide",
+    article: "Article",
     study: "Étude de cas",
-    publication: "Publication scientifique",
+    publication: "Publication",
     service: "Expertise",
     application: "Application",
     page: "Page du site",
   },
   en: {
-    article: "Article / guide",
+    article: "Article",
     study: "Case study",
-    publication: "Scientific publication",
+    publication: "Publication",
     service: "Expertise",
     application: "Application",
     page: "Website page",
@@ -67,8 +67,8 @@ const errors: Record<string, [string, string]> = {
     "This image exceeds 40 megapixels. Resize it before uploading.",
   ],
   webp_unavailable: [
-    "Ce navigateur ne peut pas produire de WebP. Utilisez un navigateur récent.",
-    "This browser cannot produce WebP. Use a recent browser.",
+    "L’image n’a pas pu être convertie. Réessayez ou utilisez un navigateur récent.",
+    "The image could not be converted. Retry or use a recent browser.",
   ],
   file_too_large: [
     "Fichier trop volumineux : images optimisées 4 MB maximum au total, vidéo 20 MB maximum.",
@@ -111,33 +111,28 @@ export function cmsError(
   return l(...p);
 }
 export const issueLabels: Record<string, [string, string]> = {
-  title: [
-    "Un titre d’au moins 8 caractères",
-    "A title of at least 8 characters",
-  ],
+  title: ["Un titre", "A title"],
   summary: [
-    "Un résumé d’au moins 30 caractères",
-    "A summary of at least 30 characters",
+    "Une introduction d’au moins 20 caractères",
+    "An introduction of at least 20 characters",
   ],
   body: [
     "Un texte d’au moins 100 caractères",
     "Body text of at least 100 characters",
   ],
-  author: ["Un auteur ou une équipe", "An author or team"],
+  cover: ["Une image principale", "A main image"],
   review: [
-    "La validation scientifique et les droits de diffusion",
-    "Scientific review and publishing rights",
+    "La confirmation de relecture",
+    "The review confirmation",
   ],
   alt: [
-    "Un texte alternatif pour chaque image",
-    "Alternative text for every image",
+    "Une description pour chaque image du texte",
+    "A description for every image in the text",
   ],
-  credit: ["Un crédit pour chaque image", "A credit for every image"],
-  caption: ["Une légende pour chaque figure", "A caption for every figure"],
   video_title: ["Un titre pour chaque vidéo", "A title for every video"],
   publication_reference: [
-    "DOI, revue, année et au moins une référence avec lien",
-    "DOI, journal, year and at least one linked reference",
+    "Le DOI, la revue et l’année",
+    "The DOI, journal and year",
   ],
   reference_label: [
     "Un libellé pour chaque référence",

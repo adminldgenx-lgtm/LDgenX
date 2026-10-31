@@ -73,7 +73,9 @@ export function localeOf(path: string): Locale {
 
 export function routesFor(locale: Locale, source: RouteSource) {
   const base = bases[locale];
-  const slug = (list: Entity[], id: string) => list.find((e) => e.id === id)?.slug ?? id;
+  // Published items are not in the static tables: their id carries their own address.
+  const slug = (list: Entity[], id: string) =>
+    list.find((e) => e.id === id)?.slug ?? id.replace(/^cms:/, '');
   const routes = {
     ...base,
     service: (id: string) => `${base.services}/${slug(source.services, id)}`,

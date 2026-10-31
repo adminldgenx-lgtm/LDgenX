@@ -1,34 +1,13 @@
 import { Fragment, useEffect, type ReactNode } from "react";
-import { Link } from "react-router-dom";
 import { ContentVideo, MediaImage } from "./media-view";
 import { useEditorial } from "./context";
-import {
-  contentBases,
-  type ContentNode,
-  type ContentImage,
-  type EditorialMedia,
-  type PublishedDocument,
-  type EditorialSummary,
+import { largestUrl } from "./meta";
+import type {
+  ContentNode,
+  ContentImage,
+  EditorialMedia,
+  EditorialSummary,
 } from "../../supabase/functions/_shared/editorial";
-import { useLocale } from "../i18n";
-import { LegacyStudyEvidence } from "../pages/Editorial";
-import { PageHero, FinalCTA } from "../components/ui";
-import { editorialMeta } from "./meta";
-function ScientificTitle({ text }: { text: string }) {
-  return (
-    <>
-      {text
-        .split(/(\*[^*]+\*)/)
-        .map((part, i) =>
-          part.startsWith("*") && part.endsWith("*") ? (
-            <em key={i}>{part.slice(1, -1)}</em>
-          ) : (
-            part
-          ),
-        )}
-    </>
-  );
-}
 
 function richNode(
   node: ContentNode,
@@ -116,7 +95,7 @@ function richNode(
     case "figure": {
       const img = node.attrs as unknown as ContentImage;
       const asset = media.find((m) => m.id === img.mediaId);
-      const full = img.staticSrc ?? Object.values(asset?.urls ?? {}).at(-1);
+      const full = img.staticSrc ?? largestUrl(asset);
       return (
         <figure className="cms-figure" key={key}>
           <a
@@ -157,15 +136,21 @@ function richNode(
       return (
         <ContentVideo key={key} node={node} media={media} locale={locale} />
       );
-    case "studyEvidence":
-      return (
-        <div className="cms-study-evidence" key={key}>
-          <LegacyStudyEvidence id={String(node.attrs?.id)} />
-        </div>
-      );
     default:
       return null;
   }
+}
+/** Formatted text laid straight into a template, which brings its own typography. */
+export function RichNodes({
+  nodes,
+  media = [],
+  locale = "fr",
+}: {
+  nodes: ContentNode[];
+  media?: EditorialMedia[];
+  locale?: string;
+}) {
+  return <>{nodes.map((node, i) => richNode(node, media, locale, i))}</>;
 }
 export function DocumentBody({
   body,
@@ -178,188 +163,25 @@ export function DocumentBody({
 }) {
   return <div className="cms-prose">{richNode(body, media, locale, 0)}</div>;
 }
-export function EditorialDocumentView({
-  content,
-  preview = false,
+/** A published item takes its page template once its text has arrived. A built-in item already
+ *  has one to show meanwhile; the server sends the text with the page, so nothing waits there. */
+export function PublishedPage({
+  row,
+  children,
 }: {
-  content: PublishedDocument;
-  preview?: boolean;
+  row: EditorialSummary;
+  children: ReactNode;
 }) {
-  const d = content.document,
-    fr = content.locale === "fr";
-  const parent = contentBases[content.locale][content.kind];
-  const label =
-    content.kind === "service"
-      ? fr
-        ? "Expertises"
-        : "Expertise"
-      : content.kind === "application"
-        ? "Applications"
-        : content.kind === "study"
-          ? fr
-            ? "Études de cas"
-            : "Case studies"
-          : content.kind === "publication"
-            ? fr
-              ? "Recherche & publications"
-              : "Research & publications"
-            : fr
-              ? "Articles & guides"
-              : "Articles & guides";
-  if (content.kind === "service" || content.kind === "application")
-    return (
-      <>
-        <PageHero
-          meta={editorialMeta(content, [])}
-          eyebrow={d.category || label}
-          title={d.title.replace(/\*/g, "")}
-          intro={d.summary}
-          editorial={content}
-        />
-        <section className="section-space">
-          <div className="container cms-document-body">
-            <DocumentBody
-              body={d.body}
-              media={content.media}
-              locale={content.locale}
-            />
-            {d.references.length > 0 && (
-              <div className="cms-references">
-                <h2>{fr ? "Sources & références" : "Sources & references"}</h2>
-                <ol>
-                  {d.references.map((r, i) => (
-                    <li key={i}>
-                      {r.url ? <a href={r.url}>{r.label}</a> : r.label}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            )}
-          </div>
-        </section>
-        <FinalCTA />
-      </>
-    );
-  return (
-    <article className="cms-document">
-      <header className="cms-document-hero container">
-        {!preview && (
-          <nav
-            className="breadcrumbs"
-            aria-label={fr ? "Fil d’Ariane" : "Breadcrumb"}
-          >
-            <Link to={fr ? "/" : "/en"}>{fr ? "Accueil" : "Home"}</Link>
-            <span aria-hidden="true"> / </span>
-            <Link to={parent}>{label}</Link>
-          </nav>
-        )}
-        <p className="eyebrow">
-          {content.kind === "publication"
-            ? fr
-              ? "Résumé de publication scientifique"
-              : "Scientific publication summary"
-            : d.category || label}
-        </p>
-        <h1>
-          <ScientificTitle text={d.title} />
-        </h1>
-        <p className="cms-lead">{d.summary}</p>
-        <div className="cms-byline">
-          <span>
-            {content.kind === "publication" &&
-              (fr ? "Auteurs de l’article : " : "Paper authors: ")}
-            {d.author}
-          </span>
-          {!preview && (
-            <time dateTime={content.updatedAt}>
-              {content.kind === "publication" &&
-                (fr ? "Résumé mis à jour le " : "Summary updated on ")}
-              {new Intl.DateTimeFormat(fr ? "fr-FR" : "en-GB", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              }).format(new Date(content.updatedAt))}
-            </time>
-          )}
-        </div>
-        {content.kind === "publication" && (
-          <p className="cms-journal">
-            {d.journal} {d.year && `· ${d.year}`}
-            {d.doi && (
-              <>
-                {" "}
-                ·{" "}
-                <a href={`https://doi.org/${d.doi}`} rel="noreferrer">
-                  DOI : {d.doi}
-                </a>
-              </>
-            )}
-          </p>
-        )}
-      </header>
-      {d.cover && (
-        <figure className="container cms-cover">
-          <MediaImage
-            image={d.cover}
-            media={content.media.find((m) => m.id === d.cover?.mediaId)}
-            eager
-          />
-          {(d.cover.caption || d.cover.credit !== "LDgenX") && (
-            <figcaption>
-              {d.cover.caption}
-              {d.cover.credit && <> · {d.cover.credit}</>}
-              {d.cover.licenceUrl && (
-                <>
-                  {" "}
-                  ·{" "}
-                  <a href={d.cover.licenceUrl} rel="noreferrer">
-                    {fr ? "Licence / source" : "Licence / source"}
-                  </a>
-                </>
-              )}
-            </figcaption>
-          )}
-        </figure>
-      )}
-      <div className="container cms-document-body">
-        <DocumentBody
-          body={d.body}
-          media={content.media}
-          locale={content.locale}
-        />
-        {d.references.length > 0 && (
-          <section className="cms-references">
-            <h2>{fr ? "Sources & références" : "Sources & references"}</h2>
-            <ol>
-              {d.references.map((r, i) => (
-                <li key={i}>
-                  {r.url ? (
-                    <a href={r.url} rel="noreferrer">
-                      {r.label}
-                    </a>
-                  ) : (
-                    r.label
-                  )}
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
-      </div>
-    </article>
-  );
-}
-export function PublishedEditorialPage({ row }: { row: EditorialSummary }) {
   const state = useEditorial(),
     content = state.documents[row.path],
     failure = state.failures[row.path];
   useEffect(() => {
     if (!content) state.load(row.path);
   }, [row.path, content]);
-  if (content) return <EditorialDocumentView content={content} />;
+  if (content || row.legacyId) return <>{children}</>;
   return (
     <section className="container cms-loading" aria-live="polite">
-      <h1>{row.title}</h1>
+      <h1>{row.title.replace(/\*/g, "")}</h1>
       <p>
         {failure
           ? row.locale === "fr"
@@ -375,50 +197,5 @@ export function PublishedEditorialPage({ row }: { row: EditorialSummary }) {
         </button>
       )}
     </section>
-  );
-}
-export function EditorialCards({
-  kind,
-  onlyNew = true,
-  entries: selected,
-}: {
-  kind: EditorialSummary["kind"];
-  onlyNew?: boolean;
-  entries?: EditorialSummary[];
-}) {
-  const { index } = useEditorial(),
-    locale = useLocale();
-  const entries =
-    selected ??
-    index.filter(
-      (r) =>
-        r.status === "published" &&
-        r.locale === locale &&
-        r.kind === kind &&
-        (!onlyNew || !r.legacyId),
-    );
-  if (!entries.length) return null;
-  return (
-    <div className="cms-card-grid">
-      {entries.map((r) => (
-        <Link to={r.path} key={r.id} className="cms-card">
-          {r.cover && (
-            <MediaImage
-              image={r.cover}
-              media={r.coverMedia}
-              sizes="(max-width: 700px) 92vw, 480px"
-            />
-          )}
-          <span className="eyebrow">{r.category}</span>
-          <h3>
-            <ScientificTitle text={r.title} />
-          </h3>
-          <p>{r.summary}</p>
-          <span className="text-link">
-            {locale === "fr" ? "Lire la suite" : "Read more"} →
-          </span>
-        </Link>
-      ))}
-    </div>
   );
 }

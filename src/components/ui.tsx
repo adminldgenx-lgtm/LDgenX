@@ -13,7 +13,6 @@ import { licensedPhotos } from "../content/licensed-photos";
 import { useEditorial, usePageDocument } from "../editorial/context";
 import { CoverCredit, MediaImage } from "../editorial/media-view";
 import { PageWriting } from "../editorial/PageWriting";
-import type { PublishedDocument } from "../../supabase/functions/_shared/editorial";
 
 export function Reveal({
   children,
@@ -55,17 +54,17 @@ export function Photo({
   const phase = useEntrance(ref);
   const widths = imageWidths(name);
   const { ui } = useCatalog();
-  const editorial = useEditorial().index.find(
-    (r) => name === `cms-entry:${r.id}`,
-  );
-  if (editorial?.cover)
+  const { media } = useEditorial();
+  if (name.startsWith("cms-media:"))
     return (
       <MediaImage
-        image={editorial.cover}
-        media={editorial.coverMedia}
+        image={{ alt, caption: "", credit: "", licenceUrl: "" }}
+        media={media.get(name.slice("cms-media:".length))}
         className={`photo ${className}`}
         eager={eager}
         sizes={sizes}
+        imageRef={ref}
+        reveal={phase}
       />
     );
   // Credits are listed in the legal notice, not printed on the pictures.
@@ -277,7 +276,6 @@ export function PageHero({
   intro,
   image,
   dark = false,
-  editorial,
 }: {
   meta: PageMeta;
   eyebrow: string;
@@ -285,10 +283,8 @@ export function PageHero({
   intro?: string;
   image?: string;
   dark?: boolean;
-  editorial?: PublishedDocument;
 }) {
-  const page = usePageDocument(meta.path),
-    content = editorial ?? page;
+  const content = usePageDocument(meta.path);
   title = content ? content.document.title.replace(/\*/g, "") : title;
   intro = content?.document.summary ?? intro;
   eyebrow = content?.document.category || eyebrow;
@@ -350,7 +346,7 @@ export function PageHero({
           </div>
         </div>
       </section>
-      {!editorial && <PageWriting path={meta.path} />}
+      {content && <PageWriting path={meta.path} />}
     </>
   );
 }

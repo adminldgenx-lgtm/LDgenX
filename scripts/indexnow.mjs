@@ -1,5 +1,6 @@
 // Tells search engines that use IndexNow (Bing, which also feeds ChatGPT search and Copilot,
-// Yandex, Seznam, Naver) which pages changed, right after a deployment. Google does not use
+// Yandex, Seznam, Naver) which pages changed, right after a deployment. A publication in the
+// administration does the same by itself (supabase/functions/editorial). Google does not use
 // IndexNow: it reads the sitemap declared in robots.txt and Search Console.
 //
 // Usage, once the new version is online:
@@ -10,10 +11,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const site = readFileSync(path.join(root, 'src/content/site.ts'), 'utf8');
-const key = site.match(/indexNowKey: '([0-9a-f]+)'/)?.[1];
-const origin = site.match(/origin: '([^']+)'/)?.[1];
-if (!key || !origin) throw new Error('IndexNow key or origin not found in src/content/site.ts.');
+const site = readFileSync(path.join(root, 'supabase/functions/_shared/site.ts'), 'utf8');
+const key = site.match(/indexNowKey = "([0-9a-f]+)"/)?.[1];
+const origin = site.match(/productionOrigin = "([^"]+)"/)?.[1];
+if (!key || !origin) throw new Error('IndexNow key or origin not found in the shared site file.');
 
 const dist = path.join(root, 'dist');
 const index = readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');

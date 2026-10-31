@@ -128,6 +128,11 @@ export const knowledge = {
         title: 'L’entreprise',
         items: [
           {
+            question: 'Que fait LDgenX ?',
+            answer:
+              'LDgenX est une entreprise française de génomique appliquée et de génétique environnementale. Elle conçoit les études, analyse les échantillons (ADN environnemental, génomique des populations, communautés microbiennes, séquençage, dPCR) et interprète les résultats pour les acteurs publics et privés de la biodiversité, de l’aquaculture, de l’agriculture, de l’environnement et de la recherche.',
+          },
+          {
             question: 'Où se trouve LDgenX ?',
             answer:
               'L’équipe est implantée à la station Ifremer de Palavas-les-Flots, près de Montpellier (Hérault, Occitanie). Ses études couvrent aussi d’autres régions, comme les ports et estuaires d’Artois-Picardie.',

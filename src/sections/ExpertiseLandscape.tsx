@@ -286,9 +286,10 @@ export function ExpertiseLandscape({
 } = {}) {
   const { copy, services, ui } = useCatalog();
   const r = useRoutes();
-  const items: Item[] = PEAKS.map((peak) => ({
+  // The land is drawn for these summits: an expertise taken off the site only loses its marker.
+  const items = PEAKS.map((peak) => ({
     peak,
-    service: services.find((s) => s.id === peak.slug)!,
+    service: services.find((s) => s.id === peak.slug),
   }));
   const others = listedExpertises(services).filter((s) => !PEAKS.some((p) => p.slug === s.id));
   const mobile = useMediaQuery('(max-width: 800px)');
@@ -632,7 +633,8 @@ export function ExpertiseLandscape({
   const cardState = usePresence(active !== null, 200);
   const [shown, setShown] = useState<number | null>(null);
   if (active !== null && active !== shown) setShown(active);
-  const current = shown === null ? null : items[shown];
+  const opened = shown === null ? null : items[shown];
+  const current = opened?.service ? (opened as Item) : null;
 
   // Floating card beside its summit on wide screens: never over its own summit, never outside
   // the landscape, close to the summit, and hiding as little of the others as possible.
@@ -738,7 +740,7 @@ export function ExpertiseLandscape({
           </svg>
         )}
         <div className="landscape-points" role="group" aria-label={ui.landscape.explore}>
-          {items.map(({ peak, service }, i) => (
+          {items.map(({ peak, service }, i) => service && (
             <button
               key={peak.slug}
               ref={(el) => {
@@ -803,7 +805,7 @@ export function ExpertiseLandscape({
       </div>
       {docked && (
         <div className="landscape-chips" role="group" aria-label={ui.landscape.choose}>
-          {items.map(({ peak, service }, i) => (
+          {items.map(({ peak, service }, i) => service && (
             <button
               key={peak.slug}
               type="button"

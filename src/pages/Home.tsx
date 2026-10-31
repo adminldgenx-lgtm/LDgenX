@@ -67,7 +67,7 @@ export function Home() {
   const page = usePageDocument(r.home);
   const featuredStudy = studies.find(
     (study) => study.id === "ichtyofaune-artois-picardie",
-  )!;
+  );
   return (
     <>
       <div className="dna-hero-wrap">
@@ -172,16 +172,18 @@ export function Home() {
             title={copy.home.studiesTitle}
             link={{ to: r.studies, label: copy.labels.allStudies }}
           />
-          <Reveal className="home-study-teaser">
-            <div>
-              <Eyebrow>Artois-Picardie</Eyebrow>
-              <h3>{featuredStudy.title}</h3>
-              <p>{featuredStudy.subtitle}</p>
-            </div>
-            <TextLink to={r.study(featuredStudy.id)}>
-              {ui.expertisePage.exploreStudy}
-            </TextLink>
-          </Reveal>
+          {featuredStudy && (
+            <Reveal className="home-study-teaser">
+              <div>
+                <Eyebrow>Artois-Picardie</Eyebrow>
+                <h3>{featuredStudy.title}</h3>
+                <p>{featuredStudy.subtitle}</p>
+              </div>
+              <TextLink to={r.study(featuredStudy.id)}>
+                {ui.expertisePage.exploreStudy}
+              </TextLink>
+            </Reveal>
+          )}
         </div>
       </section>
       {/* The page ends on the studies, at the client's request (23 October 2026): the other

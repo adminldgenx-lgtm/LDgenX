@@ -10,6 +10,23 @@ export type InternalLink =
     }
   | { kind: 'external'; href: string };
 
+/** A guide of the Resources section. Published articles carry their formatted text in `nodes`. */
+export interface Resource {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  intro: string;
+  sections: {
+    title: string;
+    text: string;
+    nodes?: import('../../supabase/functions/_shared/editorial').ContentNode[];
+  }[];
+  service: string;
+  source?: string;
+}
+
 /** A case or subject shown on an expertise page, as published on ldgenx.fr. */
 export interface CaseRef {
   title: string;

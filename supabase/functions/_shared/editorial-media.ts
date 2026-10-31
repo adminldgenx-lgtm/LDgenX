@@ -34,6 +34,24 @@ export function webpSize(b: Uint8Array): { width: number; height: number } {
     throw new EditorialError("image_dimensions");
   return { width, height };
 }
+/** Size of a baseline or progressive JPEG, from its frame header. */
+export function jpegSize(b: Uint8Array): { width: number; height: number } {
+  if (b.length < 4 || b[0] !== 0xff || b[1] !== 0xd8)
+    throw new EditorialError("image_format");
+  for (let at = 2; at + 9 < b.length; ) {
+    if (b[at] !== 0xff) break;
+    const marker = b[at + 1];
+    if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+      const height = (b[at + 5] << 8) | b[at + 6],
+        width = (b[at + 7] << 8) | b[at + 8];
+      if (!width || !height || width > EDITORIAL_LIMITS.imageWidth)
+        throw new EditorialError("image_dimensions");
+      return { width, height };
+    }
+    at += 2 + ((b[at + 2] << 8) | b[at + 3]);
+  }
+  throw new EditorialError("image_format");
+}
 export function videoMime(b: Uint8Array): "video/mp4" | "video/webm" {
   if (b.length > 12 && ascii(b, 4, 8) === "ftyp") return "video/mp4";
   if (b.length > 12 && [0x1a, 0x45, 0xdf, 0xa3].every((v, i) => b[i] === v))

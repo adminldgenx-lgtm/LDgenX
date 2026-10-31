@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, type Ref } from "react";
 import { Play } from "lucide-react";
 import {
   videoEmbed,
@@ -13,20 +13,29 @@ export function MediaImage({
   className = "",
   eager = false,
   sizes = "(max-width: 800px) 94vw, 960px",
+  imageRef,
+  reveal,
 }: {
   image: ContentImage;
   media?: EditorialMedia | null;
   className?: string;
   eager?: boolean;
   sizes?: string;
+  imageRef?: Ref<HTMLImageElement>;
+  /** The entrance of `Photo`, so an uploaded picture arrives like a built-in one. */
+  reveal?: string;
 }) {
   const variants =
-    media?.variants.slice().sort((a, b) => a.width - b.width) ?? [];
+    media?.variants
+      .filter((v) => v.mime === "image/webp")
+      .sort((a, b) => a.width - b.width) ?? [];
   const main = variants.at(-1);
   const src = image.staticSrc || (main ? media?.urls[String(main.width)] : "");
   if (!src) return null;
   return (
     <img
+      ref={imageRef}
+      data-photo-reveal={reveal}
       className={className}
       src={src}
       srcSet={

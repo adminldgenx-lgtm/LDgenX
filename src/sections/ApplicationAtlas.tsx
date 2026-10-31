@@ -40,7 +40,7 @@ const PLACES: Record<
   'energies-marines-renouvelables': { at: [0.78, 0.197], leader: [22, -30], side: 'right' },
 };
 // Geometry only: the places are the same in every language (titles come from the catalogue).
-const sectors = applicationIds.map((id) => ({ id, place: PLACES[id] }));
+const allSectors = applicationIds.map((id) => ({ id, place: PLACES[id] }));
 
 // Turbines: four in the open sea at the upper right, smaller as they stand further out, and two
 // on the hills inland. Tower
@@ -132,7 +132,9 @@ export function ApplicationAtlas() {
   const { applications, services, ui } = useCatalog();
   const r = useRoutes();
   const t = ui.atlas;
-  const content = applications;
+  // The landscape has a place for each original sector; other fields are in the list below it.
+  const sectors = allSectors.filter((s) => applications.some((a) => a.id === s.id));
+  const content = sectors.flatMap((s) => applications.filter((a) => a.id === s.id));
   // Reduced motion keeps the journey across the map, without the tilt and the parallax.
   const calm = useMotionLevel() === 'reduced';
   const compact = useMediaQuery('(max-width: 800px)');
@@ -141,7 +143,8 @@ export function ApplicationAtlas() {
   const world = useRef<HTMLDivElement>(null);
   const spot = useRef<HTMLDivElement>(null);
   const markers = useRef<(HTMLButtonElement | null)[]>([]);
-  const [active, setActive] = useState(0);
+  const [picked, setActive] = useState(0);
+  const active = Math.max(0, Math.min(picked, sectors.length - 1));
   const [focused, setFocused] = useState(false);
   const [ready, setReady] = useState(false);
   const [paused, setPaused] = useState(true);
@@ -151,6 +154,7 @@ export function ApplicationAtlas() {
 
   // Everything the animation loop reads, kept outside React so it never waits for a render.
   const live = useRef({
+    sectors,
     active: 0,
     focused: false,
     hover: -1,
@@ -174,11 +178,12 @@ export function ApplicationAtlas() {
     card: null as { left: number; top: number; right: number; bottom: number } | null,
   });
   const card = useRef<HTMLElement>(null);
+  live.current.sectors = sectors;
   live.current.active = active;
   live.current.focused = focused;
   // In a place, the card stands on the side away from it, so the place keeps the open ground.
   const cardSide: 'left' | 'right' =
-    focused && !compact && sectors[active].place.at[0] < 0.45 ? 'right' : 'left';
+    focused && !compact && (sectors[active]?.place.at[0] ?? 1) < 0.45 ? 'right' : 'left';
   live.current.cardSide = cardSide;
 
   // The view that frames the current choice: the whole landscape, or one place, set where the
@@ -189,7 +194,7 @@ export function ApplicationAtlas() {
     const z = state.focused ? (compact ? 1.55 : 1.45) : compact ? 1.18 : 1;
     let x = 0,
       y = 0;
-    const at = sectors[state.active].place.at;
+    const at = state.sectors[state.active]?.place.at ?? [0.5, 0.5];
     if (state.focused) {
       const spotX = compact ? 0.5 : state.cardSide === 'right' ? 0.36 : 0.64;
       x = w * (spotX - 0.5) - z * (at[0] - 0.5) * iw;
@@ -232,7 +237,7 @@ export function ApplicationAtlas() {
       scene.current.style.transform = calm
         ? ''
         : `perspective(1600px) rotateX(${p.y * -1.4 + arrival * 24}deg) rotateY(${p.x * 1.8}deg)`;
-    const points = sectors.map((s) => ({
+    const points = state.sectors.map((s) => ({
       x: w / 2 + view.x + view.z * (s.place.at[0] - 0.5) * iw,
       y: h / 2 + view.y + view.z * (s.place.at[1] - 0.5) * ih,
     }));
@@ -240,10 +245,10 @@ export function ApplicationAtlas() {
     if (state.card) occupied.push(state.card);
     if (!state.focused && state.heading) occupied.push(state.heading);
     const order = state.focused
-      ? [state.active, ...sectors.map((_, i) => i).filter((i) => i !== state.active)]
-      : sectors.map((_, i) => i);
+      ? [state.active, ...state.sectors.map((_, i) => i).filter((i) => i !== state.active)]
+      : state.sectors.map((_, i) => i);
     order.forEach((i) => {
-      const s = sectors[i],
+      const s = state.sectors[i],
         el = markers.current[i];
       if (!el) return;
       const { x, y } = points[i];
@@ -508,6 +513,7 @@ export function ApplicationAtlas() {
   };
 
   const sector = content[active];
+  if (!sector) return null;
   const expertises = services.filter((s) => sector.services.includes(s.id));
 
   return (

@@ -97,7 +97,7 @@ export function buildLlms({ catalogs, pages, company }) {
     const c = catalogs[locale];
     const w = words[locale];
     return [
-      `- ${w.location}: ${company.site}, ${company.street}, ${company.postalCode} ${company.locality} (Hérault, Occitanie, France)`,
+      `- ${w.location}: ${company.site}, ${company.street}, ${company.postalCode} ${company.locality}, ${locale === 'fr' ? 'près de Montpellier' : 'near Montpellier'} (Hérault, Occitanie, France)`,
       `- ${w.registry}: ${w.registryText(company)}`,
       `- ${w.team}: ${c.people.map((p) => `${p.name} (${p.role})`).join('; ')}`,
       `- ${w.contact}: ${company.email} · ${url(locale, 'contact')}`,

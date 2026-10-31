@@ -18,7 +18,10 @@ import { RequestsPage } from './pages/requests';
 import { AgendaPage } from './pages/agenda';
 import { ClientPage, ClientsPage } from './pages/clients';
 import { SettingsPage } from './pages/settings';
-const ContentListPage = lazy(() => import('./editorial/pages').then((m) => ({ default: m.ContentListPage })));
+const ContentHubPage = lazy(() => import('./editorial/ContentHub').then((m) => ({ default: m.ContentHubPage })));
+const SectionPage = lazy(() => import('./editorial/ContentHub').then((m) => ({ default: m.SectionPage })));
+const OtherPagesPage = lazy(() => import('./editorial/ContentHub').then((m) => ({ default: m.OtherPagesPage })));
+const TrashPage = lazy(() => import('./editorial/ContentHub').then((m) => ({ default: m.TrashPage })));
 const ContentEditorPage = lazy(() => import('./editorial/pages').then((m) => ({ default: m.ContentEditorPage })));
 const MediaPage = lazy(() => import('./editorial/MediaLibrary').then((m) => ({ default: m.MediaPage })));
 function EditorialScreen({ children }: { children: React.ReactNode }) { return <Suspense fallback={<p role="status">Chargement / Loading…</p>}>{children}</Suspense>; }
@@ -65,7 +68,10 @@ export function PortalApp() {
               <Route path="/admin" element={<Navigate to="/admin/messages" replace />} />
               <Route path="/admin/connexion" element={<LoginPage admin />} />
               <Route element={<AdminShell />}>
-                <Route path="/admin/contenus" element={<EditorialScreen><ContentListPage /></EditorialScreen>} />
+                <Route path="/admin/contenus" element={<EditorialScreen><ContentHubPage /></EditorialScreen>} />
+                <Route path="/admin/contenus/rubrique/:section" element={<EditorialScreen><SectionPage /></EditorialScreen>} />
+                <Route path="/admin/contenus/pages" element={<EditorialScreen><OtherPagesPage /></EditorialScreen>} />
+                <Route path="/admin/contenus/corbeille" element={<EditorialScreen><TrashPage /></EditorialScreen>} />
                 <Route path="/admin/contenus/:id" element={<EditorialScreen><ContentEditorPage /></EditorialScreen>} />
                 <Route path="/admin/medias" element={<EditorialScreen><MediaPage /></EditorialScreen>} />
                 <Route path="/admin/messages" element={<InboxPage />} />

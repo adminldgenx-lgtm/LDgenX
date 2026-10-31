@@ -26,9 +26,7 @@ export function Footer() {
         <div className="footer-brand">
           <Link to={r.home} className="footer-lockup" aria-label={ui.common.homeLink}>
             <img
-              src="/brand/lockup-navy-160.webp"
-              srcSet="/brand/lockup-navy-96.webp 343w, /brand/lockup-navy-160.webp 570w"
-              sizes="186px"
+              src="/brand/lockup-navy.svg"
               alt="LDgenX"
               width="570"
               height="160"
@@ -58,7 +56,9 @@ export function Footer() {
           <Link to={r.publications}>{t.links.publications}</Link>
           <Link to={r.partners}>{t.links.partners}</Link>
           <Link to={r.resources}>{t.links.resources}</Link>
-          <Link to={r.service('materiel')}>{t.links.equipment}</Link>
+          {services.some((s) => s.id === 'materiel') && (
+            <Link to={r.service('materiel')}>{t.links.equipment}</Link>
+          )}
           <Link to={r.faq}>{t.links.faq}</Link>
           <Link to={r.glossary}>{t.links.glossary}</Link>
         </div>

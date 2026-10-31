@@ -1,9 +1,9 @@
-import { usePageDocument } from "./context";
+import { useItemDocument } from "./context";
 import { DocumentBody } from "./PublicDocument";
 
-/** Extra authored sections retain the existing page template and its interactive modules. */
+/** Text, figures and videos added to a page, under its template's own sections. */
 export function PageWriting({ path }: { path: string }) {
-  const content = usePageDocument(path);
+  const content = useItemDocument(path);
   if (
     !content ||
     !(content.document.body.content ?? []).some(

@@ -10,38 +10,52 @@ Les modifications des événements gérés par LDgenX se font depuis leur fiche 
 
 ## Contenus du site
 
-L’adresse de travail est [www.ldgenx.fr/admin/contenus](https://www.ldgenx.fr/admin/contenus).
+Allez dans **Contenus** : l’écran montre les rubriques du site. Chacune a sa propre page.
 
-1. **Ouvrir un contenu existant ou créer un nouveau contenu.** **Nouveau contenu** enrichit une rubrique : article/guide, étude de cas, résumé de publication scientifique, expertise ou application. Chaque type reprend la présentation de sa rubrique. Les pages existantes disposent de copies de travail ; ouvrez la copie correspondante pour les corriger, afin de conserver leur adresse. La page actuelle reste visible jusqu’à la publication de la nouvelle version.
-2. **Rédiger.** Remplissez le titre, le résumé, le thème et les auteurs. Une trame facultative ajoute uniquement des titres de sections dans un document vide. Elle n’invente aucun résultat et ne remplace pas un document contenant déjà du texte ou des médias. Les outils permettent les titres, l’italique des noms latins, indices, exposants, listes, tableaux, figures et vidéos.
-3. **Documenter la science.** Distinguez méthodes, résultats, interprétation et limites. Ajoutez les références utilisées. Pour une publication, renseignez les auteurs de l’article original, son DOI, sa revue et son année ; l’année du papier reste distincte de la date de mise à jour du résumé sur le site.
-4. **Ajouter les médias.** La médiathèque réutilise les fichiers existants et optimise les nouvelles images en WebP, avec plusieurs tailles pour l’affichage. Renseignez le texte alternatif, la légende scientifique, le crédit et la source/licence. Vérifiez la lisibilité des axes, échelles et annotations ; conservez les originaux scientifiques séparément. Une vidéo courte peut être importée (20 Mo, trois minutes au maximum dans l’interface), ou intégrée depuis YouTube/Vimeo par lien pour éviter de stocker une vidéo longue sur Supabase.
-5. **Enregistrer et vérifier l’aperçu.** Enregistrer, ou **⌘/Ctrl+S**, conserve le brouillon privé. La barre de navigation reste accessible dans un long document. Une copie locale de secours peut récupérer une saisie non enregistrée dans le même navigateur ; elle ne remplace pas l’enregistrement sur le serveur.
-6. **Relire puis publier.** La liste de préparation indique les champs manquants. Confirmez la relecture scientifique et les droits, vérifiez l’aperçu, puis cliquez sur **Publier**. Le site, ses listes et ses métadonnées se mettent à jour sans reconstruction manuelle, avec un délai de cache pouvant atteindre une trentaine de secondes. Une modification ultérieure reste en brouillon tant qu’elle n’est pas publiée.
+| Rubrique | Ce qu’elle gère |
+|---|---|
+| **Expertises** | Les pages de services et le menu Expertises |
+| **Applications** | Les secteurs d’application |
+| **Études de cas** | Les projets, avec leur tableau « En bref » |
+| **Publications** | Les articles scientifiques de l’équipe |
+| **Ressources** | Les articles et guides |
+| **Autres pages** | Accueil, À propos, Équipe, FAQ, Contact… |
 
-### Modifier une page du site
+Sur la page d’une rubrique, chaque ligne affiche son image, son adresse et son état, avec ses actions à côté :
 
-**Modifier une page du site** donne accès à 64 pages en français et en anglais : accueil, expertises, applications, études de cas, publications, ressources, à propos, équipe, partenaires, FAQ, glossaire, contact. Choisissez la langue puis la page.
+| État | Signification |
+|---|---|
+| **En ligne** | Visible sur le site |
+| **En ligne · modifications à publier** | Le site montre encore l’ancienne version ; vos changements sont enregistrés |
+| **Brouillon** | Jamais publié, visible seulement ici |
+| **Hors ligne** | Retiré du site, conservé ici |
 
-Vous pouvez changer le **titre**, l’**introduction** et l’**image**, et **ajouter des blocs** de texte, figures ou vidéos, qui s’affichent après l’introduction. Les sections d’origine, leurs animations et leurs cartes restent en place : leurs textes ne se modifient pas depuis cet écran. **Aperçu** montre la vraie page avant publication. **Retirer les modifications** rend à la page sa présentation d’origine, sans la supprimer du site.
+### Ajouter un contenu
 
-### Ajouter une image
+1. Ouvrez la rubrique, puis cliquez sur **Ajouter…**, en haut à droite.
+2. Choisissez la langue avec **Français / English**. Chaque langue a sa propre version.
+3. Remplissez les champs : chacun correspond à une partie de la page.
+4. **Aperçu de la page** montre la vraie page, avec le design et les animations du site, sans rien publier.
+5. Cochez la case de relecture, puis cliquez sur **Publier**.
 
-Depuis la liste, **Ajouter une image** (ou **Changer l’image**) ouvre directement la médiathèque ; dans l’éditeur, l’image de couverture est tout en haut. Importez une photo ou choisissez-en une, puis renseignez ce qu’elle montre et son crédit. L’image apparaît sur la page et sur sa carte, et la liste des contenus affiche sa miniature. Sur l’accueil, elle remplace la vidéo tant que la modification est publiée. Une image LDgenX sans légende n’affiche aucune mention sous la photo.
+Le design ne se règle pas : il vient du site. Vous ne vous occupez que du contenu.
 
-### Supprimer et restaurer
+À la publication, la page reçoit son adresse, tirée du titre. Elle rejoint sa rubrique, le plan du site et les fichiers lus par Google et les assistants IA, et Bing et les moteurs IndexNow sont prévenus aussitôt. Google la découvre par son sitemap, en général sous quelques jours.
 
-**Supprimer**, depuis la liste ou l’éditeur, demande confirmation puis place le contenu dans la **Corbeille** : il quitte le site, mais son texte, ses images et son historique sont conservés. Pour une page du site, seules vos modifications partent à la corbeille ; la page d’origine reste en ligne. **Restaurer** ramène un brouillon à relire : rien n’est remis en ligne automatiquement. Il faut ensuite cliquer sur **Publier**.
+### Modifier un contenu existant
 
-### Publier
+Dans la rubrique, cliquez sur **Modifier**. Le formulaire s’ouvre avec le texte actuel du site. **Enregistrer** garde vos changements en privé ; **Publier** les met en ligne.
 
-**Enregistrer** garde un brouillon privé. **Publier** diffuse cette version. Une correction enregistrée ne change pas la version en ligne tant qu’elle n’est pas publiée. Le français et l’anglais se gèrent séparément.
+Dans **Autres pages**, vous modifiez le titre, l’introduction et l’image, et vous pouvez ajouter du texte, des figures et des vidéos. Leurs sections d’origine restent en place.
 
-L’historique permet de restaurer une version dans le brouillon, sans la publier automatiquement. **Retirer du site** retire la page publique et conserve la copie de travail. Les versions française et anglaise sont rédigées et validées séparément.
+### Les images
 
-Les contrôles automatiques vérifient la structure, les références requises et les informations des médias. L’exactitude scientifique des conclusions relève de la relecture du laboratoire. Un résumé publié n’est pas une republication automatique du texte intégral de la revue.
+Importez vos photos telles quelles. Chaque image est automatiquement convertie en WebP et allégée, en quatre tailles, plus une version pour les partages sur LinkedIn et les réseaux. Les données de localisation et d’appareil sont retirées. Cela fonctionne sur tous les navigateurs, y compris Safari sur Mac et iPhone.
 
-Les fichiers clients se déposent dans leur fiche privée, séparément de la médiathèque éditoriale. Les médias d’un article publié sont publics ; retirer un article ne constitue pas une procédure de révocation de documents confidentiels.
+### Supprimer, retirer, restaurer
+
+- **Retirer du site** enlève la page du site et des résultats de recherche. La ligne reste, et **Remettre en ligne** la rétablit en un clic.
+- **Supprimer** déplace le contenu dans la **Corbeille**, accessible depuis l’écran **Contenus**. **Restaurer** le ramène dans sa rubrique.
 
 ## Gestion des clients
 

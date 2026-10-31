@@ -1,10 +1,6 @@
 // Selective Pages rendering: all unrelated routes/assets keep their unlimited static delivery.
-import { render, pages, ready, redirects, renderHead } from "./entry-server";
-import {
-  editorialMeta,
-  editorialCoverUrl,
-  mergeEditorialPages,
-} from "./editorial/meta";
+import { render, pages, ready, redirects } from "./entry-server";
+import { editorialImageUrl, mergeEditorialPages } from "./editorial/meta";
 import { productionOrigin } from "../supabase/functions/_shared/site";
 import { editorialPageTemplates } from "../supabase/functions/_shared/editorial-pages";
 const editablePaths = new Set(editorialPageTemplates.map((p) => p.path));
@@ -13,18 +9,28 @@ import type {
   PublishedDocument,
 } from "../supabase/functions/_shared/editorial";
 
-// Always built from published data, including their listings and discovery files.
-const renderedPaths =
-  /^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)|^\/(?:api\/editorial\/|sitemap\.xml$|sitemaps\/|plan-du-site$|en\/site-map$|llms(?:-full)?\.txt$)/;
-const cmsSections = /^\/(?:en\/)?(?:services|applications)(?:\/|$)/;
-const sectionListings: Record<string, EditorialSummary["kind"]> = {
+// Addresses that can hold published content, and the files that describe them.
+const managedPaths =
+  /^\/(?:en\/)?(?:services|applications)(?:\/|$)|^\/(?:ressources|etudes-de-cas|recherche)(?:\/|$)|^\/en\/(?:resources|case-studies|research)(?:\/|$)|^\/(?:api\/editorial\/|sitemap\.xml$|sitemaps\/|plan-du-site$|en\/site-map$|llms(?:-full)?\.txt$)/;
+// The pages that list a kind of content: their copy on the CDN stops being current when it changes.
+const listings: Record<string, EditorialSummary["kind"] | "all"> = {
   "/services": "service",
   "/en/services": "service",
   "/applications": "application",
   "/en/applications": "application",
+  "/etudes-de-cas": "study",
+  "/en/case-studies": "study",
+  "/recherche": "publication",
+  "/en/research": "publication",
+  "/ressources": "article",
+  "/en/resources": "article",
+  "/plan-du-site": "all",
+  "/en/site-map": "all",
 };
+const mediaFile = /^\/media\/([\da-f-]{36}\/(?:\d+\.webp|social\.jpg))$/;
 
 declare const __EDITORIAL_RUNTIME__: {
+  build: string;
   templates: Record<"fr" | "en", string>;
   files: Record<string, string>;
   dates: Record<string, { date: string }>;
@@ -38,6 +44,7 @@ interface WorkerContext {
   waitUntil: (task: Promise<unknown>) => void;
 }
 const API = `${__EDITORIAL_SUPABASE__.url}/functions/v1/editorial/public`;
+const edgeCache = () => (caches as unknown as { default: Cache }).default;
 const cache = new Map<string, { until: number; value: unknown }>();
 // Each request does its own fetch: a promise owned by a visitor who disconnects never settles,
 // which would hang every other request waiting on it.
@@ -63,7 +70,7 @@ async function recent<T>(
   origin: string,
   context: WorkerContext,
 ): Promise<T> {
-  const edge = (caches as unknown as { default: Cache }).default;
+  const edge = edgeCache();
   const key = new Request(`${origin}/api/editorial/recent${path}`);
   const refresh = async () => {
     const value = await remote<T>(path, 2500);
@@ -94,6 +101,74 @@ async function recent<T>(
     );
   }
   return (await saved.json()) as T;
+}
+/** A version of a document never changes: fetched once, kept at the edge. */
+async function versioned<T>(
+  path: string,
+  origin: string,
+  context: WorkerContext,
+): Promise<T> {
+  const edge = edgeCache();
+  const key = new Request(`${origin}/api/editorial/version${path}`);
+  const saved = await edge.match(key).catch(() => undefined);
+  if (saved) return (await saved.json()) as T;
+  const value = await remote<T>(path);
+  context.waitUntil(
+    edge
+      .put(
+        key,
+        new Response(JSON.stringify(value), {
+          headers: { "Cache-Control": "public, max-age=2592000" },
+        }),
+      )
+      .catch(() => {}),
+  );
+  return value;
+}
+function documentAt(
+  path: string,
+  index: EditorialSummary[],
+  origin: string,
+  context: WorkerContext,
+) {
+  const address = `/document?path=${encodeURIComponent(path)}`;
+  const row = index.find((r) => r.path === path);
+  return row
+    ? versioned<PublishedDocument>(
+        `${address}&v=${encodeURIComponent(row.updatedAt)}`,
+        origin,
+        context,
+      )
+    : remote<PublishedDocument>(address);
+}
+/** Published pictures reach visitors from this domain and its edge cache, not from storage. */
+async function picture(
+  request: Request,
+  file: string,
+  context: WorkerContext,
+) {
+  const edge = edgeCache();
+  const key = new Request(`${new URL(request.url).origin}/media/${file}`);
+  const saved = await edge.match(key).catch(() => undefined);
+  if (saved) return saved;
+  const upstream = await fetch(
+    `${__EDITORIAL_SUPABASE__.url}/storage/v1/object/public/editorial-public/${file}`,
+    { signal: AbortSignal.timeout(15000) },
+  );
+  if (!upstream.ok)
+    return new Response(null, {
+      status: 404,
+      headers: { "Cache-Control": "no-store" },
+    });
+  const result = new Response(upstream.body, {
+    headers: {
+      ...__EDITORIAL_RUNTIME__.security,
+      "Content-Type": file.endsWith(".jpg") ? "image/jpeg" : "image/webp",
+      "Cache-Control": "public, max-age=31536000, immutable",
+    },
+  });
+  context.waitUntil(edge.put(key, result.clone()).catch(() => {}));
+  return result;
 }
 const xml = (s: string) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
@@ -136,7 +211,7 @@ function discovery(path: string, rows: EditorialSummary[]) {
           : p.kind === "service"
             ? "expertises.xml"
             : p.kind === "application"
-              ? "pages.xml"
+              ? "expertises.xml"
               : p.kind === "study"
                 ? "etudes.xml"
                 : "recherche.xml");
@@ -144,7 +219,7 @@ function discovery(path: string, rows: EditorialSummary[]) {
         row?.updatedAt.slice(0, 10) ??
         __EDITORIAL_RUNTIME__.dates[p.path]?.date ??
         new Date().toISOString().slice(0, 10);
-      const image = row?.cover ? editorialCoverUrl(row) : null;
+      const image = row?.cover ? editorialImageUrl(row) : null;
       // A page edit keeps the pictures of its original sections unless it sets a cover.
       const imageTags =
         row && (row.kind !== "page" || image)
@@ -331,10 +406,9 @@ export default {
         });
       }
     }
+    const file = url.pathname.match(mediaFile)?.[1];
     const eligible =
-      editablePaths.has(url.pathname) ||
-      cmsSections.test(url.pathname) ||
-      renderedPaths.test(url.pathname);
+      file || editablePaths.has(url.pathname) || managedPaths.test(url.pathname);
     if (!eligible) return env.ASSETS.fetch(request);
     if (!["GET", "HEAD"].includes(request.method))
       return response(
@@ -343,6 +417,7 @@ export default {
         405,
         "text/plain; charset=utf-8",
       );
+    if (file) return picture(request, file, context);
     await ready;
     const normalized =
       url.pathname.replace(/\.html$/, "").replace(/\/+$/, "") || "/";
@@ -356,15 +431,10 @@ export default {
         headers: { Location: target.href },
       });
     }
-    // Existing pages stay on the CDN until a publication changes them: identical bytes, no render
-    // cost, and no wait for the backend.
-    const cdnFirst =
-      editablePaths.has(url.pathname) && !renderedPaths.test(url.pathname);
     try {
+      // No visitor waits for the backend: the last answer is served while the next one is fetched.
       const index = [
-        ...(await (cdnFirst
-          ? recent<EditorialSummary[]>("/index", url.origin, context)
-          : remote<EditorialSummary[]>("/index"))),
+        ...(await recent<EditorialSummary[]>("/index", url.origin, context)),
       ];
       if (url.pathname === "/api/editorial/index")
         return response(
@@ -377,21 +447,18 @@ export default {
         const path = url.searchParams.get("path") ?? "";
         if (!path.startsWith("/") || path.length > 300)
           return response(request, "{}", 400, "application/json");
-        const doc = await remote<PublishedDocument>(
-          `/document?path=${encodeURIComponent(path)}`,
-        );
         return response(
           request,
-          JSON.stringify(doc),
+          JSON.stringify(await documentAt(path, index, url.origin, context)),
           200,
           "application/json; charset=utf-8",
         );
       }
-      const file = discovery(url.pathname, index);
-      if (file !== null)
+      const discovered = discovery(url.pathname, index);
+      if (discovered !== null)
         return response(
           request,
-          file,
+          discovered,
           200,
           url.pathname.endsWith(".xml")
             ? "application/xml; charset=utf-8"
@@ -406,25 +473,33 @@ export default {
         );
       if (selected?.kind === "page" && selected.status === "withdrawn")
         selected = undefined;
-      let doc: PublishedDocument | null = null;
+      // A page stays on the CDN until a publication changes it: identical bytes, no render cost.
       const staticPage = pages.find((p) => p.path === url.pathname);
+      const listed = listings[url.pathname];
       if (
-        cdnFirst &&
+        staticPage &&
         !selected &&
         !index.some(
           (r) =>
-            r.status === "published" &&
-            r.kind === sectionListings[url.pathname] &&
-            r.locale === staticPage?.locale,
+            r.kind !== "page" &&
+            (listed === "all" || r.kind === listed) &&
+            r.locale === staticPage.locale &&
+            (r.status === "published" || r.legacyId),
         )
       )
         return env.ASSETS.fetch(request);
+      // A render is kept until the published content or the site changes.
+      const version = `${__EDITORIAL_RUNTIME__.build}:${index.length}:${index.reduce((latest, r) => (r.updatedAt > latest ? r.updatedAt : latest), "")}`;
+      const pageKey = new Request(
+        `${url.origin}/api/editorial/page${url.pathname}?v=${encodeURIComponent(version)}`,
+      );
+      const edge = edgeCache();
+      const saved = await edge.match(pageKey).catch(() => undefined);
+      if (saved) return response(request, await saved.text());
+      let doc: PublishedDocument | null = null;
       if (selected || !staticPage) {
-        const documentPath = `/document?path=${encodeURIComponent(url.pathname)}`;
         try {
-          doc = await (cdnFirst
-            ? recent<PublishedDocument>(documentPath, url.origin, context)
-            : remote<PublishedDocument>(documentPath));
+          doc = await documentAt(url.pathname, index, url.origin, context);
         } catch (e) {
           if (e instanceof Error && e.message === "404" && !selected)
             return env.ASSETS.fetch(request);
@@ -439,18 +514,27 @@ export default {
       const snapshot = { index, document: doc };
       const output = render(url.pathname, snapshot);
       const locale = selected?.locale ?? staticPage?.locale ?? "fr";
-      let head = output.head;
-      if (doc)
-        head = renderHead(editorialMeta(doc, index), doc.updatedAt.slice(0, 10));
-      head = updateListSchema(head, url.pathname, index);
+      const head = updateListSchema(output.head, url.pathname, index);
       const bootstrap = `<script id="ldgenx-editorial" type="application/json">${JSON.stringify(snapshot).replaceAll("<", "\\u003c")}</script>`;
       const html = __EDITORIAL_RUNTIME__.templates[locale]
         .replace("<!--app-html-->", output.html)
         .replace("<!--seo-head-->", head)
         .replace("</body>", bootstrap + "</body>");
+      context.waitUntil(
+        edge
+          .put(
+            pageKey,
+            new Response(html, {
+              headers: { "Cache-Control": "public, max-age=2592000" },
+            }),
+          )
+          .catch(() => {}),
+      );
       return response(request, html);
     } catch (error) {
-      if (editablePaths.has(url.pathname)) return env.ASSETS.fetch(request);
+      // Whatever exists on the CDN still answers when the backend does not.
+      const stored = await env.ASSETS.fetch(request);
+      if (stored.ok) return stored;
       const status =
         error instanceof Error && error.message === "410"
           ? 410

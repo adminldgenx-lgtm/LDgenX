@@ -9083,6 +9083,7 @@ h3 {
     transform 0.5s var(--motion-ease);
 }
 .step-row p {
+  white-space: pre-line;
   max-width: 560px;
   margin: 0;
   font-size: 15px;

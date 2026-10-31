@@ -143,7 +143,8 @@ const policy = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
-  `img-src 'self' data: blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
+  // Published pictures carry their production address, which previews must also load.
+  `img-src 'self' data: blob: https://www.ldgenx.fr${supabase ? ` ${new URL(supabase).origin}` : ''}`,
   "font-src 'self'",
   `media-src 'self' blob:${supabase ? ` ${new URL(supabase).origin}` : ''}`,
   "frame-src 'self' https://www.youtube-nocookie.com https://player.vimeo.com",
@@ -170,6 +171,7 @@ const rules = [
   ['https://:version.:project.pages.dev/*', ['X-Robots-Tag: noindex']],
   ['/assets/*', ['Cache-Control: public, max-age=31536000, immutable']],
   ['/images/*', ['Cache-Control: public, max-age=2592000']],
+  ['/brand/*', ['Cache-Control: public, max-age=2592000']],
   ['/llms.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
   ['/llms-full.txt', ['Content-Type: text/plain; charset=utf-8', 'X-Robots-Tag: noindex']],
   ...(portal
@@ -179,7 +181,15 @@ const rules = [
         ['/espace', ['X-Robots-Tag: noindex, nofollow']],
         ['/espace/*', ['X-Robots-Tag: noindex, nofollow']],
         ['/admin', ['X-Robots-Tag: noindex, nofollow']],
-        ['/admin/*', ['X-Robots-Tag: noindex, nofollow']],
+        // Safari converts uploaded images with a WebAssembly encoder: allowed here and nowhere else.
+        [
+          '/admin/*',
+          [
+            'X-Robots-Tag: noindex, nofollow',
+            '! Content-Security-Policy',
+            `Content-Security-Policy: ${policy.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'")}`,
+          ],
+        ],
       ]
     : []),
 ];

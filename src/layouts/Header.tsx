@@ -39,13 +39,11 @@ function useMenus() {
   };
 }
 
-function Lockup({ tone, sizes }: { tone: 'navy' | 'light'; sizes: string }) {
+function Lockup({ tone }: { tone: 'navy' | 'light' }) {
   return (
     <img
       className={tone === 'navy' ? 'brand-dark' : 'brand-light'}
-      src={`/brand/lockup-${tone}-160.webp`}
-      srcSet={`/brand/lockup-${tone}-96.webp 343w, /brand/lockup-${tone}-160.webp 570w`}
-      sizes={sizes}
+      src={`/brand/lockup-${tone}.svg`}
       alt={tone === 'navy' ? 'LDgenX' : ''}
       width="570"
       height="160"
@@ -162,7 +160,7 @@ export function Header() {
       >
         <div className="header-inner container">
           <Link to={r.home} className="brand" aria-label={ui.common.homeLink}>
-            <Lockup tone="navy" sizes="(max-width: 1050px) 150px, 186px" />
+            <Lockup tone="navy" />
           </Link>
           <nav className="desktop-nav" aria-label={ui.header.mainNav}>
             {(['services', 'applications'] as const).map((key) => (
@@ -258,7 +256,7 @@ export function Header() {
       >
         <div className="mobile-menu-head">
           <Link to={r.home} aria-label={ui.common.homeLink}>
-            <Lockup tone="navy" sizes="150px" />
+            <Lockup tone="navy" />
           </Link>
           <button onClick={() => setMobile(false)} aria-label={ui.header.closeMenu}>
             <X size={28} />

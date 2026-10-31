@@ -3,7 +3,7 @@
 // index keeps routes, language alternates and redirects available without them. The server
 // build checks that it matches the catalogues (see allPages in lib/pages.ts).
 import type { Locale, RouteSource } from '../lib/routes';
-import { productionOrigin } from '../../supabase/functions/_shared/site';
+import { indexNowKey, productionOrigin } from '../../supabase/functions/_shared/site';
 
 export const portalEnabled = import.meta.env?.VITE_PORTAL_ENABLED !== '0';
 
@@ -32,7 +32,7 @@ export const company = {
   verification: { google: '', bing: '' },
   // IndexNow key (Bing, Yandex, Seznam, Naver): the file /<key>.txt holds it; see
   // scripts/indexnow.mjs.
-  indexNowKey: '86cc2638fcd11cbeedcfed21379e0459',
+  indexNowKey,
 };
 
 type Pairs = [id: string, slug: string][];

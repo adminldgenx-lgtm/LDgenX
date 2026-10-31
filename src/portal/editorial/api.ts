@@ -61,4 +61,6 @@ export const cms = {
     cmsRequest<EditorialRevision[]>(`/entries/${id}/revisions`),
 };
 export const megabytes = (bytes: number) =>
-  `${(bytes / 1_000_000).toLocaleString("fr-FR", { maximumFractionDigits: 2 })} MB`;
+  bytes < 1_000_000
+    ? `${Math.max(1, Math.round(bytes / 1000))} KB`
+    : `${(bytes / 1_000_000).toLocaleString("fr-FR", { maximumFractionDigits: 2 })} MB`;

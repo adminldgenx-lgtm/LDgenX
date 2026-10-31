@@ -36,9 +36,12 @@ for (const file of [
   files[file] = await readFile(`dist/${file}`, "utf8");
 await build({
   configFile: false,
+  // The worker is code only: public files are already in dist.
+  publicDir: false,
   define: {
     "process.env.NODE_ENV": '"production"',
     __EDITORIAL_RUNTIME__: JSON.stringify({
+      build: Date.now().toString(36),
       templates,
       dates,
       security,
@@ -91,6 +94,7 @@ await writeFile(
           "/llms-full.txt",
           "/api/editorial/*",
           "/api/auth/google/callback",
+          "/media/*",
         ]),
       ],
       exclude: [],
