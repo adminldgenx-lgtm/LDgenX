@@ -639,6 +639,7 @@ function requestContext() {
           slug = String(body.slug ?? "");
           if (
             !/^[a-z0-9-]{1,120}$/.test(legacyId) ||
+            !slug ||
             contentSlug(slug) !== slug ||
             !editorialStaticPaths.includes(contentPath(kind, locale, slug))
           )
