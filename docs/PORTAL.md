@@ -126,6 +126,12 @@ Signup, signin, signout, password change and recovery use the Supabase Auth SDK,
 
 Public mutation rate limits are persisted in Postgres: five contact submissions or eight booking mutations per hour per source address; authenticated mutations allow 120 per minute per account. Input validation limits field sizes, upload counts, query windows and scheduling settings. Logs contain error classifications, never request bodies, passwords, tokens or SQL text.
 
+## Team notifications
+
+The team's emails need no domain: a free Resend account created with `admin.ldgenx@gmail.com` can use Resend's starter sender, which delivers only to that address. Run `npm run supabase:mail` once: it checks the key with one real email, stores `RESEND_API_KEY` and `PORTAL_EMAIL_FROM` as Edge secrets, and leaves Supabase Auth alone. Do not run `supabase:email` with the starter sender: it would point password emails at a sender that cannot reach clients.
+
+Mail leaves right after the request that caused it, and the 15-minute job catches the rest and announces new accounts, which a database trigger creates outside the service. A refused address is recorded and not retried; a full daily quota keeps mail queued for the next run.
+
 ## Email, when enabled later
 
 Supabase's default sender is restricted to project-team addresses and is not suitable for client delivery. See [Supabase SMTP documentation](https://supabase.com/docs/guides/auth/auth-smtp). The prepared integration supports [Resend's free plan](https://resend.com/pricing); no paid plan has been enabled.

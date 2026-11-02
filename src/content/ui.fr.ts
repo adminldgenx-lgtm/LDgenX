@@ -512,7 +512,7 @@ export const ui = {
     ],
     aiTitle: 'Intelligence artificielle',
     photoTitle: 'Photographie d’illustration',
-    ai: 'Certaines illustrations, la vidéo d’accueil et les portraits de Maeva Leitwein, Emilie Delpuech et Maxime Lambert ont été réalisés avec l’aide de l’intelligence artificielle, les portraits à partir de leurs photographies.',
+    ai: 'Certaines illustrations, la vidéo d’accueil et les portraits d’Emilie Delpuech et de Maxime Lambert ont été réalisés avec l’aide de l’intelligence artificielle, les portraits à partir de leurs photographies.',
     contact: 'Contacter LDgenX',
   },
   privacy: {

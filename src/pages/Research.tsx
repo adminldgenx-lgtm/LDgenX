@@ -683,7 +683,8 @@ function PublicationCard({
 export function citation(p: ResearchPublication) {
   const authors =
     p.authors.length > 6 ? `${p.authors.slice(0, 6).join(', ')}, et al.` : p.authors.join(', ');
-  return `${authors} (${p.year}). ${p.title}. ${p.journal}, ${p.issue}. https://doi.org/${p.doi}`;
+  const source = p.issue ? `${p.journal}, ${p.issue}` : p.journal;
+  return `${authors} (${p.year}). ${p.title}. ${source}. https://doi.org/${p.doi}`;
 }
 
 /** One article of the team: its summary, the points to remember, its figures and reference. */

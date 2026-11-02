@@ -71,9 +71,20 @@ Pour transmettre un fichier à LDgenX, le client l’ajoute en pièce jointe dan
 
 Les téléchargements passent par une autorisation serveur et des liens temporaires. Le client accède à ses propres données ; il ne peut pas consulter la fiche d’un autre client ou l’administration éditoriale. Les erreurs de chargement des fichiers et rendez-vous proposent une reprise explicite.
 
+## Notifications par e-mail
+
+`admin.ldgenx@gmail.com` reçoit un e-mail à chaque événement : message d’un client, message du formulaire du site, demande ou changement de rendez-vous, annulation, fichier déposé. Chaque e-mail dit qui, quand, et ouvre directement le bon écran. Le contenu des messages reste dans l’administration.
+
+- Une série de messages dans une même conversation ne déclenche qu’un e-mail toutes les 10 minutes.
+- Un nouveau compte à valider est signalé dans les 15 minutes.
+- Chaque administrateur choisit ses notifications dans **Mon compte**.
+- Resend est gratuit jusqu’à 100 e-mails par jour et 3 000 par mois. Au-delà de la limite du jour, rien n’est perdu : les e-mails partent ensuite, pendant 2 jours.
+
+Pour brancher un autre compte Resend : `npm run supabase:mail`. Le script envoie un e-mail de test avant d’enregistrer la clé.
+
 ## Actions qui nécessitent le titulaire des comptes
 
-- **E-mails applicatifs :** le service d’envoi d’e-mails de l’application (SMTP) et la clé d’envoi des notifications ne sont pas configurés. Les invitations par e-mail, vérifications d’adresse, réinitialisations de mot de passe et notifications par e-mail demandent cette configuration puis un contrôle réel de livraison. La messagerie OVH n’a pas été modifiée.
+- **E-mails aux clients et aux visiteurs :** les notifications de l’équipe arrivent par Resend (voir *Notifications par e-mail*). Pour écrire aussi aux clients et aux visiteurs, il faut vérifier le domaine `ldgenx.fr` dans Resend (gratuit, quelques enregistrements DNS), puis relancer `npm run supabase:mail` avec `PORTAL_EMAIL_FROM="LDgenX <notifications@ldgenx.fr>"`. Les invitations par e-mail, vérifications d’adresse et réinitialisations de mot de passe passent toujours par le service d’e-mail de Supabase, volontairement inchangé.
 - **Google Cloud :** le statut OAuth **En production** a été confirmé directement dans la console le 30 octobre et le nom **LDgenX** est enregistré. Google demande de vérifier la propriété de `https://www.ldgenx.fr/` dans Search Console avec `admin.ldgenx@gmail.com`, puis d’attendre **24 heures** avant de relancer la validation du branding. Le nom peut rester remplacé par le domaine Supabase sur l’écran Google jusque-là.
 - **Agendas de l’équipe :** partager les agendas professionnels réels avec le compte connecté et renseigner leurs identifiants pour chaque personne. `primary` désigne l’agenda principal du compte connecté ; il ne représente pas automatiquement l’agenda personnel de chaque membre. Un agenda non partagé ou non renseigné ne peut pas bloquer les réservations.
 

@@ -17,9 +17,9 @@ const otherWidths: Record<string, number[]> = {
   'fig-ours-consanguinite': [900, 1400, 2007],
   'fig-estuaire-taxons': [900, 1400, 2007],
   'materiel-pompe': [480, 1000],
-  // The team portraits, 4:5: studio portraits of Maeva, Emilie and Maxime (images/team), and
-  // Damien's own photo.
-  'portrait-maeva': [480, 900],
+  // The team portraits, 4:5. Maeva's client photograph is cropped at its native resolution;
+  // Emilie and Maxime keep their approved studio portraits, and Damien his own photo.
+  'portrait-maeva': [480, 600],
   'portrait-emilie': [480, 900],
   'portrait-maxime': [480, 900],
   'portrait-damien': [480, 659],

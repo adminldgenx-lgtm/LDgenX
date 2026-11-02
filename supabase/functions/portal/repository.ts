@@ -19,6 +19,7 @@ export function repository(
   sql: Sql,
   storage: SupabaseClient,
   uploaded: string[],
+  onMail: () => void = () => {},
 ): Repository {
   return {
     async externalBusy(from, to) {
@@ -113,8 +114,9 @@ export function repository(
       if (error || !data) throw new PortalError('not_found');
       return data.signedUrl;
     },
-    async email(recipient, subject, body, sourceId) {
-      await sql`insert into private.portal_email_outbox(recipient,subject,body,source_id) values(${recipient},${subject},${body},${sourceId ?? null})`;
+    async email(recipient, subject, body, sourceId, dedupeKey) {
+      await sql`insert into private.portal_email_outbox(recipient,subject,body,source_id,dedupe_key) values(${recipient},${subject},${body},${sourceId ?? null},${dedupeKey ?? null}) on conflict(dedupe_key) do nothing`;
+      onMail();
     },
     async invite(input: InviteInput): Promise<User> {
       const { data, error } = await storage.auth.admin.inviteUserByEmail(

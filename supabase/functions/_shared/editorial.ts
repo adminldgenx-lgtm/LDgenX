@@ -128,6 +128,8 @@ export interface EditorialEntry {
   document: EditorialDocument;
   publication: EditorialSummary | null;
   publishedVersion: number | null;
+  /** Someone saved changes, so a built-in item may no longer match what the site shows. */
+  edited: boolean;
   createdAt: string;
   updatedAt: string;
   authorName: string;

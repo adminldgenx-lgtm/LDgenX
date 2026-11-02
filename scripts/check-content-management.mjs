@@ -424,11 +424,13 @@ try {
   await expect(card).toHaveCount(1);
   await expect(card.locator(".cms-status")).toHaveText("Brouillon");
   await expect(card.locator(".cms-entry-image img")).toBeVisible();
-  assert(
-    await card
-      .locator(".cms-entry-image img")
-      .evaluate((i) => i.complete && i.naturalWidth > 0),
-  );
+  await expect
+    .poll(() =>
+      card
+        .locator(".cms-entry-image img")
+        .evaluate((i) => i.complete && i.naturalWidth > 0),
+    )
+    .toBe(true);
   await page.screenshot({ path: output + "/section-fr.png", animations: "disabled" });
   await card.getByRole("button", { name: "Supprimer " + title, exact: true }).click();
   await expect(page.getByRole("dialog")).toContainText(title);
@@ -454,8 +456,23 @@ try {
   await page.waitForURL(/\/admin\/contenus\/[\da-f-]{36}$/);
   entries.push(page.url().split("/").at(-1));
   for (const label of ["Contexte", "Question", "Approche", "Enseignements"])
-    await expect(page.getByRole("textbox", { name: label, exact: true })).toBeVisible();
+    await expect(page.getByRole("textbox", { name: new RegExp(`^${label}`) })).toBeVisible();
   await expect(page.locator("h1")).toHaveText("Nouveau contenu");
+  const studyId = page.url().split("/").at(-1),
+    studyContext = `Un contexte de contrôle privé ${run}`;
+  await page.getByRole("textbox", { name: "Titre", exact: true }).fill(`Étude QA ${run}`);
+  await page.getByRole("textbox", { name: /^Contexte/ }).fill(studyContext);
+  await page
+    .locator(".cms-page-head")
+    .getByRole("button", { name: "Enregistrer", exact: true })
+    .click();
+  await expect(
+    page.getByRole("status").filter({ hasText: "Brouillon enregistré" }),
+  ).toBeVisible();
+  assert.equal((await api(`/entries/${studyId}`)).document.fields.context, studyContext);
+  await page.reload();
+  await expect(page.getByRole("textbox", { name: /^Contexte/ })).toHaveValue(studyContext);
+  ok("Text typed in a template field is saved and comes back in the form");
   await page.goto(origin + "/admin/contenus/rubrique/etudes-de-cas");
   const estuary = page
     .locator(".cms-entry")

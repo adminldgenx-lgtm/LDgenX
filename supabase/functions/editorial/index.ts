@@ -123,6 +123,7 @@ function requestContext() {
       publishedVersion: row.published_version
         ? Number(row.published_version)
         : null,
+      edited: row.edited === true,
       document: row.draft as EditorialDocument,
       publication: pub ? publication(pub) : null,
       createdAt: iso(row.created_at),
@@ -405,7 +406,7 @@ function requestContext() {
   }
   async function getEntry(id: string) {
     const [row] =
-      await sql`select e.*,coalesce(p.data->>'firstName','')||' '||coalesce(p.data->>'lastName','') as author_name from public.cms_entries e left join public.portal_profiles p on p.id=e.updated_by where e.id=${id}`;
+      await sql`select e.*,coalesce(p.data->>'firstName','')||' '||coalesce(p.data->>'lastName','') as author_name,exists(select 1 from public.cms_revisions r where r.entry_id=e.id and r.reason in ('save','restore')) as edited from public.cms_entries e left join public.portal_profiles p on p.id=e.updated_by where e.id=${id}`;
     if (!row) throw new EditorialError("not_found", 404);
     const [pub] =
       await sql`select * from public.cms_publications where entry_id=${id}`;
@@ -567,7 +568,7 @@ function requestContext() {
         return respond(editorialPageTemplates);
       if (path === "/entries" && req.method === "GET") {
         const rows =
-          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.deleted_at,e.draft-'body'-'references'-'fields' as draft,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references'-'fields') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
+          await sql`select e.id,e.kind,e.locale,e.slug,e.group_id,e.legacy_id,e.version,e.published_version,e.created_at,e.updated_at,e.deleted_at,e.draft-'body'-'references'-'fields' as draft,exists(select 1 from public.cms_revisions r where r.entry_id=e.id and r.reason in ('save','restore')) as edited,case when p.entry_id is null then null else to_jsonb(p)||jsonb_build_object('snapshot',p.snapshot-'body'-'references'-'fields') end as publication from public.cms_entries e left join public.cms_publications p on p.entry_id=e.id order by e.updated_at desc limit 500`;
         const coverIds = [
           ...new Set(
             rows

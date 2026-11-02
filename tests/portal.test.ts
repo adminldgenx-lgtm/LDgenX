@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { computeSlots } from '../supabase/functions/_shared/availability.ts';
 import { fileExpiry } from '../supabase/functions/_shared/retention.ts';
-import { atMinutes, DAY, HOUR } from '../supabase/functions/_shared/time.ts';
+import { atMinutes, DAY, HOUR, wallTime } from '../supabase/functions/_shared/time.ts';
 import {
   defaultBooking,
   defaultRetention,
@@ -12,6 +12,7 @@ import {
   validateBooking,
   type Repository,
 } from '../supabase/functions/_shared/service.ts';
+import { guestNotice, teamNotice } from '../supabase/functions/_shared/notices.ts';
 import type {
   Appointment,
   BookingConfig,
@@ -67,6 +68,26 @@ test('Paris DST conversion keeps opening hours stable at both transitions', () =
   assert.equal(iso('2026-03-30', 10), '2026-03-30T08:00:00.000Z');
   assert.equal(iso('2026-10-23', 10), '2026-10-23T08:00:00.000Z');
   assert.equal(iso('2026-10-26', 10), '2026-10-26T09:00:00.000Z');
+});
+test('all appointment lengths stay within 09:00–12:30 Paris time across clock changes', () => {
+  const c = config();
+  c.minNoticeHours = 0;
+  for (const day of ['2026-03-23', '2026-03-30', '2026-10-19', '2026-10-26']) {
+    const from = Date.parse(iso(day, 0));
+    for (const type of c.types) {
+      const slots = computeSlots(c, [], type.id, from, from + DAY, from);
+      assert(slots.length > 0, `${day}: ${type.id} has morning slots`);
+      assert.equal(slots[0].start, iso(day, 9));
+      assert.equal(slots.at(-1)!.end, iso(day, 12, 30));
+      for (const slot of slots) {
+        const start = wallTime(slot.start), end = wallTime(slot.end);
+        assert(start.hour * 60 + start.minute >= 9 * 60);
+        assert(end.hour * 60 + end.minute <= 12 * 60 + 30);
+        assert.equal(Date.parse(slot.end) - Date.parse(slot.start), type.minutes * 60_000);
+        assert.deepEqual(slot.hostIds, ['maeva', 'emilie', 'damien']);
+      }
+    }
+  }
 });
 test('both an appointment and its pending change reserve the host, with the buffer', () => {
   const c = config();
@@ -230,4 +251,37 @@ test('slot requests are bounded and require authorization to ignore held appoint
     { code: 'unauthenticated' },
   );
   assert.equal(HOUR, 3600000);
+});
+test('the team is told what happened, when, and where to deal with it', () => {
+  const message = teamNotice('message', { name: 'Jeanne  Dupont\n' }, 'client-1', 'fr');
+  assert.equal(message.subject, 'LDgenX — Nouveau message de Jeanne Dupont');
+  assert.match(message.body, /https:\/\/www\.ldgenx\.fr\/admin\/messages\?client=client-1/);
+  const request = teamNotice(
+    'appointment_requested',
+    { name: 'Jeanne Dupont', start: '2026-11-03T13:00:00.000Z' },
+    null,
+    'fr',
+  );
+  assert.equal(request.subject, 'LDgenX — Demande de rendez-vous : Jeanne Dupont');
+  assert.match(request.body, /mardi 3 novembre 2026/);
+  assert.match(request.body, /14:00/);
+  assert.match(request.body, /\/admin\/demandes/);
+  const english = teamNotice('inquiry', { name: 'Jane' }, null, 'en');
+  assert.equal(english.subject, 'LDgenX — New message from the website: Jane');
+  assert.match(english.body, /\/admin\/messages\?vue=site/);
+  assert.match(teamNotice('appointment_moved', { name: 'J' }, null, 'fr').body, /\/admin\/agenda/);
+});
+test('someone who books without an account gets a sentence, not raw data', () => {
+  const mail = guestNotice({
+    status: 'confirmed',
+    start: '2026-11-03T13:00:00.000Z',
+    reply: '',
+    meetingUrl: 'https://meet.google.com/abc',
+  });
+  assert.match(mail, /Votre rendez-vous avec LDgenX est confirmé/);
+  assert.match(mail, /mardi 3 novembre 2026/);
+  assert.match(mail, /Your appointment with LDgenX is confirmed/);
+  assert.match(mail, /https:\/\/meet\.google\.com\/abc/);
+  assert(!mail.includes('confirmed\n'));
+  assert(!mail.includes('2026-11-03T'));
 });

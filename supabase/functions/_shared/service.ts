@@ -20,6 +20,7 @@ import { computeSlots, heldSpans } from './availability.ts';
 import { fileExpiry } from './retention.ts';
 import { DAY, MINUTE, atMinutes, teamDay } from './time.ts';
 import { productionOrigin } from './site.ts';
+import { guestNotice, teamNotice } from './notices.ts';
 
 export interface Records {
   profiles: User;
@@ -47,6 +48,7 @@ export interface Repository {
     subject: string,
     body: string,
     sourceId?: string,
+    dedupeKey?: string,
   ): Promise<void>;
   invite(input: InviteInput): Promise<User>;
 }
@@ -254,13 +256,24 @@ export class PortalService {
         person.notify[pref]
       ) {
         const fr = person.locale === 'fr';
+        const notice =
+          person.role === 'admin'
+            ? teamNotice(kind, values, clientId, person.locale)
+            : {
+                subject: fr
+                  ? 'LDgenX — Nouvelle activité dans votre espace'
+                  : 'LDgenX — New activity in your account',
+                body: `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\n${productionOrigin}/espace`,
+              };
         await this.db.email(
           person.email,
-          fr
-            ? 'LDgenX — Nouvelle activité dans votre espace'
-            : 'LDgenX — New activity in your account',
-          `${fr ? 'Une nouvelle activité vous attend dans votre espace LDgenX.' : 'There is new activity in your LDgenX account.'}\n${productionOrigin}/${person.role === 'admin' ? 'admin' : 'espace'}`,
+          notice.subject,
+          notice.body,
           eventId,
+          // A burst of messages in one conversation makes one email, not twenty.
+          kind === 'message'
+            ? `message:${person.id}:${clientId}:${Math.floor(Date.now() / (10 * MINUTE))}`
+            : undefined,
         );
       }
     return eventId;
@@ -389,7 +402,7 @@ export class PortalService {
         await this.db.email(
           a.guest.email,
           'LDgenX — Rendez-vous / Appointment',
-          `${a.status}\n${a.start}\n${a.reply}\n${a.meetingUrl}\nContact : info@ldgenx.fr`,
+          guestNotice(a),
           eventId,
         );
     }

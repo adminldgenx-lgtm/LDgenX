@@ -91,22 +91,13 @@ export const defaultBooking: BookingConfig = {
     },
   ],
   rules: ['maeva', 'emilie', 'damien'].flatMap((hostId) =>
-    [0, 1, 2, 3, 4].flatMap((weekday) => [
-      {
-        id: `${hostId}-${weekday}-am`,
-        hostId,
-        weekday,
-        start: '09:30',
-        end: '12:00',
-      },
-      {
-        id: `${hostId}-${weekday}-pm`,
-        hostId,
-        weekday,
-        start: '14:00',
-        end: '17:30',
-      },
-    ]),
+    [0, 1, 2, 3, 4].map((weekday) => ({
+      id: `${hostId}-${weekday}-am`,
+      hostId,
+      weekday,
+      start: '09:00',
+      end: '12:30',
+    })),
   ),
   blocks: [],
   bufferMinutes: 10,

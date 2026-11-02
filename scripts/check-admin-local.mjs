@@ -74,6 +74,7 @@ function make(kind, locale, legacyId = null, slug = null) {
     legacyId,
     version: 1,
     publishedVersion: null,
+    edited: false,
     document: emptyDocument(),
     createdAt: now(),
     updatedAt: now(),
@@ -127,6 +128,7 @@ function api(method, path, body) {
   entry.version++;
   entry.updatedAt = now();
   if (method === "PATCH") {
+    entry.edited = true;
     entry.document = validateDocument(body.document, entry.kind);
     if (!entry.legacyId && !entry.publishedVersion) {
       const slug =
@@ -381,7 +383,14 @@ try {
   await expect(edited.locator(".cms-status")).toHaveText("Hors ligne");
   await edited.getByRole("button", { name: "Remettre en ligne", exact: true }).click();
   await expect(edited.locator(".cms-status")).toHaveText("En ligne");
-  ok("Taking an item offline and putting it back are one click each");
+  const untouched = page.locator(".cms-entry").nth(1);
+  await expect(untouched.locator(".cms-status")).toHaveText("En ligne");
+  await untouched.getByRole("button", { name: "Retirer du site", exact: true }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "Retirer du site", exact: true }).click();
+  await expect(untouched.locator(".cms-status")).toHaveText("Hors ligne");
+  await untouched.getByRole("button", { name: "Remettre en ligne", exact: true }).click();
+  await expect(untouched.locator(".cms-status")).toHaveText("En ligne");
+  ok("Taking an item offline and putting it back are one click each; an untouched page has nothing to publish");
 
   // A new article, from the empty form to the section list.
   await page.goto(origin + "/admin/contenus/rubrique/ressources");

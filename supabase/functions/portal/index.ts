@@ -3,9 +3,11 @@ import postgres from "npm:postgres@3.4.7";
 import { PortalService, email, text } from "../_shared/service.ts";
 import { PortalError, type User } from "../_shared/types.ts";
 import { repository } from "./repository.ts";
-import { runJobs } from "./jobs.ts";
+import { deliverMail, runJobs } from "./jobs.ts";
 import { portalOrigins } from "../_shared/origins.ts";
 import { runCalendarSync } from "../_shared/google-calendar.ts";
+
+declare const EdgeRuntime: { waitUntil(task: Promise<unknown>): void };
 
 const projectUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -28,6 +30,7 @@ function requestContext() {
     ssl: poolerHost ? "require" : undefined,
     connection: { application_name: "ldgenx-portal" },
   });
+  let mailWaiting = false;
   const origins = new Set(
     (Deno.env.get("PORTAL_ALLOWED_ORIGINS") ?? portalOrigins.join(","))
       .split(",")
@@ -141,7 +144,9 @@ function requestContext() {
           // Serializes related writes, including checking and reserving a free slot in one transaction.
           if (!isRead)
             await tx`select pg_advisory_xact_lock(hashtextextended(${lock},0))`;
-          const db = repository(tx as unknown as typeof sql, admin, uploaded);
+          const db = repository(tx as unknown as typeof sql, admin, uploaded, () => {
+            mailWaiting = true;
+          });
           const user = authId ? await db.get("profiles", authId) : null;
           if (authId && !user) throw new PortalError("unauthenticated");
           if (user?.status === "disabled")
@@ -341,13 +346,31 @@ function requestContext() {
       return respond({ code }, status[code] ?? 500);
     }
   }
-  return { handle, close: () => sql.end({ timeout: 1 }) };
+  return {
+    handle,
+    close: () => sql.end({ timeout: 1 }),
+    hasMail: () => mailWaiting,
+    sendMail: () =>
+      sql.begin((tx) => deliverMail(tx as unknown as typeof sql)),
+  };
 }
 Deno.serve(async (request) => {
   const context = requestContext();
+  let sending = false;
   try {
-    return await context.handle(request);
+    const response = await context.handle(request);
+    // Mail leaves as soon as the answer does; the scheduled job catches what could not.
+    if (context.hasMail()) {
+      sending = true;
+      EdgeRuntime.waitUntil(
+        context
+          .sendMail()
+          .catch(() => {})
+          .finally(() => context.close().catch(() => {})),
+      );
+    }
+    return response;
   } finally {
-    await context.close().catch(() => {});
+    if (!sending) await context.close().catch(() => {});
   }
 });

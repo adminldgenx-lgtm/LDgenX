@@ -71,7 +71,7 @@ export function entryState(entry?: EditorialEntry): State {
   if (entry?.publication?.status === "published")
     return entry.version === entry.publishedVersion ? "live" : "pending";
   if (entry?.publication?.status === "withdrawn") return "offline";
-  if (entry?.legacyId) return entry.version > 1 ? "pending" : "live";
+  if (entry?.legacyId) return entry.edited ? "pending" : "live";
   return entry ? "draft" : "live";
 }
 function useContent() {
@@ -132,7 +132,7 @@ function itemsOf(
     .map((item) => {
       const entry = own.find((e) => e.legacyId === item.id);
       // A saved edit is what the admin wrote last; an untouched copy repeats the catalogue.
-      const edited = entry && entry.version > 1;
+      const edited = entry?.edited;
       return {
         key: `${kind}:${item.id}`,
         legacyId: item.id,
@@ -803,7 +803,7 @@ export function OtherPagesPage() {
             const state: State =
               entry?.publication?.status === "published"
                 ? entryState(entry)
-                : entry && entry.version > 1
+                : entry?.edited
                   ? "pending"
                   : "live";
             return (

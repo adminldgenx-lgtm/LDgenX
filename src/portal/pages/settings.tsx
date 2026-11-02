@@ -116,7 +116,7 @@ function AvailabilityForm({ config }: { config: BookingConfig }) {
           hostId,
           weekday,
           start: '09:00',
-          end: '12:00',
+          end: '12:30',
         },
       ],
     });
