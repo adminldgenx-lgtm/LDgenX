@@ -35,7 +35,7 @@ export const socialImages = new Set([
   'schema-ecotrace',
   'schema-recherche',
   'schema-sequencage',
-  'selection-unima',
+  'selection-bassin',
   'terrain-palavas',
   'terrain-prelevement',
 ]);

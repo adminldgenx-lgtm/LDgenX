@@ -395,7 +395,7 @@ export const services: Expertise[] = [
     title: 'Sélection génomique',
     short: 'Intégrer l’information génétique dans vos programmes.',
     scope: 'Développer des outils d’aide à la sélection pour les filières agricoles et aquacoles.',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     headline: 'L’information génétique au service de la sélection.',
     intro:
       'LDgenX développe des outils pour intégrer les données génétiques dans les programmes de sélection. L’accompagnement concerne notamment les filières aquacoles et agricoles.',
@@ -437,7 +437,7 @@ export const services: Expertise[] = [
         image: 'cas-bar',
         link: { kind: 'work', id: 'selection-genomique' },
       },
-      { title: 'Développement d’un panel de SNP', image: 'cas-crevettes' },
+      { title: 'Développement d’un panel de SNP', image: 'selection-epuisette' },
     ],
     headings: {
       need: 'Un caractère, un programme,\ndes données.',
@@ -835,7 +835,7 @@ export const applications: Sector[] = [
     title: 'Aquaculture & Pêche',
     scope:
       'Sélection génomique, gestion des stocks, traçabilité des produits, surveillance sanitaire.',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     headline: 'Éclairer la gestion des ressources aquatiques.',
     intro:
       'Gestion des géniteurs, sélection, suivi des stocks et surveillance sanitaire : vos enjeux appellent une compréhension des populations et de leur environnement.',
@@ -1658,7 +1658,7 @@ export const resources: Resource[] = [
     slug: 'genomique-filiere-aquacole',
     title: 'La génomique dans les filières aquacoles.',
     category: 'Aquaculture',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     intro:
       'Diversité, sélection et suivi : des questions complémentaires autour des ressources aquatiques.',
     sections: [

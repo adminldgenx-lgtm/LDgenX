@@ -24,13 +24,19 @@ export const clientPhotos: Record<
     altFr: 'Présentation devant un public dans un amphithéâtre',
     altEn: 'A presentation to an audience in a lecture theatre',
   },
-  'selection-unima': {
-    widths: [480, 860, 1100, 1152],
-    width: 1152,
-    height: 768,
-    altFr: 'Crevette tenue dans deux mains devant un bassin',
-    altEn: 'A shrimp held in two hands in front of a pond',
-    credit: '@UNIMA',
+  'selection-bassin': {
+    widths: [480, 860, 1100, 1920],
+    width: 1920,
+    height: 1280,
+    altFr: 'Poissons nageant dans un bassin d’élevage',
+    altEn: 'Fish swimming in a rearing tank',
+  },
+  'selection-epuisette': {
+    widths: [480, 860, 1100, 1920],
+    width: 1920,
+    height: 1280,
+    altFr: 'Poissons dans une épuisette au-dessus d’un bassin d’élevage',
+    altEn: 'Fish in a landing net over a rearing tank',
   },
   'dpcr-chargement': {
     widths: [480, 828],

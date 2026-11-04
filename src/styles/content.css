@@ -2510,8 +2510,8 @@ main {
 }
 
 /* Client photographs: preserve the real subjects within the existing frames. */
-.photo[data-image='selection-unima'] {
-  object-position: 68% 54%;
+.photo[data-image='selection-bassin'] {
+  object-position: 50% 62%;
 }
 .photo[data-image='bioinformatique-client'] {
   object-position: 50% 58%;
@@ -2528,7 +2528,7 @@ main {
   aspect-ratio: 1000 / 667;
 }
 .page-hero-image .photo[data-image='populations-huitriers'],
-.page-hero-image .photo[data-image='selection-unima'] {
+.page-hero-image .photo[data-image='selection-bassin'] {
   animation: none;
   scale: 1;
   translate: none;

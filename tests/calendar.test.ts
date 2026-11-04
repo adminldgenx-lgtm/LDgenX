@@ -37,7 +37,8 @@ import {
 import type { Sql } from "npm:postgres@3.4.7";
 const id = "92efda45-aae8-400c-8191-3c480c4a8ee1";
 let day = teamDay(Date.now() + 7 * DAY);
-while (weekdayOf(day) > 4) day = addDays(day, 1);
+while (weekdayOf(day) > 4 || defaultBooking.closedDays.includes(day))
+  day = addDays(day, 1);
 const iso = (hour: number, min = 0) =>
   atMinutes(day, hour * 60 + min).toISOString();
 const fixture: Appointment = {

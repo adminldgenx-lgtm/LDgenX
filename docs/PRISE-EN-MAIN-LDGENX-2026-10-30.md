@@ -75,7 +75,7 @@ Les téléchargements passent par une autorisation serveur et des liens temporai
 
 `admin.ldgenx@gmail.com` reçoit un e-mail à chaque événement : message d’un client, message du formulaire du site, demande ou changement de rendez-vous, annulation, fichier déposé. Chaque e-mail dit qui, quand, et ouvre directement le bon écran. Le contenu des messages reste dans l’administration.
 
-- Une série de messages dans une même conversation ne déclenche qu’un e-mail toutes les 10 minutes.
+- Chaque nouveau message déclenche son propre e-mail de notification, même dans une même conversation.
 - Un nouveau compte à valider est signalé dans les 15 minutes.
 - Chaque administrateur choisit ses notifications dans **Mon compte**.
 - Resend est gratuit jusqu’à 100 e-mails par jour et 3 000 par mois. Au-delà de la limite du jour, rien n’est perdu : les e-mails partent ensuite, pendant 2 jours.

@@ -14,6 +14,7 @@ import {
 } from '../supabase/functions/_shared/service.ts';
 import { guestNotice, teamNotice } from '../supabase/functions/_shared/notices.ts';
 import type {
+  Activity,
   Appointment,
   BookingConfig,
   User,
@@ -270,6 +271,75 @@ test('the team is told what happened, when, and where to deal with it', () => {
   assert.equal(english.subject, 'LDgenX — New message from the website: Jane');
   assert.match(english.body, /\/admin\/messages\?vue=site/);
   assert.match(teamNotice('appointment_moved', { name: 'J' }, null, 'fr').body, /\/admin\/agenda/);
+});
+test('two consecutive client messages produce two separate admin emails without their contents', async () => {
+  const administrator: User = {
+    ...structuredClone(user),
+    id: 'notification-admin',
+    email: 'admin.ldgenx@gmail.com',
+    role: 'admin',
+    status: 'active',
+  };
+  const queued = new Map<string, { recipient: string; body: string }>();
+  const repo = {
+    get: async () => structuredClone(user),
+    list: async (kind: string) => kind === 'profiles' ? [administrator] : [],
+    put: async () => {},
+    email: async (recipient: string, _subject: string, body: string, sourceId: string, dedupeKey?: string) => {
+      queued.set(dedupeKey ?? sourceId, { recipient, body });
+    },
+  } as unknown as Repository;
+  const svc = new PortalService(repo, structuredClone(user));
+  await svc.sendMessage(user.id, 'Private first message', []);
+  await svc.sendMessage(user.id, 'Private second message', []);
+  assert.equal(queued.size, 2);
+  for (const item of queued.values()) {
+    assert.equal(item.recipient, 'admin.ldgenx@gmail.com');
+    assert(!item.body.includes('Private first message'));
+    assert(!item.body.includes('Private second message'));
+    assert(item.body.includes('/admin/messages?client=' + user.id));
+  }
+});
+test('appointment requests email the administrator only when appointment alerts are enabled', async () => {
+  const c = config(), now = Date.now();
+  const [slot] = computeSlots(c, [], 'decouverte', now + 2 * DAY, now + 10 * DAY, now);
+  assert(slot);
+  for (const enabled of [true, false]) {
+    const administrator: User = {
+      ...structuredClone(user),
+      id: 'notification-admin',
+      email: 'admin.ldgenx@gmail.com',
+      role: 'admin',
+      status: 'active',
+      notify: { ...user.notify, messages: false, appointments: enabled },
+    };
+    const activity: Activity[] = [];
+    const queued: { recipient: string; subject: string; sourceId?: string; dedupeKey?: string }[] = [];
+    const repo = {
+      setting: async () => c,
+      get: async () => structuredClone(user),
+      list: async (kind: string) => kind === 'profiles' ? [administrator] : [],
+      put: async (kind: string, value: Activity) => {
+        if (kind === 'activity') activity.push(value);
+      },
+      email: async (recipient: string, subject: string, _body: string, sourceId?: string, dedupeKey?: string) => {
+        queued.push({ recipient, subject, sourceId, dedupeKey });
+      },
+    } as unknown as Repository;
+    const requested = await new PortalService(repo, structuredClone(user)).requestAppointment({
+      typeId: 'decouverte', start: slot.start, hostId: slot.hostIds[0], topic: '',
+    });
+    assert.equal(requested.status, 'requested');
+    assert.equal(activity.length, 1);
+    assert.equal(activity[0].kind, 'appointment_requested');
+    assert.equal(queued.length, enabled ? 1 : 0);
+    if (enabled) {
+      assert.equal(queued[0].recipient, administrator.email);
+      assert.equal(queued[0].subject, 'LDgenX — Demande de rendez-vous : One Client');
+      assert.equal(queued[0].sourceId, activity[0].id);
+      assert.equal(queued[0].dedupeKey, `activity:${activity[0].id}:${administrator.id}`);
+    }
+  }
 });
 test('someone who books without an account gets a sentence, not raw data', () => {
   const mail = guestNotice({

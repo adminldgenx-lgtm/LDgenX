@@ -270,10 +270,8 @@ export class PortalService {
           notice.subject,
           notice.body,
           eventId,
-          // A burst of messages in one conversation makes one email, not twenty.
-          kind === 'message'
-            ? `message:${person.id}:${clientId}:${Math.floor(Date.now() / (10 * MINUTE))}`
-            : undefined,
+          // Every event gets its own alert; retries of that event remain deduplicated.
+          `activity:${eventId}:${person.id}`,
         );
       }
     return eventId;

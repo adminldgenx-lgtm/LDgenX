@@ -55,11 +55,12 @@
       "sourceFile": "images/client-2026-10-17/selection-unima.jpeg",
       "sha256": "0ab7b41d24d147416b1d428f7fe7e9e32506ffe76fb6efa2053f059c53965d32",
       "credit": "@UNIMA",
-      "usage": "assigned",
+      "usage": "retained-not-displayed",
       "altFr": "Crevette tenue dans deux mains devant un bassin",
       "altEn": "A shrimp held in two hands in front of a pond",
       "width": 1152,
-      "height": 768
+      "height": 768,
+      "note": "Retirée des pages et des cartes de partage le 4 novembre 2026 à la demande de Maeva ; conservée pour un futur cas d’étude, sans la republier automatiquement."
     },
     {
       "page": 8,
@@ -191,6 +192,38 @@
       "width": 793,
       "height": 593,
       "note": "Cut from the client’s slide « Photo pour la PCR digitale » (22 October 2026, images/client-2026-10-22/planche-pcr-digitale.png, crop [30, 93, 793, 593]); the slide holds these photos at about 800 px, originals requested."
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "selection-bassin",
+      "sourceFile": "images/client-2026-11-04/selection-bassin.jpg",
+      "sha256": "4b9d4a1db5219f54c54bcefda5aa22721e8e5281a163a0eca43c539e87213679",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Poissons nageant dans un bassin d’élevage",
+      "altEn": "Fish swimming in a rearing tank",
+      "width": 1920,
+      "height": 1280,
+      "sourceUrl": "https://drive.google.com/file/d/1v7OV0K_mFZWm1bYOsyrDQ0yhGZUTODBA/view",
+      "note": "Photographie selection.jpg fournie par Maeva dans le courriel « photo site » du 4 novembre 2026. Original 5568 × 3712 px conservé hors du dépôt (SHA-256 5824f3a2fcfafe0a878afc4d060585cf8e909bda251d15a5c2b63353babdc9f7) ; copie web réduite à 1920 × 1280 px, métadonnées retirées, sans génération, retouche du sujet ni agrandissement."
+    },
+    {
+      "page": null,
+      "image": null,
+      "archivePath": null,
+      "name": "selection-epuisette",
+      "sourceFile": "images/client-2026-11-04/selection-epuisette.jpg",
+      "sha256": "cff186f22a03b889bc4b11c087e8254e0795731f35ac2308a85f4996fa13ec64",
+      "credit": null,
+      "usage": "assigned",
+      "altFr": "Poissons dans une épuisette au-dessus d’un bassin d’élevage",
+      "altEn": "Fish in a landing net over a rearing tank",
+      "width": 1920,
+      "height": 1280,
+      "sourceUrl": "https://drive.google.com/file/d/1NcBDdsDKuPe05oFQ_MGCFREqGMb_W_aC/view",
+      "note": "Photographie selection2.jpg fournie par Maeva dans le courriel « photo site » du 4 novembre 2026. Original 5568 × 3712 px conservé hors du dépôt (SHA-256 441bc91dfcab6402dd2ac3b2d0f2d3a37bb1d57579c403c079e84c253d53868a) ; copie web réduite à 1920 × 1280 px, métadonnées retirées, sans génération, retouche du sujet ni agrandissement."
     }
   ]
 }

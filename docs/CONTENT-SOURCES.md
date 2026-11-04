@@ -149,7 +149,7 @@ Titres corrigés et courts, H1 unique, canoniques, métadonnées sociales, sché
 
 ## Photos et espèces Canva — 17 octobre 2026
 
-La présentation cliente `DAHX4VfvLE0`, export PowerPoint « Image site web », fournit les photographies et les 22 noms d’espèces. Les images intégrées ont été extraites sans réencodage ; leurs résolutions, SHA-256, pages et crédits sont dans `data/client-photos.json`. Les fichiers préservés sont dans `images/client-2026-10-17/`. La nouvelle photo de sélection génomique est créditée **@UNIMA** en HTML ; ce crédit n’est pas appliqué à l’ancienne photo de crevettes.
+La présentation cliente `DAHX4VfvLE0`, export PowerPoint « Image site web », fournit les photographies et les 22 noms d’espèces. Les images intégrées ont été extraites sans réencodage ; leurs résolutions, SHA-256, pages et crédits sont dans `data/client-photos.json`. Les fichiers préservés sont dans `images/client-2026-10-17/`. La photo de crevette UNIMA est conservée dans ces sources mais n’est plus affectée aux pages depuis le retour du 4 novembre 2026 ci-dessous.
 
 La source dPCR se trouve dans `data/assay-targets.json` ; les 22 associations sont publiées depuis le 23 octobre 2026 : la cliente a confirmé que _Neomys anomalus_ (Musaraigne de Miller, en anglais Southern water shrew) fait bien partie des espèces ciblées. La référence DOI 10.1002/ece3.4487 sert uniquement à la nomenclature, sans ajout au catalogue de recherche. Le vison de l’accueil est désormais un vison d’Europe photographié sous licence (voir plus bas). Détail et limites : [CANVA-2026-10-17.md](CANVA-2026-10-17.md).
 
@@ -273,3 +273,12 @@ E-mail de Maeva Leitwein et pièces jointes (`ldgenx 23oct file/`).
 - Domaine principal `https://www.ldgenx.fr` conservé ; variantes .fr/.com redirigées côté Cloudflare avec conservation des chemins/paramètres. Supabase Auth et les liens Edge utilisent le même domaine. Réécritures privées corrigées et exclusion d’indexation des previews vérifiée sur le site réellement publié.
 - Aucun contenu scientifique ni donnée de rapport modifié. Messagerie OVH, DNS de messagerie et protection Cloudflare des e-mails conservés à la demande du propriétaire ; e-mails automatiques du portail et intégrations Google toujours différés.
 - Déploiement et recette complète, incluant les quatre domaines, 151 pages publiques, 147 entrées de sitemap, accès privés et parcours navigateur réels : [PRODUCTION-DOMAIN-2026-10-29.md](PRODUCTION-DOMAIN-2026-10-29.md).
+
+## Photographies de sélection et d’aquaculture — 4 novembre 2026
+
+Courriel de Maeva « photo site », reçu le 4 novembre 2026 : remplacer la photographie de crevette des pages « Sélection génomique » et « Aquaculture & Pêche » par une des deux photographies fournies ; garder la crevette pour un futur cas d’étude, sans la republier avant cette demande.
+
+- `selection.jpg` : poissons dans un bassin, utilisé sous le nom `selection-bassin` pour les deux pages, leurs cartes et images de partage, ainsi que l’article lié sur la génomique des filières aquacoles, en français et en anglais.
+- `selection2.jpg` : poissons dans une épuisette, utilisé sous le nom `selection-epuisette` dans la vignette « Développement d’un panel de SNP » de la page Sélection génomique, à la place de l’autre photographie de crevettes.
+
+Les originaux de 5568 × 3712 px sont conservés hors du dépôt. Les copies de travail sans métadonnées sont dans `images/client-2026-11-04/`, réduites à 1920 × 1280 px ; variantes WebP de 480, 860, 1100 et 1920 px, sans agrandissement ni retouche générative. Les liens Drive fournis dans le mail, empreintes et textes alternatifs bilingues sont consignés dans `data/client-photos.json`. Les anciennes images `selection-unima` et `cas-crevettes` sont conservées sans affectation active ; aucune étude n’est créée ou publiée pour ce remplacement.

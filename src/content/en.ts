@@ -356,7 +356,7 @@ export const services: Expertise[] = [
     title: 'Genomic selection',
     short: 'Bringing genetic information into your programmes.',
     scope: 'Development of genetic tools to support breeding and selection programmes.',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     headline: 'Accelerate breeding programmes with genomic tools.',
     intro:
       'LDgenX develops genomic tools that integrate genetic information into breeding programmes, supporting more accurate and efficient selection decisions, notably in aquaculture and agriculture.',
@@ -398,7 +398,7 @@ export const services: Expertise[] = [
         image: 'cas-bar',
         link: { kind: 'work', id: 'selection-genomique' },
       },
-      { title: 'Development of a SNP panel', image: 'cas-crevettes' },
+      { title: 'Development of a SNP panel', image: 'selection-epuisette' },
     ],
     headings: {
       need: 'A trait, a programme,\nthe data.',
@@ -772,7 +772,7 @@ export const applications: Sector[] = [
     slug: 'aquaculture-fisheries',
     title: 'Aquaculture & Fisheries',
     scope: 'Genomic selection, stock management, product traceability, health surveillance.',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     headline: 'Optimising the management and performance of aquatic resources.',
     intro:
       'Genomic technologies provide new opportunities to improve the management of exploited populations, optimise breeding programmes and enhance the sustainability of aquaculture production. LDgenX supports producers, research organisations and fisheries managers.',
@@ -1544,7 +1544,7 @@ export const resources: Resource[] = [
     slug: 'genomics-aquaculture',
     title: 'Genomics in aquaculture.',
     category: 'Aquaculture',
-    image: 'selection-unima',
+    image: 'selection-bassin',
     intro: 'Diversity, selection and monitoring: complementary questions around aquatic resources.',
     sections: [
       {
